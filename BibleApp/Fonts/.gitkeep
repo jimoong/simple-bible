@@ -1,0 +1,20 @@
+# Korean Fonts for Bible App
+
+## Installed Fonts ✓
+
+### Noto Serif KR
+- NotoSerifKR-VariableFont_wght.ttf (variable - preferred)
+- NotoSerifKR-{ExtraLight,Light,Regular,Medium,SemiBold,Bold,ExtraBold,Black}.ttf
+
+### Noto Sans KR  
+- NotoSansKR-VariableFont_wght.ttf (variable - preferred)
+- NotoSansKR-{Thin,ExtraLight,Light,Regular,Medium,SemiBold,Bold,ExtraBold,Black}.ttf
+
+## Variable Font Benefits
+- Single file supports all weights (100-900)
+- Future: can explore width variations (narrow, wide)
+- Smaller total file size than multiple static fonts
+
+## Download Links (if needed)
+- Noto Serif KR: https://fonts.google.com/noto/specimen/Noto+Serif+KR
+- Noto Sans KR: https://fonts.google.com/noto/specimen/Noto+Sans+KR

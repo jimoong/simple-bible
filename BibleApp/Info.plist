@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>UIAppFonts</key>
+	<array>
+		<!-- Noto Serif KR -->
+		<string>Fonts/NotoSerifKR-VariableFont_wght.ttf</string>
+		<string>Fonts/NotoSerifKR-Regular.ttf</string>
+		<string>Fonts/NotoSerifKR-Medium.ttf</string>
+		<string>Fonts/NotoSerifKR-SemiBold.ttf</string>
+		<string>Fonts/NotoSerifKR-Bold.ttf</string>
+		<string>Fonts/NotoSerifKR-Light.ttf</string>
+		<string>Fonts/NotoSerifKR-ExtraLight.ttf</string>
+		<string>Fonts/NotoSerifKR-ExtraBold.ttf</string>
+		<string>Fonts/NotoSerifKR-Black.ttf</string>
+		<!-- Noto Sans KR -->
+		<string>Fonts/NotoSansKR-VariableFont_wght.ttf</string>
+		<string>Fonts/NotoSansKR-Regular.ttf</string>
+		<string>Fonts/NotoSansKR-Medium.ttf</string>
+		<string>Fonts/NotoSansKR-SemiBold.ttf</string>
+		<string>Fonts/NotoSansKR-Bold.ttf</string>
+		<string>Fonts/NotoSansKR-Light.ttf</string>
+		<string>Fonts/NotoSansKR-ExtraLight.ttf</string>
+		<string>Fonts/NotoSansKR-Thin.ttf</string>
+		<string>Fonts/NotoSansKR-ExtraBold.ttf</string>
+		<string>Fonts/NotoSansKR-Black.ttf</string>
+	</array>
+</dict>
+</plist>
