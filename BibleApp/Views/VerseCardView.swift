@@ -23,7 +23,8 @@ struct VerseCardView: View {
             if count > 600 { return 17 }      // Very long
             if count > 450 { return 18 }      // Long
             if count > 320 { return 20 }      // Medium-long
-            if count > 70  { return 24 }      // Normal
+            if count > 200 { return 24 }      // Medium
+            if count > 70  { return 28 }      // Normal
             return 32                          // Short
         }
     }
@@ -40,7 +41,8 @@ struct VerseCardView: View {
         } else {
             if count > 450 { return 5 }
             if count > 320 { return 6 }
-            if count > 70  { return 9 }
+            if count > 200 { return 7 }       // Medium
+            if count > 70  { return 9 }       // Normal
             return 11                          // Short verses get more breathing room
         }
     }

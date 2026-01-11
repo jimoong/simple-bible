@@ -5,9 +5,9 @@ struct BookGridView: View {
     @Binding var searchText: String
     
     private let columns = [
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12),
-        GridItem(.flexible(), spacing: 12)
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10)
     ]
     
     var filteredBooks: [BibleBook] {
@@ -30,7 +30,7 @@ struct BookGridView: View {
             
             // Books grid
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 12) {
+                LazyVGrid(columns: columns, spacing: 10) {
                     ForEach(filteredBooks) { book in
                         BookCell(
                             book: book,
@@ -49,30 +49,11 @@ struct BookGridView: View {
     }
     
     private var sortToggle: some View {
-        HStack(spacing: 8) {
-            ForEach(BookSortOrder.allCases, id: \.self) { order in
-                Button {
-                    if viewModel.sortOrder != order {
-                        withAnimation(.easeOut(duration: 0.2)) {
-                            viewModel.toggleSortOrder()
-                        }
-                    }
-                } label: {
-                    Text(order == .canonical ? "Canonical" : "A–Z")
-                        .font(.system(size: 13, weight: .medium))
-                        .foregroundStyle(viewModel.sortOrder == order ? .black : .white.opacity(0.5))
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .background(
-                            Capsule()
-                                .fill(viewModel.sortOrder == order ? .white : Color.clear)
-                        )
-                }
-                .buttonStyle(.plain)
-            }
-            
-            Spacer()
+        Picker("Sort", selection: $viewModel.sortOrder) {
+            Text("Canonical").tag(BookSortOrder.canonical)
+            Text("A–Z").tag(BookSortOrder.alphabetical)
         }
+        .pickerStyle(.segmented)
         .padding(.horizontal, 20)
     }
 }
@@ -89,11 +70,11 @@ struct BookCell: View {
     var body: some View {
         VStack(spacing: 6) {
             Text(book.abbreviation(for: language))
-                .font(.system(size: 16, weight: .semibold))
+                .font(.system(size: 24, weight: .semibold))
                 .foregroundStyle(theme.textPrimary)
             
             Text(book.name(for: language))
-                .font(.system(size: 10, weight: .medium))
+                .font(.system(size: 12, weight: .medium))
                 .foregroundStyle(theme.textSecondary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)

@@ -5,11 +5,12 @@ struct ChapterGridView: View {
     @Binding var currentBook: BibleBook?
     let onDismiss: () -> Void
     let onClose: () -> Void
+    var onChapterSelect: ((BibleBook, Int) -> Void)? = nil
     
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
     
-    private let columns = Array(repeating: GridItem(.flexible(), spacing: 12), count: 5)
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 5)
     private let swipeThreshold: CGFloat = 100
     
     private var book: BibleBook {
@@ -45,25 +46,9 @@ struct ChapterGridView: View {
         }
     }
     
-    // MARK: - Fixed Header (back/close buttons)
+    // MARK: - Fixed Header (close button only - back is in bottom actions)
     private var fixedHeader: some View {
         HStack {
-            // Back button
-            Button {
-                onDismiss()
-                HapticManager.shared.selection()
-            } label: {
-                Image(systemName: "chevron.left")
-                    .font(.system(size: 13, weight: .semibold))
-                    .foregroundStyle(theme.textPrimary.opacity(0.6))
-                    .frame(width: 32, height: 32)
-                    .background(
-                        Circle()
-                            .fill(theme.textPrimary.opacity(0.1))
-                    )
-            }
-            .buttonStyle(.plain)
-            
             Spacer()
             
             // Close button
@@ -71,7 +56,7 @@ struct ChapterGridView: View {
                 onClose()
             } label: {
                 Image(systemName: "xmark")
-                    .font(.system(size: 13, weight: .semibold))
+                    .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(theme.textPrimary.opacity(0.6))
                     .frame(width: 32, height: 32)
                     .background(
@@ -82,45 +67,29 @@ struct ChapterGridView: View {
             .buttonStyle(.plain)
         }
         .padding(.horizontal, 16)
-        .padding(.top, 16)
+        .padding(.top, 12)
     }
     
-    // MARK: - Swipeable Content (title, chapters, swipe hint - all move together)
+    // MARK: - Swipeable Content (title, chapters - all move together)
     private var swipeableContent: some View {
         VStack(spacing: 0) {
-            // Swipe hint
-            HStack(spacing: 4) {
-                if previousBook != nil {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 9, weight: .medium))
-                }
-                Text("swipe")
-                    .font(.system(size: 10, weight: .medium))
-                if nextBook != nil {
-                    Image(systemName: "chevron.right")
-                        .font(.system(size: 9, weight: .medium))
-                }
-            }
-            .foregroundStyle(theme.textSecondary.opacity(0.4))
-            .padding(.top, 8)
-            
             // Book title
             VStack(spacing: 8) {
                 Text(book.name(for: viewModel.languageMode))
-                    .font(theme.display(28))
+                    .font(theme.display(32))
                     .foregroundStyle(theme.textPrimary)
                 
                 Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")
                     .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(theme.textSecondary)
             }
-            .padding(.top, 16)
+            .padding(.top, 24)
             .padding(.bottom, 32)
             
             // Chapter grid
             ScrollViewReader { proxy in
                 ScrollView {
-                    LazyVGrid(columns: columns, spacing: 12) {
+                    LazyVGrid(columns: columns, spacing: 10) {
                         ForEach(1...book.chapterCount, id: \.self) { chapter in
                             ChapterCell(
                                 chapter: chapter,
@@ -129,8 +98,12 @@ struct ChapterGridView: View {
                             )
                             .id(chapter)
                             .onTapGesture {
-                                Task {
-                                    await viewModel.navigateTo(book: book, chapter: chapter)
+                                if let onChapterSelect {
+                                    onChapterSelect(book, chapter)
+                                } else {
+                                    Task {
+                                        await viewModel.navigateTo(book: book, chapter: chapter)
+                                    }
                                 }
                             }
                         }

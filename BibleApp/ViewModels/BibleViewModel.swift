@@ -32,6 +32,7 @@ final class BibleViewModel {
     var errorMessage: String?
     var showBookshelf: Bool = false
     var selectedBookForChapter: BibleBook?
+    var isSearchActive: Bool = false
     
     // For chapter transition animation
     var transitionDirection: TransitionDirection = .none
