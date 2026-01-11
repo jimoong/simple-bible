@@ -9,17 +9,51 @@ struct ContentView: View {
         viewModel.currentTheme
     }
     
+    // Dynamic sheet height: full screen for Books view, 60% for Book (chapter) view
+    private var isFullScreen: Bool {
+        viewModel.selectedBookForChapter == nil
+    }
+    
     var body: some View {
         GeometryReader { geometry in
+            let halfSheetHeight = geometry.size.height * 0.6
+            let fullHeight = geometry.size.height + geometry.safeAreaInsets.top
+            let sheetHeight = isFullScreen ? fullHeight : halfSheetHeight
+            
             ZStack {
                 // Main slot machine view
                 SlotMachineView(viewModel: viewModel)
                 
-                // Bookshelf overlay (custom overlay, not sheet)
-                if viewModel.showBookshelf {
-                    BookshelfOverlay(viewModel: viewModel, searchText: $searchText)
-                        .transition(.move(edge: .bottom).combined(with: .opacity))
+                // Dimmed background - tap to dismiss (only when not full screen)
+                if viewModel.showBookshelf && !isFullScreen {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            dismissBookshelf()
+                        }
                         .zIndex(1)
+                }
+                
+                // Bookshelf overlay (dynamic height sheet from bottom)
+                if viewModel.showBookshelf {
+                    VStack {
+                        if !isFullScreen {
+                            Spacer()
+                        }
+                        
+                        BookshelfOverlay(
+                            viewModel: viewModel,
+                            searchText: $searchText,
+                            onDismiss: { dismissBookshelf() }
+                        )
+                        .frame(height: isFullScreen ? nil : sheetHeight)
+                        .frame(maxHeight: isFullScreen ? .infinity : nil)
+                        .clipShape(RoundedRectangle(cornerRadius: isFullScreen ? 0 : 20, style: .continuous))
+                        .shadow(color: isFullScreen ? .clear : .black.opacity(0.3), radius: 20, y: -5)
+                    }
+                    .ignoresSafeArea(edges: .bottom)
+                    .transition(.move(edge: .bottom))
+                    .zIndex(2)
                 }
                 
                 // Floating controls at bottom - always on top
@@ -35,10 +69,19 @@ struct ContentView: View {
                     .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
                 }
                 .ignoresSafeArea(edges: .bottom)
-                .zIndex(2)
+                .zIndex(3)
             }
-            .animation(.easeOut(duration: 0.3), value: viewModel.showBookshelf)
+            .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.showBookshelf)
+            .animation(.spring(response: 0.35, dampingFraction: 0.85), value: isFullScreen)
         }
+    }
+    
+    private func dismissBookshelf() {
+        viewModel.isSearchActive = false
+        searchText = ""
+        isSearchFieldFocused = false
+        viewModel.dismissBookshelf()
+        HapticManager.shared.selection()
     }
     
     // MARK: - Language Toggle Button

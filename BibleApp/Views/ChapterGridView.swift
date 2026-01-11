@@ -32,13 +32,31 @@ struct ChapterGridView: View {
     var body: some View {
         ZStack {
             // Background
-            theme.background.ignoresSafeArea()
+            theme.background
             
             VStack(spacing: 0) {
-                // Fixed header (back/close buttons don't move)
-                fixedHeader
+                // Fixed header with close button
+                HStack {
+                    Spacer()
+                    
+                    Button {
+                        onClose()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(theme.textPrimary.opacity(0.6))
+                            .frame(width: 32, height: 32)
+                            .background(
+                                Circle()
+                                    .fill(theme.textPrimary.opacity(0.1))
+                            )
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.horizontal, 16)
+                .padding(.top, 12)
                 
-                // Swipeable content (moves as single unit)
+                // Swipeable content
                 swipeableContent
                     .offset(x: dragOffset)
                     .gesture(horizontalSwipeGesture)
@@ -46,31 +64,7 @@ struct ChapterGridView: View {
         }
     }
     
-    // MARK: - Fixed Header (close button only - back is in bottom actions)
-    private var fixedHeader: some View {
-        HStack {
-            Spacer()
-            
-            // Close button
-            Button {
-                onClose()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(theme.textPrimary.opacity(0.6))
-                    .frame(width: 32, height: 32)
-                    .background(
-                        Circle()
-                            .fill(theme.textPrimary.opacity(0.1))
-                    )
-            }
-            .buttonStyle(.plain)
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 12)
-    }
-    
-    // MARK: - Swipeable Content (title, chapters - all move together)
+    // MARK: - Swipeable Content
     private var swipeableContent: some View {
         VStack(spacing: 0) {
             // Book title
@@ -83,46 +77,51 @@ struct ChapterGridView: View {
                     .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(theme.textSecondary)
             }
-            .padding(.top, 24)
-            .padding(.bottom, 32)
+            .padding(.top, 16)
+            .padding(.bottom, 24)
             
             // Chapter grid
-            ScrollViewReader { proxy in
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 10) {
-                        ForEach(1...book.chapterCount, id: \.self) { chapter in
-                            ChapterCell(
-                                chapter: chapter,
-                                theme: theme,
-                                isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
-                            )
-                            .id(chapter)
-                            .onTapGesture {
-                                if let onChapterSelect {
-                                    onChapterSelect(book, chapter)
-                                } else {
-                                    Task {
-                                        await viewModel.navigateTo(book: book, chapter: chapter)
-                                    }
+            chapterGrid
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    // MARK: - Chapter Grid
+    private var chapterGrid: some View {
+        ScrollViewReader { proxy in
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(1...book.chapterCount, id: \.self) { chapter in
+                        ChapterCell(
+                            chapter: chapter,
+                            theme: theme,
+                            isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
+                        )
+                        .id(chapter)
+                        .onTapGesture {
+                            if let onChapterSelect {
+                                onChapterSelect(book, chapter)
+                            } else {
+                                Task {
+                                    await viewModel.navigateTo(book: book, chapter: chapter)
                                 }
                             }
                         }
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 40)
                 }
-                .onAppear {
-                    if book == viewModel.currentBook {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            withAnimation(.easeOut(duration: 0.3)) {
-                                proxy.scrollTo(viewModel.currentChapter, anchor: .center)
-                            }
+                .padding(.horizontal, 20)
+                .padding(.bottom, 40)
+            }
+            .onAppear {
+                if book == viewModel.currentBook {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        withAnimation(.easeOut(duration: 0.3)) {
+                            proxy.scrollTo(viewModel.currentChapter, anchor: .center)
                         }
                     }
                 }
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
     // MARK: - Horizontal Swipe Gesture
