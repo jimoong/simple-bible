@@ -22,13 +22,7 @@ struct SettingsView: View {
                         // Bible Versions Section (placeholder for future)
                         settingsSection(title: "Bible Versions") {
                             versionRow(label: "English", version: "KJV", sublabel: "King James Version")
-                            Divider().background(theme.textSecondary.opacity(0.2))
                             versionRow(label: "Korean", version: "KRV", sublabel: "개역한글")
-                        }
-                        
-                        // Display Section (placeholder for future)
-                        settingsSection(title: "Display") {
-                            toggleRow(icon: "textformat.size", label: "Large Text", isOn: .constant(false))
                         }
                         
                         // About Section
@@ -63,28 +57,26 @@ struct SettingsView: View {
     
     // MARK: - Section Container
     private func settingsSection<Content: View>(title: String, @ViewBuilder content: () -> Content) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text(title.uppercased())
-                .font(.system(size: 13, weight: .semibold))
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(theme.textSecondary.opacity(0.6))
-                .tracking(0.8)
             
             VStack(spacing: 0) {
                 content()
             }
-            .padding(16)
-            .glassBackground(.roundedRect(radius: 16), intensity: .clear)
+            .padding(.horizontal, 14)
+            .padding(.vertical, 10)
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(theme.textPrimary.opacity(0.06))
+            )
         }
     }
     
     // MARK: - Language Row
     private var languageRow: some View {
         HStack {
-            Image(systemName: "globe")
-                .font(.system(size: 18))
-                .foregroundStyle(theme.accent)
-                .frame(width: 28)
-            
             Text("Display Language")
                 .font(.system(size: 16))
                 .foregroundStyle(theme.textPrimary)
@@ -119,12 +111,13 @@ struct SettingsView: View {
                     .fill(theme.textPrimary.opacity(0.1))
             )
         }
+        .padding(.vertical, 6)
     }
     
     // MARK: - Version Row
     private func versionRow(label: String, version: String, sublabel: String) -> some View {
         HStack {
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 3) {
                 Text(label)
                     .font(.system(size: 16))
                     .foregroundStyle(theme.textPrimary)
@@ -146,27 +139,7 @@ struct SettingsView: View {
                         .fill(theme.accent.opacity(0.15))
                 )
         }
-        .padding(.vertical, 4)
-    }
-    
-    // MARK: - Toggle Row
-    private func toggleRow(icon: String, label: String, isOn: Binding<Bool>) -> some View {
-        HStack {
-            Image(systemName: icon)
-                .font(.system(size: 18))
-                .foregroundStyle(theme.accent)
-                .frame(width: 28)
-            
-            Text(label)
-                .font(.system(size: 16))
-                .foregroundStyle(theme.textPrimary)
-            
-            Spacer()
-            
-            Toggle("", isOn: isOn)
-                .labelsHidden()
-                .tint(theme.accent)
-        }
+        .padding(.vertical, 10)
     }
     
     // MARK: - Info Row
@@ -182,6 +155,7 @@ struct SettingsView: View {
                 .font(.system(size: 15))
                 .foregroundStyle(theme.textSecondary)
         }
+        .padding(.vertical, 6)
     }
 }
 
