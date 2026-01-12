@@ -76,13 +76,13 @@ struct ChapterGridView: View {
                     .foregroundStyle(theme.textSecondary)
             }
             .padding(.top, 20)
-            .padding(.bottom, 12)
+            .padding(.bottom, 16)
             
             // Book summary and message
             if let summary = bookSummary {
                 bookSummarySection(summary)
                     .padding(.horizontal, 24)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 24)
             }
             
             // Chapter grid
@@ -93,31 +93,18 @@ struct ChapterGridView: View {
     
     // MARK: - Book Summary Section
     private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 16) {
             // Summary
             Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
-                .font(.system(size: 14, weight: .regular))
+                .font(.system(size: 15, weight: .regular))
                 .foregroundStyle(theme.textSecondary)
-                .lineSpacing(4)
+                .lineSpacing(5)
             
             // Key message
-            HStack(alignment: .top, spacing: 8) {
-                Image(systemName: "quote.opening")
-                    .font(.system(size: 12))
-                    .foregroundStyle(theme.accent.opacity(0.7))
-                
-                Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundStyle(theme.textPrimary.opacity(0.85))
-                    .italic()
-                    .lineSpacing(3)
-            }
-            .padding(.vertical, 10)
-            .padding(.horizontal, 12)
-            .background(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(theme.surface.opacity(0.6))
-            )
+            Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
+                .font(.system(size: 15, weight: .regular))
+                .foregroundStyle(theme.textSecondary)
+                .lineSpacing(5)
         }
         .multilineTextAlignment(.leading)
     }
@@ -313,13 +300,13 @@ struct FullscreenChapterGridView: View {
                     .foregroundStyle(theme.textSecondary)
             }
             .padding(.top, topPadding + 20)
-            .padding(.bottom, 12)
+            .padding(.bottom, 16)
             
             // Book summary and message
             if let summary = bookSummary {
                 bookSummarySection(summary)
                     .padding(.horizontal, 24)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, 24)
             }
             
             // Chapter grid
@@ -360,31 +347,18 @@ struct FullscreenChapterGridView: View {
     
     // MARK: - Book Summary Section
     private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .leading, spacing: 16) {
             // Summary
             Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
-                .font(.system(size: 14, weight: .regular))
+                .font(.system(size: 15, weight: .regular))
                 .foregroundStyle(theme.textSecondary)
-                .lineSpacing(4)
+                .lineSpacing(5)
             
             // Key message
-            HStack(alignment: .top, spacing: 8) {
-                Image(systemName: "quote.opening")
-                    .font(.system(size: 12))
-                    .foregroundStyle(theme.accent.opacity(0.7))
-                
-                Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
-                    .font(.system(size: 13, weight: .medium))
-                    .foregroundStyle(theme.textPrimary.opacity(0.85))
-                    .italic()
-                    .lineSpacing(3)
-            }
-            .padding(.vertical, 10)
-            .padding(.horizontal, 12)
-            .background(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(theme.surface.opacity(0.6))
-            )
+            Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
+                .font(.system(size: 15, weight: .regular))
+                .foregroundStyle(theme.textSecondary)
+                .lineSpacing(5)
         }
         .multilineTextAlignment(.leading)
     }
