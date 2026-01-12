@@ -12,7 +12,7 @@ struct BibleAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
                 .preferredColorScheme(.dark)
         }
     }

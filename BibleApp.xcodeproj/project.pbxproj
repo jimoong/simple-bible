@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0000010000000000000020 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000020 /* SplashScreenView.swift */; };
 		66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */; };
 		66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */; };
 		66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */; };
@@ -37,6 +38,7 @@
 		66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchService.swift; sourceTree = "<group>"; };
 		66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchViewModel.swift; sourceTree = "<group>"; };
 		66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchOverlay.swift; sourceTree = "<group>"; };
+		AA0000020000000000000020 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000001 /* BibleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppApp.swift; sourceTree = "<group>"; };
 		AA0000020000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000003 /* SlotMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */,
+				AA0000020000000000000020 /* SplashScreenView.swift */,
 				AA0000020000000000000002 /* ContentView.swift */,
 				AA0000020000000000000003 /* SlotMachineView.swift */,
 				AA0000020000000000000004 /* VerseCardView.swift */,
@@ -230,6 +233,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA0000010000000000000001 /* BibleAppApp.swift in Sources */,
+				AA0000010000000000000020 /* SplashScreenView.swift in Sources */,
 				AA0000010000000000000002 /* ContentView.swift in Sources */,
 				AA0000010000000000000003 /* SlotMachineView.swift in Sources */,
 				AA0000010000000000000004 /* VerseCardView.swift in Sources */,
