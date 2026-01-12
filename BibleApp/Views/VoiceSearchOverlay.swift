@@ -66,6 +66,9 @@ struct VoiceSearchOverlay: View {
             case .listening:
                 listeningContent
                 
+            case .choosingOption:
+                choosingOptionContent
+                
             case .navigating:
                 navigatingContent
                 
@@ -111,84 +114,130 @@ struct VoiceSearchOverlay: View {
     
     private var listeningContent: some View {
         VStack(spacing: 0) {
-            Spacer()
+            Spacer(minLength: 20)
             
             // Circular audio visualizer
             audioVisualizer
             
-            // Live transcript - replaced with validated text when available
-            Text(displayText)
+            // Live validated text - shows matched book name or raw transcript
+            Text(viewModel.transcript.isEmpty ? " " : viewModel.displayText)
                 .font(sansFont(32))
                 .foregroundStyle(viewModel.transcript.isEmpty ? .clear : .white)
                 .multilineTextAlignment(.center)
                 .lineLimit(3)
                 .padding(.horizontal)
-                .frame(minHeight: 120)
-                .animation(.easeOut(duration: 0.15), value: displayText)
+                .frame(minHeight: 80)
+                .animation(.easeOut(duration: 0.15), value: viewModel.displayText)
             
-            Spacer()
+            Spacer(minLength: 20)
             
-            // Open button
-            Button {
-                viewModel.tryNavigate()
-            } label: {
-                Text(languageMode == .kr ? "열기" : "Open")
-                    .font(sansFont(16, weight: .semibold))
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .padding(.vertical, 16)
-                    .background(
-                        Capsule()
-                            .fill(.regularMaterial)
-                            .environment(\.colorScheme, .dark)
-                    )
-                    .overlay(
-                        Capsule()
-                            .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                    )
+            // Show "열기" button only when there's detected text
+            if !viewModel.transcript.isEmpty {
+                openButton
             }
-            .buttonStyle(.plain)
         }
     }
     
-    // MARK: - Display Text (validated or raw)
+    // MARK: - Choosing Option Content (after parsing found multiple matches)
     
-    private var displayText: String {
-        guard !viewModel.transcript.isEmpty else { return " " }
-        
-        // If we have a valid parsed result, show the validated version
-        if let parsed = viewModel.liveParseResult, let book = parsed.book {
-            return formatParsedReference(book: book, chapter: parsed.chapter, verse: parsed.verse)
+    private var choosingOptionContent: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 0) {
+                Spacer(minLength: 20)
+                
+                // Show the transcript that was parsed
+                Text(viewModel.transcript)
+                    .font(sansFont(24))
+                    .foregroundStyle(.white.opacity(0.6))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .padding(.horizontal)
+                
+                Spacer(minLength: 20)
+                
+                // Show options from parsedOptions
+                if let parsed = viewModel.parsedOptions, let primary = parsed.book {
+                    multipleOptionsButtons(primary: primary, alternatives: parsed.alternativeBooks)
+                }
+                
+                Spacer(minLength: 20)
+            }
         }
-        
-        // Otherwise show raw transcript
-        return viewModel.transcript
     }
     
-    private func formatParsedReference(book: BibleBook, chapter: Int?, verse: Int?) -> String {
-        let bookName = book.name(for: languageMode)
+    // MARK: - Multiple Options Buttons (direct navigation)
+    
+    private func multipleOptionsButtons(primary: BibleBook, alternatives: [BibleBook]) -> some View {
+        // Collect all options: primary + alternatives
+        var allOptions = [primary] + alternatives
+        allOptions.sort { $0.order < $1.order }
         
-        // Only show what was actually spoken
-        if let chapter = chapter {
-            if let verse = verse {
-                // Book + Chapter + Verse
-                if languageMode == .kr {
-                    return "\(bookName) \(chapter)장 \(verse)절"
-                } else {
-                    return "\(bookName) \(chapter):\(verse)"
+        return VStack(spacing: 12) {
+            ForEach(allOptions, id: \.id) { book in
+                Button {
+                    viewModel.navigateToBook(book)
+                } label: {
+                    Text(book.name(for: languageMode))
+                        .font(sansFont(16, weight: .semibold))
+                        .foregroundStyle(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .background(
+                            Capsule()
+                                .fill(.regularMaterial)
+                                .environment(\.colorScheme, .dark)
+                        )
+                        .overlay(
+                            Capsule()
+                                .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                        )
                 }
-            } else {
-                // Book + Chapter only
-                if languageMode == .kr {
-                    return "\(bookName) \(chapter)장"
-                } else {
-                    return "\(bookName) \(chapter)"
-                }
+                .buttonStyle(.plain)
             }
-        } else {
-            // Book only
-            return bookName
         }
+    }
+    
+    // MARK: - Open Button
+    
+    private var openButton: some View {
+        Button {
+            viewModel.tryNavigate()
+        } label: {
+            Text(languageMode == .kr ? "열기" : "Open")
+                .font(sansFont(16, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
+                .background(
+                    Capsule()
+                        .fill(.regularMaterial)
+                        .environment(\.colorScheme, .dark)
+                )
+                .overlay(
+                    Capsule()
+                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                )
+        }
+        .buttonStyle(.plain)
+    }
+    
+    // MARK: - Retry Button
+    
+    private var retryButton: some View {
+        Button {
+            viewModel.retryListening()
+        } label: {
+            Text(languageMode == .kr ? "다시 시도" : "Retry")
+                .font(sansFont(16, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 16)
+                .background(
+                    Capsule()
+                        .fill(Color.white.opacity(0.15))
+                )
+        }
+        .buttonStyle(.plain)
     }
     
     // MARK: - Audio Visualizer (Circular)

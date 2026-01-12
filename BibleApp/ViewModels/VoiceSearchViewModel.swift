@@ -5,6 +5,7 @@ import Combine
 enum VoiceSearchState: Equatable {
     case idle
     case listening
+    case choosingOption  // Multiple matches - user needs to pick one
     case navigating
     case error(String)
 }
@@ -17,6 +18,7 @@ final class VoiceSearchViewModel {
     var state: VoiceSearchState = .idle
     var showOverlay = false
     var currentAudioLevel: Float = 0.0
+    var parsedOptions: ParsedBibleReference? = nil  // Stored when multiple options need to be shown
     
     // MARK: - Services
     private let voiceService = VoiceSearchService()
@@ -40,11 +42,45 @@ final class VoiceSearchViewModel {
         currentAudioLevel
     }
     
-    /// Real-time parsed result for validation preview
+    /// Real-time parsed result for live validation display
     var liveParseResult: ParsedBibleReference? {
         guard !transcript.isEmpty else { return nil }
         let result = BibleReferenceParser.shared.parse(transcript)
         return result.book != nil ? result : nil
+    }
+    
+    /// Display text - shows validated reference (book + chapter + verse) if found, otherwise raw transcript
+    var displayText: String {
+        if let parsed = liveParseResult, let book = parsed.book {
+            return formatReference(book: book, chapter: parsed.chapter, verse: parsed.verse)
+        }
+        return transcript
+    }
+    
+    /// Format the parsed reference for display
+    private func formatReference(book: BibleBook, chapter: Int?, verse: Int?) -> String {
+        let bookName = book.name(for: languageMode)
+        
+        if let chapter = chapter {
+            if let verse = verse {
+                // Book + Chapter + Verse
+                if languageMode == .kr {
+                    return "\(bookName) \(chapter)장 \(verse)절"
+                } else {
+                    return "\(bookName) \(chapter):\(verse)"
+                }
+            } else {
+                // Book + Chapter only
+                if languageMode == .kr {
+                    return "\(bookName) \(chapter)장"
+                } else {
+                    return "\(bookName) \(chapter)"
+                }
+            }
+        } else {
+            // Book only
+            return bookName
+        }
     }
     
     var errorMessage: String? {
@@ -77,7 +113,12 @@ final class VoiceSearchViewModel {
             .receive(on: DispatchQueue.main)
             .compactMap { $0 }
             .sink { [weak self] error in
-                self?.state = .error(error)
+                guard let self = self else { return }
+                // Only transition to error state if we're currently listening
+                // This prevents stale errors from affecting retry flow
+                if case .listening = self.state {
+                    self.state = .error(error)
+                }
             }
             .store(in: &cancellables)
         
@@ -101,12 +142,15 @@ final class VoiceSearchViewModel {
     /// Opens the overlay and immediately starts listening
     func openAndStartListening(with language: LanguageMode) {
         setLanguage(language)
+        voiceService.clearTranscript()  // Start with clean state
+        state = .listening  // Set state immediately to avoid idle flash
         showOverlay = true
         startListening()
     }
     
     func close() {
-        voiceService.stopListening()
+        voiceService.reset()  // Clear transcript and stop listening
+        parsedOptions = nil
         showOverlay = false
         state = .idle
     }
@@ -128,16 +172,24 @@ final class VoiceSearchViewModel {
         
         let result = voiceService.parseTranscript()
         
-        // Only require book to be found; default chapter and verse to 1 if not specified
         if let book = result.book {
-            let chapter = result.chapter ?? 1
-            let verse = result.verse ?? 1
-            state = .navigating
-            
-            Task {
-                await onNavigate?(book, chapter, verse)
-                HapticManager.shared.success()
-                close()
+            // Check if there are multiple options
+            if result.isAmbiguous {
+                // Store the parsed result and show options
+                parsedOptions = result
+                state = .choosingOption
+                HapticManager.shared.lightClick()
+            } else {
+                // Single match - navigate directly
+                let chapter = result.chapter ?? 1
+                let verse = result.verse ?? 1
+                state = .navigating
+                
+                Task {
+                    await onNavigate?(book, chapter, verse)
+                    HapticManager.shared.success()
+                    close()
+                }
             }
         } else {
             let errorMsg = languageMode == .kr 
@@ -157,9 +209,28 @@ final class VoiceSearchViewModel {
     }
     
     func retryListening() {
-        state = .idle
-        voiceService.clearTranscript()
-        startListening()
+        // Reset everything cleanly
+        voiceService.reset()
+        state = .listening  // Set to listening immediately to avoid idle flash
+        
+        // Small delay to let audio session properly reset
+        Task {
+            try? await Task.sleep(nanoseconds: 200_000_000) // 0.2 seconds
+            startListening()
+        }
+    }
+    
+    /// Navigate directly to a specific book (used when multiple options are shown)
+    /// Always navigates to chapter 1, verse 1 to avoid hallucinated chapter numbers
+    func navigateToBook(_ book: BibleBook) {
+        voiceService.stopListening()
+        state = .navigating
+        
+        Task {
+            await onNavigate?(book, 1, 1)
+            HapticManager.shared.success()
+            close()
+        }
     }
     
     // MARK: - Permission

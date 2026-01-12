@@ -9,6 +9,7 @@ struct ParsedBibleReference {
     let detectedLanguage: LanguageMode
     let rawTranscript: String
     let confidence: ParseConfidence
+    let alternativeBooks: [BibleBook]  // Other possible matches when ambiguous
     
     var isValid: Bool {
         book != nil && chapter != nil
@@ -16,6 +17,20 @@ struct ParsedBibleReference {
     
     var isComplete: Bool {
         book != nil && chapter != nil && verse != nil
+    }
+    
+    var isAmbiguous: Bool {
+        !alternativeBooks.isEmpty
+    }
+    
+    init(book: BibleBook?, chapter: Int?, verse: Int?, detectedLanguage: LanguageMode, rawTranscript: String, confidence: ParseConfidence, alternativeBooks: [BibleBook] = []) {
+        self.book = book
+        self.chapter = chapter
+        self.verse = verse
+        self.detectedLanguage = detectedLanguage
+        self.rawTranscript = rawTranscript
+        self.confidence = confidence
+        self.alternativeBooks = alternativeBooks
     }
 }
 
@@ -120,6 +135,16 @@ final class BibleReferenceParser {
             "rev": "revelation", "revelations": "revelation",
             
             // Korean variations and short forms
+            // Explicit partial names - default to first book (상) when ambiguous
+            "사무엘": "1samuel",      // 사무엘 -> 사무엘상
+            "열왕기": "1kings",       // 열왕기 -> 열왕기상
+            "역대": "1chronicles",    // 역대 -> 역대상
+            "고린도": "1corinthians", // 고린도 -> 고린도전서
+            "데살로니가": "1thessalonians", // 데살로니가 -> 데살로니가전서
+            "디모데": "1timothy",     // 디모데 -> 디모데전서
+            "베드로": "1peter",       // 베드로 -> 베드로전서
+            "요한서": "1john",        // 요한서 -> 요한일서
+            
             "창세": "genesis",
             "출애굽": "exodus", "출": "exodus",
             "레위": "leviticus",
@@ -365,20 +390,21 @@ final class BibleReferenceParser {
         }
         
         // Find matching book
-        let (book, confidence) = findBook(bookText, language: language)
+        let matchResult = findBook(bookText, language: language)
         
         // Validate chapter is within range
-        if let book = book, chapter > book.chapterCount {
+        if let book = matchResult.book, chapter > book.chapterCount {
             return nil
         }
         
         return ParsedBibleReference(
-            book: book,
+            book: matchResult.book,
             chapter: chapter,
             verse: verse,
             detectedLanguage: language,
             rawTranscript: rawTranscript,
-            confidence: book != nil ? confidence : .low
+            confidence: matchResult.book != nil ? matchResult.confidence : .low,
+            alternativeBooks: matchResult.alternatives
         )
     }
     
@@ -386,9 +412,9 @@ final class BibleReferenceParser {
     
     private func tryBookOnlyParsing(_ text: String, language: LanguageMode, rawTranscript: String) -> ParsedBibleReference? {
         // Try to find a book match for the entire text (no numbers required)
-        let (book, confidence) = findBook(text, language: language)
+        let matchResult = findBook(text, language: language)
         
-        guard let book = book, confidence != .low else {
+        guard let book = matchResult.book, matchResult.confidence != .low else {
             return nil
         }
         
@@ -398,7 +424,8 @@ final class BibleReferenceParser {
             verse: nil,    // Will default to 1 in ViewModel
             detectedLanguage: language,
             rawTranscript: rawTranscript,
-            confidence: confidence
+            confidence: matchResult.confidence,
+            alternativeBooks: matchResult.alternatives
         )
     }
     
@@ -439,65 +466,150 @@ final class BibleReferenceParser {
             return nil
         }
         
-        let (book, confidence) = findBook(bookCandidate, language: language)
+        let matchResult = findBook(bookCandidate, language: language)
         
         let chapter = numbers.first
         let verse = numbers.count > 1 ? numbers[1] : nil
         
         // Validate
-        if let book = book, let chapter = chapter, chapter > book.chapterCount {
+        if let book = matchResult.book, let chapter = chapter, chapter > book.chapterCount {
             return nil
         }
         
         return ParsedBibleReference(
-            book: book,
+            book: matchResult.book,
             chapter: chapter,
             verse: verse,
             detectedLanguage: language,
             rawTranscript: rawTranscript,
-            confidence: book != nil ? confidence : .low
+            confidence: matchResult.book != nil ? matchResult.confidence : .low,
+            alternativeBooks: matchResult.alternatives
         )
     }
     
     // MARK: - Book Matching
     
-    private func findBook(_ text: String, language: LanguageMode) -> (BibleBook?, ParseConfidence) {
+    /// Result of book matching - includes primary match and alternatives
+    struct BookMatchResult {
+        let book: BibleBook?
+        let confidence: ParseConfidence
+        let alternatives: [BibleBook]  // Other possible matches
+    }
+    
+    private func findBook(_ text: String, language: LanguageMode) -> BookMatchResult {
         let searchText = text.lowercased().trimmingCharacters(in: .whitespaces)
+        
+        // Skip if too short
+        guard searchText.count >= 1 else {
+            return BookMatchResult(book: nil, confidence: .low, alternatives: [])
+        }
         
         // 1. Try exact match first
         if let bookId = bookAliasMap[searchText],
            let book = BibleData.book(by: bookId) {
-            return (book, .high)
+            return BookMatchResult(book: book, confidence: .high, alternatives: [])
         }
         
-        // 2. Try prefix match (e.g., "genesis" matches "gen")
+        // 2. Try prefix match - collect ALL matches
+        var prefixMatches: [BibleBook] = []
+        var matchedIds = Set<String>()
+        
         for (alias, bookId) in bookAliasMap {
             if alias.hasPrefix(searchText) || searchText.hasPrefix(alias) {
-                if let book = BibleData.book(by: bookId) {
-                    return (book, .medium)
+                if !matchedIds.contains(bookId), let book = BibleData.book(by: bookId) {
+                    prefixMatches.append(book)
+                    matchedIds.insert(bookId)
                 }
             }
         }
         
-        // 3. Try fuzzy matching with Levenshtein distance
-        var bestMatch: (bookId: String, distance: Int)? = nil
-        let maxDistance = max(2, searchText.count / 3) // Allow more errors for longer names
+        // If we have prefix matches, sort by order and return
+        if !prefixMatches.isEmpty {
+            // Sort by Bible order (earlier books first: 상 before 하)
+            prefixMatches.sort { $0.order < $1.order }
+            let primary = prefixMatches.removeFirst()
+            return BookMatchResult(book: primary, confidence: .medium, alternatives: prefixMatches)
+        }
+        
+        // 3. Try contains match - if search text contains a book name or vice versa
+        var containsMatches: [BibleBook] = []
+        matchedIds.removeAll()
+        
+        for (alias, bookId) in bookAliasMap {
+            if searchText.contains(alias) || alias.contains(searchText) {
+                if !matchedIds.contains(bookId), let book = BibleData.book(by: bookId) {
+                    containsMatches.append(book)
+                    matchedIds.insert(bookId)
+                }
+            }
+        }
+        
+        if !containsMatches.isEmpty {
+            containsMatches.sort { $0.order < $1.order }
+            let primary = containsMatches.removeFirst()
+            return BookMatchResult(book: primary, confidence: .medium, alternatives: containsMatches)
+        }
+        
+        // 4. Fuzzy matching with Levenshtein distance
+        // Only accept matches within a reasonable distance threshold
+        let maxAllowedDistance = max(2, searchText.count / 2)  // Allow up to half the characters to be wrong
+        
+        var fuzzyMatches: [(book: BibleBook, distance: Int, alias: String)] = []
         
         for (alias, bookId) in bookAliasMap {
             let distance = levenshteinDistance(searchText, alias)
-            if distance <= maxDistance {
-                if bestMatch == nil || distance < bestMatch!.distance {
-                    bestMatch = (bookId, distance)
+            
+            // Only consider matches within the threshold
+            if distance <= maxAllowedDistance {
+                if let book = BibleData.book(by: bookId) {
+                    // Keep the best distance for each book
+                    if let existingIdx = fuzzyMatches.firstIndex(where: { $0.book.id == book.id }) {
+                        if distance < fuzzyMatches[existingIdx].distance {
+                            fuzzyMatches[existingIdx] = (book, distance, alias)
+                        }
+                    } else {
+                        fuzzyMatches.append((book, distance, alias))
+                    }
                 }
             }
         }
         
-        if let match = bestMatch,
-           let book = BibleData.book(by: match.bookId) {
-            return (book, match.distance <= 1 ? .medium : .low)
+        // If no fuzzy matches found, return no match
+        guard !fuzzyMatches.isEmpty else {
+            return BookMatchResult(book: nil, confidence: .low, alternatives: [])
         }
         
-        return (nil, .low)
+        // Sort by distance (best match first), then by Bible order
+        fuzzyMatches.sort { 
+            if $0.distance != $1.distance {
+                return $0.distance < $1.distance
+            }
+            return $0.book.order < $1.book.order
+        }
+        
+        let best = fuzzyMatches.removeFirst()
+        
+        // Get alternatives with same or similar distance (within 1)
+        let alternatives = fuzzyMatches
+            .filter { $0.distance <= best.distance + 1 }
+            .prefix(5)  // Limit to top 5 alternatives
+            .map { $0.book }
+        
+        // Determine confidence based on distance
+        let confidence: ParseConfidence
+        if best.distance == 0 {
+            confidence = .high
+        } else if best.distance <= 1 {
+            confidence = .medium
+        } else {
+            confidence = .low
+        }
+        
+        return BookMatchResult(
+            book: best.book,
+            confidence: confidence,
+            alternatives: Array(alternatives)
+        )
     }
     
     // MARK: - Levenshtein Distance

@@ -18,6 +18,7 @@ final class VoiceSearchService: ObservableObject {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
+    private var isIntentionallyStopping = false  // Flag to ignore errors during intentional stops
     
     // Detect language based on user's current setting, but allow auto-detection
     private var preferredLocale: Locale = Locale(identifier: "ko-KR")
@@ -74,9 +75,13 @@ final class VoiceSearchService: ObservableObject {
     // MARK: - Start/Stop Listening
     
     func startListening() async throws {
-        // Reset state
+        // Stop any existing task first
+        stopListening()
+        
+        // Reset state after stopping
         transcript = ""
         errorMessage = nil
+        isIntentionallyStopping = false  // Clear the flag when starting fresh
         
         // Check authorization
         guard isAuthorized else {
@@ -88,9 +93,6 @@ final class VoiceSearchService: ObservableObject {
         guard micGranted else {
             throw VoiceSearchError.microphoneNotAuthorized
         }
-        
-        // Stop any existing task
-        stopListening()
         
         // Configure audio session
         let audioSession = AVAudioSession.sharedInstance()
@@ -104,7 +106,13 @@ final class VoiceSearchService: ObservableObject {
         }
         
         recognitionRequest.shouldReportPartialResults = true
-        recognitionRequest.requiresOnDeviceRecognition = false // Allow cloud for better accuracy
+        recognitionRequest.taskHint = .dictation
+        
+        // Try on-device first for potentially better accuracy with short phrases
+        // Falls back to server if on-device isn't available
+        if speechRecognizer?.supportsOnDeviceRecognition == true {
+            recognitionRequest.requiresOnDeviceRecognition = true
+        }
         
         // Get input node
         let inputNode = audioEngine.inputNode
@@ -133,14 +141,22 @@ final class VoiceSearchService: ObservableObject {
             Task { @MainActor in
                 guard let self = self else { return }
                 
+                // Ignore all callbacks if we're intentionally stopping
+                if self.isIntentionallyStopping {
+                    return
+                }
+                
                 if let result = result {
                     self.transcript = result.bestTranscription.formattedString
                 }
                 
                 if let error = error {
-                    // Ignore cancellation errors
+                    // Ignore cancellation errors and common non-critical errors
                     let nsError = error as NSError
-                    if nsError.domain != "kAFAssistantErrorDomain" || nsError.code != 216 {
+                    let isCancellation = nsError.domain == "kAFAssistantErrorDomain" && nsError.code == 216
+                    let isNoSpeech = nsError.domain == "kAFAssistantErrorDomain" && nsError.code == 1110
+                    
+                    if !isCancellation && !isNoSpeech {
                         self.errorMessage = error.localizedDescription
                     }
                 }
@@ -149,24 +165,36 @@ final class VoiceSearchService: ObservableObject {
     }
     
     func stopListening() {
+        // Mark as intentionally stopping to ignore cancellation errors
+        isIntentionallyStopping = true
+        
+        // Cancel recognition task first (before ending audio)
+        recognitionTask?.cancel()
+        recognitionTask = nil
+        
+        // End recognition request
+        recognitionRequest?.endAudio()
+        recognitionRequest = nil
+        
         // Stop audio engine
         if audioEngine.isRunning {
             audioEngine.stop()
             audioEngine.inputNode.removeTap(onBus: 0)
         }
         
-        // End recognition request
-        recognitionRequest?.endAudio()
-        recognitionRequest = nil
-        
-        // Cancel recognition task
-        recognitionTask?.cancel()
-        recognitionTask = nil
-        
         isListening = false
+        audioLevel = 0.0
         
         // Deactivate audio session
-        try? AVAudioSession.sharedInstance().setActive(false)
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
+    }
+    
+    /// Reset state for retry - clears errors and transcript
+    func reset() {
+        stopListening()
+        transcript = ""
+        errorMessage = nil
+        audioLevel = 0.0
     }
     
     // MARK: - Audio Level Processing
