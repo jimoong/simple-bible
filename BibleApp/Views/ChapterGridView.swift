@@ -3,8 +3,8 @@ import SwiftUI
 struct ChapterGridView: View {
     @Bindable var viewModel: BibleViewModel
     @Binding var currentBook: BibleBook?
-    let onDismiss: () -> Void
-    let onClose: () -> Void
+    var maxHeight: CGFloat = .infinity
+    var safeAreaTop: CGFloat = 0
     var onChapterSelect: ((BibleBook, Int) -> Void)? = nil
     
     @State private var dragOffset: CGFloat = 0
@@ -12,6 +12,11 @@ struct ChapterGridView: View {
     
     private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 5)
     private let swipeThreshold: CGFloat = 100
+    
+    // Cell dimensions
+    private let cellHeight: CGFloat = 56
+    private let cellSpacing: CGFloat = 10
+    private let headerHeight: CGFloat = 100  // Title + subtitle + padding
     
     private var book: BibleBook {
         currentBook ?? viewModel.currentBook
@@ -29,39 +34,26 @@ struct ChapterGridView: View {
         BibleData.nextBook(after: book)
     }
     
+    // Calculate content height based on number of chapter rows (including safe area)
+    private var contentHeight: CGFloat {
+        let rowCount = ceil(Double(book.chapterCount) / 5.0)
+        let gridHeight = CGFloat(rowCount) * cellHeight + CGFloat(max(0, rowCount - 1)) * cellSpacing
+        let totalHeight = safeAreaTop + headerHeight + gridHeight + 20  // 20 for bottom padding
+        return min(totalHeight, maxHeight)
+    }
+    
     var body: some View {
         ZStack {
-            // Background
+            // Background - extends to top
             theme.background
             
-            VStack(spacing: 0) {
-                // Fixed header with close button
-                HStack {
-                    Spacer()
-                    
-                    Button {
-                        onClose()
-                    } label: {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(theme.textPrimary.opacity(0.6))
-                            .frame(width: 32, height: 32)
-                            .background(
-                                Circle()
-                                    .fill(theme.textPrimary.opacity(0.1))
-                            )
-                    }
-                    .buttonStyle(.plain)
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 12)
-                
-                // Swipeable content
-                swipeableContent
-                    .offset(x: dragOffset)
-                    .gesture(horizontalSwipeGesture)
-            }
+            // Content with safe area padding
+            swipeableContent
+                .padding(.top, safeAreaTop)
+                .offset(x: dragOffset)
+                .gesture(horizontalSwipeGesture)
         }
+        .frame(height: contentHeight)
     }
     
     // MARK: - Swipeable Content
@@ -70,20 +62,20 @@ struct ChapterGridView: View {
             // Book title
             VStack(spacing: 8) {
                 Text(book.name(for: viewModel.languageMode))
-                    .font(theme.display(32))
+                    .font(theme.display(28))
                     .foregroundStyle(theme.textPrimary)
                 
                 Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")
                     .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(theme.textSecondary)
             }
-            .padding(.top, 16)
-            .padding(.bottom, 24)
+            .padding(.top, 20)
+            .padding(.bottom, 16)
             
             // Chapter grid
             chapterGrid
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity)
     }
     
     // MARK: - Chapter Grid
@@ -214,16 +206,121 @@ struct ChapterCell: View {
     }
 }
 
+// MARK: - Fullscreen Chapter Grid View (for bookshelf panel)
+struct FullscreenChapterGridView: View {
+    @Bindable var viewModel: BibleViewModel
+    let book: BibleBook
+    var topPadding: CGFloat = 0
+    var onBack: (() -> Void)? = nil
+    var onClose: (() -> Void)? = nil
+    var onChapterSelect: ((BibleBook, Int) -> Void)? = nil
+    
+    private let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 5)
+    
+    private var theme: BookTheme {
+        BookThemes.theme(for: book.id)
+    }
+    
+    var body: some View {
+        VStack(spacing: 0) {
+            // Title bar
+            titleBar
+            
+            // Book title and chapter count
+            VStack(spacing: 8) {
+                Text(book.name(for: viewModel.languageMode))
+                    .font(theme.display(28))
+                    .foregroundStyle(theme.textPrimary)
+                
+                Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")
+                    .font(.system(size: 13, weight: .regular))
+                    .foregroundStyle(theme.textSecondary)
+            }
+            .padding(.top, 12)
+            .padding(.bottom, 20)
+            
+            // Chapter grid
+            ScrollViewReader { proxy in
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 10) {
+                        ForEach(1...book.chapterCount, id: \.self) { chapter in
+                            ChapterCell(
+                                chapter: chapter,
+                                theme: theme,
+                                isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
+                            )
+                            .id(chapter)
+                            .onTapGesture {
+                                onChapterSelect?(book, chapter)
+                                HapticManager.shared.selection()
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 100)
+                }
+                .onAppear {
+                    if book == viewModel.currentBook {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            withAnimation(.easeOut(duration: 0.3)) {
+                                proxy.scrollTo(viewModel.currentChapter, anchor: .center)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .padding(.top, topPadding)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(theme.background)
+    }
+    
+    // MARK: - Title Bar
+    private var titleBar: some View {
+        ZStack {
+            // Centered title
+            Text(book.name(for: viewModel.languageMode))
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(theme.textPrimary)
+            
+            // Close button on right
+            HStack {
+                Spacer()
+                
+                Button {
+                    onClose?()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(theme.textPrimary.opacity(0.6))
+                        .frame(width: 30, height: 30)
+                        .background(
+                            Circle()
+                                .fill(theme.textPrimary.opacity(0.1))
+                        )
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.horizontal, 20)
+        .padding(.top, 16)
+    }
+}
+
 #Preview {
     struct PreviewWrapper: View {
         @State private var book: BibleBook? = BibleData.books[42] // John
         var body: some View {
-            ChapterGridView(
-                viewModel: BibleViewModel(),
-                currentBook: $book,
-                onDismiss: {},
-                onClose: {}
-            )
+            VStack {
+                ChapterGridView(
+                    viewModel: BibleViewModel(),
+                    currentBook: $book,
+                    maxHeight: 400,
+                    safeAreaTop: 59
+                )
+                Spacer()
+            }
+            .ignoresSafeArea(edges: .top)
         }
     }
     return PreviewWrapper()

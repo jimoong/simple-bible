@@ -3,29 +3,41 @@ import SwiftUI
 struct ContentView: View {
     @State private var viewModel = BibleViewModel()
     @State private var searchText: String = ""
-    @FocusState private var isSearchFieldFocused: Bool
+    @State private var voiceSearchViewModel = VoiceSearchViewModel()
+    @State private var fullscreenSelectedBook: BibleBook? = nil  // Book selected within fullscreen bookshelf
     
     private var theme: BookTheme {
         viewModel.currentTheme
     }
     
-    // Dynamic sheet height: full screen for Books view, 60% for Book (chapter) view
-    private var isFullScreen: Bool {
-        viewModel.selectedBookForChapter == nil
+    // Fullscreen bookshelf panel (books or chapters)
+    private var isShowingFullscreenBookshelf: Bool {
+        viewModel.showBookshelf && viewModel.selectedBookForChapter == nil
+    }
+    
+    // Top panel chapter grid (from header tap)
+    private var isShowingTopPanelChapters: Bool {
+        viewModel.showBookshelf && viewModel.selectedBookForChapter != nil
     }
     
     var body: some View {
         GeometryReader { geometry in
-            let halfSheetHeight = geometry.size.height * 0.6
-            let fullHeight = geometry.size.height + geometry.safeAreaInsets.top
-            let sheetHeight = isFullScreen ? fullHeight : halfSheetHeight
+            let maxPanelHeight = geometry.size.height * 0.6
             
             ZStack {
                 // Main slot machine view
-                SlotMachineView(viewModel: viewModel)
+                SlotMachineView(viewModel: viewModel) {
+                    // Header tap action - toggle bookshelf (shows chapters for current book)
+                    if viewModel.showBookshelf {
+                        dismissBookshelf()
+                    } else {
+                        viewModel.openBookshelf(showChapters: true)
+                    }
+                    HapticManager.shared.selection()
+                }
                 
-                // Dimmed background - tap to dismiss (only when not full screen)
-                if viewModel.showBookshelf && !isFullScreen {
+                // Dimmed background - tap to dismiss (only for top panel chapter grid)
+                if isShowingTopPanelChapters {
                     Color.black.opacity(0.4)
                         .ignoresSafeArea()
                         .onTapGesture {
@@ -34,52 +46,146 @@ struct ContentView: View {
                         .zIndex(1)
                 }
                 
-                // Bookshelf overlay (dynamic height sheet from bottom)
-                if viewModel.showBookshelf {
-                    VStack {
-                        if !isFullScreen {
-                            Spacer()
+                // Fullscreen bookshelf panel (books grid OR chapters grid)
+                if isShowingFullscreenBookshelf {
+                    ZStack {
+                        // Books grid
+                        if fullscreenSelectedBook == nil {
+                            BookGridView(
+                                viewModel: viewModel,
+                                searchText: $searchText,
+                                topPadding: geometry.safeAreaInsets.top,
+                                isFullscreen: true,
+                                onClose: { dismissBookshelf() },
+                                onBookSelect: { book in
+                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                        fullscreenSelectedBook = book
+                                    }
+                                }
+                            )
+                            .transition(.opacity)
                         }
                         
-                        BookshelfOverlay(
-                            viewModel: viewModel,
-                            searchText: $searchText,
-                            onDismiss: { dismissBookshelf() }
-                        )
-                        .frame(height: isFullScreen ? nil : sheetHeight)
-                        .frame(maxHeight: isFullScreen ? .infinity : nil)
-                        .clipShape(RoundedRectangle(cornerRadius: isFullScreen ? 0 : 20, style: .continuous))
-                        .shadow(color: isFullScreen ? .clear : .black.opacity(0.3), radius: 20, y: -5)
+                        // Chapters grid (same fullscreen panel)
+                        if fullscreenSelectedBook != nil {
+                            FullscreenChapterGridView(
+                                viewModel: viewModel,
+                                book: fullscreenSelectedBook!,
+                                topPadding: geometry.safeAreaInsets.top,
+                                onBack: {
+                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                        fullscreenSelectedBook = nil
+                                    }
+                                },
+                                onClose: { dismissBookshelf() },
+                                onChapterSelect: { book, chapter in
+                                    dismissBookshelf()
+                                    Task {
+                                        await viewModel.navigateTo(book: book, chapter: chapter)
+                                    }
+                                }
+                            )
+                            .transition(.opacity)
+                        }
                     }
-                    .ignoresSafeArea(edges: .bottom)
-                    .transition(.move(edge: .bottom))
+                    .ignoresSafeArea()
                     .zIndex(2)
                 }
                 
-                // Floating controls at bottom - always on top
+                // Chapter grid - top panel (from header tap, fits content up to 60%)
+                if isShowingTopPanelChapters {
+                    VStack(spacing: 0) {
+                        ChapterGridView(
+                            viewModel: viewModel,
+                            currentBook: $viewModel.selectedBookForChapter,
+                            maxHeight: maxPanelHeight,
+                            safeAreaTop: geometry.safeAreaInsets.top,
+                            onChapterSelect: { book, chapter in
+                                dismissBookshelf()
+                                Task {
+                                    await viewModel.navigateTo(book: book, chapter: chapter)
+                                }
+                            }
+                        )
+                        .clipShape(
+                            UnevenRoundedRectangle(
+                                topLeadingRadius: 0,
+                                bottomLeadingRadius: 20,
+                                bottomTrailingRadius: 20,
+                                topTrailingRadius: 0,
+                                style: .continuous
+                            )
+                        )
+                        .shadow(color: .black.opacity(0.3), radius: 20, y: 5)
+                        
+                        Spacer()
+                    }
+                    .ignoresSafeArea(edges: .top)
+                    .transition(.move(edge: .top))
+                    .zIndex(2)
+                }
+                
+                // Floating controls at bottom
                 VStack {
                     Spacer()
                     
+                    // Bottom: Action buttons (left) + Language toggle (right)
                     HStack(alignment: .bottom) {
-                        leftActionButton
+                        leftActionButtons
                         Spacer()
                         languageToggleButton
                     }
                     .padding(.horizontal, 16)
                     .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
                 }
-                .ignoresSafeArea(edges: .bottom)
+                .ignoresSafeArea()
                 .zIndex(3)
+                
+                // Voice search overlay
+                if voiceSearchViewModel.showOverlay {
+                    Color.black.opacity(0.4)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            voiceSearchViewModel.close()
+                        }
+                        .zIndex(4)
+                    
+                    VStack {
+                        Spacer()
+                        
+                        VoiceSearchOverlay(
+                            viewModel: voiceSearchViewModel,
+                            theme: theme,
+                            languageMode: viewModel.languageMode
+                        )
+                        .frame(height: maxPanelHeight)
+                        .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                        .shadow(color: .black.opacity(0.3), radius: 20, y: -5)
+                    }
+                    .ignoresSafeArea(edges: .bottom)
+                    .transition(.move(edge: .bottom))
+                    .zIndex(10)
+                }
             }
             .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.showBookshelf)
-            .animation(.spring(response: 0.35, dampingFraction: 0.85), value: isFullScreen)
+            .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.selectedBookForChapter)
+            .animation(.easeOut(duration: 0.25), value: voiceSearchViewModel.showOverlay)
+            .onAppear {
+                setupVoiceSearchNavigation()
+            }
+        }
+    }
+    
+    private func setupVoiceSearchNavigation() {
+        voiceSearchViewModel.onNavigate = { book, chapter, verse in
+            await viewModel.navigateTo(book: book, chapter: chapter, verse: verse)
         }
     }
     
     private func dismissBookshelf() {
         viewModel.isSearchActive = false
         searchText = ""
-        isSearchFieldFocused = false
+        fullscreenSelectedBook = nil
         viewModel.dismissBookshelf()
         HapticManager.shared.selection()
     }
@@ -120,41 +226,61 @@ struct ContentView: View {
         .animation(.easeOut(duration: 0.3), value: viewModel.currentBook.id)
     }
     
-    // MARK: - Context-Aware Left Action Button
+    // MARK: - Left Action Buttons
+    @FocusState private var isSearchFieldFocused: Bool
+    
     @ViewBuilder
-    private var leftActionButton: some View {
-        if !viewModel.showBookshelf {
-            // Reading view → Bookshelf button
-            actionButton(icon: "text.book.closed") {
-                viewModel.openBookshelf()
+    private var leftActionButtons: some View {
+        if isShowingFullscreenBookshelf && fullscreenSelectedBook == nil {
+            // In books grid - show search
+            if viewModel.isSearchActive {
+                searchInputBox
+            } else {
+                actionButton(icon: "magnifyingglass") {
+                    withAnimation(.easeOut(duration: 0.2)) {
+                        viewModel.isSearchActive = true
+                    }
+                    HapticManager.shared.selection()
+                }
             }
-        } else if viewModel.selectedBookForChapter != nil {
-            // Chapter view → Back to Books button
-            actionButton(icon: "books.vertical") {
-                withAnimation(.easeOut(duration: 0.2)) {
-                    viewModel.selectedBookForChapter = nil
+        } else if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil {
+            // In fullscreen chapters - show back button
+            actionButton(icon: "chevron.left") {
+                withAnimation(.easeInOut(duration: 0.25)) {
+                    fullscreenSelectedBook = nil
                 }
                 HapticManager.shared.selection()
             }
-        } else if viewModel.isSearchActive {
-            // Books view → Search input field (replaces button)
-            searchInputField
         } else {
-            // Books view → Search button
-            actionButton(icon: "magnifyingglass") {
-                withAnimation(.easeOut(duration: 0.2)) {
-                    viewModel.isSearchActive = true
+            HStack(spacing: 12) {
+                // Bookshelf button - opens to books grid view
+                actionButton(icon: "books.vertical") {
+                    if viewModel.showBookshelf {
+                        dismissBookshelf()
+                    } else {
+                        viewModel.openBookshelf()
+                    }
+                    HapticManager.shared.selection()
                 }
-                HapticManager.shared.selection()
+                
+                // Mic button (only when not in bookshelf)
+                if !viewModel.showBookshelf {
+                    actionButton(icon: "mic.fill") {
+                        withAnimation {
+                            voiceSearchViewModel.openAndStartListening(with: viewModel.languageMode)
+                        }
+                        HapticManager.shared.selection()
+                    }
+                }
             }
         }
     }
     
-    // MARK: - Search Input Field
-    private var searchInputField: some View {
+    // MARK: - Search Input Box (bottom left, replaces search button)
+    private var searchInputBox: some View {
         HStack(spacing: 8) {
             TextField("Search", text: $searchText)
-                .font(.system(size: 17))
+                .font(.system(size: 16))
                 .foregroundStyle(.white)
                 .focused($isSearchFieldFocused)
             
@@ -163,7 +289,7 @@ struct ContentView: View {
                     searchText = ""
                 } label: {
                     Image(systemName: "xmark.circle.fill")
-                        .font(.system(size: 17))
+                        .font(.system(size: 15))
                         .foregroundStyle(.white.opacity(0.5))
                 }
             }
@@ -176,11 +302,11 @@ struct ContentView: View {
                 }
             } label: {
                 Text("Cancel")
-                    .font(.system(size: 15, weight: .medium))
+                    .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(.white.opacity(0.7))
             }
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 14)
         .padding(.vertical, 12)
         .background(
             Capsule()
@@ -191,6 +317,7 @@ struct ContentView: View {
             Capsule()
                 .stroke(Color.white.opacity(0.1), lineWidth: 1)
         )
+        .frame(maxWidth: 280)
         .onAppear {
             isSearchFieldFocused = true
         }

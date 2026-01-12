@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SlotMachineView: View {
     @Bindable var viewModel: BibleViewModel
+    var onHeaderTap: () -> Void = {}
     @State private var scrollPosition: Int?
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
@@ -93,18 +94,32 @@ struct SlotMachineView: View {
         }
     }
     
-    // MARK: - Minimal Header - flush to top
+    // MARK: - Minimal Header - flush to top, tappable
     private func headerView(safeAreaTop: CGFloat) -> some View {
-        Text(viewModel.headerText)
-            .font(theme.header(13))
-            .foregroundStyle(theme.textPrimary.opacity(0.8))
+        Button {
+            onHeaderTap()
+        } label: {
+            HStack(spacing: 6) {
+                Text(viewModel.headerText)
+                    .font(theme.header(13))
+                    .foregroundStyle(theme.textPrimary.opacity(0.8))
+                
+                Image(systemName: "chevron.down")
+                    .font(.system(size: 10, weight: .semibold))
+                    .foregroundStyle(theme.textPrimary.opacity(0.5))
+                    .rotationEffect(.degrees(viewModel.showBookshelf ? 180 : 0))
+            }
             .frame(maxWidth: .infinity)
             .padding(.top, safeAreaTop + 6)
             .padding(.bottom, 8)
             .background(
                 theme.background.opacity(0.85)
             )
-            .animation(.easeOut(duration: 0.3), value: viewModel.currentBook.id)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .animation(.easeOut(duration: 0.3), value: viewModel.currentBook.id)
+        .animation(.easeOut(duration: 0.2), value: viewModel.showBookshelf)
     }
     
     // MARK: - Loading View

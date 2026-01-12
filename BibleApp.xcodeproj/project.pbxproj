@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */; };
+		66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */; };
+		66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */; };
+		66EAF8742F14AF8E00542200 /* VoiceSearchOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */; };
 		AA0000010000000000000001 /* BibleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000001 /* BibleAppApp.swift */; };
 		AA0000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000002 /* ContentView.swift */; };
 		AA0000010000000000000003 /* SlotMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000003 /* SlotMachineView.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleReferenceParser.swift; sourceTree = "<group>"; };
+		66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchService.swift; sourceTree = "<group>"; };
+		66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchViewModel.swift; sourceTree = "<group>"; };
+		66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchOverlay.swift; sourceTree = "<group>"; };
 		AA0000020000000000000001 /* BibleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppApp.swift; sourceTree = "<group>"; };
 		AA0000020000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000003 /* SlotMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineView.swift; sourceTree = "<group>"; };
@@ -108,6 +116,7 @@
 		AA0000050000000000000005 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */,
 				AA0000020000000000000002 /* ContentView.swift */,
 				AA0000020000000000000003 /* SlotMachineView.swift */,
 				AA0000020000000000000004 /* VerseCardView.swift */,
@@ -121,6 +130,7 @@
 		AA0000050000000000000006 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */,
 				AA0000020000000000000013 /* BibleViewModel.swift */,
 			);
 			path = ViewModels;
@@ -129,6 +139,8 @@
 		AA0000050000000000000007 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */,
+				66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */,
 				AA0000020000000000000011 /* BibleAPIService.swift */,
 				AA0000020000000000000012 /* HapticManager.swift */,
 			);
@@ -228,12 +240,16 @@
 				AA0000010000000000000009 /* BibleBook.swift in Sources */,
 				AA0000010000000000000010 /* LanguageMode.swift in Sources */,
 				AA0000010000000000000011 /* BibleAPIService.swift in Sources */,
+				66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */,
+				66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */,
 				AA0000010000000000000012 /* HapticManager.swift in Sources */,
 				AA0000010000000000000013 /* BibleViewModel.swift in Sources */,
 				AA0000010000000000000014 /* BibleData.swift in Sources */,
 				AA0000010000000000000015 /* Constants.swift in Sources */,
+				66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */,
 				AA0000010000000000000017 /* BookThemes.swift in Sources */,
 				AA0000010000000000000018 /* FontManager.swift in Sources */,
+				66EAF8742F14AF8E00542200 /* VoiceSearchOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +386,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BibleApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Bible";
+				INFOPLIST_KEY_CFBundleDisplayName = Bible;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -404,7 +420,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BibleApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Bible";
+				INFOPLIST_KEY_CFBundleDisplayName = Bible;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

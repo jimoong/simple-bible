@@ -7,6 +7,7 @@ final class HapticManager {
     private let mediumGenerator = UIImpactFeedbackGenerator(style: .medium)
     private let heavyGenerator = UIImpactFeedbackGenerator(style: .heavy)
     private let selectionGenerator = UISelectionFeedbackGenerator()
+    private let notificationGenerator = UINotificationFeedbackGenerator()
     
     private init() {
         // Prepare generators for low latency
@@ -39,11 +40,30 @@ final class HapticManager {
         selectionGenerator.prepare()
     }
     
+    /// Success notification haptic - used for successful actions
+    func success() {
+        notificationGenerator.notificationOccurred(.success)
+        notificationGenerator.prepare()
+    }
+    
+    /// Warning notification haptic
+    func warning() {
+        notificationGenerator.notificationOccurred(.warning)
+        notificationGenerator.prepare()
+    }
+    
+    /// Error notification haptic
+    func error() {
+        notificationGenerator.notificationOccurred(.error)
+        notificationGenerator.prepare()
+    }
+    
     /// Prepare all generators (call before intensive UI)
     func prepareAll() {
         lightGenerator.prepare()
         mediumGenerator.prepare()
         heavyGenerator.prepare()
         selectionGenerator.prepare()
+        notificationGenerator.prepare()
     }
 }
