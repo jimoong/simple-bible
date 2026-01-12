@@ -155,15 +155,11 @@ struct SlotMachineView: View {
             } label: {
                 Text("Try Again")
                     .font(.system(size: 14, weight: .semibold))
-                    .foregroundStyle(theme.background)
+                    .foregroundStyle(.white)
                     .padding(.horizontal, 28)
                     .padding(.vertical, 14)
-                    .background(
-                        Capsule()
-                            .fill(theme.accent)
-                    )
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.glassClear)
         }
         .padding(40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)

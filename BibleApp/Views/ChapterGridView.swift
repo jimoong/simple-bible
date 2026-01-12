@@ -241,28 +241,11 @@ struct FullscreenChapterGridView: View {
     }
     
     var body: some View {
-        ZStack(alignment: .topTrailing) {
+        ZStack {
             // Swipeable content
             swipeableContent
                 .offset(x: dragOffset)
                 .gesture(horizontalSwipeGesture)
-            
-            // Close button (top right) - stays fixed
-            Button {
-                onClose?()
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.system(size: 15, weight: .semibold))
-                    .foregroundStyle(theme.textPrimary.opacity(0.6))
-                    .frame(width: 30, height: 30)
-                    .background(
-                        Circle()
-                            .fill(theme.textPrimary.opacity(0.1))
-                    )
-            }
-            .buttonStyle(.plain)
-            .padding(.top, topPadding + 16)
-            .padding(.trailing, 20)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(theme.background)

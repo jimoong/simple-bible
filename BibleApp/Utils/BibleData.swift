@@ -107,6 +107,10 @@ enum BibleData {
                     return name1.localizedStandardCompare(name2) == .orderedAscending
                 }
             }
+        case .timeline:
+            // Placeholder: returns canonical order for now
+            // TODO: Implement chronological ordering based on estimated composition dates
+            return books.sorted { $0.order < $1.order }
         }
     }
     

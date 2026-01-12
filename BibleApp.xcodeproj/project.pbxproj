@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0000010000000000000023 /* GlassStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000023 /* GlassStyle.swift */; };
+		AA0000010000000000000021 /* ExpandableFAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000021 /* ExpandableFAB.swift */; };
+		AA0000010000000000000022 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000022 /* SettingsView.swift */; };
 		AA0000010000000000000020 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000020 /* SplashScreenView.swift */; };
 		66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */; };
 		66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */; };
@@ -39,6 +42,9 @@
 		66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchViewModel.swift; sourceTree = "<group>"; };
 		66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchOverlay.swift; sourceTree = "<group>"; };
 		AA0000020000000000000020 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		AA0000020000000000000021 /* ExpandableFAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableFAB.swift; sourceTree = "<group>"; };
+		AA0000020000000000000022 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AA0000020000000000000023 /* GlassStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassStyle.swift; sourceTree = "<group>"; };
 		AA0000020000000000000001 /* BibleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppApp.swift; sourceTree = "<group>"; };
 		AA0000020000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000003 /* SlotMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineView.swift; sourceTree = "<group>"; };
@@ -120,6 +126,8 @@
 			children = (
 				66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */,
 				AA0000020000000000000020 /* SplashScreenView.swift */,
+				AA0000020000000000000021 /* ExpandableFAB.swift */,
+				AA0000020000000000000022 /* SettingsView.swift */,
 				AA0000020000000000000002 /* ContentView.swift */,
 				AA0000020000000000000003 /* SlotMachineView.swift */,
 				AA0000020000000000000004 /* VerseCardView.swift */,
@@ -157,6 +165,7 @@
 				AA0000020000000000000015 /* Constants.swift */,
 				AA0000020000000000000017 /* BookThemes.swift */,
 				AA0000020000000000000018 /* FontManager.swift */,
+				AA0000020000000000000023 /* GlassStyle.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -234,6 +243,8 @@
 			files = (
 				AA0000010000000000000001 /* BibleAppApp.swift in Sources */,
 				AA0000010000000000000020 /* SplashScreenView.swift in Sources */,
+				AA0000010000000000000021 /* ExpandableFAB.swift in Sources */,
+				AA0000010000000000000022 /* SettingsView.swift in Sources */,
 				AA0000010000000000000002 /* ContentView.swift in Sources */,
 				AA0000010000000000000003 /* SlotMachineView.swift in Sources */,
 				AA0000010000000000000004 /* VerseCardView.swift in Sources */,
@@ -253,6 +264,7 @@
 				66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */,
 				AA0000010000000000000017 /* BookThemes.swift in Sources */,
 				AA0000010000000000000018 /* FontManager.swift in Sources */,
+				AA0000010000000000000023 /* GlassStyle.swift in Sources */,
 				66EAF8742F14AF8E00542200 /* VoiceSearchOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

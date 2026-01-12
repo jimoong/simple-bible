@@ -29,11 +29,21 @@ enum LanguageMode: String, CaseIterable {
 enum BookSortOrder: String, CaseIterable {
     case canonical
     case alphabetical
+    case timeline  // Placeholder for future
     
     var displayName: String {
         switch self {
         case .canonical: return "Canonical"
         case .alphabetical: return "A-Z"
+        case .timeline: return "Timeline"
+        }
+    }
+    
+    var icon: String {
+        switch self {
+        case .canonical: return "book.closed"
+        case .alphabetical: return "textformat.abc"
+        case .timeline: return "clock"
         }
     }
 }

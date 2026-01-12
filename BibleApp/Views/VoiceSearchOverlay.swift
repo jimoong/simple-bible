@@ -43,11 +43,8 @@ struct VoiceSearchOverlay: View {
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(.white.opacity(0.6))
                     .frame(width: 32, height: 32)
-                    .background(
-                        Circle()
-                            .fill(Color.white.opacity(0.1))
-                    )
             }
+            .buttonStyle(.glassCircleClear)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
@@ -99,12 +96,8 @@ struct VoiceSearchOverlay: View {
                         .foregroundStyle(.white.opacity(0.6))
                 }
                 .frame(width: 120, height: 120)
-                .background(
-                    Circle()
-                        .fill(Color.white.opacity(0.1))
-                )
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.glassCircleClear)
             
             Spacer()
         }
@@ -182,17 +175,8 @@ struct VoiceSearchOverlay: View {
                         .foregroundStyle(.white)
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 16)
-                        .background(
-                            Capsule()
-                                .fill(.regularMaterial)
-                                .environment(\.colorScheme, .dark)
-                        )
-                        .overlay(
-                            Capsule()
-                                .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                        )
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(.glassClear)
             }
         }
     }
@@ -208,17 +192,8 @@ struct VoiceSearchOverlay: View {
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
-                .background(
-                    Capsule()
-                        .fill(.regularMaterial)
-                        .environment(\.colorScheme, .dark)
-                )
-                .overlay(
-                    Capsule()
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                )
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.glassClear)
     }
     
     // MARK: - Retry Button
@@ -232,12 +207,8 @@ struct VoiceSearchOverlay: View {
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 16)
-                .background(
-                    Capsule()
-                        .fill(Color.white.opacity(0.15))
-                )
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.glassClear)
     }
     
     // MARK: - Audio Visualizer (Circular)
@@ -296,12 +267,8 @@ struct VoiceSearchOverlay: View {
                     .foregroundStyle(.white)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 16)
-                    .background(
-                        Capsule()
-                            .fill(Color.white.opacity(0.15))
-                    )
             }
-            .buttonStyle(.plain)
+            .buttonStyle(.glassClear)
         }
     }
 }

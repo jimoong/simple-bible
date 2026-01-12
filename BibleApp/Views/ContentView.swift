@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var searchText: String = ""
     @State private var voiceSearchViewModel = VoiceSearchViewModel()
     @State private var fullscreenSelectedBook: BibleBook? = nil  // Book selected within fullscreen bookshelf
+    @State private var showSettings = false
     
     private var theme: BookTheme {
         viewModel.currentTheme
@@ -61,6 +62,7 @@ struct ContentView: View {
                             BookGridView(
                                 viewModel: viewModel,
                                 searchText: $searchText,
+                                safeAreaBottom: geometry.safeAreaInsets.bottom,
                                 topPadding: geometry.safeAreaInsets.top,
                                 isFullscreen: true,
                                 onClose: { dismissBookshelf() },
@@ -127,21 +129,34 @@ struct ContentView: View {
                     .zIndex(2)
                 }
                 
-                // Floating controls at bottom
-                VStack {
-                    Spacer()
-                    
-                    // Bottom: Action buttons (left) + Language toggle (right)
-                    HStack(alignment: .bottom) {
-                        leftActionButtons
+                // Floating controls at bottom (hidden when in books grid)
+                if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil) {
+                    VStack {
                         Spacer()
-                        languageToggleButton
+                        
+                        // Bottom: Action buttons (left) + Expandable menu (right)
+                        HStack(alignment: .bottom) {
+                            leftActionButtons
+                            Spacer()
+                            ExpandableFAB(
+                                languageMode: $viewModel.languageMode,
+                                theme: theme,
+                                onLanguageToggle: {
+                                    withAnimation(.easeOut(duration: 0.2)) {
+                                        viewModel.toggleLanguage()
+                                    }
+                                },
+                                onSettings: {
+                                    showSettings = true
+                                }
+                            )
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
+                    .ignoresSafeArea()
+                    .zIndex(3)
                 }
-                .ignoresSafeArea()
-                .zIndex(3)
                 
                 // Voice search overlay
                 if voiceSearchViewModel.showOverlay {
@@ -175,6 +190,13 @@ struct ContentView: View {
             .onAppear {
                 setupVoiceSearchNavigation()
             }
+            .fullScreenCover(isPresented: $showSettings) {
+                SettingsView(
+                    languageMode: $viewModel.languageMode,
+                    theme: theme,
+                    onDismiss: { showSettings = false }
+                )
+            }
         }
     }
     
@@ -192,60 +214,11 @@ struct ContentView: View {
         HapticManager.shared.selection()
     }
     
-    // MARK: - Language Toggle Button
-    private var languageToggleButton: some View {
-        Button {
-            withAnimation(.easeOut(duration: 0.2)) {
-                viewModel.toggleLanguage()
-            }
-        } label: {
-            HStack(spacing: 4) {
-                Text("EN")
-                    .fontWeight(viewModel.languageMode == .en ? .bold : .regular)
-                    .foregroundStyle(viewModel.languageMode == .en ? theme.textPrimary : theme.textSecondary.opacity(0.5))
-                
-                Text("/")
-                    .foregroundStyle(theme.textSecondary.opacity(0.3))
-                
-                Text("KR")
-                    .fontWeight(viewModel.languageMode == .kr ? .bold : .regular)
-                    .foregroundStyle(viewModel.languageMode == .kr ? theme.textPrimary : theme.textSecondary.opacity(0.5))
-            }
-            .font(.system(size: 17, weight: .medium))
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .background(
-                Capsule()
-                    .fill(.regularMaterial)
-                    .environment(\.colorScheme, .dark)
-            )
-            .overlay(
-                Capsule()
-                    .stroke(theme.textPrimary.opacity(0.1), lineWidth: 1)
-            )
-        }
-        .buttonStyle(.plain)
-        .animation(.easeOut(duration: 0.3), value: viewModel.currentBook.id)
-    }
-    
     // MARK: - Left Action Buttons
-    @FocusState private var isSearchFieldFocused: Bool
     
     @ViewBuilder
     private var leftActionButtons: some View {
-        if isShowingFullscreenBookshelf && fullscreenSelectedBook == nil {
-            // In books grid - show search
-            if viewModel.isSearchActive {
-                searchInputBox
-            } else {
-                actionButton(icon: "magnifyingglass") {
-                    withAnimation(.easeOut(duration: 0.2)) {
-                        viewModel.isSearchActive = true
-                    }
-                    HapticManager.shared.selection()
-                }
-            }
-        } else if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil {
+        if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil {
             // In fullscreen chapters - show back button
             actionButton(icon: "chevron.left") {
                 withAnimation(.easeInOut(duration: 0.25)) {
@@ -278,70 +251,14 @@ struct ContentView: View {
         }
     }
     
-    // MARK: - Search Input Box (bottom left, replaces search button)
-    private var searchInputBox: some View {
-        HStack(spacing: 8) {
-            TextField("Search", text: $searchText)
-                .font(.system(size: 16))
-                .foregroundStyle(.white)
-                .focused($isSearchFieldFocused)
-            
-            if !searchText.isEmpty {
-                Button {
-                    searchText = ""
-                } label: {
-                    Image(systemName: "xmark.circle.fill")
-                        .font(.system(size: 15))
-                        .foregroundStyle(.white.opacity(0.5))
-                }
-            }
-            
-            Button {
-                withAnimation(.easeOut(duration: 0.2)) {
-                    viewModel.isSearchActive = false
-                    searchText = ""
-                    isSearchFieldFocused = false
-                }
-            } label: {
-                Text("Cancel")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.7))
-            }
-        }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 12)
-        .background(
-            Capsule()
-                .fill(.regularMaterial)
-                .environment(\.colorScheme, .dark)
-        )
-        .overlay(
-            Capsule()
-                .stroke(Color.white.opacity(0.1), lineWidth: 1)
-        )
-        .frame(maxWidth: 280)
-        .onAppear {
-            isSearchFieldFocused = true
-        }
-    }
-    
     private func actionButton(icon: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: icon)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.white)
                 .frame(width: 48, height: 48)
-                .background(
-                    Circle()
-                        .fill(.regularMaterial)
-                        .environment(\.colorScheme, .dark)
-                )
-                .overlay(
-                    Circle()
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                )
         }
-        .buttonStyle(.plain)
+        .buttonStyle(.glassCircleClear)
     }
 }
 

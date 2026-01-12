@@ -5,10 +5,14 @@ struct BookGridView: View {
     @Binding var searchText: String
     var maxHeight: CGFloat = .infinity
     var safeAreaTop: CGFloat = 0
+    var safeAreaBottom: CGFloat = 0
     var topPadding: CGFloat = 0  // Space for elements above
     var isFullscreen: Bool = false
     var onClose: (() -> Void)? = nil
     var onBookSelect: ((BibleBook) -> Void)? = nil
+    
+    @State private var isSearchActive = false
+    @FocusState private var isSearchFocused: Bool
     
     private let columns = [
         GridItem(.flexible(), spacing: 10),
@@ -19,7 +23,7 @@ struct BookGridView: View {
     // Each cell is ~70pt height + 10pt spacing
     private let cellHeight: CGFloat = 70
     private let cellSpacing: CGFloat = 10
-    private let headerHeight: CGFloat = 60  // Sort toggle + padding
+    private let headerHeight: CGFloat = 60
     
     var filteredBooks: [BibleBook] {
         let sorted = viewModel.sortedBooks
@@ -61,17 +65,14 @@ struct BookGridView: View {
     
     // MARK: - Fullscreen View (for books grid)
     private var fullscreenView: some View {
-        VStack(spacing: 0) {
-            // Title bar with "Books" and close button
-            titleBar
-            
-            // Sort toggle
-            sortToggle
-                .padding(.top, 16)
-            
-            // Books grid with sections
+        ZStack(alignment: .bottom) {
+            // Books grid with sections (title scrolls with content)
             ScrollView {
                 VStack(spacing: 24) {
+                    // Title (scrollable)
+                    titleBar
+                        .padding(.top, topPadding + 16)
+                    
                     // Old Testament section
                     if !oldTestamentBooks.isEmpty {
                         bookSection(
@@ -88,13 +89,148 @@ struct BookGridView: View {
                         )
                     }
                 }
-                .padding(.top, 16)
-                .padding(.bottom, 100)  // Space for bottom buttons
+                .padding(.bottom, 120)  // Space for bottom controls
             }
+            
+            // Bottom bar
+            bottomBar
+                .padding(.horizontal, 16)
+                .padding(.bottom, safeAreaBottom + 8)
         }
-        .padding(.top, topPadding)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
+    }
+    
+    // MARK: - Bottom Bar (iOS Photos style)
+    private var bottomBar: some View {
+        Group {
+            if isSearchActive {
+                // Search mode: Search input + close button
+                searchInputBar
+            } else {
+                // Normal mode: Close + Segmented + Search
+                normalBottomBar
+            }
+        }
+    }
+    
+    // MARK: - Normal Bottom Bar
+    private var normalBottomBar: some View {
+        HStack(alignment: .bottom) {
+            // Close button (left) - same position as bookshelf button
+            Button {
+                onClose?()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.white)
+                    .frame(width: 48, height: 48)
+            }
+            .buttonStyle(.glassCircle)
+            
+            Spacer()
+            
+            // Segmented sort control (center)
+            sortSegmentedControl
+            
+            Spacer()
+            
+            // Search button (right)
+            Button {
+                withAnimation(.easeOut(duration: 0.25)) {
+                    isSearchActive = true
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    isSearchFocused = true
+                }
+                HapticManager.shared.selection()
+            } label: {
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.white)
+                    .frame(width: 48, height: 48)
+            }
+            .buttonStyle(.glassCircle)
+        }
+    }
+    
+    // MARK: - Search Input Bar
+    private var searchInputBar: some View {
+        HStack(spacing: 12) {
+            // Search input field
+            HStack(spacing: 10) {
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 16, weight: .medium))
+                    .foregroundStyle(.white.opacity(0.5))
+                
+                TextField(
+                    viewModel.languageMode == .kr ? "검색" : "Search",
+                    text: $searchText
+                )
+                .font(.system(size: 16))
+                .foregroundStyle(.white)
+                .focused($isSearchFocused)
+                
+                if !searchText.isEmpty {
+                    Button {
+                        searchText = ""
+                    } label: {
+                        Image(systemName: "xmark.circle.fill")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white.opacity(0.4))
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 12)
+            .frame(maxWidth: .infinity)
+            .glassBackground(.capsule, intensity: .regular)
+            
+            // Close search button
+            Button {
+                withAnimation(.easeOut(duration: 0.25)) {
+                    isSearchActive = false
+                    searchText = ""
+                    isSearchFocused = false
+                }
+                HapticManager.shared.selection()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.white)
+                    .frame(width: 48, height: 48)
+            }
+            .buttonStyle(.glassCircle)
+        }
+    }
+    
+    // MARK: - Segmented Sort Control
+    private var sortSegmentedControl: some View {
+        HStack(spacing: 0) {
+            ForEach(BookSortOrder.allCases, id: \.self) { order in
+                Button {
+                    withAnimation(.easeOut(duration: 0.2)) {
+                        viewModel.sortOrder = order
+                    }
+                    HapticManager.shared.selection()
+                } label: {
+                    Text(order.displayName)
+                        .font(.system(size: 14, weight: viewModel.sortOrder == order ? .semibold : .regular))
+                        .foregroundStyle(viewModel.sortOrder == order ? .white : .white.opacity(0.5))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 12)
+                        .background(
+                            Capsule()
+                                .fill(viewModel.sortOrder == order ? Color.white.opacity(0.15) : Color.clear)
+                        )
+                }
+                .buttonStyle(.plain)
+                .disabled(order == .timeline)
+                .opacity(order == .timeline ? 0.4 : 1)
+            }
+        }
+        .padding(4)
+        .glassBackground(.capsule, intensity: .regular)
     }
     
     // MARK: - Book Section
@@ -130,42 +266,18 @@ struct BookGridView: View {
         }
     }
     
-    // MARK: - Title Bar
+    // MARK: - Title
     private var titleBar: some View {
-        ZStack {
-            // Centered title
-            Text("Books")
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(.white)
-            
-            // Close button on right
-            HStack {
-                Spacer()
-                
-                Button {
-                    onClose?()
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(.white.opacity(0.6))
-                        .frame(width: 30, height: 30)
-                        .background(
-                            Circle()
-                                .fill(Color.white.opacity(0.1))
-                        )
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 16)
+        Text(viewModel.languageMode == .kr ? "성경" : "Books")
+            .font(.system(size: 17, weight: .semibold))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .padding(.horizontal, 20)
     }
     
     // MARK: - Compact View (for panel)
     private var compactView: some View {
         VStack(spacing: 16) {
-            sortToggle
-            
             ScrollView {
                 VStack(spacing: 24) {
                     // Old Testament section
@@ -217,15 +329,6 @@ struct BookGridView: View {
             }
             .padding(.horizontal, 20)
         }
-    }
-    
-    private var sortToggle: some View {
-        Picker("Sort", selection: $viewModel.sortOrder) {
-            Text("Canonical").tag(BookSortOrder.canonical)
-            Text("A–Z").tag(BookSortOrder.alphabetical)
-        }
-        .pickerStyle(.segmented)
-        .padding(.horizontal, 20)
     }
 }
 
