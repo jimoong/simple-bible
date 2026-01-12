@@ -62,7 +62,7 @@ struct ChapterGridView: View {
             // Book title
             VStack(spacing: 8) {
                 Text(book.name(for: viewModel.languageMode))
-                    .font(theme.display(28))
+                    .font(theme.display(28, language: viewModel.languageMode))
                     .foregroundStyle(theme.textPrimary)
                 
                 Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")
@@ -229,7 +229,7 @@ struct FullscreenChapterGridView: View {
                 // Book title and chapter count
                 VStack(spacing: 8) {
                     Text(book.name(for: viewModel.languageMode))
-                        .font(theme.display(28))
+                        .font(theme.display(28, language: viewModel.languageMode))
                         .foregroundStyle(theme.textPrimary)
                     
                     Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")

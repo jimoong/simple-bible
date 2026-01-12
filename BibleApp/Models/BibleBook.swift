@@ -12,6 +12,14 @@ struct BibleBook: Identifiable, Equatable {
         chapterCount == 1
     }
     
+    var isOldTestament: Bool {
+        order <= 39
+    }
+    
+    var isNewTestament: Bool {
+        order > 39
+    }
+    
     func name(for language: LanguageMode) -> String {
         switch language {
         case .en: return nameEn

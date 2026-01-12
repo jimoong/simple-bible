@@ -34,6 +34,14 @@ struct BookGridView: View {
         }
     }
     
+    var oldTestamentBooks: [BibleBook] {
+        filteredBooks.filter { $0.isOldTestament }
+    }
+    
+    var newTestamentBooks: [BibleBook] {
+        filteredBooks.filter { $0.isNewTestament }
+    }
+    
     // Calculate content height based on number of rows (including safe area)
     private var contentHeight: CGFloat {
         let bookCount = filteredBooks.count
@@ -61,26 +69,25 @@ struct BookGridView: View {
             sortToggle
                 .padding(.top, 16)
             
-            // Books grid
+            // Books grid with sections
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(filteredBooks) { book in
-                        BookCell(
-                            book: book,
-                            language: viewModel.languageMode,
-                            isSelected: book == viewModel.currentBook
+                VStack(spacing: 24) {
+                    // Old Testament section
+                    if !oldTestamentBooks.isEmpty {
+                        bookSection(
+                            title: viewModel.languageMode == .kr ? "구약" : "Old Testament",
+                            books: oldTestamentBooks
                         )
-                        .onTapGesture {
-                            if let onBookSelect {
-                                onBookSelect(book)
-                            } else {
-                                viewModel.selectBook(book)
-                            }
-                            HapticManager.shared.selection()
-                        }
+                    }
+                    
+                    // New Testament section
+                    if !newTestamentBooks.isEmpty {
+                        bookSection(
+                            title: viewModel.languageMode == .kr ? "신약" : "New Testament",
+                            books: newTestamentBooks
+                        )
                     }
                 }
-                .padding(.horizontal, 20)
                 .padding(.top, 16)
                 .padding(.bottom, 100)  // Space for bottom buttons
             }
@@ -88,6 +95,39 @@ struct BookGridView: View {
         .padding(.top, topPadding)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
+    }
+    
+    // MARK: - Book Section
+    private func bookSection(title: String, books: [BibleBook]) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Section header
+            Text(title)
+                .font(viewModel.languageMode == .kr 
+                    ? FontManager.koreanSans(size: 13, weight: .semibold)
+                    : .system(size: 13, weight: .semibold))
+                .foregroundStyle(.white.opacity(0.5))
+                .padding(.horizontal, 20)
+            
+            // Books grid
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(books) { book in
+                    BookCell(
+                        book: book,
+                        language: viewModel.languageMode,
+                        isSelected: book == viewModel.currentBook
+                    )
+                    .onTapGesture {
+                        if let onBookSelect {
+                            onBookSelect(book)
+                        } else {
+                            viewModel.selectBook(book)
+                        }
+                        HapticManager.shared.selection()
+                    }
+                }
+            }
+            .padding(.horizontal, 20)
+        }
     }
     
     // MARK: - Title Bar
@@ -127,24 +167,56 @@ struct BookGridView: View {
             sortToggle
             
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(filteredBooks) { book in
-                        BookCell(
-                            book: book,
-                            language: viewModel.languageMode,
-                            isSelected: book == viewModel.currentBook
+                VStack(spacing: 24) {
+                    // Old Testament section
+                    if !oldTestamentBooks.isEmpty {
+                        compactBookSection(
+                            title: viewModel.languageMode == .kr ? "구약" : "Old Testament",
+                            books: oldTestamentBooks
                         )
-                        .onTapGesture {
-                            viewModel.selectBook(book)
-                        }
+                    }
+                    
+                    // New Testament section
+                    if !newTestamentBooks.isEmpty {
+                        compactBookSection(
+                            title: viewModel.languageMode == .kr ? "신약" : "New Testament",
+                            books: newTestamentBooks
+                        )
                     }
                 }
-                .padding(.horizontal, 20)
             }
         }
         .padding(.top, safeAreaTop + 16)
         .frame(height: contentHeight)
         .background(Color.black)
+    }
+    
+    // MARK: - Compact Book Section
+    private func compactBookSection(title: String, books: [BibleBook]) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Section header
+            Text(title)
+                .font(viewModel.languageMode == .kr 
+                    ? FontManager.koreanSans(size: 13, weight: .semibold)
+                    : .system(size: 13, weight: .semibold))
+                .foregroundStyle(.white.opacity(0.5))
+                .padding(.horizontal, 20)
+            
+            // Books grid
+            LazyVGrid(columns: columns, spacing: 10) {
+                ForEach(books) { book in
+                    BookCell(
+                        book: book,
+                        language: viewModel.languageMode,
+                        isSelected: book == viewModel.currentBook
+                    )
+                    .onTapGesture {
+                        viewModel.selectBook(book)
+                    }
+                }
+            }
+            .padding(.horizontal, 20)
+        }
     }
     
     private var sortToggle: some View {
@@ -169,11 +241,13 @@ struct BookCell: View {
     var body: some View {
         VStack(spacing: 6) {
             Text(book.abbreviation(for: language))
-                .font(.system(size: 24, weight: .semibold))
+                .font(theme.display(24, language: language))
                 .foregroundStyle(theme.textPrimary)
             
             Text(book.name(for: language))
-                .font(.system(size: 12, weight: .medium))
+                .font(language == .kr 
+                    ? FontManager.koreanSans(size: 12, weight: .medium)
+                    : .system(size: 12, weight: .medium, design: .default))
                 .foregroundStyle(theme.textSecondary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.8)
