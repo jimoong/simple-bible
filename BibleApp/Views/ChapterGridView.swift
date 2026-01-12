@@ -17,6 +17,7 @@ struct ChapterGridView: View {
     private let cellHeight: CGFloat = 56
     private let cellSpacing: CGFloat = 10
     private let headerHeight: CGFloat = 100  // Title + subtitle + padding
+    private let summaryHeight: CGFloat = 140  // Summary + message section
     
     private var book: BibleBook {
         currentBook ?? viewModel.currentBook
@@ -24,6 +25,10 @@ struct ChapterGridView: View {
     
     private var theme: BookTheme {
         BookThemes.theme(for: book.id)
+    }
+    
+    private var bookSummary: BibleBookSummary? {
+        BibleBookSummaries.summary(for: book.id)
     }
     
     private var previousBook: BibleBook? {
@@ -38,7 +43,8 @@ struct ChapterGridView: View {
     private var contentHeight: CGFloat {
         let rowCount = ceil(Double(book.chapterCount) / 5.0)
         let gridHeight = CGFloat(rowCount) * cellHeight + CGFloat(max(0, rowCount - 1)) * cellSpacing
-        let totalHeight = safeAreaTop + headerHeight + gridHeight + 20  // 20 for bottom padding
+        let summaryAddition: CGFloat = bookSummary != nil ? summaryHeight : 0
+        let totalHeight = safeAreaTop + headerHeight + summaryAddition + gridHeight + 20  // 20 for bottom padding
         return min(totalHeight, maxHeight)
     }
     
@@ -70,12 +76,50 @@ struct ChapterGridView: View {
                     .foregroundStyle(theme.textSecondary)
             }
             .padding(.top, 20)
-            .padding(.bottom, 16)
+            .padding(.bottom, 12)
+            
+            // Book summary and message
+            if let summary = bookSummary {
+                bookSummarySection(summary)
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 16)
+            }
             
             // Chapter grid
             chapterGrid
         }
         .frame(maxWidth: .infinity)
+    }
+    
+    // MARK: - Book Summary Section
+    private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Summary
+            Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
+                .font(.system(size: 14, weight: .regular))
+                .foregroundStyle(theme.textSecondary)
+                .lineSpacing(4)
+            
+            // Key message
+            HStack(alignment: .top, spacing: 8) {
+                Image(systemName: "quote.opening")
+                    .font(.system(size: 12))
+                    .foregroundStyle(theme.accent.opacity(0.7))
+                
+                Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(theme.textPrimary.opacity(0.85))
+                    .italic()
+                    .lineSpacing(3)
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 12)
+            .background(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(theme.surface.opacity(0.6))
+            )
+        }
+        .multilineTextAlignment(.leading)
     }
     
     // MARK: - Chapter Grid
@@ -232,6 +276,10 @@ struct FullscreenChapterGridView: View {
         BookThemes.theme(for: currentBook.id)
     }
     
+    private var bookSummary: BibleBookSummary? {
+        BibleBookSummaries.summary(for: currentBook.id)
+    }
+    
     private var previousBook: BibleBook? {
         BibleData.previousBook(before: currentBook)
     }
@@ -265,7 +313,14 @@ struct FullscreenChapterGridView: View {
                     .foregroundStyle(theme.textSecondary)
             }
             .padding(.top, topPadding + 20)
-            .padding(.bottom, 20)
+            .padding(.bottom, 12)
+            
+            // Book summary and message
+            if let summary = bookSummary {
+                bookSummarySection(summary)
+                    .padding(.horizontal, 24)
+                    .padding(.bottom, 16)
+            }
             
             // Chapter grid
             ScrollViewReader { proxy in
@@ -301,6 +356,37 @@ struct FullscreenChapterGridView: View {
                 }
             }
         }
+    }
+    
+    // MARK: - Book Summary Section
+    private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            // Summary
+            Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
+                .font(.system(size: 14, weight: .regular))
+                .foregroundStyle(theme.textSecondary)
+                .lineSpacing(4)
+            
+            // Key message
+            HStack(alignment: .top, spacing: 8) {
+                Image(systemName: "quote.opening")
+                    .font(.system(size: 12))
+                    .foregroundStyle(theme.accent.opacity(0.7))
+                
+                Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(theme.textPrimary.opacity(0.85))
+                    .italic()
+                    .lineSpacing(3)
+            }
+            .padding(.vertical, 10)
+            .padding(.horizontal, 12)
+            .background(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(theme.surface.opacity(0.6))
+            )
+        }
+        .multilineTextAlignment(.leading)
     }
     
     // MARK: - Horizontal Swipe Gesture
