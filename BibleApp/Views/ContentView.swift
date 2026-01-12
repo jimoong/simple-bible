@@ -48,6 +48,13 @@ struct ContentView: View {
                 
                 // Fullscreen bookshelf panel (books grid OR chapters grid)
                 if isShowingFullscreenBookshelf {
+                    // Solid background to prevent reading view visibility during transitions
+                    let panelTheme = fullscreenSelectedBook != nil 
+                        ? BookThemes.theme(for: fullscreenSelectedBook!.id)
+                        : theme
+                    panelTheme.background
+                        .ignoresSafeArea()
+                    
                     ZStack {
                         // Books grid
                         if fullscreenSelectedBook == nil {
@@ -72,11 +79,6 @@ struct ContentView: View {
                                 viewModel: viewModel,
                                 book: fullscreenSelectedBook!,
                                 topPadding: geometry.safeAreaInsets.top,
-                                onBack: {
-                                    withAnimation(.easeInOut(duration: 0.25)) {
-                                        fullscreenSelectedBook = nil
-                                    }
-                                },
                                 onClose: { dismissBookshelf() },
                                 onChapterSelect: { book, chapter in
                                     dismissBookshelf()

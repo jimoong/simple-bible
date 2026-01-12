@@ -82,26 +82,29 @@ struct ChapterGridView: View {
     private var chapterGrid: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                LazyVGrid(columns: columns, spacing: 10) {
-                    ForEach(1...book.chapterCount, id: \.self) { chapter in
-                        ChapterCell(
-                            chapter: chapter,
-                            theme: theme,
-                            isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
-                        )
-                        .id(chapter)
-                        .onTapGesture {
-                            if let onChapterSelect {
-                                onChapterSelect(book, chapter)
-                            } else {
-                                Task {
-                                    await viewModel.navigateTo(book: book, chapter: chapter)
+                VStack {
+                    LazyVGrid(columns: columns, spacing: 10) {
+                        ForEach(1...book.chapterCount, id: \.self) { chapter in
+                            ChapterCell(
+                                chapter: chapter,
+                                theme: theme,
+                                isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
+                            )
+                            .id(chapter)
+                            .onTapGesture {
+                                if let onChapterSelect {
+                                    onChapterSelect(book, chapter)
+                                } else {
+                                    Task {
+                                        await viewModel.navigateTo(book: book, chapter: chapter)
+                                    }
                                 }
                             }
                         }
                     }
+                    .frame(maxWidth: 350)
                 }
-                .padding(.horizontal, 20)
+                .frame(maxWidth: .infinity)
                 .padding(.bottom, 40)
             }
             .onAppear {
@@ -211,7 +214,6 @@ struct FullscreenChapterGridView: View {
     @Bindable var viewModel: BibleViewModel
     let book: BibleBook
     var topPadding: CGFloat = 0
-    var onBack: (() -> Void)? = nil
     var onClose: (() -> Void)? = nil
     var onChapterSelect: ((BibleBook, Int) -> Void)? = nil
     
@@ -222,88 +224,76 @@ struct FullscreenChapterGridView: View {
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            // Title bar
-            titleBar
-            
-            // Book title and chapter count
-            VStack(spacing: 8) {
-                Text(book.name(for: viewModel.languageMode))
-                    .font(theme.display(28))
-                    .foregroundStyle(theme.textPrimary)
+        ZStack(alignment: .topTrailing) {
+            VStack(spacing: 0) {
+                // Book title and chapter count
+                VStack(spacing: 8) {
+                    Text(book.name(for: viewModel.languageMode))
+                        .font(theme.display(28))
+                        .foregroundStyle(theme.textPrimary)
+                    
+                    Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")
+                        .font(.system(size: 13, weight: .regular))
+                        .foregroundStyle(theme.textSecondary)
+                }
+                .padding(.top, 20)
+                .padding(.bottom, 20)
                 
-                Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")
-                    .font(.system(size: 13, weight: .regular))
-                    .foregroundStyle(theme.textSecondary)
+                // Chapter grid
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        VStack {
+                            LazyVGrid(columns: columns, spacing: 10) {
+                                ForEach(1...book.chapterCount, id: \.self) { chapter in
+                                    ChapterCell(
+                                        chapter: chapter,
+                                        theme: theme,
+                                        isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
+                                    )
+                                    .id(chapter)
+                                    .onTapGesture {
+                                        onChapterSelect?(book, chapter)
+                                        HapticManager.shared.selection()
+                                    }
+                                }
+                            }
+                            .frame(maxWidth: 350)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.bottom, 100)
+                    }
+                    .onAppear {
+                        if book == viewModel.currentBook {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                withAnimation(.easeOut(duration: 0.3)) {
+                                    proxy.scrollTo(viewModel.currentChapter, anchor: .center)
+                                }
+                            }
+                        }
+                    }
+                }
             }
-            .padding(.top, 12)
-            .padding(.bottom, 20)
             
-            // Chapter grid
-            ScrollViewReader { proxy in
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 10) {
-                        ForEach(1...book.chapterCount, id: \.self) { chapter in
-                            ChapterCell(
-                                chapter: chapter,
-                                theme: theme,
-                                isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
-                            )
-                            .id(chapter)
-                            .onTapGesture {
-                                onChapterSelect?(book, chapter)
-                                HapticManager.shared.selection()
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 100)
-                }
-                .onAppear {
-                    if book == viewModel.currentBook {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                            withAnimation(.easeOut(duration: 0.3)) {
-                                proxy.scrollTo(viewModel.currentChapter, anchor: .center)
-                            }
-                        }
-                    }
-                }
+            // Close button (top right)
+            Button {
+                onClose?()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 15, weight: .semibold))
+                    .foregroundStyle(theme.textPrimary.opacity(0.6))
+                    .frame(width: 30, height: 30)
+                    .background(
+                        Circle()
+                            .fill(theme.textPrimary.opacity(0.1))
+                    )
             }
+            .buttonStyle(.plain)
+            .padding(.top, 16)
+            .padding(.trailing, 20)
         }
         .padding(.top, topPadding)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(theme.background)
-    }
-    
-    // MARK: - Title Bar
-    private var titleBar: some View {
-        ZStack {
-            // Centered title
-            Text(book.name(for: viewModel.languageMode))
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(theme.textPrimary)
-            
-            // Close button on right
-            HStack {
-                Spacer()
-                
-                Button {
-                    onClose?()
-                } label: {
-                    Image(systemName: "xmark")
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(theme.textPrimary.opacity(0.6))
-                        .frame(width: 30, height: 30)
-                        .background(
-                            Circle()
-                                .fill(theme.textPrimary.opacity(0.1))
-                        )
-                }
-                .buttonStyle(.plain)
-            }
-        }
-        .padding(.horizontal, 20)
-        .padding(.top, 16)
     }
 }
 
