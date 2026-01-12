@@ -77,7 +77,7 @@ struct ContentView: View {
                         if fullscreenSelectedBook != nil {
                             FullscreenChapterGridView(
                                 viewModel: viewModel,
-                                book: fullscreenSelectedBook!,
+                                book: $fullscreenSelectedBook,
                                 topPadding: geometry.safeAreaInsets.top,
                                 onClose: { dismissBookshelf() },
                                 onChapterSelect: { book, chapter in
