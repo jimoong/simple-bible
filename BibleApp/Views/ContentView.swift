@@ -193,7 +193,6 @@ struct ContentView: View {
             .fullScreenCover(isPresented: $showSettings) {
                 SettingsView(
                     languageMode: $viewModel.languageMode,
-                    theme: theme,
                     onDismiss: { showSettings = false }
                 )
             }

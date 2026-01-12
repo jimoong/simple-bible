@@ -2,14 +2,13 @@ import SwiftUI
 
 struct SettingsView: View {
     @Binding var languageMode: LanguageMode
-    var theme: BookTheme
     var onDismiss: () -> Void
     
     var body: some View {
         NavigationStack {
             ZStack {
                 // Background
-                theme.background
+                Color.black
                     .ignoresSafeArea()
                 
                 ScrollView {
@@ -43,14 +42,20 @@ struct SettingsView: View {
                     Button {
                         onDismiss()
                     } label: {
-                        Image(systemName: "xmark.circle.fill")
-                            .font(.system(size: 28))
-                            .symbolRenderingMode(.hierarchical)
-                            .foregroundStyle(theme.textSecondary)
+                        ZStack {
+                            Circle()
+                                .fill(.white.opacity(0.1))
+                            
+                            Image(systemName: "xmark")
+                                .font(.system(size: 14, weight: .semibold))
+                                .foregroundStyle(.white.opacity(0.6))
+                        }
+                        .frame(width: 30, height: 30)
                     }
+                    .buttonStyle(.plain)
                 }
             }
-            .toolbarBackground(theme.background, for: .navigationBar)
+            .toolbarBackground(Color.black, for: .navigationBar)
         }
         .preferredColorScheme(.dark)
     }
@@ -60,7 +65,7 @@ struct SettingsView: View {
         VStack(alignment: .leading, spacing: 8) {
             Text(title)
                 .font(.system(size: 13, weight: .medium))
-                .foregroundStyle(theme.textSecondary.opacity(0.6))
+                .foregroundStyle(.white.opacity(0.4))
             
             VStack(spacing: 0) {
                 content()
@@ -69,7 +74,7 @@ struct SettingsView: View {
             .padding(.vertical, 10)
             .background(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(theme.textPrimary.opacity(0.06))
+                    .fill(.white.opacity(0.06))
             )
         }
     }
@@ -79,7 +84,7 @@ struct SettingsView: View {
         HStack {
             Text("Display Language")
                 .font(.system(size: 16))
-                .foregroundStyle(theme.textPrimary)
+                .foregroundStyle(.white)
             
             Spacer()
             
@@ -94,12 +99,12 @@ struct SettingsView: View {
                     } label: {
                         Text(mode.displayName)
                             .font(.system(size: 14, weight: languageMode == mode ? .semibold : .regular))
-                            .foregroundStyle(languageMode == mode ? theme.background : theme.textSecondary)
+                            .foregroundStyle(languageMode == mode ? .black : .white.opacity(0.5))
                             .padding(.horizontal, 14)
                             .padding(.vertical, 8)
                             .background(
                                 Capsule()
-                                    .fill(languageMode == mode ? theme.textPrimary : Color.clear)
+                                    .fill(languageMode == mode ? .white : Color.clear)
                             )
                     }
                     .buttonStyle(.plain)
@@ -108,7 +113,7 @@ struct SettingsView: View {
             .padding(3)
             .background(
                 Capsule()
-                    .fill(theme.textPrimary.opacity(0.1))
+                    .fill(.white.opacity(0.1))
             )
         }
         .padding(.vertical, 6)
@@ -120,24 +125,18 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text(label)
                     .font(.system(size: 16))
-                    .foregroundStyle(theme.textPrimary)
+                    .foregroundStyle(.white)
                 
                 Text(sublabel)
                     .font(.system(size: 13))
-                    .foregroundStyle(theme.textSecondary.opacity(0.7))
+                    .foregroundStyle(.white.opacity(0.5))
             }
             
             Spacer()
             
             Text(version)
-                .font(.system(size: 15, weight: .medium, design: .monospaced))
-                .foregroundStyle(theme.accent)
-                .padding(.horizontal, 10)
-                .padding(.vertical, 5)
-                .background(
-                    RoundedRectangle(cornerRadius: 6, style: .continuous)
-                        .fill(theme.accent.opacity(0.15))
-                )
+                .font(.system(size: 15))
+                .foregroundStyle(.white.opacity(0.5))
         }
         .padding(.vertical, 10)
     }
@@ -147,13 +146,13 @@ struct SettingsView: View {
         HStack {
             Text(label)
                 .font(.system(size: 16))
-                .foregroundStyle(theme.textPrimary)
+                .foregroundStyle(.white)
             
             Spacer()
             
             Text(value)
                 .font(.system(size: 15))
-                .foregroundStyle(theme.textSecondary)
+                .foregroundStyle(.white.opacity(0.5))
         }
         .padding(.vertical, 6)
     }
@@ -162,7 +161,6 @@ struct SettingsView: View {
 #Preview {
     SettingsView(
         languageMode: .constant(.en),
-        theme: BookThemes.genesis,
         onDismiss: {}
     )
 }
