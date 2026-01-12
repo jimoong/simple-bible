@@ -8,7 +8,8 @@
 import Foundation
 
 struct BibleBookSummary: Identifiable, Codable {
-    let id: Int
+    let id: String            // Matches BibleBook.id (e.g., "genesis", "exodus")
+    let bookNumber: Int       // API book number 1-66 (matches BibleBook.order)
     let bookKo: String
     let bookEn: String
     let category: String
@@ -35,7 +36,8 @@ struct BibleBookSummaries {
         // OLD TESTAMENT - PENTATEUCH (모세오경)
         // ============================================================
         BibleBookSummary(
-            id: 1,
+            id: "genesis",
+            bookNumber: 1,
             bookKo: "창세기",
             bookEn: "Genesis",
             category: "Pentateuch",
@@ -47,7 +49,8 @@ struct BibleBookSummaries {
             yearEvents: -2000
         ),
         BibleBookSummary(
-            id: 2,
+            id: "exodus",
+            bookNumber: 2,
             bookKo: "출애굽기",
             bookEn: "Exodus",
             category: "Pentateuch",
@@ -59,7 +62,8 @@ struct BibleBookSummaries {
             yearEvents: -1446
         ),
         BibleBookSummary(
-            id: 3,
+            id: "leviticus",
+            bookNumber: 3,
             bookKo: "레위기",
             bookEn: "Leviticus",
             category: "Pentateuch",
@@ -71,7 +75,8 @@ struct BibleBookSummaries {
             yearEvents: -1445
         ),
         BibleBookSummary(
-            id: 4,
+            id: "numbers",
+            bookNumber: 4,
             bookKo: "민수기",
             bookEn: "Numbers",
             category: "Pentateuch",
@@ -83,7 +88,8 @@ struct BibleBookSummaries {
             yearEvents: -1445
         ),
         BibleBookSummary(
-            id: 5,
+            id: "deuteronomy",
+            bookNumber: 5,
             bookKo: "신명기",
             bookEn: "Deuteronomy",
             category: "Pentateuch",
@@ -99,7 +105,8 @@ struct BibleBookSummaries {
         // OLD TESTAMENT - HISTORICAL BOOKS (역사서)
         // ============================================================
         BibleBookSummary(
-            id: 6,
+            id: "joshua",
+            bookNumber: 6,
             bookKo: "여호수아",
             bookEn: "Joshua",
             category: "History",
@@ -111,7 +118,8 @@ struct BibleBookSummaries {
             yearEvents: -1406
         ),
         BibleBookSummary(
-            id: 7,
+            id: "judges",
+            bookNumber: 7,
             bookKo: "사사기",
             bookEn: "Judges",
             category: "History",
@@ -123,7 +131,8 @@ struct BibleBookSummaries {
             yearEvents: -1380
         ),
         BibleBookSummary(
-            id: 8,
+            id: "ruth",
+            bookNumber: 8,
             bookKo: "룻기",
             bookEn: "Ruth",
             category: "History",
@@ -135,7 +144,8 @@ struct BibleBookSummaries {
             yearEvents: -1100
         ),
         BibleBookSummary(
-            id: 9,
+            id: "1samuel",
+            bookNumber: 9,
             bookKo: "사무엘상",
             bookEn: "1 Samuel",
             category: "History",
@@ -147,7 +157,8 @@ struct BibleBookSummaries {
             yearEvents: -1050
         ),
         BibleBookSummary(
-            id: 10,
+            id: "2samuel",
+            bookNumber: 10,
             bookKo: "사무엘하",
             bookEn: "2 Samuel",
             category: "History",
@@ -159,7 +170,8 @@ struct BibleBookSummaries {
             yearEvents: -1010
         ),
         BibleBookSummary(
-            id: 11,
+            id: "1kings",
+            bookNumber: 11,
             bookKo: "열왕기상",
             bookEn: "1 Kings",
             category: "History",
@@ -171,7 +183,8 @@ struct BibleBookSummaries {
             yearEvents: -970
         ),
         BibleBookSummary(
-            id: 12,
+            id: "2kings",
+            bookNumber: 12,
             bookKo: "열왕기하",
             bookEn: "2 Kings",
             category: "History",
@@ -183,7 +196,8 @@ struct BibleBookSummaries {
             yearEvents: -850
         ),
         BibleBookSummary(
-            id: 13,
+            id: "1chronicles",
+            bookNumber: 13,
             bookKo: "역대상",
             bookEn: "1 Chronicles",
             category: "History",
@@ -195,7 +209,8 @@ struct BibleBookSummaries {
             yearEvents: -1000
         ),
         BibleBookSummary(
-            id: 14,
+            id: "2chronicles",
+            bookNumber: 14,
             bookKo: "역대하",
             bookEn: "2 Chronicles",
             category: "History",
@@ -207,7 +222,8 @@ struct BibleBookSummaries {
             yearEvents: -970
         ),
         BibleBookSummary(
-            id: 15,
+            id: "ezra",
+            bookNumber: 15,
             bookKo: "에스라",
             bookEn: "Ezra",
             category: "History",
@@ -219,7 +235,8 @@ struct BibleBookSummaries {
             yearEvents: -538
         ),
         BibleBookSummary(
-            id: 16,
+            id: "nehemiah",
+            bookNumber: 16,
             bookKo: "느헤미야",
             bookEn: "Nehemiah",
             category: "History",
@@ -231,7 +248,8 @@ struct BibleBookSummaries {
             yearEvents: -445
         ),
         BibleBookSummary(
-            id: 17,
+            id: "esther",
+            bookNumber: 17,
             bookKo: "에스더",
             bookEn: "Esther",
             category: "History",
@@ -247,7 +265,8 @@ struct BibleBookSummaries {
         // OLD TESTAMENT - WISDOM/POETRY (지혜서/시가서)
         // ============================================================
         BibleBookSummary(
-            id: 18,
+            id: "job",
+            bookNumber: 18,
             bookKo: "욥기",
             bookEn: "Job",
             category: "Wisdom",
@@ -259,7 +278,8 @@ struct BibleBookSummaries {
             yearEvents: -2000
         ),
         BibleBookSummary(
-            id: 19,
+            id: "psalms",
+            bookNumber: 19,
             bookKo: "시편",
             bookEn: "Psalms",
             category: "Wisdom",
@@ -271,7 +291,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 20,
+            id: "proverbs",
+            bookNumber: 20,
             bookKo: "잠언",
             bookEn: "Proverbs",
             category: "Wisdom",
@@ -283,7 +304,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 21,
+            id: "ecclesiastes",
+            bookNumber: 21,
             bookKo: "전도서",
             bookEn: "Ecclesiastes",
             category: "Wisdom",
@@ -295,7 +317,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 22,
+            id: "songofsolomon",
+            bookNumber: 22,
             bookKo: "아가",
             bookEn: "Song of Solomon",
             category: "Wisdom",
@@ -311,7 +334,8 @@ struct BibleBookSummaries {
         // OLD TESTAMENT - MAJOR PROPHETS (대선지서)
         // ============================================================
         BibleBookSummary(
-            id: 23,
+            id: "isaiah",
+            bookNumber: 23,
             bookKo: "이사야",
             bookEn: "Isaiah",
             category: "Major Prophets",
@@ -323,7 +347,8 @@ struct BibleBookSummaries {
             yearEvents: -740
         ),
         BibleBookSummary(
-            id: 24,
+            id: "jeremiah",
+            bookNumber: 24,
             bookKo: "예레미야",
             bookEn: "Jeremiah",
             category: "Major Prophets",
@@ -335,7 +360,8 @@ struct BibleBookSummaries {
             yearEvents: -627
         ),
         BibleBookSummary(
-            id: 25,
+            id: "lamentations",
+            bookNumber: 25,
             bookKo: "예레미야애가",
             bookEn: "Lamentations",
             category: "Major Prophets",
@@ -347,7 +373,8 @@ struct BibleBookSummaries {
             yearEvents: -586
         ),
         BibleBookSummary(
-            id: 26,
+            id: "ezekiel",
+            bookNumber: 26,
             bookKo: "에스겔",
             bookEn: "Ezekiel",
             category: "Major Prophets",
@@ -359,7 +386,8 @@ struct BibleBookSummaries {
             yearEvents: -593
         ),
         BibleBookSummary(
-            id: 27,
+            id: "daniel",
+            bookNumber: 27,
             bookKo: "다니엘",
             bookEn: "Daniel",
             category: "Major Prophets",
@@ -375,7 +403,8 @@ struct BibleBookSummaries {
         // OLD TESTAMENT - MINOR PROPHETS (소선지서)
         // ============================================================
         BibleBookSummary(
-            id: 28,
+            id: "hosea",
+            bookNumber: 28,
             bookKo: "호세아",
             bookEn: "Hosea",
             category: "Minor Prophets",
@@ -387,7 +416,8 @@ struct BibleBookSummaries {
             yearEvents: -755
         ),
         BibleBookSummary(
-            id: 29,
+            id: "joel",
+            bookNumber: 29,
             bookKo: "요엘",
             bookEn: "Joel",
             category: "Minor Prophets",
@@ -399,7 +429,8 @@ struct BibleBookSummaries {
             yearEvents: -835
         ),
         BibleBookSummary(
-            id: 30,
+            id: "amos",
+            bookNumber: 30,
             bookKo: "아모스",
             bookEn: "Amos",
             category: "Minor Prophets",
@@ -411,7 +442,8 @@ struct BibleBookSummaries {
             yearEvents: -760
         ),
         BibleBookSummary(
-            id: 31,
+            id: "obadiah",
+            bookNumber: 31,
             bookKo: "오바댜",
             bookEn: "Obadiah",
             category: "Minor Prophets",
@@ -423,7 +455,8 @@ struct BibleBookSummaries {
             yearEvents: -586
         ),
         BibleBookSummary(
-            id: 32,
+            id: "jonah",
+            bookNumber: 32,
             bookKo: "요나",
             bookEn: "Jonah",
             category: "Minor Prophets",
@@ -435,7 +468,8 @@ struct BibleBookSummaries {
             yearEvents: -760
         ),
         BibleBookSummary(
-            id: 33,
+            id: "micah",
+            bookNumber: 33,
             bookKo: "미가",
             bookEn: "Micah",
             category: "Minor Prophets",
@@ -447,7 +481,8 @@ struct BibleBookSummaries {
             yearEvents: -735
         ),
         BibleBookSummary(
-            id: 34,
+            id: "nahum",
+            bookNumber: 34,
             bookKo: "나훔",
             bookEn: "Nahum",
             category: "Minor Prophets",
@@ -459,7 +494,8 @@ struct BibleBookSummaries {
             yearEvents: -650
         ),
         BibleBookSummary(
-            id: 35,
+            id: "habakkuk",
+            bookNumber: 35,
             bookKo: "하박국",
             bookEn: "Habakkuk",
             category: "Minor Prophets",
@@ -471,7 +507,8 @@ struct BibleBookSummaries {
             yearEvents: -609
         ),
         BibleBookSummary(
-            id: 36,
+            id: "zephaniah",
+            bookNumber: 36,
             bookKo: "스바냐",
             bookEn: "Zephaniah",
             category: "Minor Prophets",
@@ -483,7 +520,8 @@ struct BibleBookSummaries {
             yearEvents: -630
         ),
         BibleBookSummary(
-            id: 37,
+            id: "haggai",
+            bookNumber: 37,
             bookKo: "학개",
             bookEn: "Haggai",
             category: "Minor Prophets",
@@ -495,7 +533,8 @@ struct BibleBookSummaries {
             yearEvents: -520
         ),
         BibleBookSummary(
-            id: 38,
+            id: "zechariah",
+            bookNumber: 38,
             bookKo: "스가랴",
             bookEn: "Zechariah",
             category: "Minor Prophets",
@@ -507,7 +546,8 @@ struct BibleBookSummaries {
             yearEvents: -520
         ),
         BibleBookSummary(
-            id: 39,
+            id: "malachi",
+            bookNumber: 39,
             bookKo: "말라기",
             bookEn: "Malachi",
             category: "Minor Prophets",
@@ -523,7 +563,8 @@ struct BibleBookSummaries {
         // NEW TESTAMENT - GOSPELS (복음서)
         // ============================================================
         BibleBookSummary(
-            id: 40,
+            id: "matthew",
+            bookNumber: 40,
             bookKo: "마태복음",
             bookEn: "Matthew",
             category: "Gospels",
@@ -535,7 +576,8 @@ struct BibleBookSummaries {
             yearEvents: 30
         ),
         BibleBookSummary(
-            id: 41,
+            id: "mark",
+            bookNumber: 41,
             bookKo: "마가복음",
             bookEn: "Mark",
             category: "Gospels",
@@ -547,7 +589,8 @@ struct BibleBookSummaries {
             yearEvents: 30
         ),
         BibleBookSummary(
-            id: 42,
+            id: "luke",
+            bookNumber: 42,
             bookKo: "누가복음",
             bookEn: "Luke",
             category: "Gospels",
@@ -559,7 +602,8 @@ struct BibleBookSummaries {
             yearEvents: 30
         ),
         BibleBookSummary(
-            id: 43,
+            id: "john",
+            bookNumber: 43,
             bookKo: "요한복음",
             bookEn: "John",
             category: "Gospels",
@@ -575,7 +619,8 @@ struct BibleBookSummaries {
         // NEW TESTAMENT - HISTORY (역사서)
         // ============================================================
         BibleBookSummary(
-            id: 44,
+            id: "acts",
+            bookNumber: 44,
             bookKo: "사도행전",
             bookEn: "Acts",
             category: "History",
@@ -591,7 +636,8 @@ struct BibleBookSummaries {
         // NEW TESTAMENT - PAULINE EPISTLES (바울서신)
         // ============================================================
         BibleBookSummary(
-            id: 45,
+            id: "romans",
+            bookNumber: 45,
             bookKo: "로마서",
             bookEn: "Romans",
             category: "Pauline Epistles",
@@ -603,7 +649,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 46,
+            id: "1corinthians",
+            bookNumber: 46,
             bookKo: "고린도전서",
             bookEn: "1 Corinthians",
             category: "Pauline Epistles",
@@ -615,7 +662,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 47,
+            id: "2corinthians",
+            bookNumber: 47,
             bookKo: "고린도후서",
             bookEn: "2 Corinthians",
             category: "Pauline Epistles",
@@ -627,7 +675,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 48,
+            id: "galatians",
+            bookNumber: 48,
             bookKo: "갈라디아서",
             bookEn: "Galatians",
             category: "Pauline Epistles",
@@ -639,7 +688,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 49,
+            id: "ephesians",
+            bookNumber: 49,
             bookKo: "에베소서",
             bookEn: "Ephesians",
             category: "Pauline Epistles",
@@ -651,7 +701,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 50,
+            id: "philippians",
+            bookNumber: 50,
             bookKo: "빌립보서",
             bookEn: "Philippians",
             category: "Pauline Epistles",
@@ -663,7 +714,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 51,
+            id: "colossians",
+            bookNumber: 51,
             bookKo: "골로새서",
             bookEn: "Colossians",
             category: "Pauline Epistles",
@@ -675,7 +727,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 52,
+            id: "1thessalonians",
+            bookNumber: 52,
             bookKo: "데살로니가전서",
             bookEn: "1 Thessalonians",
             category: "Pauline Epistles",
@@ -687,7 +740,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 53,
+            id: "2thessalonians",
+            bookNumber: 53,
             bookKo: "데살로니가후서",
             bookEn: "2 Thessalonians",
             category: "Pauline Epistles",
@@ -699,7 +753,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 54,
+            id: "1timothy",
+            bookNumber: 54,
             bookKo: "디모데전서",
             bookEn: "1 Timothy",
             category: "Pauline Epistles",
@@ -711,7 +766,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 55,
+            id: "2timothy",
+            bookNumber: 55,
             bookKo: "디모데후서",
             bookEn: "2 Timothy",
             category: "Pauline Epistles",
@@ -723,7 +779,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 56,
+            id: "titus",
+            bookNumber: 56,
             bookKo: "디도서",
             bookEn: "Titus",
             category: "Pauline Epistles",
@@ -735,7 +792,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 57,
+            id: "philemon",
+            bookNumber: 57,
             bookKo: "빌레몬서",
             bookEn: "Philemon",
             category: "Pauline Epistles",
@@ -751,7 +809,8 @@ struct BibleBookSummaries {
         // NEW TESTAMENT - GENERAL EPISTLES (공동서신)
         // ============================================================
         BibleBookSummary(
-            id: 58,
+            id: "hebrews",
+            bookNumber: 58,
             bookKo: "히브리서",
             bookEn: "Hebrews",
             category: "General Epistles",
@@ -763,7 +822,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 59,
+            id: "james",
+            bookNumber: 59,
             bookKo: "야고보서",
             bookEn: "James",
             category: "General Epistles",
@@ -775,7 +835,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 60,
+            id: "1peter",
+            bookNumber: 60,
             bookKo: "베드로전서",
             bookEn: "1 Peter",
             category: "General Epistles",
@@ -787,7 +848,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 61,
+            id: "2peter",
+            bookNumber: 61,
             bookKo: "베드로후서",
             bookEn: "2 Peter",
             category: "General Epistles",
@@ -799,7 +861,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 62,
+            id: "1john",
+            bookNumber: 62,
             bookKo: "요한일서",
             bookEn: "1 John",
             category: "General Epistles",
@@ -811,7 +874,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 63,
+            id: "2john",
+            bookNumber: 63,
             bookKo: "요한이서",
             bookEn: "2 John",
             category: "General Epistles",
@@ -823,7 +887,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 64,
+            id: "3john",
+            bookNumber: 64,
             bookKo: "요한삼서",
             bookEn: "3 John",
             category: "General Epistles",
@@ -835,7 +900,8 @@ struct BibleBookSummaries {
             yearEvents: nil
         ),
         BibleBookSummary(
-            id: 65,
+            id: "jude",
+            bookNumber: 65,
             bookKo: "유다서",
             bookEn: "Jude",
             category: "General Epistles",
@@ -851,7 +917,8 @@ struct BibleBookSummaries {
         // NEW TESTAMENT - PROPHECY (예언서)
         // ============================================================
         BibleBookSummary(
-            id: 66,
+            id: "revelation",
+            bookNumber: 66,
             bookKo: "요한계시록",
             bookEn: "Revelation",
             category: "Prophecy",
@@ -866,9 +933,14 @@ struct BibleBookSummaries {
     
     // MARK: - Helper Methods
     
-    /// Get summary by book ID
-    static func summary(for bookId: Int) -> BibleBookSummary? {
+    /// Get summary by book ID (string, matches BibleBook.id)
+    static func summary(for bookId: String) -> BibleBookSummary? {
         return all.first { $0.id == bookId }
+    }
+    
+    /// Get summary by book number (1-66, matches API and BibleBook.order)
+    static func summary(forBookNumber bookNumber: Int) -> BibleBookSummary? {
+        return all.first { $0.bookNumber == bookNumber }
     }
     
     /// Get summaries by category
@@ -881,12 +953,17 @@ struct BibleBookSummaries {
         return Array(Set(all.map { $0.category })).sorted()
     }
     
-    /// Get summaries sorted by timeline (oldest first)
+    /// Get summaries sorted by timeline (oldest events first)
     static var timelineSorted: [BibleBookSummary] {
         return all.sorted { (a, b) -> Bool in
             let yearA = a.yearEvents ?? a.yearWritten
             let yearB = b.yearEvents ?? b.yearWritten
             return yearA < yearB
         }
+    }
+    
+    /// Get summaries sorted by canonical order (1-66)
+    static var canonicalSorted: [BibleBookSummary] {
+        return all.sorted { $0.bookNumber < $1.bookNumber }
     }
 }
