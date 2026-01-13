@@ -121,7 +121,8 @@ struct ChapterGridView: View {
                             ChapterCell(
                                 chapter: chapter,
                                 theme: theme,
-                                isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter
+                                isCurrentChapter: book == viewModel.currentBook && chapter == viewModel.currentChapter,
+                                isRead: ReadingProgressTracker.shared.isChapterRead(bookId: book.id, chapter: chapter)
                             )
                             .id(chapter)
                             .onTapGesture {
@@ -227,16 +228,29 @@ struct ChapterCell: View {
     let chapter: Int
     let theme: BookTheme
     let isCurrentChapter: Bool
+    let isRead: Bool
+    
+    // Darker shade for read chapters - darker than parent background
+    private var cellBackground: Color {
+        if isCurrentChapter {
+            return theme.accent
+        } else if isRead {
+            // Darker than the parent background
+            return Color.black.opacity(0.3)
+        } else {
+            return theme.surface
+        }
+    }
     
     var body: some View {
         Text("\(chapter)")
             .font(.system(size: 18, weight: isCurrentChapter ? .bold : .medium))
-            .foregroundStyle(isCurrentChapter ? theme.background : theme.textPrimary)
+            .foregroundStyle(isCurrentChapter ? theme.background : (isRead ? theme.textPrimary.opacity(0.6) : theme.textPrimary))
             .frame(maxWidth: .infinity)
             .frame(minHeight: 56)
             .background(
                 RoundedRectangle(cornerRadius: 12)
-                    .fill(isCurrentChapter ? theme.accent : theme.surface)
+                    .fill(cellBackground)
             )
             .contentShape(Rectangle())
     }
@@ -322,7 +336,8 @@ struct FullscreenChapterGridView: View {
                                 ChapterCell(
                                     chapter: chapter,
                                     theme: theme,
-                                    isCurrentChapter: currentBook == viewModel.currentBook && chapter == viewModel.currentChapter
+                                    isCurrentChapter: currentBook == viewModel.currentBook && chapter == viewModel.currentChapter,
+                                    isRead: ReadingProgressTracker.shared.isChapterRead(bookId: currentBook.id, chapter: chapter)
                                 )
                                 .id(chapter)
                                 .onTapGesture {

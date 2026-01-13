@@ -37,17 +37,20 @@ struct SlotMachineView: View {
                                     // Top 30% = previous verse, bottom 70% = next verse
                                     let tapY = location.y
                                     let threshold = geometry.size.height * 0.3
+                                    // Total items includes verses + mark as read card
+                                    let maxIndex = viewModel.verses.count // Last index is the mark as read card
                                     
                                     if tapY < threshold {
                                         // Top 30% - go to previous verse
-                                        let prevIndex = max(viewModel.currentVerseIndex - 1, 0)
+                                        let prevIndex = max((scrollPosition ?? viewModel.currentVerseIndex) - 1, 0)
                                         guard prevIndex != scrollPosition else { return }
                                         withAnimation(.easeOut(duration: 0.25)) {
                                             scrollPosition = prevIndex
                                         }
                                     } else {
-                                        // Bottom 70% - go to next verse
-                                        let nextIndex = min(viewModel.currentVerseIndex + 1, viewModel.verses.count - 1)
+                                        // Bottom 70% - go to next item (verse or mark as read card)
+                                        let currentPos = scrollPosition ?? viewModel.currentVerseIndex
+                                        let nextIndex = min(currentPos + 1, maxIndex)
                                         guard nextIndex != scrollPosition else { return }
                                         withAnimation(.easeOut(duration: 0.25)) {
                                             scrollPosition = nextIndex
@@ -169,20 +172,38 @@ struct SlotMachineView: View {
     private func verseScrollView(geometry: GeometryProxy) -> some View {
         let verseHeight = geometry.size.height * 0.38
         let verticalPadding = geometry.size.height * 0.31
+        // Total items: verses + 1 for the "Mark as read" card
+        let totalItems = viewModel.verses.count + 1
+        let markAsReadIndex = viewModel.verses.count
         
         return ScrollView(.vertical) {
             LazyVStack(spacing: 16) {
-                ForEach(Array(viewModel.verses.enumerated()), id: \.offset) { index, verse in
-                    VerseCardView(
-                        verse: verse,
-                        language: viewModel.languageMode,
-                        theme: theme,
-                        isCentered: index == viewModel.currentVerseIndex
-                    )
-                    .slotMachineEffect(isScrubbing: isScrubbing)
-                    .id(index)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: verseHeight, alignment: .center)  // Fixed snap height, centered content, overflow visible
+                ForEach(0..<totalItems, id: \.self) { index in
+                    if index < viewModel.verses.count {
+                        // Regular verse card
+                        VerseCardView(
+                            verse: viewModel.verses[index],
+                            language: viewModel.languageMode,
+                            theme: theme,
+                            isCentered: index == viewModel.currentVerseIndex
+                        )
+                        .slotMachineEffect(isScrubbing: isScrubbing)
+                        .id(index)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: verseHeight, alignment: .center)
+                    } else {
+                        // Mark as read card at the end
+                        MarkAsReadCard(
+                            bookId: viewModel.currentBook.id,
+                            chapter: viewModel.currentChapter,
+                            theme: theme,
+                            languageMode: viewModel.languageMode
+                        )
+                        .slotMachineEffect(isScrubbing: isScrubbing)
+                        .id(markAsReadIndex)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: verseHeight, alignment: .center)
+                    }
                 }
             }
             .scrollTargetLayout()
@@ -375,6 +396,60 @@ struct SlotMachineView: View {
                     }
                 }
             }
+    }
+}
+
+// MARK: - Mark As Read Card
+struct MarkAsReadCard: View {
+    let bookId: String
+    let chapter: Int
+    let theme: BookTheme
+    let languageMode: LanguageMode
+    
+    @State private var isRead: Bool = false
+    
+    var body: some View {
+        VStack {
+            // Mark as read toggle button
+            Button {
+                withAnimation(.easeOut(duration: 0.2)) {
+                    isRead.toggle()
+                }
+                ReadingProgressTracker.shared.toggleReadState(bookId: bookId, chapter: chapter)
+                HapticManager.shared.selection()
+            } label: {
+                HStack(spacing: 8) {
+                    if isRead {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 14, weight: .bold))
+                    }
+                    
+                    Text(isRead 
+                         ? (languageMode == .kr ? "읽음으로 표시됨" : "Marked as Read")
+                         : (languageMode == .kr ? "읽음으로 표시" : "Mark as Read"))
+                        .font(.system(size: 15, weight: .semibold))
+                }
+                .foregroundStyle(isRead ? theme.background : theme.textPrimary)
+                .padding(.horizontal, 24)
+                .padding(.vertical, 14)
+                .background(
+                    Capsule()
+                        .fill(isRead ? theme.accent : theme.surface)
+                )
+            }
+            .buttonStyle(.plain)
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+        .padding(.horizontal, 28)
+        .onAppear {
+            isRead = ReadingProgressTracker.shared.isChapterRead(bookId: bookId, chapter: chapter)
+        }
+        .onChange(of: bookId) { _, _ in
+            isRead = ReadingProgressTracker.shared.isChapterRead(bookId: bookId, chapter: chapter)
+        }
+        .onChange(of: chapter) { _, _ in
+            isRead = ReadingProgressTracker.shared.isChapterRead(bookId: bookId, chapter: chapter)
+        }
     }
 }
 

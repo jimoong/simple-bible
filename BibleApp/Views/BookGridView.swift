@@ -341,31 +341,60 @@ struct BookCell: View {
         BookThemes.theme(for: book.id)
     }
     
-    var body: some View {
-        VStack(spacing: 6) {
-            Text(book.abbreviation(for: language))
-                .font(theme.display(24, language: language))
-                .foregroundStyle(theme.textPrimary)
-            
-            Text(book.name(for: language))
-                .font(language == .kr 
-                    ? FontManager.koreanSans(size: 12, weight: .medium)
-                    : .system(size: 12, weight: .medium, design: .default))
-                .foregroundStyle(theme.textSecondary)
-                .lineLimit(1)
-                .minimumScaleFactor(0.8)
+    private var isFullyRead: Bool {
+        ReadingProgressTracker.shared.isBookFullyRead(book: book)
+    }
+    
+    // Very dark grey for fully read books (slightly brighter than pure black)
+    private var cellBackground: Color {
+        if isFullyRead {
+            return Color(red: 0.12, green: 0.12, blue: 0.12)
+        } else {
+            return theme.surface
         }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 18)
-        .padding(.horizontal, 8)
-        .background(
-            RoundedRectangle(cornerRadius: 12)
-                .fill(theme.surface)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(isSelected ? theme.accent : Color.clear, lineWidth: 2)
-        )
+    }
+    
+    var body: some View {
+        ZStack {
+            VStack(spacing: 6) {
+                Text(book.abbreviation(for: language))
+                    .font(theme.display(24, language: language))
+                    .foregroundStyle(isFullyRead ? theme.textPrimary.opacity(0.5) : theme.textPrimary)
+                
+                Text(book.name(for: language))
+                    .font(language == .kr 
+                        ? FontManager.koreanSans(size: 12, weight: .medium)
+                        : .system(size: 12, weight: .medium, design: .default))
+                    .foregroundStyle(isFullyRead ? theme.textSecondary.opacity(0.5) : theme.textSecondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 18)
+            .padding(.horizontal, 8)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(cellBackground)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(isSelected ? theme.accent : Color.clear, lineWidth: 2)
+            )
+            
+            // Checkmark indicator for fully read books
+            if isFullyRead {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 12, weight: .semibold))
+                            .foregroundStyle(.white.opacity(0.4))
+                            .padding(8)
+                    }
+                    Spacer()
+                }
+            }
+        }
     }
 }
 

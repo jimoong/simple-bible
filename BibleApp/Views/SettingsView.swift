@@ -11,6 +11,7 @@ struct SettingsView: View {
     @State private var showPrimaryPicker: Bool = false
     @State private var showSecondaryPicker: Bool = false
     @State private var mailError: String?
+    @State private var showClearDataConfirmation = false
     
     private let appVersion = "1.0.0"
     private let contactEmail = "jiwoong.net@gmail.com"
@@ -28,6 +29,9 @@ struct SettingsView: View {
                         
                         // About Section
                         aboutSection
+                        
+                        // Developer Section
+                        developerSection
                         
                         Spacer(minLength: 80)
                     }
@@ -193,6 +197,58 @@ struct SettingsView: View {
                     .fill(.white.opacity(0.04))
             )
         }
+    }
+    
+    // MARK: - Developer Section
+    private var developerSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            sectionHeader(title: "Developer")
+            
+            VStack(spacing: 0) {
+                // Clear All Data
+                Button {
+                    HapticManager.shared.selection()
+                    showClearDataConfirmation = true
+                } label: {
+                    HStack {
+                        Text("Clear All Saved Data")
+                            .font(.system(size: 16))
+                            .foregroundStyle(Color(hex: "ef4444"))
+                        
+                        Spacer()
+                        
+                        Image(systemName: "trash")
+                            .font(.system(size: 14))
+                            .foregroundStyle(Color(hex: "ef4444").opacity(0.6))
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                }
+                .buttonStyle(.plain)
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(.white.opacity(0.04))
+            )
+        }
+        .alert("Clear All Data", isPresented: $showClearDataConfirmation) {
+            Button("Cancel", role: .cancel) { }
+            Button("Clear", role: .destructive) {
+                clearAllSavedData()
+            }
+        } message: {
+            Text("This will clear all reading progress and toast history. This action cannot be undone.")
+        }
+    }
+    
+    private func clearAllSavedData() {
+        // Clear reading progress
+        ReadingProgressTracker.shared.clearAll()
+        
+        // Clear chapter toast tracker
+        ChapterToastTracker.shared.clearAll()
+        
+        HapticManager.shared.success()
     }
     
     // MARK: - Section Header
