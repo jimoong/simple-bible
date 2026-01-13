@@ -334,7 +334,7 @@ struct ContentView: View {
                 .foregroundStyle(.white)
                 .frame(width: 48, height: 48)
         }
-        .buttonStyle(.glassCircleClear)
+        .buttonStyle(.glassCircle)
     }
 }
 
