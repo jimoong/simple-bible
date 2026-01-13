@@ -24,8 +24,8 @@ struct ChapterToast: View {
                     .font(.system(size: 13, weight: .semibold))
                     .foregroundStyle(theme.textSecondary)
                 
-                // Message
-                Text(chapterSummary.message(for: languageMode))
+                // Summary (instead of message)
+                Text(chapterSummary.summary(for: languageMode))
                     .font(theme.verseText(14, language: languageMode))
                     .foregroundStyle(theme.textPrimary)
                     .lineLimit(2)
