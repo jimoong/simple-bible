@@ -1,0 +1,383 @@
+{
+  "bookId": "2kings",
+  "bookNumber": 12,
+  "bookNameKo": "열왕기하",
+  "bookNameEn": "2 Kings",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "아하시야의 죽음",
+      "titleEn": "Death of Ahaziah",
+      "summaryKo": "아하시야가 이방 신을 구하다가 엘리야의 예언대로 죽습니다.",
+      "summaryEn": "Ahaziah consults a foreign god and dies as Elijah prophesied.",
+      "messageKo": "어려울 때 누구에게 의지하느냐가 운명을 결정합니다.",
+      "messageEn": "Whom we turn to in trouble determines our fate.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바알세붑에게 물음", "eventEn": "Inquires of Baal-Zebub"},
+        {"verse": 10, "eventKo": "불이 내림", "eventEn": "Fire comes down"},
+        {"verse": 17, "eventKo": "아하시야의 죽음", "eventEn": "Ahaziah dies"}
+      ],
+      "timelineYear": "BC 852"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "엘리야의 승천",
+      "titleEn": "Elijah Taken Up",
+      "summaryKo": "엘리야가 회오리바람에 승천하고 엘리사가 그의 사역을 이어받습니다.",
+      "summaryEn": "Elijah is taken up in a whirlwind; Elisha takes up his ministry.",
+      "messageKo": "하나님의 영이 임하면 스승보다 더 큰 일을 할 수 있습니다.",
+      "messageEn": "With God's Spirit, we can do greater things than our teachers.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "갑절의 영을 구함", "eventEn": "Request for double portion"},
+        {"verse": 11, "eventKo": "불 수레와 불 말", "eventEn": "Chariot and horses of fire"},
+        {"verse": 14, "eventKo": "요단 강물을 가름", "eventEn": "Jordan divided"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "모압과의 전쟁",
+      "titleEn": "War Against Moab",
+      "summaryKo": "이스라엘, 유다, 에돔 연합군이 모압과 싸울 때 엘리사가 돕습니다.",
+      "summaryEn": "Allied forces of Israel, Judah, and Edom fight Moab with Elisha's help.",
+      "messageKo": "하나님은 경건한 왕을 위해 불경건한 자들도 축복하십니다.",
+      "messageEn": "God blesses the ungodly for the sake of the godly.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "엘리사에게 물음", "eventEn": "Inquiry to Elisha"},
+        {"verse": 17, "eventKo": "물이 채워짐", "eventEn": "Valley filled with water"},
+        {"verse": 27, "eventKo": "모압의 항복", "eventEn": "Moab's defeat"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "엘리사의 기적들",
+      "titleEn": "Elisha's Miracles",
+      "summaryKo": "엘리사가 기름 기적, 수넴 여인의 아들 살림 등 여러 기적을 행합니다.",
+      "summaryEn": "Elisha performs miracles: multiplying oil, raising the Shunammite's son, etc.",
+      "messageKo": "하나님은 믿음을 가진 자의 필요를 초자연적으로 채우십니다.",
+      "messageEn": "God supernaturally meets the needs of those with faith.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "기름이 멈추지 않음", "eventEn": "Oil keeps flowing"},
+        {"verse": 35, "eventKo": "아이를 살림", "eventEn": "Child raised to life"},
+        {"verse": 41, "eventKo": "독을 없앰", "eventEn": "Poison neutralized"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "나아만의 치유",
+      "titleEn": "Naaman Healed",
+      "summaryKo": "아람 장군 나아만이 요단 강에서 문둥병이 치유됩니다.",
+      "summaryEn": "Aramean commander Naaman is healed of leprosy in the Jordan River.",
+      "messageKo": "겸손하게 순종할 때 하나님의 치유가 임합니다.",
+      "messageEn": "God's healing comes when we humbly obey.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "요단 강에 일곱 번 씻으라", "eventEn": "Wash seven times in Jordan"},
+        {"verse": 14, "eventKo": "나아만의 치유", "eventEn": "Naaman healed"},
+        {"verse": 27, "eventKo": "게하시의 탐욕과 형벌", "eventEn": "Gehazi's greed and punishment"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "도끼 머리와 아람 군대",
+      "titleEn": "Floating Axe Head and Aramean Army",
+      "summaryKo": "엘리사가 도끼 머리를 띄우고 아람 군대의 눈을 가리는 기적을 행합니다.",
+      "summaryEn": "Elisha makes an axe head float and blinds the Aramean army.",
+      "messageKo": "하나님의 능력은 크고 작은 모든 상황에서 역사합니다.",
+      "messageEn": "God's power works in both great and small situations.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "도끼 머리가 뜸", "eventEn": "Axe head floats"},
+        {"verse": 17, "eventKo": "불 말과 불 병거", "eventEn": "Horses and chariots of fire"},
+        {"verse": 23, "eventKo": "원수에게 잔치를 베풂", "eventEn": "Feast for enemies"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "사마리아의 기근 해제",
+      "titleEn": "End of Samaria's Famine",
+      "summaryKo": "네 명의 문둥병자가 아람 진영에서 음식을 발견하여 기근이 끝납니다.",
+      "summaryEn": "Four lepers discover food in the Aramean camp, ending the famine.",
+      "messageKo": "가장 낮은 자를 통해서도 구원의 소식이 전해집니다.",
+      "messageEn": "Good news of salvation can come through the lowliest.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "내일 풍년", "eventEn": "Tomorrow abundance"},
+        {"verse": 5, "eventKo": "문둥병자들의 발견", "eventEn": "Lepers' discovery"},
+        {"verse": 20, "eventKo": "불신한 장관의 죽음", "eventEn": "Death of unbelieving officer"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "수넴 여인과 하사엘",
+      "titleEn": "Shunammite Woman and Hazael",
+      "summaryKo": "수넴 여인의 재산 회복과 하사엘이 아람 왕이 되는 이야기입니다.",
+      "summaryEn": "The Shunammite's property is restored; Hazael becomes king of Aram.",
+      "messageKo": "하나님은 자기 백성의 권리를 지키시고 역사를 이끄십니다.",
+      "messageEn": "God protects His people's rights and guides history.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "여인의 재산 회복", "eventEn": "Woman's property restored"},
+        {"verse": 13, "eventKo": "하사엘에 대한 예언", "eventEn": "Prophecy about Hazael"},
+        {"verse": 15, "eventKo": "하사엘이 왕을 죽임", "eventEn": "Hazael kills king"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "예후의 기름부음",
+      "titleEn": "Jehu Anointed",
+      "summaryKo": "예후가 왕으로 기름부음 받고 요람과 이세벨을 죽입니다.",
+      "summaryEn": "Jehu is anointed king and kills Joram and Jezebel.",
+      "messageKo": "하나님의 심판은 반드시 임하지만, 그 때를 알 수 없습니다.",
+      "messageEn": "God's judgment surely comes, though its timing is unknown.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "예후에게 기름부음", "eventEn": "Jehu anointed"},
+        {"verse": 24, "eventKo": "요람을 죽임", "eventEn": "Joram killed"},
+        {"verse": 33, "eventKo": "이세벨의 죽음", "eventEn": "Jezebel's death"}
+      ],
+      "timelineYear": "BC 841"
+    },
+    {
+      "chapter": 10,
+      "titleKo": "아합 집안 멸망",
+      "titleEn": "End of Ahab's House",
+      "summaryKo": "예후가 아합의 후손과 바알 숭배자들을 모두 멸합니다.",
+      "summaryEn": "Jehu destroys all of Ahab's descendants and Baal worshipers.",
+      "messageKo": "하나님의 심판의 도구도 순종이 없으면 온전한 축복을 받지 못합니다.",
+      "messageEn": "Even instruments of God's judgment need obedience for full blessing.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "아합 집안 멸망", "eventEn": "Ahab's house destroyed"},
+        {"verse": 27, "eventKo": "바알 신전 파괴", "eventEn": "Temple of Baal destroyed"},
+        {"verse": 31, "eventKo": "예후의 불완전한 순종", "eventEn": "Jehu's incomplete obedience"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "아달랴와 요아스",
+      "titleEn": "Athaliah and Joash",
+      "summaryKo": "아달랴가 왕족을 학살하지만 요아스가 살아남아 왕이 됩니다.",
+      "summaryEn": "Athaliah massacres royalty, but Joash survives and becomes king.",
+      "messageKo": "하나님은 다윗 언약을 지키시기 위해 한 사람도 보존하십니다.",
+      "messageEn": "God preserves even one person to keep His covenant with David.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "요아스를 숨김", "eventEn": "Joash hidden"},
+        {"verse": 12, "eventKo": "요아스의 대관식", "eventEn": "Joash crowned"},
+        {"verse": 16, "eventKo": "아달랴의 처형", "eventEn": "Athaliah executed"}
+      ],
+      "timelineYear": "BC 835"
+    },
+    {
+      "chapter": 12,
+      "titleKo": "성전 보수",
+      "titleEn": "Temple Repairs",
+      "summaryKo": "요아스가 성전 보수를 명하고, 제사장 여호야다가 그를 인도합니다.",
+      "summaryEn": "Joash orders temple repairs under the guidance of priest Jehoiada.",
+      "messageKo": "좋은 멘토가 있을 때 선한 일을 이룹니다.",
+      "messageEn": "Good mentors help us accomplish good work.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "성전 보수 명령", "eventEn": "Orders temple repairs"},
+        {"verse": 9, "eventKo": "헌금함 설치", "eventEn": "Offering box set up"},
+        {"verse": 17, "eventKo": "하사엘에게 조공", "eventEn": "Tribute to Hazael"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "이스라엘의 쇠퇴",
+      "titleEn": "Israel's Decline",
+      "summaryKo": "여호아하스와 요아스 왕 시대, 엘리사가 죽습니다.",
+      "summaryEn": "During reigns of Jehoahaz and Joash, Elisha dies.",
+      "messageKo": "하나님의 긍휼은 언약 백성을 끝까지 버리지 않으십니다.",
+      "messageEn": "God's mercy does not abandon His covenant people.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "여호와께서 구원자를 주심", "eventEn": "LORD gives a deliverer"},
+        {"verse": 17, "eventKo": "화살 이야기", "eventEn": "Arrow prophecy"},
+        {"verse": 21, "eventKo": "엘리사의 뼈로 살아남", "eventEn": "Man revived by Elisha's bones"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "아마샤와 여로보암 2세",
+      "titleEn": "Amaziah and Jeroboam II",
+      "summaryKo": "아마샤가 에돔을 격파하고, 여로보암 2세가 이스라엘을 확장합니다.",
+      "summaryEn": "Amaziah defeats Edom; Jeroboam II expands Israel.",
+      "messageKo": "승리 후의 교만은 더 큰 패배를 가져옵니다.",
+      "messageEn": "Pride after victory brings greater defeat.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "에돔 정복", "eventEn": "Edom conquered"},
+        {"verse": 11, "eventKo": "이스라엘과의 전쟁 패배", "eventEn": "Defeat by Israel"},
+        {"verse": 25, "eventKo": "여로보암 2세의 영토 회복", "eventEn": "Jeroboam II restores territory"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "이스라엘의 혼란",
+      "titleEn": "Chaos in Israel",
+      "summaryKo": "이스라엘에서 반역과 암살이 연속되고, 앗수르가 위협합니다.",
+      "summaryEn": "Israel experiences continuous revolts and assassinations; Assyria threatens.",
+      "messageKo": "하나님을 떠난 나라는 혼란과 불안정에 빠집니다.",
+      "messageEn": "A nation that forsakes God falls into chaos and instability.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "살룸이 스가랴를 죽임", "eventEn": "Shallum kills Zechariah"},
+        {"verse": 19, "eventKo": "앗수르 왕 불이 침략", "eventEn": "Tiglath-Pileser invades"},
+        {"verse": 30, "eventKo": "호세아가 베가를 죽임", "eventEn": "Hoshea kills Pekah"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "아하스의 배교",
+      "titleEn": "Ahaz's Apostasy",
+      "summaryKo": "유다 왕 아하스가 앗수르에 의존하고 이방 제단을 세웁니다.",
+      "summaryEn": "King Ahaz of Judah depends on Assyria and sets up pagan altars.",
+      "messageKo": "하나님 대신 세상 권세에 의존하면 영적으로 타락합니다.",
+      "messageEn": "Depending on worldly powers instead of God leads to spiritual decline.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아들을 불로 통과시킴", "eventEn": "Son passed through fire"},
+        {"verse": 7, "eventKo": "앗수르에 도움 요청", "eventEn": "Appeals to Assyria"},
+        {"verse": 14, "eventKo": "제단을 바꿈", "eventEn": "Altar changed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "북이스라엘의 멸망",
+      "titleEn": "Fall of Northern Israel",
+      "summaryKo": "앗수르가 사마리아를 함락시키고 이스라엘 백성을 포로로 끌어갑니다.",
+      "summaryEn": "Assyria captures Samaria and exiles the Israelites.",
+      "messageKo": "지속적인 불순종은 결국 심판으로 이어집니다.",
+      "messageEn": "Persistent disobedience eventually leads to judgment.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "사마리아 함락", "eventEn": "Samaria falls"},
+        {"verse": 18, "eventKo": "유다만 남음", "eventEn": "Only Judah remains"},
+        {"verse": 33, "eventKo": "혼합 종교", "eventEn": "Syncretistic worship"}
+      ],
+      "timelineYear": "BC 722"
+    },
+    {
+      "chapter": 18,
+      "titleKo": "히스기야의 개혁",
+      "titleEn": "Hezekiah's Reform",
+      "summaryKo": "히스기야가 우상을 제거하고 앗수르의 침략에 직면합니다.",
+      "summaryEn": "Hezekiah removes idols and faces Assyrian invasion.",
+      "messageKo": "참된 개혁은 모든 우상을 제거하는 것입니다.",
+      "messageEn": "True reform removes all idols.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "놋뱀을 부숨", "eventEn": "Bronze serpent destroyed"},
+        {"verse": 13, "eventKo": "앗수르의 침략", "eventEn": "Assyrian invasion"},
+        {"verse": 35, "eventKo": "랍사게의 조롱", "eventEn": "Rabshakeh's mockery"}
+      ],
+      "timelineYear": "BC 701"
+    },
+    {
+      "chapter": 19,
+      "titleKo": "히스기야의 기도",
+      "titleEn": "Hezekiah's Prayer",
+      "summaryKo": "히스기야가 기도하고 이사야를 통해 구원을 약속받습니다.",
+      "summaryEn": "Hezekiah prays and receives promise of deliverance through Isaiah.",
+      "messageKo": "위기 때 하나님께 나아가면 초자연적 승리를 경험합니다.",
+      "messageEn": "Coming to God in crisis brings supernatural victory.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "히스기야의 기도", "eventEn": "Hezekiah's prayer"},
+        {"verse": 20, "eventKo": "이사야의 응답", "eventEn": "Isaiah's response"},
+        {"verse": 35, "eventKo": "앗수르 군대 185,000명 죽음", "eventEn": "185,000 Assyrians die"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "히스기야의 병과 어리석음",
+      "titleEn": "Hezekiah's Illness and Folly",
+      "summaryKo": "히스기야가 병에서 회복되지만 바벨론 사신에게 보물을 보여줍니다.",
+      "summaryEn": "Hezekiah recovers from illness but shows treasures to Babylonian envoys.",
+      "messageKo": "하나님의 은혜 후에도 교만하지 않도록 조심해야 합니다.",
+      "messageEn": "Beware of pride even after experiencing God's grace.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "15년 수명 연장", "eventEn": "15 years added"},
+        {"verse": 11, "eventKo": "해시계 표적", "eventEn": "Sundial sign"},
+        {"verse": 17, "eventKo": "바벨론 포로 예언", "eventEn": "Babylonian exile foretold"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "므낫세와 아몬",
+      "titleEn": "Manasseh and Amon",
+      "summaryKo": "가장 악한 왕 므낫세와 그의 아들 아몬이 통치합니다.",
+      "summaryEn": "The most wicked king Manasseh and his son Amon reign.",
+      "messageKo": "한 세대의 악행이 나라의 운명을 결정할 수 있습니다.",
+      "messageEn": "One generation's wickedness can determine a nation's destiny.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "산당과 우상 재건", "eventEn": "High places and idols rebuilt"},
+        {"verse": 9, "eventKo": "가나안보다 더 악함", "eventEn": "More wicked than Canaanites"},
+        {"verse": 16, "eventKo": "무죄한 피를 많이 흘림", "eventEn": "Shed much innocent blood"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "요시야와 율법책",
+      "titleEn": "Josiah and the Book of Law",
+      "summaryKo": "요시야가 성전에서 발견된 율법책을 듣고 개혁을 시작합니다.",
+      "summaryEn": "Josiah begins reform after hearing the Book of the Law found in the temple.",
+      "messageKo": "하나님의 말씀을 듣고 겸손히 반응하는 것이 개혁의 시작입니다.",
+      "messageEn": "Reform begins with hearing God's word and responding humbly.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "율법책 발견", "eventEn": "Book of Law found"},
+        {"verse": 11, "eventKo": "요시야가 옷을 찢음", "eventEn": "Josiah tears robes"},
+        {"verse": 19, "eventKo": "마음이 부드러워짐", "eventEn": "Heart was tender"}
+      ],
+      "timelineYear": "BC 621"
+    },
+    {
+      "chapter": 23,
+      "titleKo": "요시야의 개혁",
+      "titleEn": "Josiah's Reform",
+      "summaryKo": "요시야가 철저한 종교 개혁을 시행하고 유월절을 지킵니다.",
+      "summaryEn": "Josiah implements thorough religious reform and celebrates Passover.",
+      "messageKo": "진정한 개혁은 철저하고 전면적이어야 합니다.",
+      "messageEn": "True reform must be thorough and comprehensive.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "우상 제거", "eventEn": "Idols removed"},
+        {"verse": 21, "eventKo": "유월절 지킴", "eventEn": "Passover celebrated"},
+        {"verse": 29, "eventKo": "요시야의 죽음", "eventEn": "Josiah's death"}
+      ],
+      "timelineYear": "BC 609"
+    },
+    {
+      "chapter": 24,
+      "titleKo": "바벨론 포로",
+      "titleEn": "Babylonian Captivity",
+      "summaryKo": "여호야김과 여호야긴 시대에 바벨론이 유다를 침략합니다.",
+      "summaryEn": "Babylon invades Judah during reigns of Jehoiakim and Jehoiachin.",
+      "messageKo": "죄의 결과는 피할 수 없으며, 다음 세대에까지 영향을 미칩니다.",
+      "messageEn": "Sin's consequences are unavoidable and affect future generations.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바벨론 침략", "eventEn": "Babylonian invasion"},
+        {"verse": 12, "eventKo": "여호야긴의 항복", "eventEn": "Jehoiachin surrenders"},
+        {"verse": 17, "eventKo": "시드기야가 왕이 됨", "eventEn": "Zedekiah made king"}
+      ],
+      "timelineYear": "BC 597"
+    },
+    {
+      "chapter": 25,
+      "titleKo": "예루살렘 멸망",
+      "titleEn": "Fall of Jerusalem",
+      "summaryKo": "바벨론이 예루살렘을 함락시키고 성전을 파괴합니다.",
+      "summaryEn": "Babylon captures Jerusalem and destroys the temple.",
+      "messageKo": "심판 속에서도 하나님의 언약은 소망의 씨앗을 남깁니다.",
+      "messageEn": "Even in judgment, God's covenant leaves seeds of hope.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "성전 파괴", "eventEn": "Temple destroyed"},
+        {"verse": 11, "eventKo": "유다 백성 포로", "eventEn": "People exiled"},
+        {"verse": 27, "eventKo": "여호야긴의 석방", "eventEn": "Jehoiachin released"}
+      ],
+      "timelineYear": "BC 586"
+    }
+  ]
+}

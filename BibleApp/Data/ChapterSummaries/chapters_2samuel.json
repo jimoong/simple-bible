@@ -1,0 +1,368 @@
+{
+  "bookId": "2samuel",
+  "bookNumber": 10,
+  "bookNameKo": "사무엘하",
+  "bookNameEn": "2 Samuel",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "사울과 요나단을 위한 애가",
+      "titleEn": "Lament for Saul and Jonathan",
+      "summaryKo": "다윗이 사울과 요나단의 죽음 소식을 듣고 애가를 지어 슬퍼합니다.",
+      "summaryEn": "David hears of Saul and Jonathan's deaths and composes a lament.",
+      "messageKo": "원수까지도 존중하는 태도가 참된 왕의 자질입니다.",
+      "messageEn": "Respecting even enemies shows true kingly character.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사울 죽음의 소식", "eventEn": "News of Saul's death"},
+        {"verse": 17, "eventKo": "애가를 지음", "eventEn": "David's lament"},
+        {"verse": 26, "eventKo": "요나단을 위한 슬픔", "eventEn": "Grief for Jonathan"}
+      ],
+      "timelineYear": "BC 1010"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "다윗, 유다의 왕",
+      "titleEn": "David King of Judah",
+      "summaryKo": "다윗이 헤브론에서 유다의 왕으로 기름부음 받고, 내전이 시작됩니다.",
+      "summaryEn": "David is anointed king of Judah in Hebron; civil war begins.",
+      "messageKo": "하나님의 때를 기다리며 점진적으로 나아가는 것이 지혜입니다.",
+      "messageEn": "Waiting for God's timing and progressing gradually is wise.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "헤브론에서 유다 왕으로", "eventEn": "Anointed king in Hebron"},
+        {"verse": 8, "eventKo": "이스보셋이 이스라엘 왕", "eventEn": "Ish-Bosheth king of Israel"},
+        {"verse": 17, "eventKo": "기브온 전투", "eventEn": "Battle at Gibeon"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "아브넬의 죽음",
+      "titleEn": "Death of Abner",
+      "summaryKo": "아브넬이 다윗에게 귀순하려다 요압에게 살해됩니다.",
+      "summaryEn": "Abner attempts to defect to David but is killed by Joab.",
+      "messageKo": "개인적 복수는 더 큰 문제를 일으킵니다.",
+      "messageEn": "Personal revenge creates greater problems.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "아브넬이 다윗과 언약", "eventEn": "Abner's covenant with David"},
+        {"verse": 27, "eventKo": "요압이 아브넬을 죽임", "eventEn": "Joab kills Abner"},
+        {"verse": 31, "eventKo": "다윗이 아브넬을 애도", "eventEn": "David mourns Abner"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "이스보셋의 죽음",
+      "titleEn": "Death of Ish-Bosheth",
+      "summaryKo": "이스보셋이 부하들에게 살해되고, 다윗이 살인자들을 처형합니다.",
+      "summaryEn": "Ish-Bosheth is murdered by his officers; David executes the killers.",
+      "messageKo": "악한 방법으로 얻은 결과는 인정받지 못합니다.",
+      "messageEn": "Results obtained through evil means are not honored.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "이스보셋 암살", "eventEn": "Ish-Bosheth assassinated"},
+        {"verse": 8, "eventKo": "다윗에게 머리를 가져옴", "eventEn": "Head brought to David"},
+        {"verse": 12, "eventKo": "암살자들 처형", "eventEn": "Assassins executed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "다윗, 온 이스라엘의 왕",
+      "titleEn": "David King of All Israel",
+      "summaryKo": "다윗이 온 이스라엘의 왕이 되어 예루살렘을 정복하고 수도로 삼습니다.",
+      "summaryEn": "David becomes king of all Israel, conquers Jerusalem, and makes it his capital.",
+      "messageKo": "하나님이 함께하시면 난공불락도 정복됩니다.",
+      "messageEn": "With God, even impenetrable places can be conquered.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "온 이스라엘의 왕으로 기름부음", "eventEn": "Anointed king over all Israel"},
+        {"verse": 7, "eventKo": "예루살렘 정복", "eventEn": "Jerusalem conquered"},
+        {"verse": 25, "eventKo": "블레셋 격파", "eventEn": "Philistines defeated"}
+      ],
+      "timelineYear": "BC 1003"
+    },
+    {
+      "chapter": 6,
+      "titleKo": "언약궤를 예루살렘으로",
+      "titleEn": "Ark Brought to Jerusalem",
+      "summaryKo": "다윗이 언약궤를 예루살렘으로 옮기며 춤추고 기뻐합니다.",
+      "summaryEn": "David brings the ark to Jerusalem, dancing and celebrating.",
+      "messageKo": "하나님의 임재를 기뻐하는 것이 참된 예배입니다.",
+      "messageEn": "Rejoicing in God's presence is true worship.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "웃사의 죽음", "eventEn": "Death of Uzzah"},
+        {"verse": 14, "eventKo": "다윗이 춤춤", "eventEn": "David dances"},
+        {"verse": 20, "eventKo": "미갈의 비난", "eventEn": "Michal's scorn"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "다윗 언약",
+      "titleEn": "Davidic Covenant",
+      "summaryKo": "하나님이 다윗에게 영원한 왕조를 약속하시는 언약을 세우십니다.",
+      "summaryEn": "God makes a covenant with David, promising an eternal dynasty.",
+      "messageKo": "하나님의 은혜는 우리의 계획을 초월하여 영원합니다.",
+      "messageEn": "God's grace transcends our plans and is eternal.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "네가 집을 지으려 하느냐", "eventEn": "Will you build Me a house?"},
+        {"verse": 12, "eventKo": "네 후손의 나라를 세우리라", "eventEn": "I will establish your offspring's kingdom"},
+        {"verse": 16, "eventKo": "영원한 왕위 약속", "eventEn": "Eternal throne promised"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "다윗의 정복",
+      "titleEn": "David's Conquests",
+      "summaryKo": "다윗이 주변 민족들을 정복하고 왕국을 확장합니다.",
+      "summaryEn": "David conquers surrounding nations and expands his kingdom.",
+      "messageKo": "하나님이 함께하시면 사방에 승리합니다.",
+      "messageEn": "With God, there is victory on every side.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "블레셋 정복", "eventEn": "Philistines conquered"},
+        {"verse": 3, "eventKo": "소바 왕 하닷에셀 격파", "eventEn": "Hadadezer of Zobah defeated"},
+        {"verse": 15, "eventKo": "공평과 정의로 다스림", "eventEn": "Ruled with justice and righteousness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "므비보셋에 대한 은혜",
+      "titleEn": "Kindness to Mephibosheth",
+      "summaryKo": "다윗이 요나단의 아들 므비보셋에게 은혜를 베풀어 왕의 식탁에 앉게 합니다.",
+      "summaryEn": "David shows kindness to Jonathan's son Mephibosheth, welcoming him to the king's table.",
+      "messageKo": "하나님의 은혜처럼 자격 없는 자에게 베푸는 것이 참된 은혜입니다.",
+      "messageEn": "True grace is giving to the undeserving, as God does for us.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "요나단의 집에 남은 자가 있느냐", "eventEn": "Is there anyone left of Jonathan's house?"},
+        {"verse": 6, "eventKo": "므비보셋 발견", "eventEn": "Mephibosheth found"},
+        {"verse": 11, "eventKo": "왕의 식탁에서 먹음", "eventEn": "Eats at the king's table"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "암몬과의 전쟁",
+      "titleEn": "War with Ammon",
+      "summaryKo": "다윗의 사절단이 모욕당하고 암몬과 전쟁이 시작됩니다.",
+      "summaryEn": "David's envoys are humiliated, leading to war with Ammon.",
+      "messageKo": "선의가 오해받더라도 의로운 대응이 필요합니다.",
+      "messageEn": "Even when good intentions are misunderstood, a righteous response is needed.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사절단 모욕", "eventEn": "Envoys humiliated"},
+        {"verse": 7, "eventKo": "암몬이 아람과 연합", "eventEn": "Ammon allies with Aram"},
+        {"verse": 18, "eventKo": "아람 격파", "eventEn": "Aram defeated"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "다윗과 밧세바",
+      "titleEn": "David and Bathsheba",
+      "summaryKo": "다윗이 밧세바와 간음하고 그 남편 우리아를 죽게 합니다.",
+      "summaryEn": "David commits adultery with Bathsheba and arranges her husband Uriah's death.",
+      "messageKo": "한 순간의 유혹이 연쇄적인 죄로 이어질 수 있습니다.",
+      "messageEn": "A moment of temptation can lead to a chain of sins.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "다윗이 밧세바를 봄", "eventEn": "David sees Bathsheba"},
+        {"verse": 14, "eventKo": "우리아를 죽음에 이르게 함", "eventEn": "David arranges Uriah's death"},
+        {"verse": 27, "eventKo": "밧세바를 아내로 삼음", "eventEn": "Bathsheba becomes David's wife"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "나단의 책망",
+      "titleEn": "Nathan's Rebuke",
+      "summaryKo": "선지자 나단이 다윗의 죄를 책망하고, 아이가 죽고 솔로몬이 태어납니다.",
+      "summaryEn": "Prophet Nathan rebukes David; the child dies, but Solomon is born.",
+      "messageKo": "죄를 인정하고 회개할 때 용서를 받지만 결과는 남습니다.",
+      "messageEn": "Confession and repentance bring forgiveness, but consequences remain.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "네가 그 사람이라", "eventEn": "You are the man"},
+        {"verse": 13, "eventKo": "내가 여호와께 죄를 범하였나이다", "eventEn": "I have sinned against the LORD"},
+        {"verse": 24, "eventKo": "솔로몬 출생", "eventEn": "Solomon is born"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "암논과 다말",
+      "titleEn": "Amnon and Tamar",
+      "summaryKo": "암논이 이복 누이 다말을 욕보이고 압살롬이 복수합니다.",
+      "summaryEn": "Amnon violates his half-sister Tamar; Absalom takes revenge.",
+      "messageKo": "죄의 결과는 다음 세대에까지 영향을 미칩니다.",
+      "messageEn": "The consequences of sin affect future generations.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "암논의 악행", "eventEn": "Amnon's violation"},
+        {"verse": 22, "eventKo": "압살롬의 미움", "eventEn": "Absalom's hatred"},
+        {"verse": 29, "eventKo": "압살롬이 암논을 죽임", "eventEn": "Absalom kills Amnon"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "압살롬의 귀환",
+      "titleEn": "Absalom's Return",
+      "summaryKo": "요압의 계략으로 압살롬이 예루살렘에 돌아오지만 왕을 만나지 못합니다.",
+      "summaryEn": "Through Joab's scheme, Absalom returns to Jerusalem but cannot see the king.",
+      "messageKo": "불완전한 화해는 더 큰 갈등을 준비합니다.",
+      "messageEn": "Incomplete reconciliation prepares for greater conflict.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "요압의 계략", "eventEn": "Joab's scheme"},
+        {"verse": 24, "eventKo": "왕의 얼굴을 보지 못함", "eventEn": "Cannot see the king's face"},
+        {"verse": 33, "eventKo": "왕이 압살롬에게 입맞춤", "eventEn": "King kisses Absalom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "압살롬의 반역",
+      "titleEn": "Absalom's Rebellion",
+      "summaryKo": "압살롬이 백성의 마음을 훔쳐 반역을 일으키고 다윗이 도피합니다.",
+      "summaryEn": "Absalom steals the people's hearts and rebels; David flees.",
+      "messageKo": "권력욕은 가장 가까운 관계도 파괴합니다.",
+      "messageEn": "Lust for power destroys even the closest relationships.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "백성의 마음을 훔침", "eventEn": "Steals people's hearts"},
+        {"verse": 10, "eventKo": "헤브론에서 반역 선포", "eventEn": "Rebellion proclaimed in Hebron"},
+        {"verse": 14, "eventKo": "다윗이 예루살렘을 떠남", "eventEn": "David leaves Jerusalem"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "다윗의 고난",
+      "titleEn": "David's Hardship",
+      "summaryKo": "다윗이 도피 중에 시므이의 저주를 받고 압살롬이 예루살렘에 입성합니다.",
+      "summaryEn": "David is cursed by Shimei while fleeing; Absalom enters Jerusalem.",
+      "messageKo": "고난 중에도 하나님의 주권을 신뢰해야 합니다.",
+      "messageEn": "We must trust God's sovereignty even in suffering.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "시므이의 저주", "eventEn": "Shimei's curse"},
+        {"verse": 11, "eventKo": "여호와께서 그리하라 하셨음", "eventEn": "The LORD told him to curse"},
+        {"verse": 22, "eventKo": "압살롬이 후궁들과 동침", "eventEn": "Absalom with David's concubines"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "아히도벨과 후새",
+      "titleEn": "Ahithophel and Hushai",
+      "summaryKo": "후새가 아히도벨의 계략을 무산시켜 다윗을 구합니다.",
+      "summaryEn": "Hushai defeats Ahithophel's counsel and saves David.",
+      "messageKo": "하나님은 원수의 계략을 무력화하실 수 있습니다.",
+      "messageEn": "God can frustrate the enemy's schemes.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "후새의 조언", "eventEn": "Hushai's counsel"},
+        {"verse": 14, "eventKo": "아히도벨의 계략이 물러남", "eventEn": "Ahithophel's advice rejected"},
+        {"verse": 23, "eventKo": "아히도벨의 자살", "eventEn": "Ahithophel's suicide"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "압살롬의 죽음",
+      "titleEn": "Death of Absalom",
+      "summaryKo": "전투에서 압살롬이 상수리나무에 걸려 요압에게 죽임을 당합니다.",
+      "summaryEn": "Absalom is caught in an oak tree and killed by Joab in battle.",
+      "messageKo": "반역의 결말은 비극이지만, 아버지의 마음은 여전히 아픕니다.",
+      "messageEn": "Rebellion ends in tragedy, but a father's heart still grieves.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "상수리나무에 매달림", "eventEn": "Caught in an oak tree"},
+        {"verse": 14, "eventKo": "요압이 압살롬을 죽임", "eventEn": "Joab kills Absalom"},
+        {"verse": 33, "eventKo": "다윗의 슬픔", "eventEn": "David's grief"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "다윗의 귀환",
+      "titleEn": "David's Return",
+      "summaryKo": "다윗이 예루살렘으로 돌아오고 유다와 이스라엘 사이에 갈등이 생깁니다.",
+      "summaryEn": "David returns to Jerusalem; conflict arises between Judah and Israel.",
+      "messageKo": "회복의 과정에서도 새로운 갈등이 생길 수 있습니다.",
+      "messageEn": "New conflicts can arise even in the process of restoration.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "백성이 다윗을 맞이함", "eventEn": "People welcome David"},
+        {"verse": 23, "eventKo": "시므이를 용서", "eventEn": "Shimei forgiven"},
+        {"verse": 43, "eventKo": "유다와 이스라엘의 다툼", "eventEn": "Judah and Israel quarrel"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "세바의 반역",
+      "titleEn": "Sheba's Rebellion",
+      "summaryKo": "세바가 반역을 일으키지만 진압되고, 요압이 아마사를 죽입니다.",
+      "summaryEn": "Sheba rebels but is suppressed; Joab kills Amasa.",
+      "messageKo": "한 분열이 또 다른 분열을 낳을 수 있습니다.",
+      "messageEn": "One division can lead to another.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "세바의 반역", "eventEn": "Sheba's rebellion"},
+        {"verse": 10, "eventKo": "요압이 아마사를 죽임", "eventEn": "Joab kills Amasa"},
+        {"verse": 22, "eventKo": "세바의 머리를 던짐", "eventEn": "Sheba's head thrown over wall"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "기브온 사람들에 대한 속죄",
+      "titleEn": "Atonement for the Gibeonites",
+      "summaryKo": "사울의 죄로 인한 기근이 해결되고, 블레셋과의 전투 기록입니다.",
+      "summaryEn": "Famine caused by Saul's sin is resolved; battles with Philistines recorded.",
+      "messageKo": "과거의 죄도 해결되어야 공동체가 치유됩니다.",
+      "messageEn": "Past sins must be addressed for community healing.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "3년 기근", "eventEn": "Three-year famine"},
+        {"verse": 9, "eventKo": "사울 후손 일곱 명", "eventEn": "Seven of Saul's descendants"},
+        {"verse": 22, "eventKo": "블레셋 거인들 죽임", "eventEn": "Philistine giants killed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "다윗의 감사 노래",
+      "titleEn": "David's Song of Praise",
+      "summaryKo": "다윗이 모든 원수에서 구원받은 것을 감사하며 노래합니다.",
+      "summaryEn": "David sings of thanksgiving for deliverance from all his enemies.",
+      "messageKo": "인생 전체를 돌아보며 하나님의 신실하심을 찬양해야 합니다.",
+      "messageEn": "Looking back on life, we should praise God's faithfulness.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "여호와는 나의 반석", "eventEn": "The LORD is my rock"},
+        {"verse": 17, "eventKo": "높은 데서 손을 내밀어", "eventEn": "He reached down from on high"},
+        {"verse": 47, "eventKo": "여호와는 살아 계심", "eventEn": "The LORD lives"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "다윗의 마지막 말",
+      "titleEn": "David's Last Words",
+      "summaryKo": "다윗의 마지막 말과 용사들의 명단이 기록됩니다.",
+      "summaryEn": "David's final words and a list of his mighty warriors are recorded.",
+      "messageKo": "신실한 동역자들은 하나님 나라의 귀한 자산입니다.",
+      "messageEn": "Faithful co-workers are precious assets in God's kingdom.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "다윗의 마지막 말", "eventEn": "David's last words"},
+        {"verse": 8, "eventKo": "세 용사", "eventEn": "The three mighty warriors"},
+        {"verse": 15, "eventKo": "베들레헴 우물물", "eventEn": "Water from Bethlehem's well"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "인구조사와 재앙",
+      "titleEn": "Census and Plague",
+      "summaryKo": "다윗이 교만으로 인구조사를 하고, 재앙이 임하며 제단을 쌓습니다.",
+      "summaryEn": "David's prideful census brings plague; he builds an altar.",
+      "messageKo": "교만의 대가는 크지만, 회개는 자비를 가져옵니다.",
+      "messageEn": "Pride has a great cost, but repentance brings mercy.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "인구조사 명령", "eventEn": "Command to take census"},
+        {"verse": 15, "eventKo": "재앙으로 7만 명 죽음", "eventEn": "70,000 die in plague"},
+        {"verse": 24, "eventKo": "아라우나의 타작마당에 제단", "eventEn": "Altar at Araunah's threshing floor"}
+      ],
+      "timelineYear": "BC 970경"
+    }
+  ]
+}

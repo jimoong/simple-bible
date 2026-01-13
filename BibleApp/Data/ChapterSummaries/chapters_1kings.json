@@ -1,0 +1,338 @@
+{
+  "bookId": "1kings",
+  "bookNumber": 11,
+  "bookNameKo": "열왕기상",
+  "bookNameEn": "1 Kings",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "솔로몬의 즉위",
+      "titleEn": "Solomon Becomes King",
+      "summaryKo": "늙은 다윗 왕 시대에 아도니야가 왕이 되려 하지만 솔로몬이 왕위에 오릅니다.",
+      "summaryEn": "As King David grows old, Adonijah attempts to become king, but Solomon ascends the throne.",
+      "messageKo": "하나님의 계획은 인간의 야망을 초월합니다.",
+      "messageEn": "God's plan transcends human ambition.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "아도니야의 반역", "eventEn": "Adonijah's rebellion"},
+        {"verse": 34, "eventKo": "솔로몬에게 기름부음", "eventEn": "Solomon anointed"},
+        {"verse": 53, "eventKo": "아도니야의 항복", "eventEn": "Adonijah submits"}
+      ],
+      "timelineYear": "BC 970"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "다윗의 유언과 죽음",
+      "titleEn": "David's Charge and Death",
+      "summaryKo": "다윗이 솔로몬에게 유언을 남기고 죽으며, 솔로몬이 왕권을 확립합니다.",
+      "summaryEn": "David gives his final charge to Solomon and dies; Solomon establishes his kingdom.",
+      "messageKo": "하나님의 말씀을 지키는 것이 번영의 조건입니다.",
+      "messageEn": "Keeping God's word is the condition for prosperity.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "다윗의 유언", "eventEn": "David's final charge"},
+        {"verse": 10, "eventKo": "다윗의 죽음", "eventEn": "David's death"},
+        {"verse": 46, "eventKo": "왕권 확립", "eventEn": "Kingdom established"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "솔로몬의 지혜",
+      "titleEn": "Solomon's Wisdom",
+      "summaryKo": "솔로몬이 기브온에서 지혜를 구하고 하나님이 지혜와 부와 영광을 주십니다.",
+      "summaryEn": "Solomon asks for wisdom at Gibeon; God grants wisdom, riches, and honor.",
+      "messageKo": "지혜를 구하는 겸손한 마음을 하나님이 기뻐하십니다.",
+      "messageEn": "God is pleased with a humble heart that seeks wisdom.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "기브온의 꿈", "eventEn": "Dream at Gibeon"},
+        {"verse": 9, "eventKo": "지혜를 구함", "eventEn": "Request for wisdom"},
+        {"verse": 28, "eventKo": "두 여인의 재판", "eventEn": "Judgment of two women"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "솔로몬의 관리와 번영",
+      "titleEn": "Solomon's Officials and Prosperity",
+      "summaryKo": "솔로몬의 행정 조직과 이스라엘의 번영이 기록됩니다.",
+      "summaryEn": "Solomon's administration and Israel's prosperity are recorded.",
+      "messageKo": "지혜로운 통치는 나라에 평화와 번영을 가져옵니다.",
+      "messageEn": "Wise governance brings peace and prosperity to a nation.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "열두 지방 총독", "eventEn": "Twelve district governors"},
+        {"verse": 25, "eventKo": "유다와 이스라엘의 평안", "eventEn": "Judah and Israel in peace"},
+        {"verse": 34, "eventKo": "솔로몬의 명성", "eventEn": "Solomon's fame"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "성전 건축 준비",
+      "titleEn": "Preparations for Temple",
+      "summaryKo": "솔로몬이 두로 왕 히람과 협력하여 성전 건축을 준비합니다.",
+      "summaryEn": "Solomon partners with King Hiram of Tyre to prepare for building the temple.",
+      "messageKo": "큰 일을 위해서는 지혜로운 협력이 필요합니다.",
+      "messageEn": "Great work requires wise cooperation.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "성전 건축 계획", "eventEn": "Plans to build temple"},
+        {"verse": 12, "eventKo": "히람과의 조약", "eventEn": "Treaty with Hiram"},
+        {"verse": 13, "eventKo": "부역꾼 삼만 명", "eventEn": "30,000 laborers"}
+      ],
+      "timelineYear": "BC 966"
+    },
+    {
+      "chapter": 6,
+      "titleKo": "성전 건축",
+      "titleEn": "Building the Temple",
+      "summaryKo": "솔로몬이 7년에 걸쳐 예루살렘에 성전을 건축합니다.",
+      "summaryEn": "Solomon builds the temple in Jerusalem over seven years.",
+      "messageKo": "하나님의 집을 짓는 것은 순종의 표현입니다.",
+      "messageEn": "Building God's house is an expression of obedience.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "성전 건축 시작", "eventEn": "Temple construction begins"},
+        {"verse": 12, "eventKo": "하나님의 약속", "eventEn": "God's promise"},
+        {"verse": 38, "eventKo": "7년 만에 완공", "eventEn": "Completed in 7 years"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "궁전과 성전 기구",
+      "titleEn": "Palace and Temple Furnishings",
+      "summaryKo": "솔로몬의 궁전 건축과 성전 기구 제작이 기록됩니다.",
+      "summaryEn": "Solomon's palace construction and temple furnishings are recorded.",
+      "messageKo": "하나님께 드리는 것은 최선이어야 합니다.",
+      "messageEn": "What we offer to God should be our best.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "궁전 13년 건축", "eventEn": "Palace built in 13 years"},
+        {"verse": 13, "eventKo": "히람의 기술", "eventEn": "Hiram's craftsmanship"},
+        {"verse": 51, "eventKo": "성전 기구 완성", "eventEn": "Temple furnishings completed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "성전 봉헌",
+      "titleEn": "Temple Dedication",
+      "summaryKo": "솔로몬이 성전을 봉헌하고 긴 기도를 드립니다.",
+      "summaryEn": "Solomon dedicates the temple with a lengthy prayer.",
+      "messageKo": "참된 예배는 하나님의 이름을 높이고 백성을 위해 중보합니다.",
+      "messageEn": "True worship honors God's name and intercedes for the people.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "하나님의 영광이 성전에 충만", "eventEn": "God's glory fills temple"},
+        {"verse": 22, "eventKo": "솔로몬의 봉헌 기도", "eventEn": "Solomon's dedicatory prayer"},
+        {"verse": 66, "eventKo": "백성이 기뻐함", "eventEn": "People rejoice"}
+      ],
+      "timelineYear": "BC 959"
+    },
+    {
+      "chapter": 9,
+      "titleKo": "하나님의 응답",
+      "titleEn": "God's Response",
+      "summaryKo": "하나님이 솔로몬에게 두 번째로 나타나 축복과 경고를 주십니다.",
+      "summaryEn": "God appears to Solomon a second time, giving both blessing and warning.",
+      "messageKo": "하나님의 축복에는 순종의 조건이 따릅니다.",
+      "messageEn": "God's blessing comes with the condition of obedience.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나님의 두 번째 현현", "eventEn": "God appears second time"},
+        {"verse": 6, "eventKo": "경고", "eventEn": "Warning given"},
+        {"verse": 26, "eventKo": "에시온게벨의 배들", "eventEn": "Ships at Ezion Geber"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "스바 여왕의 방문",
+      "titleEn": "Queen of Sheba's Visit",
+      "summaryKo": "스바 여왕이 솔로몬의 지혜와 부를 보고 감탄합니다.",
+      "summaryEn": "The Queen of Sheba visits and marvels at Solomon's wisdom and wealth.",
+      "messageKo": "하나님이 주신 지혜는 세상의 존경을 받습니다.",
+      "messageEn": "God-given wisdom earns the respect of the world.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "스바 여왕의 방문", "eventEn": "Queen of Sheba visits"},
+        {"verse": 6, "eventKo": "그 지혜가 내가 들은 것보다 크다", "eventEn": "Wisdom greater than reported"},
+        {"verse": 23, "eventKo": "솔로몬의 부와 영광", "eventEn": "Solomon's wealth and honor"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "솔로몬의 타락",
+      "titleEn": "Solomon's Decline",
+      "summaryKo": "솔로몬이 이방 여인들로 인해 우상숭배에 빠지고 왕국 분열이 예고됩니다.",
+      "summaryEn": "Solomon turns to idolatry through foreign wives; division of kingdom is foretold.",
+      "messageKo": "아무리 지혜로운 자도 유혹에 빠질 수 있습니다.",
+      "messageEn": "Even the wisest can fall into temptation.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "마음이 변함", "eventEn": "Heart turns away"},
+        {"verse": 11, "eventKo": "왕국 분열 예고", "eventEn": "Kingdom division foretold"},
+        {"verse": 43, "eventKo": "솔로몬의 죽음", "eventEn": "Solomon's death"}
+      ],
+      "timelineYear": "BC 930"
+    },
+    {
+      "chapter": 12,
+      "titleKo": "왕국의 분열",
+      "titleEn": "Kingdom Divided",
+      "summaryKo": "르호보암의 어리석은 결정으로 왕국이 남북으로 분열됩니다.",
+      "summaryEn": "Rehoboam's foolish decision leads to the division of the kingdom into north and south.",
+      "messageKo": "어리석은 결정 하나가 세대를 걸쳐 영향을 미칩니다.",
+      "messageEn": "One foolish decision can affect generations.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "젊은이들의 조언", "eventEn": "Advice of young men"},
+        {"verse": 16, "eventKo": "열 지파의 분리", "eventEn": "Ten tribes separate"},
+        {"verse": 28, "eventKo": "여로보암의 금송아지", "eventEn": "Jeroboam's golden calves"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "유다에서 온 선지자",
+      "titleEn": "Prophet from Judah",
+      "summaryKo": "유다에서 온 선지자가 벧엘 제단을 책망하지만, 불순종으로 죽습니다.",
+      "summaryEn": "A prophet from Judah denounces the altar at Bethel but dies due to disobedience.",
+      "messageKo": "하나님의 말씀에 부분적으로 순종하는 것도 불순종입니다.",
+      "messageEn": "Partial obedience to God's word is still disobedience.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "제단을 향해 예언", "eventEn": "Prophecy against altar"},
+        {"verse": 18, "eventKo": "늙은 선지자의 거짓말", "eventEn": "Old prophet's lie"},
+        {"verse": 24, "eventKo": "사자에게 죽임당함", "eventEn": "Killed by lion"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "여로보암의 집안 멸망",
+      "titleEn": "Doom of Jeroboam's House",
+      "summaryKo": "여로보암의 아들이 죽고, 르호보암 시대 유다가 타락합니다.",
+      "summaryEn": "Jeroboam's son dies; Judah falls into sin during Rehoboam's reign.",
+      "messageKo": "우상숭배는 개인과 가정, 나라를 멸망시킵니다.",
+      "messageEn": "Idolatry destroys individuals, families, and nations.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "여로보암 집안 멸망 예언", "eventEn": "Prophecy against Jeroboam"},
+        {"verse": 17, "eventKo": "아이의 죽음", "eventEn": "Child dies"},
+        {"verse": 25, "eventKo": "시삭의 침략", "eventEn": "Shishak's invasion"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "아비야와 아사",
+      "titleEn": "Abijah and Asa",
+      "summaryKo": "유다 왕 아비야와 개혁 왕 아사, 이스라엘 왕들이 기록됩니다.",
+      "summaryEn": "Kings Abijah and reformer Asa of Judah, and kings of Israel are recorded.",
+      "messageKo": "하나님을 온전히 따르는 왕이 진정한 개혁을 이룹니다.",
+      "messageEn": "A king who fully follows God brings true reform.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "아사가 여호와 보시기에 정직히 행함", "eventEn": "Asa did right in God's eyes"},
+        {"verse": 14, "eventKo": "산당을 제거하지 못함", "eventEn": "High places not removed"},
+        {"verse": 27, "eventKo": "바아사가 나답을 죽임", "eventEn": "Baasha kills Nadab"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "이스라엘의 악한 왕들",
+      "titleEn": "Wicked Kings of Israel",
+      "summaryKo": "바아사, 엘라, 시므리, 오므리, 아합 등 악한 왕들의 연대기입니다.",
+      "summaryEn": "Chronicle of wicked kings: Baasha, Elah, Zimri, Omri, and Ahab.",
+      "messageKo": "악한 통치의 연속은 나라를 더욱 깊은 어둠으로 이끕니다.",
+      "messageEn": "A succession of evil rulers leads a nation deeper into darkness.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "시므리의 반역", "eventEn": "Zimri's conspiracy"},
+        {"verse": 23, "eventKo": "오므리가 사마리아를 세움", "eventEn": "Omri builds Samaria"},
+        {"verse": 30, "eventKo": "아합이 가장 악함", "eventEn": "Ahab most wicked"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "엘리야의 등장",
+      "titleEn": "Elijah Appears",
+      "summaryKo": "선지자 엘리야가 등장하여 가뭄을 선포하고 하나님의 공급을 받습니다.",
+      "summaryEn": "Prophet Elijah appears, announces drought, and is sustained by God.",
+      "messageKo": "하나님은 자기 종을 초자연적으로 공급하십니다.",
+      "messageEn": "God supernaturally provides for His servants.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "가뭄 선포", "eventEn": "Drought announced"},
+        {"verse": 6, "eventKo": "까마귀가 먹임", "eventEn": "Fed by ravens"},
+        {"verse": 22, "eventKo": "과부 아들 살림", "eventEn": "Widow's son raised"}
+      ],
+      "timelineYear": "BC 870경"
+    },
+    {
+      "chapter": 18,
+      "titleKo": "갈멜산의 대결",
+      "titleEn": "Contest on Mount Carmel",
+      "summaryKo": "엘리야가 갈멜산에서 바알 선지자 450명과 대결하여 승리합니다.",
+      "summaryEn": "Elijah defeats 450 prophets of Baal in a contest on Mount Carmel.",
+      "messageKo": "여호와 하나님만이 참 하나님이십니다.",
+      "messageEn": "The LORD alone is the true God.",
+      "keyEvents": [
+        {"verse": 21, "eventKo": "어느 편에 서겠느냐", "eventEn": "How long will you waver?"},
+        {"verse": 38, "eventKo": "하나님의 불이 내림", "eventEn": "Fire of God falls"},
+        {"verse": 45, "eventKo": "비가 내림", "eventEn": "Rain comes"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "호렙산의 엘리야",
+      "titleEn": "Elijah at Horeb",
+      "summaryKo": "이세벨을 피해 도망친 엘리야가 호렙산에서 하나님을 만납니다.",
+      "summaryEn": "Elijah flees from Jezebel and encounters God at Mount Horeb.",
+      "messageKo": "하나님은 세미한 음성으로 지친 종을 회복시키십니다.",
+      "messageEn": "God restores His weary servants through a gentle whisper.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "죽기를 원함", "eventEn": "Wishes to die"},
+        {"verse": 12, "eventKo": "세미한 음성", "eventEn": "Still small voice"},
+        {"verse": 19, "eventKo": "엘리사의 부름", "eventEn": "Elisha called"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "아람과의 전쟁",
+      "titleEn": "Wars with Aram",
+      "summaryKo": "아합이 아람과 두 차례 전쟁에서 승리하지만 벤하닷을 놓아줍니다.",
+      "summaryEn": "Ahab wins two wars against Aram but releases Ben-Hadad.",
+      "messageKo": "하나님의 명령을 무시한 자비는 진정한 자비가 아닙니다.",
+      "messageEn": "Mercy that ignores God's command is not true mercy.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "선지자의 승리 예언", "eventEn": "Prophet predicts victory"},
+        {"verse": 28, "eventKo": "두 번째 승리", "eventEn": "Second victory"},
+        {"verse": 42, "eventKo": "벤하닷을 놓아줌의 결과", "eventEn": "Consequence of releasing Ben-Hadad"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "나봇의 포도원",
+      "titleEn": "Naboth's Vineyard",
+      "summaryKo": "이세벨이 나봇을 죽이고 포도원을 빼앗아 아합에게 줍니다.",
+      "summaryEn": "Jezebel has Naboth killed to take his vineyard for Ahab.",
+      "messageKo": "탐욕과 권력 남용은 심판을 불러옵니다.",
+      "messageEn": "Greed and abuse of power bring judgment.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "아합의 탐욕", "eventEn": "Ahab's covetousness"},
+        {"verse": 14, "eventKo": "나봇의 죽음", "eventEn": "Naboth's death"},
+        {"verse": 21, "eventKo": "엘리야의 심판 선포", "eventEn": "Elijah pronounces judgment"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "아합의 죽음",
+      "titleEn": "Death of Ahab",
+      "summaryKo": "아합이 미가야의 경고를 무시하고 전쟁에 나가 죽습니다.",
+      "summaryEn": "Ahab ignores Micaiah's warning, goes to battle, and dies.",
+      "messageKo": "참된 선지자의 말을 거부하면 멸망을 자초합니다.",
+      "messageEn": "Rejecting the word of a true prophet leads to destruction.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "미가야를 싫어함", "eventEn": "Ahab hates Micaiah"},
+        {"verse": 17, "eventKo": "이스라엘이 흩어지리라", "eventEn": "Israel will scatter"},
+        {"verse": 37, "eventKo": "아합의 죽음", "eventEn": "Ahab's death"}
+      ],
+      "timelineYear": "BC 853"
+    }
+  ]
+}

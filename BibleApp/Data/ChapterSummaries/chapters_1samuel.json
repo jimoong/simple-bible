@@ -1,0 +1,473 @@
+{
+  "bookId": "1samuel",
+  "bookNumber": 9,
+  "bookNameKo": "사무엘상",
+  "bookNameEn": "1 Samuel",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "한나의 기도",
+      "titleEn": "Hannah's Prayer",
+      "summaryKo": "불임의 한나가 간절히 기도하여 사무엘을 얻고 하나님께 서원대로 드립니다.",
+      "summaryEn": "Barren Hannah prays fervently, receives Samuel, and dedicates him to God as vowed.",
+      "messageKo": "간절한 기도는 하나님의 응답을 경험하게 합니다.",
+      "messageEn": "Fervent prayer leads to experiencing God's answer.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "한나의 서원", "eventEn": "Hannah's vow"},
+        {"verse": 20, "eventKo": "사무엘 출생", "eventEn": "Samuel is born"},
+        {"verse": 28, "eventKo": "사무엘을 여호와께 드림", "eventEn": "Samuel dedicated to the LORD"}
+      ],
+      "timelineYear": "BC 1100경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "한나의 찬송",
+      "titleEn": "Hannah's Song",
+      "summaryKo": "한나가 감사의 찬송을 드리고, 엘리의 아들들의 악행이 기록됩니다.",
+      "summaryEn": "Hannah sings a song of thanksgiving; the wickedness of Eli's sons is recorded.",
+      "messageKo": "하나님은 교만한 자를 낮추시고 겸손한 자를 높이십니다.",
+      "messageEn": "God humbles the proud and exalts the humble.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "한나의 찬송", "eventEn": "Hannah's song"},
+        {"verse": 12, "eventKo": "엘리 아들들의 악행", "eventEn": "Wickedness of Eli's sons"},
+        {"verse": 26, "eventKo": "사무엘이 자라남", "eventEn": "Samuel grows up"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "사무엘의 소명",
+      "titleEn": "Samuel's Call",
+      "summaryKo": "어린 사무엘이 밤에 하나님의 음성을 듣고 선지자로 부름받습니다.",
+      "summaryEn": "Young Samuel hears God's voice at night and is called as a prophet.",
+      "messageKo": "하나님은 어린아이도 부르시며, 순종하는 자에게 말씀하십니다.",
+      "messageEn": "God calls even children and speaks to those who obey.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "하나님이 사무엘을 부르심", "eventEn": "God calls Samuel"},
+        {"verse": 10, "eventKo": "말씀하소서 듣겠나이다", "eventEn": "Speak, for your servant hears"},
+        {"verse": 19, "eventKo": "사무엘이 선지자로 인정됨", "eventEn": "Samuel recognized as prophet"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "언약궤를 빼앗김",
+      "titleEn": "The Ark Captured",
+      "summaryKo": "블레셋과의 전쟁에서 패하고 언약궤를 빼앗기며, 엘리가 죽습니다.",
+      "summaryEn": "Israel is defeated by the Philistines, the ark is captured, and Eli dies.",
+      "messageKo": "하나님의 임재는 물건이 아니라 관계를 통해 경험됩니다.",
+      "messageEn": "God's presence is experienced through relationship, not objects.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "언약궤를 전쟁터로 가져옴", "eventEn": "Ark brought to battle"},
+        {"verse": 11, "eventKo": "언약궤 빼앗김", "eventEn": "Ark captured"},
+        {"verse": 18, "eventKo": "엘리의 죽음", "eventEn": "Eli's death"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "언약궤와 다곤",
+      "titleEn": "The Ark and Dagon",
+      "summaryKo": "언약궤가 다곤 신전에서 다곤을 쓰러뜨리고 블레셋에 재앙을 가져옵니다.",
+      "summaryEn": "The ark topples Dagon in his temple and brings plagues upon the Philistines.",
+      "messageKo": "여호와 하나님은 모든 우상보다 위대하십니다.",
+      "messageEn": "The LORD God is greater than all idols.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "다곤이 엎드러짐", "eventEn": "Dagon falls before the ark"},
+        {"verse": 6, "eventKo": "블레셋에 재앙", "eventEn": "Plague on Philistines"},
+        {"verse": 11, "eventKo": "궤를 돌려보내자는 결정", "eventEn": "Decision to send ark away"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "언약궤 귀환",
+      "titleEn": "The Ark Returned",
+      "summaryKo": "블레셋이 속건제물과 함께 언약궤를 이스라엘에 돌려보냅니다.",
+      "summaryEn": "The Philistines return the ark to Israel with guilt offerings.",
+      "messageKo": "하나님의 거룩하심은 이방인에게도 두려움을 주십니다.",
+      "messageEn": "God's holiness inspires awe even among pagans.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "새 수레에 궤를 싣음", "eventEn": "Ark placed on new cart"},
+        {"verse": 13, "eventKo": "벧세메스에 도착", "eventEn": "Arrives at Beth Shemesh"},
+        {"verse": 19, "eventKo": "궤를 들여다 본 자들의 죽음", "eventEn": "Death of those who looked into ark"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "사무엘의 지도력",
+      "titleEn": "Samuel's Leadership",
+      "summaryKo": "사무엘이 이스라엘을 회개시키고 블레셋을 물리칩니다.",
+      "summaryEn": "Samuel leads Israel to repentance and defeats the Philistines.",
+      "messageKo": "회개와 하나님께로의 전심 귀의가 구원을 가져옵니다.",
+      "messageEn": "Repentance and wholehearted return to God bring deliverance.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "우상을 버리라", "eventEn": "Put away foreign gods"},
+        {"verse": 10, "eventKo": "에벤에셀의 승리", "eventEn": "Victory at Ebenezer"},
+        {"verse": 15, "eventKo": "사무엘이 평생 사사로 재판", "eventEn": "Samuel judges Israel all his life"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "왕을 요구함",
+      "titleEn": "Israel Demands a King",
+      "summaryKo": "이스라엘이 다른 나라처럼 왕을 요구하고 사무엘이 경고합니다.",
+      "summaryEn": "Israel demands a king like other nations; Samuel warns them.",
+      "messageKo": "하나님의 다스림을 거부하고 세상을 따르면 대가를 치릅니다.",
+      "messageEn": "Rejecting God's rule to follow the world comes at a cost.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "왕을 세워달라", "eventEn": "Give us a king"},
+        {"verse": 7, "eventKo": "하나님을 버림", "eventEn": "They have rejected Me"},
+        {"verse": 11, "eventKo": "왕의 권리 경고", "eventEn": "Warning about king's ways"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "사울을 만남",
+      "titleEn": "Saul Meets Samuel",
+      "summaryKo": "베냐민 지파의 사울이 암나귀를 찾다가 사무엘을 만납니다.",
+      "summaryEn": "Saul of Benjamin meets Samuel while searching for lost donkeys.",
+      "messageKo": "하나님은 일상의 일을 통해 큰 계획을 이루십니다.",
+      "messageEn": "God accomplishes great plans through everyday circumstances.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "사울의 외모", "eventEn": "Saul's appearance"},
+        {"verse": 15, "eventKo": "하나님이 사무엘에게 알리심", "eventEn": "God reveals to Samuel"},
+        {"verse": 27, "eventKo": "하나님의 말씀을 알려주리라", "eventEn": "Word of God to be revealed"}
+      ],
+      "timelineYear": "BC 1050경"
+    },
+    {
+      "chapter": 10,
+      "titleKo": "사울의 기름부음",
+      "titleEn": "Saul Anointed King",
+      "summaryKo": "사무엘이 사울에게 기름을 붓고 이스라엘의 첫 왕으로 선포합니다.",
+      "summaryEn": "Samuel anoints Saul, who is proclaimed Israel's first king.",
+      "messageKo": "하나님은 자격 없는 자도 부르시지만 성령의 능력이 필요합니다.",
+      "messageEn": "God calls the unqualified, but they need the Spirit's power.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "사울에게 기름부음", "eventEn": "Saul anointed"},
+        {"verse": 10, "eventKo": "성령이 임함, 예언함", "eventEn": "Spirit comes; Saul prophesies"},
+        {"verse": 24, "eventKo": "왕이여 만세", "eventEn": "Long live the king"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "암몬 격파",
+      "titleEn": "Defeat of Ammon",
+      "summaryKo": "사울이 암몬을 물리치고 왕권을 확립합니다.",
+      "summaryEn": "Saul defeats the Ammonites and establishes his kingship.",
+      "messageKo": "하나님의 영이 임하면 담대하게 행동할 수 있습니다.",
+      "messageEn": "When God's Spirit comes, we can act boldly.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "암몬의 위협", "eventEn": "Ammonite threat"},
+        {"verse": 6, "eventKo": "하나님의 영이 사울에게 임함", "eventEn": "Spirit of God comes on Saul"},
+        {"verse": 15, "eventKo": "길갈에서 왕권 확립", "eventEn": "Kingship confirmed at Gilgal"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "사무엘의 고별사",
+      "titleEn": "Samuel's Farewell",
+      "summaryKo": "사무엘이 자신의 청렴함을 변호하고 백성에게 왕과 함께 하나님을 섬기라 권고합니다.",
+      "summaryEn": "Samuel defends his integrity and urges the people to serve God along with their king.",
+      "messageKo": "지도자가 바뀌어도 하나님을 경외하는 것이 근본입니다.",
+      "messageEn": "Even when leaders change, fearing God remains fundamental.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "사무엘의 청렴", "eventEn": "Samuel's integrity"},
+        {"verse": 17, "eventKo": "우레와 비의 표적", "eventEn": "Sign of thunder and rain"},
+        {"verse": 24, "eventKo": "여호와를 경외하라", "eventEn": "Fear the LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "사울의 불순종",
+      "titleEn": "Saul's Disobedience",
+      "summaryKo": "사울이 사무엘을 기다리지 않고 번제를 드려 책망받습니다.",
+      "summaryEn": "Saul offers burnt offerings without waiting for Samuel and is rebuked.",
+      "messageKo": "조급함으로 하나님의 명령을 어기면 큰 대가를 치릅니다.",
+      "messageEn": "Impatience that leads to disobeying God's commands has a great cost.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "사울이 번제를 드림", "eventEn": "Saul offers burnt offering"},
+        {"verse": 13, "eventKo": "어리석게 행하였도다", "eventEn": "You have acted foolishly"},
+        {"verse": 14, "eventKo": "왕위가 네게 서지 못함", "eventEn": "Your kingdom will not endure"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "요나단의 용맹",
+      "titleEn": "Jonathan's Bravery",
+      "summaryKo": "요나단이 믿음으로 블레셋 진영을 공격하여 큰 승리를 얻습니다.",
+      "summaryEn": "Jonathan attacks the Philistine camp by faith and wins a great victory.",
+      "messageKo": "믿음으로 행동하는 자에게 하나님은 구원을 베푸십니다.",
+      "messageEn": "God grants deliverance to those who act in faith.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "요나단의 믿음 고백", "eventEn": "Jonathan's confession of faith"},
+        {"verse": 15, "eventKo": "블레셋에 큰 두려움", "eventEn": "Great panic among Philistines"},
+        {"verse": 45, "eventKo": "요나단이 구출됨", "eventEn": "Jonathan is rescued"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "사울의 폐위",
+      "titleEn": "Saul Rejected",
+      "summaryKo": "사울이 아말렉을 진멸하라는 명령을 어기고 왕위에서 버림받습니다.",
+      "summaryEn": "Saul disobeys the command to destroy Amalek and is rejected as king.",
+      "messageKo": "순종이 제사보다 낫습니다. 부분적 순종은 불순종입니다.",
+      "messageEn": "Obedience is better than sacrifice. Partial obedience is disobedience.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아말렉 진멸 명령", "eventEn": "Command to destroy Amalek"},
+        {"verse": 9, "eventKo": "사울이 좋은 것을 남김", "eventEn": "Saul spares the best"},
+        {"verse": 23, "eventKo": "순종이 제사보다 나음", "eventEn": "Obedience better than sacrifice"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "다윗의 기름부음",
+      "titleEn": "David Anointed",
+      "summaryKo": "사무엘이 베들레헴에서 이새의 막내아들 다윗에게 기름을 붓습니다.",
+      "summaryEn": "Samuel anoints David, Jesse's youngest son, in Bethlehem.",
+      "messageKo": "하나님은 외모가 아닌 중심을 보십니다.",
+      "messageEn": "God looks at the heart, not outward appearance.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "사람은 외모를, 하나님은 중심을", "eventEn": "Man looks at appearance, God at heart"},
+        {"verse": 13, "eventKo": "다윗에게 기름부음", "eventEn": "David anointed"},
+        {"verse": 23, "eventKo": "다윗이 사울을 위해 수금을 탐", "eventEn": "David plays harp for Saul"}
+      ],
+      "timelineYear": "BC 1025경"
+    },
+    {
+      "chapter": 17,
+      "titleKo": "다윗과 골리앗",
+      "titleEn": "David and Goliath",
+      "summaryKo": "목동 다윗이 블레셋의 거인 골리앗을 물맷돌로 쓰러뜨립니다.",
+      "summaryEn": "Shepherd David defeats the Philistine giant Goliath with a sling and stone.",
+      "messageKo": "전쟁은 여호와께 속한 것입니다. 믿음이 승리의 열쇠입니다.",
+      "messageEn": "The battle belongs to the LORD. Faith is the key to victory.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "골리앗의 도전", "eventEn": "Goliath's challenge"},
+        {"verse": 45, "eventKo": "만군의 여호와 이름으로", "eventEn": "In the name of the LORD of hosts"},
+        {"verse": 50, "eventKo": "물맷돌로 골리앗을 쓰러뜨림", "eventEn": "Goliath struck down with sling"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "사울의 질투",
+      "titleEn": "Saul's Jealousy",
+      "summaryKo": "다윗이 인기를 얻자 사울이 질투하여 죽이려 합니다.",
+      "summaryEn": "As David gains popularity, Saul becomes jealous and tries to kill him.",
+      "messageKo": "질투는 영혼을 좀먹고 파괴적인 행동으로 이끕니다.",
+      "messageEn": "Jealousy corrodes the soul and leads to destructive actions.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "요나단과 다윗의 우정", "eventEn": "Friendship of Jonathan and David"},
+        {"verse": 7, "eventKo": "사울은 천천, 다윗은 만만", "eventEn": "Saul thousands, David ten thousands"},
+        {"verse": 11, "eventKo": "사울이 단창을 던짐", "eventEn": "Saul hurls spear at David"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "다윗의 도피",
+      "titleEn": "David Flees",
+      "summaryKo": "요나단과 미갈의 도움으로 다윗이 사울을 피해 도망합니다.",
+      "summaryEn": "David escapes from Saul with help from Jonathan and Michal.",
+      "messageKo": "하나님은 신실한 친구들을 통해 우리를 보호하십니다.",
+      "messageEn": "God protects us through faithful friends.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "요나단의 변호", "eventEn": "Jonathan defends David"},
+        {"verse": 12, "eventKo": "미갈이 다윗을 도움", "eventEn": "Michal helps David escape"},
+        {"verse": 24, "eventKo": "사울도 예언함", "eventEn": "Saul also prophesies"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "요나단과의 언약",
+      "titleEn": "Covenant with Jonathan",
+      "summaryKo": "다윗과 요나단이 언약을 맺고, 사울의 살의를 확인합니다.",
+      "summaryEn": "David and Jonathan make a covenant; Saul's intent to kill is confirmed.",
+      "messageKo": "진정한 우정은 어려움 속에서 더욱 빛납니다.",
+      "messageEn": "True friendship shines brightest in difficulties.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "언약에 호소", "eventEn": "Appeal to the covenant"},
+        {"verse": 17, "eventKo": "요나단의 사랑", "eventEn": "Jonathan's love for David"},
+        {"verse": 42, "eventKo": "평안히 가라", "eventEn": "Go in peace"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "놉에서 도움받음",
+      "titleEn": "David at Nob",
+      "summaryKo": "다윗이 놉에서 진설병과 골리앗의 칼을 얻고 가드로 도망합니다.",
+      "summaryEn": "David receives bread and Goliath's sword at Nob, then flees to Gath.",
+      "messageKo": "위기 상황에서도 하나님은 필요를 공급하십니다.",
+      "messageEn": "Even in crisis, God provides for our needs.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "거룩한 떡을 받음", "eventEn": "Receives holy bread"},
+        {"verse": 9, "eventKo": "골리앗의 칼", "eventEn": "Goliath's sword"},
+        {"verse": 13, "eventKo": "가드에서 미친 척함", "eventEn": "Pretends madness in Gath"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "아둘람 굴",
+      "titleEn": "Cave of Adullam",
+      "summaryKo": "다윗이 아둘람 굴에서 추종자들을 모으고, 사울이 놉의 제사장들을 학살합니다.",
+      "summaryEn": "David gathers followers at Adullam; Saul massacres the priests at Nob.",
+      "messageKo": "하나님은 버림받은 자들을 모아 자신의 군대로 삼으십니다.",
+      "messageEn": "God gathers the rejected and makes them His army.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "아둘람 굴에서 400명", "eventEn": "400 men at Adullam"},
+        {"verse": 17, "eventKo": "놉의 제사장 학살 명령", "eventEn": "Order to kill priests of Nob"},
+        {"verse": 18, "eventKo": "도엑이 85명의 제사장을 죽임", "eventEn": "Doeg kills 85 priests"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "다윗의 도피 생활",
+      "titleEn": "David's Fugitive Life",
+      "summaryKo": "다윗이 그일라를 구하고 광야에서 계속 도피 생활을 합니다.",
+      "summaryEn": "David saves Keilah and continues his fugitive life in the wilderness.",
+      "messageKo": "어려운 시기에 하나님께 묻는 것이 지혜입니다.",
+      "messageEn": "Seeking God's guidance in difficult times is wise.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나님께 물음", "eventEn": "David inquires of God"},
+        {"verse": 14, "eventKo": "광야에서 도피", "eventEn": "David in the wilderness"},
+        {"verse": 18, "eventKo": "요나단이 다윗을 격려", "eventEn": "Jonathan strengthens David"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "사울을 살려줌 (1)",
+      "titleEn": "David Spares Saul (1)",
+      "summaryKo": "다윗이 엔게디 굴에서 사울을 죽일 기회를 얻지만 살려줍니다.",
+      "summaryEn": "David has the opportunity to kill Saul in a cave at En Gedi but spares him.",
+      "messageKo": "원수를 갚는 것은 하나님께 맡기고 선으로 악을 이겨야 합니다.",
+      "messageEn": "Leave vengeance to God and overcome evil with good.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사울의 옷자락을 자름", "eventEn": "David cuts Saul's robe"},
+        {"verse": 6, "eventKo": "기름부음 받은 자를 해하지 않음", "eventEn": "Will not harm the LORD's anointed"},
+        {"verse": 17, "eventKo": "사울이 다윗의 의를 인정", "eventEn": "Saul acknowledges David's righteousness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "나발과 아비가일",
+      "titleEn": "Nabal and Abigail",
+      "summaryKo": "어리석은 나발과 지혜로운 아비가일의 이야기로, 다윗이 아비가일과 결혼합니다.",
+      "summaryEn": "The story of foolish Nabal and wise Abigail; David marries Abigail.",
+      "messageKo": "지혜로운 중재가 재앙을 막을 수 있습니다.",
+      "messageEn": "Wise mediation can prevent disaster.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "사무엘의 죽음", "eventEn": "Death of Samuel"},
+        {"verse": 14, "eventKo": "나발의 어리석음", "eventEn": "Nabal's foolishness"},
+        {"verse": 32, "eventKo": "아비가일의 지혜", "eventEn": "Abigail's wisdom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "사울을 살려줌 (2)",
+      "titleEn": "David Spares Saul (2)",
+      "summaryKo": "다윗이 또다시 사울의 목숨을 살려주어 관용을 보입니다.",
+      "summaryEn": "David spares Saul's life again, showing mercy.",
+      "messageKo": "반복되는 시험에서도 원칙을 지키는 것이 신앙입니다.",
+      "messageEn": "Maintaining principles through repeated tests is faith.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "사울 진영에 잠입", "eventEn": "David enters Saul's camp"},
+        {"verse": 9, "eventKo": "주의 기름부음 받은 자", "eventEn": "The LORD's anointed"},
+        {"verse": 21, "eventKo": "사울의 고백", "eventEn": "Saul's confession"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "블레셋에서의 생활",
+      "titleEn": "Life Among Philistines",
+      "summaryKo": "다윗이 블레셋 왕 아기스에게 의탁하여 시글락에 거주합니다.",
+      "summaryEn": "David takes refuge with Philistine king Achish and lives in Ziklag.",
+      "messageKo": "절망 속에서 내린 결정이 복잡한 상황을 만들 수 있습니다.",
+      "messageEn": "Decisions made in despair can create complicated situations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "다윗의 절망", "eventEn": "David's despair"},
+        {"verse": 6, "eventKo": "시글락을 받음", "eventEn": "Given Ziklag"},
+        {"verse": 10, "eventKo": "이중 생활", "eventEn": "Double life"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "엔돌의 신접한 여인",
+      "titleEn": "Witch of Endor",
+      "summaryKo": "절박한 사울이 신접한 여인을 찾아가 사무엘의 영을 불러냅니다.",
+      "summaryEn": "Desperate Saul consults a medium at Endor to call up Samuel's spirit.",
+      "messageKo": "하나님을 떠난 자의 마지막은 절망과 어둠입니다.",
+      "messageEn": "The end of those who forsake God is despair and darkness.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "하나님이 응답하지 않으심", "eventEn": "God does not answer Saul"},
+        {"verse": 11, "eventKo": "사무엘을 불러내라", "eventEn": "Bring up Samuel"},
+        {"verse": 19, "eventKo": "내일 죽으리라", "eventEn": "Tomorrow you will die"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "다윗의 귀환",
+      "titleEn": "David Sent Back",
+      "summaryKo": "블레셋 방백들의 반대로 다윗이 전쟁에 참여하지 않고 돌아옵니다.",
+      "summaryEn": "Philistine commanders object, so David is sent back before the battle.",
+      "messageKo": "하나님은 예상치 못한 방법으로 우리를 딜레마에서 건지십니다.",
+      "messageEn": "God delivers us from dilemmas in unexpected ways.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "방백들의 반대", "eventEn": "Commanders object"},
+        {"verse": 6, "eventKo": "아기스가 다윗을 돌려보냄", "eventEn": "Achish sends David back"},
+        {"verse": 11, "eventKo": "블레셋을 떠남", "eventEn": "David leaves Philistines"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "시글락 탈환",
+      "titleEn": "Ziklag Recovered",
+      "summaryKo": "아말렉이 시글락을 약탈하지만 다윗이 추격하여 모든 것을 회복합니다.",
+      "summaryEn": "Amalekites raid Ziklag, but David pursues and recovers everything.",
+      "messageKo": "절망 속에서 하나님 안에서 힘을 얻으면 회복이 옵니다.",
+      "messageEn": "When we find strength in God amid despair, restoration comes.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "다윗이 울음", "eventEn": "David weeps"},
+        {"verse": 6, "eventKo": "하나님 안에서 힘을 얻음", "eventEn": "David strengthens himself in God"},
+        {"verse": 19, "eventKo": "모든 것을 회복함", "eventEn": "Everything recovered"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "사울의 죽음",
+      "titleEn": "Death of Saul",
+      "summaryKo": "길보아 전투에서 사울과 요나단이 전사합니다.",
+      "summaryEn": "Saul and Jonathan are killed in battle at Mount Gilboa.",
+      "messageKo": "하나님을 떠난 왕의 비극적 결말은 경고가 됩니다.",
+      "messageEn": "The tragic end of a king who forsook God serves as a warning.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "요나단의 죽음", "eventEn": "Jonathan killed"},
+        {"verse": 4, "eventKo": "사울의 자살", "eventEn": "Saul's suicide"},
+        {"verse": 12, "eventKo": "야베스 길르앗 사람들의 장례", "eventEn": "Men of Jabesh Gilead bury them"}
+      ],
+      "timelineYear": "BC 1010경"
+    }
+  ]
+}
