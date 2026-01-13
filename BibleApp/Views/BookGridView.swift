@@ -292,11 +292,13 @@ struct BookGridView: View {
     
     // MARK: - Title
     private var titleBar: some View {
-        Text(viewModel.languageMode == .kr ? "성경" : "Books")
-                .font(.system(size: 17, weight: .semibold))
-                .foregroundStyle(.white)
+        Image("AppIcon")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 40, height: 40)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .frame(maxWidth: .infinity)
-        .padding(.horizontal, 20)
+            .padding(.horizontal, 20)
     }
     
     // MARK: - Compact View (for panel)

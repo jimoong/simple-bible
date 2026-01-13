@@ -57,16 +57,12 @@ struct BibleTimelineView: View {
     
     // MARK: - Title Section
     private var titleSection: some View {
-        VStack(spacing: 8) {
-            Text(languageMode == .kr ? "성경 타임라인" : "Bible Timeline")
-                .font(.system(size: 20, weight: .bold))
-                .foregroundStyle(.white)
-            
-            Text(languageMode == .kr ? "세계사와 성경의 역사를 한눈에" : "World History & Biblical History")
-                .font(.system(size: 14, weight: .regular))
-                .foregroundStyle(.white.opacity(0.6))
-        }
-        .padding(.bottom, 24)
+        Image("AppIcon")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 40, height: 40)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .padding(.bottom, 24)
     }
     
     // MARK: - Timeline Content
@@ -632,9 +628,11 @@ struct BibleTimelineContentView: View {
     
     // MARK: - Title Section
     private var titleSection: some View {
-        Text(languageMode == .kr ? "성경" : "Books")
-            .font(.system(size: 17, weight: .semibold))
-            .foregroundStyle(.white)
+        Image("AppIcon")
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 40, height: 40)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 20)
             .padding(.bottom, 8)
