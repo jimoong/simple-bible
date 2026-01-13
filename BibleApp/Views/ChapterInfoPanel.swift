@@ -13,6 +13,11 @@ struct ChapterInfoPanel: View {
     var safeAreaTop: CGFloat = 0
     
     @State private var measuredHeight: CGFloat = 0
+    @State private var dragOffset: CGFloat = 0
+    @State private var isDragging: Bool = false
+    
+    private let swipeThreshold: CGFloat = 100
+    private let animationDuration: Double = 0.2
     
     private var book: BibleBook {
         viewModel.currentBook
@@ -78,8 +83,84 @@ struct ChapterInfoPanel: View {
                     }
                 )
             }
+            .offset(x: dragOffset)
+            .gesture(horizontalSwipeGesture)
         }
         .frame(height: min(measuredHeight, maxHeight))
+    }
+    
+    // MARK: - Horizontal Swipe Gesture
+    private var horizontalSwipeGesture: some Gesture {
+        DragGesture(minimumDistance: 20)
+            .onChanged { value in
+                if abs(value.translation.width) > abs(value.translation.height) {
+                    isDragging = true
+                    dragOffset = value.translation.width
+                }
+            }
+            .onEnded { value in
+                guard isDragging else { return }
+                isDragging = false
+                
+                let horizontalAmount = value.translation.width
+                let velocity = value.predictedEndTranslation.width - value.translation.width
+                
+                let shouldGoBack = (horizontalAmount > swipeThreshold || velocity > 200) && viewModel.canGoToPreviousChapter
+                let shouldGoForward = (horizontalAmount < -swipeThreshold || velocity < -200) && viewModel.canGoToNextChapter
+                
+                if shouldGoBack {
+                    // Slide current content off-screen to the right
+                    withAnimation(.easeOut(duration: animationDuration)) {
+                        dragOffset = UIScreen.main.bounds.width
+                    }
+                    // After exit, swap chapter and slide new content in from left
+                    DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
+                        Task {
+                            await viewModel.goToPreviousChapter()
+                            
+                            // Reset offset to the left of screen
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                dragOffset = -UIScreen.main.bounds.width
+                            }
+                            // Then animate slide in
+                            withAnimation(.easeOut(duration: animationDuration)) {
+                                dragOffset = 0
+                            }
+                        }
+                    }
+                    HapticManager.shared.selection()
+                } else if shouldGoForward {
+                    // Slide current content off-screen to the left
+                    withAnimation(.easeOut(duration: animationDuration)) {
+                        dragOffset = -UIScreen.main.bounds.width
+                    }
+                    // After exit, swap chapter and slide new content in from right
+                    DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration) {
+                        Task {
+                            await viewModel.goToNextChapter()
+                            
+                            // Reset offset to the right of screen
+                            var transaction = Transaction()
+                            transaction.disablesAnimations = true
+                            withTransaction(transaction) {
+                                dragOffset = UIScreen.main.bounds.width
+                            }
+                            // Then animate slide in
+                            withAnimation(.easeOut(duration: animationDuration)) {
+                                dragOffset = 0
+                            }
+                        }
+                    }
+                    HapticManager.shared.selection()
+                } else {
+                    // Snap back to center
+                    withAnimation(.easeOut(duration: 0.25)) {
+                        dragOffset = 0
+                    }
+                }
+            }
     }
     
     // MARK: - Title
