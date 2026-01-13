@@ -94,8 +94,8 @@ struct BookGridView: View {
             
             // Bottom bar
             bottomBar
-                .padding(.horizontal, 16)
-                .padding(.bottom, safeAreaBottom + 8)
+                .padding(.horizontal, 24)
+                .padding(.bottom, safeAreaBottom - 4)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)

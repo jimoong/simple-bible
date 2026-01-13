@@ -216,10 +216,6 @@ struct SettingsView: View {
                             .foregroundStyle(Color(hex: "ef4444"))
                         
                         Spacer()
-                        
-                        Image(systemName: "trash")
-                            .font(.system(size: 14))
-                            .foregroundStyle(Color(hex: "ef4444").opacity(0.6))
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
