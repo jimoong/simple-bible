@@ -28,14 +28,27 @@ enum LanguageMode: String, CaseIterable {
 
 enum BookSortOrder: String, CaseIterable {
     case canonical
+    case timeline
     case alphabetical
-    case timeline  // Placeholder for future
     
     var displayName: String {
         switch self {
         case .canonical: return "Canonical"
         case .alphabetical: return "A-Z"
         case .timeline: return "Time"
+        }
+    }
+    
+    func displayName(for language: LanguageMode) -> String {
+        switch language {
+        case .kr:
+            switch self {
+            case .canonical: return "목차순"
+            case .alphabetical: return "ㄱㄴㄷ"
+            case .timeline: return "연대순"
+            }
+        case .en:
+            return displayName
         }
     }
     

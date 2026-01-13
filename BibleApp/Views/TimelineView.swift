@@ -373,6 +373,7 @@ struct TimelineDetailSheet: View {
                         bookInfoSection
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(24)
             }
             .scrollContentBackground(.hidden)
@@ -401,12 +402,14 @@ struct TimelineDetailSheet: View {
                     ? FontManager.koreanSans(size: 24, weight: .bold)
                     : .system(size: 24, weight: .bold))
                 .foregroundStyle(.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             // Date
             Text(item.displayYear)
                 .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(.white.opacity(0.6))
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     private var descriptionSection: some View {
@@ -416,6 +419,7 @@ struct TimelineDetailSheet: View {
                 : .system(size: 16, weight: .regular))
             .foregroundStyle(.white.opacity(0.9))
             .lineSpacing(6)
+            .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     private var relatedEventsSection: some View {
@@ -438,9 +442,11 @@ struct TimelineDetailSheet: View {
                             .foregroundStyle(.white)
                         
                         Text(event.displayYear)
-                            .font(.system(size: 11, weight: .regular, design: .monospaced))
+                            .font(.system(size: 11, weight: .regular))
                             .foregroundStyle(.white.opacity(0.5))
                     }
+                    
+                    Spacer()
                 }
                 .padding(12)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -450,6 +456,7 @@ struct TimelineDetailSheet: View {
                 )
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     private var bookInfoSection: some View {
@@ -474,8 +481,11 @@ struct TimelineDetailSheet: View {
                         value: categoryDisplayName(category)
                     )
                 }
+                
+                Spacer()
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     private func infoChip(label: String, value: String) -> some View {
@@ -540,9 +550,6 @@ struct BibleTimelineContentView: View {
     @State private var selectedItem: TimelineItem? // For historical events only
     @State private var hasRestoredScrollPosition = false
     
-    // Persist scroll position
-    @AppStorage("timelineScrollEraId") private var savedEraId: String = ""
-    
     // Layout constants
     private let axisWidth: CGFloat = 2
     private let yearLabelWidth: CGFloat = 60
@@ -595,20 +602,6 @@ struct BibleTimelineContentView: View {
                 }
             }
             .coordinateSpace(name: "timelineScroll")
-            .onPreferenceChange(VisibleEraPreferenceKey.self) { eraPositions in
-                // Find the era closest to the top (within visible range)
-                // Save scroll position when era changes (only when not searching)
-                guard searchText.isEmpty, hasRestoredScrollPosition else { return }
-                
-                let visibleThreshold: CGFloat = 200 // Consider eras within 200pt of top as visible
-                let topVisibleEra = eraPositions
-                    .filter { $0.value < visibleThreshold && $0.value > -500 }
-                    .min { $0.value < $1.value }
-                
-                if let eraId = topVisibleEra?.key {
-                    savedEraId = eraId
-                }
-            }
             .onChange(of: searchText) { _, newValue in
                 // Scroll to first matching Bible book when searching
                 // Use custom anchor to account for safe area and title
@@ -619,15 +612,8 @@ struct BibleTimelineContentView: View {
                 }
             }
             .onChange(of: eras) { _, _ in
-                // Restore scroll position after data loads
-                if !savedEraId.isEmpty && !hasRestoredScrollPosition {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                        proxy.scrollTo(savedEraId, anchor: UnitPoint(x: 0.5, y: 0.15))
-                        hasRestoredScrollPosition = true
-                    }
-                } else {
-                    hasRestoredScrollPosition = true
-                }
+                // Always start at the top
+                hasRestoredScrollPosition = true
             }
         }
         .onAppear {
@@ -710,6 +696,9 @@ struct BibleTimelineContentView: View {
                         ? FontManager.koreanSans(size: 15, weight: .bold)
                         : .system(size: 15, weight: .bold))
                     .foregroundStyle(.white)
+                    .multilineTextAlignment(.trailing)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Text(era.description.text(for: languageMode))
                     .font(languageMode == .kr
@@ -717,6 +706,8 @@ struct BibleTimelineContentView: View {
                         : .system(size: 12, weight: .regular))
                     .foregroundStyle(.white.opacity(0.6))
                     .multilineTextAlignment(.trailing)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.leading, 4)

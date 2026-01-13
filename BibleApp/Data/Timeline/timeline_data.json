@@ -1,17 +1,17 @@
 {
   "timeline_data": [
     {
-      "id": "era_00",
+      "id": "era_01",
       "type": "ERA",
       "start_year": -3000,
-      "end_year": -2000,
+      "end_year": -1800,
       "title": {
-        "ko": "태고 시대",
-        "en": "Ancient World"
+        "ko": "족장 시대",
+        "en": "Patriarchal Age"
       },
       "description": {
-        "ko": "성경의 창세기 초반과 고대 문명의 발흥 시기입니다.",
-        "en": "The early Genesis period and the rise of ancient civilizations."
+        "ko": "아브라함, 이삭, 야곱의 시대로 이스라엘 민족의 기원이 되는 시기입니다.",
+        "en": "The era of Abraham, Isaac, and Jacob, marking the origins of the nation of Israel."
       }
     },
     {
@@ -26,20 +26,6 @@
       "description": {
         "ko": "파라오 쿠푸를 위해 건설된 기자의 대피라미드는 고대 세계 7대 불가사의 중 유일하게 현존합니다.",
         "en": "The Great Pyramid of Giza, built for Pharaoh Khufu, is the only surviving wonder of the ancient world."
-      }
-    },
-    {
-      "id": "era_01",
-      "type": "ERA",
-      "start_year": -2000,
-      "end_year": -1800,
-      "title": {
-        "ko": "족장 시대",
-        "en": "Patriarchal Age"
-      },
-      "description": {
-        "ko": "아브라함, 이삭, 야곱의 시대로 이스라엘 민족의 기원이 되는 시기입니다.",
-        "en": "The era of Abraham, Isaac, and Jacob, marking the origins of the nation of Israel."
       }
     },
     {

@@ -236,7 +236,7 @@ struct BookGridView: View {
                     }
                     HapticManager.shared.selection()
                 } label: {
-                    Text(order.displayName)
+                    Text(order.displayName(for: viewModel.languageMode))
                         .font(.system(size: 14, weight: isOrderSelected(order) ? .semibold : .regular))
                         .foregroundStyle(isOrderSelected(order) ? .white : .white.opacity(0.5))
                         .padding(.horizontal, 14)
