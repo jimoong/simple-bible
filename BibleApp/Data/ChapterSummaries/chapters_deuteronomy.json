@@ -1,0 +1,518 @@
+{
+  "bookId": "deuteronomy",
+  "bookNumber": 5,
+  "bookNameKo": "신명기",
+  "bookNameEn": "Deuteronomy",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "모세의 회고",
+      "titleEn": "Moses' Review",
+      "summaryKo": "모세가 요단 동편에서 이스라엘 백성에게 광야 40년의 역사를 회고합니다.",
+      "summaryEn": "Moses recounts the 40 years of wilderness journey to Israel east of the Jordan.",
+      "messageKo": "과거를 기억하는 것은 하나님의 신실하심을 깨닫고 미래를 준비하는 기초입니다.",
+      "messageEn": "Remembering the past helps us recognize God's faithfulness and prepares us for the future.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "호렙에서 출발 명령", "eventEn": "Command to leave Horeb"},
+        {"verse": 22, "eventKo": "정탐꾼 파송", "eventEn": "Sending of the spies"},
+        {"verse": 34, "eventKo": "불신앙 세대의 심판", "eventEn": "Judgment on unbelieving generation"}
+      ],
+      "timelineYear": "BC 1406"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "광야 여정",
+      "titleEn": "Wilderness Journey",
+      "summaryKo": "에돔, 모압, 암몬을 지나며 헤스본 왕 시혼을 정복한 이야기입니다.",
+      "summaryEn": "Israel's journey past Edom, Moab, and Ammon, and the conquest of King Sihon of Heshbon.",
+      "messageKo": "하나님은 우리의 발걸음을 인도하시며, 때가 되면 승리를 주십니다.",
+      "messageEn": "God guides our steps and gives victory when the time is right.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "40년 광야 생활", "eventEn": "40 years in the wilderness"},
+        {"verse": 24, "eventKo": "시혼과의 전쟁 시작", "eventEn": "War against Sihon begins"},
+        {"verse": 33, "eventKo": "시혼을 격파함", "eventEn": "Defeat of Sihon"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "바산 정복",
+      "titleEn": "Conquest of Bashan",
+      "summaryKo": "바산 왕 옥을 정복하고 요단 동편 땅을 지파들에게 분배합니다.",
+      "summaryEn": "The conquest of King Og of Bashan and the division of land east of the Jordan.",
+      "messageKo": "하나님의 약속은 반드시 성취되며, 그분은 우리를 위해 싸우십니다.",
+      "messageEn": "God's promises are always fulfilled; He fights for us.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "바산 왕 옥을 침", "eventEn": "Defeat of King Og"},
+        {"verse": 12, "eventKo": "르우벤, 갓, 므낫세 지파에 땅 분배", "eventEn": "Land given to Reuben, Gad, half-Manasseh"},
+        {"verse": 27, "eventKo": "모세가 가나안을 바라봄", "eventEn": "Moses views Canaan from Pisgah"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "순종의 권고",
+      "titleEn": "Call to Obedience",
+      "summaryKo": "모세가 백성들에게 하나님의 율법을 지키고 우상숭배를 피할 것을 권고합니다.",
+      "summaryEn": "Moses urges the people to keep God's laws and avoid idolatry.",
+      "messageKo": "하나님의 말씀에 더하거나 빼지 말고 온전히 순종해야 합니다.",
+      "messageEn": "We must not add to or take away from God's Word but obey it completely.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "말씀에 더하거나 빼지 말라", "eventEn": "Do not add or subtract from the Word"},
+        {"verse": 24, "eventKo": "하나님은 소멸하는 불", "eventEn": "God is a consuming fire"},
+        {"verse": 41, "eventKo": "도피성 설정", "eventEn": "Cities of refuge designated"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "십계명 재선포",
+      "titleEn": "The Ten Commandments Restated",
+      "summaryKo": "모세가 새 세대에게 십계명을 다시 선포합니다.",
+      "summaryEn": "Moses restates the Ten Commandments to the new generation.",
+      "messageKo": "하나님의 계명은 세대를 넘어 변함없이 유효합니다.",
+      "messageEn": "God's commandments remain valid across generations.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "제1계명: 유일신 섬김", "eventEn": "First commandment: One God"},
+        {"verse": 12, "eventKo": "안식일 준수", "eventEn": "Sabbath observance"},
+        {"verse": 16, "eventKo": "부모 공경", "eventEn": "Honor parents"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "쉐마 이스라엘",
+      "titleEn": "The Shema",
+      "summaryKo": "이스라엘아 들으라! 가장 큰 계명과 자녀 교육에 대한 명령입니다.",
+      "summaryEn": "Hear, O Israel! The greatest commandment and instructions for teaching children.",
+      "messageKo": "하나님 사랑은 모든 계명의 기초이며, 신앙은 가정에서 전수됩니다.",
+      "messageEn": "Love for God is the foundation of all commandments; faith is passed down in families.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "쉐마: 여호와는 유일한 하나님", "eventEn": "Shema: The LORD is one"},
+        {"verse": 5, "eventKo": "마음을 다해 사랑하라", "eventEn": "Love with all your heart"},
+        {"verse": 7, "eventKo": "자녀에게 가르치라", "eventEn": "Teach your children"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "거룩한 백성",
+      "titleEn": "A Holy People",
+      "summaryKo": "가나안 민족들과의 혼인 금지와 이스라엘의 선택받은 정체성을 다룹니다.",
+      "summaryEn": "Prohibition of intermarriage with Canaanites and Israel's chosen identity.",
+      "messageKo": "하나님은 사랑으로 우리를 선택하셨으며, 거룩함을 요구하십니다.",
+      "messageEn": "God chose us in love and calls us to holiness.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "가나안 일곱 족속 진멸 명령", "eventEn": "Command to destroy seven nations"},
+        {"verse": 6, "eventKo": "거룩한 백성으로 선택됨", "eventEn": "Chosen as a holy people"},
+        {"verse": 9, "eventKo": "신실하신 하나님", "eventEn": "The faithful God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "광야의 교훈",
+      "titleEn": "Lessons from the Wilderness",
+      "summaryKo": "광야에서의 겸손과 의존을 기억하고, 풍요 속에서 하나님을 잊지 말라는 경고입니다.",
+      "summaryEn": "Remember humility and dependence in the wilderness; don't forget God in prosperity.",
+      "messageKo": "사람이 떡으로만 살 것이 아니요, 하나님의 말씀으로 살 것입니다.",
+      "messageEn": "Man does not live by bread alone but by every word from God.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "40년 광야의 목적", "eventEn": "Purpose of 40 years in wilderness"},
+        {"verse": 3, "eventKo": "만나와 말씀으로 살리심", "eventEn": "Fed with manna and the Word"},
+        {"verse": 17, "eventKo": "풍요 속 교만의 경고", "eventEn": "Warning against pride in prosperity"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "목이 곧은 백성",
+      "titleEn": "A Stiff-Necked People",
+      "summaryKo": "이스라엘의 반역 역사를 상기시키며 자기 의를 경계합니다.",
+      "summaryEn": "A reminder of Israel's rebellions and a warning against self-righteousness.",
+      "messageKo": "축복은 우리의 의로움이 아니라 하나님의 은혜로 주어집니다.",
+      "messageEn": "Blessings come not from our righteousness but from God's grace.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "네 의로움이 아님", "eventEn": "Not because of your righteousness"},
+        {"verse": 12, "eventKo": "금송아지 사건", "eventEn": "The golden calf incident"},
+        {"verse": 25, "eventKo": "모세의 40일 중보기도", "eventEn": "Moses' 40-day intercession"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "새 돌판",
+      "titleEn": "New Stone Tablets",
+      "summaryKo": "하나님이 새 돌판을 주시고, 마음을 할례하라는 명령을 주십니다.",
+      "summaryEn": "God gives new tablets and commands circumcision of the heart.",
+      "messageKo": "하나님이 요구하시는 것은 외적 행위가 아니라 마음의 변화입니다.",
+      "messageEn": "What God requires is not outward acts but a changed heart.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "새 돌판 제작", "eventEn": "New tablets made"},
+        {"verse": 12, "eventKo": "하나님이 요구하시는 것", "eventEn": "What God requires"},
+        {"verse": 16, "eventKo": "마음의 할례", "eventEn": "Circumcision of the heart"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "축복과 저주",
+      "titleEn": "Blessings and Curses",
+      "summaryKo": "순종하면 축복, 불순종하면 저주가 따르는 언약의 원리를 선포합니다.",
+      "summaryEn": "The covenant principle: obedience brings blessing, disobedience brings curse.",
+      "messageKo": "우리의 선택이 축복과 저주를 결정합니다.",
+      "messageEn": "Our choices determine whether we receive blessing or curse.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "말씀 순종의 축복", "eventEn": "Blessing for obedience"},
+        {"verse": 26, "eventKo": "축복과 저주를 놓음", "eventEn": "Blessing and curse set before you"},
+        {"verse": 29, "eventKo": "그리심산과 에발산", "eventEn": "Mount Gerizim and Ebal"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "예배의 장소",
+      "titleEn": "The Place of Worship",
+      "summaryKo": "하나님이 정하신 한 장소에서만 예배할 것을 명령합니다.",
+      "summaryEn": "Command to worship only at the place God chooses.",
+      "messageKo": "참된 예배는 우리 방식이 아니라 하나님이 정하신 방식으로 드려야 합니다.",
+      "messageEn": "True worship must be offered God's way, not our way.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "하나님이 택하신 곳", "eventEn": "The place God chooses"},
+        {"verse": 8, "eventKo": "자기 소견대로 하지 말라", "eventEn": "Not doing what is right in own eyes"},
+        {"verse": 31, "eventKo": "이방 풍습 금지", "eventEn": "Prohibition of pagan practices"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "거짓 선지자 경계",
+      "titleEn": "Warning Against False Prophets",
+      "summaryKo": "거짓 선지자와 우상숭배 유혹에 대한 엄중한 경고입니다.",
+      "summaryEn": "Stern warnings against false prophets and temptations to idolatry.",
+      "messageKo": "아무리 기적이 있어도 하나님을 떠나게 하는 가르침은 거짓입니다.",
+      "messageEn": "Any teaching that leads away from God is false, regardless of signs.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "거짓 선지자 분별", "eventEn": "Testing false prophets"},
+        {"verse": 6, "eventKo": "가까운 자의 유혹", "eventEn": "Temptation from close ones"},
+        {"verse": 12, "eventKo": "우상숭배 도시 심판", "eventEn": "Judgment on idolatrous cities"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "정결한 음식",
+      "titleEn": "Clean and Unclean Food",
+      "summaryKo": "정결한 음식과 부정한 음식에 대한 규례와 십일조 법을 다룹니다.",
+      "summaryEn": "Laws about clean and unclean food, and the tithe.",
+      "messageKo": "거룩한 백성은 삶의 모든 영역에서 구별된 삶을 살아야 합니다.",
+      "messageEn": "A holy people must live distinctively in every area of life.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "거룩한 백성", "eventEn": "A holy people"},
+        {"verse": 4, "eventKo": "정결한 짐승 목록", "eventEn": "List of clean animals"},
+        {"verse": 22, "eventKo": "십일조 규례", "eventEn": "Tithe regulations"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "안식년과 가난한 자",
+      "titleEn": "The Sabbatical Year",
+      "summaryKo": "7년마다 빚을 면제하고 종을 해방하는 안식년 규례입니다.",
+      "summaryEn": "The sabbatical year: canceling debts and freeing servants every seven years.",
+      "messageKo": "하나님의 백성은 서로를 향한 관대함으로 하나님의 은혜를 반영해야 합니다.",
+      "messageEn": "God's people should reflect His grace through generosity to one another.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "7년마다 면제", "eventEn": "Release every seven years"},
+        {"verse": 7, "eventKo": "가난한 자에게 손을 펴라", "eventEn": "Open your hand to the poor"},
+        {"verse": 12, "eventKo": "종의 해방", "eventEn": "Freeing servants"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "세 절기",
+      "titleEn": "Three Annual Feasts",
+      "summaryKo": "유월절, 칠칠절, 초막절의 세 큰 절기를 지킬 것을 명령합니다.",
+      "summaryEn": "Instructions for keeping the three great feasts: Passover, Weeks, and Tabernacles.",
+      "messageKo": "절기는 하나님의 구원 역사를 기억하고 감사하는 시간입니다.",
+      "messageEn": "Feasts are times to remember and give thanks for God's saving acts.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "유월절", "eventEn": "Passover"},
+        {"verse": 9, "eventKo": "칠칠절 (오순절)", "eventEn": "Feast of Weeks (Pentecost)"},
+        {"verse": 13, "eventKo": "초막절", "eventEn": "Feast of Tabernacles"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "왕에 대한 규례",
+      "titleEn": "Regulations for Kings",
+      "summaryKo": "미래의 왕에 대한 규례와 재판관, 제사장의 역할을 다룹니다.",
+      "summaryEn": "Regulations for future kings, judges, and priests.",
+      "messageKo": "지도자도 하나님의 말씀 아래 있으며, 말씀으로 다스려야 합니다.",
+      "messageEn": "Leaders are under God's Word and must govern by it.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "재판의 원리", "eventEn": "Principles of judgment"},
+        {"verse": 14, "eventKo": "왕 세우기", "eventEn": "Appointing a king"},
+        {"verse": 18, "eventKo": "왕이 율법을 기록할 것", "eventEn": "King to write a copy of the law"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "메시아 선지자 예언",
+      "titleEn": "The Prophet Like Moses",
+      "summaryKo": "레위인의 몫과 모세 같은 선지자에 대한 메시아 예언입니다.",
+      "summaryEn": "The Levites' portion and the messianic prophecy of a prophet like Moses.",
+      "messageKo": "하나님은 모세와 같은 완전한 선지자 예수 그리스도를 보내실 것입니다.",
+      "messageEn": "God will send the perfect prophet like Moses—Jesus Christ.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "레위인의 기업", "eventEn": "The Levites' inheritance"},
+        {"verse": 15, "eventKo": "모세 같은 선지자 예언", "eventEn": "Prophet like Moses prophecy"},
+        {"verse": 20, "eventKo": "거짓 선지자 심판", "eventEn": "Judgment on false prophets"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "도피성",
+      "titleEn": "Cities of Refuge",
+      "summaryKo": "실수로 살인한 자를 위한 도피성과 공정한 재판 규례입니다.",
+      "summaryEn": "Cities of refuge for accidental killers and rules for fair trials.",
+      "messageKo": "하나님은 정의와 자비를 동시에 베푸시는 분입니다.",
+      "messageEn": "God is both just and merciful.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "세 도피성 설정", "eventEn": "Three cities of refuge"},
+        {"verse": 15, "eventKo": "두세 증인의 원칙", "eventEn": "Two or three witnesses required"},
+        {"verse": 21, "eventKo": "눈은 눈으로", "eventEn": "Eye for eye"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "전쟁 규례",
+      "titleEn": "Rules of Warfare",
+      "summaryKo": "전쟁 시 두려워하지 말 것과 전쟁의 규례를 다룹니다.",
+      "summaryEn": "Instructions not to fear in battle and rules of engagement.",
+      "messageKo": "하나님이 함께하시면 적의 수는 문제가 되지 않습니다.",
+      "messageEn": "When God is with us, the enemy's numbers don't matter.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "두려워하지 말라", "eventEn": "Do not be afraid"},
+        {"verse": 5, "eventKo": "전쟁 면제 규정", "eventEn": "Exemptions from battle"},
+        {"verse": 16, "eventKo": "가나안 족속 진멸", "eventEn": "Destruction of Canaanite nations"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "미제 살인 사건",
+      "titleEn": "Unsolved Murder",
+      "summaryKo": "미제 살인에 대한 속죄 의식과 가정법을 다룹니다.",
+      "summaryEn": "Atonement for unsolved murders and family laws.",
+      "messageKo": "공동체는 죄의 결과에 대해 함께 책임져야 합니다.",
+      "messageEn": "The community shares responsibility for the consequences of sin.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "미제 살인 속죄", "eventEn": "Atonement for unsolved murder"},
+        {"verse": 10, "eventKo": "포로 여인 규례", "eventEn": "Captive women regulations"},
+        {"verse": 18, "eventKo": "패역한 아들", "eventEn": "Rebellious son"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "일상의 규례",
+      "titleEn": "Various Laws",
+      "summaryKo": "이웃 사랑, 정결, 결혼에 관한 다양한 규례입니다.",
+      "summaryEn": "Various laws about neighborly love, purity, and marriage.",
+      "messageKo": "신앙은 일상의 작은 일에서도 실천되어야 합니다.",
+      "messageEn": "Faith must be practiced even in small everyday matters.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "잃은 물건 돌려주기", "eventEn": "Returning lost property"},
+        {"verse": 5, "eventKo": "남녀 옷 구별", "eventEn": "Distinction in clothing"},
+        {"verse": 13, "eventKo": "결혼의 순결", "eventEn": "Marital purity"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "총회 규례",
+      "titleEn": "Assembly Regulations",
+      "summaryKo": "여호와의 총회에 들어올 수 있는 자격과 진영의 정결에 대한 규례입니다.",
+      "summaryEn": "Qualifications for entering the assembly and camp purity.",
+      "messageKo": "하나님의 백성은 거룩한 공동체로서 정결을 유지해야 합니다.",
+      "messageEn": "God's people must maintain purity as a holy community.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "총회 참여 자격", "eventEn": "Who may enter the assembly"},
+        {"verse": 9, "eventKo": "진영의 정결", "eventEn": "Cleanliness of the camp"},
+        {"verse": 21, "eventKo": "서원 지키기", "eventEn": "Keeping vows"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "이혼과 사회법",
+      "titleEn": "Divorce and Social Laws",
+      "summaryKo": "이혼 규례와 약자 보호에 관한 사회법입니다.",
+      "summaryEn": "Divorce regulations and social laws protecting the vulnerable.",
+      "messageKo": "하나님은 약한 자를 보호하시며, 정의로운 사회를 원하십니다.",
+      "messageEn": "God protects the weak and desires a just society.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "이혼 규례", "eventEn": "Divorce regulations"},
+        {"verse": 14, "eventKo": "품꾼의 삯", "eventEn": "Wages for laborers"},
+        {"verse": 19, "eventKo": "과부와 고아 보호", "eventEn": "Care for widows and orphans"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "형제의 의무",
+      "titleEn": "Brother's Duty",
+      "summaryKo": "형사벌의 제한과 형제의 의무(계대결혼)에 관한 규례입니다.",
+      "summaryEn": "Limits on corporal punishment and the duty of levirate marriage.",
+      "messageKo": "가족과 공동체에 대한 책임은 하나님이 주신 것입니다.",
+      "messageEn": "Responsibility to family and community is given by God.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "태형의 제한", "eventEn": "Limit on lashes"},
+        {"verse": 5, "eventKo": "계대결혼 의무", "eventEn": "Levirate marriage duty"},
+        {"verse": 17, "eventKo": "아말렉 기억", "eventEn": "Remember Amalek"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "첫 열매와 십일조",
+      "titleEn": "Firstfruits and Tithes",
+      "summaryKo": "첫 열매 봉헌과 십일조 신앙고백 의식입니다.",
+      "summaryEn": "The ceremony of offering firstfruits and the tithe confession.",
+      "messageKo": "모든 축복의 근원이신 하나님께 감사와 고백으로 응답해야 합니다.",
+      "messageEn": "We must respond with thanksgiving and confession to God, the source of all blessings.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "첫 열매 봉헌", "eventEn": "Offering of firstfruits"},
+        {"verse": 5, "eventKo": "방랑하는 아람인 고백", "eventEn": "Confession: 'A wandering Aramean'"},
+        {"verse": 12, "eventKo": "십일조 고백", "eventEn": "Tithe declaration"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "에발산의 제단",
+      "titleEn": "Altar on Mount Ebal",
+      "summaryKo": "요단을 건넌 후 에발산에 제단을 쌓고 율법을 기록할 것을 명령합니다.",
+      "summaryEn": "Instructions to build an altar on Mount Ebal and write the law.",
+      "messageKo": "말씀은 기록되고 선포되어 세대를 넘어 전달되어야 합니다.",
+      "messageEn": "God's Word must be written and proclaimed to be passed on through generations.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "큰 돌에 율법 기록", "eventEn": "Write the law on stones"},
+        {"verse": 5, "eventKo": "에발산에 제단", "eventEn": "Altar on Mount Ebal"},
+        {"verse": 15, "eventKo": "열두 저주 선포", "eventEn": "Twelve curses pronounced"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "축복과 저주",
+      "titleEn": "Blessings and Curses",
+      "summaryKo": "순종의 축복과 불순종의 저주를 상세히 나열합니다.",
+      "summaryEn": "Detailed listing of blessings for obedience and curses for disobedience.",
+      "messageKo": "하나님과의 관계에서 순종은 선택이 아닌 필수입니다.",
+      "messageEn": "In our relationship with God, obedience is not optional but essential.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "순종의 축복 시작", "eventEn": "Blessings for obedience begin"},
+        {"verse": 15, "eventKo": "불순종의 저주 시작", "eventEn": "Curses for disobedience begin"},
+        {"verse": 64, "eventKo": "열국 중 흩어짐 예언", "eventEn": "Prophecy of scattering among nations"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "모압 언약",
+      "titleEn": "Covenant in Moab",
+      "summaryKo": "모압 땅에서 새롭게 언약을 세우고 세대를 넘는 언약의 의미를 강조합니다.",
+      "summaryEn": "Renewal of the covenant in Moab, emphasizing its transgenerational significance.",
+      "messageKo": "하나님의 언약은 우리뿐 아니라 후대를 위한 것입니다.",
+      "messageEn": "God's covenant is not just for us but for future generations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "모압 언약", "eventEn": "Covenant in Moab"},
+        {"verse": 14, "eventKo": "오늘 여기 있지 않는 자들도", "eventEn": "For those not here today as well"},
+        {"verse": 29, "eventKo": "감추어진 것과 나타난 것", "eventEn": "Secret and revealed things"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "회복의 약속",
+      "titleEn": "Promise of Restoration",
+      "summaryKo": "흩어진 후에도 회개하면 회복시키시겠다는 은혜의 약속입니다.",
+      "summaryEn": "A promise of grace: restoration after repentance, even after scattering.",
+      "messageKo": "생명과 죽음 중 생명을 택하라는 하나님의 간절한 호소입니다.",
+      "messageEn": "God earnestly calls us to choose life over death.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "사로잡힌 자를 돌이키심", "eventEn": "Restoration of captives"},
+        {"verse": 6, "eventKo": "마음의 할례", "eventEn": "Circumcision of the heart"},
+        {"verse": 19, "eventKo": "생명을 택하라", "eventEn": "Choose life"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "모세의 유언",
+      "titleEn": "Moses' Final Charge",
+      "summaryKo": "모세가 여호수아에게 지도자직을 위임하고 율법을 백성에게 맡깁니다.",
+      "summaryEn": "Moses commissions Joshua and entrusts the law to the people.",
+      "messageKo": "지도자는 바뀌어도 하나님의 신실하심은 변함없습니다.",
+      "messageEn": "Leaders change, but God's faithfulness remains constant.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "모세 120세", "eventEn": "Moses is 120 years old"},
+        {"verse": 7, "eventKo": "여호수아 위임", "eventEn": "Joshua commissioned"},
+        {"verse": 24, "eventKo": "율법책 기록 완료", "eventEn": "Book of the Law completed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "모세의 노래",
+      "titleEn": "Song of Moses",
+      "summaryKo": "하나님의 신실하심과 이스라엘의 배반을 대조하는 모세의 노래입니다.",
+      "summaryEn": "Moses' song contrasting God's faithfulness with Israel's unfaithfulness.",
+      "messageKo": "역사는 하나님의 신실하심과 인간의 연약함을 동시에 보여줍니다.",
+      "messageEn": "History reveals both God's faithfulness and human weakness.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "반석이신 하나님", "eventEn": "God is the Rock"},
+        {"verse": 15, "eventKo": "여수룬의 배반", "eventEn": "Jeshurun's rebellion"},
+        {"verse": 48, "eventKo": "느보산으로 올라가라", "eventEn": "Go up to Mount Nebo"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 33,
+      "titleKo": "모세의 축복",
+      "titleEn": "Moses' Blessing",
+      "summaryKo": "모세가 죽기 전 이스라엘 열두 지파를 축복합니다.",
+      "summaryEn": "Moses blesses the twelve tribes of Israel before his death.",
+      "messageKo": "하나님은 각 사람에게 고유한 축복과 사명을 주십니다.",
+      "messageEn": "God gives each person a unique blessing and calling.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "축복의 시작", "eventEn": "Beginning of the blessing"},
+        {"verse": 12, "eventKo": "베냐민 축복", "eventEn": "Blessing of Benjamin"},
+        {"verse": 27, "eventKo": "영원하신 하나님", "eventEn": "The eternal God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 34,
+      "titleKo": "모세의 죽음",
+      "titleEn": "Death of Moses",
+      "summaryKo": "모세가 느보산에서 약속의 땅을 바라보고 죽습니다.",
+      "summaryEn": "Moses views the Promised Land from Mount Nebo and dies.",
+      "messageKo": "한 세대의 끝은 새 세대의 시작이며, 하나님의 역사는 계속됩니다.",
+      "messageEn": "The end of one generation is the beginning of the next; God's work continues.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "느보산에서 땅을 봄", "eventEn": "Viewing the land from Nebo"},
+        {"verse": 5, "eventKo": "모세의 죽음", "eventEn": "Death of Moses"},
+        {"verse": 9, "eventKo": "여호수아에게 지혜의 영", "eventEn": "Spirit of wisdom on Joshua"}
+      ],
+      "timelineYear": "BC 1406"
+    }
+  ]
+}

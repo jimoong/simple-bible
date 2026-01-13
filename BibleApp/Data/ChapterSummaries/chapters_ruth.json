@@ -1,0 +1,68 @@
+{
+  "bookId": "ruth",
+  "bookNumber": 8,
+  "bookNameKo": "룻기",
+  "bookNameEn": "Ruth",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "나오미와 룻",
+      "titleEn": "Naomi and Ruth",
+      "summaryKo": "기근으로 모압에 갔던 나오미가 남편과 아들들을 잃고 며느리 룻과 함께 베들레헴으로 돌아옵니다.",
+      "summaryEn": "Naomi loses her husband and sons in Moab and returns to Bethlehem with her daughter-in-law Ruth.",
+      "messageKo": "고난 중에도 신실한 사랑과 헌신은 빛을 발합니다.",
+      "messageEn": "Faithful love and devotion shine even in times of hardship.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "기근으로 모압 이주", "eventEn": "Famine leads to Moab"},
+        {"verse": 5, "eventKo": "남편과 두 아들의 죽음", "eventEn": "Death of husband and two sons"},
+        {"verse": 16, "eventKo": "룻의 신앙고백", "eventEn": "Ruth's declaration of faith"}
+      ],
+      "timelineYear": "BC 1100경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "보아스의 밭에서",
+      "titleEn": "In Boaz's Field",
+      "summaryKo": "룻이 이삭을 줍다가 친족 보아스를 만나 호의를 입습니다.",
+      "summaryEn": "Ruth gleans in the fields and meets Boaz, a kinsman, who shows her kindness.",
+      "messageKo": "성실한 노동과 겸손한 태도는 하나님의 은혜를 경험하게 합니다.",
+      "messageEn": "Diligent work and a humble attitude lead to experiencing God's grace.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "룻이 이삭 줍기 시작", "eventEn": "Ruth begins gleaning"},
+        {"verse": 8, "eventKo": "보아스의 친절", "eventEn": "Boaz's kindness"},
+        {"verse": 20, "eventKo": "보아스가 기업 무를 자임을 앎", "eventEn": "Boaz identified as kinsman-redeemer"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "타작마당의 밤",
+      "titleEn": "Night at the Threshing Floor",
+      "summaryKo": "나오미의 지시로 룻이 보아스에게 기업 무를 자의 의무를 구합니다.",
+      "summaryEn": "Following Naomi's instructions, Ruth asks Boaz to fulfill his duty as kinsman-redeemer.",
+      "messageKo": "하나님의 섭리 안에서 담대하게 행동할 때 은혜를 경험합니다.",
+      "messageEn": "When we act boldly within God's providence, we experience grace.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "나오미의 계획", "eventEn": "Naomi's plan"},
+        {"verse": 9, "eventKo": "룻이 보아스에게 요청", "eventEn": "Ruth's request to Boaz"},
+        {"verse": 13, "eventKo": "보아스의 약속", "eventEn": "Boaz's promise"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "보아스와 룻의 결혼",
+      "titleEn": "Boaz Marries Ruth",
+      "summaryKo": "보아스가 기업 무를 자의 권리를 얻어 룻과 결혼하고, 다윗의 조상 오벳이 태어납니다.",
+      "summaryEn": "Boaz obtains the right of kinsman-redeemer, marries Ruth, and Obed—ancestor of David—is born.",
+      "messageKo": "하나님은 신실한 자들을 통해 구속의 역사를 이루어가십니다.",
+      "messageEn": "God accomplishes redemptive history through faithful people.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "성문에서 협상", "eventEn": "Negotiation at the gate"},
+        {"verse": 10, "eventKo": "룻을 아내로 삼음", "eventEn": "Boaz takes Ruth as wife"},
+        {"verse": 17, "eventKo": "오벳 출생 (다윗의 할아버지)", "eventEn": "Obed born (grandfather of David)"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

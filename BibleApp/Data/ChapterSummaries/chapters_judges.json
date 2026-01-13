@@ -1,0 +1,323 @@
+{
+  "bookId": "judges",
+  "bookNumber": 7,
+  "bookNameKo": "사사기",
+  "bookNameEn": "Judges",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "불완전한 정복",
+      "titleEn": "Incomplete Conquest",
+      "summaryKo": "여호수아 사후 각 지파가 가나안 족속을 완전히 쫓아내지 못합니다.",
+      "summaryEn": "After Joshua's death, the tribes fail to completely drive out the Canaanites.",
+      "messageKo": "불완전한 순종은 미래의 문제를 낳습니다.",
+      "messageEn": "Incomplete obedience leads to future problems.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "유다가 먼저 올라감", "eventEn": "Judah goes up first"},
+        {"verse": 19, "eventKo": "철 병거 때문에 쫓지 못함", "eventEn": "Could not drive out due to iron chariots"},
+        {"verse": 28, "eventKo": "가나안 족속과 함께 거함", "eventEn": "Lived among Canaanites"}
+      ],
+      "timelineYear": "BC 1375"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "사사 시대의 순환",
+      "titleEn": "Cycle of the Judges",
+      "summaryKo": "이스라엘의 반복되는 타락과 구원의 패턴이 시작됩니다.",
+      "summaryEn": "The recurring pattern of Israel's apostasy and deliverance begins.",
+      "messageKo": "죄-심판-회개-구원의 순환은 인간의 연약함을 보여줍니다.",
+      "messageEn": "The cycle of sin-judgment-repentance-deliverance shows human weakness.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와의 사자의 책망", "eventEn": "Angel of the LORD's rebuke"},
+        {"verse": 10, "eventKo": "여호수아를 알지 못하는 세대", "eventEn": "Generation that did not know Joshua"},
+        {"verse": 16, "eventKo": "사사를 세우심", "eventEn": "God raised up judges"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "옷니엘, 에훗, 삼갈",
+      "titleEn": "Othniel, Ehud, Shamgar",
+      "summaryKo": "처음 세 사사의 이야기로 옷니엘, 에훗, 삼갈이 이스라엘을 구합니다.",
+      "summaryEn": "The first three judges—Othniel, Ehud, and Shamgar—deliver Israel.",
+      "messageKo": "하나님은 다양한 방법과 사람을 통해 구원하십니다.",
+      "messageEn": "God delivers through various methods and people.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "옷니엘의 구원", "eventEn": "Othniel delivers Israel"},
+        {"verse": 21, "eventKo": "에훗이 에글론을 죽임", "eventEn": "Ehud kills Eglon"},
+        {"verse": 31, "eventKo": "삼갈이 블레셋 600명을 침", "eventEn": "Shamgar kills 600 Philistines"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "드보라와 바락",
+      "titleEn": "Deborah and Barak",
+      "summaryKo": "여선지자 드보라와 바락이 가나안 왕 야빈을 물리칩니다.",
+      "summaryEn": "The prophetess Deborah and Barak defeat Jabin king of Canaan.",
+      "messageKo": "하나님은 성별에 상관없이 지도자를 세우십니다.",
+      "messageEn": "God raises up leaders regardless of gender.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "드보라가 사사로 이스라엘 재판", "eventEn": "Deborah judges Israel"},
+        {"verse": 14, "eventKo": "시스라 군대 패배", "eventEn": "Sisera's army defeated"},
+        {"verse": 21, "eventKo": "야엘이 시스라를 죽임", "eventEn": "Jael kills Sisera"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "드보라의 노래",
+      "titleEn": "Song of Deborah",
+      "summaryKo": "드보라와 바락이 승리를 기념하며 찬양의 노래를 부릅니다.",
+      "summaryEn": "Deborah and Barak sing a song celebrating the victory.",
+      "messageKo": "승리 후에 하나님께 영광 돌리는 것이 합당합니다.",
+      "messageEn": "Giving glory to God after victory is fitting.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "여호와를 찬송하라", "eventEn": "Praise the LORD"},
+        {"verse": 20, "eventKo": "별들이 시스라와 싸움", "eventEn": "Stars fought against Sisera"},
+        {"verse": 31, "eventKo": "40년 평화", "eventEn": "40 years of peace"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "기드온의 소명",
+      "titleEn": "Gideon's Call",
+      "summaryKo": "미디안의 압제 속에서 기드온이 사사로 부름받습니다.",
+      "summaryEn": "Gideon is called to be a judge during Midianite oppression.",
+      "messageKo": "하나님은 약한 자를 택하여 강한 일을 행하십니다.",
+      "messageEn": "God chooses the weak to accomplish mighty things.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "여호와의 사자가 나타남", "eventEn": "Angel of the LORD appears"},
+        {"verse": 14, "eventKo": "큰 용사여", "eventEn": "Mighty warrior"},
+        {"verse": 36, "eventKo": "기드온의 양털 시험", "eventEn": "Gideon's fleece test"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "기드온의 300용사",
+      "titleEn": "Gideon's 300 Men",
+      "summaryKo": "하나님이 32,000명을 300명으로 줄여 미디안을 물리칩니다.",
+      "summaryEn": "God reduces 32,000 men to 300 to defeat Midian.",
+      "messageKo": "하나님의 승리는 인간의 수나 능력이 아닌 그분의 능력으로 옵니다.",
+      "messageEn": "God's victory comes through His power, not human numbers or ability.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "군사가 너무 많다", "eventEn": "Too many soldiers"},
+        {"verse": 7, "eventKo": "300명으로 구원", "eventEn": "Deliverance with 300"},
+        {"verse": 20, "eventKo": "횃불과 나팔 공격", "eventEn": "Attack with torches and trumpets"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "기드온의 말년",
+      "titleEn": "Gideon's Later Years",
+      "summaryKo": "기드온이 미디안을 완전히 물리치지만 에봇을 만들어 함정이 됩니다.",
+      "summaryEn": "Gideon completely defeats Midian but makes an ephod that becomes a snare.",
+      "messageKo": "승리 후에도 겸손을 유지하지 않으면 넘어질 수 있습니다.",
+      "messageEn": "Without maintaining humility after victory, one can fall.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "에브라임의 불평", "eventEn": "Ephraim's complaint"},
+        {"verse": 23, "eventKo": "왕 되기를 거절", "eventEn": "Refuses to be king"},
+        {"verse": 27, "eventKo": "에봇을 만듦", "eventEn": "Makes an ephod"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "아비멜렉의 폭정",
+      "titleEn": "Abimelech's Tyranny",
+      "summaryKo": "기드온의 아들 아비멜렉이 형제들을 죽이고 왕이 되지만 비참하게 죽습니다.",
+      "summaryEn": "Gideon's son Abimelech kills his brothers and becomes king but dies miserably.",
+      "messageKo": "폭력으로 얻은 권력은 폭력으로 끝납니다.",
+      "messageEn": "Power gained through violence ends in violence.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "70형제 살해", "eventEn": "Murder of 70 brothers"},
+        {"verse": 7, "eventKo": "요담의 비유", "eventEn": "Jotham's parable"},
+        {"verse": 53, "eventKo": "맷돌에 머리가 깨짐", "eventEn": "Skull crushed by millstone"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "돌라와 야일",
+      "titleEn": "Tola and Jair",
+      "summaryKo": "사사 돌라와 야일의 짧은 기록과 암몬의 압제가 시작됩니다.",
+      "summaryEn": "Brief record of judges Tola and Jair; Ammonite oppression begins.",
+      "messageKo": "죄의 결과로 오는 고통 속에서도 하나님은 회개를 기다리십니다.",
+      "messageEn": "Even in suffering from sin's consequences, God waits for repentance.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "돌라가 23년 재판", "eventEn": "Tola judges 23 years"},
+        {"verse": 3, "eventKo": "야일이 22년 재판", "eventEn": "Jair judges 22 years"},
+        {"verse": 16, "eventKo": "하나님이 마음 아파하심", "eventEn": "God grieved"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "입다의 서원",
+      "titleEn": "Jephthah's Vow",
+      "summaryKo": "입다가 암몬을 물리치지만 경솔한 서원으로 비극을 겪습니다.",
+      "summaryEn": "Jephthah defeats Ammon but faces tragedy due to a rash vow.",
+      "messageKo": "하나님 앞에서 한 말은 신중해야 합니다.",
+      "messageEn": "We must be careful with words spoken before God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "입다의 배경", "eventEn": "Jephthah's background"},
+        {"verse": 30, "eventKo": "경솔한 서원", "eventEn": "The rash vow"},
+        {"verse": 34, "eventKo": "딸이 나옴", "eventEn": "His daughter comes out"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "입다와 에브라임",
+      "titleEn": "Jephthah and Ephraim",
+      "summaryKo": "에브라임과의 내전과 입산, 엘론, 압돈 사사의 기록입니다.",
+      "summaryEn": "Civil war with Ephraim and records of judges Ibzan, Elon, and Abdon.",
+      "messageKo": "내부 분열은 외부의 적보다 더 위험할 수 있습니다.",
+      "messageEn": "Internal division can be more dangerous than external enemies.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "에브라임과 전쟁", "eventEn": "War with Ephraim"},
+        {"verse": 6, "eventKo": "십볼렛 시험", "eventEn": "Shibboleth test"},
+        {"verse": 7, "eventKo": "입다 6년 재판", "eventEn": "Jephthah judges 6 years"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "삼손의 출생",
+      "titleEn": "Birth of Samson",
+      "summaryKo": "불임의 여인에게 천사가 나타나 삼손의 출생을 예고합니다.",
+      "summaryEn": "An angel appears to a barren woman announcing Samson's birth.",
+      "messageKo": "하나님은 특별한 목적을 위해 사람을 준비시키십니다.",
+      "messageEn": "God prepares people for special purposes.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "여호와의 사자 출현", "eventEn": "Angel of the LORD appears"},
+        {"verse": 5, "eventKo": "나실인으로 태어남", "eventEn": "Born as a Nazirite"},
+        {"verse": 24, "eventKo": "삼손 출생", "eventEn": "Samson is born"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "삼손의 결혼",
+      "titleEn": "Samson's Marriage",
+      "summaryKo": "삼손이 블레셋 여인과 결혼하고 수수께끼를 내어 분쟁이 시작됩니다.",
+      "summaryEn": "Samson marries a Philistine woman; a riddle leads to conflict.",
+      "messageKo": "개인적 욕망을 따르면 복잡한 결과를 초래합니다.",
+      "messageEn": "Following personal desires leads to complicated consequences.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "사자를 찢음", "eventEn": "Tears apart a lion"},
+        {"verse": 12, "eventKo": "수수께끼를 냄", "eventEn": "Poses a riddle"},
+        {"verse": 19, "eventKo": "블레셋인 30명을 침", "eventEn": "Strikes 30 Philistines"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "삼손의 복수",
+      "titleEn": "Samson's Revenge",
+      "summaryKo": "삼손이 여우로 블레셋 농작물을 태우고 나귀 턱뼈로 1000명을 죽입니다.",
+      "summaryEn": "Samson burns Philistine crops with foxes and kills 1,000 with a donkey's jawbone.",
+      "messageKo": "초자연적 힘은 하나님께로부터 오며, 그분의 목적을 위해 사용되어야 합니다.",
+      "messageEn": "Supernatural strength comes from God and should be used for His purposes.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "여우 300마리로 불 지름", "eventEn": "Sets fire with 300 foxes"},
+        {"verse": 15, "eventKo": "나귀 턱뼈로 1000명 침", "eventEn": "Kills 1,000 with jawbone"},
+        {"verse": 19, "eventKo": "하나님이 물을 주심", "eventEn": "God provides water"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "삼손과 들릴라",
+      "titleEn": "Samson and Delilah",
+      "summaryKo": "들릴라의 유혹에 넘어간 삼손이 힘을 잃지만 마지막에 회복됩니다.",
+      "summaryEn": "Samson falls to Delilah's seduction, loses his strength, but is restored at the end.",
+      "messageKo": "죄의 유혹에 반복적으로 노출되면 결국 넘어지게 됩니다.",
+      "messageEn": "Repeated exposure to temptation eventually leads to a fall.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "들릴라를 사랑함", "eventEn": "Loves Delilah"},
+        {"verse": 17, "eventKo": "비밀을 말함", "eventEn": "Reveals his secret"},
+        {"verse": 30, "eventKo": "삼손의 죽음", "eventEn": "Samson's death"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "미가의 신당",
+      "titleEn": "Micah's Shrine",
+      "summaryKo": "에브라임 미가가 사적인 신당을 만들고 레위인을 제사장으로 삼습니다.",
+      "summaryEn": "Micah of Ephraim sets up a private shrine and hires a Levite as priest.",
+      "messageKo": "각자 자기 소견대로 행하면 영적 혼란이 옵니다.",
+      "messageEn": "When everyone does what is right in their own eyes, spiritual chaos follows.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "미가의 신당", "eventEn": "Micah's shrine"},
+        {"verse": 6, "eventKo": "왕이 없을 때", "eventEn": "No king in Israel"},
+        {"verse": 10, "eventKo": "레위인을 제사장으로", "eventEn": "Levite becomes priest"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "단 지파의 이주",
+      "titleEn": "Migration of Dan",
+      "summaryKo": "단 지파가 북쪽으로 이주하며 미가의 신상과 제사장을 빼앗습니다.",
+      "summaryEn": "The tribe of Dan migrates north, taking Micah's idols and priest.",
+      "messageKo": "편법으로 얻은 종교는 진정한 신앙이 아닙니다.",
+      "messageEn": "Religion obtained through shortcuts is not true faith.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "단 지파가 땅을 구함", "eventEn": "Dan seeks territory"},
+        {"verse": 17, "eventKo": "신상을 빼앗음", "eventEn": "Takes the idols"},
+        {"verse": 30, "eventKo": "단에 우상 숭배", "eventEn": "Idolatry in Dan"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "기브아의 만행",
+      "titleEn": "Outrage at Gibeah",
+      "summaryKo": "베냐민 지파 기브아에서 끔찍한 범죄가 발생합니다.",
+      "summaryEn": "A terrible crime occurs in Gibeah of Benjamin.",
+      "messageKo": "도덕적 타락의 끝은 상상할 수 없는 악입니다.",
+      "messageEn": "The end of moral decay is unimaginable evil.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "레위인과 첩", "eventEn": "A Levite and his concubine"},
+        {"verse": 22, "eventKo": "기브아의 악행", "eventEn": "Wickedness of Gibeah"},
+        {"verse": 29, "eventKo": "시체를 12조각으로", "eventEn": "Body cut into 12 pieces"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "베냐민과의 전쟁",
+      "titleEn": "War Against Benjamin",
+      "summaryKo": "이스라엘이 베냐민 지파를 쳐서 거의 멸절시킵니다.",
+      "summaryEn": "Israel attacks Benjamin and nearly wipes out the tribe.",
+      "messageKo": "죄에 대한 심판은 필요하지만, 과도한 보복도 죄가 될 수 있습니다.",
+      "messageEn": "Judgment on sin is necessary, but excessive retaliation can also be sin.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "이스라엘이 연합함", "eventEn": "Israel unites"},
+        {"verse": 35, "eventKo": "베냐민 25,100명 죽음", "eventEn": "25,100 Benjamites killed"},
+        {"verse": 47, "eventKo": "600명만 생존", "eventEn": "Only 600 survive"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "베냐민의 회복",
+      "titleEn": "Restoration of Benjamin",
+      "summaryKo": "베냐민 지파가 멸절되지 않도록 아내를 구해주는 방법을 찾습니다.",
+      "summaryEn": "A way is found to provide wives for Benjamin so the tribe won't die out.",
+      "messageKo": "인간의 해결책은 종종 더 큰 문제를 만듭니다. 하나님의 인도가 필요합니다.",
+      "messageEn": "Human solutions often create more problems. God's guidance is needed.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "딸을 주지 않겠다는 맹세", "eventEn": "Oath not to give daughters"},
+        {"verse": 12, "eventKo": "야베스 길르앗의 처녀들", "eventEn": "Virgins of Jabesh Gilead"},
+        {"verse": 25, "eventKo": "왕이 없어 소견대로 행함", "eventEn": "No king; everyone did as they saw fit"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

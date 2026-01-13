@@ -1,0 +1,368 @@
+{
+  "bookId": "joshua",
+  "bookNumber": 6,
+  "bookNameKo": "여호수아",
+  "bookNameEn": "Joshua",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "여호수아의 소명",
+      "titleEn": "Joshua's Commission",
+      "summaryKo": "모세의 죽음 후 여호수아가 새 지도자로 임명되고 강하고 담대하라는 명령을 받습니다.",
+      "summaryEn": "After Moses' death, Joshua is commissioned as the new leader and told to be strong and courageous.",
+      "messageKo": "하나님이 함께하시면 어떤 도전도 두려워할 필요가 없습니다.",
+      "messageEn": "When God is with us, we need not fear any challenge.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "모세 사후 여호수아 임명", "eventEn": "Joshua commissioned after Moses"},
+        {"verse": 6, "eventKo": "강하고 담대하라", "eventEn": "Be strong and courageous"},
+        {"verse": 8, "eventKo": "율법서를 주야로 묵상", "eventEn": "Meditate on the law day and night"}
+      ],
+      "timelineYear": "BC 1406"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "정탐꾼과 라합",
+      "titleEn": "Spies and Rahab",
+      "summaryKo": "두 정탐꾼이 여리고를 정탐하고 기생 라합의 도움으로 탈출합니다.",
+      "summaryEn": "Two spies explore Jericho and escape with the help of Rahab the prostitute.",
+      "messageKo": "하나님은 믿음으로 반응하는 자를 그 배경과 상관없이 구원하십니다.",
+      "messageEn": "God saves those who respond in faith, regardless of their background.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "정탐꾼 파송", "eventEn": "Spies sent out"},
+        {"verse": 9, "eventKo": "라합의 신앙고백", "eventEn": "Rahab's confession of faith"},
+        {"verse": 18, "eventKo": "붉은 줄 약속", "eventEn": "Promise of the scarlet cord"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "요단강 도하",
+      "titleEn": "Crossing the Jordan",
+      "summaryKo": "제사장들이 언약궤를 메고 요단강에 들어서자 강물이 멈춥니다.",
+      "summaryEn": "Priests carry the ark into the Jordan and the waters stop flowing.",
+      "messageKo": "믿음의 발걸음이 먼저이고, 하나님의 역사는 그 후에 나타납니다.",
+      "messageEn": "Faith steps out first; God's work is revealed afterward.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "자신을 성결하게 하라", "eventEn": "Consecrate yourselves"},
+        {"verse": 13, "eventKo": "물이 끊어짐", "eventEn": "Waters cut off"},
+        {"verse": 17, "eventKo": "마른 땅으로 건넘", "eventEn": "Crossing on dry ground"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "열두 돌 기념비",
+      "titleEn": "Twelve Memorial Stones",
+      "summaryKo": "요단강 가운데서 열두 돌을 가져와 기념비를 세웁니다.",
+      "summaryEn": "Twelve stones are taken from the Jordan to build a memorial.",
+      "messageKo": "하나님의 역사를 기념하고 후대에 전달하는 것은 중요합니다.",
+      "messageEn": "It is important to commemorate God's works and pass them on to future generations.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "열두 돌을 취함", "eventEn": "Taking twelve stones"},
+        {"verse": 6, "eventKo": "자녀들에게 교훈", "eventEn": "Teaching the children"},
+        {"verse": 19, "eventKo": "길갈에 진을 침", "eventEn": "Camp at Gilgal"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "길갈의 할례",
+      "titleEn": "Circumcision at Gilgal",
+      "summaryKo": "가나안 땅에서 새 세대가 할례를 받고 유월절을 지킵니다.",
+      "summaryEn": "The new generation is circumcised and celebrates Passover in Canaan.",
+      "messageKo": "약속의 땅에 들어가기 전 영적 준비와 언약 갱신이 필요합니다.",
+      "messageEn": "Spiritual preparation and covenant renewal are needed before entering the promised land.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "길갈에서 할례", "eventEn": "Circumcision at Gilgal"},
+        {"verse": 10, "eventKo": "유월절 준수", "eventEn": "Passover observed"},
+        {"verse": 13, "eventKo": "여호와 군대 대장 출현", "eventEn": "Commander of LORD's army appears"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "여리고 성 함락",
+      "titleEn": "Fall of Jericho",
+      "summaryKo": "이스라엘이 7일 동안 여리고 성을 돌고 함성을 지르자 성벽이 무너집니다.",
+      "summaryEn": "Israel marches around Jericho for seven days; the walls fall at their shout.",
+      "messageKo": "하나님의 방법은 때로 이해되지 않지만, 순종하면 승리합니다.",
+      "messageEn": "God's ways may not always make sense, but obedience brings victory.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "6일간 성 돌기", "eventEn": "Marching around the city for six days"},
+        {"verse": 16, "eventKo": "일곱째 날 함성", "eventEn": "Shout on the seventh day"},
+        {"verse": 20, "eventKo": "성벽 무너짐", "eventEn": "Walls collapse"}
+      ],
+      "timelineYear": "BC 1406"
+    },
+    {
+      "chapter": 7,
+      "titleKo": "아간의 죄",
+      "titleEn": "Sin of Achan",
+      "summaryKo": "아이 성 패배 후 아간의 숨겨진 죄가 발각되어 심판받습니다.",
+      "summaryEn": "After defeat at Ai, Achan's hidden sin is discovered and judged.",
+      "messageKo": "개인의 숨겨진 죄가 공동체 전체에 영향을 미칩니다.",
+      "messageEn": "One person's hidden sin affects the entire community.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "아간의 범죄", "eventEn": "Achan's transgression"},
+        {"verse": 5, "eventKo": "아이 성 패배", "eventEn": "Defeat at Ai"},
+        {"verse": 25, "eventKo": "아간의 심판", "eventEn": "Judgment of Achan"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "아이 성 정복",
+      "titleEn": "Conquest of Ai",
+      "summaryKo": "죄를 제거한 후 매복 전술로 아이 성을 정복합니다.",
+      "summaryEn": "After removing sin, Ai is conquered through an ambush strategy.",
+      "messageKo": "죄를 처리한 후에 하나님의 승리가 회복됩니다.",
+      "messageEn": "After dealing with sin, God's victory is restored.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "두려워 말라", "eventEn": "Do not be afraid"},
+        {"verse": 18, "eventKo": "단창 신호", "eventEn": "Signal with the javelin"},
+        {"verse": 30, "eventKo": "에발산에 제단 축조", "eventEn": "Altar built on Mount Ebal"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "기브온의 계략",
+      "titleEn": "Gibeonite Deception",
+      "summaryKo": "기브온 사람들이 속임수로 이스라엘과 평화 조약을 맺습니다.",
+      "summaryEn": "The Gibeonites deceive Israel into making a peace treaty.",
+      "messageKo": "중요한 결정에서 하나님께 묻지 않으면 후회할 수 있습니다.",
+      "messageEn": "Failing to seek God in important decisions can lead to regret.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "기브온의 속임수", "eventEn": "Gibeonite deception"},
+        {"verse": 14, "eventKo": "여호와께 묻지 않음", "eventEn": "Did not consult the LORD"},
+        {"verse": 21, "eventKo": "기브온인을 종으로 삼음", "eventEn": "Gibeonites made servants"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "태양이 멈춘 날",
+      "titleEn": "The Sun Stands Still",
+      "summaryKo": "기브온을 구하는 전투에서 태양과 달이 멈추는 기적이 일어납니다.",
+      "summaryEn": "During the battle to save Gibeon, the sun and moon stand still.",
+      "messageKo": "하나님은 그의 백성을 위해 자연 법칙까지 멈추실 수 있습니다.",
+      "messageEn": "God can stop even the laws of nature for His people.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "두려워 말라", "eventEn": "Do not fear them"},
+        {"verse": 12, "eventKo": "태양아 멈추라", "eventEn": "Sun, stand still"},
+        {"verse": 42, "eventKo": "남방 왕들 정복", "eventEn": "Conquest of southern kings"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "북방 정복",
+      "titleEn": "Northern Conquest",
+      "summaryKo": "여호수아가 북방 연합군을 물리치고 땅을 정복합니다.",
+      "summaryEn": "Joshua defeats the northern coalition and conquers the land.",
+      "messageKo": "하나님이 명하신 대로 온전히 순종하는 것이 승리의 비결입니다.",
+      "messageEn": "Complete obedience to God's commands is the key to victory.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "북방 연합군", "eventEn": "Northern coalition army"},
+        {"verse": 6, "eventKo": "두려워 말라", "eventEn": "Do not be afraid"},
+        {"verse": 23, "eventKo": "전쟁이 그침", "eventEn": "The land had rest from war"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "정복한 왕들의 목록",
+      "titleEn": "List of Defeated Kings",
+      "summaryKo": "모세와 여호수아가 정복한 왕들의 목록입니다.",
+      "summaryEn": "A list of kings defeated by Moses and Joshua.",
+      "messageKo": "하나님의 승리는 기록되어 기억되어야 합니다.",
+      "messageEn": "God's victories should be recorded and remembered.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "요단 동편 왕들", "eventEn": "Kings east of Jordan"},
+        {"verse": 7, "eventKo": "요단 서편 왕들", "eventEn": "Kings west of Jordan"},
+        {"verse": 24, "eventKo": "총 31왕 정복", "eventEn": "Total of 31 kings defeated"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "남은 땅",
+      "titleEn": "Land Yet to Be Conquered",
+      "summaryKo": "아직 정복하지 못한 땅과 요단 동편 지파들의 기업을 다룹니다.",
+      "summaryEn": "Land remaining to be conquered and the inheritance of tribes east of Jordan.",
+      "messageKo": "약속은 주어졌지만 완전한 소유는 우리의 책임입니다.",
+      "messageEn": "The promise is given, but full possession is our responsibility.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호수아가 나이 많음", "eventEn": "Joshua was old"},
+        {"verse": 8, "eventKo": "동편 지파 기업", "eventEn": "Inheritance of eastern tribes"},
+        {"verse": 33, "eventKo": "레위의 기업은 여호와", "eventEn": "The LORD is Levi's inheritance"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "갈렙의 기업",
+      "titleEn": "Caleb's Inheritance",
+      "summaryKo": "85세의 갈렙이 믿음으로 헤브론 산지를 요청하여 받습니다.",
+      "summaryEn": "Caleb, at 85, requests and receives the hill country of Hebron by faith.",
+      "messageKo": "나이와 상관없이 믿음을 가진 자는 하나님의 약속을 받습니다.",
+      "messageEn": "Regardless of age, those with faith receive God's promises.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "갈렙이 여호수아에게 말함", "eventEn": "Caleb speaks to Joshua"},
+        {"verse": 10, "eventKo": "갈렙 85세", "eventEn": "Caleb at 85 years old"},
+        {"verse": 12, "eventKo": "헤브론을 기업으로 받음", "eventEn": "Receives Hebron as inheritance"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "유다 지파의 기업",
+      "titleEn": "Judah's Inheritance",
+      "summaryKo": "유다 지파가 받은 땅의 경계와 성읍들을 기록합니다.",
+      "summaryEn": "The boundaries and cities of Judah's territory are recorded.",
+      "messageKo": "하나님은 각자에게 적합한 기업을 분배하십니다.",
+      "messageEn": "God distributes to each an appropriate inheritance.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "유다의 경계", "eventEn": "Boundaries of Judah"},
+        {"verse": 13, "eventKo": "갈렙이 헤브론 받음", "eventEn": "Caleb receives Hebron"},
+        {"verse": 63, "eventKo": "예루살렘 여부스족", "eventEn": "Jebusites in Jerusalem"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "에브라임 지파의 기업",
+      "titleEn": "Ephraim's Inheritance",
+      "summaryKo": "요셉 자손 중 에브라임 지파가 받은 땅의 경계입니다.",
+      "summaryEn": "The boundaries of the territory given to the tribe of Ephraim.",
+      "messageKo": "하나님의 약속은 다음 세대에게까지 이어집니다.",
+      "messageEn": "God's promises extend to the next generation.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "요셉 자손의 땅", "eventEn": "Territory of Joseph's descendants"},
+        {"verse": 5, "eventKo": "에브라임 경계", "eventEn": "Ephraim's boundaries"},
+        {"verse": 10, "eventKo": "게셀 가나안 족속", "eventEn": "Canaanites in Gezer"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "므낫세 지파의 기업",
+      "titleEn": "Manasseh's Inheritance",
+      "summaryKo": "므낫세 지파가 받은 땅과 슬로브핫 딸들의 기업을 다룹니다.",
+      "summaryEn": "The territory of Manasseh and the inheritance of Zelophehad's daughters.",
+      "messageKo": "하나님은 공의로우시며 여성의 권리도 인정하십니다.",
+      "messageEn": "God is just and acknowledges women's rights.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "슬로브핫 딸들의 기업", "eventEn": "Zelophehad's daughters' inheritance"},
+        {"verse": 12, "eventKo": "가나안 족속을 쫓아내지 못함", "eventEn": "Could not drive out Canaanites"},
+        {"verse": 14, "eventKo": "요셉 자손의 불평", "eventEn": "Joseph's descendants complain"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "실로에서 땅 분배",
+      "titleEn": "Division at Shiloh",
+      "summaryKo": "실로에 회막을 세우고 나머지 일곱 지파에게 땅을 분배합니다.",
+      "summaryEn": "The tent of meeting is set up at Shiloh and land is distributed to seven tribes.",
+      "messageKo": "하나님이 주신 것을 적극적으로 취해야 합니다.",
+      "messageEn": "We must actively take what God has given us.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "실로에 회막 설치", "eventEn": "Tent of meeting at Shiloh"},
+        {"verse": 3, "eventKo": "언제까지 지체하느냐", "eventEn": "How long will you wait?"},
+        {"verse": 11, "eventKo": "베냐민 지파 기업", "eventEn": "Benjamin's inheritance"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "여섯 지파의 기업",
+      "titleEn": "Six Tribes' Inheritance",
+      "summaryKo": "시므온, 스불론, 잇사갈, 아셀, 납달리, 단 지파의 기업을 분배합니다.",
+      "summaryEn": "Distribution of inheritance to Simeon, Zebulun, Issachar, Asher, Naphtali, and Dan.",
+      "messageKo": "하나님은 모든 자녀에게 기업을 주십니다.",
+      "messageEn": "God gives an inheritance to all His children.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "시므온 지파", "eventEn": "Tribe of Simeon"},
+        {"verse": 17, "eventKo": "잇사갈 지파", "eventEn": "Tribe of Issachar"},
+        {"verse": 49, "eventKo": "여호수아의 기업", "eventEn": "Joshua's inheritance"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "도피성",
+      "titleEn": "Cities of Refuge",
+      "summaryKo": "실수로 살인한 자를 위한 여섯 도피성을 지정합니다.",
+      "summaryEn": "Six cities of refuge are designated for those who accidentally kill.",
+      "messageKo": "하나님은 정의와 자비를 균형 있게 베푸십니다.",
+      "messageEn": "God balances justice and mercy.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "도피성 설정 명령", "eventEn": "Command to designate cities"},
+        {"verse": 7, "eventKo": "세 도피성 (서편)", "eventEn": "Three cities (west)"},
+        {"verse": 8, "eventKo": "세 도피성 (동편)", "eventEn": "Three cities (east)"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "레위인의 성읍",
+      "titleEn": "Levitical Cities",
+      "summaryKo": "레위인들에게 48개 성읍과 그 초원을 분배합니다.",
+      "summaryEn": "48 cities and pasturelands are given to the Levites.",
+      "messageKo": "하나님을 섬기는 자들을 위한 공급은 공동체의 책임입니다.",
+      "messageEn": "Providing for those who serve God is the community's responsibility.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "레위인에게 성읍 줌", "eventEn": "Cities given to Levites"},
+        {"verse": 43, "eventKo": "모든 약속이 이루어짐", "eventEn": "All promises fulfilled"},
+        {"verse": 45, "eventKo": "하나도 남김없이 응함", "eventEn": "Not one word failed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "동편 지파의 제단",
+      "titleEn": "Altar of the Eastern Tribes",
+      "summaryKo": "동편 지파들이 세운 제단이 오해를 일으키지만 해결됩니다.",
+      "summaryEn": "An altar built by the eastern tribes causes misunderstanding but is resolved.",
+      "messageKo": "오해가 생겼을 때 대화와 화해가 중요합니다.",
+      "messageEn": "When misunderstandings arise, dialogue and reconciliation are important.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "동편 지파 귀환", "eventEn": "Eastern tribes return home"},
+        {"verse": 10, "eventKo": "요단가에 제단 축조", "eventEn": "Altar built by the Jordan"},
+        {"verse": 34, "eventKo": "증거의 제단", "eventEn": "Altar as a witness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "여호수아의 고별사",
+      "titleEn": "Joshua's Farewell Address",
+      "summaryKo": "늙은 여호수아가 지도자들에게 하나님께 충성할 것을 권고합니다.",
+      "summaryEn": "The aging Joshua urges the leaders to remain faithful to God.",
+      "messageKo": "하나님의 약속을 경험한 세대는 다음 세대에 전달할 책임이 있습니다.",
+      "messageEn": "Those who experienced God's promises must pass them on to the next generation.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "하나님이 싸우셨음", "eventEn": "God fought for you"},
+        {"verse": 8, "eventKo": "여호와께 친근히 하라", "eventEn": "Hold fast to the LORD"},
+        {"verse": 14, "eventKo": "하나도 틀림없이 응함", "eventEn": "Not one word has failed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "세겜 언약",
+      "titleEn": "Covenant at Shechem",
+      "summaryKo": "여호수아가 세겜에서 백성들과 언약을 갱신하고 죽습니다.",
+      "summaryEn": "Joshua renews the covenant with the people at Shechem and dies.",
+      "messageKo": "오늘 누구를 섬길지 결단하라. 나와 내 집은 여호와를 섬기겠다.",
+      "messageEn": "Choose today whom you will serve. As for me and my house, we will serve the LORD.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나님의 역사 회고", "eventEn": "Recounting God's history"},
+        {"verse": 15, "eventKo": "오늘 섬길 자를 택하라", "eventEn": "Choose this day whom you will serve"},
+        {"verse": 29, "eventKo": "여호수아의 죽음 (110세)", "eventEn": "Death of Joshua at 110"}
+      ],
+      "timelineYear": "BC 1375"
+    }
+  ]
+}
