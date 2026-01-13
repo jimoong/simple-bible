@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 // MARK: - Timeline Data Models
 
@@ -95,6 +96,16 @@ struct TimelineItem: Codable, Identifiable, Equatable {
     
     var isEra: Bool {
         type == .era
+    }
+    
+    // Image name for historical events (matches item id)
+    var imageName: String {
+        id
+    }
+    
+    // Check if this item has an associated image in the asset catalog
+    var hasImage: Bool {
+        UIImage(named: imageName) != nil
     }
 }
 

@@ -360,9 +360,6 @@ struct TimelineDetailSheet: View {
                     // Header
                     headerSection
                     
-                    Divider()
-                        .background(Color.white.opacity(0.1))
-                    
                     // Description
                     descriptionSection
                     
@@ -378,7 +375,8 @@ struct TimelineDetailSheet: View {
                 }
                 .padding(24)
             }
-            .background(Color(red: 0.08, green: 0.08, blue: 0.1))
+            .scrollContentBackground(.hidden)
+            .background(Color.black)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -391,22 +389,12 @@ struct TimelineDetailSheet: View {
                 }
             }
         }
+        .background(Color.black)
         .preferredColorScheme(.dark)
     }
     
     private var headerSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            // Type badge
-            Text(item.type.displayName.text(for: languageMode))
-                .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(item.isHistoricalEvent ? Color.amber : Color.cyan)
-                .padding(.horizontal, 12)
-                .padding(.vertical, 6)
-                .background(
-                    Capsule()
-                        .fill((item.isHistoricalEvent ? Color.amber : Color.cyan).opacity(0.15))
-                )
-            
             // Title
             Text(item.title.text(for: languageMode))
                 .font(languageMode == .kr
@@ -416,24 +404,18 @@ struct TimelineDetailSheet: View {
             
             // Date
             Text(item.displayYear)
-                .font(.system(size: 14, weight: .medium, design: .monospaced))
+                .font(.system(size: 14, weight: .medium))
                 .foregroundStyle(.white.opacity(0.6))
         }
     }
     
     private var descriptionSection: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            Text(languageMode == .kr ? "개요" : "Overview")
-                .font(.system(size: 13, weight: .semibold))
-                .foregroundStyle(.white.opacity(0.5))
-            
-            Text(item.description.text(for: languageMode))
-                .font(languageMode == .kr
-                    ? FontManager.koreanSans(size: 16, weight: .regular)
-                    : .system(size: 16, weight: .regular))
-                .foregroundStyle(.white.opacity(0.9))
-                .lineSpacing(6)
-        }
+        Text(item.description.text(for: languageMode))
+            .font(languageMode == .kr
+                ? FontManager.koreanSans(size: 16, weight: .regular)
+                : .system(size: 16, weight: .regular))
+            .foregroundStyle(.white.opacity(0.9))
+            .lineSpacing(6)
     }
     
     private var relatedEventsSection: some View {
@@ -847,18 +829,46 @@ struct BibleTimelineContentView: View {
             selectedItem = item
             HapticManager.shared.selection()
         } label: {
+            if item.hasImage {
+                // Image card (same style as BookCell)
+                historyImageCard(item: item)
+            } else {
+                // Text-only card
+                Text(item.title.text(for: languageMode))
+                    .font(languageMode == .kr
+                        ? FontManager.koreanSans(size: 12, weight: .regular)
+                        : .system(size: 12, weight: .regular))
+                    .foregroundStyle(.white.opacity(0.6))
+                    .multilineTextAlignment(.trailing)
+                    .lineLimit(2)
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.leading, 4)
+            }
+        }
+        .buttonStyle(.plain)
+    }
+    
+    // MARK: - History Image Card
+    private func historyImageCard(item: TimelineItem) -> some View {
+        VStack(alignment: .trailing, spacing: 6) {
+            // Image with rounded corners
+            Image(item.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(maxWidth: .infinity)
+                .frame(height: 96)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+            
+            // Title below image (same size as other history cards)
             Text(item.title.text(for: languageMode))
                 .font(languageMode == .kr
                     ? FontManager.koreanSans(size: 12, weight: .regular)
                     : .system(size: 12, weight: .regular))
                 .foregroundStyle(.white.opacity(0.6))
-                .lineSpacing(4)
-                .multilineTextAlignment(.trailing)
                 .lineLimit(2)
-                .frame(maxWidth: .infinity, alignment: .trailing)
-                .padding(.leading, 4)
+                .multilineTextAlignment(.trailing)
         }
-        .buttonStyle(.plain)
+        .frame(maxWidth: .infinity, alignment: .trailing)
     }
     
     // MARK: - Year Indicator
