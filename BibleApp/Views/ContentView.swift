@@ -6,6 +6,8 @@ struct ContentView: View {
     @State private var voiceSearchViewModel = VoiceSearchViewModel()
     @State private var fullscreenSelectedBook: BibleBook? = nil  // Book selected within fullscreen bookshelf
     @State private var showSettings = false
+    @State private var showChapterToast = false
+    @State private var currentChapterSummary: ChapterSummary? = nil
     
     private var theme: BookTheme {
         viewModel.currentTheme
@@ -32,9 +34,36 @@ struct ContentView: View {
                     if viewModel.showBookshelf {
                         dismissBookshelf()
                     } else {
+                        // Mark toast as seen when opening chapter info panel
+                        markCurrentChapterToastSeen()
+                        showChapterToast = false
                         viewModel.openBookshelf(showChapters: true)
                     }
                     HapticManager.shared.selection()
+                }
+                
+                // Chapter toast (below header, above content)
+                if !viewModel.showBookshelf && !voiceSearchViewModel.showOverlay {
+                    VStack {
+                        ChapterToastContainer(
+                            isVisible: $showChapterToast,
+                            chapterSummary: currentChapterSummary,
+                            languageMode: viewModel.languageMode,
+                            theme: theme,
+                            onTap: {
+                                markCurrentChapterToastSeen()
+                                viewModel.openBookshelf(showChapters: true)
+                            },
+                            onDismiss: {
+                                markCurrentChapterToastSeen()
+                            }
+                        )
+                        .padding(.horizontal, 16)
+                        .padding(.top, geometry.safeAreaInsets.top - 24)
+                        
+                        Spacer()
+                    }
+                    .zIndex(1)
                 }
                 
                 // Dimmed background - tap to dismiss (only for top panel chapter grid)
@@ -182,6 +211,27 @@ struct ContentView: View {
             .animation(.easeOut(duration: 0.25), value: voiceSearchViewModel.showOverlay)
             .onAppear {
                 setupVoiceSearchNavigation()
+                showChapterToastIfAvailable()
+            }
+            .onChange(of: viewModel.currentChapter) { _, _ in
+                // Quick dismiss current toast when chapter changes (user swiped)
+                if showChapterToast {
+                    withAnimation(.easeOut(duration: 0.08)) {
+                        showChapterToast = false
+                    }
+                    markCurrentChapterToastSeen()
+                }
+                showChapterToastIfAvailable()
+            }
+            .onChange(of: viewModel.currentBook) { _, _ in
+                // Quick dismiss current toast when book changes
+                if showChapterToast {
+                    withAnimation(.easeOut(duration: 0.08)) {
+                        showChapterToast = false
+                    }
+                    markCurrentChapterToastSeen()
+                }
+                showChapterToastIfAvailable()
             }
             .fullScreenCover(isPresented: $showSettings) {
                 SettingsView(
@@ -196,6 +246,36 @@ struct ContentView: View {
         voiceSearchViewModel.onNavigate = { book, chapter, verse in
             await viewModel.navigateTo(book: book, chapter: chapter, verse: verse)
         }
+    }
+    
+    private func showChapterToastIfAvailable() {
+        // Small delay to let the view settle
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            // Don't show if bookshelf is open
+            guard !viewModel.showBookshelf else { return }
+            
+            // Check if we should show toast for this chapter (not seen in last 6 months)
+            guard ChapterToastTracker.shared.shouldShowToast(
+                bookId: viewModel.currentBook.id,
+                chapter: viewModel.currentChapter
+            ) else { return }
+            
+            // Get chapter summary
+            if let summary = ChapterDataManager.shared.chapterSummary(
+                bookId: viewModel.currentBook.id,
+                chapter: viewModel.currentChapter
+            ) {
+                currentChapterSummary = summary
+                showChapterToast = true
+            }
+        }
+    }
+    
+    private func markCurrentChapterToastSeen() {
+        ChapterToastTracker.shared.markAsSeen(
+            bookId: viewModel.currentBook.id,
+            chapter: viewModel.currentChapter
+        )
     }
     
     private func dismissBookshelf() {
@@ -230,14 +310,12 @@ struct ContentView: View {
                     HapticManager.shared.selection()
                 }
                 
-                // Mic button (only when not in bookshelf)
-                if !viewModel.showBookshelf {
-                    actionButton(icon: "mic.fill") {
-                        withAnimation {
-                            voiceSearchViewModel.openAndStartListening(with: viewModel.languageMode)
-                        }
-                        HapticManager.shared.selection()
+                // Mic button
+                actionButton(icon: "mic.fill") {
+                    withAnimation {
+                        voiceSearchViewModel.openAndStartListening(with: viewModel.languageMode)
                     }
+                    HapticManager.shared.selection()
                 }
             }
         }

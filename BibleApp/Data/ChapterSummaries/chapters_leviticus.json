@@ -1,0 +1,413 @@
+{
+  "bookId": "leviticus",
+  "bookNumber": 3,
+  "bookNameKo": "레위기",
+  "bookNameEn": "Leviticus",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "번제",
+      "titleEn": "The Burnt Offering",
+      "summaryKo": "번제에 대한 규례로, 소, 양, 새를 드리는 방법을 설명합니다.",
+      "summaryEn": "Instructions for burnt offerings from the herd, flock, or birds.",
+      "messageKo": "번제는 전적인 헌신을 상징하며, 하나님께 온전히 드려지는 예배를 의미합니다.",
+      "messageEn": "The burnt offering symbolizes complete dedication and worship wholly given to God.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "소로 드리는 번제", "eventEn": "Burnt offering from the herd"},
+        {"verse": 10, "eventKo": "양으로 드리는 번제", "eventEn": "Burnt offering from the flock"},
+        {"verse": 14, "eventKo": "새로 드리는 번제", "eventEn": "Burnt offering of birds"}
+      ],
+      "timelineYear": "BC 1445"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "소제",
+      "titleEn": "The Grain Offering",
+      "summaryKo": "곡식으로 드리는 소제에 대한 규례입니다.",
+      "summaryEn": "Instructions for grain offerings presented to the Lord.",
+      "messageKo": "소제는 우리의 노동의 결실을 하나님께 드리는 감사의 표현입니다.",
+      "messageEn": "The grain offering represents giving the fruit of our labor to God in gratitude.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "고운 가루 소제", "eventEn": "Fine flour offering"},
+        {"verse": 4, "eventKo": "화덕에 구운 소제", "eventEn": "Oven-baked offering"},
+        {"verse": 13, "eventKo": "소금의 언약", "eventEn": "Covenant of salt"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "화목제",
+      "titleEn": "The Peace Offering",
+      "summaryKo": "하나님과의 교제를 나타내는 화목제에 대한 규례입니다.",
+      "summaryEn": "Instructions for peace offerings symbolizing fellowship with God.",
+      "messageKo": "화목제는 하나님과의 화평과 교제를 축하하는 기쁨의 제사입니다.",
+      "messageEn": "The peace offering celebrates joy and fellowship with God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "소로 드리는 화목제", "eventEn": "Peace offering from the herd"},
+        {"verse": 6, "eventKo": "양으로 드리는 화목제", "eventEn": "Peace offering from the flock"},
+        {"verse": 17, "eventKo": "피와 기름 금지", "eventEn": "Prohibition of fat and blood"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "속죄제",
+      "titleEn": "The Sin Offering",
+      "summaryKo": "부지중에 지은 죄를 위한 속죄제에 대한 규례입니다.",
+      "summaryEn": "Instructions for sin offerings to atone for unintentional sins.",
+      "messageKo": "하나님은 죄를 가볍게 여기지 않으시지만, 속죄의 길을 열어 주셨습니다.",
+      "messageEn": "God does not take sin lightly but has provided a way for atonement.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "제사장의 속죄제", "eventEn": "Sin offering for priests"},
+        {"verse": 13, "eventKo": "회중의 속죄제", "eventEn": "Sin offering for congregation"},
+        {"verse": 22, "eventKo": "족장의 속죄제", "eventEn": "Sin offering for leaders"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "속건제",
+      "titleEn": "The Guilt Offering",
+      "summaryKo": "특정한 죄와 성물에 대한 잘못을 위한 속건제입니다.",
+      "summaryEn": "Instructions for guilt offerings for specific sins and violations.",
+      "messageKo": "죄에는 대가가 따르며, 온전한 회복을 위해서는 보상이 필요합니다.",
+      "messageEn": "Sin has consequences, and full restoration requires restitution.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "증언하지 않는 죄", "eventEn": "Sin of withholding testimony"},
+        {"verse": 14, "eventKo": "성물에 대한 범죄", "eventEn": "Violation of holy things"},
+        {"verse": 17, "eventKo": "부지중의 범죄", "eventEn": "Unintentional sins"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "제사 규례 (계속)",
+      "titleEn": "Offering Instructions Continued",
+      "summaryKo": "속건제의 추가 규례와 번제, 소제에 대한 제사장 규례입니다.",
+      "summaryEn": "Additional regulations for guilt offerings and priestly duties for offerings.",
+      "messageKo": "제사는 규례대로 드려야 하며, 제사장에게는 특별한 책임이 있습니다.",
+      "messageEn": "Offerings must be presented according to regulations; priests bear special responsibilities.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "번제의 불", "eventEn": "Fire of burnt offering"},
+        {"verse": 14, "eventKo": "소제의 규례", "eventEn": "Grain offering regulations"},
+        {"verse": 20, "eventKo": "제사장의 소제", "eventEn": "Priestly grain offering"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "화목제와 제사장 몫",
+      "titleEn": "Peace Offering and Priestly Portions",
+      "summaryKo": "화목제 규례와 제물에서 제사장에게 돌아가는 몫에 대한 규정입니다.",
+      "summaryEn": "Regulations for peace offerings and portions designated for priests.",
+      "messageKo": "하나님은 섬기는 자들을 공급하시며, 감사와 서원의 구별을 중요시하십니다.",
+      "messageEn": "God provides for those who serve Him; He values the distinction between thanksgiving and vows.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "감사의 화목제", "eventEn": "Thanksgiving peace offering"},
+        {"verse": 16, "eventKo": "서원의 화목제", "eventEn": "Vow peace offering"},
+        {"verse": 31, "eventKo": "제사장의 몫", "eventEn": "Priestly portions"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "아론과 아들들의 위임식",
+      "titleEn": "Ordination of Aaron and Sons",
+      "summaryKo": "아론과 그의 아들들을 제사장으로 세우는 거룩한 위임식입니다.",
+      "summaryEn": "The sacred ordination ceremony for Aaron and his sons as priests.",
+      "messageKo": "하나님을 섬기는 직분은 하나님이 정하신 방법대로 거룩하게 임명됩니다.",
+      "messageEn": "Ministry positions are appointed according to God's holy design.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "물로 씻음", "eventEn": "Washing with water"},
+        {"verse": 12, "eventKo": "기름 부음", "eventEn": "Anointing with oil"},
+        {"verse": 22, "eventKo": "위임의 숫양", "eventEn": "Ram of ordination"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "제사장 직무 시작",
+      "titleEn": "Priests Begin Ministry",
+      "summaryKo": "아론이 처음으로 제사장 직무를 수행하고, 하나님의 영광이 나타납니다.",
+      "summaryEn": "Aaron performs his first priestly duties, and God's glory appears.",
+      "messageKo": "하나님은 규례대로 드린 예배에 영광으로 응답하십니다.",
+      "messageEn": "God responds with glory to worship offered according to His commands.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "아론의 첫 제사", "eventEn": "Aaron's first offering"},
+        {"verse": 22, "eventKo": "백성을 축복함", "eventEn": "Blessing the people"},
+        {"verse": 24, "eventKo": "하늘에서 불이 내림", "eventEn": "Fire from heaven"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "나답과 아비후의 죽음",
+      "titleEn": "Death of Nadab and Abihu",
+      "summaryKo": "나답과 아비후가 다른 불을 드려 죽임을 당하고, 제사장 규례가 추가됩니다.",
+      "summaryEn": "Nadab and Abihu offer unauthorized fire and die; additional priestly regulations given.",
+      "messageKo": "하나님은 거룩하시며, 그분의 명령에 대한 순종을 요구하십니다.",
+      "messageEn": "God is holy and demands obedience to His commands.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "다른 불을 드림", "eventEn": "Offering unauthorized fire"},
+        {"verse": 2, "eventKo": "하나님 앞에서 죽음", "eventEn": "Death before the Lord"},
+        {"verse": 9, "eventKo": "제사장의 포도주 금지", "eventEn": "Wine prohibition for priests"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "정결한 음식과 부정한 음식",
+      "titleEn": "Clean and Unclean Animals",
+      "summaryKo": "먹을 수 있는 동물과 먹을 수 없는 동물에 대한 규례입니다.",
+      "summaryEn": "Regulations distinguishing clean animals for food from unclean ones.",
+      "messageKo": "하나님의 백성은 일상의 모든 영역에서 거룩함을 추구해야 합니다.",
+      "messageEn": "God's people must pursue holiness in every area of daily life.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "정결한 짐승", "eventEn": "Clean land animals"},
+        {"verse": 9, "eventKo": "정결한 물고기", "eventEn": "Clean sea creatures"},
+        {"verse": 13, "eventKo": "부정한 새", "eventEn": "Unclean birds"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "출산 후 정결례",
+      "titleEn": "Purification After Childbirth",
+      "summaryKo": "아이를 낳은 여인의 정결례에 대한 규정입니다.",
+      "summaryEn": "Regulations for purification of women after childbirth.",
+      "messageKo": "생명의 탄생도 하나님 앞에서 거룩한 과정을 거쳐야 합니다.",
+      "messageEn": "Even the birth of life requires a holy process before God.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "남자아이 출산", "eventEn": "Birth of male child"},
+        {"verse": 5, "eventKo": "여자아이 출산", "eventEn": "Birth of female child"},
+        {"verse": 6, "eventKo": "정결례 제물", "eventEn": "Purification offerings"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "피부병 진단",
+      "titleEn": "Skin Disease Diagnosis",
+      "summaryKo": "다양한 피부병을 진단하고 판정하는 방법에 대한 규례입니다.",
+      "summaryEn": "Regulations for diagnosing and determining various skin diseases.",
+      "messageKo": "죄는 피부병처럼 퍼져나가며, 공동체의 정결을 위해 분리가 필요합니다.",
+      "messageEn": "Sin spreads like disease; separation is needed to protect community holiness.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "피부병 검사", "eventEn": "Skin disease examination"},
+        {"verse": 45, "eventKo": "부정한 자의 외침", "eventEn": "Cry of the unclean"},
+        {"verse": 47, "eventKo": "옷의 곰팡이", "eventEn": "Mold in garments"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "피부병자의 정결례",
+      "titleEn": "Cleansing from Skin Disease",
+      "summaryKo": "피부병이 나은 사람을 정결케 하는 절차입니다.",
+      "summaryEn": "Procedures for ceremonial cleansing of those healed from skin disease.",
+      "messageKo": "회복은 하나님께서 주시며, 정결례는 공동체로의 복귀를 가능케 합니다.",
+      "messageEn": "Healing comes from God; purification enables return to the community.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "두 마리 새", "eventEn": "Two birds ritual"},
+        {"verse": 14, "eventKo": "피를 바름", "eventEn": "Application of blood"},
+        {"verse": 34, "eventKo": "집의 곰팡이", "eventEn": "Mold in houses"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "유출병 규례",
+      "titleEn": "Bodily Discharges",
+      "summaryKo": "남녀의 유출에 관한 부정과 정결례 규정입니다.",
+      "summaryEn": "Regulations regarding ceremonial uncleanness from bodily discharges.",
+      "messageKo": "우리의 육체적 상태도 하나님 앞에서 다루어져야 합니다.",
+      "messageEn": "Our physical conditions must also be addressed before God.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "남자의 유출", "eventEn": "Male discharge"},
+        {"verse": 19, "eventKo": "여자의 월경", "eventEn": "Female menstruation"},
+        {"verse": 31, "eventKo": "부정에서 구별", "eventEn": "Separation from uncleanness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "대속죄일",
+      "titleEn": "Day of Atonement",
+      "summaryKo": "일 년에 한 번 지키는 대속죄일의 규례로, 이스라엘의 모든 죄를 속합니다.",
+      "summaryEn": "The annual Day of Atonement when all Israel's sins are atoned for.",
+      "messageKo": "완전한 속죄를 위해서는 대제사장의 중보가 필요하며, 이는 그리스도를 예표합니다.",
+      "messageEn": "Complete atonement requires priestly mediation, foreshadowing Christ.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "지성소 진입 규례", "eventEn": "Entering the Most Holy Place"},
+        {"verse": 15, "eventKo": "백성을 위한 속죄", "eventEn": "Atonement for the people"},
+        {"verse": 21, "eventKo": "아사셀 염소", "eventEn": "Scapegoat sent away"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "피에 관한 규례",
+      "titleEn": "Laws About Blood",
+      "summaryKo": "제물은 성막에서 드려야 하며, 피를 먹지 말라는 규례입니다.",
+      "summaryEn": "Offerings must be brought to the tabernacle; blood must not be consumed.",
+      "messageKo": "피 안에 생명이 있으며, 생명은 하나님께 속한 것입니다.",
+      "messageEn": "Life is in the blood, and life belongs to God.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "성막에서 제사", "eventEn": "Sacrifices at the tabernacle"},
+        {"verse": 11, "eventKo": "피 안에 생명", "eventEn": "Life in the blood"},
+        {"verse": 14, "eventKo": "피 먹기 금지", "eventEn": "Prohibition of eating blood"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "성적 관계 규례",
+      "titleEn": "Sexual Morality Laws",
+      "summaryKo": "금지된 성적 관계에 대한 규례로, 이스라엘의 거룩함을 지키기 위한 것입니다.",
+      "summaryEn": "Laws regarding forbidden sexual relations to maintain Israel's holiness.",
+      "messageKo": "하나님은 성적 순결을 요구하시며, 이는 그분의 거룩함을 반영합니다.",
+      "messageEn": "God requires sexual purity, reflecting His holiness.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "애굽과 가나안의 풍속 금지", "eventEn": "Rejecting pagan customs"},
+        {"verse": 6, "eventKo": "근친상간 금지", "eventEn": "Prohibition of incest"},
+        {"verse": 22, "eventKo": "동성애 금지", "eventEn": "Prohibition of homosexuality"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "거룩함의 실제적 적용",
+      "titleEn": "Practical Holiness",
+      "summaryKo": "일상생활에서 거룩함을 실천하는 다양한 규례들입니다.",
+      "summaryEn": "Various regulations for practicing holiness in daily life.",
+      "messageKo": "거룩함은 일상의 모든 관계와 행동에서 나타나야 합니다.",
+      "messageEn": "Holiness must be evident in all relationships and actions of daily life.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "거룩하라 명령", "eventEn": "Command to be holy"},
+        {"verse": 9, "eventKo": "가난한 자를 위한 수확", "eventEn": "Harvest for the poor"},
+        {"verse": 18, "eventKo": "네 이웃을 사랑하라", "eventEn": "Love your neighbor"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "범죄에 대한 형벌",
+      "titleEn": "Penalties for Sin",
+      "summaryKo": "18-19장의 규례를 어긴 자들에 대한 형벌 규정입니다.",
+      "summaryEn": "Penalties for violations of the laws given in chapters 18-19.",
+      "messageKo": "하나님의 거룩함은 심판을 동반하며, 죄에는 반드시 대가가 따릅니다.",
+      "messageEn": "God's holiness involves judgment; sin always has consequences.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "몰렉 숭배자 처벌", "eventEn": "Penalty for Molech worship"},
+        {"verse": 10, "eventKo": "간음의 형벌", "eventEn": "Penalty for adultery"},
+        {"verse": 26, "eventKo": "거룩한 구별", "eventEn": "Holy separation"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "제사장의 거룩함",
+      "titleEn": "Holiness of Priests",
+      "summaryKo": "제사장들에게 요구되는 특별한 거룩함의 기준입니다.",
+      "summaryEn": "Special standards of holiness required for priests.",
+      "messageKo": "하나님을 가까이 섬기는 자에게는 더 높은 기준이 요구됩니다.",
+      "messageEn": "Those who serve close to God are held to higher standards.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "죽은 자로 인한 부정", "eventEn": "Defilement from the dead"},
+        {"verse": 7, "eventKo": "제사장의 결혼", "eventEn": "Priestly marriages"},
+        {"verse": 16, "eventKo": "흠이 있는 자 제한", "eventEn": "Physical requirements"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "거룩한 제물",
+      "titleEn": "Holy Offerings",
+      "summaryKo": "제물을 다루는 규례와 제물의 자격 요건입니다.",
+      "summaryEn": "Regulations for handling offerings and requirements for acceptable sacrifices.",
+      "messageKo": "하나님께 드리는 것은 최상의 것이어야 합니다.",
+      "messageEn": "What we offer to God must be our best.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "부정한 상태의 제사장", "eventEn": "Priests in unclean state"},
+        {"verse": 17, "eventKo": "흠 없는 제물", "eventEn": "Unblemished offerings"},
+        {"verse": 29, "eventKo": "감사제 규례", "eventEn": "Thanksgiving offering rules"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "절기들",
+      "titleEn": "The Festivals",
+      "summaryKo": "이스라엘이 지켜야 할 연간 절기들에 대한 규정입니다.",
+      "summaryEn": "Annual festivals Israel must observe throughout the year.",
+      "messageKo": "절기는 하나님의 구원 역사를 기억하고 경축하는 시간입니다.",
+      "messageEn": "Festivals are times to remember and celebrate God's saving acts.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "유월절", "eventEn": "Passover"},
+        {"verse": 15, "eventKo": "칠칠절 (오순절)", "eventEn": "Festival of Weeks"},
+        {"verse": 34, "eventKo": "초막절", "eventEn": "Festival of Tabernacles"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "등불과 진설병, 신성모독",
+      "titleEn": "Lamps, Bread, and Blasphemy",
+      "summaryKo": "성막의 등불과 진설병 규례, 그리고 신성모독자의 처벌입니다.",
+      "summaryEn": "Regulations for tabernacle lamps and bread; punishment for blasphemy.",
+      "messageKo": "하나님의 이름은 거룩하며, 가볍게 여겨서는 안 됩니다.",
+      "messageEn": "God's name is holy and must not be treated carelessly.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "등불 규례", "eventEn": "Lamp regulations"},
+        {"verse": 5, "eventKo": "진설병 규례", "eventEn": "Bread of Presence"},
+        {"verse": 16, "eventKo": "신성모독자 처형", "eventEn": "Blasphemer executed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "안식년과 희년",
+      "titleEn": "Sabbath Year and Jubilee",
+      "summaryKo": "7년마다의 안식년과 50년마다의 희년에 대한 규례입니다.",
+      "summaryEn": "Regulations for the Sabbath year every seven years and Jubilee every fifty years.",
+      "messageKo": "땅은 하나님의 것이며, 희년은 해방과 회복의 때입니다.",
+      "messageEn": "The land belongs to God; Jubilee is a time of liberation and restoration.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "안식년 규례", "eventEn": "Sabbath year"},
+        {"verse": 10, "eventKo": "희년 선포", "eventEn": "Year of Jubilee"},
+        {"verse": 23, "eventKo": "땅은 하나님의 것", "eventEn": "The land is God's"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "순종의 축복과 불순종의 저주",
+      "titleEn": "Blessings and Curses",
+      "summaryKo": "율법에 대한 순종의 축복과 불순종의 저주를 나열합니다.",
+      "summaryEn": "Blessings for obedience and curses for disobedience to the law.",
+      "messageKo": "하나님은 순종에 축복하시고 불순종에 징계하시지만, 회개하면 회복하십니다.",
+      "messageEn": "God blesses obedience and disciplines disobedience, but restores upon repentance.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "순종의 축복", "eventEn": "Blessings for obedience"},
+        {"verse": 14, "eventKo": "불순종의 저주", "eventEn": "Curses for disobedience"},
+        {"verse": 40, "eventKo": "회개와 회복", "eventEn": "Repentance and restoration"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "서원과 십일조",
+      "titleEn": "Vows and Tithes",
+      "summaryKo": "서원물의 값을 매기는 방법과 십일조에 대한 규례입니다.",
+      "summaryEn": "Regulations for valuing vowed offerings and giving tithes.",
+      "messageKo": "하나님께 한 약속은 반드시 지켜야 하며, 십일조는 하나님의 것입니다.",
+      "messageEn": "Promises to God must be kept; the tithe belongs to the Lord.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "사람의 값", "eventEn": "Valuation of persons"},
+        {"verse": 26, "eventKo": "처음 난 것", "eventEn": "Firstborn regulations"},
+        {"verse": 30, "eventKo": "십일조는 여호와의 것", "eventEn": "Tithe belongs to the Lord"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

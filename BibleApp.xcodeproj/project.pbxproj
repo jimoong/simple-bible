@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0000010000000000000029 /* ChapterToastTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000029 /* ChapterToastTracker.swift */; };
+		AA0000010000000000000028 /* ChapterToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000028 /* ChapterToast.swift */; };
 		AA0000010000000000000027 /* ChapterInfoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000027 /* ChapterInfoPanel.swift */; };
 		AA0000010000000000000025 /* ChapterSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000025 /* ChapterSummary.swift */; };
 		AA0000010000000000000026 /* ChapterSummaries in Resources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000026 /* ChapterSummaries */; };
@@ -53,6 +55,8 @@
 		AA0000020000000000000025 /* ChapterSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterSummary.swift; sourceTree = "<group>"; };
 		AA0000020000000000000026 /* ChapterSummaries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ChapterSummaries; sourceTree = "<group>"; };
 		AA0000020000000000000027 /* ChapterInfoPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterInfoPanel.swift; sourceTree = "<group>"; };
+		AA0000020000000000000028 /* ChapterToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterToast.swift; sourceTree = "<group>"; };
+		AA0000020000000000000029 /* ChapterToastTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterToastTracker.swift; sourceTree = "<group>"; };
 		AA0000020000000000000001 /* BibleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppApp.swift; sourceTree = "<group>"; };
 		AA0000020000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000003 /* SlotMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineView.swift; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				AA0000020000000000000006 /* BookGridView.swift */,
 				AA0000020000000000000007 /* ChapterGridView.swift */,
 				AA0000020000000000000027 /* ChapterInfoPanel.swift */,
+				AA0000020000000000000028 /* ChapterToast.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 				66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */,
 				AA0000020000000000000011 /* BibleAPIService.swift */,
 				AA0000020000000000000012 /* HapticManager.swift */,
+				AA0000020000000000000029 /* ChapterToastTracker.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 				AA0000010000000000000024 /* BibleBookSummaries.swift in Sources */,
 				AA0000010000000000000025 /* ChapterSummary.swift in Sources */,
 				AA0000010000000000000027 /* ChapterInfoPanel.swift in Sources */,
+				AA0000010000000000000028 /* ChapterToast.swift in Sources */,
+				AA0000010000000000000029 /* ChapterToastTracker.swift in Sources */,
 				66EAF8742F14AF8E00542200 /* VoiceSearchOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

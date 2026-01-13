@@ -214,13 +214,8 @@ struct ChapterInfoPanel: View {
     
     // MARK: - Key Events Section
     private func keyEventsSection(_ events: [ChapterKeyEvent]) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
-            Text(viewModel.languageMode == .kr ? "주요 사건" : "Key events")
-                .font(.system(size: 14, weight: .bold))
-                .foregroundStyle(theme.accent)
-            
-            VStack(alignment: .leading, spacing: 1) {
-                ForEach(Array(events.enumerated()), id: \.offset) { index, event in
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(events) { event in
                     Button {
                         Task {
                             // Map verse number to index (typically verse - 1)
@@ -235,7 +230,7 @@ struct ChapterInfoPanel: View {
                         HStack(alignment: .top, spacing: 16) {
                             Text("\(event.verse)")
                                 .font(theme.verseNumber(14, language: viewModel.languageMode))
-                                .foregroundStyle(theme.accent)
+                                .foregroundStyle(theme.textSecondary.opacity(0.5))
                                 .frame(width: 28, alignment: .leading)
                                 .padding(.top, 2)
                             
@@ -247,21 +242,9 @@ struct ChapterInfoPanel: View {
                             
                             Spacer()
                         }
-                        .padding(.horizontal, 16)
                         .padding(.vertical, 12)
-                        .background(
-                            UnevenRoundedRectangle(
-                                topLeadingRadius: index == 0 ? 16 : 0,
-                                bottomLeadingRadius: index == events.count - 1 ? 16 : 0,
-                                bottomTrailingRadius: index == events.count - 1 ? 16 : 0,
-                                topTrailingRadius: index == 0 ? 16 : 0,
-                                style: .continuous
-                            )
-                            .fill(Color.black.opacity(0.2))
-                        )
                     }
                     .buttonStyle(.plain)
-                }
             }
         }
     }
