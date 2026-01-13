@@ -1,11 +1,11 @@
 import SwiftUI
 
-/// Morphing menu button - transforms from FAB into a menu panel
-struct ExpandableFAB: View {
-    @Binding var languageMode: LanguageMode
+/// Expandable navigation button - transforms from FAB into a menu panel
+/// Mirror behavior of ExpandableFAB for consistency
+struct NavigateFAB: View {
     var theme: BookTheme
-    var onLanguageToggle: () -> Void
-    var onSettings: () -> Void
+    var onBookshelf: () -> Void
+    var onVoiceSearch: () -> Void
     @Binding var isExpanded: Bool
     var isHidden: Bool = false
     
@@ -15,14 +15,14 @@ struct ExpandableFAB: View {
     private let menuItemHeight: CGFloat = 48
     private let menuPadding: CGFloat = 8
     
-    private var menuItemCount: Int { 2 } // Settings + Language
+    private var menuItemCount: Int { 2 } // Bookshelf + Voice
     
     private var expandedHeight: CGFloat {
         CGFloat(menuItemCount) * menuItemHeight + menuPadding * 2
     }
     
     var body: some View {
-        ZStack(alignment: .bottomTrailing) {
+        ZStack(alignment: .bottomLeading) {
             // Tap-outside overlay to close (only when expanded)
             if isExpanded {
                 Color.clear
@@ -51,21 +51,24 @@ struct ExpandableFAB: View {
             if isExpanded {
                 // Menu items
                 VStack(spacing: 0) {
-                    // Settings (closes menu)
-                    menuItem(icon: "gearshape.fill", label: "Settings") {
-                        onSettings()
+                    // Voice search
+                    menuItem(icon: "mic.fill", label: "Voice") {
+                        onVoiceSearch()
                         closeMenu()
                     }
                     
-                    // Language toggle (doesn't close menu)
-                    languageToggleItem
+                    // Bookshelf
+                    menuItem(icon: "books.vertical", label: "Books") {
+                        onBookshelf()
+                        closeMenu()
+                    }
                 }
                 .padding(.vertical, menuPadding)
-                .padding(.horizontal, menuPadding) // even padding on all sides
+                .padding(.horizontal, menuPadding)
                 .transition(.opacity.animation(.easeOut(duration: 0.15).delay(0.1)))
             } else {
-                // FAB icon
-                Image(systemName: "ellipsis")
+                // FAB icon - location icon
+                Image(systemName: "location")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.white)
                     .transition(.opacity.animation(.easeOut(duration: 0.1)))
@@ -120,7 +123,7 @@ struct ExpandableFAB: View {
         )
     }
     
-    // MARK: - Menu Item (standard - closes menu on tap)
+    // MARK: - Menu Item
     private func menuItem(icon: String, label: String, action: @escaping () -> Void) -> some View {
         Button {
             action()
@@ -142,46 +145,7 @@ struct ExpandableFAB: View {
             .frame(height: menuItemHeight)
             .contentShape(Rectangle())
         }
-        .buttonStyle(MenuItemButtonStyle())
-    }
-    
-    // MARK: - Language Toggle Item (doesn't close menu)
-    private var languageToggleItem: some View {
-        Button {
-            withAnimation(.easeOut(duration: 0.15)) {
-                onLanguageToggle()
-            }
-            HapticManager.shared.selection()
-            // Note: Does NOT close menu
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: "globe")
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 24)
-                
-                // Toggle indicator
-                HStack(spacing: 6) {
-                    Text("KR")
-                        .font(.system(size: 16, weight: languageMode == .kr ? .bold : .regular))
-                        .foregroundStyle(languageMode == .kr ? .white : .white.opacity(0.4))
-                    
-                    Text("/")
-                        .font(.system(size: 16))
-                        .foregroundStyle(.white.opacity(0.25))
-                    
-                    Text("EN")
-                        .font(.system(size: 16, weight: languageMode == .en ? .bold : .regular))
-                        .foregroundStyle(languageMode == .en ? .white : .white.opacity(0.4))
-                }
-                
-                Spacer()
-            }
-            .padding(.horizontal, 16)
-            .frame(height: menuItemHeight)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(MenuItemButtonStyle())
+        .buttonStyle(NavigateMenuItemButtonStyle())
     }
     
     // MARK: - Helpers
@@ -200,7 +164,7 @@ struct ExpandableFAB: View {
 }
 
 // MARK: - Menu Item Button Style
-private struct MenuItemButtonStyle: ButtonStyle {
+private struct NavigateMenuItemButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .background(
@@ -214,7 +178,6 @@ private struct MenuItemButtonStyle: ButtonStyle {
 // MARK: - Preview
 #Preview {
     struct PreviewWrapper: View {
-        @State private var languageMode: LanguageMode = .en
         @State private var isExpanded = false
         
         var body: some View {
@@ -225,15 +188,14 @@ private struct MenuItemButtonStyle: ButtonStyle {
                 VStack {
                     Spacer()
                     HStack {
-                        Spacer()
-                        ExpandableFAB(
-                            languageMode: $languageMode,
+                        NavigateFAB(
                             theme: BookThemes.genesis,
-                            onLanguageToggle: { print("Toggle language") },
-                            onSettings: { print("Open settings") },
+                            onBookshelf: { print("Open bookshelf") },
+                            onVoiceSearch: { print("Open voice search") },
                             isExpanded: $isExpanded
                         )
                         .padding(24)
+                        Spacer()
                     }
                 }
             }

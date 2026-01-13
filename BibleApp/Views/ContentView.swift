@@ -8,6 +8,8 @@ struct ContentView: View {
     @State private var showSettings = false
     @State private var showChapterToast = false
     @State private var currentChapterSummary: ChapterSummary? = nil
+    @State private var isNavigateFABExpanded = false
+    @State private var isSettingsFABExpanded = false
     
     private var theme: BookTheme {
         viewModel.currentTheme
@@ -160,18 +162,23 @@ struct ContentView: View {
                         HStack(alignment: .bottom) {
                             leftActionButtons
                             Spacer()
-                            ExpandableFAB(
-                                languageMode: $viewModel.languageMode,
-                                theme: theme,
-                                onLanguageToggle: {
-                                    withAnimation(.easeOut(duration: 0.2)) {
-                                        viewModel.toggleLanguage()
-                                    }
-                                },
-                                onSettings: {
-                                    showSettings = true
-                                }
-                            )
+                            // Hide menu when in fullscreen chapter grid
+                            if !(isShowingFullscreenBookshelf && fullscreenSelectedBook != nil) {
+                                ExpandableFAB(
+                                    languageMode: $viewModel.languageMode,
+                                    theme: theme,
+                                    onLanguageToggle: {
+                                        withAnimation(.easeOut(duration: 0.2)) {
+                                            viewModel.toggleLanguage()
+                                        }
+                                    },
+                                    onSettings: {
+                                        showSettings = true
+                                    },
+                                    isExpanded: $isSettingsFABExpanded,
+                                    isHidden: isNavigateFABExpanded
+                                )
+                            }
                         }
                         .padding(.horizontal, 24)
                         .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
@@ -299,25 +306,24 @@ struct ContentView: View {
                 HapticManager.shared.selection()
             }
         } else {
-            HStack(spacing: 12) {
-                // Bookshelf button - opens to books grid view
-                actionButton(icon: "books.vertical") {
+            // Navigate FAB - expands to show bookshelf and voice search
+            NavigateFAB(
+                theme: theme,
+                onBookshelf: {
                     if viewModel.showBookshelf {
                         dismissBookshelf()
                     } else {
                         viewModel.openBookshelf()
                     }
-                    HapticManager.shared.selection()
-                }
-                
-                // Mic button
-                actionButton(icon: "mic.fill") {
+                },
+                onVoiceSearch: {
                     withAnimation {
                         voiceSearchViewModel.openAndStartListening(with: viewModel.languageMode)
                     }
-                    HapticManager.shared.selection()
-                }
-            }
+                },
+                isExpanded: $isNavigateFABExpanded,
+                isHidden: isSettingsFABExpanded
+            )
         }
     }
     

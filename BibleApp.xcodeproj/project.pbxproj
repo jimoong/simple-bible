@@ -36,6 +36,7 @@
 		AA0000010000000000000019 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000019 /* Fonts */; };
 		AA0000010000000000000020 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000020 /* SplashScreenView.swift */; };
 		AA0000010000000000000021 /* ExpandableFAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000021 /* ExpandableFAB.swift */; };
+		AA0000010000000000000032 /* NavigateFAB.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000032 /* NavigateFAB.swift */; };
 		AA0000010000000000000022 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000022 /* SettingsView.swift */; };
 		AA0000010000000000000023 /* GlassStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000023 /* GlassStyle.swift */; };
 		AA0000010000000000000024 /* BibleBookSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000024 /* BibleBookSummaries.swift */; };
@@ -79,6 +80,7 @@
 		AA000002000000000000001A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA0000020000000000000020 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000021 /* ExpandableFAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableFAB.swift; sourceTree = "<group>"; };
+		AA0000020000000000000032 /* NavigateFAB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateFAB.swift; sourceTree = "<group>"; };
 		AA0000020000000000000022 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000023 /* GlassStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassStyle.swift; sourceTree = "<group>"; };
 		AA0000020000000000000024 /* BibleBookSummaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleBookSummaries.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */,
 				AA0000020000000000000020 /* SplashScreenView.swift */,
 				AA0000020000000000000021 /* ExpandableFAB.swift */,
+				AA0000020000000000000032 /* NavigateFAB.swift */,
 				AA0000020000000000000022 /* SettingsView.swift */,
 				AA0000020000000000000002 /* ContentView.swift */,
 				AA0000020000000000000003 /* SlotMachineView.swift */,
@@ -298,6 +301,7 @@
 				AA0000010000000000000001 /* BibleAppApp.swift in Sources */,
 				AA0000010000000000000020 /* SplashScreenView.swift in Sources */,
 				AA0000010000000000000021 /* ExpandableFAB.swift in Sources */,
+				AA0000010000000000000032 /* NavigateFAB.swift in Sources */,
 				AA0000010000000000000022 /* SettingsView.swift in Sources */,
 				AA0000010000000000000002 /* ContentView.swift in Sources */,
 				AA0000010000000000000003 /* SlotMachineView.swift in Sources */,
