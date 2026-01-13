@@ -11,6 +11,7 @@ final class BibleViewModel {
         static let verseIndex = "savedVerseIndex"
         static let languageMode = "savedLanguageMode"
         static let sortOrder = "savedSortOrder"
+        static let readingMode = "savedReadingMode"
     }
     
     // MARK: - State
@@ -29,6 +30,9 @@ final class BibleViewModel {
     }
     var sortOrder: BookSortOrder = .canonical {
         didSet { saveSortOrder() }
+    }
+    var readingMode: ReadingMode = .tap {
+        didSet { saveReadingMode() }
     }
     
     var isLoading: Bool = false
@@ -106,6 +110,12 @@ final class BibleViewModel {
            let order = BookSortOrder(rawValue: savedSortOrder) {
             self.sortOrder = order
         }
+        
+        // Load saved reading mode
+        if let savedReadingMode = defaults.string(forKey: StorageKeys.readingMode),
+           let mode = ReadingMode(rawValue: savedReadingMode) {
+            self.readingMode = mode
+        }
     }
     
     // MARK: - Persistence
@@ -122,6 +132,10 @@ final class BibleViewModel {
     
     private func saveSortOrder() {
         UserDefaults.standard.set(sortOrder.rawValue, forKey: StorageKeys.sortOrder)
+    }
+    
+    private func saveReadingMode() {
+        UserDefaults.standard.set(readingMode.rawValue, forKey: StorageKeys.readingMode)
     }
     
     // MARK: - Actions

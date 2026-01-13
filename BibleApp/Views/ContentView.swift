@@ -30,18 +30,17 @@ struct ContentView: View {
             let maxPanelHeight = geometry.size.height * 0.8
             
             ZStack {
-                // Main slot machine view
-                SlotMachineView(viewModel: viewModel) {
-                    // Header tap action - toggle bookshelf (shows chapters for current book)
-                    if viewModel.showBookshelf {
-                        dismissBookshelf()
+                // Main reading view - switches based on reading mode
+                Group {
+                    if viewModel.readingMode == .tap {
+                        SlotMachineView(viewModel: viewModel) {
+                            handleHeaderTap()
+                        }
                     } else {
-                        // Mark toast as seen when opening chapter info panel
-                        markCurrentChapterToastSeen()
-                        showChapterToast = false
-                        viewModel.openBookshelf(showChapters: true)
+                        BookReadingView(viewModel: viewModel) {
+                            handleHeaderTap()
+                        }
                     }
-                    HapticManager.shared.selection()
                 }
                 
                 // Chapter toast (below header, above content)
@@ -166,17 +165,24 @@ struct ContentView: View {
                             if !(isShowingFullscreenBookshelf && fullscreenSelectedBook != nil) {
                                 ExpandableFAB(
                                     languageMode: $viewModel.languageMode,
+                                    readingMode: $viewModel.readingMode,
                                     theme: theme,
                                     onLanguageToggle: {
                                         withAnimation(.easeOut(duration: 0.2)) {
                                             viewModel.toggleLanguage()
                                         }
                                     },
+                                    onReadingModeToggle: {
+                                        withAnimation(.easeOut(duration: 0.2)) {
+                                            viewModel.readingMode = viewModel.readingMode == .tap ? .scroll : .tap
+                                        }
+                                    },
                                     onSettings: {
                                         showSettings = true
                                     },
                                     isExpanded: $isSettingsFABExpanded,
-                                    isHidden: isNavigateFABExpanded
+                                    isHidden: isNavigateFABExpanded,
+                                    useBlurBackground: viewModel.readingMode == .scroll
                                 )
                             }
                         }
@@ -243,6 +249,7 @@ struct ContentView: View {
             .fullScreenCover(isPresented: $showSettings) {
                 SettingsView(
                     languageMode: $viewModel.languageMode,
+                    readingMode: $viewModel.readingMode,
                     onDismiss: { showSettings = false }
                 )
             }
@@ -293,6 +300,19 @@ struct ContentView: View {
         HapticManager.shared.selection()
     }
     
+    private func handleHeaderTap() {
+        // Header tap action - toggle bookshelf (shows chapters for current book)
+        if viewModel.showBookshelf {
+            dismissBookshelf()
+        } else {
+            // Mark toast as seen when opening chapter info panel
+            markCurrentChapterToastSeen()
+            showChapterToast = false
+            viewModel.openBookshelf(showChapters: true)
+        }
+        HapticManager.shared.selection()
+    }
+    
     // MARK: - Left Action Buttons
     
     @ViewBuilder
@@ -322,7 +342,8 @@ struct ContentView: View {
                     }
                 },
                 isExpanded: $isNavigateFABExpanded,
-                isHidden: isSettingsFABExpanded
+                isHidden: isSettingsFABExpanded,
+                useBlurBackground: viewModel.readingMode == .scroll
             )
         }
     }

@@ -8,6 +8,7 @@ struct NavigateFAB: View {
     var onVoiceSearch: () -> Void
     @Binding var isExpanded: Bool
     var isHidden: Bool = false
+    var useBlurBackground: Bool = false
     
     // Layout
     private let collapsedSize: CGFloat = 52
@@ -93,34 +94,66 @@ struct NavigateFAB: View {
     }
     
     // MARK: - Glass Background
+    @ViewBuilder
     private var glassBackground: some View {
-        RoundedRectangle(
-            cornerRadius: isExpanded ? 20 : collapsedSize / 2,
-            style: .continuous
-        )
-        .fill(Color.white.opacity(0.08))
-        .overlay(
+        if useBlurBackground {
             RoundedRectangle(
                 cornerRadius: isExpanded ? 20 : collapsedSize / 2,
                 style: .continuous
             )
-            .stroke(
-                LinearGradient(
-                    colors: [
-                        Color.white.opacity(0.25),
-                        Color.white.opacity(0.08)
-                    ],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing
-                ),
-                lineWidth: 1
+            .fill(.regularMaterial)
+            .environment(\.colorScheme, .dark)
+            .overlay(
+                RoundedRectangle(
+                    cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                    style: .continuous
+                )
+                .stroke(
+                    LinearGradient(
+                        colors: [
+                            Color.white.opacity(0.18),
+                            Color.white.opacity(0.05)
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ),
+                    lineWidth: 1
+                )
             )
-        )
-        .shadow(
-            color: .black.opacity(isExpanded ? 0.15 : 0.12),
-            radius: isExpanded ? 8 : 4,
-            y: isExpanded ? 4 : 2
-        )
+            .shadow(
+                color: .black.opacity(isExpanded ? 0.20 : 0.15),
+                radius: isExpanded ? 10 : 6,
+                y: isExpanded ? 4 : 3
+            )
+        } else {
+            RoundedRectangle(
+                cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                style: .continuous
+            )
+            .fill(Color.white.opacity(0.08))
+            .overlay(
+                RoundedRectangle(
+                    cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                    style: .continuous
+                )
+                .stroke(
+                    LinearGradient(
+                        colors: [
+                            Color.white.opacity(0.25),
+                            Color.white.opacity(0.08)
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    ),
+                    lineWidth: 1
+                )
+            )
+            .shadow(
+                color: .black.opacity(isExpanded ? 0.15 : 0.12),
+                radius: isExpanded ? 8 : 4,
+                y: isExpanded ? 4 : 2
+            )
+        }
     }
     
     // MARK: - Menu Item

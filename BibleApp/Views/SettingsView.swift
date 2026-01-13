@@ -3,6 +3,7 @@ import MessageUI
 
 struct SettingsView: View {
     @Binding var languageMode: LanguageMode
+    @Binding var readingMode: ReadingMode
     var onDismiss: () -> Void
     
     // MARK: - State
@@ -26,6 +27,9 @@ struct SettingsView: View {
                     VStack(spacing: 28) {
                         // Languages Section
                         languagesSection
+                        
+                        // Reading Section
+                        readingSection
                         
                         // About Section
                         aboutSection
@@ -138,6 +142,57 @@ struct SettingsView: View {
                     .padding(.vertical, 14)
                 }
                 .buttonStyle(.plain)
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(.white.opacity(0.04))
+            )
+        }
+    }
+    
+    // MARK: - Reading Section
+    private var readingSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            sectionHeader(title: "Reading")
+            
+            VStack(spacing: 0) {
+                // Reading Mode Toggle
+                HStack {
+                    Text("Reading Mode")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.white)
+                    
+                    Spacer()
+                    
+                    // Segmented Picker
+                    HStack(spacing: 0) {
+                        ForEach(ReadingMode.allCases, id: \.self) { mode in
+                            Button {
+                                HapticManager.shared.selection()
+                                withAnimation(.easeOut(duration: 0.15)) {
+                                    readingMode = mode
+                                }
+                            } label: {
+                                Text(mode.displayName)
+                                    .font(.system(size: 14, weight: readingMode == mode ? .semibold : .regular))
+                                    .foregroundStyle(readingMode == mode ? .white : .white.opacity(0.5))
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .fill(readingMode == mode ? .white.opacity(0.15) : .clear)
+                                    )
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(.white.opacity(0.06))
+                    )
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 14)
             }
             .background(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
@@ -445,6 +500,7 @@ extension Color {
 #Preview {
     SettingsView(
         languageMode: .constant(.en),
+        readingMode: .constant(.tap),
         onDismiss: {}
     )
 }
