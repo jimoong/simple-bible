@@ -1,0 +1,1821 @@
+{
+  "timeline_data": [
+    {
+      "id": "era_01",
+      "type": "ERA",
+      "start_year": -2000,
+      "end_year": -1800,
+      "title": {
+        "ko": "족장 시대",
+        "en": "Patriarchal Age"
+      },
+      "description": {
+        "ko": "아브라함, 이삭, 야곱의 시대로 이스라엘 민족의 기원이 되는 시기입니다.",
+        "en": "The era of Abraham, Isaac, and Jacob, marking the origins of the nation of Israel."
+      }
+    },
+    {
+      "id": "hist_01",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1792,
+      "end_year": -1750,
+      "title": {
+        "ko": "함무라비 법전 편찬 (바빌로니아)",
+        "en": "Code of Hammurabi (Babylonia)"
+      },
+      "description": {
+        "ko": "고대 바빌로니아의 함무라비 왕이 제정한 법전으로, 고대 근동의 법 체계를 보여줍니다.",
+        "en": "Ancient Babylonian law code enacted by King Hammurabi, demonstrating the legal systems of the ancient Near East."
+      }
+    },
+    {
+      "id": "hist_02",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1876,
+      "title": {
+        "ko": "야곱의 가족 이집트 이주",
+        "en": "Jacob's Family Moves to Egypt"
+      },
+      "description": {
+        "ko": "기근으로 인해 야곱의 가족이 이집트로 이주하여 400년간 거주하게 됩니다.",
+        "en": "Due to famine, Jacob's family migrates to Egypt where they would reside for 400 years."
+      }
+    },
+    {
+      "id": "book_01",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 1,
+      "title": {
+        "ko": "창세기",
+        "en": "Genesis"
+      },
+      "start_year": -2000,
+      "end_year": -1800,
+      "description": {
+        "ko": "천지창조부터 요셉의 죽음까지, 인류와 이스라엘의 기원을 기록한 책입니다.",
+        "en": "Records the origins of humanity and Israel, from creation to the death of Joseph."
+      },
+      "testament": "OT",
+      "category": "PENTATEUCH",
+      "related_historical_events": ["hist_01", "hist_02"]
+    },
+    {
+      "id": "book_18",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 18,
+      "title": {
+        "ko": "욥기",
+        "en": "Job"
+      },
+      "start_year": -2000,
+      "end_year": -1800,
+      "description": {
+        "ko": "의로운 자의 고난과 하나님의 주권에 대한 시적 대화록입니다. 족장 시대를 배경으로 합니다.",
+        "en": "A poetic dialogue about the suffering of the righteous and God's sovereignty, set in the Patriarchal Age."
+      },
+      "testament": "OT",
+      "category": "WISDOM",
+      "related_historical_events": ["hist_01"]
+    },
+    {
+      "id": "era_02",
+      "type": "ERA",
+      "start_year": -1446,
+      "end_year": -1400,
+      "title": {
+        "ko": "출애굽 시대",
+        "en": "Exodus Era"
+      },
+      "description": {
+        "ko": "이스라엘이 이집트에서 해방되어 시내산에서 율법을 받고 광야를 여행한 시기입니다.",
+        "en": "The period when Israel was liberated from Egypt, received the Law at Sinai, and journeyed through the wilderness."
+      }
+    },
+    {
+      "id": "hist_03",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1279,
+      "end_year": -1213,
+      "title": {
+        "ko": "람세스 2세 치세 (이집트)",
+        "en": "Reign of Ramesses II (Egypt)"
+      },
+      "description": {
+        "ko": "이집트 신왕국 제19왕조의 파라오로, 출애굽의 배경이 되는 시기로 추정됩니다.",
+        "en": "Pharaoh of the 19th Dynasty of Egypt's New Kingdom, considered a possible backdrop for the Exodus."
+      }
+    },
+    {
+      "id": "hist_04",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1446,
+      "title": {
+        "ko": "출애굽 사건",
+        "en": "The Exodus"
+      },
+      "description": {
+        "ko": "모세의 인도 아래 이스라엘 백성이 이집트의 노예 생활에서 해방된 사건입니다.",
+        "en": "Under Moses' leadership, the Israelites were freed from slavery in Egypt."
+      }
+    },
+    {
+      "id": "hist_05",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1446,
+      "title": {
+        "ko": "시내산 율법 수여",
+        "en": "Giving of the Law at Sinai"
+      },
+      "description": {
+        "ko": "하나님이 시내산에서 모세를 통해 이스라엘 백성에게 십계명과 율법을 주신 사건입니다.",
+        "en": "God gave the Ten Commandments and the Law to Israel through Moses at Mount Sinai."
+      }
+    },
+    {
+      "id": "book_02",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 2,
+      "title": {
+        "ko": "출애굽기",
+        "en": "Exodus"
+      },
+      "start_year": -1446,
+      "end_year": -1406,
+      "description": {
+        "ko": "이집트에서의 노예 생활, 해방, 시내산 언약 체결을 기록한 책입니다.",
+        "en": "Records Israel's slavery in Egypt, their liberation, and the covenant at Mount Sinai."
+      },
+      "testament": "OT",
+      "category": "PENTATEUCH",
+      "related_historical_events": ["hist_03", "hist_04", "hist_05"]
+    },
+    {
+      "id": "book_03",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 3,
+      "title": {
+        "ko": "레위기",
+        "en": "Leviticus"
+      },
+      "start_year": -1446,
+      "end_year": -1406,
+      "description": {
+        "ko": "제사 규례와 거룩한 삶에 대한 율법을 담은 책입니다.",
+        "en": "Contains laws regarding sacrifices and holy living."
+      },
+      "testament": "OT",
+      "category": "PENTATEUCH",
+      "related_historical_events": ["hist_05"]
+    },
+    {
+      "id": "book_04",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 4,
+      "title": {
+        "ko": "민수기",
+        "en": "Numbers"
+      },
+      "start_year": -1446,
+      "end_year": -1406,
+      "description": {
+        "ko": "40년간의 광야 생활과 이스라엘의 인구 조사를 기록한 책입니다.",
+        "en": "Records the 40-year wilderness wandering and the census of Israel."
+      },
+      "testament": "OT",
+      "category": "PENTATEUCH",
+      "related_historical_events": ["hist_04"]
+    },
+    {
+      "id": "book_05",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 5,
+      "title": {
+        "ko": "신명기",
+        "en": "Deuteronomy"
+      },
+      "start_year": -1406,
+      "description": {
+        "ko": "가나안 입성 전 모세가 새 세대에게 율법을 다시 선포한 내용입니다.",
+        "en": "Moses' restatement of the Law to the new generation before entering Canaan."
+      },
+      "testament": "OT",
+      "category": "PENTATEUCH",
+      "related_historical_events": ["hist_05"]
+    },
+    {
+      "id": "era_03",
+      "type": "ERA",
+      "start_year": -1406,
+      "end_year": -1050,
+      "title": {
+        "ko": "정복과 사사 시대",
+        "en": "Conquest and Judges Period"
+      },
+      "description": {
+        "ko": "가나안 정복 이후 사사들이 이스라엘을 다스린 시기입니다.",
+        "en": "The period after the conquest of Canaan when judges ruled Israel."
+      }
+    },
+    {
+      "id": "hist_06",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1406,
+      "title": {
+        "ko": "가나안 정복",
+        "en": "Conquest of Canaan"
+      },
+      "description": {
+        "ko": "여호수아의 인도 아래 이스라엘이 약속의 땅 가나안을 정복한 사건입니다.",
+        "en": "Under Joshua's leadership, Israel conquered the Promised Land of Canaan."
+      }
+    },
+    {
+      "id": "hist_07",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1200,
+      "title": {
+        "ko": "청동기에서 철기 시대로 전환",
+        "en": "Bronze Age to Iron Age Transition"
+      },
+      "description": {
+        "ko": "고대 근동 지역에서 청동기 시대가 끝나고 철기 시대가 시작된 시기입니다.",
+        "en": "The transition from the Bronze Age to the Iron Age in the Ancient Near East."
+      }
+    },
+    {
+      "id": "hist_08",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1200,
+      "title": {
+        "ko": "해양 민족 침입",
+        "en": "Sea Peoples Invasion"
+      },
+      "description": {
+        "ko": "지중해 지역을 침략한 해양 민족들로 인해 고대 근동의 질서가 재편되었습니다.",
+        "en": "Maritime invaders who disrupted the ancient Near Eastern order."
+      }
+    },
+    {
+      "id": "book_06",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 6,
+      "title": {
+        "ko": "여호수아",
+        "en": "Joshua"
+      },
+      "start_year": -1406,
+      "end_year": -1375,
+      "description": {
+        "ko": "가나안 정복과 땅의 분배를 기록한 책입니다.",
+        "en": "Records the conquest of Canaan and the division of the land."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_06"]
+    },
+    {
+      "id": "book_07",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 7,
+      "title": {
+        "ko": "사사기",
+        "en": "Judges"
+      },
+      "start_year": -1375,
+      "end_year": -1050,
+      "description": {
+        "ko": "사사들이 이스라엘을 다스리던 혼란의 시기를 기록한 책입니다.",
+        "en": "Records the turbulent period when judges ruled Israel."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_07", "hist_08"]
+    },
+    {
+      "id": "book_08",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 8,
+      "title": {
+        "ko": "룻기",
+        "en": "Ruth"
+      },
+      "start_year": -1150,
+      "end_year": -1100,
+      "description": {
+        "ko": "사사 시대를 배경으로 한 모압 여인 룻의 이야기로, 다윗의 조상이 됩니다.",
+        "en": "The story of Ruth the Moabitess during the judges period, who becomes an ancestor of David."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_07"]
+    },
+    {
+      "id": "era_04",
+      "type": "ERA",
+      "start_year": -1050,
+      "end_year": -930,
+      "title": {
+        "ko": "통일 왕정 시대",
+        "en": "United Monarchy"
+      },
+      "description": {
+        "ko": "사울, 다윗, 솔로몬 왕 아래 이스라엘이 하나의 왕국으로 통일된 시기입니다.",
+        "en": "The period when Israel was united under Kings Saul, David, and Solomon."
+      }
+    },
+    {
+      "id": "hist_09",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1050,
+      "title": {
+        "ko": "사울 왕 즉위",
+        "en": "King Saul's Coronation"
+      },
+      "description": {
+        "ko": "이스라엘 최초의 왕 사울이 즉위하여 왕정 시대가 시작되었습니다.",
+        "en": "Saul becomes Israel's first king, beginning the monarchic period."
+      }
+    },
+    {
+      "id": "hist_10",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -1010,
+      "title": {
+        "ko": "다윗 왕조 건설",
+        "en": "Establishment of David's Dynasty"
+      },
+      "description": {
+        "ko": "다윗이 왕이 되어 예루살렘을 수도로 정하고 이스라엘을 통일했습니다.",
+        "en": "David becomes king, establishes Jerusalem as capital, and unites Israel."
+      }
+    },
+    {
+      "id": "hist_11",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -966,
+      "end_year": -959,
+      "title": {
+        "ko": "솔로몬 성전 건축",
+        "en": "Construction of Solomon's Temple"
+      },
+      "description": {
+        "ko": "솔로몬 왕이 예루살렘에 하나님의 성전을 건축했습니다.",
+        "en": "King Solomon constructs the Temple of God in Jerusalem."
+      }
+    },
+    {
+      "id": "hist_12",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -970,
+      "end_year": -930,
+      "title": {
+        "ko": "솔로몬의 황금기",
+        "en": "Solomon's Golden Age"
+      },
+      "description": {
+        "ko": "솔로몬 왕 치하에서 이스라엘이 최대 번영과 지혜의 시대를 맞이했습니다.",
+        "en": "Israel reaches its peak of prosperity and wisdom under King Solomon."
+      }
+    },
+    {
+      "id": "book_09",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 9,
+      "title": {
+        "ko": "사무엘상",
+        "en": "1 Samuel"
+      },
+      "start_year": -1100,
+      "end_year": -1010,
+      "description": {
+        "ko": "사무엘의 사역과 사울의 왕정, 다윗의 등장을 기록한 책입니다.",
+        "en": "Records Samuel's ministry, Saul's reign, and David's rise."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_09"]
+    },
+    {
+      "id": "book_10",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 10,
+      "title": {
+        "ko": "사무엘하",
+        "en": "2 Samuel"
+      },
+      "start_year": -1010,
+      "end_year": -970,
+      "description": {
+        "ko": "다윗 왕의 통치와 언약을 기록한 책입니다.",
+        "en": "Records King David's reign and the covenant made with him."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_10"]
+    },
+    {
+      "id": "book_11",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 11,
+      "title": {
+        "ko": "열왕기상",
+        "en": "1 Kings"
+      },
+      "start_year": -970,
+      "end_year": -850,
+      "description": {
+        "ko": "솔로몬의 통치와 왕국 분열, 초기 분열 왕국의 역사를 기록합니다.",
+        "en": "Records Solomon's reign, the kingdom's division, and early divided monarchy history."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_11", "hist_12", "hist_13"]
+    },
+    {
+      "id": "book_19",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 19,
+      "title": {
+        "ko": "시편",
+        "en": "Psalms"
+      },
+      "start_year": -1000,
+      "end_year": -400,
+      "description": {
+        "ko": "다윗과 여러 저자들이 쓴 찬양과 기도의 시 모음집입니다.",
+        "en": "A collection of hymns and prayers written by David and various authors."
+      },
+      "testament": "OT",
+      "category": "WISDOM",
+      "related_historical_events": ["hist_10"]
+    },
+    {
+      "id": "book_20",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 20,
+      "title": {
+        "ko": "잠언",
+        "en": "Proverbs"
+      },
+      "start_year": -970,
+      "end_year": -930,
+      "description": {
+        "ko": "주로 솔로몬이 기록한 지혜의 말씀 모음집입니다.",
+        "en": "A collection of wisdom sayings, primarily attributed to Solomon."
+      },
+      "testament": "OT",
+      "category": "WISDOM",
+      "related_historical_events": ["hist_12"]
+    },
+    {
+      "id": "book_21",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 21,
+      "title": {
+        "ko": "전도서",
+        "en": "Ecclesiastes"
+      },
+      "start_year": -935,
+      "description": {
+        "ko": "인생의 의미와 허무함에 대한 솔로몬의 철학적 성찰입니다.",
+        "en": "Solomon's philosophical reflection on the meaning and vanity of life."
+      },
+      "testament": "OT",
+      "category": "WISDOM",
+      "related_historical_events": ["hist_12"]
+    },
+    {
+      "id": "book_22",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 22,
+      "title": {
+        "ko": "아가",
+        "en": "Song of Solomon"
+      },
+      "start_year": -965,
+      "description": {
+        "ko": "솔로몬의 사랑의 노래로, 신랑과 신부의 사랑을 노래합니다.",
+        "en": "Solomon's song of love between a bride and bridegroom."
+      },
+      "testament": "OT",
+      "category": "WISDOM",
+      "related_historical_events": ["hist_12"]
+    },
+    {
+      "id": "era_05",
+      "type": "ERA",
+      "start_year": -930,
+      "end_year": -722,
+      "title": {
+        "ko": "분열 왕정 시대",
+        "en": "Divided Kingdom Period"
+      },
+      "description": {
+        "ko": "솔로몬 사후 왕국이 북이스라엘과 남유다로 분열된 시기입니다.",
+        "en": "After Solomon's death, the kingdom split into Northern Israel and Southern Judah."
+      }
+    },
+    {
+      "id": "hist_13",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -930,
+      "title": {
+        "ko": "왕국 분열 (북이스라엘/남유다)",
+        "en": "Kingdom Division (Israel/Judah)"
+      },
+      "description": {
+        "ko": "르호보암 왕 때 왕국이 북이스라엘과 남유다로 분열되었습니다.",
+        "en": "During Rehoboam's reign, the kingdom divided into Northern Israel and Southern Judah."
+      }
+    },
+    {
+      "id": "hist_14",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -883,
+      "end_year": -612,
+      "title": {
+        "ko": "앗수르 제국의 부상",
+        "en": "Rise of the Assyrian Empire"
+      },
+      "description": {
+        "ko": "고대 근동의 패권을 장악한 앗수르 제국이 이스라엘을 위협했습니다.",
+        "en": "The Assyrian Empire dominated the ancient Near East and threatened Israel."
+      }
+    },
+    {
+      "id": "hist_15",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -722,
+      "title": {
+        "ko": "북이스라엘 멸망 (앗수르 침공)",
+        "en": "Fall of Northern Israel (Assyrian Conquest)"
+      },
+      "description": {
+        "ko": "앗수르가 사마리아를 정복하고 북이스라엘이 멸망했습니다.",
+        "en": "Assyria conquered Samaria and the Northern Kingdom of Israel fell."
+      }
+    },
+    {
+      "id": "hist_16",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -853,
+      "title": {
+        "ko": "가르갈 전투",
+        "en": "Battle of Qarqar"
+      },
+      "description": {
+        "ko": "아합 왕이 앗수르에 대항해 연합군과 함께 싸운 중요한 전투입니다.",
+        "en": "A significant battle where King Ahab joined a coalition against Assyria."
+      }
+    },
+    {
+      "id": "book_12",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 12,
+      "title": {
+        "ko": "열왕기하",
+        "en": "2 Kings"
+      },
+      "start_year": -850,
+      "end_year": -560,
+      "description": {
+        "ko": "분열 왕국의 쇠퇴와 멸망, 바벨론 포로기까지의 역사입니다.",
+        "en": "Records the decline and fall of the divided kingdoms through the Babylonian exile."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_14", "hist_15", "hist_17"]
+    },
+    {
+      "id": "book_13",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 13,
+      "title": {
+        "ko": "역대상",
+        "en": "1 Chronicles"
+      },
+      "start_year": -1010,
+      "end_year": -970,
+      "description": {
+        "ko": "아담부터 다윗까지의 족보와 다윗 왕의 통치를 기록합니다.",
+        "en": "Records genealogies from Adam to David and David's reign."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_10"]
+    },
+    {
+      "id": "book_14",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 14,
+      "title": {
+        "ko": "역대하",
+        "en": "2 Chronicles"
+      },
+      "start_year": -970,
+      "end_year": -586,
+      "description": {
+        "ko": "솔로몬부터 바벨론 포로기까지 유다 왕들의 역사입니다.",
+        "en": "History of Judah's kings from Solomon to the Babylonian exile."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_11", "hist_13", "hist_17"]
+    },
+    {
+      "id": "book_23",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 23,
+      "title": {
+        "ko": "이사야",
+        "en": "Isaiah"
+      },
+      "start_year": -740,
+      "end_year": -680,
+      "description": {
+        "ko": "앗수르 침공과 바벨론 포로를 예언하며 메시아의 오심을 예고합니다.",
+        "en": "Prophesies Assyrian invasion and Babylonian exile while foretelling the Messiah's coming."
+      },
+      "testament": "OT",
+      "category": "MAJOR_PROPHETS",
+      "related_historical_events": ["hist_14", "hist_15"]
+    },
+    {
+      "id": "book_28",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 28,
+      "title": {
+        "ko": "호세아",
+        "en": "Hosea"
+      },
+      "start_year": -755,
+      "end_year": -715,
+      "description": {
+        "ko": "북이스라엘의 우상숭배를 책망하고 하나님의 사랑을 선포한 예언서입니다.",
+        "en": "Rebukes Northern Israel's idolatry and proclaims God's faithful love."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_14", "hist_15"]
+    },
+    {
+      "id": "book_29",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 29,
+      "title": {
+        "ko": "요엘",
+        "en": "Joel"
+      },
+      "start_year": -835,
+      "end_year": -800,
+      "description": {
+        "ko": "메뚜기 재앙을 통해 여호와의 날을 경고하고 회개를 촉구합니다.",
+        "en": "Uses a locust plague to warn of the Day of the Lord and calls for repentance."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_13"]
+    },
+    {
+      "id": "book_30",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 30,
+      "title": {
+        "ko": "아모스",
+        "en": "Amos"
+      },
+      "start_year": -760,
+      "end_year": -750,
+      "description": {
+        "ko": "사회적 불의를 책망하고 북이스라엘의 심판을 예언합니다.",
+        "en": "Condemns social injustice and prophesies judgment on Northern Israel."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_14"]
+    },
+    {
+      "id": "book_31",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 31,
+      "title": {
+        "ko": "오바댜",
+        "en": "Obadiah"
+      },
+      "start_year": -586,
+      "end_year": -553,
+      "description": {
+        "ko": "에돔의 교만과 멸망을 예언한 가장 짧은 구약 예언서입니다.",
+        "en": "The shortest Old Testament prophecy, foretelling Edom's pride and destruction."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_17"]
+    },
+    {
+      "id": "book_32",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 32,
+      "title": {
+        "ko": "요나",
+        "en": "Jonah"
+      },
+      "start_year": -785,
+      "end_year": -760,
+      "description": {
+        "ko": "니느웨에 보냄 받은 선지자 요나의 이야기로, 하나님의 긍휼을 보여줍니다.",
+        "en": "The story of prophet Jonah sent to Nineveh, demonstrating God's mercy."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_14"]
+    },
+    {
+      "id": "book_33",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 33,
+      "title": {
+        "ko": "미가",
+        "en": "Micah"
+      },
+      "start_year": -735,
+      "end_year": -700,
+      "description": {
+        "ko": "사회적 불의를 책망하고 베들레헴에서 나실 메시아를 예언합니다.",
+        "en": "Condemns social injustice and prophesies the Messiah's birth in Bethlehem."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_14", "hist_15"]
+    },
+    {
+      "id": "book_34",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 34,
+      "title": {
+        "ko": "나훔",
+        "en": "Nahum"
+      },
+      "start_year": -663,
+      "end_year": -612,
+      "description": {
+        "ko": "앗수르의 수도 니느웨의 멸망을 예언합니다.",
+        "en": "Prophesies the fall of Nineveh, the capital of Assyria."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_14"]
+    },
+    {
+      "id": "book_35",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 35,
+      "title": {
+        "ko": "하박국",
+        "en": "Habakkuk"
+      },
+      "start_year": -609,
+      "end_year": -598,
+      "description": {
+        "ko": "바벨론의 침략에 대한 하나님의 주권을 묵상하는 예언서입니다.",
+        "en": "A prophetic dialogue contemplating God's sovereignty amid Babylonian invasion."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_17"]
+    },
+    {
+      "id": "book_36",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 36,
+      "title": {
+        "ko": "스바냐",
+        "en": "Zephaniah"
+      },
+      "start_year": -640,
+      "end_year": -609,
+      "description": {
+        "ko": "여호와의 날과 유다의 심판 및 회복을 예언합니다.",
+        "en": "Prophesies the Day of the Lord and Judah's judgment and restoration."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_14"]
+    },
+    {
+      "id": "era_06",
+      "type": "ERA",
+      "start_year": -586,
+      "end_year": -538,
+      "title": {
+        "ko": "포로 시대",
+        "en": "Exile Period"
+      },
+      "description": {
+        "ko": "예루살렘 멸망 후 유다 백성들이 바벨론에서 포로 생활을 한 시기입니다.",
+        "en": "After Jerusalem's fall, the people of Judah lived as exiles in Babylon."
+      }
+    },
+    {
+      "id": "hist_17",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -586,
+      "title": {
+        "ko": "예루살렘 함락 (바벨론 침공)",
+        "en": "Fall of Jerusalem (Babylonian Conquest)"
+      },
+      "description": {
+        "ko": "느부갓네살이 예루살렘을 정복하고 성전을 파괴하여 바벨론 포로기가 시작됩니다.",
+        "en": "Nebuchadnezzar conquers Jerusalem and destroys the Temple, beginning the Babylonian exile."
+      }
+    },
+    {
+      "id": "hist_18",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -605,
+      "end_year": -562,
+      "title": {
+        "ko": "느부갓네살 2세 치세 (바벨론)",
+        "en": "Reign of Nebuchadnezzar II (Babylon)"
+      },
+      "description": {
+        "ko": "신바벨로니아 제국의 전성기로, 유다를 멸망시키고 바벨론의 공중정원을 건설했습니다.",
+        "en": "The height of the Neo-Babylonian Empire; destroyed Judah and built the Hanging Gardens."
+      }
+    },
+    {
+      "id": "hist_19",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -539,
+      "title": {
+        "ko": "바벨론 멸망 (페르시아)",
+        "en": "Fall of Babylon (Persian Conquest)"
+      },
+      "description": {
+        "ko": "페르시아의 고레스 왕이 바벨론을 정복하고 세계 제국을 건설했습니다.",
+        "en": "Cyrus the Great of Persia conquers Babylon and establishes a world empire."
+      }
+    },
+    {
+      "id": "book_24",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 24,
+      "title": {
+        "ko": "예레미야",
+        "en": "Jeremiah"
+      },
+      "start_year": -627,
+      "end_year": -586,
+      "description": {
+        "ko": "예루살렘 멸망 전후 활동한 선지자로, 바벨론 포로를 예언하고 새 언약을 약속합니다.",
+        "en": "Prophet active before and during Jerusalem's fall; prophesied the exile and promised a new covenant."
+      },
+      "testament": "OT",
+      "category": "MAJOR_PROPHETS",
+      "related_historical_events": ["hist_17", "hist_18"]
+    },
+    {
+      "id": "book_25",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 25,
+      "title": {
+        "ko": "예레미야애가",
+        "en": "Lamentations"
+      },
+      "start_year": -586,
+      "description": {
+        "ko": "예루살렘 멸망에 대한 비가로, 예레미야가 기록한 것으로 전해집니다.",
+        "en": "A lament over Jerusalem's destruction, traditionally attributed to Jeremiah."
+      },
+      "testament": "OT",
+      "category": "MAJOR_PROPHETS",
+      "related_historical_events": ["hist_17"]
+    },
+    {
+      "id": "book_26",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 26,
+      "title": {
+        "ko": "에스겔",
+        "en": "Ezekiel"
+      },
+      "start_year": -593,
+      "end_year": -571,
+      "description": {
+        "ko": "바벨론 포로 중 활동한 선지자로, 환상과 상징을 통해 이스라엘의 회복을 예언합니다.",
+        "en": "Prophet active during the exile; prophesies Israel's restoration through visions and symbols."
+      },
+      "testament": "OT",
+      "category": "MAJOR_PROPHETS",
+      "related_historical_events": ["hist_17", "hist_18"]
+    },
+    {
+      "id": "book_27",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 27,
+      "title": {
+        "ko": "다니엘",
+        "en": "Daniel"
+      },
+      "start_year": -605,
+      "end_year": -536,
+      "description": {
+        "ko": "바벨론 궁정에서 활동한 다니엘의 이야기와 종말론적 환상을 담고 있습니다.",
+        "en": "Contains Daniel's experiences in Babylon's court and apocalyptic visions."
+      },
+      "testament": "OT",
+      "category": "MAJOR_PROPHETS",
+      "related_historical_events": ["hist_18", "hist_19"]
+    },
+    {
+      "id": "era_07",
+      "type": "ERA",
+      "start_year": -538,
+      "end_year": -4,
+      "title": {
+        "ko": "귀환 및 중간기",
+        "en": "Return and Intertestamental Period"
+      },
+      "description": {
+        "ko": "바벨론 포로에서 돌아와 성전을 재건하고, 신약 시대 전까지의 시기입니다.",
+        "en": "Period from the return from exile and Temple rebuilding until the New Testament era."
+      }
+    },
+    {
+      "id": "hist_20",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -538,
+      "title": {
+        "ko": "고레스 칙령 (귀환 허용)",
+        "en": "Edict of Cyrus (Return Permitted)"
+      },
+      "description": {
+        "ko": "페르시아의 고레스 왕이 유대인들의 귀환과 성전 재건을 허용했습니다.",
+        "en": "Cyrus the Great permits Jews to return and rebuild the Temple."
+      }
+    },
+    {
+      "id": "hist_21",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -516,
+      "title": {
+        "ko": "제2성전 완공",
+        "en": "Second Temple Completed"
+      },
+      "description": {
+        "ko": "스룹바벨의 인도 아래 예루살렘에 제2성전이 완공되었습니다.",
+        "en": "The Second Temple in Jerusalem is completed under Zerubbabel's leadership."
+      }
+    },
+    {
+      "id": "hist_22",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -458,
+      "title": {
+        "ko": "에스라의 귀환",
+        "en": "Return of Ezra"
+      },
+      "description": {
+        "ko": "에스라가 율법을 가지고 예루살렘으로 돌아와 종교 개혁을 이끌었습니다.",
+        "en": "Ezra returns to Jerusalem with the Law and leads religious reform."
+      }
+    },
+    {
+      "id": "hist_23",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -445,
+      "title": {
+        "ko": "느헤미야의 성벽 재건",
+        "en": "Nehemiah's Wall Reconstruction"
+      },
+      "description": {
+        "ko": "느헤미야가 예루살렘 성벽을 52일 만에 재건했습니다.",
+        "en": "Nehemiah rebuilds Jerusalem's walls in just 52 days."
+      }
+    },
+    {
+      "id": "hist_24",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -333,
+      "title": {
+        "ko": "알렉산더 대왕의 정복",
+        "en": "Alexander the Great's Conquests"
+      },
+      "description": {
+        "ko": "마케도니아의 알렉산더가 페르시아를 정복하고 헬라 문화를 전파했습니다.",
+        "en": "Alexander of Macedonia conquers Persia and spreads Hellenistic culture."
+      }
+    },
+    {
+      "id": "hist_25",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -167,
+      "end_year": -160,
+      "title": {
+        "ko": "마카비 혁명",
+        "en": "Maccabean Revolt"
+      },
+      "description": {
+        "ko": "셀레우코스의 종교 박해에 대항한 유대인 반란으로, 하누카 명절의 기원입니다.",
+        "en": "Jewish revolt against Seleucid religious persecution, origin of Hanukkah."
+      }
+    },
+    {
+      "id": "hist_26",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -63,
+      "title": {
+        "ko": "로마의 예루살렘 정복",
+        "en": "Roman Conquest of Jerusalem"
+      },
+      "description": {
+        "ko": "폼페이우스가 예루살렘을 정복하여 유대가 로마의 지배 아래 들어갔습니다.",
+        "en": "Pompey conquers Jerusalem, bringing Judea under Roman rule."
+      }
+    },
+    {
+      "id": "book_15",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 15,
+      "title": {
+        "ko": "에스라",
+        "en": "Ezra"
+      },
+      "start_year": -538,
+      "end_year": -458,
+      "description": {
+        "ko": "바벨론 포로에서 돌아온 이스라엘의 성전 재건과 종교 개혁을 기록합니다.",
+        "en": "Records Israel's return from exile, Temple rebuilding, and religious reform."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_20", "hist_21", "hist_22"]
+    },
+    {
+      "id": "book_16",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 16,
+      "title": {
+        "ko": "느헤미야",
+        "en": "Nehemiah"
+      },
+      "start_year": -445,
+      "end_year": -420,
+      "description": {
+        "ko": "예루살렘 성벽 재건과 사회·종교적 개혁을 기록합니다.",
+        "en": "Records the rebuilding of Jerusalem's walls and social-religious reforms."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_23"]
+    },
+    {
+      "id": "book_17",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 17,
+      "title": {
+        "ko": "에스더",
+        "en": "Esther"
+      },
+      "start_year": -479,
+      "end_year": -473,
+      "description": {
+        "ko": "페르시아에서 유대 민족을 구한 에스더의 이야기로, 부림절의 기원입니다.",
+        "en": "The story of Esther saving the Jewish people in Persia, origin of Purim."
+      },
+      "testament": "OT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_20"]
+    },
+    {
+      "id": "book_37",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 37,
+      "title": {
+        "ko": "학개",
+        "en": "Haggai"
+      },
+      "start_year": -520,
+      "description": {
+        "ko": "성전 재건을 촉구하는 예언서입니다.",
+        "en": "A prophetic call to rebuild the Temple."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_21"]
+    },
+    {
+      "id": "book_38",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 38,
+      "title": {
+        "ko": "스가랴",
+        "en": "Zechariah"
+      },
+      "start_year": -520,
+      "end_year": -480,
+      "description": {
+        "ko": "메시아적 환상과 성전 재건 격려를 담은 예언서입니다.",
+        "en": "Contains messianic visions and encouragement for Temple rebuilding."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_21"]
+    },
+    {
+      "id": "book_39",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 39,
+      "title": {
+        "ko": "말라기",
+        "en": "Malachi"
+      },
+      "start_year": -435,
+      "end_year": -400,
+      "description": {
+        "ko": "구약의 마지막 예언서로, 메시아의 오심을 예고합니다.",
+        "en": "The last Old Testament prophecy, heralding the Messiah's coming."
+      },
+      "testament": "OT",
+      "category": "MINOR_PROPHETS",
+      "related_historical_events": ["hist_23"]
+    },
+    {
+      "id": "era_08",
+      "type": "ERA",
+      "start_year": -4,
+      "end_year": 100,
+      "title": {
+        "ko": "신약 시대",
+        "en": "New Testament Era"
+      },
+      "description": {
+        "ko": "예수 그리스도의 탄생, 사역, 십자가와 부활, 그리고 초대교회의 시대입니다.",
+        "en": "The era of Jesus Christ's birth, ministry, crucifixion, resurrection, and the early church."
+      }
+    },
+    {
+      "id": "hist_27",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -37,
+      "end_year": -4,
+      "title": {
+        "ko": "헤롯 대왕 치세",
+        "en": "Reign of Herod the Great"
+      },
+      "description": {
+        "ko": "로마의 지원을 받은 헤롯이 유대를 통치하며 성전을 증축했습니다.",
+        "en": "Herod ruled Judea with Roman support and expanded the Temple."
+      }
+    },
+    {
+      "id": "hist_28",
+      "type": "HISTORICAL_EVENT",
+      "start_year": -4,
+      "title": {
+        "ko": "예수 그리스도 탄생",
+        "en": "Birth of Jesus Christ"
+      },
+      "description": {
+        "ko": "베들레헴에서 예수 그리스도가 탄생하셨습니다.",
+        "en": "Jesus Christ is born in Bethlehem."
+      }
+    },
+    {
+      "id": "hist_29",
+      "type": "HISTORICAL_EVENT",
+      "start_year": 30,
+      "title": {
+        "ko": "예수의 십자가와 부활",
+        "en": "Crucifixion and Resurrection of Jesus"
+      },
+      "description": {
+        "ko": "예수께서 십자가에 못 박히시고 삼일 만에 부활하셨습니다.",
+        "en": "Jesus is crucified and rises from the dead on the third day."
+      }
+    },
+    {
+      "id": "hist_30",
+      "type": "HISTORICAL_EVENT",
+      "start_year": 30,
+      "title": {
+        "ko": "오순절 성령 강림",
+        "en": "Pentecost - Coming of the Holy Spirit"
+      },
+      "description": {
+        "ko": "오순절에 성령이 강림하시고 교회가 시작되었습니다.",
+        "en": "The Holy Spirit descends at Pentecost and the Church begins."
+      }
+    },
+    {
+      "id": "hist_31",
+      "type": "HISTORICAL_EVENT",
+      "start_year": 70,
+      "title": {
+        "ko": "예루살렘 성전 파괴 (로마)",
+        "en": "Destruction of Jerusalem Temple (Rome)"
+      },
+      "description": {
+        "ko": "로마의 티투스 장군이 예루살렘을 정복하고 제2성전을 파괴했습니다.",
+        "en": "Roman General Titus conquers Jerusalem and destroys the Second Temple."
+      }
+    },
+    {
+      "id": "hist_32",
+      "type": "HISTORICAL_EVENT",
+      "start_year": 27,
+      "end_year": 180,
+      "title": {
+        "ko": "팍스 로마나 (로마의 평화)",
+        "en": "Pax Romana (Roman Peace)"
+      },
+      "description": {
+        "ko": "로마 제국의 평화 시기로, 복음 전파에 유리한 환경이 조성되었습니다.",
+        "en": "Period of Roman peace that facilitated the spread of the Gospel."
+      }
+    },
+    {
+      "id": "hist_33",
+      "type": "HISTORICAL_EVENT",
+      "start_year": 46,
+      "end_year": 57,
+      "title": {
+        "ko": "바울의 선교 여행",
+        "en": "Paul's Missionary Journeys"
+      },
+      "description": {
+        "ko": "사도 바울이 세 차례의 선교 여행을 통해 복음을 전파했습니다.",
+        "en": "Apostle Paul spreads the Gospel through three missionary journeys."
+      }
+    },
+    {
+      "id": "hist_34",
+      "type": "HISTORICAL_EVENT",
+      "start_year": 64,
+      "title": {
+        "ko": "네로의 기독교 박해",
+        "en": "Nero's Persecution of Christians"
+      },
+      "description": {
+        "ko": "로마 황제 네로가 기독교인들을 박해하기 시작했습니다.",
+        "en": "Roman Emperor Nero begins persecution of Christians."
+      }
+    },
+    {
+      "id": "hist_35",
+      "type": "HISTORICAL_EVENT",
+      "start_year": 81,
+      "end_year": 96,
+      "title": {
+        "ko": "도미티아누스 황제의 박해",
+        "en": "Domitian's Persecution"
+      },
+      "description": {
+        "ko": "도미티아누스 황제 때 기독교인들에 대한 박해가 심화되었습니다.",
+        "en": "Persecution of Christians intensified under Emperor Domitian."
+      }
+    },
+    {
+      "id": "book_40",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 40,
+      "title": {
+        "ko": "마태복음",
+        "en": "Matthew"
+      },
+      "start_year": 50,
+      "end_year": 70,
+      "description": {
+        "ko": "유대인을 대상으로 쓴 복음서로, 예수를 메시아 왕으로 소개합니다.",
+        "en": "Gospel written for Jews, presenting Jesus as the Messiah King."
+      },
+      "testament": "NT",
+      "category": "GOSPELS",
+      "related_historical_events": ["hist_28", "hist_29", "hist_27"]
+    },
+    {
+      "id": "book_41",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 41,
+      "title": {
+        "ko": "마가복음",
+        "en": "Mark"
+      },
+      "start_year": 55,
+      "end_year": 65,
+      "description": {
+        "ko": "가장 짧고 행동적인 복음서로, 예수를 고난받는 종으로 묘사합니다.",
+        "en": "The shortest and most action-oriented Gospel, portraying Jesus as the suffering servant."
+      },
+      "testament": "NT",
+      "category": "GOSPELS",
+      "related_historical_events": ["hist_28", "hist_29"]
+    },
+    {
+      "id": "book_42",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 42,
+      "title": {
+        "ko": "누가복음",
+        "en": "Luke"
+      },
+      "start_year": 59,
+      "end_year": 63,
+      "description": {
+        "ko": "이방인을 위해 쓴 가장 상세한 복음서로, 예수를 인류의 구세주로 소개합니다.",
+        "en": "The most detailed Gospel written for Gentiles, presenting Jesus as the Savior of humanity."
+      },
+      "testament": "NT",
+      "category": "GOSPELS",
+      "related_historical_events": ["hist_28", "hist_29", "hist_27"]
+    },
+    {
+      "id": "book_43",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 43,
+      "title": {
+        "ko": "요한복음",
+        "en": "John"
+      },
+      "start_year": 85,
+      "end_year": 95,
+      "description": {
+        "ko": "신학적으로 깊은 복음서로, 예수의 신성과 영생을 강조합니다.",
+        "en": "A theologically profound Gospel emphasizing Jesus' divinity and eternal life."
+      },
+      "testament": "NT",
+      "category": "GOSPELS",
+      "related_historical_events": ["hist_28", "hist_29"]
+    },
+    {
+      "id": "book_44",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 44,
+      "title": {
+        "ko": "사도행전",
+        "en": "Acts"
+      },
+      "start_year": 30,
+      "end_year": 62,
+      "description": {
+        "ko": "초대교회의 탄생과 복음 전파의 역사를 기록합니다.",
+        "en": "Records the birth of the early church and the spread of the Gospel."
+      },
+      "testament": "NT",
+      "category": "HISTORY",
+      "related_historical_events": ["hist_30", "hist_32", "hist_33"]
+    },
+    {
+      "id": "book_45",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 45,
+      "title": {
+        "ko": "로마서",
+        "en": "Romans"
+      },
+      "start_year": 57,
+      "description": {
+        "ko": "바울이 로마 교회에 보낸 서신으로, 복음의 핵심을 체계적으로 설명합니다.",
+        "en": "Paul's letter to Rome systematically explaining the core of the Gospel."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_32", "hist_33"]
+    },
+    {
+      "id": "book_46",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 46,
+      "title": {
+        "ko": "고린도전서",
+        "en": "1 Corinthians"
+      },
+      "start_year": 55,
+      "description": {
+        "ko": "고린도 교회의 문제들을 다루며 그리스도인의 삶을 가르칩니다.",
+        "en": "Addresses issues in the Corinthian church and teaches Christian living."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_33"]
+    },
+    {
+      "id": "book_47",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 47,
+      "title": {
+        "ko": "고린도후서",
+        "en": "2 Corinthians"
+      },
+      "start_year": 56,
+      "description": {
+        "ko": "바울의 사도직 변호와 새 언약의 영광을 설명합니다.",
+        "en": "Paul defends his apostleship and explains the glory of the new covenant."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_33"]
+    },
+    {
+      "id": "book_48",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 48,
+      "title": {
+        "ko": "갈라디아서",
+        "en": "Galatians"
+      },
+      "start_year": 49,
+      "description": {
+        "ko": "율법이 아닌 믿음으로 의롭게 됨을 선언하는 서신입니다.",
+        "en": "Declares justification by faith, not by the Law."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_33"]
+    },
+    {
+      "id": "book_49",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 49,
+      "title": {
+        "ko": "에베소서",
+        "en": "Ephesians"
+      },
+      "start_year": 60,
+      "end_year": 62,
+      "description": {
+        "ko": "그리스도 안에서 교회의 정체성과 일치를 강조합니다.",
+        "en": "Emphasizes the church's identity and unity in Christ."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_33"]
+    },
+    {
+      "id": "book_50",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 50,
+      "title": {
+        "ko": "빌립보서",
+        "en": "Philippians"
+      },
+      "start_year": 61,
+      "description": {
+        "ko": "옥중에서 쓴 기쁨의 서신으로, 그리스도의 겸손을 본받을 것을 권면합니다.",
+        "en": "A letter of joy written from prison, encouraging imitation of Christ's humility."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_32"]
+    },
+    {
+      "id": "book_51",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 51,
+      "title": {
+        "ko": "골로새서",
+        "en": "Colossians"
+      },
+      "start_year": 60,
+      "end_year": 62,
+      "description": {
+        "ko": "그리스도의 충만함과 완전함을 강조하며 거짓 가르침을 반박합니다.",
+        "en": "Emphasizes Christ's fullness and completeness while refuting false teachings."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_32"]
+    },
+    {
+      "id": "book_52",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 52,
+      "title": {
+        "ko": "데살로니가전서",
+        "en": "1 Thessalonians"
+      },
+      "start_year": 51,
+      "description": {
+        "ko": "그리스도의 재림에 대한 소망과 거룩한 삶을 가르칩니다.",
+        "en": "Teaches about the hope of Christ's return and holy living."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_33"]
+    },
+    {
+      "id": "book_53",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 53,
+      "title": {
+        "ko": "데살로니가후서",
+        "en": "2 Thessalonians"
+      },
+      "start_year": 51,
+      "end_year": 52,
+      "description": {
+        "ko": "재림에 대한 오해를 바로잡고 인내할 것을 권면합니다.",
+        "en": "Corrects misunderstandings about the Second Coming and encourages perseverance."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_33"]
+    },
+    {
+      "id": "book_54",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 54,
+      "title": {
+        "ko": "디모데전서",
+        "en": "1 Timothy"
+      },
+      "start_year": 63,
+      "end_year": 65,
+      "description": {
+        "ko": "젊은 목회자 디모데에게 교회 지도에 관해 가르치는 서신입니다.",
+        "en": "Paul instructs young pastor Timothy on church leadership."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_32"]
+    },
+    {
+      "id": "book_55",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 55,
+      "title": {
+        "ko": "디모데후서",
+        "en": "2 Timothy"
+      },
+      "start_year": 67,
+      "description": {
+        "ko": "바울의 마지막 서신으로, 신앙의 선한 싸움을 싸울 것을 권면합니다.",
+        "en": "Paul's final letter, encouraging Timothy to fight the good fight of faith."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_34"]
+    },
+    {
+      "id": "book_56",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 56,
+      "title": {
+        "ko": "디도서",
+        "en": "Titus"
+      },
+      "start_year": 63,
+      "end_year": 65,
+      "description": {
+        "ko": "그레데 교회를 돌보는 디도에게 교회 질서에 관해 가르칩니다.",
+        "en": "Instructs Titus on church order as he cares for churches in Crete."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_32"]
+    },
+    {
+      "id": "book_57",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 57,
+      "title": {
+        "ko": "빌레몬서",
+        "en": "Philemon"
+      },
+      "start_year": 60,
+      "end_year": 62,
+      "description": {
+        "ko": "도망친 종 오네시모를 용서해 달라는 바울의 개인 서신입니다.",
+        "en": "Paul's personal letter requesting forgiveness for the runaway slave Onesimus."
+      },
+      "testament": "NT",
+      "category": "PAULINE_EPISTLES",
+      "related_historical_events": ["hist_32"]
+    },
+    {
+      "id": "book_58",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 58,
+      "title": {
+        "ko": "히브리서",
+        "en": "Hebrews"
+      },
+      "start_year": 64,
+      "end_year": 68,
+      "description": {
+        "ko": "그리스도의 탁월함과 새 언약의 우월성을 증명하는 서신입니다.",
+        "en": "Demonstrates Christ's supremacy and the superiority of the new covenant."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_31", "hist_34"]
+    },
+    {
+      "id": "book_59",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 59,
+      "title": {
+        "ko": "야고보서",
+        "en": "James"
+      },
+      "start_year": 45,
+      "end_year": 49,
+      "description": {
+        "ko": "행함으로 나타나는 실제적인 믿음을 강조하는 서신입니다.",
+        "en": "Emphasizes practical faith demonstrated through works."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_30"]
+    },
+    {
+      "id": "book_60",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 60,
+      "title": {
+        "ko": "베드로전서",
+        "en": "1 Peter"
+      },
+      "start_year": 63,
+      "end_year": 64,
+      "description": {
+        "ko": "박해 중에 있는 성도들에게 소망과 인내를 권면합니다.",
+        "en": "Encourages hope and perseverance for believers under persecution."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_34"]
+    },
+    {
+      "id": "book_61",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 61,
+      "title": {
+        "ko": "베드로후서",
+        "en": "2 Peter"
+      },
+      "start_year": 65,
+      "end_year": 68,
+      "description": {
+        "ko": "거짓 교사들을 경계하고 주의 재림을 기다릴 것을 권면합니다.",
+        "en": "Warns against false teachers and encourages waiting for the Lord's return."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_34"]
+    },
+    {
+      "id": "book_62",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 62,
+      "title": {
+        "ko": "요한일서",
+        "en": "1 John"
+      },
+      "start_year": 85,
+      "end_year": 95,
+      "description": {
+        "ko": "하나님과의 교제와 형제 사랑을 강조하며 거짓 가르침을 반박합니다.",
+        "en": "Emphasizes fellowship with God and brotherly love while refuting false teachings."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_35"]
+    },
+    {
+      "id": "book_63",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 63,
+      "title": {
+        "ko": "요한이서",
+        "en": "2 John"
+      },
+      "start_year": 85,
+      "end_year": 95,
+      "description": {
+        "ko": "진리 안에서 행하고 거짓 교사들을 경계할 것을 권면합니다.",
+        "en": "Encourages walking in truth and warns against false teachers."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_35"]
+    },
+    {
+      "id": "book_64",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 64,
+      "title": {
+        "ko": "요한삼서",
+        "en": "3 John"
+      },
+      "start_year": 85,
+      "end_year": 95,
+      "description": {
+        "ko": "가이오를 칭찬하고 선을 행할 것을 권면하는 개인 서신입니다.",
+        "en": "A personal letter commending Gaius and encouraging doing good."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_35"]
+    },
+    {
+      "id": "book_65",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 65,
+      "title": {
+        "ko": "유다서",
+        "en": "Jude"
+      },
+      "start_year": 65,
+      "end_year": 80,
+      "description": {
+        "ko": "배교자들을 경계하고 믿음을 위해 싸울 것을 권면합니다.",
+        "en": "Warns against apostates and encourages contending for the faith."
+      },
+      "testament": "NT",
+      "category": "GENERAL_EPISTLES",
+      "related_historical_events": ["hist_34"]
+    },
+    {
+      "id": "book_66",
+      "type": "BIBLE_BOOK_CONTEXT",
+      "book_id": 66,
+      "title": {
+        "ko": "요한계시록",
+        "en": "Revelation"
+      },
+      "start_year": 95,
+      "end_year": 96,
+      "description": {
+        "ko": "박해받는 교회에 소망을 주며 그리스도의 최종 승리를 계시합니다.",
+        "en": "Gives hope to the persecuted church and reveals Christ's ultimate victory."
+      },
+      "testament": "NT",
+      "category": "APOCALYPTIC",
+      "related_historical_events": ["hist_35", "hist_31"]
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-01-12",
+    "total_books": 66,
+    "total_historical_events": 35,
+    "total_eras": 8,
+    "notes": {
+      "ko": "연대는 학자들 간의 이견이 있을 수 있습니다. 본 데이터는 전통적인 연대기를 기반으로 합니다.",
+      "en": "Dates may vary among scholars. This data is based on traditional chronology."
+    }
+  },
+  "categories": {
+    "PENTATEUCH": {
+      "ko": "모세 오경",
+      "en": "Pentateuch (Torah)"
+    },
+    "HISTORY": {
+      "ko": "역사서",
+      "en": "Historical Books"
+    },
+    "WISDOM": {
+      "ko": "지혜서/시가서",
+      "en": "Wisdom/Poetry"
+    },
+    "MAJOR_PROPHETS": {
+      "ko": "대선지서",
+      "en": "Major Prophets"
+    },
+    "MINOR_PROPHETS": {
+      "ko": "소선지서",
+      "en": "Minor Prophets"
+    },
+    "GOSPELS": {
+      "ko": "복음서",
+      "en": "Gospels"
+    },
+    "PAULINE_EPISTLES": {
+      "ko": "바울 서신",
+      "en": "Pauline Epistles"
+    },
+    "GENERAL_EPISTLES": {
+      "ko": "공동 서신",
+      "en": "General Epistles"
+    },
+    "APOCALYPTIC": {
+      "ko": "묵시록",
+      "en": "Apocalyptic"
+    }
+  },
+  "types": {
+    "ERA": {
+      "ko": "시대",
+      "en": "Era"
+    },
+    "HISTORICAL_EVENT": {
+      "ko": "역사적 사건",
+      "en": "Historical Event"
+    },
+    "BIBLE_BOOK_CONTEXT": {
+      "ko": "성경 배경",
+      "en": "Bible Book Context"
+    }
+  }
+}

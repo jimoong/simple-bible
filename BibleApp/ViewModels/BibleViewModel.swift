@@ -10,6 +10,7 @@ final class BibleViewModel {
         static let chapter = "savedChapter"
         static let verseIndex = "savedVerseIndex"
         static let languageMode = "savedLanguageMode"
+        static let sortOrder = "savedSortOrder"
     }
     
     // MARK: - State
@@ -26,7 +27,9 @@ final class BibleViewModel {
     var languageMode: LanguageMode = .kr {
         didSet { saveLanguageMode() }
     }
-    var sortOrder: BookSortOrder = .canonical
+    var sortOrder: BookSortOrder = .canonical {
+        didSet { saveSortOrder() }
+    }
     
     var isLoading: Bool = false
     var errorMessage: String?
@@ -97,6 +100,12 @@ final class BibleViewModel {
            let mode = LanguageMode(rawValue: savedLanguage) {
             self.languageMode = mode
         }
+        
+        // Load saved sort order
+        if let savedSortOrder = defaults.string(forKey: StorageKeys.sortOrder),
+           let order = BookSortOrder(rawValue: savedSortOrder) {
+            self.sortOrder = order
+        }
     }
     
     // MARK: - Persistence
@@ -109,6 +118,10 @@ final class BibleViewModel {
     
     private func saveLanguageMode() {
         UserDefaults.standard.set(languageMode.rawValue, forKey: StorageKeys.languageMode)
+    }
+    
+    private func saveSortOrder() {
+        UserDefaults.standard.set(sortOrder.rawValue, forKey: StorageKeys.sortOrder)
     }
     
     // MARK: - Actions

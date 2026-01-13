@@ -66,39 +66,60 @@ struct BookGridView: View {
     // MARK: - Fullscreen View (for books grid)
     private var fullscreenView: some View {
         ZStack(alignment: .bottom) {
-            // Books grid with sections (title scrolls with content)
-            ScrollView {
-                VStack(spacing: 24) {
-                    // Title (scrollable)
-                    titleBar
-                        .padding(.top, topPadding + 16)
-                    
-                    // Old Testament section
-                    if !oldTestamentBooks.isEmpty {
-                        bookSection(
-                            title: viewModel.languageMode == .kr ? "구약" : "Old Testament",
-                            books: oldTestamentBooks
-                        )
+            // Content area - switches between book grid and timeline
+            if viewModel.sortOrder == .timeline {
+                // Timeline content (scrollable)
+                BibleTimelineContentView(
+                    languageMode: viewModel.languageMode,
+                    topPadding: topPadding,
+                    currentBook: viewModel.currentBook,
+                    onBookSelect: { book in
+                        // Navigate to chapter grid when tapped in timeline
+                        if let onBookSelect {
+                            onBookSelect(book)
+                        } else {
+                            viewModel.selectBook(book)
+                        }
                     }
-                    
-                    // New Testament section
-                    if !newTestamentBooks.isEmpty {
-                        bookSection(
-                            title: viewModel.languageMode == .kr ? "신약" : "New Testament",
-                            books: newTestamentBooks
-                        )
+                )
+                .transition(.opacity)
+            } else {
+                // Books grid with sections (title scrolls with content)
+                ScrollView {
+                    VStack(spacing: 24) {
+                        // Title (scrollable)
+                        titleBar
+                            .padding(.top, topPadding + 16)
+                        
+                        // Old Testament section
+                        if !oldTestamentBooks.isEmpty {
+                            bookSection(
+                                title: viewModel.languageMode == .kr ? "구약" : "Old Testament",
+                                books: oldTestamentBooks
+                            )
+                        }
+                        
+                        // New Testament section
+                        if !newTestamentBooks.isEmpty {
+                            bookSection(
+                                title: viewModel.languageMode == .kr ? "신약" : "New Testament",
+                                books: newTestamentBooks
+                            )
+                        }
                     }
+                    .padding(.bottom, 120)  // Space for bottom controls
                 }
-                .padding(.bottom, 120)  // Space for bottom controls
+                .transition(.opacity)
             }
             
-            // Bottom bar
+            // Bottom bar - always visible
             bottomBar
                 .padding(.horizontal, 24)
                 .padding(.bottom, safeAreaBottom - 4)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)
+        .animation(.easeOut(duration: 0.3), value: viewModel.sortOrder)
     }
     
     // MARK: - Bottom Bar (iOS Photos style)
@@ -215,22 +236,24 @@ struct BookGridView: View {
                     HapticManager.shared.selection()
                 } label: {
                     Text(order.displayName)
-                        .font(.system(size: 14, weight: viewModel.sortOrder == order ? .semibold : .regular))
-                        .foregroundStyle(viewModel.sortOrder == order ? .white : .white.opacity(0.5))
-                        .padding(.horizontal, 14)
-                        .padding(.vertical, 12)
-                        .background(
-                            Capsule()
-                                .fill(viewModel.sortOrder == order ? Color.white.opacity(0.15) : Color.clear)
-                        )
+                        .font(.system(size: 14, weight: isOrderSelected(order) ? .semibold : .regular))
+                        .foregroundStyle(isOrderSelected(order) ? .white : .white.opacity(0.5))
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 12)
+                    .background(
+                        Capsule()
+                            .fill(isOrderSelected(order) ? Color.white.opacity(0.15) : Color.clear)
+                    )
                 }
                 .buttonStyle(.plain)
-                .disabled(order == .timeline)
-                .opacity(order == .timeline ? 0.4 : 1)
             }
         }
         .padding(4)
         .glassBackground(.capsule, intensity: .regular)
+    }
+    
+    private func isOrderSelected(_ order: BookSortOrder) -> Bool {
+        return viewModel.sortOrder == order
     }
     
     // MARK: - Book Section
