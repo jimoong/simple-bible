@@ -1,0 +1,158 @@
+{
+  "bookId": "esther",
+  "bookNumber": 17,
+  "bookNameKo": "에스더",
+  "bookNameEn": "Esther",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "와스디 왕비의 폐위",
+      "titleEn": "Queen Vashti Deposed",
+      "summaryKo": "아하수에로 왕이 와스디 왕비를 불렀으나 거절하여 폐위됩니다.",
+      "summaryEn": "King Ahasuerus summons Queen Vashti, but she refuses and is deposed.",
+      "messageKo": "하나님은 보이지 않는 곳에서 구원의 무대를 준비하십니다.",
+      "messageEn": "God prepares the stage for salvation in unseen ways.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "180일 잔치", "eventEn": "180-day feast"},
+        {"verse": 12, "eventKo": "와스디의 거절", "eventEn": "Vashti refuses"},
+        {"verse": 19, "eventKo": "와스디 폐위", "eventEn": "Vashti deposed"}
+      ],
+      "timelineYear": "BC 483"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "에스더가 왕비가 됨",
+      "titleEn": "Esther Becomes Queen",
+      "summaryKo": "유다 처녀 에스더가 왕비로 선발되고, 모르드개가 암살 음모를 밝힙니다.",
+      "summaryEn": "Jewish maiden Esther is chosen as queen; Mordecai uncovers an assassination plot.",
+      "messageKo": "하나님은 평범한 사람을 특별한 위치에 두십니다.",
+      "messageEn": "God places ordinary people in extraordinary positions.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "모르드개가 에스더를 양육", "eventEn": "Mordecai raises Esther"},
+        {"verse": 17, "eventKo": "에스더가 왕비가 됨", "eventEn": "Esther becomes queen"},
+        {"verse": 22, "eventKo": "암살 음모 발각", "eventEn": "Assassination plot uncovered"}
+      ],
+      "timelineYear": "BC 479"
+    },
+    {
+      "chapter": 3,
+      "titleKo": "하만의 음모",
+      "titleEn": "Haman's Plot",
+      "summaryKo": "하만이 모르드개의 거절에 분노하여 모든 유다인 학살을 계획합니다.",
+      "summaryEn": "Haman, angered by Mordecai's refusal to bow, plans to kill all Jews.",
+      "messageKo": "개인적 원한이 민족 전체의 위기로 확대될 수 있습니다.",
+      "messageEn": "Personal grudges can escalate into national crises.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "모르드개가 절하지 않음", "eventEn": "Mordecai refuses to bow"},
+        {"verse": 8, "eventKo": "하만의 고소", "eventEn": "Haman's accusation"},
+        {"verse": 13, "eventKo": "유다인 학살 조서", "eventEn": "Decree to destroy Jews"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "에스더의 결단",
+      "titleEn": "Esther's Decision",
+      "summaryKo": "모르드개가 에스더에게 민족 구원을 위해 나서라고 촉구합니다.",
+      "summaryEn": "Mordecai urges Esther to act to save her people.",
+      "messageKo": "이 때를 위해 왕비가 된 것이 아닌지 누가 알겠느냐.",
+      "messageEn": "Who knows if you came to royal position for such a time as this?",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "유다인의 통곡", "eventEn": "Jews mourn"},
+        {"verse": 14, "eventKo": "이 때를 위함이 아닌지", "eventEn": "For such a time as this"},
+        {"verse": 16, "eventKo": "죽으면 죽으리이다", "eventEn": "If I perish, I perish"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "에스더의 잔치",
+      "titleEn": "Esther's Banquet",
+      "summaryKo": "에스더가 왕 앞에 나아가 왕과 하만을 잔치에 초대합니다.",
+      "summaryEn": "Esther approaches the king and invites him and Haman to a banquet.",
+      "messageKo": "지혜로운 타이밍이 결과를 바꿉니다.",
+      "messageEn": "Wise timing changes outcomes.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "왕이 금 규를 내밂", "eventEn": "King extends gold scepter"},
+        {"verse": 8, "eventKo": "내일 잔치에 다시 오소서", "eventEn": "Come again tomorrow"},
+        {"verse": 14, "eventKo": "하만이 장대를 세움", "eventEn": "Haman builds gallows"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "모르드개의 영예",
+      "titleEn": "Mordecai Honored",
+      "summaryKo": "왕이 잠 못 드는 밤에 모르드개의 공을 발견하고 하만이 그를 높입니다.",
+      "summaryEn": "The sleepless king discovers Mordecai's deed; Haman must honor him.",
+      "messageKo": "하나님의 섭리가 상황을 완전히 뒤집습니다.",
+      "messageEn": "God's providence completely reverses situations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "왕이 잠을 이루지 못함", "eventEn": "King cannot sleep"},
+        {"verse": 6, "eventKo": "하만의 착각", "eventEn": "Haman's assumption"},
+        {"verse": 11, "eventKo": "하만이 모르드개를 높임", "eventEn": "Haman honors Mordecai"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "하만의 몰락",
+      "titleEn": "Haman's Downfall",
+      "summaryKo": "에스더가 하만의 음모를 폭로하고 하만이 자기 장대에 달립니다.",
+      "summaryEn": "Esther exposes Haman's plot; Haman is hanged on his own gallows.",
+      "messageKo": "악인은 자신이 판 함정에 빠집니다.",
+      "messageEn": "The wicked fall into the pit they dug.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "에스더의 간청", "eventEn": "Esther's plea"},
+        {"verse": 6, "eventKo": "대적 하만", "eventEn": "The enemy is Haman"},
+        {"verse": 10, "eventKo": "하만이 장대에 달림", "eventEn": "Haman hanged on gallows"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "유다인 구원 조서",
+      "titleEn": "Decree to Save Jews",
+      "summaryKo": "에스더와 모르드개가 유다인을 구하는 새 조서를 내립니다.",
+      "summaryEn": "Esther and Mordecai issue a new decree to save the Jews.",
+      "messageKo": "하나님의 백성은 위기를 기회로 바꿉니다.",
+      "messageEn": "God's people turn crisis into opportunity.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "모르드개가 반지를 받음", "eventEn": "Mordecai receives signet ring"},
+        {"verse": 11, "eventKo": "유다인이 방어할 수 있음", "eventEn": "Jews may defend themselves"},
+        {"verse": 17, "eventKo": "기쁨과 즐거움", "eventEn": "Joy and gladness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "유다인의 승리",
+      "titleEn": "Jews' Victory",
+      "summaryKo": "유다인이 원수들을 물리치고 부림절이 제정됩니다.",
+      "summaryEn": "Jews defeat their enemies; the Feast of Purim is established.",
+      "messageKo": "하나님의 구원을 기념하고 기억해야 합니다.",
+      "messageEn": "We must commemorate and remember God's deliverance.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "상황이 뒤바뀜", "eventEn": "Tables turned"},
+        {"verse": 17, "eventKo": "부림절의 유래", "eventEn": "Origin of Purim"},
+        {"verse": 22, "eventKo": "슬픔이 기쁨으로", "eventEn": "Sorrow turned to joy"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "모르드개의 영광",
+      "titleEn": "Mordecai's Greatness",
+      "summaryKo": "모르드개가 왕 다음으로 높아져 동족에게 평화를 가져옵니다.",
+      "summaryEn": "Mordecai becomes second to the king, bringing peace to his people.",
+      "messageKo": "하나님은 겸손한 자를 높이십니다.",
+      "messageEn": "God exalts the humble.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "모르드개의 위대함", "eventEn": "Mordecai's greatness"},
+        {"verse": 3, "eventKo": "동족에게 존경받음", "eventEn": "Respected by his people"},
+        {"verse": 3, "eventKo": "민족의 평안을 구함", "eventEn": "Sought welfare of his people"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

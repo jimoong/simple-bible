@@ -1,0 +1,548 @@
+{
+  "bookId": "2chronicles",
+  "bookNumber": 14,
+  "bookNameKo": "역대하",
+  "bookNameEn": "2 Chronicles",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "솔로몬의 지혜",
+      "titleEn": "Solomon's Wisdom",
+      "summaryKo": "솔로몬이 기브온에서 지혜를 구하고 하나님이 지혜와 부를 주십니다.",
+      "summaryEn": "Solomon asks for wisdom at Gibeon; God grants wisdom and riches.",
+      "messageKo": "지혜를 구하는 겸손한 마음을 하나님이 기뻐하십니다.",
+      "messageEn": "God is pleased with a humble heart that seeks wisdom.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "무엇을 줄꼬", "eventEn": "What shall I give you?"},
+        {"verse": 10, "eventKo": "지혜와 지식을 구함", "eventEn": "Asks for wisdom and knowledge"},
+        {"verse": 12, "eventKo": "지혜와 부도 주심", "eventEn": "Wisdom and wealth given"}
+      ],
+      "timelineYear": "BC 970"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "성전 건축 준비",
+      "titleEn": "Preparations for Temple",
+      "summaryKo": "솔로몬이 히람과 협력하여 성전 건축을 준비합니다.",
+      "summaryEn": "Solomon partners with Hiram to prepare for temple construction.",
+      "messageKo": "하나님의 일을 위해 최고의 자원과 기술을 사용해야 합니다.",
+      "messageEn": "The best resources and skills should be used for God's work.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "성전과 궁전 건축 결정", "eventEn": "Decision to build temple and palace"},
+        {"verse": 7, "eventKo": "히람에게 기술자 요청", "eventEn": "Request craftsman from Hiram"},
+        {"verse": 17, "eventKo": "이방인 일꾼 계수", "eventEn": "Foreigners counted for labor"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "성전 건축",
+      "titleEn": "Temple Construction",
+      "summaryKo": "솔로몬이 모리아 산에 성전을 건축합니다.",
+      "summaryEn": "Solomon builds the temple on Mount Moriah.",
+      "messageKo": "하나님의 집은 최고의 정성과 아름다움으로 지어야 합니다.",
+      "messageEn": "God's house should be built with utmost care and beauty.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "모리아 산에 착공", "eventEn": "Construction on Mount Moriah"},
+        {"verse": 8, "eventKo": "지성소", "eventEn": "Most Holy Place"},
+        {"verse": 15, "eventKo": "두 기둥", "eventEn": "Two pillars"}
+      ],
+      "timelineYear": "BC 966"
+    },
+    {
+      "chapter": 4,
+      "titleKo": "성전 기구들",
+      "titleEn": "Temple Furnishings",
+      "summaryKo": "놋 제단, 바다, 등잔대 등 성전 기구들이 제작됩니다.",
+      "summaryEn": "Bronze altar, sea, lampstands, and other temple furnishings are made.",
+      "messageKo": "예배를 위한 모든 세부 사항이 중요합니다.",
+      "messageEn": "Every detail matters in worship preparation.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "놋 제단", "eventEn": "Bronze altar"},
+        {"verse": 2, "eventKo": "바다", "eventEn": "Bronze sea"},
+        {"verse": 19, "eventKo": "금 기구들", "eventEn": "Gold furnishings"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "언약궤를 성전에 안치",
+      "titleEn": "Ark Brought to Temple",
+      "summaryKo": "언약궤가 지성소에 안치되고 하나님의 영광이 성전에 충만합니다.",
+      "summaryEn": "The ark is placed in the Most Holy Place; God's glory fills the temple.",
+      "messageKo": "연합된 찬양이 하나님의 임재를 불러옵니다.",
+      "messageEn": "United praise invites God's presence.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "언약궤 안치", "eventEn": "Ark placed in temple"},
+        {"verse": 13, "eventKo": "한 소리로 찬양", "eventEn": "Praise with one voice"},
+        {"verse": 14, "eventKo": "하나님의 영광 충만", "eventEn": "Glory fills the temple"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "솔로몬의 봉헌 기도",
+      "titleEn": "Solomon's Dedicatory Prayer",
+      "summaryKo": "솔로몬이 온 회중 앞에서 성전 봉헌 기도를 드립니다.",
+      "summaryEn": "Solomon prays the dedicatory prayer before the whole assembly.",
+      "messageKo": "하나님은 겸손한 기도를 들으시고 응답하십니다.",
+      "messageEn": "God hears and answers humble prayer.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "무릎 꿇고 기도", "eventEn": "Kneels and prays"},
+        {"verse": 21, "eventKo": "용서를 구함", "eventEn": "Asks for forgiveness"},
+        {"verse": 40, "eventKo": "기도에 응답하소서", "eventEn": "Answer our prayers"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "하나님의 응답",
+      "titleEn": "God's Response",
+      "summaryKo": "하늘에서 불이 내려오고, 하나님이 솔로몬에게 나타나 응답하십니다.",
+      "summaryEn": "Fire comes from heaven; God appears to Solomon with His response.",
+      "messageKo": "겸손히 기도하면 하나님이 땅을 치료하십니다.",
+      "messageEn": "Humble prayer leads to God healing the land.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "하늘에서 불이 내림", "eventEn": "Fire from heaven"},
+        {"verse": 12, "eventKo": "하나님이 밤에 나타나심", "eventEn": "God appears at night"},
+        {"verse": 14, "eventKo": "겸손히 기도하면", "eventEn": "If my people humble themselves"}
+      ],
+      "timelineYear": "BC 959"
+    },
+    {
+      "chapter": 8,
+      "titleKo": "솔로몬의 업적",
+      "titleEn": "Solomon's Achievements",
+      "summaryKo": "솔로몬의 건축 사업과 행정, 제사 규례가 기록됩니다.",
+      "summaryEn": "Solomon's building projects, administration, and worship regulations are recorded.",
+      "messageKo": "모든 일을 규례대로 질서 있게 행해야 합니다.",
+      "messageEn": "Everything should be done orderly according to regulations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "20년 건축 완료", "eventEn": "20 years of building completed"},
+        {"verse": 14, "eventKo": "다윗의 규례를 따름", "eventEn": "Following David's regulations"},
+        {"verse": 17, "eventKo": "에시온게벨 함대", "eventEn": "Fleet at Ezion Geber"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "스바 여왕의 방문",
+      "titleEn": "Queen of Sheba's Visit",
+      "summaryKo": "스바 여왕이 방문하고, 솔로몬의 영화와 죽음이 기록됩니다.",
+      "summaryEn": "The Queen of Sheba visits; Solomon's splendor and death are recorded.",
+      "messageKo": "하나님이 주신 지혜는 세상의 존경을 받습니다.",
+      "messageEn": "God-given wisdom earns worldly respect.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "스바 여왕 방문", "eventEn": "Queen of Sheba visits"},
+        {"verse": 8, "eventKo": "하나님이 사랑하시는 왕", "eventEn": "King loved by God"},
+        {"verse": 31, "eventKo": "솔로몬의 죽음", "eventEn": "Solomon's death"}
+      ],
+      "timelineYear": "BC 930"
+    },
+    {
+      "chapter": 10,
+      "titleKo": "왕국 분열",
+      "titleEn": "Kingdom Divided",
+      "summaryKo": "르호보암이 백성의 요구를 거절하여 왕국이 분열됩니다.",
+      "summaryEn": "Rehoboam rejects the people's request, causing the kingdom to divide.",
+      "messageKo": "어리석은 조언을 따르면 큰 손실을 입습니다.",
+      "messageEn": "Following foolish advice leads to great loss.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "백성의 요구", "eventEn": "People's request"},
+        {"verse": 13, "eventKo": "가혹한 대답", "eventEn": "Harsh response"},
+        {"verse": 19, "eventKo": "이스라엘이 다윗 집을 배반", "eventEn": "Israel rebels against David's house"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "르호보암의 통치",
+      "titleEn": "Rehoboam's Reign",
+      "summaryKo": "르호보암이 유다를 강화하고 제사장과 레위인이 유다로 옵니다.",
+      "summaryEn": "Rehoboam strengthens Judah; priests and Levites come to Judah.",
+      "messageKo": "하나님을 경외하는 자들은 진정한 예배가 있는 곳으로 모입니다.",
+      "messageEn": "Those who fear God gather where true worship exists.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "동족과 싸우지 말라", "eventEn": "Do not fight your brothers"},
+        {"verse": 13, "eventKo": "제사장과 레위인이 유다로", "eventEn": "Priests and Levites come to Judah"},
+        {"verse": 17, "eventKo": "3년간 강성", "eventEn": "Strong for 3 years"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "시삭의 침략",
+      "titleEn": "Shishak's Invasion",
+      "summaryKo": "르호보암이 율법을 버려 애굽 시삭이 침략하지만 겸손하여 멸망을 면합니다.",
+      "summaryEn": "Rehoboam abandons the law; Shishak invades, but humility prevents destruction.",
+      "messageKo": "겸손한 회개가 완전한 멸망을 막습니다.",
+      "messageEn": "Humble repentance prevents total destruction.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "율법을 버림", "eventEn": "Abandons the law"},
+        {"verse": 6, "eventKo": "스스로 겸손함", "eventEn": "They humble themselves"},
+        {"verse": 9, "eventKo": "성전 보물 약탈", "eventEn": "Temple treasures taken"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "아비야의 승리",
+      "titleEn": "Abijah's Victory",
+      "summaryKo": "아비야가 여로보암을 꾸짖고 하나님을 의뢰하여 대승합니다.",
+      "summaryEn": "Abijah rebukes Jeroboam and wins a great victory by relying on God.",
+      "messageKo": "하나님을 의뢰하면 압도적 열세도 이깁니다.",
+      "messageEn": "Relying on God overcomes overwhelming odds.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "금송아지 책망", "eventEn": "Rebukes golden calves"},
+        {"verse": 12, "eventKo": "하나님이 우리와 함께", "eventEn": "God is with us"},
+        {"verse": 18, "eventKo": "유다의 승리", "eventEn": "Judah's victory"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "아사의 개혁",
+      "titleEn": "Asa's Reform",
+      "summaryKo": "아사가 우상을 제거하고 구스 군대를 물리칩니다.",
+      "summaryEn": "Asa removes idols and defeats the Cushite army.",
+      "messageKo": "하나님을 찾을 때 그분이 평안을 주십니다.",
+      "messageEn": "When we seek God, He gives us peace.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "우상 제거", "eventEn": "Idols removed"},
+        {"verse": 7, "eventKo": "하나님을 찾음", "eventEn": "Sought the LORD"},
+        {"verse": 12, "eventKo": "구스 군대 격파", "eventEn": "Cushites defeated"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "아사의 언약",
+      "titleEn": "Asa's Covenant",
+      "summaryKo": "선지자 아사랴의 권면으로 아사가 개혁을 심화하고 언약을 체결합니다.",
+      "summaryEn": "Prophet Azariah's encouragement leads Asa to deepen reform and make a covenant.",
+      "messageKo": "하나님을 찾으면 만나시고, 버리면 버림받습니다.",
+      "messageEn": "Seek God and He will be found; forsake Him and be forsaken.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "너희가 여호와와 함께하면", "eventEn": "If you are with the LORD"},
+        {"verse": 12, "eventKo": "언약 체결", "eventEn": "Covenant made"},
+        {"verse": 15, "eventKo": "전심으로 찾음", "eventEn": "Sought with all their heart"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "아사의 실패",
+      "titleEn": "Asa's Failure",
+      "summaryKo": "아사가 말년에 아람에 의존하고 선지자를 옥에 가둡니다.",
+      "summaryEn": "In his later years, Asa relies on Aram and imprisons the prophet.",
+      "messageKo": "처음의 믿음을 끝까지 유지하는 것이 중요합니다.",
+      "messageEn": "Maintaining initial faith to the end is crucial.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "아람에 의존", "eventEn": "Relies on Aram"},
+        {"verse": 9, "eventKo": "여호와의 눈", "eventEn": "Eyes of the LORD"},
+        {"verse": 12, "eventKo": "병중에도 하나님을 찾지 않음", "eventEn": "Did not seek God in illness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "여호사밧의 개혁",
+      "titleEn": "Jehoshaphat's Reform",
+      "summaryKo": "여호사밧이 하나님을 찾고 율법 교육을 실시합니다.",
+      "summaryEn": "Jehoshaphat seeks God and institutes teaching of the law.",
+      "messageKo": "하나님의 말씀 교육이 나라의 근본입니다.",
+      "messageEn": "Teaching God's word is fundamental to a nation.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "여호와를 찾음", "eventEn": "Sought the LORD"},
+        {"verse": 9, "eventKo": "율법책으로 교육", "eventEn": "Teaching with the Book of Law"},
+        {"verse": 10, "eventKo": "주변 나라들이 두려워함", "eventEn": "Surrounding nations feared"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "미가야의 예언",
+      "titleEn": "Micaiah's Prophecy",
+      "summaryKo": "여호사밧이 아합과 연합하고 미가야가 패전을 예언합니다.",
+      "summaryEn": "Jehoshaphat allies with Ahab; Micaiah prophesies defeat.",
+      "messageKo": "불신자와의 동맹은 위험합니다.",
+      "messageEn": "Alliance with unbelievers is dangerous.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아합과 동맹", "eventEn": "Alliance with Ahab"},
+        {"verse": 16, "eventKo": "이스라엘이 흩어지리라", "eventEn": "Israel will scatter"},
+        {"verse": 34, "eventKo": "아합의 죽음", "eventEn": "Ahab's death"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "여호사밧의 사법 개혁",
+      "titleEn": "Jehoshaphat's Judicial Reform",
+      "summaryKo": "여호사밧이 재판관을 세우고 공의를 강조합니다.",
+      "summaryEn": "Jehoshaphat appoints judges and emphasizes justice.",
+      "messageKo": "재판은 사람이 아닌 하나님을 위해 행해야 합니다.",
+      "messageEn": "Judgment must be rendered for God, not for man.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "예후의 책망", "eventEn": "Jehu's rebuke"},
+        {"verse": 6, "eventKo": "여호와를 위하여 재판하라", "eventEn": "Judge for the LORD"},
+        {"verse": 11, "eventKo": "담대히 행하라", "eventEn": "Act courageously"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "여호사밧의 승리",
+      "titleEn": "Jehoshaphat's Victory",
+      "summaryKo": "모압, 암몬, 에돔 연합군이 침략하지만 찬양으로 승리합니다.",
+      "summaryEn": "Moab, Ammon, and Edom invade, but victory comes through praise.",
+      "messageKo": "전쟁은 하나님께 속한 것이며, 찬양이 무기가 됩니다.",
+      "messageEn": "The battle belongs to God, and praise is our weapon.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "주목하옵나이다", "eventEn": "Our eyes are on You"},
+        {"verse": 15, "eventKo": "전쟁은 너희에게 속한 것이 아니요", "eventEn": "Battle is not yours"},
+        {"verse": 22, "eventKo": "찬송할 때 복병을 두심", "eventEn": "Ambush during praise"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "여호람의 악정",
+      "titleEn": "Jehoram's Wickedness",
+      "summaryKo": "여호람이 형제들을 죽이고 우상숭배하여 재앙을 받습니다.",
+      "summaryEn": "Jehoram kills his brothers, worships idols, and suffers calamity.",
+      "messageKo": "악한 동맹과 우상숭배는 멸망을 가져옵니다.",
+      "messageEn": "Evil alliances and idolatry bring destruction.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "형제들을 죽임", "eventEn": "Kills brothers"},
+        {"verse": 12, "eventKo": "엘리야의 편지", "eventEn": "Letter from Elijah"},
+        {"verse": 19, "eventKo": "사랑받지 못한 채 죽음", "eventEn": "Dies unloved"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "아하시야와 아달랴",
+      "titleEn": "Ahaziah and Athaliah",
+      "summaryKo": "아하시야가 예후에게 죽고, 아달랴가 왕족을 학살합니다.",
+      "summaryEn": "Ahaziah is killed by Jehu; Athaliah massacres the royal family.",
+      "messageKo": "악한 조언자와 가까이하면 멸망합니다.",
+      "messageEn": "Associating with evil counselors leads to ruin.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "악한 조언", "eventEn": "Evil counsel"},
+        {"verse": 9, "eventKo": "예후에게 죽임당함", "eventEn": "Killed by Jehu"},
+        {"verse": 10, "eventKo": "아달랴가 왕족 학살", "eventEn": "Athaliah kills royal family"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "요아스의 즉위",
+      "titleEn": "Joash Crowned",
+      "summaryKo": "여호야다 제사장이 요아스를 왕으로 세우고 아달랴를 처형합니다.",
+      "summaryEn": "Priest Jehoiada crowns Joash and executes Athaliah.",
+      "messageKo": "하나님은 언약을 지키시기 위해 한 후손을 보존하십니다.",
+      "messageEn": "God preserves one descendant to keep His covenant.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "왕의 아들이 왕이 되리라", "eventEn": "King's son shall reign"},
+        {"verse": 11, "eventKo": "요아스 대관식", "eventEn": "Joash crowned"},
+        {"verse": 16, "eventKo": "여호와의 백성이 되기로 언약", "eventEn": "Covenant to be God's people"}
+      ],
+      "timelineYear": "BC 835"
+    },
+    {
+      "chapter": 24,
+      "titleKo": "성전 보수와 요아스의 타락",
+      "titleEn": "Temple Repair and Joash's Fall",
+      "summaryKo": "요아스가 성전을 수리하지만 여호야다 사후 타락합니다.",
+      "summaryEn": "Joash repairs temple but falls away after Jehoiada's death.",
+      "messageKo": "좋은 멘토 없이 신앙을 유지하기 어렵습니다.",
+      "messageEn": "Without good mentors, it is hard to maintain faith.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "성전 수리 명령", "eventEn": "Orders temple repair"},
+        {"verse": 17, "eventKo": "여호야다 죽음 후 타락", "eventEn": "Falls away after Jehoiada"},
+        {"verse": 21, "eventKo": "스가랴를 죽임", "eventEn": "Zechariah killed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "아마샤",
+      "titleEn": "Amaziah",
+      "summaryKo": "아마샤가 에돔을 격파하지만 교만하여 이스라엘에 패합니다.",
+      "summaryEn": "Amaziah defeats Edom but is defeated by Israel due to pride.",
+      "messageKo": "승리 후의 교만이 더 큰 패배를 가져옵니다.",
+      "messageEn": "Pride after victory brings greater defeat.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "하나님이 넘어지게 하심", "eventEn": "God can make you fall"},
+        {"verse": 14, "eventKo": "에돔 신들을 섬김", "eventEn": "Worships Edom's gods"},
+        {"verse": 23, "eventKo": "이스라엘에 패함", "eventEn": "Defeated by Israel"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "웃시야의 번영과 몰락",
+      "titleEn": "Uzziah's Prosperity and Fall",
+      "summaryKo": "웃시야가 하나님을 찾을 때 형통하지만 교만하여 문둥병에 걸립니다.",
+      "summaryEn": "Uzziah prospers while seeking God but becomes leprous due to pride.",
+      "messageKo": "교만은 가장 성공한 자도 무너뜨립니다.",
+      "messageEn": "Pride brings down even the most successful.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "하나님을 찾을 때 형통", "eventEn": "Prospered while seeking God"},
+        {"verse": 16, "eventKo": "교만하여 분향", "eventEn": "Pride leads to burning incense"},
+        {"verse": 21, "eventKo": "죽을 때까지 문둥병", "eventEn": "Leprosy until death"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "요담",
+      "titleEn": "Jotham",
+      "summaryKo": "요담이 여호와 보시기에 정직히 행하며 나라를 강하게 합니다.",
+      "summaryEn": "Jotham does right before the LORD and strengthens the kingdom.",
+      "messageKo": "여호와 앞에서 바르게 행하면 강성해집니다.",
+      "messageEn": "Walking right before God brings strength.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "정직히 행함", "eventEn": "Did what was right"},
+        {"verse": 5, "eventKo": "암몬에 승리", "eventEn": "Victory over Ammon"},
+        {"verse": 6, "eventKo": "하나님 앞에 정돈함", "eventEn": "Ordered ways before God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "아하스의 악정",
+      "titleEn": "Ahaz's Wickedness",
+      "summaryKo": "아하스가 우상숭배하고 앗수르에 의존하여 나라가 쇠퇴합니다.",
+      "summaryEn": "Ahaz practices idolatry and depends on Assyria, leading to decline.",
+      "messageKo": "하나님 대신 세상 권세에 의존하면 더 깊이 빠집니다.",
+      "messageEn": "Depending on worldly powers instead of God leads deeper into trouble.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바알의 형상", "eventEn": "Images of Baals"},
+        {"verse": 16, "eventKo": "앗수르에 도움 요청", "eventEn": "Appeals to Assyria"},
+        {"verse": 24, "eventKo": "성전 문을 닫음", "eventEn": "Closes temple doors"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "히스기야의 성전 정화",
+      "titleEn": "Hezekiah Purifies Temple",
+      "summaryKo": "히스기야가 성전을 정화하고 예배를 회복합니다.",
+      "summaryEn": "Hezekiah purifies the temple and restores worship.",
+      "messageKo": "진정한 부흥은 하나님의 전을 정화하는 것에서 시작됩니다.",
+      "messageEn": "True revival begins with purifying God's house.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "첫째 달에 성전 문을 엶", "eventEn": "Opens temple doors in first month"},
+        {"verse": 16, "eventKo": "더러운 것을 제거", "eventEn": "Removes unclean things"},
+        {"verse": 36, "eventKo": "백성이 기뻐함", "eventEn": "People rejoice"}
+      ],
+      "timelineYear": "BC 715"
+    },
+    {
+      "chapter": 30,
+      "titleKo": "유월절 준수",
+      "titleEn": "Passover Celebrated",
+      "summaryKo": "히스기야가 온 이스라엘을 초청하여 유월절을 지킵니다.",
+      "summaryEn": "Hezekiah invites all Israel to celebrate Passover.",
+      "messageKo": "하나님은 은혜로우시니 진심으로 돌아오면 용납하십니다.",
+      "messageEn": "God is gracious; He accepts those who return wholeheartedly.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "북이스라엘에 초청장", "eventEn": "Letters to northern Israel"},
+        {"verse": 18, "eventKo": "정결하지 않아도 허락", "eventEn": "Allowed despite uncleanness"},
+        {"verse": 26, "eventKo": "솔로몬 이후 최고의 기쁨", "eventEn": "Greatest joy since Solomon"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "히스기야의 개혁",
+      "titleEn": "Hezekiah's Reforms",
+      "summaryKo": "히스기야가 우상을 파괴하고 제사장, 레위인 제도를 정비합니다.",
+      "summaryEn": "Hezekiah destroys idols and reorganizes priests and Levites.",
+      "messageKo": "예배 사역자들을 잘 섬기는 것이 개혁의 일부입니다.",
+      "messageEn": "Caring for worship ministers is part of reform.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "산당과 우상 파괴", "eventEn": "High places and idols destroyed"},
+        {"verse": 4, "eventKo": "제사장 몫 규정", "eventEn": "Portions for priests"},
+        {"verse": 21, "eventKo": "전심으로 행함", "eventEn": "Did with all his heart"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "앗수르 침략과 히스기야의 병",
+      "titleEn": "Assyrian Invasion and Hezekiah's Illness",
+      "summaryKo": "산헤립이 침략하지만 하나님이 구원하시고, 히스기야의 병과 교만이 기록됩니다.",
+      "summaryEn": "Sennacherib invades but God delivers; Hezekiah's illness and pride are recorded.",
+      "messageKo": "위기 때 하나님을 의지하면 구원받습니다.",
+      "messageEn": "Relying on God in crisis brings deliverance.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "우리와 함께 하시는 이가 더 크다", "eventEn": "Greater One is with us"},
+        {"verse": 21, "eventKo": "천사가 앗수르 군대 멸망", "eventEn": "Angel destroys Assyrian army"},
+        {"verse": 26, "eventKo": "교만에서 겸손으로", "eventEn": "From pride to humility"}
+      ],
+      "timelineYear": "BC 701"
+    },
+    {
+      "chapter": 33,
+      "titleKo": "므낫세의 회개",
+      "titleEn": "Manasseh's Repentance",
+      "summaryKo": "가장 악한 왕 므낫세가 포로 중에 회개하고 회복됩니다.",
+      "summaryEn": "The most wicked king Manasseh repents during captivity and is restored.",
+      "messageKo": "아무리 악한 자도 겸손히 회개하면 하나님이 용서하십니다.",
+      "messageEn": "Even the most wicked can be forgiven through humble repentance.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "악행이 심함", "eventEn": "Great wickedness"},
+        {"verse": 12, "eventKo": "곤경 중에 회개", "eventEn": "Repents in distress"},
+        {"verse": 13, "eventKo": "하나님이 기도를 들으심", "eventEn": "God hears his prayer"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 34,
+      "titleKo": "요시야의 개혁",
+      "titleEn": "Josiah's Reform",
+      "summaryKo": "요시야가 율법책을 발견하고 철저한 개혁을 시행합니다.",
+      "summaryEn": "Josiah discovers the Book of the Law and implements thorough reform.",
+      "messageKo": "하나님의 말씀에 겸손히 반응하는 것이 개혁의 시작입니다.",
+      "messageEn": "Reform begins with humble response to God's word.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "8년에 하나님을 찾기 시작", "eventEn": "Begins seeking God at 8 years"},
+        {"verse": 14, "eventKo": "율법책 발견", "eventEn": "Book of Law found"},
+        {"verse": 27, "eventKo": "마음이 부드러워짐", "eventEn": "Heart was tender"}
+      ],
+      "timelineYear": "BC 621"
+    },
+    {
+      "chapter": 35,
+      "titleKo": "요시야의 유월절과 죽음",
+      "titleEn": "Josiah's Passover and Death",
+      "summaryKo": "요시야가 대규모 유월절을 지키고, 애굽 왕 느고와 싸우다 죽습니다.",
+      "summaryEn": "Josiah celebrates a grand Passover and dies fighting Pharaoh Neco.",
+      "messageKo": "하나님의 음성이 아닌 곳에서 싸우면 위험합니다.",
+      "messageEn": "Fighting where God has not called is dangerous.",
+      "keyEvents": [
+        {"verse": 18, "eventKo": "사무엘 이후 최대 유월절", "eventEn": "Greatest Passover since Samuel"},
+        {"verse": 22, "eventKo": "느고 왕과 전쟁", "eventEn": "War with Neco"},
+        {"verse": 24, "eventKo": "요시야의 죽음", "eventEn": "Josiah's death"}
+      ],
+      "timelineYear": "BC 609"
+    },
+    {
+      "chapter": 36,
+      "titleKo": "유다의 멸망과 귀환 약속",
+      "titleEn": "Fall of Judah and Promise of Return",
+      "summaryKo": "마지막 왕들의 악행, 예루살렘 멸망, 그리고 고레스의 귀환 조서로 끝납니다.",
+      "summaryEn": "Last kings' wickedness, Jerusalem's fall, and Cyrus's decree to return.",
+      "messageKo": "심판 후에도 하나님의 회복 약속은 유효합니다.",
+      "messageEn": "God's promise of restoration remains valid even after judgment.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "선지자들을 경멸", "eventEn": "Despised prophets"},
+        {"verse": 19, "eventKo": "성전과 예루살렘 파괴", "eventEn": "Temple and Jerusalem destroyed"},
+        {"verse": 23, "eventKo": "고레스의 조서", "eventEn": "Cyrus's decree"}
+      ],
+      "timelineYear": "BC 586"
+    }
+  ]
+}

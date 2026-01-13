@@ -1,0 +1,638 @@
+{
+  "bookId": "job",
+  "bookNumber": 18,
+  "bookNameKo": "욥기",
+  "bookNameEn": "Job",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "욥의 시련",
+      "titleEn": "Job's Trials",
+      "summaryKo": "의로운 욥이 하늘의 의회에서 사탄의 도전을 받아 모든 것을 잃습니다.",
+      "summaryEn": "Righteous Job loses everything after Satan's challenge in the heavenly council.",
+      "messageKo": "고난 중에도 하나님을 찬양하는 것이 참된 믿음입니다.",
+      "messageEn": "True faith praises God even in suffering.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "욥의 의로움", "eventEn": "Job's righteousness"},
+        {"verse": 12, "eventKo": "사탄의 도전", "eventEn": "Satan's challenge"},
+        {"verse": 21, "eventKo": "주신 자도 여호와시요", "eventEn": "The LORD gave and took away"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 2,
+      "titleKo": "욥의 육체적 고난",
+      "titleEn": "Job's Physical Suffering",
+      "summaryKo": "욥이 악성 종기로 고통받지만 하나님을 원망하지 않습니다.",
+      "summaryEn": "Job suffers painful sores but does not curse God.",
+      "messageKo": "하나님께 복만 받겠다는 것은 온전한 믿음이 아닙니다.",
+      "messageEn": "Expecting only blessings from God is not complete faith.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "악성 종기", "eventEn": "Painful sores"},
+        {"verse": 9, "eventKo": "아내의 조언", "eventEn": "Wife's advice"},
+        {"verse": 13, "eventKo": "세 친구의 방문", "eventEn": "Three friends visit"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "욥의 탄식",
+      "titleEn": "Job's Lament",
+      "summaryKo": "욥이 자신이 태어난 날을 저주하며 탄식합니다.",
+      "summaryEn": "Job curses the day of his birth and laments.",
+      "messageKo": "극심한 고통 중에 정직하게 하나님 앞에 나아갈 수 있습니다.",
+      "messageEn": "In extreme pain, we can honestly approach God.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "태어난 날을 저주", "eventEn": "Curses day of birth"},
+        {"verse": 11, "eventKo": "왜 죽지 않았는가", "eventEn": "Why did I not die?"},
+        {"verse": 26, "eventKo": "평안함이 없음", "eventEn": "No peace"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "엘리바스의 첫 번째 말",
+      "titleEn": "Eliphaz's First Speech",
+      "summaryKo": "엘리바스가 욥의 고난을 죄의 결과로 해석합니다.",
+      "summaryEn": "Eliphaz interprets Job's suffering as a result of sin.",
+      "messageKo": "고난의 원인을 단순하게 판단해서는 안 됩니다.",
+      "messageEn": "We should not simplistically judge the cause of suffering.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "의인이 멸망한 적 있느냐", "eventEn": "Who ever perished being innocent?"},
+        {"verse": 12, "eventKo": "밤중의 환상", "eventEn": "Night vision"},
+        {"verse": 17, "eventKo": "사람이 하나님보다 의로우랴", "eventEn": "Can a mortal be more righteous than God?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "엘리바스의 권면",
+      "titleEn": "Eliphaz's Counsel",
+      "summaryKo": "엘리바스가 욥에게 하나님께 돌아가라고 권면합니다.",
+      "summaryEn": "Eliphaz counsels Job to return to God.",
+      "messageKo": "좋은 신학도 잘못 적용하면 상처가 됩니다.",
+      "messageEn": "Good theology wrongly applied can wound.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "하나님께 구하라", "eventEn": "Appeal to God"},
+        {"verse": 17, "eventKo": "하나님의 징계를 받는 자는 복됨", "eventEn": "Blessed is the one God corrects"},
+        {"verse": 27, "eventKo": "우리가 연구한 바라", "eventEn": "This is what we have examined"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "욥의 응답: 고통의 호소",
+      "titleEn": "Job's Reply: Cry of Anguish",
+      "summaryKo": "욥이 자신의 고통의 깊이를 호소하고 친구들의 무정함을 책망합니다.",
+      "summaryEn": "Job cries out about his suffering and rebukes his friends' heartlessness.",
+      "messageKo": "고통받는 자에게는 이해와 연민이 필요합니다.",
+      "messageEn": "Those in pain need understanding and compassion.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "고통을 달아본다면", "eventEn": "If only my anguish could be weighed"},
+        {"verse": 14, "eventKo": "친구의 도리", "eventEn": "A friend's duty"},
+        {"verse": 26, "eventKo": "절망한 자의 말", "eventEn": "Words of a despairing man"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "욥의 탄원",
+      "titleEn": "Job's Plea",
+      "summaryKo": "욥이 인생의 허무와 고통을 탄식하며 하나님께 묻습니다.",
+      "summaryEn": "Job laments life's futility and questions God.",
+      "messageKo": "하나님께 정직하게 질문하는 것은 허용됩니다.",
+      "messageEn": "Honest questions to God are allowed.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "인생은 전쟁과 같음", "eventEn": "Life is like hard service"},
+        {"verse": 17, "eventKo": "사람이 무엇이기에", "eventEn": "What is mankind?"},
+        {"verse": 20, "eventKo": "왜 나를 과녁으로 삼으셨나이까", "eventEn": "Why make me your target?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "빌닷의 첫 번째 말",
+      "titleEn": "Bildad's First Speech",
+      "summaryKo": "빌닷이 하나님의 공의를 강조하며 욥의 자녀들의 죄를 암시합니다.",
+      "summaryEn": "Bildad emphasizes God's justice, implying sin of Job's children.",
+      "messageKo": "신학적 정확성만으로 사람을 위로할 수 없습니다.",
+      "messageEn": "Theological accuracy alone cannot comfort people.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "하나님이 공의를 굽히시겠느냐", "eventEn": "Does God pervert justice?"},
+        {"verse": 6, "eventKo": "네가 순결하고 정직하면", "eventEn": "If you are pure and upright"},
+        {"verse": 20, "eventKo": "하나님은 완전한 자를 버리지 않으신다", "eventEn": "God does not reject the blameless"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "욥의 응답: 하나님의 위대하심",
+      "titleEn": "Job's Reply: God's Greatness",
+      "summaryKo": "욥이 하나님의 위대하심을 인정하면서도 자신의 결백을 주장합니다.",
+      "summaryEn": "Job acknowledges God's greatness while maintaining his innocence.",
+      "messageKo": "하나님은 너무 크시기에 논쟁할 수 없습니다.",
+      "messageEn": "God is too great for us to argue with.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "사람이 하나님 앞에 어찌 의로우랴", "eventEn": "How can a mortal be righteous before God?"},
+        {"verse": 10, "eventKo": "측량할 수 없는 일을 행하시며", "eventEn": "He performs wonders beyond measure"},
+        {"verse": 33, "eventKo": "중재자가 없구나", "eventEn": "No arbiter between us"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "욥의 호소",
+      "titleEn": "Job's Appeal",
+      "summaryKo": "욥이 하나님께 자신이 왜 고난받는지 알려달라고 호소합니다.",
+      "summaryEn": "Job appeals to God to know why he suffers.",
+      "messageKo": "고난 중에 하나님께 '왜'라고 물을 수 있습니다.",
+      "messageEn": "We can ask God 'why' in suffering.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "무슨 이유로 다투시는지", "eventEn": "Tell me why You contend with me"},
+        {"verse": 8, "eventKo": "주의 손이 나를 만드셨거늘", "eventEn": "Your hands shaped me"},
+        {"verse": 18, "eventKo": "어찌하여 태에서 나오게 하셨나이까", "eventEn": "Why did You bring me out?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "소발의 첫 번째 말",
+      "titleEn": "Zophar's First Speech",
+      "summaryKo": "소발이 욥을 어리석다고 비난하며 회개를 촉구합니다.",
+      "summaryEn": "Zophar accuses Job of foolishness and urges repentance.",
+      "messageKo": "하나님의 지혜는 인간의 이해를 초월합니다.",
+      "messageEn": "God's wisdom transcends human understanding.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "하나님이 말씀하셨으면", "eventEn": "If only God would speak"},
+        {"verse": 7, "eventKo": "하나님의 깊은 것을 측량하겠느냐", "eventEn": "Can you fathom God's mysteries?"},
+        {"verse": 14, "eventKo": "죄악을 멀리하면", "eventEn": "If you put away sin"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "욥의 응답: 하나님의 주권",
+      "titleEn": "Job's Reply: God's Sovereignty",
+      "summaryKo": "욥이 친구들을 비꼬며 하나님의 절대 주권을 선포합니다.",
+      "summaryEn": "Job sarcastically responds to friends and proclaims God's absolute sovereignty.",
+      "messageKo": "하나님의 주권은 선과 악 모두 위에 있습니다.",
+      "messageEn": "God's sovereignty is over both good and evil.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "너희만 지혜로운 사람이냐", "eventEn": "Are you the only wise people?"},
+        {"verse": 13, "eventKo": "지혜와 권능이 하나님께", "eventEn": "Wisdom and power belong to God"},
+        {"verse": 23, "eventKo": "나라를 크게도 작게도 하시며", "eventEn": "He makes nations great and destroys them"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "욥의 변론",
+      "titleEn": "Job's Defense",
+      "summaryKo": "욥이 친구들을 책망하고 하나님께 직접 변론하기를 원합니다.",
+      "summaryEn": "Job rebukes friends and desires to argue his case directly with God.",
+      "messageKo": "잘못된 위로보다 침묵이 나을 때가 있습니다.",
+      "messageEn": "Sometimes silence is better than wrong comfort.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "무용한 의사들", "eventEn": "Worthless physicians"},
+        {"verse": 5, "eventKo": "너희가 잠잠하면 지혜가 되리라", "eventEn": "If only you would be silent"},
+        {"verse": 15, "eventKo": "그가 나를 죽이시리니", "eventEn": "Though He slay me"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "인생의 덧없음",
+      "titleEn": "Life's Brevity",
+      "summaryKo": "욥이 인생의 짧음과 덧없음을 탄식합니다.",
+      "summaryEn": "Job laments the shortness and futility of human life.",
+      "messageKo": "인생은 짧고 연약하지만 하나님 앞에 소중합니다.",
+      "messageEn": "Life is short and fragile but precious before God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여자에게서 난 사람은 날이 짧고", "eventEn": "Born of woman, few days"},
+        {"verse": 7, "eventKo": "나무는 소망이 있나니", "eventEn": "There is hope for a tree"},
+        {"verse": 14, "eventKo": "사람이 죽으면 다시 살리이까", "eventEn": "If someone dies, will they live again?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "엘리바스의 두 번째 말",
+      "titleEn": "Eliphaz's Second Speech",
+      "summaryKo": "엘리바스가 욥의 태도를 비난하고 악인의 운명을 경고합니다.",
+      "summaryEn": "Eliphaz criticizes Job's attitude and warns of the wicked's fate.",
+      "messageKo": "논쟁이 길어질수록 서로의 입장은 더 굳어집니다.",
+      "messageEn": "The longer arguments continue, the more positions harden.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "하나님 경외함을 폐하며", "eventEn": "You undermine piety"},
+        {"verse": 14, "eventKo": "사람이 어찌 깨끗하랴", "eventEn": "How can a mortal be pure?"},
+        {"verse": 20, "eventKo": "악인은 평생 고통", "eventEn": "Wicked suffer all their days"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "욥의 고통스러운 호소",
+      "titleEn": "Job's Anguished Cry",
+      "summaryKo": "욥이 친구들을 비난하고 하나님께 자신의 고통을 호소합니다.",
+      "summaryEn": "Job criticizes friends and cries out to God about his suffering.",
+      "messageKo": "하늘에 증인이 계십니다.",
+      "messageEn": "There is a witness in heaven.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "번거롭게 위로하는 자들", "eventEn": "Miserable comforters"},
+        {"verse": 12, "eventKo": "하나님이 나를 과녁으로 삼으셨음", "eventEn": "God made me His target"},
+        {"verse": 19, "eventKo": "하늘에 나의 증인이 계시고", "eventEn": "My witness is in heaven"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "욥의 절망",
+      "titleEn": "Job's Despair",
+      "summaryKo": "욥이 절망 속에서 죽음을 바라보며 탄식합니다.",
+      "summaryEn": "Job looks toward death in despair and laments.",
+      "messageKo": "깊은 어둠 속에서도 소망의 실날은 남아있습니다.",
+      "messageEn": "Even in deep darkness, a thread of hope remains.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "내 날이 다 갔음", "eventEn": "My days are cut short"},
+        {"verse": 9, "eventKo": "의인은 자기 길을 굳게 가고", "eventEn": "The righteous hold to their way"},
+        {"verse": 15, "eventKo": "나의 소망이 어디 있느냐", "eventEn": "Where is my hope?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "빌닷의 두 번째 말",
+      "titleEn": "Bildad's Second Speech",
+      "summaryKo": "빌닷이 악인의 운명을 묘사하며 암암리에 욥을 비난합니다.",
+      "summaryEn": "Bildad describes the wicked's fate, implicitly accusing Job.",
+      "messageKo": "정의를 주장하면서도 사랑이 없으면 공허합니다.",
+      "messageEn": "Claiming justice without love is empty.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "네 분노로 자기를 찢는구나", "eventEn": "You tear yourself in anger"},
+        {"verse": 14, "eventKo": "두려움의 왕에게", "eventEn": "To the king of terrors"},
+        {"verse": 21, "eventKo": "불의한 자의 처소", "eventEn": "Dwelling of the wicked"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "나의 구속자가 살아계심",
+      "titleEn": "My Redeemer Lives",
+      "summaryKo": "욥이 고통 속에서도 자신의 구속자가 살아 계심을 고백합니다.",
+      "summaryEn": "Job confesses his Redeemer lives even in suffering.",
+      "messageKo": "내 구속자가 살아 계시니 땅 위에 서실 것입니다.",
+      "messageEn": "My Redeemer lives and will stand upon the earth.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "하나님이 나를 곤하게 하셨음", "eventEn": "God has wronged me"},
+        {"verse": 25, "eventKo": "내 구속자가 살아 계심", "eventEn": "I know my Redeemer lives"},
+        {"verse": 26, "eventKo": "내 육체가 썩은 후에 하나님을 보리라", "eventEn": "In my flesh I will see God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "소발의 두 번째 말",
+      "titleEn": "Zophar's Second Speech",
+      "summaryKo": "소발이 악인의 일시적 번영과 몰락을 경고합니다.",
+      "summaryEn": "Zophar warns of the wicked's temporary prosperity and downfall.",
+      "messageKo": "악인의 번영은 순간이지만 의인의 소망은 영원합니다.",
+      "messageEn": "The wicked prosper briefly, but the righteous have eternal hope.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "악인의 기쁨은 잠깐", "eventEn": "Joy of the wicked is brief"},
+        {"verse": 12, "eventKo": "악이 입에 달아도", "eventEn": "Evil tastes sweet"},
+        {"verse": 29, "eventKo": "이것이 악인의 분깃", "eventEn": "This is the wicked's lot"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "욥의 반론: 악인의 번영",
+      "titleEn": "Job's Reply: Prosperity of Wicked",
+      "summaryKo": "욥이 악인도 번영한다며 친구들의 논리에 반박합니다.",
+      "summaryEn": "Job refutes friends' logic, noting wicked also prosper.",
+      "messageKo": "현실은 단순한 공식으로 설명되지 않습니다.",
+      "messageEn": "Reality cannot be explained by simple formulas.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "어찌하여 악인이 살며 늙으며", "eventEn": "Why do the wicked live on?"},
+        {"verse": 14, "eventKo": "하나님을 떠나라 함", "eventEn": "Depart from us, God"},
+        {"verse": 34, "eventKo": "헛된 위로", "eventEn": "Empty comfort"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "엘리바스의 세 번째 말",
+      "titleEn": "Eliphaz's Third Speech",
+      "summaryKo": "엘리바스가 욥의 구체적인 죄를 고발하고 회개를 촉구합니다.",
+      "summaryEn": "Eliphaz accuses Job of specific sins and urges repentance.",
+      "messageKo": "확인되지 않은 죄를 가정하여 비난해서는 안 됩니다.",
+      "messageEn": "We should not accuse based on assumed sins.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "네 악이 크지 아니하냐", "eventEn": "Is not your wickedness great?"},
+        {"verse": 21, "eventKo": "하나님과 화목하라", "eventEn": "Submit to God and be at peace"},
+        {"verse": 29, "eventKo": "낮추는 자를 구원하시느니라", "eventEn": "He saves the humble"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "욥이 하나님을 찾음",
+      "titleEn": "Job Seeks God",
+      "summaryKo": "욥이 하나님을 찾지만 어디서도 발견하지 못합니다.",
+      "summaryEn": "Job seeks God but cannot find Him anywhere.",
+      "messageKo": "하나님은 내 길을 아시며, 나를 연단하신 후에는 정금같이 나오리라.",
+      "messageEn": "God knows my way; when tested, I will come forth as gold.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "어디서 하나님을 만날꼬", "eventEn": "If only I knew where to find Him"},
+        {"verse": 10, "eventKo": "그가 내 길을 아시나니", "eventEn": "He knows the way I take"},
+        {"verse": 10, "eventKo": "나를 단련하시면 정금같이", "eventEn": "When tested, I will come forth as gold"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "불의에 대한 질문",
+      "titleEn": "Questions About Injustice",
+      "summaryKo": "욥이 세상의 불의와 하나님의 침묵에 대해 질문합니다.",
+      "summaryEn": "Job questions worldly injustice and God's silence.",
+      "messageKo": "불의가 심판받지 않는 것처럼 보여도 하나님은 보고 계십니다.",
+      "messageEn": "Even when injustice seems unjudged, God sees.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "어찌하여 심판 때를 정하지 않으시는가", "eventEn": "Why are times not set by Almighty?"},
+        {"verse": 12, "eventKo": "하나님이 악에 주의하지 않으심", "eventEn": "God charges no one with wrongdoing"},
+        {"verse": 25, "eventKo": "누가 내 말을 거짓되다 하랴", "eventEn": "Who can prove me false?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "빌닷의 세 번째 말",
+      "titleEn": "Bildad's Third Speech",
+      "summaryKo": "빌닷이 하나님의 위엄 앞에 인간의 비천함을 말합니다.",
+      "summaryEn": "Bildad speaks of human lowliness before God's majesty.",
+      "messageKo": "하나님의 거룩하심 앞에 모든 인간은 겸손해야 합니다.",
+      "messageEn": "Before God's holiness, all humans must be humble.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나님께는 권능과 위엄이 있음", "eventEn": "Dominion and awe belong to God"},
+        {"verse": 4, "eventKo": "사람이 어찌 의로우며", "eventEn": "How can a mortal be righteous?"},
+        {"verse": 6, "eventKo": "하물며 벌레 같은 사람", "eventEn": "How much less a human, a maggot"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "욥의 응답: 하나님의 능력",
+      "titleEn": "Job's Reply: God's Power",
+      "summaryKo": "욥이 하나님의 무한한 능력과 지혜를 찬양합니다.",
+      "summaryEn": "Job praises God's infinite power and wisdom.",
+      "messageKo": "하나님의 길은 작은 속삭임일 뿐, 그 능력의 천둥소리를 누가 알랴.",
+      "messageEn": "These are but the fringes of His ways; who can fathom His thunder?",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "땅을 허공에 다심", "eventEn": "He suspends earth over nothing"},
+        {"verse": 12, "eventKo": "라합을 쳐서 깨뜨리심", "eventEn": "He pierced the serpent"},
+        {"verse": 14, "eventKo": "그의 길의 가장자리일 뿐", "eventEn": "These are but fringes of His ways"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "욥의 결백 선언",
+      "titleEn": "Job Maintains Integrity",
+      "summaryKo": "욥이 죽을 때까지 자신의 결백을 주장합니다.",
+      "summaryEn": "Job insists on his innocence to the death.",
+      "messageKo": "양심이 증언하는 결백함을 포기하지 마십시오.",
+      "messageEn": "Do not abandon the innocence your conscience testifies to.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "입술이 불의를 말하지 않음", "eventEn": "Lips will not speak wickedness"},
+        {"verse": 5, "eventKo": "죽기 전에 나의 의를 버리지 않으리라", "eventEn": "Will not deny my integrity till I die"},
+        {"verse": 13, "eventKo": "악인의 분깃", "eventEn": "The wicked's portion"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "지혜의 찬가",
+      "titleEn": "Hymn to Wisdom",
+      "summaryKo": "진정한 지혜는 어디서 발견되는가에 대한 시입니다.",
+      "summaryEn": "A poem about where true wisdom is found.",
+      "messageKo": "하나님을 경외함이 지혜요, 악을 떠남이 명철입니다.",
+      "messageEn": "The fear of the Lord is wisdom; to shun evil is understanding.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "지혜는 어디서 얻으며", "eventEn": "Where can wisdom be found?"},
+        {"verse": 23, "eventKo": "하나님이 그 길을 아시며", "eventEn": "God understands the way to it"},
+        {"verse": 28, "eventKo": "주를 경외함이 지혜", "eventEn": "Fear of the Lord is wisdom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "지난 날의 영광",
+      "titleEn": "Past Glory",
+      "summaryKo": "욥이 과거의 복된 시절과 존경받던 때를 회상합니다.",
+      "summaryEn": "Job recalls past days of blessing and respect.",
+      "messageKo": "과거의 축복은 감사의 대상이지 집착의 대상이 아닙니다.",
+      "messageEn": "Past blessings are for gratitude, not obsession.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "강성한 날에 하나님의 우정", "eventEn": "God's intimate friendship"},
+        {"verse": 12, "eventKo": "가난한 자를 구원함", "eventEn": "Rescued the poor"},
+        {"verse": 25, "eventKo": "그들의 지도자로 앉았음", "eventEn": "Sat as chief among them"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "현재의 수치",
+      "titleEn": "Present Shame",
+      "summaryKo": "욥이 현재 당하는 모욕과 고통을 탄식합니다.",
+      "summaryEn": "Job laments present insults and suffering.",
+      "messageKo": "어제의 영광이 오늘의 수치가 될 수 있습니다.",
+      "messageEn": "Yesterday's glory can become today's shame.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "이제는 나보다 젊은 자들이 비웃음", "eventEn": "Now younger men mock me"},
+        {"verse": 16, "eventKo": "내 영혼이 내 속에서 녹음", "eventEn": "My soul is poured out"},
+        {"verse": 20, "eventKo": "부르짖어도 응답하지 않으심", "eventEn": "I cry out but no answer"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "욥의 최종 변론",
+      "titleEn": "Job's Final Defense",
+      "summaryKo": "욥이 자신의 도덕적 결백을 상세히 변론합니다.",
+      "summaryEn": "Job presents a detailed defense of his moral integrity.",
+      "messageKo": "하나님 앞에 삶의 모든 영역에서 정직해야 합니다.",
+      "messageEn": "We must be honest in every area of life before God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "눈과 언약을 세움", "eventEn": "Made covenant with my eyes"},
+        {"verse": 24, "eventKo": "금을 의지하지 않음", "eventEn": "Did not trust in gold"},
+        {"verse": 35, "eventKo": "나의 서명이 여기 있나니", "eventEn": "Here is my signature"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "엘리후의 등장",
+      "titleEn": "Elihu Appears",
+      "summaryKo": "젊은 엘리후가 분노하며 말하기 시작합니다.",
+      "summaryEn": "Young Elihu speaks in anger.",
+      "messageKo": "지혜는 나이에 비례하지 않습니다.",
+      "messageEn": "Wisdom is not proportional to age.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "엘리후의 분노", "eventEn": "Elihu's anger"},
+        {"verse": 8, "eventKo": "영이 사람에게 깨닫게 함", "eventEn": "Spirit in a person gives understanding"},
+        {"verse": 18, "eventKo": "말이 내 속에 가득함", "eventEn": "Full of words to say"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 33,
+      "titleKo": "엘리후의 첫 번째 말",
+      "titleEn": "Elihu's First Speech",
+      "summaryKo": "엘리후가 하나님의 여러 가지 말씀하시는 방법을 설명합니다.",
+      "summaryEn": "Elihu explains God's various ways of speaking.",
+      "messageKo": "하나님은 꿈, 고통, 중재자를 통해 말씀하십니다.",
+      "messageEn": "God speaks through dreams, suffering, and mediators.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "하나님은 여러 가지로 말씀하시나", "eventEn": "God speaks in various ways"},
+        {"verse": 19, "eventKo": "고통으로 징계하심", "eventEn": "Disciplines through pain"},
+        {"verse": 24, "eventKo": "구원하라 그가 구덩이로 내려가지 않게", "eventEn": "Spare him from going to the pit"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 34,
+      "titleKo": "엘리후의 두 번째 말",
+      "titleEn": "Elihu's Second Speech",
+      "summaryKo": "엘리후가 하나님의 공의를 변호합니다.",
+      "summaryEn": "Elihu defends God's justice.",
+      "messageKo": "하나님은 절대로 불의를 행하지 않으십니다.",
+      "messageEn": "God absolutely never acts unjustly.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "하나님은 불의를 행하지 않으심", "eventEn": "God does no wrong"},
+        {"verse": 21, "eventKo": "하나님의 눈은 모든 것을 보심", "eventEn": "His eyes are on everyone"},
+        {"verse": 37, "eventKo": "악에 반역을 더함", "eventEn": "Adds rebellion to his sin"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 35,
+      "titleKo": "엘리후의 세 번째 말",
+      "titleEn": "Elihu's Third Speech",
+      "summaryKo": "엘리후가 인간의 행위가 하나님께 영향을 주지 않음을 말합니다.",
+      "summaryEn": "Elihu argues human actions do not affect God.",
+      "messageKo": "하나님은 인간의 행위로 유익을 받거나 손해를 보지 않으십니다.",
+      "messageEn": "God is not benefited or harmed by human actions.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "네 죄가 하나님께 무엇을 더하며", "eventEn": "What do your sins do to Him?"},
+        {"verse": 10, "eventKo": "나를 지으신 하나님이 어디 계시냐", "eventEn": "Where is God my Maker?"},
+        {"verse": 13, "eventKo": "헛된 부르짖음", "eventEn": "Empty cries"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 36,
+      "titleKo": "하나님의 위대하심",
+      "titleEn": "God's Greatness",
+      "summaryKo": "엘리후가 하나님의 위대하심과 공의를 선포합니다.",
+      "summaryEn": "Elihu proclaims God's greatness and justice.",
+      "messageKo": "하나님은 고난을 통해 가르치시고 구원하십니다.",
+      "messageEn": "God teaches and delivers through affliction.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "하나님은 전능하시며 멸시하지 않으심", "eventEn": "God is mighty but despises no one"},
+        {"verse": 15, "eventKo": "곤고한 자를 고난으로 건지시며", "eventEn": "Delivers the afflicted through affliction"},
+        {"verse": 26, "eventKo": "하나님은 크시니 우리가 알 수 없음", "eventEn": "God is great beyond our understanding"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 37,
+      "titleKo": "폭풍 속의 하나님",
+      "titleEn": "God in the Storm",
+      "summaryKo": "엘리후가 자연 현상을 통해 나타난 하나님의 능력을 묘사합니다.",
+      "summaryEn": "Elihu describes God's power revealed through nature.",
+      "messageKo": "자연은 하나님의 위엄을 드러내는 무대입니다.",
+      "messageEn": "Nature is a stage displaying God's majesty.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "하나님의 음성의 우레", "eventEn": "God thunders with His voice"},
+        {"verse": 14, "eventKo": "하나님의 기이한 일을 깨달으라", "eventEn": "Consider God's wonders"},
+        {"verse": 23, "eventKo": "전능자를 우리가 측량할 수 없음", "eventEn": "Almighty beyond our reach"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 38,
+      "titleKo": "하나님의 응답 (1)",
+      "titleEn": "God's Response (1)",
+      "summaryKo": "하나님이 폭풍 가운데서 욥에게 창조의 신비에 대해 질문하십니다.",
+      "summaryEn": "God answers Job from the storm, questioning him about creation's mysteries.",
+      "messageKo": "내가 땅의 기초를 놓을 때 네가 어디 있었느냐?",
+      "messageEn": "Where were you when I laid the earth's foundation?",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "폭풍 가운데서 말씀하심", "eventEn": "Speaks from the storm"},
+        {"verse": 4, "eventKo": "내가 땅의 기초를 놓을 때", "eventEn": "When I laid earth's foundation"},
+        {"verse": 31, "eventKo": "묘성을 매며 오리온 띠를 풀겠느냐", "eventEn": "Can you bind the Pleiades?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 39,
+      "titleKo": "하나님의 응답 (2)",
+      "titleEn": "God's Response (2)",
+      "summaryKo": "하나님이 동물 세계의 신비와 자신의 섭리를 말씀하십니다.",
+      "summaryEn": "God speaks of the animal kingdom's mysteries and His providence.",
+      "messageKo": "모든 피조물이 하나님의 지혜와 돌보심을 보여줍니다.",
+      "messageEn": "All creatures display God's wisdom and care.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "산염소의 새끼 치는 때", "eventEn": "When mountain goats give birth"},
+        {"verse": 19, "eventKo": "말에게 힘을 주셨느냐", "eventEn": "Did you give the horse its strength?"},
+        {"verse": 27, "eventKo": "독수리가 높이 뜨는 것", "eventEn": "Does the eagle soar at your command?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 40,
+      "titleKo": "욥의 첫 응답과 하나님의 도전",
+      "titleEn": "Job's First Response and God's Challenge",
+      "summaryKo": "욥이 겸손하게 침묵하고, 하나님이 베헤못을 예로 드십니다.",
+      "summaryEn": "Job humbly falls silent; God cites Behemoth as example.",
+      "messageKo": "전능자와 다투는 자가 징계하려 하느냐?",
+      "messageEn": "Would you contend with the Almighty?",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "나는 미천하오니", "eventEn": "I am unworthy"},
+        {"verse": 8, "eventKo": "네가 내 의를 부인하려느냐", "eventEn": "Would you discredit My justice?"},
+        {"verse": 15, "eventKo": "베헤못을 볼지어다", "eventEn": "Look at Behemoth"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 41,
+      "titleKo": "리워야단",
+      "titleEn": "Leviathan",
+      "summaryKo": "하나님이 리워야단을 묘사하며 자신의 절대 주권을 선포하십니다.",
+      "summaryEn": "God describes Leviathan and proclaims His absolute sovereignty.",
+      "messageKo": "하늘 아래 있는 것이 다 내 것이니라.",
+      "messageEn": "Everything under heaven belongs to Me.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "낚시로 리워야단을 끌어낼 수 있느냐", "eventEn": "Can you pull in Leviathan with a hook?"},
+        {"verse": 10, "eventKo": "누가 감히 그것을 건드리겠느냐", "eventEn": "Who would dare to rouse it?"},
+        {"verse": 33, "eventKo": "땅 위에는 그와 비길 것이 없음", "eventEn": "Nothing on earth is its equal"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 42,
+      "titleKo": "욥의 회복",
+      "titleEn": "Job Restored",
+      "summaryKo": "욥이 회개하고, 친구들을 위해 기도하며, 배나 축복받습니다.",
+      "summaryEn": "Job repents, prays for friends, and receives double blessing.",
+      "messageKo": "내가 주께 대하여 귀로 듣기만 하였사오나 이제는 눈으로 주를 뵈옵나이다.",
+      "messageEn": "My ears had heard of You, but now my eyes have seen You.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "주께서 모든 것을 하실 수 있사오며", "eventEn": "I know You can do all things"},
+        {"verse": 5, "eventKo": "이제는 눈으로 뵈옵나이다", "eventEn": "Now my eyes have seen You"},
+        {"verse": 10, "eventKo": "욥의 소유가 배로 회복됨", "eventEn": "Job's fortunes restored double"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

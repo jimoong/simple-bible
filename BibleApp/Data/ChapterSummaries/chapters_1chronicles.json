@@ -1,0 +1,443 @@
+{
+  "bookId": "1chronicles",
+  "bookNumber": 13,
+  "bookNameKo": "역대상",
+  "bookNameEn": "1 Chronicles",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "아담부터 에서까지의 족보",
+      "titleEn": "Genealogy from Adam to Esau",
+      "summaryKo": "아담부터 노아, 아브라함을 거쳐 에서의 후손까지의 족보입니다.",
+      "summaryEn": "Genealogy from Adam through Noah and Abraham to Esau's descendants.",
+      "messageKo": "하나님은 인류 역사 전체를 이끌어 오셨습니다.",
+      "messageEn": "God has guided all of human history.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "아담부터 노아까지", "eventEn": "Adam to Noah"},
+        {"verse": 28, "eventKo": "아브라함의 아들들", "eventEn": "Sons of Abraham"},
+        {"verse": 43, "eventKo": "에돔 왕들", "eventEn": "Kings of Edom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 2,
+      "titleKo": "이스라엘의 아들들",
+      "titleEn": "Sons of Israel",
+      "summaryKo": "야곱의 아들들과 유다 지파, 특히 다윗의 조상 족보입니다.",
+      "summaryEn": "Jacob's sons and the tribe of Judah, especially David's ancestry.",
+      "messageKo": "메시아의 족보가 유다 지파를 통해 이어집니다.",
+      "messageEn": "The Messiah's lineage continues through the tribe of Judah.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "이스라엘의 아들들", "eventEn": "Sons of Israel"},
+        {"verse": 13, "eventKo": "이새와 다윗", "eventEn": "Jesse and David"},
+        {"verse": 18, "eventKo": "갈렙의 후손", "eventEn": "Caleb's descendants"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "다윗의 후손",
+      "titleEn": "Descendants of David",
+      "summaryKo": "다윗의 아들들과 솔로몬을 통한 왕실 족보입니다.",
+      "summaryEn": "David's sons and the royal lineage through Solomon.",
+      "messageKo": "다윗의 자손에서 영원한 왕이 나올 것입니다.",
+      "messageEn": "An eternal king will come from David's descendants.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "헤브론에서 난 아들들", "eventEn": "Sons born in Hebron"},
+        {"verse": 5, "eventKo": "예루살렘에서 난 아들들", "eventEn": "Sons born in Jerusalem"},
+        {"verse": 10, "eventKo": "솔로몬의 후손", "eventEn": "Solomon's descendants"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "유다와 시므온 지파",
+      "titleEn": "Tribes of Judah and Simeon",
+      "summaryKo": "유다 지파의 추가 족보와 야베스의 기도, 시므온 지파의 족보입니다.",
+      "summaryEn": "Additional genealogy of Judah, Jabez's prayer, and Simeon's genealogy.",
+      "messageKo": "간절한 기도는 삶의 경계를 넓혀줍니다.",
+      "messageEn": "Earnest prayer expands the boundaries of life.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "야베스의 기도", "eventEn": "Jabez's prayer"},
+        {"verse": 10, "eventKo": "하나님이 그 구한 것을 허락", "eventEn": "God granted his request"},
+        {"verse": 41, "eventKo": "시므온의 영토 확장", "eventEn": "Simeon's territory expansion"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "르우벤, 갓, 므낫세 반 지파",
+      "titleEn": "Reuben, Gad, Half-Manasseh",
+      "summaryKo": "요단 동편 지파들의 족보와 역사입니다.",
+      "summaryEn": "Genealogy and history of the tribes east of the Jordan.",
+      "messageKo": "전쟁 중에 하나님을 의뢰하면 승리합니다.",
+      "messageEn": "Relying on God in battle brings victory.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "르우벤의 장자권 상실", "eventEn": "Reuben loses birthright"},
+        {"verse": 20, "eventKo": "하갈 족속과의 전쟁", "eventEn": "War with Hagrites"},
+        {"verse": 26, "eventKo": "앗수르 포로", "eventEn": "Exile to Assyria"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "레위 지파",
+      "titleEn": "Tribe of Levi",
+      "summaryKo": "레위 지파의 족보와 성전 음악 담당자, 레위인 도시들입니다.",
+      "summaryEn": "Levite genealogy, temple musicians, and Levitical cities.",
+      "messageKo": "예배 사역자들은 하나님 앞에 서도록 구별되었습니다.",
+      "messageEn": "Worship ministers are set apart to stand before God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "레위의 아들들", "eventEn": "Sons of Levi"},
+        {"verse": 31, "eventKo": "찬양 담당자", "eventEn": "Musicians appointed"},
+        {"verse": 54, "eventKo": "레위인 도시들", "eventEn": "Levitical cities"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "잇사갈, 베냐민, 납달리, 므낫세, 에브라임, 아셀 지파",
+      "titleEn": "Issachar, Benjamin, Naphtali, Manasseh, Ephraim, Asher",
+      "summaryKo": "여러 지파들의 족보와 용사들의 수입니다.",
+      "summaryEn": "Genealogies and numbers of warriors from various tribes.",
+      "messageKo": "각 지파가 이스라엘 공동체의 중요한 일원입니다.",
+      "messageEn": "Each tribe is an important member of Israel's community.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "잇사갈의 용사들", "eventEn": "Issachar's warriors"},
+        {"verse": 21, "eventKo": "에브라임의 슬픔", "eventEn": "Ephraim's tragedy"},
+        {"verse": 40, "eventKo": "아셀의 용사들", "eventEn": "Asher's warriors"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "베냐민 지파와 사울의 족보",
+      "titleEn": "Benjamin and Saul's Genealogy",
+      "summaryKo": "베냐민 지파의 자세한 족보와 사울 왕의 가계입니다.",
+      "summaryEn": "Detailed genealogy of Benjamin and King Saul's family.",
+      "messageKo": "하나님은 작은 지파에서도 왕을 세우십니다.",
+      "messageEn": "God raises up kings even from the smallest tribe.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "베냐민의 아들들", "eventEn": "Sons of Benjamin"},
+        {"verse": 28, "eventKo": "예루살렘 거주자", "eventEn": "Jerusalem inhabitants"},
+        {"verse": 33, "eventKo": "사울의 가계", "eventEn": "Saul's family"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "예루살렘 거주자들",
+      "titleEn": "Jerusalem's Inhabitants",
+      "summaryKo": "포로 후 예루살렘에 돌아온 자들과 성전 봉사자들의 명단입니다.",
+      "summaryEn": "List of those who returned to Jerusalem after exile and temple servants.",
+      "messageKo": "회복은 성전 예배의 재건으로 시작됩니다.",
+      "messageEn": "Restoration begins with rebuilding temple worship.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "첫 귀환자들", "eventEn": "First returnees"},
+        {"verse": 17, "eventKo": "문지기들", "eventEn": "Gatekeepers"},
+        {"verse": 33, "eventKo": "찬양하는 자들", "eventEn": "Singers"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "사울의 죽음",
+      "titleEn": "Death of Saul",
+      "summaryKo": "사울과 아들들이 블레셋과의 전투에서 죽습니다.",
+      "summaryEn": "Saul and his sons die in battle against the Philistines.",
+      "messageKo": "하나님을 거역한 자의 최후는 비참합니다.",
+      "messageEn": "The end of those who rebel against God is tragic.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사울의 자살", "eventEn": "Saul's suicide"},
+        {"verse": 6, "eventKo": "사울 집안의 몰락", "eventEn": "Fall of Saul's house"},
+        {"verse": 14, "eventKo": "여호와께 묻지 아니함", "eventEn": "Did not inquire of LORD"}
+      ],
+      "timelineYear": "BC 1010"
+    },
+    {
+      "chapter": 11,
+      "titleKo": "다윗이 온 이스라엘의 왕이 됨",
+      "titleEn": "David King Over All Israel",
+      "summaryKo": "다윗이 헤브론에서 왕이 되고 예루살렘을 정복합니다.",
+      "summaryEn": "David becomes king at Hebron and conquers Jerusalem.",
+      "messageKo": "하나님의 약속은 적절한 때에 성취됩니다.",
+      "messageEn": "God's promises are fulfilled at the right time.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "헤브론에서 기름부음", "eventEn": "Anointed at Hebron"},
+        {"verse": 5, "eventKo": "예루살렘 정복", "eventEn": "Jerusalem conquered"},
+        {"verse": 10, "eventKo": "다윗의 용사들", "eventEn": "David's mighty men"}
+      ],
+      "timelineYear": "BC 1003"
+    },
+    {
+      "chapter": 12,
+      "titleKo": "다윗의 용사들",
+      "titleEn": "David's Warriors",
+      "summaryKo": "사울 시대와 헤브론 시대에 다윗에게 합류한 용사들의 명단입니다.",
+      "summaryEn": "List of warriors who joined David during Saul's time and at Hebron.",
+      "messageKo": "하나님의 사람 주위에 하나님의 사람들이 모입니다.",
+      "messageEn": "God's people gather around God's chosen leader.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "베냐민 사람들", "eventEn": "Benjamites join"},
+        {"verse": 18, "eventKo": "성령에 감동된 아마새", "eventEn": "Spirit-empowered Amasai"},
+        {"verse": 38, "eventKo": "온 이스라엘의 연합", "eventEn": "All Israel united"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "언약궤 이동 시도",
+      "titleEn": "Attempt to Move the Ark",
+      "summaryKo": "다윗이 언약궤를 옮기려다 웃사가 죽는 사건이 발생합니다.",
+      "summaryEn": "David attempts to move the ark; Uzzah dies.",
+      "messageKo": "하나님께 나아갈 때는 그분의 방법을 따라야 합니다.",
+      "messageEn": "We must approach God in His prescribed way.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "언약궤 이동 결정", "eventEn": "Decision to move ark"},
+        {"verse": 10, "eventKo": "웃사의 죽음", "eventEn": "Uzzah's death"},
+        {"verse": 14, "eventKo": "궤가 오벧에돔 집에 머묾", "eventEn": "Ark stays at Obed-Edom's"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "다윗의 번영과 승리",
+      "titleEn": "David's Prosperity and Victory",
+      "summaryKo": "히람이 다윗의 궁전을 짓고 블레셋을 두 번 격파합니다.",
+      "summaryEn": "Hiram builds David's palace; David defeats Philistines twice.",
+      "messageKo": "하나님께 묻고 순종할 때 승리가 옵니다.",
+      "messageEn": "Victory comes when we inquire of God and obey.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "히람이 궁전을 지음", "eventEn": "Hiram builds palace"},
+        {"verse": 11, "eventKo": "바알브라심의 승리", "eventEn": "Victory at Baal Perazim"},
+        {"verse": 16, "eventKo": "뽕나무 소리의 전략", "eventEn": "Strategy at mulberry trees"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "언약궤를 예루살렘으로",
+      "titleEn": "Ark Brought to Jerusalem",
+      "summaryKo": "다윗이 레위인들을 통해 바르게 언약궤를 옮깁니다.",
+      "summaryEn": "David properly moves the ark through the Levites.",
+      "messageKo": "예배는 하나님의 규례대로 드려야 합니다.",
+      "messageEn": "Worship must be offered according to God's instructions.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "레위인만 메게 함", "eventEn": "Only Levites may carry"},
+        {"verse": 13, "eventKo": "처음에 규례대로 하지 않음", "eventEn": "First time not done properly"},
+        {"verse": 28, "eventKo": "온 이스라엘이 궤를 맞이", "eventEn": "All Israel welcomes ark"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "언약궤 앞에서의 찬양",
+      "titleEn": "Praise Before the Ark",
+      "summaryKo": "다윗이 찬양팀을 세우고 감사 시편을 드립니다.",
+      "summaryEn": "David appoints musicians and offers a psalm of thanksgiving.",
+      "messageKo": "하나님의 임재 앞에서 감사와 찬양으로 응답해야 합니다.",
+      "messageEn": "We must respond with thanks and praise in God's presence.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "봉사자 임명", "eventEn": "Ministers appointed"},
+        {"verse": 8, "eventKo": "감사 시편", "eventEn": "Psalm of thanks"},
+        {"verse": 37, "eventKo": "매일 봉사", "eventEn": "Daily ministry"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "다윗 언약",
+      "titleEn": "Davidic Covenant",
+      "summaryKo": "하나님이 다윗에게 영원한 나라를 약속하십니다.",
+      "summaryEn": "God promises David an everlasting kingdom.",
+      "messageKo": "하나님의 은혜는 우리의 계획을 초월합니다.",
+      "messageEn": "God's grace surpasses our plans.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "네가 집을 짓지 않을 것이라", "eventEn": "You will not build the house"},
+        {"verse": 11, "eventKo": "하나님이 집을 세우심", "eventEn": "God will build a house"},
+        {"verse": 14, "eventKo": "영원한 왕위", "eventEn": "Eternal throne"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "다윗의 정복들",
+      "titleEn": "David's Conquests",
+      "summaryKo": "다윗이 블레셋, 모압, 소바, 아람 등을 정복합니다.",
+      "summaryEn": "David conquers Philistia, Moab, Zobah, Aram, etc.",
+      "messageKo": "하나님이 함께하시면 사방에서 승리합니다.",
+      "messageEn": "With God, there is victory on every side.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "블레셋 정복", "eventEn": "Philistines conquered"},
+        {"verse": 6, "eventKo": "다윗이 가는 곳마다 승리", "eventEn": "Victory wherever David went"},
+        {"verse": 14, "eventKo": "공평과 정의", "eventEn": "Justice and righteousness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "암몬과 아람 전쟁",
+      "titleEn": "War with Ammon and Aram",
+      "summaryKo": "다윗의 사절단이 모욕당하고 전쟁이 일어납니다.",
+      "summaryEn": "David's envoys are humiliated, leading to war.",
+      "messageKo": "선의가 거부당해도 의를 행하는 것이 옳습니다.",
+      "messageEn": "It is right to do good even when rejected.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사절단 모욕", "eventEn": "Envoys humiliated"},
+        {"verse": 13, "eventKo": "요압의 담대함", "eventEn": "Joab's courage"},
+        {"verse": 19, "eventKo": "아람의 항복", "eventEn": "Aram surrenders"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "암몬 정복과 블레셋 거인들",
+      "titleEn": "Ammon Conquered, Philistine Giants",
+      "summaryKo": "랍바가 함락되고 블레셋 거인들이 죽임을 당합니다.",
+      "summaryEn": "Rabbah falls; Philistine giants are killed.",
+      "messageKo": "용감한 믿음의 사람들이 거인을 무찌릅니다.",
+      "messageEn": "Brave people of faith defeat giants.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "요압이 랍바를 침", "eventEn": "Joab attacks Rabbah"},
+        {"verse": 4, "eventKo": "거인들과의 전투", "eventEn": "Battles with giants"},
+        {"verse": 8, "eventKo": "다윗 손에 넘어짐", "eventEn": "Fallen by David's men"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "다윗의 인구조사",
+      "titleEn": "David's Census",
+      "summaryKo": "다윗이 인구조사를 하여 재앙이 임하고, 오르난의 타작마당에 제단을 쌓습니다.",
+      "summaryEn": "David's census brings plague; he builds altar at Ornan's threshing floor.",
+      "messageKo": "교만의 대가는 크지만, 회개하면 자비를 얻습니다.",
+      "messageEn": "Pride has a great cost, but repentance brings mercy.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "사탄이 다윗을 충동", "eventEn": "Satan incites David"},
+        {"verse": 14, "eventKo": "7만 명이 죽음", "eventEn": "70,000 die"},
+        {"verse": 26, "eventKo": "하늘에서 불로 응답", "eventEn": "Fire from heaven"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "성전 건축 준비",
+      "titleEn": "Preparations for Temple",
+      "summaryKo": "다윗이 성전 건축 재료를 준비하고 솔로몬에게 부탁합니다.",
+      "summaryEn": "David prepares materials for the temple and charges Solomon.",
+      "messageKo": "우리가 못 이루는 일도 다음 세대를 위해 준비할 수 있습니다.",
+      "messageEn": "We can prepare for the next generation what we cannot accomplish.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "재료 준비", "eventEn": "Materials prepared"},
+        {"verse": 6, "eventKo": "솔로몬에게 명함", "eventEn": "Charges Solomon"},
+        {"verse": 13, "eventKo": "강하고 담대하라", "eventEn": "Be strong and courageous"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "레위인 조직",
+      "titleEn": "Organization of Levites",
+      "summaryKo": "다윗이 레위인들의 직무를 조직합니다.",
+      "summaryEn": "David organizes the Levites and their duties.",
+      "messageKo": "예배 사역에는 질서와 조직이 필요합니다.",
+      "messageEn": "Worship ministry requires order and organization.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "솔로몬을 왕으로 삼음", "eventEn": "Solomon made king"},
+        {"verse": 6, "eventKo": "레위인 반열", "eventEn": "Levite divisions"},
+        {"verse": 28, "eventKo": "레위인의 직무", "eventEn": "Levite duties"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "제사장 반차",
+      "titleEn": "Divisions of Priests",
+      "summaryKo": "아론 자손의 24반차 조직입니다.",
+      "summaryEn": "Organization of Aaron's descendants into 24 divisions.",
+      "messageKo": "모든 봉사자에게 공평한 기회가 주어져야 합니다.",
+      "messageEn": "All servants should be given equal opportunity.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "아론 자손의 반열", "eventEn": "Divisions of Aaron's sons"},
+        {"verse": 5, "eventKo": "제비로 나눔", "eventEn": "Divided by lot"},
+        {"verse": 19, "eventKo": "섬기는 규례", "eventEn": "Order of service"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "찬양대 조직",
+      "titleEn": "Musicians' Divisions",
+      "summaryKo": "아삽, 헤만, 여두둔 자손들이 24반으로 나뉘어 찬양합니다.",
+      "summaryEn": "Sons of Asaph, Heman, and Jeduthun divided into 24 groups for worship.",
+      "messageKo": "음악 사역도 하나님의 부르심이며 전문성이 필요합니다.",
+      "messageEn": "Music ministry is God's calling and requires skill.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "찬양하는 자들", "eventEn": "Musicians appointed"},
+        {"verse": 6, "eventKo": "노래하며 섬김", "eventEn": "Serve with singing"},
+        {"verse": 8, "eventKo": "제비로 순서 정함", "eventEn": "Order determined by lot"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "문지기와 창고지기",
+      "titleEn": "Gatekeepers and Treasurers",
+      "summaryKo": "문지기와 성전 창고 관리자들의 조직입니다.",
+      "summaryEn": "Organization of gatekeepers and temple treasury managers.",
+      "messageKo": "보이지 않는 곳에서의 충실한 봉사도 귀합니다.",
+      "messageEn": "Faithful service in unseen places is also precious.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "문지기 반열", "eventEn": "Gatekeeper divisions"},
+        {"verse": 20, "eventKo": "창고 관리자", "eventEn": "Treasury managers"},
+        {"verse": 29, "eventKo": "외부 업무 담당", "eventEn": "External duties"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "군대와 관리 조직",
+      "titleEn": "Military and Administrative Organization",
+      "summaryKo": "월별 군대 조직과 지파장, 왕의 재산 관리자 명단입니다.",
+      "summaryEn": "Monthly military organization, tribal leaders, and royal property managers.",
+      "messageKo": "나라를 다스리는 데도 체계적인 조직이 필요합니다.",
+      "messageEn": "Governing a nation requires systematic organization.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "월별 군대 조직", "eventEn": "Monthly army divisions"},
+        {"verse": 16, "eventKo": "지파 지도자", "eventEn": "Tribal leaders"},
+        {"verse": 25, "eventKo": "왕의 재산 관리자", "eventEn": "Royal property managers"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "다윗의 고별사",
+      "titleEn": "David's Farewell Address",
+      "summaryKo": "다윗이 온 이스라엘 앞에서 성전 건축 계획을 전하고 솔로몬을 격려합니다.",
+      "summaryEn": "David presents temple plans to Israel and encourages Solomon.",
+      "messageKo": "다음 세대에게 비전을 전하는 것이 지도자의 사명입니다.",
+      "messageEn": "Passing vision to the next generation is a leader's mission.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "성전 건축 계획 발표", "eventEn": "Temple plans announced"},
+        {"verse": 10, "eventKo": "솔로몬을 택하심", "eventEn": "Solomon chosen"},
+        {"verse": 20, "eventKo": "강하고 담대하라", "eventEn": "Be strong and courageous"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "다윗의 헌금과 기도",
+      "titleEn": "David's Offering and Prayer",
+      "summaryKo": "다윗과 백성이 성전 건축을 위해 헌금하고 다윗이 감사 기도를 드립니다.",
+      "summaryEn": "David and people give offerings for temple; David prays in thanksgiving.",
+      "messageKo": "모든 것이 하나님께 속한 것을 인정하며 감사하며 드려야 합니다.",
+      "messageEn": "We give thankfully, acknowledging all belongs to God.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "다윗의 개인 헌금", "eventEn": "David's personal offering"},
+        {"verse": 9, "eventKo": "백성의 자원 헌금", "eventEn": "People's freewill offering"},
+        {"verse": 14, "eventKo": "주의 것을 주께 드림", "eventEn": "Giving God what is His"}
+      ],
+      "timelineYear": "BC 970"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "bookId": "ezra",
+  "bookNumber": 15,
+  "bookNameKo": "에스라",
+  "bookNameEn": "Ezra",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "고레스의 귀환 조서",
+      "titleEn": "Cyrus's Decree",
+      "summaryKo": "바사 왕 고레스가 유다인들의 예루살렘 귀환과 성전 재건을 명령합니다.",
+      "summaryEn": "King Cyrus of Persia decrees the return of Jews to Jerusalem and temple rebuilding.",
+      "messageKo": "하나님은 이방 왕의 마음도 움직여 자기 백성을 회복시키십니다.",
+      "messageEn": "God moves even pagan kings' hearts to restore His people.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와께서 고레스의 마음을 감동", "eventEn": "LORD moves Cyrus's heart"},
+        {"verse": 3, "eventKo": "예루살렘으로 올라가라", "eventEn": "Go up to Jerusalem"},
+        {"verse": 7, "eventKo": "성전 기구 반환", "eventEn": "Temple articles returned"}
+      ],
+      "timelineYear": "BC 538"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "귀환자 명단",
+      "titleEn": "List of Returnees",
+      "summaryKo": "스룹바벨과 함께 귀환한 사람들의 상세한 명단입니다.",
+      "summaryEn": "Detailed list of those who returned with Zerubbabel.",
+      "messageKo": "하나님은 자기 백성 한 사람 한 사람을 알고 계십니다.",
+      "messageEn": "God knows each of His people individually.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "스룹바벨의 인도", "eventEn": "Zerubbabel leads"},
+        {"verse": 64, "eventKo": "총 42,360명", "eventEn": "Total 42,360 people"},
+        {"verse": 68, "eventKo": "자원하여 드림", "eventEn": "Freewill offerings"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "제단과 성전 기초",
+      "titleEn": "Altar and Temple Foundation",
+      "summaryKo": "제단을 쌓고 절기를 지키며 성전 기초를 놓습니다.",
+      "summaryEn": "The altar is built, feasts observed, and temple foundation laid.",
+      "messageKo": "회복은 예배의 재건에서 시작됩니다.",
+      "messageEn": "Restoration begins with rebuilding worship.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "제단 건축", "eventEn": "Altar built"},
+        {"verse": 4, "eventKo": "초막절 준수", "eventEn": "Feast of Tabernacles observed"},
+        {"verse": 11, "eventKo": "기초 놓을 때 찬양", "eventEn": "Praise at foundation laying"}
+      ],
+      "timelineYear": "BC 536"
+    },
+    {
+      "chapter": 4,
+      "titleKo": "건축 방해",
+      "titleEn": "Opposition to Building",
+      "summaryKo": "원수들이 성전 건축을 방해하여 공사가 중단됩니다.",
+      "summaryEn": "Enemies oppose temple construction, causing work to stop.",
+      "messageKo": "하나님의 일에는 반드시 방해가 따르지만 포기하면 안 됩니다.",
+      "messageEn": "God's work faces opposition, but we must not give up.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "함께 짓자는 거짓 제안", "eventEn": "Deceptive offer to help"},
+        {"verse": 5, "eventKo": "고문을 고용하여 방해", "eventEn": "Counselors hired to frustrate"},
+        {"verse": 24, "eventKo": "공사 중단", "eventEn": "Work stopped"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "성전 건축 재개",
+      "titleEn": "Temple Rebuilding Resumes",
+      "summaryKo": "학개와 스가랴 선지자의 격려로 성전 건축이 재개됩니다.",
+      "summaryEn": "Temple rebuilding resumes with encouragement from prophets Haggai and Zechariah.",
+      "messageKo": "선지자적 격려가 하나님의 일을 다시 일으킵니다.",
+      "messageEn": "Prophetic encouragement revives God's work.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "학개와 스가랴의 예언", "eventEn": "Haggai and Zechariah prophesy"},
+        {"verse": 2, "eventKo": "스룹바벨과 예수아가 재개", "eventEn": "Zerubbabel and Jeshua resume"},
+        {"verse": 5, "eventKo": "하나님의 눈이 지켜봄", "eventEn": "Eye of God watching"}
+      ],
+      "timelineYear": "BC 520"
+    },
+    {
+      "chapter": 6,
+      "titleKo": "성전 완공",
+      "titleEn": "Temple Completed",
+      "summaryKo": "다리오 왕의 지원으로 성전이 완공되고 봉헌됩니다.",
+      "summaryEn": "With King Darius's support, the temple is completed and dedicated.",
+      "messageKo": "하나님이 시작하신 일은 반드시 완성됩니다.",
+      "messageEn": "What God starts, He completes.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "고레스의 조서 발견", "eventEn": "Cyrus's decree found"},
+        {"verse": 15, "eventKo": "성전 완공", "eventEn": "Temple completed"},
+        {"verse": 22, "eventKo": "유월절 준수", "eventEn": "Passover celebrated"}
+      ],
+      "timelineYear": "BC 516"
+    },
+    {
+      "chapter": 7,
+      "titleKo": "에스라의 귀환",
+      "titleEn": "Ezra's Return",
+      "summaryKo": "학자 에스라가 아닥사스다 왕의 허락을 받아 예루살렘으로 옵니다.",
+      "summaryEn": "Scribe Ezra comes to Jerusalem with King Artaxerxes' permission.",
+      "messageKo": "하나님의 말씀을 연구하고 가르치는 것이 지도자의 사명입니다.",
+      "messageEn": "Studying and teaching God's word is a leader's mission.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "에스라는 학자", "eventEn": "Ezra the scribe"},
+        {"verse": 10, "eventKo": "율법을 연구하고 행하고 가르침", "eventEn": "Study, practice, teach the law"},
+        {"verse": 27, "eventKo": "하나님께 찬송", "eventEn": "Praise to God"}
+      ],
+      "timelineYear": "BC 458"
+    },
+    {
+      "chapter": 8,
+      "titleKo": "에스라와 함께 귀환한 자들",
+      "titleEn": "Those Who Returned with Ezra",
+      "summaryKo": "에스라와 함께 귀환한 자들의 명단과 여정이 기록됩니다.",
+      "summaryEn": "List of those who returned with Ezra and their journey.",
+      "messageKo": "금식과 기도로 하나님의 인도를 구해야 합니다.",
+      "messageEn": "We must seek God's guidance through fasting and prayer.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "레위인이 없음을 발견", "eventEn": "No Levites found"},
+        {"verse": 21, "eventKo": "금식하며 기도", "eventEn": "Fasting and prayer"},
+        {"verse": 31, "eventKo": "하나님의 손이 보호", "eventEn": "God's hand protects"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "에스라의 통회 기도",
+      "titleEn": "Ezra's Prayer of Confession",
+      "summaryKo": "에스라가 백성의 이방인과의 통혼 죄를 듣고 통회합니다.",
+      "summaryEn": "Ezra learns of intermarriage with foreigners and prays in confession.",
+      "messageKo": "지도자는 백성의 죄를 자신의 것으로 여기고 중보해야 합니다.",
+      "messageEn": "Leaders must intercede, taking the people's sins as their own.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "이방인과의 통혼", "eventEn": "Intermarriage with foreigners"},
+        {"verse": 3, "eventKo": "옷을 찢고 슬퍼함", "eventEn": "Tears clothes in grief"},
+        {"verse": 6, "eventKo": "부끄러워 얼굴을 못 들겠나이다", "eventEn": "Too ashamed to lift face"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "백성의 회개",
+      "titleEn": "People's Repentance",
+      "summaryKo": "백성이 죄를 고백하고 이방 아내들을 보내기로 결단합니다.",
+      "summaryEn": "The people confess their sins and decide to send away foreign wives.",
+      "messageKo": "진정한 회개는 구체적인 행동의 변화를 요구합니다.",
+      "messageEn": "True repentance requires specific changes in action.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "백성이 통곡", "eventEn": "People weep bitterly"},
+        {"verse": 3, "eventKo": "언약을 세움", "eventEn": "Covenant made"},
+        {"verse": 12, "eventKo": "말씀대로 행하겠나이다", "eventEn": "We will do as you say"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

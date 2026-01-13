@@ -1,0 +1,203 @@
+{
+  "bookId": "nehemiah",
+  "bookNumber": 16,
+  "bookNameKo": "느헤미야",
+  "bookNameEn": "Nehemiah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "느헤미야의 기도",
+      "titleEn": "Nehemiah's Prayer",
+      "summaryKo": "느헤미야가 예루살렘 성벽의 파괴 소식을 듣고 금식하며 기도합니다.",
+      "summaryEn": "Nehemiah hears of Jerusalem's broken walls and prays while fasting.",
+      "messageKo": "하나님의 일은 통회와 기도에서 시작됩니다.",
+      "messageEn": "God's work begins with confession and prayer.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "예루살렘 상황 보고", "eventEn": "Report on Jerusalem"},
+        {"verse": 4, "eventKo": "금식하며 기도", "eventEn": "Fasting and prayer"},
+        {"verse": 11, "eventKo": "왕 앞에서 형통케 하소서", "eventEn": "Grant success before the king"}
+      ],
+      "timelineYear": "BC 445"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "예루살렘으로 파송",
+      "titleEn": "Sent to Jerusalem",
+      "summaryKo": "아닥사스다 왕이 느헤미야를 예루살렘으로 보내고, 그가 성벽을 살핍니다.",
+      "summaryEn": "King Artaxerxes sends Nehemiah to Jerusalem; he inspects the walls.",
+      "messageKo": "비전을 품고 준비하며 때를 기다려야 합니다.",
+      "messageEn": "Hold the vision, prepare, and wait for the right time.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "짧은 기도", "eventEn": "Quick prayer"},
+        {"verse": 8, "eventKo": "왕이 허락함", "eventEn": "King grants permission"},
+        {"verse": 17, "eventKo": "성벽 건축 제안", "eventEn": "Proposes wall rebuilding"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "성벽 건축자들",
+      "titleEn": "Wall Builders",
+      "summaryKo": "각 가문과 직업별로 성벽의 다른 부분을 담당하여 건축합니다.",
+      "summaryEn": "Different families and professions take responsibility for different sections.",
+      "messageKo": "모두가 자기 앞 부분을 담당할 때 전체가 완성됩니다.",
+      "messageEn": "When everyone handles their part, the whole is completed.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "대제사장이 먼저", "eventEn": "High priest starts"},
+        {"verse": 5, "eventKo": "귀족들은 일하지 않음", "eventEn": "Nobles refuse to work"},
+        {"verse": 28, "eventKo": "각자 자기 집 앞", "eventEn": "Each in front of own house"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "건축 방해와 대응",
+      "titleEn": "Opposition and Response",
+      "summaryKo": "산발랏과 도비야가 조롱하고 공격하려 하지만, 기도하며 경계합니다.",
+      "summaryEn": "Sanballat and Tobiah mock and plan attack; Nehemiah prays and posts guards.",
+      "messageKo": "기도하면서 동시에 실제적인 대비를 해야 합니다.",
+      "messageEn": "Pray while also making practical preparations.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "느헤미야의 기도", "eventEn": "Nehemiah's prayer"},
+        {"verse": 9, "eventKo": "기도하고 파수꾼을 둠", "eventEn": "Prayed and posted guard"},
+        {"verse": 17, "eventKo": "한 손에 연장, 한 손에 무기", "eventEn": "Tool in one hand, weapon in other"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "내부 문제 해결",
+      "titleEn": "Internal Problems Resolved",
+      "summaryKo": "부자들의 착취를 느헤미야가 책망하고 개혁합니다.",
+      "summaryEn": "Nehemiah rebukes the wealthy for exploitation and brings reform.",
+      "messageKo": "외부의 적보다 내부의 불의가 더 위험합니다.",
+      "messageEn": "Internal injustice is more dangerous than external enemies.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "느헤미야가 노함", "eventEn": "Nehemiah's anger"},
+        {"verse": 11, "eventKo": "이자를 돌려주라", "eventEn": "Return the interest"},
+        {"verse": 14, "eventKo": "총독 녹을 받지 않음", "eventEn": "Did not take governor's food"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "성벽 완공",
+      "titleEn": "Wall Completed",
+      "summaryKo": "원수들의 계략을 물리치고 52일 만에 성벽이 완공됩니다.",
+      "summaryEn": "Enemies' schemes are thwarted; the wall is completed in 52 days.",
+      "messageKo": "집중력을 잃지 않으면 방해를 이기고 완성할 수 있습니다.",
+      "messageEn": "Focus defeats distraction and leads to completion.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "큰 일을 하고 있어 내려갈 수 없다", "eventEn": "Cannot come down; doing great work"},
+        {"verse": 12, "eventKo": "거짓 선지자의 계략", "eventEn": "False prophet's scheme"},
+        {"verse": 15, "eventKo": "52일 만에 완공", "eventEn": "Completed in 52 days"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "예루살렘 인구 조사",
+      "titleEn": "Jerusalem Census",
+      "summaryKo": "성 문지기와 봉사자를 세우고 귀환자 명단을 기록합니다.",
+      "summaryEn": "Gatekeepers and servants are appointed; returnees are registered.",
+      "messageKo": "질서 있는 조직이 공동체를 세웁니다.",
+      "messageEn": "Orderly organization builds community.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나니와 하나냐에게 맡김", "eventEn": "Hanani and Hananiah appointed"},
+        {"verse": 4, "eventKo": "도시가 넓으나 사람이 적음", "eventEn": "City large but few people"},
+        {"verse": 66, "eventKo": "총 42,360명", "eventEn": "Total 42,360 people"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "율법 낭독",
+      "titleEn": "Reading of the Law",
+      "summaryKo": "에스라가 율법을 낭독하고 백성이 듣고 울며 기뻐합니다.",
+      "summaryEn": "Ezra reads the law; the people weep and then rejoice.",
+      "messageKo": "하나님의 말씀을 이해하면 기쁨이 옵니다.",
+      "messageEn": "Understanding God's word brings joy.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "새벽부터 정오까지 낭독", "eventEn": "Read from dawn to noon"},
+        {"verse": 8, "eventKo": "뜻을 해석함", "eventEn": "Explained the meaning"},
+        {"verse": 10, "eventKo": "여호와를 기뻐함이 너희 힘", "eventEn": "Joy of the LORD is your strength"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "백성의 회개",
+      "titleEn": "People's Confession",
+      "summaryKo": "백성이 금식하며 죄를 자복하고 하나님의 신실하심을 고백합니다.",
+      "summaryEn": "The people fast, confess sins, and acknowledge God's faithfulness.",
+      "messageKo": "역사를 통해 하나님의 신실하심을 기억해야 합니다.",
+      "messageEn": "We must remember God's faithfulness through history.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "죄를 자복함", "eventEn": "Confessed sins"},
+        {"verse": 17, "eventKo": "용서하시는 하나님", "eventEn": "God who forgives"},
+        {"verse": 33, "eventKo": "주는 공의로우시나", "eventEn": "You have been just"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "언약 서명",
+      "titleEn": "Covenant Signed",
+      "summaryKo": "지도자들이 율법을 지키기로 서명하고 구체적인 서약을 합니다.",
+      "summaryEn": "Leaders sign a covenant to keep the law with specific commitments.",
+      "messageKo": "결단은 구체적인 약속으로 표현되어야 합니다.",
+      "messageEn": "Decisions should be expressed through specific commitments.",
+      "keyEvents": [
+        {"verse": 29, "eventKo": "저주를 담당하여 맹세", "eventEn": "Bind with oath and curse"},
+        {"verse": 30, "eventKo": "이방인과 통혼하지 않음", "eventEn": "No intermarriage"},
+        {"verse": 39, "eventKo": "하나님의 전을 폐하지 않으리라", "eventEn": "Will not neglect God's house"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "예루살렘 거주자들",
+      "titleEn": "Jerusalem's Residents",
+      "summaryKo": "예루살렘에 거주할 자들이 제비뽑기로 선정됩니다.",
+      "summaryEn": "Residents for Jerusalem are selected by lot.",
+      "messageKo": "하나님의 도시를 세우기 위해 희생하는 자들이 필요합니다.",
+      "messageEn": "Building God's city requires those willing to sacrifice.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "십분의 일이 예루살렘에", "eventEn": "One-tenth to live in Jerusalem"},
+        {"verse": 2, "eventKo": "자원하여 사는 자들을 축복", "eventEn": "Blessed those who volunteered"},
+        {"verse": 4, "eventKo": "유다와 베냐민 자손", "eventEn": "People of Judah and Benjamin"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "성벽 봉헌식",
+      "titleEn": "Wall Dedication",
+      "summaryKo": "제사장과 레위인 명단, 성벽 봉헌식의 기쁨이 기록됩니다.",
+      "summaryEn": "List of priests and Levites; joyful dedication of the wall.",
+      "messageKo": "하나님의 일이 완성되면 온 마음으로 기뻐해야 합니다.",
+      "messageEn": "When God's work is complete, rejoice wholeheartedly.",
+      "keyEvents": [
+        {"verse": 27, "eventKo": "기쁨으로 봉헌", "eventEn": "Dedication with joy"},
+        {"verse": 31, "eventKo": "두 무리가 행진", "eventEn": "Two processions"},
+        {"verse": 43, "eventKo": "기쁨의 소리가 멀리 들림", "eventEn": "Sound of joy heard far away"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "느헤미야의 개혁",
+      "titleEn": "Nehemiah's Reforms",
+      "summaryKo": "느헤미야가 돌아와 성전 정화, 안식일 준수, 통혼 문제를 개혁합니다.",
+      "summaryEn": "Nehemiah returns and reforms temple service, Sabbath observance, and intermarriage.",
+      "messageKo": "개혁은 지속적인 관심과 노력이 필요합니다.",
+      "messageEn": "Reform requires ongoing attention and effort.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "도비야의 방을 정리", "eventEn": "Throws out Tobiah's things"},
+        {"verse": 17, "eventKo": "안식일 위반 책망", "eventEn": "Rebukes Sabbath violation"},
+        {"verse": 25, "eventKo": "통혼 문제 해결", "eventEn": "Addresses intermarriage"}
+      ],
+      "timelineYear": "BC 432"
+    }
+  ]
+}
