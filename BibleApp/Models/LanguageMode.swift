@@ -35,7 +35,7 @@ enum BookSortOrder: String, CaseIterable {
         switch self {
         case .canonical: return "Canonical"
         case .alphabetical: return "A-Z"
-        case .timeline: return "Timeline"
+        case .timeline: return "Time"
         }
     }
     

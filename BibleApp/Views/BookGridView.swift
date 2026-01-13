@@ -73,6 +73,7 @@ struct BookGridView: View {
                     languageMode: viewModel.languageMode,
                     topPadding: topPadding,
                     currentBook: viewModel.currentBook,
+                    searchText: searchText,
                     onBookSelect: { book in
                         // Navigate to chapter grid when tapped in timeline
                         if let onBookSelect {
@@ -138,7 +139,7 @@ struct BookGridView: View {
     // MARK: - Normal Bottom Bar
     private var normalBottomBar: some View {
         HStack(alignment: .bottom) {
-            // Close button (left) - same position as bookshelf button
+            // Close button (left)
             Button {
                 onClose?()
             } label: {
@@ -151,7 +152,7 @@ struct BookGridView: View {
             
             Spacer()
             
-            // Segmented sort control (center)
+            // Segmented sort control - centered
             sortSegmentedControl
             
             Spacer()
@@ -238,12 +239,12 @@ struct BookGridView: View {
                     Text(order.displayName)
                         .font(.system(size: 14, weight: isOrderSelected(order) ? .semibold : .regular))
                         .foregroundStyle(isOrderSelected(order) ? .white : .white.opacity(0.5))
-                    .padding(.horizontal, 14)
-                    .padding(.vertical, 12)
-                    .background(
-                        Capsule()
-                            .fill(isOrderSelected(order) ? Color.white.opacity(0.15) : Color.clear)
-                    )
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 12)
+                        .background(
+                            Capsule()
+                                .fill(isOrderSelected(order) ? Color.white.opacity(0.15) : Color.clear)
+                        )
                 }
                 .buttonStyle(.plain)
             }

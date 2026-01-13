@@ -542,6 +542,7 @@ struct BibleTimelineContentView: View {
     let languageMode: LanguageMode
     var topPadding: CGFloat = 0
     var currentBook: BibleBook? = nil
+    var searchText: String = ""
     var onBookSelect: ((BibleBook) -> Void)? // Called when a Bible book is tapped
     
     @State private var timelineItems: [TimelineItem] = []
@@ -552,6 +553,39 @@ struct BibleTimelineContentView: View {
     private let axisWidth: CGFloat = 2
     private let yearLabelWidth: CGFloat = 60
     private let verticalSpacing: CGFloat = 16
+    
+    // Filtered items based on search
+    private var filteredTimelineItems: [TimelineItem] {
+        guard !searchText.isEmpty else { return timelineItems }
+        
+        return timelineItems.filter { item in
+            // Always keep historical events
+            if item.type == .historicalEvent {
+                return true
+            }
+            // Filter Bible books by name
+            let titleMatch = item.title.en.localizedCaseInsensitiveContains(searchText) ||
+                            item.title.ko.contains(searchText)
+            return titleMatch
+        }
+    }
+    
+    // Eras that have at least one item (for search filtering)
+    private var filteredEras: [TimelineItem] {
+        guard !searchText.isEmpty else { return eras }
+        return eras.filter { era in
+            !getItemsForEra(era).isEmpty
+        }
+    }
+    
+    // First matching Bible book for auto-scrolling
+    private var firstMatchingBibleBook: TimelineItem? {
+        guard !searchText.isEmpty else { return nil }
+        return filteredTimelineItems
+            .filter { $0.isBibleBook }
+            .sorted { $0.startYear < $1.startYear }
+            .first
+    }
     
     var body: some View {
         ScrollViewReader { proxy in
@@ -564,6 +598,15 @@ struct BibleTimelineContentView: View {
                     // Era-based timeline
                     timelineContent
                         .padding(.bottom, 120)  // Space for bottom bar
+                }
+            }
+            .onChange(of: searchText) { _, newValue in
+                // Scroll to first matching Bible book when searching
+                // Use custom anchor to account for safe area and title
+                if !newValue.isEmpty, let firstBook = firstMatchingBibleBook {
+                    withAnimation(.easeOut(duration: 0.3)) {
+                        proxy.scrollTo("book_\(firstBook.id)", anchor: UnitPoint(x: 0.5, y: 0.15))
+                    }
                 }
             }
         }
@@ -605,7 +648,7 @@ struct BibleTimelineContentView: View {
             
             // Timeline items
             VStack(spacing: 0) {
-                ForEach(eras, id: \.id) { era in
+                ForEach(filteredEras, id: \.id) { era in
                     eraSection(era: era)
                 }
             }
@@ -724,6 +767,7 @@ struct BibleTimelineContentView: View {
                     ForEach(group.bibleBooks, id: \.id) { item in
                         if let book = findBibleBook(for: item) {
                             bibleBookCell(book: book)
+                                .id("book_\(item.id)")
                         }
                     }
                 }
@@ -798,7 +842,7 @@ struct BibleTimelineContentView: View {
             nextEraStart = 200 // End of NT era
         }
         
-        return timelineItems
+        return filteredTimelineItems
             .filter { $0.startYear >= era.startYear && $0.startYear < nextEraStart }
             .sorted { $0.startYear < $1.startYear }
     }
