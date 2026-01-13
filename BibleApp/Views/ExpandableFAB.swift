@@ -59,6 +59,7 @@ struct ExpandableFAB: View {
                     languageToggleItem
                 }
                 .padding(.vertical, menuPadding)
+                .padding(.horizontal, menuPadding) // even padding on all sides
                 .transition(.opacity.animation(.easeOut(duration: 0.15).delay(0.1)))
             } else {
                 // FAB icon
