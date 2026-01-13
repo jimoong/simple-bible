@@ -1,0 +1,758 @@
+{
+  "bookId": "genesis",
+  "bookNumber": 1,
+  "bookNameKo": "창세기",
+  "bookNameEn": "Genesis",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "천지창조",
+      "titleEn": "The Creation",
+      "summaryKo": "하나님께서 6일 동안 말씀으로 온 우주 만물과 인간을 창조하신 이야기입니다.",
+      "summaryEn": "God creates the universe and all living things by His word over six days.",
+      "messageKo": "하나님은 모든 것의 창조주이시며, 그분의 말씀에는 생명을 창조하는 권능이 있습니다.",
+      "messageEn": "God is the Creator of all things, and His word has the power to bring life into existence.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "천지창조의 시작", "eventEn": "Beginning of creation"},
+        {"verse": 3, "eventKo": "빛의 창조", "eventEn": "Creation of light"},
+        {"verse": 27, "eventKo": "인간 창조", "eventEn": "Creation of humanity"}
+      ],
+      "timelineYear": "태초"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "에덴동산",
+      "titleEn": "The Garden of Eden",
+      "summaryKo": "인간 창조의 구체적인 과정과 에덴동산에서의 삶, 그리고 결혼의 제정을 다룹니다.",
+      "summaryEn": "Details the creation of man, life in Eden, and the institution of marriage.",
+      "messageKo": "하나님은 인간에게 친밀한 교제와 목적 있는 삶을 주셨으며, 결혼은 하나님이 정하신 거룩한 제도입니다.",
+      "messageEn": "God designed humans for intimate fellowship and purposeful living; marriage is His sacred institution.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "흙으로 사람을 빚으심", "eventEn": "Man formed from dust"},
+        {"verse": 17, "eventKo": "선악과 금지 명령", "eventEn": "Prohibition of the tree"},
+        {"verse": 22, "eventKo": "여자의 창조", "eventEn": "Creation of woman"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "인류의 타락",
+      "titleEn": "The Fall",
+      "summaryKo": "뱀의 유혹으로 인한 불순종과 죄의 유입, 그리고 하나님의 구원 약속을 다룹니다.",
+      "summaryEn": "The serpent's temptation leads to disobedience, sin enters the world, and God promises salvation.",
+      "messageKo": "죄는 불순종에서 시작되지만, 하나님은 이미 구원의 계획을 준비해 두셨습니다.",
+      "messageEn": "Sin begins with disobedience, but God already had a plan for redemption prepared.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "선악과를 먹음", "eventEn": "Eating the forbidden fruit"},
+        {"verse": 15, "eventKo": "원시복음 (여자의 후손)", "eventEn": "Proto-gospel promise"},
+        {"verse": 24, "eventKo": "에덴에서 추방", "eventEn": "Expulsion from Eden"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "가인과 아벨",
+      "titleEn": "Cain and Abel",
+      "summaryKo": "최초의 형제 가인과 아벨의 이야기, 첫 번째 살인, 그리고 가인의 후손들을 다룹니다.",
+      "summaryEn": "The story of the first brothers, the first murder, and Cain's descendants.",
+      "messageKo": "하나님은 마음의 태도를 보시며, 죄를 다스리지 않으면 죄가 우리를 지배합니다.",
+      "messageEn": "God looks at the heart's attitude; if we don't master sin, it will master us.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "아벨의 제사가 열납됨", "eventEn": "Abel's offering accepted"},
+        {"verse": 8, "eventKo": "가인이 아벨을 죽임", "eventEn": "Cain kills Abel"},
+        {"verse": 25, "eventKo": "셋의 탄생", "eventEn": "Birth of Seth"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "아담의 족보",
+      "titleEn": "Descendants of Adam",
+      "summaryKo": "아담부터 노아까지의 족보로, 인류의 수명과 셋의 계보를 기록합니다.",
+      "summaryEn": "The genealogy from Adam to Noah, recording lifespans and the line of Seth.",
+      "messageKo": "하나님은 역사 속에서 신실한 계보를 보존하시며, 에녹처럼 하나님과 동행하는 삶이 가능합니다.",
+      "messageEn": "God preserves a faithful lineage through history; a life walking with God like Enoch is possible.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "아담이 930세에 죽음", "eventEn": "Adam dies at 930"},
+        {"verse": 24, "eventKo": "에녹이 하나님과 동행", "eventEn": "Enoch walks with God"},
+        {"verse": 27, "eventKo": "므두셀라 969세", "eventEn": "Methuselah lives 969 years"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "노아와 홍수 예고",
+      "titleEn": "Noah and the Coming Flood",
+      "summaryKo": "인류의 타락이 극에 달하고, 하나님께서 노아에게 방주를 만들라고 명령하십니다.",
+      "summaryEn": "Human wickedness reaches its peak, and God commands Noah to build an ark.",
+      "messageKo": "하나님은 죄를 심판하시지만, 그분 앞에서 은혜를 입은 자를 구원하십니다.",
+      "messageEn": "God judges sin but saves those who find grace in His sight.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "하나님이 인간의 악을 보심", "eventEn": "God sees human wickedness"},
+        {"verse": 8, "eventKo": "노아가 은혜를 입음", "eventEn": "Noah finds favor"},
+        {"verse": 14, "eventKo": "방주 건조 명령", "eventEn": "Command to build the ark"}
+      ],
+      "timelineYear": "BC 2400경"
+    },
+    {
+      "chapter": 7,
+      "titleKo": "대홍수",
+      "titleEn": "The Great Flood",
+      "summaryKo": "노아의 가족과 동물들이 방주에 들어가고, 40일간의 대홍수가 시작됩니다.",
+      "summaryEn": "Noah's family and the animals enter the ark, and the flood begins for 40 days.",
+      "messageKo": "하나님의 말씀에 순종할 때 심판 가운데서도 구원의 길이 열립니다.",
+      "messageEn": "When we obey God's word, a way of salvation opens even in the midst of judgment.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "방주에 들어감", "eventEn": "Entering the ark"},
+        {"verse": 11, "eventKo": "홍수 시작", "eventEn": "The flood begins"},
+        {"verse": 24, "eventKo": "150일간 물이 땅을 덮음", "eventEn": "Water covers earth 150 days"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "홍수의 끝",
+      "titleEn": "The Flood Ends",
+      "summaryKo": "물이 빠지고 노아가 방주에서 나와 제단을 쌓아 하나님께 제사를 드립니다.",
+      "summaryEn": "The waters recede, Noah exits the ark and offers a sacrifice to God.",
+      "messageKo": "구원받은 후 감사의 예배는 하나님께 드리는 마땅한 응답입니다.",
+      "messageEn": "Worship of thanksgiving after salvation is the proper response to God.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "방주가 아라랏 산에 머묾", "eventEn": "Ark rests on Ararat"},
+        {"verse": 11, "eventKo": "비둘기가 감람 잎사귀를 물어옴", "eventEn": "Dove brings olive leaf"},
+        {"verse": 20, "eventKo": "노아의 제사", "eventEn": "Noah's sacrifice"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "노아 언약",
+      "titleEn": "God's Covenant with Noah",
+      "summaryKo": "하나님께서 노아와 언약을 세우시고 무지개를 그 증표로 주십니다.",
+      "summaryEn": "God establishes His covenant with Noah and gives the rainbow as a sign.",
+      "messageKo": "하나님은 언약을 지키시는 분이시며, 자연의 질서 속에 그분의 약속이 새겨져 있습니다.",
+      "messageEn": "God keeps His covenants, and His promises are inscribed in the order of nature.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "생육하고 번성하라", "eventEn": "Be fruitful and multiply"},
+        {"verse": 13, "eventKo": "무지개 언약의 증표", "eventEn": "Rainbow as covenant sign"},
+        {"verse": 25, "eventKo": "가나안의 저주", "eventEn": "Curse on Canaan"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "민족들의 족보",
+      "titleEn": "Table of Nations",
+      "summaryKo": "노아의 세 아들 셈, 함, 야벳의 후손들과 민족들의 기원을 기록합니다.",
+      "summaryEn": "Records the descendants of Shem, Ham, and Japheth and the origins of nations.",
+      "messageKo": "모든 민족은 한 조상에서 나왔으며, 하나님은 모든 민족의 역사를 주관하십니다.",
+      "messageEn": "All nations came from one ancestor, and God sovereignly governs the history of all peoples.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "야벳의 후손들 (이방 민족)", "eventEn": "Japheth's descendants"},
+        {"verse": 8, "eventKo": "니므롯 - 최초의 권력자", "eventEn": "Nimrod the mighty hunter"},
+        {"verse": 21, "eventKo": "셈의 후손들", "eventEn": "Shem's descendants"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "바벨탑",
+      "titleEn": "Tower of Babel",
+      "summaryKo": "바벨탑 사건으로 언어가 혼잡해지고, 셈부터 아브람까지의 족보가 기록됩니다.",
+      "summaryEn": "The Tower of Babel causes language confusion; genealogy from Shem to Abram.",
+      "messageKo": "인간의 교만은 하나님의 심판을 부르지만, 하나님은 구원의 계보를 계속 이어가십니다.",
+      "messageEn": "Human pride invites God's judgment, yet God continues the lineage of salvation.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "바벨탑 건설 시작", "eventEn": "Building the tower"},
+        {"verse": 7, "eventKo": "언어의 혼잡", "eventEn": "Confusion of languages"},
+        {"verse": 31, "eventKo": "아브람이 갈대아 우르를 떠남", "eventEn": "Abram leaves Ur"}
+      ],
+      "timelineYear": "BC 2200경"
+    },
+    {
+      "chapter": 12,
+      "titleKo": "아브라함의 소명",
+      "titleEn": "The Call of Abram",
+      "summaryKo": "하나님께서 아브람을 부르시고 약속의 땅 가나안으로 인도하십니다.",
+      "summaryEn": "God calls Abram and leads him to the promised land of Canaan.",
+      "messageKo": "하나님의 부르심에 순종할 때, 우리는 복의 통로가 되어 모든 민족에게 축복이 됩니다.",
+      "messageEn": "When we obey God's call, we become channels of blessing to all nations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "아브람의 부르심", "eventEn": "God calls Abram"},
+        {"verse": 7, "eventKo": "가나안 땅의 약속", "eventEn": "Promise of Canaan"},
+        {"verse": 10, "eventKo": "애굽으로 내려감", "eventEn": "Journey to Egypt"}
+      ],
+      "timelineYear": "BC 2091경"
+    },
+    {
+      "chapter": 13,
+      "titleKo": "아브람과 롯의 분리",
+      "titleEn": "Abram and Lot Separate",
+      "summaryKo": "아브람과 롯이 가축이 많아 분리하고, 롯은 소돔 지역을 선택합니다.",
+      "summaryEn": "Abram and Lot separate due to their wealth; Lot chooses the Jordan plain near Sodom.",
+      "messageKo": "겸손히 양보하는 자에게 하나님은 더 큰 것을 약속하십니다.",
+      "messageEn": "God promises greater things to those who humbly yield to others.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "아브람이 롯에게 선택권을 줌", "eventEn": "Abram offers Lot first choice"},
+        {"verse": 12, "eventKo": "롯이 소돔 근처에 거함", "eventEn": "Lot settles near Sodom"},
+        {"verse": 15, "eventKo": "땅의 약속 재확인", "eventEn": "Land promise reaffirmed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "아브람의 승리",
+      "titleEn": "Abram Rescues Lot",
+      "summaryKo": "아브람이 연합군을 물리치고 롯을 구출하며, 멜기세덱을 만납니다.",
+      "summaryEn": "Abram defeats the kings, rescues Lot, and meets Melchizedek.",
+      "messageKo": "하나님을 높이는 자는 세상의 유혹에 초연할 수 있습니다.",
+      "messageEn": "Those who exalt God can remain above worldly temptations.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "아브람이 롯을 구출", "eventEn": "Abram rescues Lot"},
+        {"verse": 18, "eventKo": "멜기세덱의 축복", "eventEn": "Melchizedek blesses Abram"},
+        {"verse": 20, "eventKo": "십일조를 드림", "eventEn": "Abram gives a tithe"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "아브라함 언약",
+      "titleEn": "God's Covenant with Abram",
+      "summaryKo": "하나님께서 아브람과 언약을 세우시고 후손과 땅을 약속하십니다.",
+      "summaryEn": "God makes a covenant with Abram, promising descendants and land.",
+      "messageKo": "믿음은 하나님의 약속을 신뢰하는 것이며, 그것이 의로 여겨집니다.",
+      "messageEn": "Faith is trusting God's promises, and this is credited as righteousness.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "두려워 말라, 나는 네 방패다", "eventEn": "Fear not, I am your shield"},
+        {"verse": 6, "eventKo": "믿음이 의로 여겨짐", "eventEn": "Faith credited as righteousness"},
+        {"verse": 18, "eventKo": "언약 체결", "eventEn": "Covenant established"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "하갈과 이스마엘",
+      "titleEn": "Hagar and Ishmael",
+      "summaryKo": "사래의 제안으로 아브람이 하갈에게서 이스마엘을 낳습니다.",
+      "summaryEn": "At Sarai's suggestion, Abram has a son Ishmael through Hagar.",
+      "messageKo": "인간의 방법으로 하나님의 약속을 이루려 할 때 문제가 생기지만, 하나님은 여전히 돌보십니다.",
+      "messageEn": "Problems arise when we try to fulfill God's promises by human means, yet God still cares.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "사래가 하갈을 아브람에게 줌", "eventEn": "Sarai gives Hagar to Abram"},
+        {"verse": 11, "eventKo": "이스마엘의 탄생 예언", "eventEn": "Ishmael's birth foretold"},
+        {"verse": 15, "eventKo": "이스마엘 탄생", "eventEn": "Ishmael is born"}
+      ],
+      "timelineYear": "BC 2080경"
+    },
+    {
+      "chapter": 17,
+      "titleKo": "할례 언약",
+      "titleEn": "Covenant of Circumcision",
+      "summaryKo": "하나님께서 아브람을 아브라함으로, 사래를 사라로 개명하시고 할례 언약을 세우십니다.",
+      "summaryEn": "God renames Abram to Abraham, Sarai to Sarah, and establishes circumcision.",
+      "messageKo": "하나님과의 언약은 우리의 정체성을 바꾸고, 순종의 표징을 요구합니다.",
+      "messageEn": "Covenant with God changes our identity and requires signs of obedience.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "아브람이 아브라함이 됨", "eventEn": "Abram becomes Abraham"},
+        {"verse": 10, "eventKo": "할례 언약", "eventEn": "Circumcision covenant"},
+        {"verse": 19, "eventKo": "이삭의 탄생 예언", "eventEn": "Isaac's birth promised"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "세 천사의 방문",
+      "titleEn": "Three Visitors",
+      "summaryKo": "세 천사가 아브라함을 방문하고 이삭의 탄생을 예고하며, 소돔 심판을 알립니다.",
+      "summaryEn": "Three visitors announce Isaac's birth and reveal the coming judgment on Sodom.",
+      "messageKo": "하나님께 불가능한 일은 없으며, 하나님의 친구는 하나님의 계획에 참여합니다.",
+      "messageEn": "Nothing is impossible for God, and God's friends participate in His plans.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "내년에 아들을 낳으리라", "eventEn": "Sarah will have a son"},
+        {"verse": 14, "eventKo": "하나님께 능치 못한 일이 있겠느냐", "eventEn": "Is anything too hard for the LORD?"},
+        {"verse": 23, "eventKo": "소돔을 위한 중보", "eventEn": "Abraham intercedes for Sodom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "소돔과 고모라",
+      "titleEn": "Destruction of Sodom",
+      "summaryKo": "소돔과 고모라가 멸망하고, 롯과 두 딸만 구원받습니다.",
+      "summaryEn": "Sodom and Gomorrah are destroyed; only Lot and his daughters escape.",
+      "messageKo": "하나님의 심판은 확실하지만, 의인을 위해 구원의 길을 열어두십니다.",
+      "messageEn": "God's judgment is certain, but He opens a way of escape for the righteous.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "천사들의 심판 예고", "eventEn": "Angels announce destruction"},
+        {"verse": 24, "eventKo": "유황불 심판", "eventEn": "Fire and brimstone"},
+        {"verse": 26, "eventKo": "롯의 아내가 소금 기둥이 됨", "eventEn": "Lot's wife becomes salt"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "아브라함과 아비멜렉",
+      "titleEn": "Abraham and Abimelech",
+      "summaryKo": "아브라함이 그랄에서 사라를 누이라 하여 위기를 맞지만 하나님께서 보호하십니다.",
+      "summaryEn": "Abraham calls Sarah his sister in Gerar, but God protects them.",
+      "messageKo": "우리의 실수에도 하나님은 그분의 계획을 보호하시며 이루어가십니다.",
+      "messageEn": "Despite our failures, God protects and fulfills His plans.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "아비멜렉이 사라를 취함", "eventEn": "Abimelech takes Sarah"},
+        {"verse": 6, "eventKo": "하나님이 꿈에 경고", "eventEn": "God warns in a dream"},
+        {"verse": 17, "eventKo": "아브라함의 중보 기도", "eventEn": "Abraham prays for Abimelech"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "이삭의 탄생",
+      "titleEn": "Birth of Isaac",
+      "summaryKo": "약속대로 이삭이 태어나고, 하갈과 이스마엘이 쫓겨납니다.",
+      "summaryEn": "Isaac is born as promised; Hagar and Ishmael are sent away.",
+      "messageKo": "하나님의 때에 하나님의 방법으로 약속은 반드시 성취됩니다.",
+      "messageEn": "God's promises are fulfilled in His time and in His way.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "이삭 탄생", "eventEn": "Isaac is born"},
+        {"verse": 10, "eventKo": "하갈과 이스마엘 추방", "eventEn": "Hagar and Ishmael sent away"},
+        {"verse": 33, "eventKo": "브엘세바에서 언약", "eventEn": "Covenant at Beersheba"}
+      ],
+      "timelineYear": "BC 2066경"
+    },
+    {
+      "chapter": 22,
+      "titleKo": "이삭을 바치다",
+      "titleEn": "The Sacrifice of Isaac",
+      "summaryKo": "하나님께서 아브라함을 시험하시어 이삭을 바치라 하시고, 그의 믿음을 인정하십니다.",
+      "summaryEn": "God tests Abraham by asking him to sacrifice Isaac; his faith is confirmed.",
+      "messageKo": "진정한 믿음은 가장 소중한 것도 하나님께 맡기며, 하나님은 친히 준비하십니다.",
+      "messageEn": "True faith entrusts even our most precious things to God, and He Himself provides.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "이삭을 바치라는 명령", "eventEn": "Command to sacrifice Isaac"},
+        {"verse": 8, "eventKo": "하나님이 친히 준비하시리라", "eventEn": "God will provide"},
+        {"verse": 13, "eventKo": "숫양이 대신 제물이 됨", "eventEn": "Ram provided as substitute"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "사라의 죽음",
+      "titleEn": "Death of Sarah",
+      "summaryKo": "사라가 127세에 죽고, 아브라함이 막벨라 굴을 매입하여 장사합니다.",
+      "summaryEn": "Sarah dies at 127; Abraham buys the cave of Machpelah to bury her.",
+      "messageKo": "약속의 땅에 대한 소망은 죽음 앞에서도 변하지 않습니다.",
+      "messageEn": "Hope in the promised land remains unchanged even in the face of death.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "사라의 죽음", "eventEn": "Sarah dies"},
+        {"verse": 16, "eventKo": "막벨라 굴 매입", "eventEn": "Purchase of Machpelah"},
+        {"verse": 19, "eventKo": "사라를 장사함", "eventEn": "Sarah is buried"}
+      ],
+      "timelineYear": "BC 2029경"
+    },
+    {
+      "chapter": 24,
+      "titleKo": "이삭의 신부",
+      "titleEn": "A Wife for Isaac",
+      "summaryKo": "아브라함이 종을 보내 이삭의 아내를 구하고, 리브가를 데려옵니다.",
+      "summaryEn": "Abraham sends his servant to find a wife for Isaac; Rebekah is chosen.",
+      "messageKo": "하나님의 인도하심을 구하며 기도할 때, 그분은 신실하게 응답하십니다.",
+      "messageEn": "When we seek God's guidance in prayer, He faithfully answers.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "고향에서 아내를 구하라", "eventEn": "Find a wife from homeland"},
+        {"verse": 14, "eventKo": "종의 기도와 응답", "eventEn": "Servant's prayer answered"},
+        {"verse": 67, "eventKo": "이삭과 리브가의 결혼", "eventEn": "Isaac marries Rebekah"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "아브라함의 죽음과 에서와 야곱",
+      "titleEn": "Abraham Dies; Esau and Jacob",
+      "summaryKo": "아브라함이 죽고, 리브가가 쌍둥이 에서와 야곱을 낳습니다.",
+      "summaryEn": "Abraham dies; Rebekah gives birth to twins Esau and Jacob.",
+      "messageKo": "하나님의 선택은 인간의 기대를 뛰어넘으며, 영적 가치를 우선해야 합니다.",
+      "messageEn": "God's choices transcend human expectations; we must prioritize spiritual values.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "아브라함의 죽음 (175세)", "eventEn": "Abraham dies at 175"},
+        {"verse": 23, "eventKo": "에서와 야곱 탄생", "eventEn": "Birth of Esau and Jacob"},
+        {"verse": 34, "eventKo": "에서가 장자권을 팜", "eventEn": "Esau sells birthright"}
+      ],
+      "timelineYear": "BC 2006경"
+    },
+    {
+      "chapter": 26,
+      "titleKo": "이삭과 아비멜렉",
+      "titleEn": "Isaac and Abimelech",
+      "summaryKo": "이삭이 그랄에서 하나님의 축복을 받아 부요해지고, 아비멜렉과 언약을 맺습니다.",
+      "summaryEn": "Isaac prospers in Gerar through God's blessing and makes a covenant with Abimelech.",
+      "messageKo": "어려운 상황에서도 하나님께 순종하면 백배의 축복을 받습니다.",
+      "messageEn": "Obedience to God in difficult circumstances brings a hundredfold blessing.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아브라함 언약의 재확인", "eventEn": "Covenant reaffirmed"},
+        {"verse": 12, "eventKo": "백배의 결실", "eventEn": "Hundredfold harvest"},
+        {"verse": 28, "eventKo": "아비멜렉과 언약", "eventEn": "Covenant with Abimelech"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "야곱이 축복을 받다",
+      "titleEn": "Jacob Receives the Blessing",
+      "summaryKo": "야곱이 리브가의 계략으로 에서 대신 아버지 이삭의 축복을 받습니다.",
+      "summaryEn": "Jacob, with Rebekah's help, deceives Isaac and receives the blessing meant for Esau.",
+      "messageKo": "인간의 속임수에도 불구하고 하나님의 주권적 계획은 이루어집니다.",
+      "messageEn": "God's sovereign plan is fulfilled despite human deception.",
+      "keyEvents": [
+        {"verse": 19, "eventKo": "야곱의 속임", "eventEn": "Jacob deceives Isaac"},
+        {"verse": 28, "eventKo": "야곱이 축복을 받음", "eventEn": "Jacob receives blessing"},
+        {"verse": 41, "eventKo": "에서의 분노", "eventEn": "Esau's anger"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "야곱의 사다리",
+      "titleEn": "Jacob's Ladder",
+      "summaryKo": "야곱이 하란으로 피신하던 중 벧엘에서 하나님을 만나 꿈에 사다리를 봅니다.",
+      "summaryEn": "On his way to Haran, Jacob dreams of a ladder at Bethel and meets God.",
+      "messageKo": "하나님은 예상치 못한 곳에서 우리를 만나시며, 어디서든 함께 하십니다.",
+      "messageEn": "God meets us in unexpected places and is with us wherever we go.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "하늘 사다리의 꿈", "eventEn": "Dream of the ladder"},
+        {"verse": 15, "eventKo": "하나님의 약속", "eventEn": "God's promise to Jacob"},
+        {"verse": 19, "eventKo": "벧엘이라 이름 지음", "eventEn": "Names the place Bethel"}
+      ],
+      "timelineYear": "BC 1928경"
+    },
+    {
+      "chapter": 29,
+      "titleKo": "야곱의 결혼",
+      "titleEn": "Jacob Marries",
+      "summaryKo": "야곱이 외삼촌 라반의 집에서 라헬과 레아를 아내로 맞습니다.",
+      "summaryEn": "Jacob works for Laban and marries both Leah and Rachel.",
+      "messageKo": "속인 자도 속임을 당하지만, 하나님은 그 상황 속에서도 일하십니다.",
+      "messageEn": "The deceiver is also deceived, but God works even through such situations.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "야곱이 라헬을 만남", "eventEn": "Jacob meets Rachel"},
+        {"verse": 25, "eventKo": "라반의 속임수", "eventEn": "Laban's deception"},
+        {"verse": 28, "eventKo": "라헬과 결혼", "eventEn": "Jacob marries Rachel"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "야곱의 자녀들",
+      "titleEn": "Jacob's Children",
+      "summaryKo": "야곱이 네 여인에게서 열한 아들과 딸 디나를 얻고, 라반과의 계약으로 부유해집니다.",
+      "summaryEn": "Jacob has eleven sons and a daughter through four women; he prospers.",
+      "messageKo": "하나님은 복잡한 가정 상황 속에서도 약속의 백성을 형성해 가십니다.",
+      "messageEn": "God forms His covenant people even through complex family situations.",
+      "keyEvents": [
+        {"verse": 22, "eventKo": "요셉 탄생", "eventEn": "Joseph is born"},
+        {"verse": 25, "eventKo": "고향으로 돌아가기를 원함", "eventEn": "Jacob wants to return home"},
+        {"verse": 43, "eventKo": "야곱의 번영", "eventEn": "Jacob prospers greatly"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "야곱이 도망하다",
+      "titleEn": "Jacob Flees from Laban",
+      "summaryKo": "야곱이 가족을 데리고 라반을 떠나 가나안으로 향하고, 라반과 언약을 맺습니다.",
+      "summaryEn": "Jacob secretly leaves Laban and heads to Canaan; they make a covenant.",
+      "messageKo": "하나님께서 돌아가라 하실 때, 두려움에도 불구하고 순종해야 합니다.",
+      "messageEn": "When God says to return, we must obey despite our fears.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "하나님의 귀환 명령", "eventEn": "God tells Jacob to return"},
+        {"verse": 19, "eventKo": "라헬이 드라빔을 훔침", "eventEn": "Rachel steals household gods"},
+        {"verse": 49, "eventKo": "미스바 언약", "eventEn": "Covenant at Mizpah"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "야곱의 씨름",
+      "titleEn": "Jacob Wrestles with God",
+      "summaryKo": "야곱이 에서를 만나기 전 천사와 씨름하고 이스라엘이라는 새 이름을 받습니다.",
+      "summaryEn": "Jacob wrestles with an angel and receives the name Israel.",
+      "messageKo": "하나님과 씨름하며 매달리는 자에게 새로운 정체성과 축복이 주어집니다.",
+      "messageEn": "Those who wrestle with God and hold on receive a new identity and blessing.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "천사들을 만남 (마하나임)", "eventEn": "Angels meet Jacob (Mahanaim)"},
+        {"verse": 24, "eventKo": "밤새 씨름함", "eventEn": "Wrestling all night"},
+        {"verse": 28, "eventKo": "이스라엘이라는 이름을 받음", "eventEn": "Named Israel"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 33,
+      "titleKo": "에서와의 화해",
+      "titleEn": "Jacob Meets Esau",
+      "summaryKo": "야곱이 20년 만에 에서를 만나 화해하고, 세겜에 정착합니다.",
+      "summaryEn": "Jacob reunites with Esau after 20 years; they reconcile, and Jacob settles in Shechem.",
+      "messageKo": "하나님은 관계의 치유를 위해 일하시며, 용서와 화해의 은혜를 주십니다.",
+      "messageEn": "God works for the healing of relationships, giving grace for forgiveness and reconciliation.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "에서가 야곱을 안음", "eventEn": "Esau embraces Jacob"},
+        {"verse": 10, "eventKo": "화해의 선물", "eventEn": "Reconciliation gifts"},
+        {"verse": 18, "eventKo": "세겜에 정착", "eventEn": "Jacob settles in Shechem"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 34,
+      "titleKo": "디나 사건",
+      "titleEn": "The Rape of Dinah",
+      "summaryKo": "디나가 세겜에게 욕을 당하고, 시므온과 레위가 복수합니다.",
+      "summaryEn": "Dinah is violated by Shechem; Simeon and Levi take revenge.",
+      "messageKo": "분노에 따른 행동은 더 큰 문제를 낳으며, 하나님의 방법을 따라야 합니다.",
+      "messageEn": "Actions driven by anger create bigger problems; we must follow God's ways.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "디나가 세겜에게 욕을 당함", "eventEn": "Dinah is violated"},
+        {"verse": 25, "eventKo": "시므온과 레위의 복수", "eventEn": "Simeon and Levi's revenge"},
+        {"verse": 30, "eventKo": "야곱의 탄식", "eventEn": "Jacob's distress"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 35,
+      "titleKo": "벧엘로 돌아가다",
+      "titleEn": "Jacob Returns to Bethel",
+      "summaryKo": "야곱이 벧엘로 돌아가 제단을 쌓고, 라헬이 베냐민을 낳다 죽습니다.",
+      "summaryEn": "Jacob returns to Bethel, builds an altar; Rachel dies giving birth to Benjamin.",
+      "messageKo": "하나님께 돌아가는 것은 우상을 버리고 언약을 새롭게 하는 것입니다.",
+      "messageEn": "Returning to God means putting away idols and renewing our covenant.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "이스라엘로 개명 재확인", "eventEn": "Name Israel confirmed"},
+        {"verse": 18, "eventKo": "베냐민 탄생, 라헬 죽음", "eventEn": "Benjamin born; Rachel dies"},
+        {"verse": 29, "eventKo": "이삭의 죽음 (180세)", "eventEn": "Isaac dies at 180"}
+      ],
+      "timelineYear": "BC 1886경"
+    },
+    {
+      "chapter": 36,
+      "titleKo": "에서의 후손",
+      "titleEn": "Descendants of Esau",
+      "summaryKo": "에돔의 조상인 에서의 족보와 후손들을 기록합니다.",
+      "summaryEn": "Records the genealogy of Esau, ancestor of the Edomites.",
+      "messageKo": "하나님은 선택받지 않은 자들도 돌보시며 그들의 역사도 기록하십니다.",
+      "messageEn": "God cares for those not chosen and records their history too.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "에서의 족보", "eventEn": "Esau's descendants"},
+        {"verse": 8, "eventKo": "에돔에 정착", "eventEn": "Esau settles in Edom"},
+        {"verse": 31, "eventKo": "에돔의 왕들", "eventEn": "Kings of Edom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 37,
+      "titleKo": "요셉의 꿈",
+      "titleEn": "Joseph's Dreams",
+      "summaryKo": "요셉이 형들의 미움을 받아 애굽 상인들에게 팔려갑니다.",
+      "summaryEn": "Joseph, hated by his brothers, is sold to merchants going to Egypt.",
+      "messageKo": "하나님이 주신 비전은 고난을 통해 성취되는 경우가 많습니다.",
+      "messageEn": "God-given visions are often fulfilled through suffering.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "채색옷을 받음", "eventEn": "Joseph receives a robe"},
+        {"verse": 9, "eventKo": "요셉의 두 번째 꿈", "eventEn": "Joseph's second dream"},
+        {"verse": 28, "eventKo": "요셉이 팔려감", "eventEn": "Joseph sold into slavery"}
+      ],
+      "timelineYear": "BC 1897경"
+    },
+    {
+      "chapter": 38,
+      "titleKo": "유다와 다말",
+      "titleEn": "Judah and Tamar",
+      "summaryKo": "유다와 며느리 다말의 이야기, 그리고 베레스와 세라의 탄생을 다룹니다.",
+      "summaryEn": "The story of Judah and his daughter-in-law Tamar; Perez and Zerah are born.",
+      "messageKo": "하나님은 실패한 사람들을 통해서도 구속의 계보를 이어가십니다.",
+      "messageEn": "God continues the line of redemption even through flawed people.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "유다의 아들들", "eventEn": "Judah's sons"},
+        {"verse": 18, "eventKo": "다말의 계략", "eventEn": "Tamar's scheme"},
+        {"verse": 29, "eventKo": "베레스 탄생", "eventEn": "Perez is born"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 39,
+      "titleKo": "보디발의 집",
+      "titleEn": "Joseph in Potiphar's House",
+      "summaryKo": "요셉이 보디발의 집에서 형통하다가 보디발 아내의 모함으로 옥에 갇힙니다.",
+      "summaryEn": "Joseph prospers in Potiphar's house but is imprisoned after false accusations.",
+      "messageKo": "어디에 있든 하나님이 함께 하시면 형통하며, 유혹 앞에서 도망쳐야 합니다.",
+      "messageEn": "Wherever we are, we prosper when God is with us; we must flee from temptation.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "여호와께서 요셉과 함께 하심", "eventEn": "The Lord was with Joseph"},
+        {"verse": 12, "eventKo": "요셉의 도망", "eventEn": "Joseph flees temptation"},
+        {"verse": 20, "eventKo": "옥에 갇힘", "eventEn": "Joseph imprisoned"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 40,
+      "titleKo": "감옥에서의 꿈 해석",
+      "titleEn": "Dreams in Prison",
+      "summaryKo": "요셉이 옥에서 바로의 신하들의 꿈을 해석해 줍니다.",
+      "summaryEn": "Joseph interprets the dreams of Pharaoh's cupbearer and baker in prison.",
+      "messageKo": "고난 중에도 다른 사람을 섬기며, 해석은 오직 하나님께 속한 것입니다.",
+      "messageEn": "Serve others even in suffering; interpretations belong to God alone.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "해석은 하나님께 있다", "eventEn": "Interpretations belong to God"},
+        {"verse": 13, "eventKo": "술 맡은 관원장의 회복", "eventEn": "Cupbearer will be restored"},
+        {"verse": 23, "eventKo": "요셉을 잊어버림", "eventEn": "Cupbearer forgets Joseph"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 41,
+      "titleKo": "바로의 꿈과 요셉의 높임",
+      "titleEn": "Pharaoh's Dreams; Joseph Exalted",
+      "summaryKo": "요셉이 바로의 꿈을 해석하고 애굽의 총리가 됩니다.",
+      "summaryEn": "Joseph interprets Pharaoh's dreams and becomes second-in-command of Egypt.",
+      "messageKo": "하나님의 때에 높임을 받으며, 하나님만이 미래를 아시고 계획을 주십니다.",
+      "messageEn": "God exalts in His timing; only He knows the future and gives plans.",
+      "keyEvents": [
+        {"verse": 16, "eventKo": "하나님이 바로에게 해석을 주시리라", "eventEn": "God will give Pharaoh the answer"},
+        {"verse": 41, "eventKo": "요셉이 총리가 됨", "eventEn": "Joseph made ruler"},
+        {"verse": 57, "eventKo": "온 땅이 요셉에게 옴", "eventEn": "All countries come to Joseph"}
+      ],
+      "timelineYear": "BC 1884경"
+    },
+    {
+      "chapter": 42,
+      "titleKo": "형들의 첫 방문",
+      "titleEn": "Brothers' First Visit",
+      "summaryKo": "기근으로 요셉의 형들이 양식을 구하러 애굽에 옵니다.",
+      "summaryEn": "Joseph's brothers come to Egypt to buy grain during the famine.",
+      "messageKo": "숨겨진 죄는 결국 드러나며, 양심의 가책은 회개로 이끕니다.",
+      "messageEn": "Hidden sin eventually surfaces, and guilt leads to repentance.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "형들이 요셉에게 절함", "eventEn": "Brothers bow to Joseph"},
+        {"verse": 21, "eventKo": "형들의 양심의 가책", "eventEn": "Brothers feel guilty"},
+        {"verse": 24, "eventKo": "시므온을 가둠", "eventEn": "Simeon detained"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 43,
+      "titleKo": "형들의 두 번째 방문",
+      "titleEn": "Brothers' Second Visit",
+      "summaryKo": "형들이 베냐민을 데리고 다시 애굽에 가서 요셉을 만납니다.",
+      "summaryEn": "The brothers return to Egypt with Benjamin and meet Joseph again.",
+      "messageKo": "하나님을 신뢰하며 위험을 감수할 때 회복의 길이 열립니다.",
+      "messageEn": "When we trust God and take risks, the path to restoration opens.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "야곱이 베냐민을 보냄", "eventEn": "Jacob sends Benjamin"},
+        {"verse": 30, "eventKo": "요셉이 베냐민을 보고 감격함", "eventEn": "Joseph overcome with emotion"},
+        {"verse": 34, "eventKo": "베냐민의 몫이 5배", "eventEn": "Benjamin's portion five times more"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 44,
+      "titleKo": "은잔 사건",
+      "titleEn": "The Silver Cup",
+      "summaryKo": "요셉이 형들을 시험하기 위해 베냐민의 자루에 은잔을 넣게 합니다.",
+      "summaryEn": "Joseph tests his brothers by having his cup placed in Benjamin's sack.",
+      "messageKo": "진정한 회개는 행동의 변화로 증명되며, 자기희생으로 나타납니다.",
+      "messageEn": "True repentance is proven by changed behavior and self-sacrifice.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "은잔을 베냐민 자루에 넣음", "eventEn": "Cup placed in Benjamin's sack"},
+        {"verse": 16, "eventKo": "유다의 고백", "eventEn": "Judah's confession"},
+        {"verse": 33, "eventKo": "유다의 탄원", "eventEn": "Judah pleads for Benjamin"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 45,
+      "titleKo": "요셉이 자신을 밝히다",
+      "titleEn": "Joseph Reveals Himself",
+      "summaryKo": "요셉이 형들에게 자신을 밝히고, 야곱의 가족을 애굽으로 초대합니다.",
+      "summaryEn": "Joseph reveals himself to his brothers and invites Jacob's family to Egypt.",
+      "messageKo": "하나님은 악도 선으로 바꾸시며, 용서는 화해와 회복을 가져옵니다.",
+      "messageEn": "God turns evil into good; forgiveness brings reconciliation and restoration.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "나는 요셉이라", "eventEn": "I am Joseph"},
+        {"verse": 5, "eventKo": "하나님의 섭리", "eventEn": "God's providence"},
+        {"verse": 18, "eventKo": "바로의 초청", "eventEn": "Pharaoh's invitation"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 46,
+      "titleKo": "야곱이 애굽으로",
+      "titleEn": "Jacob Goes to Egypt",
+      "summaryKo": "야곱이 가족 70명을 데리고 애굽으로 내려가 요셉을 만납니다.",
+      "summaryEn": "Jacob travels to Egypt with 70 family members and reunites with Joseph.",
+      "messageKo": "하나님은 두려운 상황에서도 함께 하시며 약속을 지키십니다.",
+      "messageEn": "God is with us in fearful situations and keeps His promises.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "애굽으로 가라는 하나님의 말씀", "eventEn": "God tells Jacob to go"},
+        {"verse": 27, "eventKo": "70명이 애굽에 들어감", "eventEn": "70 people enter Egypt"},
+        {"verse": 30, "eventKo": "야곱이 요셉을 만남", "eventEn": "Jacob meets Joseph"}
+      ],
+      "timelineYear": "BC 1876경"
+    },
+    {
+      "chapter": 47,
+      "titleKo": "고센에 정착",
+      "titleEn": "Settling in Goshen",
+      "summaryKo": "야곱의 가족이 고센 땅에 정착하고, 요셉이 기근 동안 애굽을 다스립니다.",
+      "summaryEn": "Jacob's family settles in Goshen; Joseph manages Egypt during the famine.",
+      "messageKo": "하나님의 백성은 세상 속에서도 구별되어 보호받습니다.",
+      "messageEn": "God's people are set apart and protected even in the world.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "고센에 정착", "eventEn": "Settling in Goshen"},
+        {"verse": 9, "eventKo": "야곱이 바로를 축복함", "eventEn": "Jacob blesses Pharaoh"},
+        {"verse": 29, "eventKo": "야곱의 유언 - 가나안에 묻어달라", "eventEn": "Jacob's burial request"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 48,
+      "titleKo": "에브라임과 므낫세",
+      "titleEn": "Ephraim and Manasseh Blessed",
+      "summaryKo": "야곱이 요셉의 두 아들을 축복하며, 에브라임을 므낫세보다 높입니다.",
+      "summaryEn": "Jacob blesses Joseph's sons, placing Ephraim above Manasseh.",
+      "messageKo": "하나님의 축복은 인간의 전통을 초월하며, 그분의 주권을 따릅니다.",
+      "messageEn": "God's blessing transcends human tradition and follows His sovereignty.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "에브라임과 므낫세를 양자로 삼음", "eventEn": "Adopting Ephraim and Manasseh"},
+        {"verse": 14, "eventKo": "오른손을 에브라임에게", "eventEn": "Right hand on Ephraim"},
+        {"verse": 20, "eventKo": "이스라엘의 축복 기준이 됨", "eventEn": "They become a standard for blessing"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 49,
+      "titleKo": "야곱의 축복",
+      "titleEn": "Jacob Blesses His Sons",
+      "summaryKo": "야곱이 열두 아들에게 예언적 축복을 선포합니다.",
+      "summaryEn": "Jacob gives prophetic blessings to his twelve sons.",
+      "messageKo": "하나님은 각 사람에게 고유한 사명과 미래를 정해두셨습니다.",
+      "messageEn": "God has ordained a unique calling and future for each person.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "유다에게 주어진 왕권", "eventEn": "Judah receives the scepter"},
+        {"verse": 10, "eventKo": "실로 예언 (메시아)", "eventEn": "Shiloh prophecy (Messiah)"},
+        {"verse": 22, "eventKo": "요셉의 풍성한 축복", "eventEn": "Joseph's abundant blessing"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 50,
+      "titleKo": "야곱과 요셉의 죽음",
+      "titleEn": "Deaths of Jacob and Joseph",
+      "summaryKo": "야곱이 가나안에 장사되고, 요셉이 형들을 용서하며, 110세에 죽습니다.",
+      "summaryEn": "Jacob is buried in Canaan; Joseph forgives his brothers and dies at 110.",
+      "messageKo": "악을 선으로 바꾸시는 하나님을 신뢰하며, 용서로 관계를 회복합니다.",
+      "messageEn": "Trust the God who turns evil into good; restore relationships through forgiveness.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "야곱을 가나안에 장사함", "eventEn": "Jacob buried in Canaan"},
+        {"verse": 20, "eventKo": "악을 선으로 바꾸신 하나님", "eventEn": "God meant it for good"},
+        {"verse": 26, "eventKo": "요셉의 죽음 (110세)", "eventEn": "Joseph dies at 110"}
+      ],
+      "timelineYear": "BC 1805경"
+    }
+  ]
+}

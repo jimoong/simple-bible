@@ -23,7 +23,7 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            let maxPanelHeight = geometry.size.height * 0.6
+            let maxPanelHeight = geometry.size.height * 0.8
             
             ZStack {
                 // Main slot machine view
@@ -96,20 +96,13 @@ struct ContentView: View {
                     .zIndex(2)
                 }
                 
-                // Chapter grid - top panel (from header tap, fits content up to 60%)
+                // Chapter info panel - top panel (from header tap)
                 if isShowingTopPanelChapters {
                     VStack(spacing: 0) {
-                        ChapterGridView(
+                        ChapterInfoPanel(
                             viewModel: viewModel,
-                            currentBook: $viewModel.selectedBookForChapter,
                             maxHeight: maxPanelHeight,
-                            safeAreaTop: geometry.safeAreaInsets.top,
-                            onChapterSelect: { book, chapter in
-                                dismissBookshelf()
-                                Task {
-                                    await viewModel.navigateTo(book: book, chapter: chapter)
-                                }
-                            }
+                            safeAreaTop: geometry.safeAreaInsets.top
                         )
                         .clipShape(
                             UnevenRoundedRectangle(

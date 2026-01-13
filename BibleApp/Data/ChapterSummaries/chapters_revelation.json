@@ -1,0 +1,338 @@
+{
+  "bookId": "revelation",
+  "bookNumber": 66,
+  "bookNameKo": "요한계시록",
+  "bookNameEn": "Revelation",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "영광스러운 그리스도",
+      "titleEn": "The Glorious Christ",
+      "summaryKo": "요한이 밧모 섬에서 영광스러운 예수 그리스도의 환상을 보고 기록하라는 명령을 받습니다.",
+      "summaryEn": "John receives a vision of the glorified Christ on Patmos and is commanded to write.",
+      "messageKo": "예수님은 처음이요 마지막이시며, 죽었다가 살아나신 영광의 주님이십니다.",
+      "messageEn": "Jesus is the First and Last, the Living One who died and lives forever in glory.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "알파와 오메가", "eventEn": "Alpha and Omega"},
+        {"verse": 13, "eventKo": "인자같은 이의 환상", "eventEn": "Vision of one like a son of man"},
+        {"verse": 17, "eventKo": "처음이요 마지막이요 살아있는 자", "eventEn": "First and Last, the Living One"}
+      ],
+      "timelineYear": "AD 95경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "네 교회에 보내는 편지",
+      "titleEn": "Letters to Four Churches",
+      "summaryKo": "에베소, 서머나, 버가모, 두아디라 교회에 보내는 그리스도의 편지입니다.",
+      "summaryEn": "Christ's letters to the churches in Ephesus, Smyrna, Pergamum, and Thyatira.",
+      "messageKo": "교회는 처음 사랑을 회복하고, 죽도록 충성하며, 타협하지 말아야 합니다.",
+      "messageEn": "Churches must recover first love, be faithful to death, and avoid compromise.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "에베소 - 처음 사랑을 버림", "eventEn": "Ephesus - forsaken first love"},
+        {"verse": 10, "eventKo": "서머나 - 죽도록 충성하라", "eventEn": "Smyrna - be faithful unto death"},
+        {"verse": 17, "eventKo": "버가모 - 감추인 만나", "eventEn": "Pergamum - hidden manna"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "세 교회에 보내는 편지",
+      "titleEn": "Letters to Three Churches",
+      "summaryKo": "사데, 빌라델비아, 라오디게아 교회에 보내는 그리스도의 편지입니다.",
+      "summaryEn": "Christ's letters to the churches in Sardis, Philadelphia, and Laodicea.",
+      "messageKo": "깨어 있고, 열린 문을 통과하며, 미지근함에서 벗어나 예수님을 영접해야 합니다.",
+      "messageEn": "Wake up, walk through open doors, leave lukewarmness, and welcome Jesus in.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "사데 - 깨어 있으라", "eventEn": "Sardis - wake up"},
+        {"verse": 8, "eventKo": "빌라델비아 - 열린 문", "eventEn": "Philadelphia - open door"},
+        {"verse": 20, "eventKo": "라오디게아 - 문 밖에서 두드림", "eventEn": "Laodicea - I stand at the door"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "하늘 보좌",
+      "titleEn": "The Throne in Heaven",
+      "summaryKo": "요한이 열린 문을 통해 하늘 보좌와 예배의 광경을 봅니다.",
+      "summaryEn": "John sees the throne room of heaven and the worship around God's throne.",
+      "messageKo": "하나님은 영원히 보좌에 앉아 계시며, 온 피조물의 경배를 받으시기에 합당하십니다.",
+      "messageEn": "God sits on His throne forever and is worthy of worship from all creation.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하늘에 보좌", "eventEn": "Throne in heaven"},
+        {"verse": 6, "eventKo": "네 생물", "eventEn": "Four living creatures"},
+        {"verse": 11, "eventKo": "창조를 위한 찬양", "eventEn": "Worship for creation"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "어린양이 두루마리를 받다",
+      "titleEn": "The Lamb Takes the Scroll",
+      "summaryKo": "죽임 당하신 어린양만이 일곱 인으로 봉한 두루마리를 열 수 있습니다.",
+      "summaryEn": "Only the Lamb who was slain is worthy to open the scroll sealed with seven seals.",
+      "messageKo": "예수님만이 역사의 비밀을 열 권세가 있으시며, 그분의 보혈로 우리를 사셨습니다.",
+      "messageEn": "Only Jesus has authority to open history's mysteries; His blood purchased us.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "유다 지파의 사자, 다윗의 뿌리", "eventEn": "Lion of Judah, Root of David"},
+        {"verse": 9, "eventKo": "새 노래 - 어린양의 구속", "eventEn": "New song - Lamb's redemption"},
+        {"verse": 12, "eventKo": "어린양이 합당하시다", "eventEn": "Worthy is the Lamb"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "일곱 인",
+      "titleEn": "The Seven Seals",
+      "summaryKo": "어린양이 첫 여섯 인을 열고, 네 기사, 순교자, 자연 재앙이 나타납니다.",
+      "summaryEn": "The Lamb opens the first six seals, revealing four horsemen, martyrs, and cosmic disturbances.",
+      "messageKo": "역사는 하나님의 심판 아래 있으며, 순교자들의 피는 헛되지 않습니다.",
+      "messageEn": "History is under God's judgment; the blood of martyrs is not in vain.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "백마 탄 자 - 정복", "eventEn": "White horse - conquest"},
+        {"verse": 8, "eventKo": "청황색 말 - 죽음", "eventEn": "Pale horse - death"},
+        {"verse": 17, "eventKo": "누가 능히 서리요", "eventEn": "Who can stand?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "인침받은 자들",
+      "titleEn": "The Sealed",
+      "summaryKo": "이스라엘의 십사만 사천과 흰 옷 입은 큰 무리가 인침을 받습니다.",
+      "summaryEn": "144,000 from Israel and a great multitude in white robes are sealed.",
+      "messageKo": "하나님은 환난 중에도 자기 백성을 보호하시며, 모든 눈물을 닦아 주실 것입니다.",
+      "messageEn": "God protects His people through tribulation and will wipe away every tear.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "인침받은 십사만 사천", "eventEn": "144,000 sealed"},
+        {"verse": 9, "eventKo": "셀 수 없는 큰 무리", "eventEn": "Great multitude no one could count"},
+        {"verse": 17, "eventKo": "모든 눈물을 씻어 주시리라", "eventEn": "God will wipe every tear"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "일곱 나팔 (1)",
+      "titleEn": "Seven Trumpets (1)",
+      "summaryKo": "일곱째 인이 열리고, 첫 네 나팔이 울려 자연에 재앙이 내립니다.",
+      "summaryEn": "The seventh seal is opened; the first four trumpets bring judgment on nature.",
+      "messageKo": "성도의 기도는 하나님 앞에 향처럼 올라가며, 심판의 응답을 가져옵니다.",
+      "messageEn": "The prayers of saints rise like incense before God and bring answers of judgment.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "일곱째 인 - 침묵", "eventEn": "Seventh seal - silence"},
+        {"verse": 7, "eventKo": "첫째 나팔 - 우박과 불", "eventEn": "First trumpet - hail and fire"},
+        {"verse": 12, "eventKo": "넷째 나팔 - 해, 달, 별", "eventEn": "Fourth trumpet - sun, moon, stars"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "일곱 나팔 (2)",
+      "titleEn": "Seven Trumpets (2)",
+      "summaryKo": "다섯째와 여섯째 나팔이 울리고, 황충의 재앙과 마군의 재앙이 내립니다.",
+      "summaryEn": "The fifth and sixth trumpets bring demonic locust plague and an army of horsemen.",
+      "messageKo": "심판 중에도 회개의 기회가 주어지지만, 완악한 자는 돌이키지 않습니다.",
+      "messageEn": "Even in judgment, opportunity for repentance is given, but the hardened do not turn.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "황충의 재앙", "eventEn": "Locust plague"},
+        {"verse": 15, "eventKo": "네 천사가 놓임", "eventEn": "Four angels released"},
+        {"verse": 20, "eventKo": "회개하지 않음", "eventEn": "Did not repent"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "작은 두루마리",
+      "titleEn": "The Little Scroll",
+      "summaryKo": "강한 천사가 작은 두루마리를 들고 나타나고, 요한이 그것을 먹습니다.",
+      "summaryEn": "A mighty angel appears with a little scroll, which John eats.",
+      "messageKo": "하나님의 말씀은 달지만 심판의 메시지는 쓰며, 더 많은 예언이 있습니다.",
+      "messageEn": "God's word is sweet, but the message of judgment is bitter; more prophecy remains.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "더 이상 지체하지 않으리라", "eventEn": "No more delay"},
+        {"verse": 9, "eventKo": "두루마리를 먹음", "eventEn": "Eating the scroll"},
+        {"verse": 11, "eventKo": "다시 예언해야 함", "eventEn": "Must prophesy again"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "두 증인",
+      "titleEn": "The Two Witnesses",
+      "summaryKo": "두 증인이 예언하고 죽임당한 후 부활하며, 일곱째 나팔이 울립니다.",
+      "summaryEn": "Two witnesses prophesy, are killed, and rise; the seventh trumpet sounds.",
+      "messageKo": "하나님의 증인은 핍박받지만 궁극적으로 승리하며, 세상 나라가 주의 것이 됩니다.",
+      "messageEn": "God's witnesses face persecution but ultimately triumph; the world's kingdoms become the Lord's.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "두 증인의 1260일 예언", "eventEn": "Two witnesses prophesy 1260 days"},
+        {"verse": 11, "eventKo": "두 증인의 부활", "eventEn": "Witnesses come back to life"},
+        {"verse": 15, "eventKo": "일곱째 나팔 - 세상 나라가 주의 것", "eventEn": "Seventh trumpet - kingdom proclaimed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "용과 여자",
+      "titleEn": "The Dragon and the Woman",
+      "summaryKo": "해를 입은 여자와 그녀의 아들을 삼키려는 붉은 용의 전쟁이 묘사됩니다.",
+      "summaryEn": "The cosmic conflict between the woman clothed with the sun and the red dragon.",
+      "messageKo": "사탄은 하나님의 백성을 공격하지만, 어린양의 피와 증거의 말씀으로 승리합니다.",
+      "messageEn": "Satan attacks God's people, but they overcome by the blood of the Lamb and their testimony.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "해를 입은 여자", "eventEn": "Woman clothed with the sun"},
+        {"verse": 7, "eventKo": "미가엘과 용의 전쟁", "eventEn": "War in heaven - Michael vs dragon"},
+        {"verse": 17, "eventKo": "용이 여자의 자손과 싸움", "eventEn": "Dragon wars against her offspring"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "두 짐승",
+      "titleEn": "The Two Beasts",
+      "summaryKo": "바다에서 짐승과 땅에서 짐승이 올라와 경배를 받으며, 666이 등장합니다.",
+      "summaryEn": "A beast from the sea and a beast from the earth demand worship; 666 appears.",
+      "messageKo": "적그리스도의 세력이 경배를 강요하지만, 성도는 인내와 믿음을 지켜야 합니다.",
+      "messageEn": "Antichrist forces demand worship, but saints must hold to patience and faith.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "바다에서 나온 짐승", "eventEn": "Beast from the sea"},
+        {"verse": 11, "eventKo": "땅에서 나온 짐승 (거짓 선지자)", "eventEn": "Beast from the earth (false prophet)"},
+        {"verse": 18, "eventKo": "짐승의 수 666", "eventEn": "Number of the beast 666"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "어린양과 십사만 사천",
+      "titleEn": "The Lamb and 144,000",
+      "summaryKo": "어린양이 시온 산에 서시고, 천사들이 심판의 메시지를 선포합니다.",
+      "summaryEn": "The Lamb stands on Mount Zion; angels proclaim messages of judgment.",
+      "messageKo": "영원한 복음을 선포하고, 짐승을 경배하는 자들에게 심판이 임합니다.",
+      "messageEn": "The eternal gospel is proclaimed; judgment comes on those who worship the beast.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "시온 산의 십사만 사천", "eventEn": "144,000 on Mount Zion"},
+        {"verse": 7, "eventKo": "영원한 복음", "eventEn": "Eternal gospel"},
+        {"verse": 13, "eventKo": "주 안에서 죽는 자는 복이 있다", "eventEn": "Blessed are the dead in the Lord"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "일곱 대접",
+      "titleEn": "Seven Bowls",
+      "summaryKo": "일곱 대접 재앙을 가진 천사들이 나타나고, 성도들이 승리의 노래를 부릅니다.",
+      "summaryEn": "Angels with seven bowl plagues appear; saints sing the song of victory.",
+      "messageKo": "짐승을 이긴 자들이 하나님의 의로우신 행위를 찬양합니다.",
+      "messageEn": "Those who conquered the beast sing praise to God's righteous acts.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "마지막 일곱 재앙", "eventEn": "Seven last plagues"},
+        {"verse": 3, "eventKo": "모세의 노래와 어린양의 노래", "eventEn": "Song of Moses and the Lamb"},
+        {"verse": 8, "eventKo": "하나님의 영광으로 성전이 가득", "eventEn": "Temple filled with God's glory"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "일곱 대접 재앙",
+      "titleEn": "Seven Bowl Judgments",
+      "summaryKo": "일곱 대접이 쏟아지고, 땅, 바다, 물, 해, 어둠, 유프라테스, 지진 재앙이 내립니다.",
+      "summaryEn": "Seven bowls poured out, bringing plagues on earth, sea, waters, sun, darkness, Euphrates, and earthquake.",
+      "messageKo": "하나님의 진노가 완성되며, 아마겟돈 전쟁이 준비됩니다.",
+      "messageEn": "God's wrath is complete; the battle of Armageddon is prepared.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "바다가 피가 됨", "eventEn": "Sea turns to blood"},
+        {"verse": 12, "eventKo": "유프라테스 강이 마름", "eventEn": "Euphrates dried up"},
+        {"verse": 16, "eventKo": "아마겟돈", "eventEn": "Armageddon"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "큰 음녀",
+      "titleEn": "The Great Prostitute",
+      "summaryKo": "큰 음녀 바벨론과 그녀가 탄 붉은 짐승의 비밀이 설명됩니다.",
+      "summaryEn": "The mystery of the great prostitute Babylon and the beast she rides is revealed.",
+      "messageKo": "세상의 부패한 시스템은 결국 멸망하며, 어린양이 이기십니다.",
+      "messageEn": "The world's corrupt system will fall; the Lamb will overcome.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "큰 바벨론", "eventEn": "Babylon the Great"},
+        {"verse": 9, "eventKo": "일곱 머리는 일곱 산", "eventEn": "Seven heads are seven hills"},
+        {"verse": 14, "eventKo": "어린양이 이기리니", "eventEn": "Lamb will overcome"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "바벨론의 멸망",
+      "titleEn": "Fall of Babylon",
+      "summaryKo": "큰 성 바벨론이 심판받아 무너지고, 왕들과 상인들이 애곡합니다.",
+      "summaryEn": "Great city Babylon falls in judgment; kings and merchants mourn her destruction.",
+      "messageKo": "세상의 부귀영화는 한 시간에 무너지니, 하나님의 백성은 그에게서 나오라.",
+      "messageEn": "Worldly wealth and glory fall in one hour; God's people must come out of her.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바벨론이 무너졌도다", "eventEn": "Fallen, fallen is Babylon"},
+        {"verse": 4, "eventKo": "내 백성아, 그에게서 나오라", "eventEn": "Come out of her, my people"},
+        {"verse": 20, "eventKo": "하늘이여 기뻐하라", "eventEn": "Rejoice, O heaven"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "어린양의 혼인 잔치",
+      "titleEn": "The Wedding Supper",
+      "summaryKo": "하늘에서 할렐루야 찬양이 울리고, 백마 탄 왕이 짐승을 물리치십니다.",
+      "summaryEn": "Heaven erupts in hallelujah; the rider on the white horse defeats the beast.",
+      "messageKo": "할렐루야! 전능하신 하나님이 통치하시며, 어린양의 혼인 잔치가 왔습니다.",
+      "messageEn": "Hallelujah! The Almighty reigns; the wedding supper of the Lamb has come.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "할렐루야, 전능하신 하나님이 통치하신다", "eventEn": "Hallelujah, the Lord reigns"},
+        {"verse": 7, "eventKo": "어린양의 혼인 잔치", "eventEn": "Wedding of the Lamb"},
+        {"verse": 16, "eventKo": "왕의 왕, 주의 주", "eventEn": "King of kings, Lord of lords"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "천년왕국과 최후 심판",
+      "titleEn": "Millennium and Final Judgment",
+      "summaryKo": "사탄이 천 년간 묶이고, 성도들이 통치하며, 최후 심판이 있습니다.",
+      "summaryEn": "Satan bound for 1000 years; saints reign; final judgment at the great white throne.",
+      "messageKo": "성도는 그리스도와 함께 통치하며, 생명책에 기록되지 않은 자는 심판받습니다.",
+      "messageEn": "Saints reign with Christ; those not in the book of life face judgment.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "용을 천 년간 결박", "eventEn": "Dragon bound 1000 years"},
+        {"verse": 4, "eventKo": "성도들의 천년 통치", "eventEn": "Saints reign 1000 years"},
+        {"verse": 12, "eventKo": "큰 백보좌 심판", "eventEn": "Great white throne judgment"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "새 하늘과 새 땅",
+      "titleEn": "New Heaven and New Earth",
+      "summaryKo": "새 하늘과 새 땅이 나타나고, 새 예루살렘이 하늘에서 내려옵니다.",
+      "summaryEn": "A new heaven and new earth appear; the New Jerusalem descends from heaven.",
+      "messageKo": "하나님이 우리와 함께 거하시며, 더 이상 눈물, 사망, 고통이 없습니다.",
+      "messageEn": "God dwells with us; there will be no more tears, death, or pain.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "새 하늘과 새 땅", "eventEn": "New heaven and new earth"},
+        {"verse": 4, "eventKo": "모든 눈물을 씻기시고 사망이 없음", "eventEn": "No more tears, death, pain"},
+        {"verse": 23, "eventKo": "어린양이 등불이심", "eventEn": "Lamb is the lamp"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "생명수의 강",
+      "titleEn": "River of Life",
+      "summaryKo": "생명수의 강과 생명나무가 있는 영원한 도성, 그리고 예수의 재림 약속입니다.",
+      "summaryEn": "The river of life and tree of life in the eternal city; Christ promises to return.",
+      "messageKo": "주 예수께서 속히 오시니, 아멘 주 예수여 오시옵소서!",
+      "messageEn": "The Lord Jesus is coming soon; Amen, come Lord Jesus!",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "생명수의 강", "eventEn": "River of the water of life"},
+        {"verse": 12, "eventKo": "보라 내가 속히 오리니", "eventEn": "Behold, I am coming soon"},
+        {"verse": 20, "eventKo": "아멘, 주 예수여 오시옵소서", "eventEn": "Amen. Come, Lord Jesus"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

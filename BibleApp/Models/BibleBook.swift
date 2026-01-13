@@ -4,6 +4,8 @@ struct BibleBook: Identifiable, Equatable {
     let id: String
     let nameEn: String
     let nameKr: String
+    let abbrEn: String      // Standard English abbreviation (e.g., "Gen", "Exo")
+    let abbrKr: String      // Standard Korean abbreviation (e.g., "창", "출")
     let apiName: String
     let chapterCount: Int
     let order: Int
@@ -29,8 +31,8 @@ struct BibleBook: Identifiable, Equatable {
     
     func abbreviation(for language: LanguageMode) -> String {
         switch language {
-        case .en: return String(nameEn.prefix(3)).uppercased()
-        case .kr: return String(nameKr.prefix(2))
+        case .en: return abbrEn
+        case .kr: return abbrKr
         }
     }
 }

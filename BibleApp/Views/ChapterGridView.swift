@@ -16,8 +16,8 @@ struct ChapterGridView: View {
     // Cell dimensions
     private let cellHeight: CGFloat = 56
     private let cellSpacing: CGFloat = 10
-    private let headerHeight: CGFloat = 100  // Title + subtitle + padding
-    private let summaryHeight: CGFloat = 140  // Summary + message section
+    private let headerHeight: CGFloat = 120  // Title + subtitle + padding (with doubled bottom)
+    private let summaryHeight: CGFloat = 250  // Summary + message section (17pt font with increased line height)
     
     private var book: BibleBook {
         currentBook ?? viewModel.currentBook
@@ -65,7 +65,7 @@ struct ChapterGridView: View {
     // MARK: - Swipeable Content
     private var swipeableContent: some View {
         VStack(spacing: 0) {
-            // Book title
+            // Book title (fixed header)
             VStack(spacing: 8) {
                 Text(book.name(for: viewModel.languageMode))
                     .font(theme.display(28, language: viewModel.languageMode))
@@ -76,16 +76,9 @@ struct ChapterGridView: View {
                     .foregroundStyle(theme.textSecondary)
             }
             .padding(.top, 20)
-            .padding(.bottom, 16)
+            .padding(.bottom, 24)
             
-            // Book summary and message
-            if let summary = bookSummary {
-                bookSummarySection(summary)
-                    .padding(.horizontal, 24)
-                    .padding(.bottom, 24)
-            }
-            
-            // Chapter grid
+            // Scrollable content (summary + chapters)
             chapterGrid
         }
         .frame(maxWidth: .infinity)
@@ -93,27 +86,36 @@ struct ChapterGridView: View {
     
     // MARK: - Book Summary Section
     private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 18) {
             // Summary
             Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
-                .font(.system(size: 15, weight: .regular))
+                .font(theme.verseText(17, language: viewModel.languageMode))
                 .foregroundStyle(theme.textSecondary)
-                .lineSpacing(5)
+                .lineSpacing(7)
             
             // Key message
             Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
-                .font(.system(size: 15, weight: .regular))
+                .font(theme.verseText(17, language: viewModel.languageMode))
                 .foregroundStyle(theme.textSecondary)
-                .lineSpacing(5)
+                .lineSpacing(7)
         }
         .multilineTextAlignment(.leading)
     }
     
-    // MARK: - Chapter Grid
+    // MARK: - Chapter Grid (includes summary/message)
     private var chapterGrid: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                VStack {
+                VStack(spacing: 0) {
+                    // Book summary and message (scrollable)
+                    if let summary = bookSummary {
+                        bookSummarySection(summary)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding(.horizontal, 20)
+                            .padding(.bottom, 32)
+                    }
+                    
+                    // Chapter grid
                     LazyVGrid(columns: columns, spacing: 10) {
                         ForEach(1...book.chapterCount, id: \.self) { chapter in
                             ChapterCell(
@@ -134,8 +136,8 @@ struct ChapterGridView: View {
                         }
                     }
                     .frame(maxWidth: 350)
+                    .frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity)
                 .padding(.bottom, 40)
             }
             .onAppear {
@@ -289,7 +291,7 @@ struct FullscreenChapterGridView: View {
     // MARK: - Swipeable Content
     private var swipeableContent: some View {
         VStack(spacing: 0) {
-            // Book title and chapter count
+            // Book title and chapter count (fixed header)
             VStack(spacing: 8) {
                 Text(currentBook.name(for: viewModel.languageMode))
                     .font(theme.display(28, language: viewModel.languageMode))
@@ -300,19 +302,21 @@ struct FullscreenChapterGridView: View {
                     .foregroundStyle(theme.textSecondary)
             }
             .padding(.top, topPadding + 20)
-            .padding(.bottom, 16)
+            .padding(.bottom, 24)
             
-            // Book summary and message
-            if let summary = bookSummary {
-                bookSummarySection(summary)
-                    .padding(.horizontal, 24)
-                    .padding(.bottom, 24)
-            }
-            
-            // Chapter grid
+            // Scrollable content (summary + chapters)
             ScrollViewReader { proxy in
                 ScrollView {
-                    VStack {
+                    VStack(spacing: 0) {
+                        // Book summary and message (scrollable)
+                        if let summary = bookSummary {
+                            bookSummarySection(summary)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 20)
+                                .padding(.bottom, 32)
+                        }
+                        
+                        // Chapter grid
                         LazyVGrid(columns: columns, spacing: 10) {
                             ForEach(1...currentBook.chapterCount, id: \.self) { chapter in
                                 ChapterCell(
@@ -328,8 +332,8 @@ struct FullscreenChapterGridView: View {
                             }
                         }
                         .frame(maxWidth: 350)
+                        .frame(maxWidth: .infinity)
                     }
-                    .frame(maxWidth: .infinity)
                     .padding(.bottom, 100)
                 }
                 .onAppear {
@@ -347,18 +351,18 @@ struct FullscreenChapterGridView: View {
     
     // MARK: - Book Summary Section
     private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(alignment: .leading, spacing: 18) {
             // Summary
             Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
-                .font(.system(size: 15, weight: .regular))
+                .font(theme.verseText(17, language: viewModel.languageMode))
                 .foregroundStyle(theme.textSecondary)
-                .lineSpacing(5)
+                .lineSpacing(7)
             
             // Key message
             Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
-                .font(.system(size: 15, weight: .regular))
+                .font(theme.verseText(17, language: viewModel.languageMode))
                 .foregroundStyle(theme.textSecondary)
-                .lineSpacing(5)
+                .lineSpacing(7)
         }
         .multilineTextAlignment(.leading)
     }

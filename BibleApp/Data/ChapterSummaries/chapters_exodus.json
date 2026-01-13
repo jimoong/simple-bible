@@ -1,0 +1,608 @@
+{
+  "bookId": "exodus",
+  "bookNumber": 2,
+  "bookNameKo": "출애굽기",
+  "bookNameEn": "Exodus",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "이스라엘의 고난",
+      "titleEn": "Israel's Oppression",
+      "summaryKo": "요셉 이후 애굽에서 이스라엘 백성이 번성하지만, 새 바로에 의해 압제를 받습니다.",
+      "summaryEn": "Israel multiplies in Egypt but faces oppression under a new Pharaoh.",
+      "messageKo": "하나님의 백성은 압제 속에서도 번성하며, 고난이 구원의 서막이 됩니다.",
+      "messageEn": "God's people flourish even under oppression; suffering becomes the prelude to salvation.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "요셉을 알지 못하는 왕", "eventEn": "New king who didn't know Joseph"},
+        {"verse": 14, "eventKo": "고된 노동", "eventEn": "Harsh labor imposed"},
+        {"verse": 22, "eventKo": "남자 아이 살해 명령", "eventEn": "Order to kill male babies"}
+      ],
+      "timelineYear": "BC 1526경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "모세의 탄생",
+      "titleEn": "Birth of Moses",
+      "summaryKo": "모세가 태어나 바로의 딸에게 양육되고, 성장 후 미디안으로 도망갑니다.",
+      "summaryEn": "Moses is born, raised by Pharaoh's daughter, and flees to Midian.",
+      "messageKo": "하나님은 구원자를 예비하시며, 인간의 환경을 초월하여 일하십니다.",
+      "messageEn": "God prepares a deliverer and works beyond human circumstances.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "갈대상자에 놓임", "eventEn": "Placed in a basket"},
+        {"verse": 10, "eventKo": "바로의 공주가 양자로 삼음", "eventEn": "Adopted by Pharaoh's daughter"},
+        {"verse": 15, "eventKo": "미디안으로 도망", "eventEn": "Flees to Midian"}
+      ],
+      "timelineYear": "BC 1526경"
+    },
+    {
+      "chapter": 3,
+      "titleKo": "불붙는 떨기나무",
+      "titleEn": "The Burning Bush",
+      "summaryKo": "하나님께서 떨기나무 불꽃 가운데서 모세를 부르시고 이스라엘을 인도할 사명을 주십니다.",
+      "summaryEn": "God calls Moses from the burning bush and commissions him to deliver Israel.",
+      "messageKo": "하나님은 스스로 존재하시는 분이며, 고통받는 자의 부르짖음을 들으십니다.",
+      "messageEn": "God is the self-existent One who hears the cries of the suffering.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "타지 않는 떨기나무", "eventEn": "Bush burns but not consumed"},
+        {"verse": 6, "eventKo": "아브라함의 하나님", "eventEn": "God of Abraham, Isaac, Jacob"},
+        {"verse": 14, "eventKo": "나는 스스로 있는 자", "eventEn": "I AM WHO I AM"}
+      ],
+      "timelineYear": "BC 1446경"
+    },
+    {
+      "chapter": 4,
+      "titleKo": "모세의 변명과 표징",
+      "titleEn": "Moses' Objections and Signs",
+      "summaryKo": "모세가 변명하지만 하나님께서 표징을 주시고, 아론을 대변자로 세우십니다.",
+      "summaryEn": "Moses objects, but God gives signs and appoints Aaron as spokesman.",
+      "messageKo": "하나님은 우리의 부족함을 아시고 필요한 것을 공급하십니다.",
+      "messageEn": "God knows our inadequacies and supplies what we need.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "지팡이가 뱀이 됨", "eventEn": "Staff becomes a snake"},
+        {"verse": 14, "eventKo": "아론이 대변자가 됨", "eventEn": "Aaron appointed spokesman"},
+        {"verse": 24, "eventKo": "할례 사건", "eventEn": "Circumcision incident"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "바로에게 나아감",
+      "titleEn": "Moses Before Pharaoh",
+      "summaryKo": "모세가 바로에게 백성을 보내라 요구하지만, 오히려 노동이 가중됩니다.",
+      "summaryEn": "Moses demands Israel's release, but Pharaoh increases their burden.",
+      "messageKo": "순종이 당장 쉬운 결과를 가져오지 않더라도 하나님의 계획을 신뢰해야 합니다.",
+      "messageEn": "We must trust God's plan even when obedience doesn't bring immediate relief.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "내 백성을 보내라", "eventEn": "Let my people go"},
+        {"verse": 7, "eventKo": "짚을 주지 말라", "eventEn": "No more straw"},
+        {"verse": 21, "eventKo": "백성이 모세를 원망함", "eventEn": "People blame Moses"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "하나님의 약속",
+      "titleEn": "God's Promise Renewed",
+      "summaryKo": "하나님께서 모세에게 언약을 재확인하시고, 레위 족보가 기록됩니다.",
+      "summaryEn": "God reaffirms His covenant with Moses; genealogy of Levi is recorded.",
+      "messageKo": "하나님은 여호와, 약속을 지키시는 분이며 반드시 구원을 이루십니다.",
+      "messageEn": "God is Yahweh, the covenant-keeping God who will surely accomplish salvation.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "나는 여호와라", "eventEn": "I am the LORD"},
+        {"verse": 6, "eventKo": "네 가지 약속", "eventEn": "Four promises of redemption"},
+        {"verse": 12, "eventKo": "모세의 재차 변명", "eventEn": "Moses objects again"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "첫 번째 재앙 - 피",
+      "titleEn": "First Plague - Blood",
+      "summaryKo": "아론의 지팡이가 뱀이 되고, 나일강이 피로 변하는 첫 번째 재앙이 내립니다.",
+      "summaryEn": "Aaron's staff becomes a snake; the first plague turns the Nile to blood.",
+      "messageKo": "하나님은 애굽의 신들보다 높으시며, 강퍅한 마음에 심판을 내리십니다.",
+      "messageEn": "God is greater than Egypt's gods and brings judgment on hardened hearts.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "지팡이가 뱀이 됨", "eventEn": "Staff becomes a serpent"},
+        {"verse": 17, "eventKo": "나일강이 피로 변함", "eventEn": "Nile turns to blood"},
+        {"verse": 22, "eventKo": "바로의 마음이 강퍅해짐", "eventEn": "Pharaoh's heart hardened"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "개구리, 이, 파리 재앙",
+      "titleEn": "Frogs, Gnats, Flies",
+      "summaryKo": "두 번째부터 네 번째 재앙: 개구리, 이, 파리가 애굽을 뒤덮습니다.",
+      "summaryEn": "Second through fourth plagues: frogs, gnats, and flies cover Egypt.",
+      "messageKo": "하나님만이 재앙을 주시고 거두실 수 있으며, 이것은 하나님의 손입니다.",
+      "messageEn": "Only God can send and remove plagues; this is the finger of God.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "개구리 재앙", "eventEn": "Plague of frogs"},
+        {"verse": 17, "eventKo": "이 재앙", "eventEn": "Plague of gnats"},
+        {"verse": 24, "eventKo": "파리 재앙", "eventEn": "Plague of flies"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "가축, 악성 종기, 우박 재앙",
+      "titleEn": "Livestock, Boils, Hail",
+      "summaryKo": "다섯 번째부터 일곱 번째 재앙: 가축 염병, 악성 종기, 우박이 내립니다.",
+      "summaryEn": "Fifth through seventh plagues: livestock disease, boils, and hail strike Egypt.",
+      "messageKo": "하나님은 자기 백성을 구별하여 보호하시며, 온 땅에 그분 같은 이가 없습니다.",
+      "messageEn": "God distinguishes and protects His people; there is none like Him in all the earth.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "가축 염병", "eventEn": "Plague on livestock"},
+        {"verse": 10, "eventKo": "악성 종기", "eventEn": "Plague of boils"},
+        {"verse": 23, "eventKo": "우박 재앙", "eventEn": "Plague of hail"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "메뚜기, 흑암 재앙",
+      "titleEn": "Locusts and Darkness",
+      "summaryKo": "여덟 번째 메뚜기와 아홉 번째 흑암 재앙이 내립니다.",
+      "summaryEn": "Eighth and ninth plagues: locusts devour everything; darkness covers the land.",
+      "messageKo": "하나님은 자녀들에게 빛을 주시며, 세상의 어둠 속에서도 구별하십니다.",
+      "messageEn": "God gives light to His children and distinguishes them even in worldly darkness.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "메뚜기 재앙", "eventEn": "Plague of locusts"},
+        {"verse": 22, "eventKo": "사흘간의 흑암", "eventEn": "Three days of darkness"},
+        {"verse": 28, "eventKo": "바로가 모세를 추방", "eventEn": "Pharaoh banishes Moses"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "장자 재앙 예고",
+      "titleEn": "Warning of the Final Plague",
+      "summaryKo": "마지막 열 번째 재앙인 장자의 죽음이 예고됩니다.",
+      "summaryEn": "God announces the final plague: death of the firstborn.",
+      "messageKo": "하나님의 심판은 확실하며, 그분께 순종하는 자만 면합니다.",
+      "messageEn": "God's judgment is certain; only those who obey Him are spared.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "마지막 재앙 예고", "eventEn": "Final plague announced"},
+        {"verse": 5, "eventKo": "모든 장자가 죽을 것", "eventEn": "Every firstborn will die"},
+        {"verse": 7, "eventKo": "이스라엘은 보호됨", "eventEn": "Israel protected"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "유월절",
+      "titleEn": "The Passover",
+      "summaryKo": "유월절이 제정되고, 어린양의 피로 장자 재앙을 피하며 출애굽이 시작됩니다.",
+      "summaryEn": "Passover is instituted; the lamb's blood saves Israel; the Exodus begins.",
+      "messageKo": "어린양의 피는 심판을 통과하게 하며, 이는 그리스도를 예표합니다.",
+      "messageEn": "The blood of the lamb allows passage through judgment, foreshadowing Christ.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "문설주에 피를 바름", "eventEn": "Blood on doorposts"},
+        {"verse": 29, "eventKo": "장자 재앙", "eventEn": "Death of firstborn"},
+        {"verse": 41, "eventKo": "430년 만에 출애굽", "eventEn": "Exodus after 430 years"}
+      ],
+      "timelineYear": "BC 1446경"
+    },
+    {
+      "chapter": 13,
+      "titleKo": "장자 성별과 출발",
+      "titleEn": "Consecration and Departure",
+      "summaryKo": "장자를 하나님께 드리는 규례가 정해지고, 이스라엘이 출발합니다.",
+      "summaryEn": "Firstborn are consecrated to God; Israel departs, led by cloud and fire.",
+      "messageKo": "하나님은 낮과 밤으로 인도하시며, 구원받은 자는 그분께 속합니다.",
+      "messageEn": "God guides day and night; the redeemed belong to Him.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "장자 성별", "eventEn": "Firstborn consecrated"},
+        {"verse": 17, "eventKo": "광야 길로 인도", "eventEn": "Led by the wilderness way"},
+        {"verse": 21, "eventKo": "구름 기둥과 불 기둥", "eventEn": "Pillar of cloud and fire"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "홍해를 건너다",
+      "titleEn": "Crossing the Red Sea",
+      "summaryKo": "하나님께서 홍해를 갈라 이스라엘을 건너게 하시고, 애굽 군대를 물리치십니다.",
+      "summaryEn": "God parts the Red Sea; Israel crosses; the Egyptian army is destroyed.",
+      "messageKo": "두려워 말고 가만히 서서 하나님의 구원을 보라; 그분이 싸우십니다.",
+      "messageEn": "Fear not, stand firm, and see God's salvation; the LORD will fight for you.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "두려워 말고 가만히 서라", "eventEn": "Stand firm and see salvation"},
+        {"verse": 21, "eventKo": "바다가 갈라짐", "eventEn": "Sea parts"},
+        {"verse": 28, "eventKo": "애굽 군대 전멸", "eventEn": "Egyptian army destroyed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "승리의 노래",
+      "titleEn": "Song of Victory",
+      "summaryKo": "모세와 백성이 승리의 노래를 부르고, 마라에서 쓴 물을 달게 합니다.",
+      "summaryEn": "Moses and Israel sing a song of triumph; bitter water is made sweet at Marah.",
+      "messageKo": "하나님은 치료자이시며, 승리 후에 찬양으로 응답해야 합니다.",
+      "messageEn": "God is our healer; we must respond to victory with praise.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "모세의 승리의 노래", "eventEn": "Song of Moses"},
+        {"verse": 20, "eventKo": "미리암의 찬송", "eventEn": "Miriam's song"},
+        {"verse": 25, "eventKo": "마라의 쓴 물", "eventEn": "Bitter water at Marah"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "만나와 메추라기",
+      "titleEn": "Manna and Quail",
+      "summaryKo": "하나님께서 광야에서 만나와 메추라기로 백성을 먹이십니다.",
+      "summaryEn": "God provides manna and quail to feed Israel in the wilderness.",
+      "messageKo": "하나님은 날마다 필요를 공급하시며, 그분의 말씀이 우리의 양식입니다.",
+      "messageEn": "God supplies our daily needs; His word is our bread.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "하늘에서 양식을 내리리라", "eventEn": "Bread from heaven"},
+        {"verse": 13, "eventKo": "메추라기가 옴", "eventEn": "Quail arrive"},
+        {"verse": 31, "eventKo": "만나라 부름", "eventEn": "They called it manna"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "반석에서 물이 나다",
+      "titleEn": "Water from the Rock",
+      "summaryKo": "반석에서 물이 나오고, 아말렉과의 전쟁에서 승리합니다.",
+      "summaryEn": "Water flows from the rock; Israel defeats Amalek with Moses' raised hands.",
+      "messageKo": "그리스도는 우리의 반석이시며, 기도하는 손을 통해 승리합니다.",
+      "messageEn": "Christ is our rock; victory comes through uplifted hands of prayer.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "반석을 쳐서 물을 냄", "eventEn": "Water from the rock"},
+        {"verse": 11, "eventKo": "모세의 손을 들면 승리", "eventEn": "Victory when Moses' hands raised"},
+        {"verse": 15, "eventKo": "여호와 닛시", "eventEn": "The LORD is my Banner"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "이드로의 방문",
+      "titleEn": "Jethro's Visit",
+      "summaryKo": "장인 이드로가 모세를 찾아와 재판 제도를 조언합니다.",
+      "summaryEn": "Moses' father-in-law Jethro visits and advises on delegating judgment.",
+      "messageKo": "지혜로운 조언을 받아들이고, 함께 일할 동역자를 세워야 합니다.",
+      "messageEn": "Accept wise counsel and raise up co-workers to share the burden.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "이드로가 하나님을 찬양", "eventEn": "Jethro praises God"},
+        {"verse": 18, "eventKo": "이드로의 조언", "eventEn": "Jethro's advice"},
+        {"verse": 25, "eventKo": "재판관 임명", "eventEn": "Judges appointed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "시내산 도착",
+      "titleEn": "Arrival at Sinai",
+      "summaryKo": "이스라엘이 시내산에 도착하고, 하나님께서 백성과 만나실 것을 예비하십니다.",
+      "summaryEn": "Israel arrives at Sinai; God prepares to meet with the people.",
+      "messageKo": "하나님의 백성은 제사장 나라요 거룩한 백성으로 부름받았습니다.",
+      "messageEn": "God's people are called to be a kingdom of priests and a holy nation.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "제사장 나라, 거룩한 백성", "eventEn": "Kingdom of priests, holy nation"},
+        {"verse": 16, "eventKo": "나팔 소리와 하나님의 임재", "eventEn": "Thunder, lightning, trumpet"},
+        {"verse": 20, "eventKo": "하나님이 시내산에 강림", "eventEn": "God descends on Sinai"}
+      ],
+      "timelineYear": "BC 1446경"
+    },
+    {
+      "chapter": 20,
+      "titleKo": "십계명",
+      "titleEn": "The Ten Commandments",
+      "summaryKo": "하나님께서 십계명을 선포하시고, 백성이 두려워 멀리 섭니다.",
+      "summaryEn": "God proclaims the Ten Commandments; the people tremble in fear.",
+      "messageKo": "십계명은 하나님과 이웃을 사랑하는 삶의 기초입니다.",
+      "messageEn": "The Ten Commandments are the foundation for loving God and neighbor.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "제1계명: 다른 신을 두지 말라", "eventEn": "1st: No other gods"},
+        {"verse": 7, "eventKo": "제3계명: 이름을 망령되이 부르지 말라", "eventEn": "3rd: Do not misuse God's name"},
+        {"verse": 12, "eventKo": "제5계명: 부모를 공경하라", "eventEn": "5th: Honor your parents"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "종에 관한 법",
+      "titleEn": "Laws About Servants",
+      "summaryKo": "종, 상해, 손해배상 등 사회 정의에 관한 율법이 주어집니다.",
+      "summaryEn": "Laws concerning servants, personal injury, and compensation are given.",
+      "messageKo": "하나님의 율법은 모든 사람의 존엄성과 정의를 보호합니다.",
+      "messageEn": "God's law protects the dignity and justice of all people.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "히브리 종 규례", "eventEn": "Hebrew servant laws"},
+        {"verse": 23, "eventKo": "눈은 눈으로, 이는 이로", "eventEn": "Eye for eye, tooth for tooth"},
+        {"verse": 28, "eventKo": "가축 관련 규례", "eventEn": "Ox regulations"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "재산과 사회 규례",
+      "titleEn": "Property and Social Laws",
+      "summaryKo": "도둑질, 재산 손해, 사회적 책임에 관한 규례가 주어집니다.",
+      "summaryEn": "Laws about theft, property damage, and social responsibilities are given.",
+      "messageKo": "하나님은 약자를 보호하시며, 정직한 삶을 요구하십니다.",
+      "messageEn": "God protects the vulnerable and requires honest living.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "도둑에 대한 배상", "eventEn": "Restitution for theft"},
+        {"verse": 21, "eventKo": "나그네를 압제하지 말라", "eventEn": "Do not oppress foreigners"},
+        {"verse": 25, "eventKo": "가난한 자에게 이자를 받지 말라", "eventEn": "No interest to the poor"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "정의와 절기",
+      "titleEn": "Justice and Feasts",
+      "summaryKo": "공정한 재판, 안식일, 세 절기에 관한 규례가 주어집니다.",
+      "summaryEn": "Laws about justice, Sabbath, and three annual feasts are given.",
+      "messageKo": "정의를 행하고 하나님 앞에 나아가 절기를 지키는 것이 신앙입니다.",
+      "messageEn": "Faith means practicing justice and appearing before God to observe feasts.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "다수를 따라 악을 행하지 말라", "eventEn": "Do not follow the crowd in evil"},
+        {"verse": 14, "eventKo": "세 절기", "eventEn": "Three annual feasts"},
+        {"verse": 20, "eventKo": "천사를 보내어 인도하리라", "eventEn": "Angel to guide you"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "언약 확인",
+      "titleEn": "Covenant Confirmed",
+      "summaryKo": "백성이 언약에 동의하고, 모세가 시내산에 40일간 올라갑니다.",
+      "summaryEn": "The people agree to the covenant; Moses ascends Sinai for 40 days.",
+      "messageKo": "언약은 말씀에 대한 순종의 약속이며, 피로 인침됩니다.",
+      "messageEn": "The covenant is a promise to obey God's word, sealed with blood.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "백성이 한 목소리로 응답", "eventEn": "People respond with one voice"},
+        {"verse": 8, "eventKo": "언약의 피", "eventEn": "Blood of the covenant"},
+        {"verse": 18, "eventKo": "40일간 산에 머묾", "eventEn": "40 days on the mountain"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "성막 예물",
+      "titleEn": "Offerings for the Tabernacle",
+      "summaryKo": "성막 건축을 위한 예물과 언약궤, 떡 상, 등대의 설계가 주어집니다.",
+      "summaryEn": "Instructions for tabernacle offerings, the ark, table, and lampstand.",
+      "messageKo": "하나님은 우리 가운데 거하시기를 원하시며, 자원하는 마음을 기뻐하십니다.",
+      "messageEn": "God desires to dwell among us and delights in willing hearts.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "자원하는 마음으로 예물을", "eventEn": "Freewill offerings"},
+        {"verse": 10, "eventKo": "언약궤 설계", "eventEn": "Design of the ark"},
+        {"verse": 31, "eventKo": "등대 설계", "eventEn": "Design of the lampstand"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "성막 구조",
+      "titleEn": "Tabernacle Structure",
+      "summaryKo": "성막의 휘장, 널판, 덮개 등 구조에 대한 지시가 주어집니다.",
+      "summaryEn": "Detailed instructions for the tabernacle's curtains, frames, and coverings.",
+      "messageKo": "하나님은 예배의 모든 세부사항까지 관심을 가지십니다.",
+      "messageEn": "God cares about every detail of worship.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "성막 휘장", "eventEn": "Tabernacle curtains"},
+        {"verse": 15, "eventKo": "널판 구조", "eventEn": "Upright frames"},
+        {"verse": 31, "eventKo": "휘장으로 지성소 구분", "eventEn": "Veil separates Holy of Holies"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "제단과 뜰",
+      "titleEn": "Altar and Courtyard",
+      "summaryKo": "번제단과 성막 뜰, 그리고 등불에 관한 지시가 주어집니다.",
+      "summaryEn": "Instructions for the altar of burnt offering, courtyard, and lamp oil.",
+      "messageKo": "제단은 죄인이 하나님께 나아가는 길이며, 빛은 끊이지 않아야 합니다.",
+      "messageEn": "The altar is how sinners approach God; the light must never go out.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "번제단", "eventEn": "Altar of burnt offering"},
+        {"verse": 9, "eventKo": "성막 뜰", "eventEn": "Courtyard"},
+        {"verse": 20, "eventKo": "순수한 감람유", "eventEn": "Pure olive oil for lamp"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "제사장 의복",
+      "titleEn": "Priestly Garments",
+      "summaryKo": "대제사장 아론과 그 아들들의 의복에 관한 지시가 주어집니다.",
+      "summaryEn": "Instructions for the garments of Aaron and his sons as priests.",
+      "messageKo": "제사장은 하나님 앞에서 백성을 대표하며 거룩함을 입어야 합니다.",
+      "messageEn": "Priests represent the people before God and must be clothed in holiness.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "제사장 의복 목록", "eventEn": "List of priestly garments"},
+        {"verse": 15, "eventKo": "판결 흉패", "eventEn": "Breastpiece of judgment"},
+        {"verse": 36, "eventKo": "거룩하면 금패", "eventEn": "Holy to the LORD gold plate"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "제사장 위임식",
+      "titleEn": "Consecration of Priests",
+      "summaryKo": "제사장 위임식의 절차와 매일 드릴 번제에 관한 지시가 주어집니다.",
+      "summaryEn": "Instructions for consecrating priests and the daily burnt offerings.",
+      "messageKo": "하나님을 섬기려면 먼저 거룩하게 구별되어야 합니다.",
+      "messageEn": "To serve God, one must first be set apart as holy.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "관유를 부음", "eventEn": "Anointing with oil"},
+        {"verse": 20, "eventKo": "오른쪽 귀와 엄지에 피를 바름", "eventEn": "Blood on ear and thumb"},
+        {"verse": 38, "eventKo": "매일의 번제", "eventEn": "Daily burnt offering"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "분향단과 물두멍",
+      "titleEn": "Incense Altar and Basin",
+      "summaryKo": "분향단, 인구조사 속전, 물두멍, 관유, 향에 관한 지시가 주어집니다.",
+      "summaryEn": "Instructions for the incense altar, census ransom, basin, oil, and incense.",
+      "messageKo": "기도는 향처럼 하나님께 올라가며, 모든 영혼은 값으로 구속됩니다.",
+      "messageEn": "Prayer rises to God like incense; every soul is redeemed at a price.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "분향단", "eventEn": "Altar of incense"},
+        {"verse": 18, "eventKo": "물두멍", "eventEn": "Bronze basin"},
+        {"verse": 23, "eventKo": "거룩한 관유", "eventEn": "Holy anointing oil"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "브살렐과 안식일",
+      "titleEn": "Bezalel and the Sabbath",
+      "summaryKo": "하나님께서 브살렐과 오홀리압을 성막 건축 장인으로 부르시고, 안식일을 강조하십니다.",
+      "summaryEn": "God appoints Bezalel and Oholiab as craftsmen; the Sabbath is emphasized.",
+      "messageKo": "하나님은 기술과 재능도 주시며, 안식일은 하나님과의 언약 표징입니다.",
+      "messageEn": "God gives skills and talents; the Sabbath is a sign of covenant with God.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "브살렐이 부름받음", "eventEn": "Bezalel called"},
+        {"verse": 13, "eventKo": "안식일 준수", "eventEn": "Sabbath observance"},
+        {"verse": 18, "eventKo": "돌판 두 개를 주심", "eventEn": "Two stone tablets given"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "금송아지",
+      "titleEn": "The Golden Calf",
+      "summaryKo": "백성이 금송아지를 만들어 우상 숭배하고, 모세가 돌판을 깨뜨립니다.",
+      "summaryEn": "Israel makes a golden calf; Moses breaks the tablets in anger.",
+      "messageKo": "우상숭배는 언약을 깨뜨리는 것이며, 중보자의 기도가 필요합니다.",
+      "messageEn": "Idolatry breaks the covenant; intercessory prayer is needed.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "금송아지를 만듦", "eventEn": "Golden calf made"},
+        {"verse": 19, "eventKo": "모세가 돌판을 깨뜨림", "eventEn": "Moses breaks the tablets"},
+        {"verse": 28, "eventKo": "레위인들의 심판", "eventEn": "Levites execute judgment"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 33,
+      "titleKo": "모세의 중보",
+      "titleEn": "Moses Intercedes",
+      "summaryKo": "하나님께서 직접 가지 않겠다 하시나, 모세의 간구로 동행을 약속하십니다.",
+      "summaryEn": "God threatens not to go with Israel, but Moses intercedes for God's presence.",
+      "messageKo": "하나님의 임재가 우리를 다른 백성과 구별하며, 그것이 가장 중요합니다.",
+      "messageEn": "God's presence distinguishes us from all other people; it is what matters most.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "하나님과 모세의 대화", "eventEn": "God speaks with Moses face to face"},
+        {"verse": 14, "eventKo": "내 얼굴이 함께 가리라", "eventEn": "My presence will go with you"},
+        {"verse": 18, "eventKo": "주의 영광을 보이소서", "eventEn": "Show me your glory"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 34,
+      "titleKo": "새 돌판",
+      "titleEn": "New Tablets",
+      "summaryKo": "하나님께서 새 돌판을 주시고, 자비의 속성을 선포하시며, 언약을 새롭게 하십니다.",
+      "summaryEn": "God gives new tablets, proclaims His compassion, and renews the covenant.",
+      "messageKo": "하나님은 긍휼과 은혜가 풍성하시며, 실패 후에도 새 출발을 주십니다.",
+      "messageEn": "God is rich in mercy and grace, giving new beginnings even after failure.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "하나님의 자비 선포", "eventEn": "Proclamation of God's mercy"},
+        {"verse": 28, "eventKo": "십계명을 다시 기록", "eventEn": "Ten Commandments rewritten"},
+        {"verse": 29, "eventKo": "모세의 얼굴이 빛남", "eventEn": "Moses' face shines"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 35,
+      "titleKo": "성막 건축 시작",
+      "titleEn": "Building the Tabernacle Begins",
+      "summaryKo": "모세가 안식일을 다시 명하고, 백성이 성막을 위해 자원하여 예물을 드립니다.",
+      "summaryEn": "Moses reaffirms the Sabbath; the people bring freewill offerings for the tabernacle.",
+      "messageKo": "마음에 감동받은 자가 자원하여 드리는 것이 참된 헌신입니다.",
+      "messageEn": "True devotion is freewill giving from a stirred heart.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "안식일 규례 재확인", "eventEn": "Sabbath reaffirmed"},
+        {"verse": 21, "eventKo": "마음에 감동받은 자들이 예물을 가져옴", "eventEn": "Stirred hearts bring offerings"},
+        {"verse": 30, "eventKo": "브살렐과 오홀리압 소개", "eventEn": "Bezalel and Oholiab introduced"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 36,
+      "titleKo": "성막 제작",
+      "titleEn": "Tabernacle Construction",
+      "summaryKo": "장인들이 성막의 휘장과 구조물을 만들기 시작합니다.",
+      "summaryEn": "Craftsmen begin making the tabernacle curtains and structure.",
+      "messageKo": "백성의 넘치는 헌신은 하나님의 일을 완성합니다.",
+      "messageEn": "The overflowing devotion of God's people accomplishes His work.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "예물이 넘침", "eventEn": "More than enough offerings"},
+        {"verse": 8, "eventKo": "휘장 제작", "eventEn": "Curtains made"},
+        {"verse": 20, "eventKo": "널판 제작", "eventEn": "Frames made"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 37,
+      "titleKo": "성막 기구 제작",
+      "titleEn": "Tabernacle Furnishings",
+      "summaryKo": "언약궤, 속죄소, 떡 상, 등대, 분향단이 만들어집니다.",
+      "summaryEn": "The ark, mercy seat, table, lampstand, and incense altar are made.",
+      "messageKo": "성막의 모든 기구는 그리스도를 가리키는 그림자입니다.",
+      "messageEn": "Every furnishing of the tabernacle points to Christ as a shadow.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "언약궤 제작", "eventEn": "Ark made"},
+        {"verse": 17, "eventKo": "등대 제작", "eventEn": "Lampstand made"},
+        {"verse": 25, "eventKo": "분향단 제작", "eventEn": "Incense altar made"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 38,
+      "titleKo": "제단과 뜰 제작",
+      "titleEn": "Altar and Courtyard Made",
+      "summaryKo": "번제단, 물두멍, 뜰이 만들어지고, 사용된 재료의 총계가 기록됩니다.",
+      "summaryEn": "The altar, basin, and courtyard are made; materials are accounted for.",
+      "messageKo": "하나님의 일에는 정직한 청지기 정신이 필요합니다.",
+      "messageEn": "God's work requires honest stewardship.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "번제단 제작", "eventEn": "Altar made"},
+        {"verse": 8, "eventKo": "물두멍 제작", "eventEn": "Basin made"},
+        {"verse": 24, "eventKo": "재료 총계", "eventEn": "Total of materials"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 39,
+      "titleKo": "제사장 의복 제작",
+      "titleEn": "Priestly Garments Made",
+      "summaryKo": "제사장 의복이 완성되고, 모든 성막 작업이 지시대로 완료됩니다.",
+      "summaryEn": "Priestly garments are completed; all tabernacle work finished as commanded.",
+      "messageKo": "하나님의 명령대로 순종할 때 축복이 임합니다.",
+      "messageEn": "Blessing comes when we obey exactly as God commands.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "거룩한 의복 제작", "eventEn": "Holy garments made"},
+        {"verse": 30, "eventKo": "거룩하면 금패 제작", "eventEn": "Gold plate made"},
+        {"verse": 43, "eventKo": "모세가 모든 것을 검토하고 축복", "eventEn": "Moses inspects and blesses"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 40,
+      "titleKo": "성막 봉헌",
+      "titleEn": "Tabernacle Erected",
+      "summaryKo": "성막이 세워지고, 하나님의 영광이 성막을 가득 채웁니다.",
+      "summaryEn": "The tabernacle is set up, and God's glory fills it.",
+      "messageKo": "하나님께서 우리 가운데 거하실 때, 그분의 영광이 충만합니다.",
+      "messageEn": "When God dwells among us, His glory fills the place.",
+      "keyEvents": [
+        {"verse": 17, "eventKo": "성막을 세움", "eventEn": "Tabernacle erected"},
+        {"verse": 34, "eventKo": "구름이 성막을 덮음", "eventEn": "Cloud covers tabernacle"},
+        {"verse": 38, "eventKo": "밤에는 불, 낮에는 구름", "eventEn": "Fire by night, cloud by day"}
+      ],
+      "timelineYear": "BC 1445경"
+    }
+  ]
+}
