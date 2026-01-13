@@ -12,6 +12,8 @@ struct ChapterInfoPanel: View {
     var maxHeight: CGFloat = .infinity
     var safeAreaTop: CGFloat = 0
     
+    @State private var measuredHeight: CGFloat = 0
+    
     private var book: BibleBook {
         viewModel.currentBook
     }
@@ -30,24 +32,6 @@ struct ChapterInfoPanel: View {
     
     private var verseCount: Int {
         viewModel.verses.count
-    }
-    
-    // Calculate content height based on whether we have chapter data
-    private var contentHeight: CGFloat {
-        let headerHeight: CGFloat = 100  // Title + subtitle
-        let contentPadding: CGFloat = 60  // Top and bottom padding
-        
-        if chapterSummary != nil {
-            // With summary: estimate based on content
-            let summaryHeight: CGFloat = 280  // Summary + message with padding
-            let totalHeight = safeAreaTop + headerHeight + summaryHeight + contentPadding
-            return min(totalHeight, maxHeight)
-        } else {
-            // Empty state
-            let emptyHeight: CGFloat = 100
-            let totalHeight = safeAreaTop + headerHeight + emptyHeight + contentPadding
-            return min(totalHeight, maxHeight)
-        }
     }
     
     var body: some View {
@@ -83,9 +67,19 @@ struct ChapterInfoPanel: View {
                     }
                 }
                 .padding(.bottom, 40)
+                .background(
+                    GeometryReader { geo in
+                        Color.clear.onAppear {
+                            measuredHeight = geo.size.height
+                        }
+                        .onChange(of: geo.size.height) { _, newValue in
+                            measuredHeight = newValue
+                        }
+                    }
+                )
             }
         }
-        .frame(height: contentHeight)
+        .frame(height: min(measuredHeight, maxHeight))
     }
     
     // MARK: - Title
@@ -114,20 +108,81 @@ struct ChapterInfoPanel: View {
     
     // MARK: - Chapter Content Section
     private func chapterContentSection(_ summary: ChapterSummary) -> some View {
-        VStack(alignment: .leading, spacing: 18) {
-            // Summary
-            Text(summary.summary(for: viewModel.languageMode))
-                .font(theme.verseText(17, language: viewModel.languageMode))
-                .foregroundStyle(theme.textSecondary)
-                .lineSpacing(7)
+        VStack(alignment: .leading, spacing: 32) {
+            VStack(alignment: .leading, spacing: 18) {
+                // Summary
+                Text(summary.summary(for: viewModel.languageMode))
+                    .font(theme.verseText(17, language: viewModel.languageMode))
+                    .foregroundStyle(theme.textSecondary)
+                    .lineSpacing(7)
+                
+                // Key message
+                Text(summary.message(for: viewModel.languageMode))
+                    .font(theme.verseText(17, language: viewModel.languageMode))
+                    .foregroundStyle(theme.textSecondary)
+                    .lineSpacing(7)
+            }
             
-            // Key message
-            Text(summary.message(for: viewModel.languageMode))
-                .font(theme.verseText(17, language: viewModel.languageMode))
-                .foregroundStyle(theme.textSecondary)
-                .lineSpacing(7)
+            // Key Events
+            if !summary.keyEvents.isEmpty {
+                keyEventsSection(summary.keyEvents)
+            }
         }
         .multilineTextAlignment(.leading)
+    }
+    
+    // MARK: - Key Events Section
+    private func keyEventsSection(_ events: [ChapterKeyEvent]) -> some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text(viewModel.languageMode == .kr ? "주요 사건" : "Key events")
+                .font(.system(size: 14, weight: .bold))
+                .foregroundStyle(theme.accent)
+            
+            VStack(alignment: .leading, spacing: 1) {
+                ForEach(Array(events.enumerated()), id: \.offset) { index, event in
+                    Button {
+                        Task {
+                            // Map verse number to index (typically verse - 1)
+                            let verseIndex = max(0, event.verse - 1)
+                            await viewModel.navigateTo(
+                                book: book, 
+                                chapter: chapter, 
+                                verse: verseIndex
+                            )
+                        }
+                    } label: {
+                        HStack(alignment: .top, spacing: 16) {
+                            Text("\(event.verse)")
+                                .font(theme.verseNumber(14, language: viewModel.languageMode))
+                                .foregroundStyle(theme.accent)
+                                .frame(width: 28, alignment: .leading)
+                                .padding(.top, 2)
+                            
+                            Text(event.event(for: viewModel.languageMode))
+                                .font(theme.verseText(17, language: viewModel.languageMode))
+                                .foregroundStyle(theme.textPrimary)
+                                .lineSpacing(4)
+                                .multilineTextAlignment(.leading)
+                            
+                            Spacer()
+                        }
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 12)
+                        .background(
+                            UnevenRoundedRectangle(
+                                topLeadingRadius: index == 0 ? 16 : 0,
+                                bottomLeadingRadius: index == events.count - 1 ? 16 : 0,
+                                bottomTrailingRadius: index == events.count - 1 ? 16 : 0,
+                                topTrailingRadius: index == 0 ? 16 : 0,
+                                style: .continuous
+                            )
+                            .fill(Color.black.opacity(0.2))
+                        )
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+        }
     }
     
     // MARK: - Empty State

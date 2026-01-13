@@ -14,8 +14,8 @@ struct BookTheme {
     // MARK: - Font Methods
     
     /// Verse number font
-    func verseNumber(_ size: CGFloat = 15, language: LanguageMode = .en) -> Font {
-        fontFor(size: size, weight: .bold, design: titleFont, language: language)
+    func verseNumber(_ size: CGFloat = 15, weight: Font.Weight = .regular, language: LanguageMode = .en) -> Font {
+        fontFor(size: size, weight: weight, design: titleFont, language: language)
     }
     
     /// Main verse text font - respects theme's bodyFont design for both languages
