@@ -159,17 +159,17 @@ struct ExpandableFAB: View {
                 
                 // Toggle indicator
                 HStack(spacing: 6) {
-                    Text("EN")
-                        .font(.system(size: 16, weight: languageMode == .en ? .bold : .regular))
-                        .foregroundStyle(languageMode == .en ? .white : .white.opacity(0.4))
+                    Text("KR")
+                        .font(.system(size: 16, weight: languageMode == .kr ? .bold : .regular))
+                        .foregroundStyle(languageMode == .kr ? .white : .white.opacity(0.4))
                     
                     Text("/")
                         .font(.system(size: 16))
                         .foregroundStyle(.white.opacity(0.25))
                     
-                    Text("KR")
-                        .font(.system(size: 16, weight: languageMode == .kr ? .bold : .regular))
-                        .foregroundStyle(languageMode == .kr ? .white : .white.opacity(0.4))
+                    Text("EN")
+                        .font(.system(size: 16, weight: languageMode == .en ? .bold : .regular))
+                        .foregroundStyle(languageMode == .en ? .white : .white.opacity(0.4))
                 }
                 
                 Spacer()

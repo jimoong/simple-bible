@@ -1,8 +1,8 @@
 import Foundation
 
 enum LanguageMode: String, CaseIterable {
-    case en
     case kr
+    case en
     
     var apiVersion: String {
         switch self {
