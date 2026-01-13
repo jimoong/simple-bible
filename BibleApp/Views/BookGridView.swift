@@ -116,7 +116,7 @@ struct BookGridView: View {
             // Bottom bar - always visible
             bottomBar
                 .padding(.horizontal, 24)
-                .padding(.bottom, safeAreaBottom - 4)
+                .padding(.bottom, safeAreaBottom + 8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.black)

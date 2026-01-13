@@ -174,7 +174,7 @@ struct ContentView: View {
                             )
                         }
                         .padding(.horizontal, 24)
-                        .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
+                        .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
                     }
                     .ignoresSafeArea()
                     .zIndex(3)

@@ -32,7 +32,7 @@ struct TimelineMetadata: Codable {
     }
 }
 
-struct LocalizedText: Codable {
+struct LocalizedText: Codable, Equatable {
     let ko: String
     let en: String
     
@@ -44,7 +44,7 @@ struct LocalizedText: Codable {
     }
 }
 
-struct TimelineItem: Codable, Identifiable {
+struct TimelineItem: Codable, Identifiable, Equatable {
     let id: String
     let type: TimelineItemType
     let startYear: Int
@@ -55,6 +55,10 @@ struct TimelineItem: Codable, Identifiable {
     let category: String?
     let bookId: Int?
     let relatedHistoricalEvents: [String]?
+    
+    static func == (lhs: TimelineItem, rhs: TimelineItem) -> Bool {
+        lhs.id == rhs.id
+    }
     
     enum CodingKeys: String, CodingKey {
         case id, type, title, description, testament, category

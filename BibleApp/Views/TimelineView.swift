@@ -538,6 +538,14 @@ struct TimelineDetailSheet: View {
 
 // MARK: - Embeddable Timeline Content View (without bottom bar)
 
+// Preference key to track visible eras
+private struct VisibleEraPreferenceKey: PreferenceKey {
+    static var defaultValue: [String: CGFloat] = [:]
+    static func reduce(value: inout [String: CGFloat], nextValue: () -> [String: CGFloat]) {
+        value.merge(nextValue()) { _, new in new }
+    }
+}
+
 struct BibleTimelineContentView: View {
     let languageMode: LanguageMode
     var topPadding: CGFloat = 0
@@ -548,6 +556,10 @@ struct BibleTimelineContentView: View {
     @State private var timelineItems: [TimelineItem] = []
     @State private var eras: [TimelineItem] = []
     @State private var selectedItem: TimelineItem? // For historical events only
+    @State private var hasRestoredScrollPosition = false
+    
+    // Persist scroll position
+    @AppStorage("timelineScrollEraId") private var savedEraId: String = ""
     
     // Layout constants
     private let axisWidth: CGFloat = 2
@@ -600,6 +612,21 @@ struct BibleTimelineContentView: View {
                         .padding(.bottom, 120)  // Space for bottom bar
                 }
             }
+            .coordinateSpace(name: "timelineScroll")
+            .onPreferenceChange(VisibleEraPreferenceKey.self) { eraPositions in
+                // Find the era closest to the top (within visible range)
+                // Save scroll position when era changes (only when not searching)
+                guard searchText.isEmpty, hasRestoredScrollPosition else { return }
+                
+                let visibleThreshold: CGFloat = 200 // Consider eras within 200pt of top as visible
+                let topVisibleEra = eraPositions
+                    .filter { $0.value < visibleThreshold && $0.value > -500 }
+                    .min { $0.value < $1.value }
+                
+                if let eraId = topVisibleEra?.key {
+                    savedEraId = eraId
+                }
+            }
             .onChange(of: searchText) { _, newValue in
                 // Scroll to first matching Bible book when searching
                 // Use custom anchor to account for safe area and title
@@ -607,6 +634,17 @@ struct BibleTimelineContentView: View {
                     withAnimation(.easeOut(duration: 0.3)) {
                         proxy.scrollTo("book_\(firstBook.id)", anchor: UnitPoint(x: 0.5, y: 0.15))
                     }
+                }
+            }
+            .onChange(of: eras) { _, _ in
+                // Restore scroll position after data loads
+                if !savedEraId.isEmpty && !hasRestoredScrollPosition {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        proxy.scrollTo(savedEraId, anchor: UnitPoint(x: 0.5, y: 0.15))
+                        hasRestoredScrollPosition = true
+                    }
+                } else {
+                    hasRestoredScrollPosition = true
                 }
             }
         }
@@ -664,6 +702,14 @@ struct BibleTimelineContentView: View {
             // Era header
             eraHeader(era)
                 .id(era.id)
+                .background(
+                    GeometryReader { geo in
+                        Color.clear.preference(
+                            key: VisibleEraPreferenceKey.self,
+                            value: [era.id: geo.frame(in: .named("timelineScroll")).minY]
+                        )
+                    }
+                )
             
             // Items grouped by year
             ForEach(yearGroups, id: \.year) { group in
