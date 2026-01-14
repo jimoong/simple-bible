@@ -103,28 +103,6 @@ actor BibleAPIService {
             .filter { $0 > 0 }  // Exclude verse 0 (titles/superscriptions)
             .sorted()
         
-        // Debug: Log verse numbers for troubleshooting Numbers navigation issue
-        #if DEBUG
-        if book.id == "numbers" && chapter == 1 {
-            let primaryNums = primaryVerses.map { $0.verse }.sorted()
-            let secondaryNums = secondaryVerses.map { $0.verse }.sorted()
-            let around23 = allVerseNumbers.filter { $0 >= 20 && $0 <= 26 }
-            
-            print("\n" + String(repeating: "=", count: 50))
-            print("🔍 NUMBERS 1 DEBUG")
-            print(String(repeating: "=", count: 50))
-            print("Primary (\(primaryTranslationId)): \(primaryNums.count) verses, first=\(primaryNums.first ?? -1)")
-            print("Secondary (\(secondaryTranslationId)): \(secondaryNums.count) verses, first=\(secondaryNums.first ?? -1)")
-            print("Verses 20-26: \(around23)")
-            if !allVerseNumbers.contains(23) {
-                print("⚠️ VERSE 23 IS MISSING!")
-            }
-            if primaryNums.first == 0 || secondaryNums.first == 0 {
-                print("⚠️ Had verse 0 (filtered out)")
-            }
-            print(String(repeating: "=", count: 50) + "\n")
-        }
-        #endif
         
         // Build verse list
         var verses: [BibleVerse] = []

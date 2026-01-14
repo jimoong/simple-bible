@@ -77,47 +77,19 @@ struct SlotMachineView: View {
             }
         }
         .onChange(of: scrollPosition) { oldValue, newValue in
-            // Debug logging for Numbers navigation issue
-            #if DEBUG
-            if viewModel.currentBook.id == "numbers" && viewModel.currentChapter == 1 {
-                print("📜 scrollPosition changed: \(String(describing: oldValue)) → \(String(describing: newValue)), isNavigating=\(viewModel.isNavigating)")
-            }
-            #endif
-            
             // Only sync to viewModel if not scrubbing and not navigating (scrubber updates both directly)
             // isNavigating prevents race conditions when navigateTo is setting the verse index
             if !isScrubbing, !viewModel.isNavigating, let newValue, newValue != viewModel.currentVerseIndex {
-                #if DEBUG
-                if viewModel.currentBook.id == "numbers" && viewModel.currentChapter == 1 {
-                    print("⚠️ onVerseSnap called with \(newValue) (currentVerseIndex was \(viewModel.currentVerseIndex))")
-                }
-                #endif
                 viewModel.onVerseSnap(to: newValue)
             }
         }
         .onChange(of: viewModel.currentVerseIndex) { oldValue, newValue in
-            // Debug logging for Numbers navigation issue
-            #if DEBUG
-            if viewModel.currentBook.id == "numbers" && viewModel.currentChapter == 1 {
-                if newValue < viewModel.verses.count {
-                    let verse = viewModel.verses[newValue]
-                    print("📺 currentVerseIndex changed: \(oldValue) → \(newValue), verseNumber=\(verse.verseNumber), scrollPosition=\(String(describing: scrollPosition))")
-                }
-            }
-            #endif
-            
             if scrollPosition != newValue {
                 // Set immediately without animation to ensure correct positioning
-                // Animation was causing visual glitches where wrong verse was shown
                 scrollPosition = newValue
             }
         }
         .task {
-            #if DEBUG
-            if viewModel.currentBook.id == "numbers" && viewModel.currentChapter == 1 {
-                print("🚀 SlotMachineView .task started, scrollPosition=\(String(describing: scrollPosition)), currentVerseIndex=\(viewModel.currentVerseIndex), isNavigating=\(viewModel.isNavigating)")
-            }
-            #endif
             await viewModel.loadCurrentChapter()
         }
     }
