@@ -77,6 +77,12 @@ actor OfflineStorageService {
         return fileManager.fileExists(atPath: filePath.path)
     }
     
+    /// Delete a chapter from local storage
+    func deleteChapter(translationId: String, bookId: String, chapter: Int) async {
+        let filePath = chapterFilePath(translationId: translationId, bookId: bookId, chapter: chapter)
+        try? fileManager.removeItem(at: filePath)
+    }
+    
     // MARK: - Translation Download Status
     
     /// Get download progress for a translation (0.0 - 1.0)

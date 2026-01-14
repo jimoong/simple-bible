@@ -48,6 +48,9 @@ final class BibleViewModel {
     // Target verse for scroll navigation (used in scroll mode)
     var targetVerseNumber: Int? = nil
     
+    // Flag to prevent race conditions during navigation
+    var isNavigating: Bool = false
+    
     // For chapter transition animation
     var transitionDirection: TransitionDirection = .none
     
@@ -255,6 +258,9 @@ final class BibleViewModel {
     }
     
     func navigateTo(book: BibleBook, chapter: Int, verse: Int = 0) async {
+        // Set navigating flag to prevent race conditions with ScrollView snapping
+        isNavigating = true
+        
         currentBook = book
         currentChapter = chapter
         showBookshelf = false
@@ -274,6 +280,12 @@ final class BibleViewModel {
         } else {
             currentVerseIndex = 0
             targetVerseNumber = nil
+        }
+        
+        // Clear navigating flag after a short delay to allow ScrollView to settle
+        Task {
+            try? await Task.sleep(for: .milliseconds(300))
+            isNavigating = false
         }
     }
     

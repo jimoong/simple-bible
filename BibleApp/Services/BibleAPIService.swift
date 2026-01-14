@@ -97,7 +97,33 @@ actor BibleAPIService {
         print("📖 Primary (\(primaryTranslationId)): \(primaryVerses.count), Secondary (\(secondaryTranslationId)): \(secondaryVerses.count)")
         
         // Determine which has more verses (use as base)
-        let allVerseNumbers = Set(primaryVerses.map { $0.verse } + secondaryVerses.map { $0.verse }).sorted()
+        // Filter out verse 0 (title/superscription) as it causes offset issues in navigation
+        let allVerseNumbers = Set(primaryVerses.map { $0.verse } + secondaryVerses.map { $0.verse })
+            .filter { $0 > 0 }  // Exclude verse 0 (titles/superscriptions)
+            .sorted()
+        
+        // Debug: Log verse numbers for troubleshooting
+        #if DEBUG
+        if book.id == "numbers" && chapter == 1 {
+            let primaryNums = primaryVerses.map { $0.verse }.sorted()
+            let secondaryNums = secondaryVerses.map { $0.verse }.sorted()
+            print("🔍 Numbers 1 - Primary (\(primaryTranslationId)) verse numbers: \(primaryNums.prefix(5))...\(primaryNums.suffix(5))")
+            print("🔍 Numbers 1 - Secondary (\(secondaryTranslationId)) verse numbers: \(secondaryNums.prefix(5))...\(secondaryNums.suffix(5))")
+            print("🔍 Numbers 1 - Combined (filtered) verse numbers: \(allVerseNumbers.prefix(5))...\(allVerseNumbers.suffix(5))")
+            
+            // Check for missing verses around 23
+            if !allVerseNumbers.contains(23) {
+                print("⚠️ Numbers 1 is MISSING verse 23!")
+            }
+            // Check for verse 0
+            if primaryNums.first == 0 || secondaryNums.first == 0 {
+                print("⚠️ Numbers 1 had verse 0 (title verse) - filtered out to prevent offset issues")
+            }
+            // Log verses around 22-24
+            let around23 = allVerseNumbers.filter { $0 >= 20 && $0 <= 26 }
+            print("🔍 Numbers 1 - Verses around 23: \(around23)")
+        }
+        #endif
         
         // Build verse list
         var verses: [BibleVerse] = []
@@ -209,6 +235,30 @@ actor BibleAPIService {
     func clearCache() {
         cache.removeAll()
         print("🗑 Cache cleared")
+    }
+    
+    /// Clear cache for a specific chapter (including offline storage)
+    func clearChapterCache(book: BibleBook, chapter: Int) async {
+        // Clear in-memory cache entries for this chapter
+        let keysToRemove = cache.keys.filter { $0.hasPrefix("\(book.id)-\(chapter)-") }
+        for key in keysToRemove {
+            cache.removeValue(forKey: key)
+        }
+        
+        // Clear offline storage for both translations
+        loadSavedTranslations()
+        await OfflineStorageService.shared.deleteChapter(
+            translationId: primaryTranslationId,
+            bookId: book.id,
+            chapter: chapter
+        )
+        await OfflineStorageService.shared.deleteChapter(
+            translationId: secondaryTranslationId,
+            bookId: book.id,
+            chapter: chapter
+        )
+        
+        print("🗑 Cleared cache for \(book.id) chapter \(chapter)")
     }
     
     /// Prefetch adjacent chapters

@@ -326,11 +326,38 @@ struct SettingsView: View {
     }
     
     // MARK: - Developer Section
+    @State private var showClearCacheConfirmation = false
+    
     private var developerSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             sectionHeader(title: isKoreanUI ? "개발자" : "Developer")
             
             VStack(spacing: 0) {
+                // Clear Cache (for debugging verse navigation issues)
+                Button {
+                    HapticManager.shared.selection()
+                    showClearCacheConfirmation = true
+                } label: {
+                    HStack {
+                        Text(isKoreanUI ? "캐시 지우기" : "Clear Cache")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white.opacity(0.85))
+                        
+                        Spacer()
+                        
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.white.opacity(0.4))
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                }
+                .buttonStyle(.plain)
+                
+                Divider()
+                    .background(.white.opacity(0.06))
+                    .padding(.leading, 16)
+                
                 // Clear All Data
                 Button {
                     HapticManager.shared.selection()
@@ -353,6 +380,14 @@ struct SettingsView: View {
                     .fill(.white.opacity(0.04))
             )
         }
+        .alert(isKoreanUI ? "캐시 지우기" : "Clear Cache", isPresented: $showClearCacheConfirmation) {
+            Button(isKoreanUI ? "취소" : "Cancel", role: .cancel) { }
+            Button(isKoreanUI ? "지우기" : "Clear", role: .destructive) {
+                clearCache()
+            }
+        } message: {
+            Text(isKoreanUI ? "다운로드한 성경 데이터 캐시를 지웁니다. 앱이 데이터를 다시 다운로드합니다." : "This will clear cached Bible data. The app will re-download data as needed.")
+        }
         .alert(isKoreanUI ? "모든 정보 삭제" : "Clear All Data", isPresented: $showClearDataConfirmation) {
             Button(isKoreanUI ? "취소" : "Cancel", role: .cancel) { }
             Button(isKoreanUI ? "삭제" : "Clear", role: .destructive) {
@@ -360,6 +395,24 @@ struct SettingsView: View {
             }
         } message: {
             Text(isKoreanUI ? "모든 읽기 진행 상황, 기록, 저장된 구절이 삭제됩니다. 이 작업은 되돌릴 수 없습니다." : "This will clear all reading progress, toast history, and saved verses. This action cannot be undone.")
+        }
+    }
+    
+    private func clearCache() {
+        Task {
+            // Clear in-memory cache
+            await BibleAPIService.shared.clearCache()
+            
+            // Clear current chapter cache to force reload
+            await BibleAPIService.shared.clearChapterCache(
+                book: viewModel.currentBook,
+                chapter: viewModel.currentChapter
+            )
+            
+            // Reload current chapter
+            await viewModel.reloadCurrentChapter()
+            
+            HapticManager.shared.success()
         }
     }
     

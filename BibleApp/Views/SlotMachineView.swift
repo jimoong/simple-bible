@@ -77,8 +77,9 @@ struct SlotMachineView: View {
             }
         }
         .onChange(of: scrollPosition) { oldValue, newValue in
-            // Only sync to viewModel if not scrubbing (scrubber updates both directly)
-            if !isScrubbing, let newValue, newValue != viewModel.currentVerseIndex {
+            // Only sync to viewModel if not scrubbing and not navigating (scrubber updates both directly)
+            // isNavigating prevents race conditions when navigateTo is setting the verse index
+            if !isScrubbing, !viewModel.isNavigating, let newValue, newValue != viewModel.currentVerseIndex {
                 viewModel.onVerseSnap(to: newValue)
             }
         }

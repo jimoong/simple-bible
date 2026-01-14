@@ -218,12 +218,11 @@ struct ChapterInfoPanel: View {
             ForEach(events) { event in
                     Button {
                         Task {
-                            // Map verse number to index (typically verse - 1)
-                            let verseIndex = max(0, event.verse - 1)
+                            // Pass actual verse number (navigateTo handles finding the index)
                             await viewModel.navigateTo(
                                 book: book, 
                                 chapter: chapter, 
-                                verse: verseIndex
+                                verse: event.verse
                             )
                         }
                     } label: {
