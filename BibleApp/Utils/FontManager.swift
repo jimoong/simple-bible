@@ -63,23 +63,14 @@ enum FontManager {
         
         if let fontName = serifFonts[targetWeight],
            UIFont(name: fontName, size: size) != nil {
-            #if DEBUG
-            print("🔤 Using serif: \(fontName)")
-            #endif
             return .custom(fontName, size: size)
         }
         
         // Fallback to AppleMyungjo
         if UIFont(name: appleMyungjo, size: size) != nil {
-            #if DEBUG
-            print("🔤 Serif fallback: AppleMyungjo")
-            #endif
             return .custom(appleMyungjo, size: size)
         }
         
-        #if DEBUG
-        print("🔤 Serif fallback: system serif")
-        #endif
         return .system(size: size, weight: weight, design: .serif)
     }
     
@@ -90,23 +81,16 @@ enum FontManager {
         
         if let fontName = sansFonts[targetWeight],
            UIFont(name: fontName, size: size) != nil {
-            #if DEBUG
-            print("🔤 Using sans: \(fontName)")
-            #endif
             return .custom(fontName, size: size)
         }
         
         // Fallback to Apple SD Gothic Neo
         let sdGothicName = appleSDGothicName(for: weight)
         if UIFont(name: sdGothicName, size: size) != nil {
-            #if DEBUG
-            print("🔤 Sans fallback: \(sdGothicName)")
-            #endif
             return .custom(sdGothicName, size: size)
         }
         
-        #if DEBUG
-        print("🔤 Sans fallback: system default")
+        #if false  // Disabled: too verbose
         #endif
         return .system(size: size, weight: weight, design: .default)
     }

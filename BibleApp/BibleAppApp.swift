@@ -4,10 +4,8 @@ import SwiftUI
 struct BibleAppApp: App {
     
     init() {
-        // Debug: print font status
-        #if DEBUG
-        FontManager.debugPrintFontStatus()
-        #endif
+        // Uncomment to debug font loading issues:
+        // FontManager.debugPrintFontStatus()
     }
     
     var body: some Scene {
