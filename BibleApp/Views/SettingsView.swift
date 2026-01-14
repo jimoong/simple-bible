@@ -213,8 +213,12 @@ struct SettingsView: View {
     }
     
     private func refreshDownloadCount() async {
-        let downloaded = await OfflineStorageService.shared.getDownloadedTranslations()
-        downloadedCount = downloaded.count
+        await DownloadManager.shared.refreshDownloadedTranslations()
+        // Only count completed downloads (not auto-cached chapters)
+        downloadedCount = DownloadManager.shared.downloadStates.values.filter { state in
+            if case .completed = state { return true }
+            return false
+        }.count
     }
     
     // MARK: - Reading Section

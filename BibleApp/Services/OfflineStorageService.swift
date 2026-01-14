@@ -197,4 +197,16 @@ struct OfflineVerse: Codable {
     let pk: Int
     let verse: Int
     let text: String
+    
+    /// Create a cleaned version of this verse (removes Strong's numbers)
+    var cleaned: OfflineVerse {
+        OfflineVerse(pk: pk, verse: verse, text: Self.cleanText(text))
+    }
+    
+    /// Clean text by removing Strong's concordance numbers (e.g., <S>7225</S>)
+    static func cleanText(_ text: String) -> String {
+        text.replacingOccurrences(of: "<S>\\d+</S>", with: "", options: .regularExpression)
+            .replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+    }
 }

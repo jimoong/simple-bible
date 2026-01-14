@@ -101,9 +101,9 @@ final class DownloadManager {
             
             if progress >= 1.0 {
                 downloadStates[translationId] = .completed
-            } else if downloadStates[translationId]?.isDownloading != true {
-                downloadStates[translationId] = .paused(progress: progress)
             }
+            // Don't auto-set "paused" state for auto-cached chapters
+            // Only keep existing downloading/paused states from user-initiated downloads
         }
     }
     
@@ -179,11 +179,14 @@ final class DownloadManager {
                         chapter: chapter
                     )
                     
+                    // Clean Strong's numbers before saving
+                    let cleanedVerses = verses.map { $0.cleaned }
+                    
                     try await OfflineStorageService.shared.saveChapter(
                         translationId: translationId,
                         bookId: book.id,
                         chapter: chapter,
-                        verses: verses
+                        verses: cleanedVerses
                     )
                     
                     downloadedCount += 1

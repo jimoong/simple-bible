@@ -25,6 +25,13 @@ struct BollsVerseResponse: Codable {
     let pk: Int
     let verse: Int
     let text: String
+    
+    /// Clean text by removing Strong's concordance numbers (e.g., <S>7225</S>)
+    var cleanText: String {
+        text.replacingOccurrences(of: "<S>\\d+</S>", with: "", options: .regularExpression)
+            .replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+    }
 }
 
 actor BibleAPIService {
@@ -94,8 +101,8 @@ actor BibleAPIService {
         var verses: [BibleVerse] = []
         
         for verseNum in allVerseNumbers {
-            let primaryText = primaryVerses.first(where: { $0.verse == verseNum })?.text ?? ""
-            let secondaryText = secondaryVerses.first(where: { $0.verse == verseNum })?.text ?? ""
+            let primaryText = primaryVerses.first(where: { $0.verse == verseNum })?.cleanText ?? ""
+            let secondaryText = secondaryVerses.first(where: { $0.verse == verseNum })?.cleanText ?? ""
             
             // Determine which text goes to textKr and textEn based on primary language
             let primaryLangCode = UserDefaults.standard.string(forKey: "primaryLanguageCode") ?? "ko"
@@ -144,9 +151,9 @@ actor BibleAPIService {
         do {
             let verses = try await fetchTranslationChapter(book: book, chapter: chapter, translationId: translationId)
             
-            // 3. Save to offline storage for future use
+            // 3. Save to offline storage for future use (with cleaned text)
             Task {
-                let offlineVerses = verses.map { OfflineVerse(pk: $0.pk, verse: $0.verse, text: $0.text) }
+                let offlineVerses = verses.map { OfflineVerse(pk: $0.pk, verse: $0.verse, text: $0.cleanText) }
                 try? await OfflineStorageService.shared.saveChapter(
                     translationId: translationId,
                     bookId: book.id,
