@@ -303,9 +303,10 @@ final class BibleViewModel {
             targetVerseNumber = nil
         }
         
-        // Clear navigating flag after a short delay to allow ScrollView to settle
+        // Clear navigating flag after ScrollView settles
+        // Increased from 300ms to 800ms to prevent cascading snaps
         Task {
-            try? await Task.sleep(for: .milliseconds(300))
+            try? await Task.sleep(for: .milliseconds(800))
             isNavigating = false
         }
     }
