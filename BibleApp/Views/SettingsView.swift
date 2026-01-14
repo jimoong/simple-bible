@@ -344,10 +344,6 @@ struct SettingsView: View {
                             .foregroundStyle(.white.opacity(0.85))
                         
                         Spacer()
-                        
-                        Image(systemName: "arrow.triangle.2.circlepath")
-                            .font(.system(size: 14))
-                            .foregroundStyle(.white.opacity(0.4))
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
