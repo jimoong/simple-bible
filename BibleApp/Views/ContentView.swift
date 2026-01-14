@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var showFavoritesInBookshelf = false  // Inline in bookshelf (same level as chapter grid)
     @State private var selectedVerseForMenu: BibleVerse? = nil
     @State private var editingFavorite: FavoriteVerse? = nil
+    @State private var isFavoritesFilterExpanded = false  // Hide back button when filter menu is open
     
     // Search mode
     @State private var openSearchOnBookshelf = false  // Open bookshelf with search mode active
@@ -191,7 +192,8 @@ struct ContentView: View {
                                         textEn: favorite.textEn,
                                         textKr: favorite.textKr
                                     )
-                                }
+                                },
+                                isFilterExpanded: $isFavoritesFilterExpanded
                             )
                             .transition(.opacity)
                         }
@@ -459,6 +461,7 @@ struct ContentView: View {
     private var leftActionButtons: some View {
         if isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf) {
             // In fullscreen chapters or favorites - show back button
+            // Hide when favorites filter menu is expanded
             actionButton(icon: "chevron.left") {
                 withAnimation(.easeInOut(duration: 0.25)) {
                     if showFavoritesInBookshelf {
@@ -469,6 +472,8 @@ struct ContentView: View {
                 }
                 HapticManager.shared.selection()
             }
+            .opacity(isFavoritesFilterExpanded ? 0 : 1)
+            .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
         } else {
             HStack(spacing: 12) {
                 // Bookshelf button - directly opens bookshelf
