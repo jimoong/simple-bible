@@ -352,6 +352,7 @@ struct BookGridView: View {
                             .onTapGesture {
                                 // Navigate to selected verse
                                 HapticManager.shared.selection()
+                                viewModel.isNavigating = true  // Set before closing to prevent race condition
                                 onClose?()
                                 Task {
                                     await viewModel.navigateTo(book: book, chapter: verse.chapter, verse: verse.verseNumber)
@@ -541,6 +542,7 @@ struct BookGridView: View {
             // Verse or chapter+verse selection mode
             let targetVerse = searchSelectedVerse ?? filteredVerses.first?.verseNumber ?? 1
             HapticManager.shared.selection()
+            viewModel.isNavigating = true  // Set before closing to prevent race condition
             onClose?()
             Task {
                 await viewModel.navigateTo(book: book, chapter: chapter, verse: targetVerse)

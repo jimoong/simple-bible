@@ -176,6 +176,9 @@ struct ContentView: View {
                                 onNavigateToVerse: { favorite in
                                     // Navigate to the verse location
                                     if let book = BibleData.book(by: favorite.bookId) {
+                                        // Set navigating flag BEFORE dismissing bookshelf to prevent race condition
+                                        // where SlotMachineView snaps to position 0 before navigateTo runs
+                                        viewModel.isNavigating = true
                                         dismissBookshelf()
                                         Task {
                                             await viewModel.navigateTo(book: book, chapter: favorite.chapter, verse: favorite.verseNumber)
