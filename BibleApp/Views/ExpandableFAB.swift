@@ -60,7 +60,7 @@ struct ExpandableFAB: View {
                     // Settings (closes menu)
                     // Use UI language based on currently active display language
                     let isKoreanUI = uiLanguage == .kr
-                    menuItem(icon: "gearshape.fill", label: isKoreanUI ? "설정" : "Settings") {
+                    menuItem(icon: "gear", label: isKoreanUI ? "설정" : "Settings") {
                         onSettings()
                         closeMenu()
                     }
@@ -199,7 +199,7 @@ struct ExpandableFAB: View {
             HapticManager.shared.selection()
         } label: {
             HStack(spacing: 12) {
-                Image(systemName: "book.pages")
+                Image(systemName: "hand.point.up")
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
                     .frame(width: 24)

@@ -56,7 +56,7 @@ struct NavigateFAB: View {
                 // Menu items - uses UI language based on primary translation
                 VStack(spacing: 0) {
                     // Voice search
-                    menuItem(icon: "mic.fill", label: isKoreanUI ? "음성 바로가기" : "Voice") {
+                    menuItem(icon: "mic", label: isKoreanUI ? "음성 바로가기" : "Voice") {
                         onVoiceSearch()
                         closeMenu()
                     }

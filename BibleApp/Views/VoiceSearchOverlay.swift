@@ -87,7 +87,7 @@ struct VoiceSearchOverlay: View {
                 viewModel.startListening()
             } label: {
                 VStack(spacing: 16) {
-                    Image(systemName: "mic.fill")
+                    Image(systemName: "mic")
                         .font(.system(size: 40, weight: .medium))
                         .foregroundStyle(.white)
                     
