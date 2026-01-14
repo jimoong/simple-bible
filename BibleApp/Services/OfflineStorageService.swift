@@ -203,9 +203,11 @@ struct OfflineVerse: Codable {
         OfflineVerse(pk: pk, verse: verse, text: Self.cleanText(text))
     }
     
-    /// Clean text by removing Strong's concordance numbers (e.g., <S>7225</S>)
+    /// Clean text by removing markup tags (Strong's numbers, footnotes, etc.)
     static func cleanText(_ text: String) -> String {
-        text.replacingOccurrences(of: "<S>\\d+</S>", with: "", options: .regularExpression)
+        text.replacingOccurrences(of: "<S>\\d+</S>", with: "", options: .regularExpression)  // Strong's numbers
+            .replacingOccurrences(of: "<sup>.*?</sup>", with: "", options: .regularExpression)  // Footnotes
+            .replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression)  // Any remaining HTML tags
             .replacingOccurrences(of: "\\s+", with: " ", options: .regularExpression)
             .trimmingCharacters(in: .whitespaces)
     }
