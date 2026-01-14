@@ -107,14 +107,9 @@ struct SlotMachineView: View {
             #endif
             
             if scrollPosition != newValue {
-                // Skip animation during scrubbing for immediate response
-                if isScrubbing {
-                    scrollPosition = newValue
-                } else {
-                    withAnimation(.easeOut(duration: 0.2)) {
-                        scrollPosition = newValue
-                    }
-                }
+                // Set immediately without animation to ensure correct positioning
+                // Animation was causing visual glitches where wrong verse was shown
+                scrollPosition = newValue
             }
         }
         .task {
