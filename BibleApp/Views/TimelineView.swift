@@ -11,6 +11,7 @@ struct BibleTimelineView: View {
     @State private var eras: [TimelineItem] = []
     @State private var selectedItem: TimelineItem?
     @State private var showDetail: Bool = false
+    @State private var glowAnimating = false
     
     // Layout constants
     private let axisWidth: CGFloat = 2
@@ -62,7 +63,26 @@ struct BibleTimelineView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(
+                        RadialGradient(
+                            colors: [Color.white.opacity(glowAnimating ? 0.38 : 0.25), Color.clear],
+                            center: .center,
+                            startRadius: 0,
+                            endRadius: 25
+                        )
+                    )
+                    .blur(radius: 8)
+                    .scaleEffect(glowAnimating ? 1.15 : 1.0)
+                    .allowsHitTesting(false)
+            )
             .padding(.bottom, 24)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
+                    glowAnimating = true
+                }
+            }
     }
     
     // MARK: - Timeline Content
@@ -545,6 +565,7 @@ struct BibleTimelineContentView: View {
     @State private var eras: [TimelineItem] = []
     @State private var selectedItem: TimelineItem? // For historical events only
     @State private var hasRestoredScrollPosition = false
+    @State private var glowAnimating = false
     
     // Layout constants
     private let axisWidth: CGFloat = 2
@@ -633,9 +654,28 @@ struct BibleTimelineContentView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(
+                        RadialGradient(
+                            colors: [Color.white.opacity(glowAnimating ? 0.38 : 0.25), Color.clear],
+                            center: .center,
+                            startRadius: 0,
+                            endRadius: 25
+                        )
+                    )
+                    .blur(radius: 8)
+                    .scaleEffect(glowAnimating ? 1.15 : 1.0)
+                    .allowsHitTesting(false)
+            )
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 20)
             .padding(.bottom, 8)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
+                    glowAnimating = true
+                }
+            }
     }
     
     // MARK: - Timeline Content

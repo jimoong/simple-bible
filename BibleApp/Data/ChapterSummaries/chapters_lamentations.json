@@ -1,0 +1,83 @@
+{
+  "bookId": "lamentations",
+  "bookNumber": 25,
+  "bookNameKo": "예레미야애가",
+  "bookNameEn": "Lamentations",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "예루살렘의 슬픔",
+      "titleEn": "Jerusalem's Sorrow",
+      "summaryKo": "예루살렘이 황폐되어 과부처럼 앉아 있습니다.",
+      "summaryEn": "Jerusalem sits desolate like a widow.",
+      "messageKo": "슬프다 이 성이여 본래 거민이 많더니 이제는 어찌 그리 적막하게 앉았는고.",
+      "messageEn": "How deserted lies the city, once so full of people!",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "거민이 많던 성이 적막함", "eventEn": "City once full now sits empty"},
+        {"verse": 12, "eventKo": "이 고통 같은 고통이 있느냐", "eventEn": "Is any suffering like my suffering?"},
+        {"verse": 18, "eventKo": "여호와는 의로우시다", "eventEn": "The LORD is righteous"}
+      ],
+      "timelineYear": "BC 586"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "하나님의 진노",
+      "titleEn": "God's Anger",
+      "summaryKo": "하나님의 진노로 인한 예루살렘의 파괴를 애통합니다.",
+      "summaryEn": "Lament over Jerusalem's destruction by God's anger.",
+      "messageKo": "주께서 진노하사 야곱을 구름으로 덮으셨도다.",
+      "messageEn": "The Lord has covered Daughter Zion with the cloud of His anger.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "시온을 구름으로 덮으심", "eventEn": "Covered Zion with cloud"},
+        {"verse": 9, "eventKo": "성문이 땅에 묻힘", "eventEn": "Gates sunk into ground"},
+        {"verse": 19, "eventKo": "밤에 일어나 부르짖으라", "eventEn": "Arise, cry out in the night"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "소망과 탄식",
+      "titleEn": "Hope and Lament",
+      "summaryKo": "고난 속에서도 하나님의 신실하심과 자비를 찬양합니다.",
+      "summaryEn": "In suffering, praising God's faithfulness and mercy.",
+      "messageKo": "주의 인자하심은 끝이 없으시며 그의 긍휼하심은 아침마다 새로우니.",
+      "messageEn": "Because of the LORD's great love we are not consumed; His mercies are new every morning.",
+      "keyEvents": [
+        {"verse": 22, "eventKo": "인자하심이 끝이 없으시며", "eventEn": "His mercies never fail"},
+        {"verse": 23, "eventKo": "아침마다 새로움", "eventEn": "New every morning"},
+        {"verse": 25, "eventKo": "바라고 찾는 자에게 선하심", "eventEn": "Good to those who hope in Him"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "시온의 영광이 사라짐",
+      "titleEn": "Zion's Glory Faded",
+      "summaryKo": "시온의 과거 영광과 현재 비참함을 대조합니다.",
+      "summaryEn": "Contrasting Zion's past glory with present misery.",
+      "messageKo": "정금이 빛을 잃었고 순금이 변하였도다.",
+      "messageEn": "How the gold has lost its luster, the fine gold become dull!",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "정금이 빛을 잃음", "eventEn": "Gold has lost its luster"},
+        {"verse": 10, "eventKo": "어머니가 자녀를 삶아 먹음", "eventEn": "Mothers cooked their children"},
+        {"verse": 22, "eventKo": "시온아 형벌이 끝나리라", "eventEn": "Zion's punishment will end"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "회복을 위한 기도",
+      "titleEn": "Prayer for Restoration",
+      "summaryKo": "하나님께 백성의 고통을 기억하시고 회복시켜 달라고 기도합니다.",
+      "summaryEn": "Prayer for God to remember the suffering and restore His people.",
+      "messageKo": "여호와여 우리를 주께로 돌이키소서 우리가 돌아가겠나이다.",
+      "messageEn": "Restore us to Yourself, LORD, that we may return; renew our days as of old.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "우리에게 임한 일을 기억하소서", "eventEn": "Remember what has happened to us"},
+        {"verse": 19, "eventKo": "여호와는 영원히 계시며", "eventEn": "LORD, You reign forever"},
+        {"verse": 21, "eventKo": "우리를 돌이키소서", "eventEn": "Restore us to Yourself"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

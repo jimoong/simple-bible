@@ -4,6 +4,7 @@ import MessageUI
 struct SettingsView: View {
     @Binding var languageMode: LanguageMode
     @Binding var readingMode: ReadingMode
+    var viewModel: BibleViewModel  // Direct reference to update language codes
     var onDismiss: () -> Void
     
     // MARK: - State
@@ -11,11 +12,18 @@ struct SettingsView: View {
     @State private var secondaryTranslation: BibleTranslation = .kjv
     @State private var showPrimaryPicker: Bool = false
     @State private var showSecondaryPicker: Bool = false
+    @State private var showOfflineDownloads: Bool = false
     @State private var mailError: String?
     @State private var showClearDataConfirmation = false
+    @State private var downloadedCount: Int = 0
     
     private let appVersion = "1.0.0"
     private let contactEmail = "jiwoong.net@gmail.com"
+    
+    /// UI language based on currently active display mode (follows toggle)
+    private var isKoreanUI: Bool {
+        viewModel.uiLanguage == .kr
+    }
     
     var body: some View {
         NavigationStack {
@@ -27,6 +35,9 @@ struct SettingsView: View {
                     VStack(spacing: 28) {
                         // Languages Section
                         languagesSection
+                        
+                        // Offline Downloads Section
+                        offlineSection
                         
                         // Reading Section
                         readingSection
@@ -43,7 +54,7 @@ struct SettingsView: View {
                     .padding(.top, 16)
                 }
             }
-            .navigationTitle("Settings")
+            .navigationTitle(isKoreanUI ? "설정" : "Settings")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -72,20 +83,27 @@ struct SettingsView: View {
         }
         .sheet(isPresented: $showPrimaryPicker) {
             TranslationPickerSheet(
-                title: "Primary Language",
+                title: isKoreanUI ? "주 언어" : "Primary Language",
+                cancelLabel: isKoreanUI ? "취소" : "Cancel",
+                searchPlaceholder: isKoreanUI ? "번역 검색" : "Search translations",
                 selectedTranslation: $primaryTranslation,
                 onSelect: { savePrimaryTranslation() }
             )
         }
         .sheet(isPresented: $showSecondaryPicker) {
             TranslationPickerSheet(
-                title: "Secondary Language",
+                title: isKoreanUI ? "보조 언어" : "Secondary Language",
+                cancelLabel: isKoreanUI ? "취소" : "Cancel",
+                searchPlaceholder: isKoreanUI ? "번역 검색" : "Search translations",
                 selectedTranslation: $secondaryTranslation,
                 onSelect: { saveSecondaryTranslation() }
             )
         }
-        .alert("Mail Error", isPresented: .constant(mailError != nil)) {
-            Button("OK") { mailError = nil }
+        .sheet(isPresented: $showOfflineDownloads) {
+            OfflineDownloadView(isKoreanUI: isKoreanUI)
+        }
+        .alert(isKoreanUI ? "메일 오류" : "Mail Error", isPresented: .constant(mailError != nil)) {
+            Button(isKoreanUI ? "확인" : "OK") { mailError = nil }
         } message: {
             Text(mailError ?? "")
         }
@@ -94,7 +112,7 @@ struct SettingsView: View {
     // MARK: - Languages Section
     private var languagesSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            sectionHeader(title: "Languages")
+            sectionHeader(title: isKoreanUI ? "언어" : "Languages")
             
             VStack(spacing: 0) {
                 // Primary Language
@@ -103,7 +121,7 @@ struct SettingsView: View {
                     showPrimaryPicker = true
                 } label: {
                     HStack {
-                        Text("\(primaryTranslation.language) (Primary)")
+                        Text(isKoreanUI ? "\(primaryTranslation.language) (주 언어)" : "\(primaryTranslation.language) (Primary)")
                             .font(.system(size: 16))
                             .foregroundStyle(.white)
                         
@@ -128,7 +146,7 @@ struct SettingsView: View {
                     showSecondaryPicker = true
                 } label: {
                     HStack {
-                        Text("\(secondaryTranslation.language) (Secondary)")
+                        Text(secondaryTranslation.language)
                             .font(.system(size: 16))
                             .foregroundStyle(.white)
                         
@@ -150,15 +168,64 @@ struct SettingsView: View {
         }
     }
     
+    // MARK: - Offline Downloads Section
+    private var offlineSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            sectionHeader(title: isKoreanUI ? "오프라인" : "Offline")
+            
+            VStack(spacing: 0) {
+                Button {
+                    HapticManager.shared.selection()
+                    showOfflineDownloads = true
+                } label: {
+                    HStack {
+                        Text(isKoreanUI ? "다운로드 관리" : "Manage Downloads")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white)
+                        
+                        Spacer()
+                        
+                        HStack(spacing: 8) {
+                            if downloadedCount > 0 {
+                                Text("\(downloadedCount)")
+                                    .font(.system(size: 16))
+                                    .foregroundStyle(.white.opacity(0.4))
+                            }
+                            
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.white.opacity(0.3))
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                }
+                .buttonStyle(.plain)
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(.white.opacity(0.04))
+            )
+        }
+        .task {
+            await refreshDownloadCount()
+        }
+    }
+    
+    private func refreshDownloadCount() async {
+        let downloaded = await OfflineStorageService.shared.getDownloadedTranslations()
+        downloadedCount = downloaded.count
+    }
+    
     // MARK: - Reading Section
     private var readingSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            sectionHeader(title: "Reading")
+            sectionHeader(title: isKoreanUI ? "읽기" : "Reading")
             
             VStack(spacing: 0) {
                 // Reading Mode Toggle
                 HStack {
-                    Text("Reading Mode")
+                    Text(isKoreanUI ? "읽기 모드" : "Reading Mode")
                         .font(.system(size: 16))
                         .foregroundStyle(.white)
                     
@@ -173,7 +240,7 @@ struct SettingsView: View {
                                     readingMode = mode
                                 }
                             } label: {
-                                Text(mode.displayName)
+                                Text(mode.displayName(for: isKoreanUI ? .kr : .en))
                                     .font(.system(size: 14, weight: readingMode == mode ? .semibold : .regular))
                                     .foregroundStyle(readingMode == mode ? .white : .white.opacity(0.5))
                                     .padding(.horizontal, 16)
@@ -204,12 +271,12 @@ struct SettingsView: View {
     // MARK: - About Section
     private var aboutSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            sectionHeader(title: "About")
+            sectionHeader(title: isKoreanUI ? "정보" : "About")
             
             VStack(spacing: 0) {
                 // Version
                 HStack {
-                    Text("Version")
+                    Text(isKoreanUI ? "버전" : "Version")
                         .font(.system(size: 16))
                         .foregroundStyle(.white)
                     
@@ -232,7 +299,7 @@ struct SettingsView: View {
                     openMailComposer()
                 } label: {
                     HStack {
-                        Text("Contact")
+                        Text(isKoreanUI ? "개발자 연락처" : "Contact")
                             .font(.system(size: 16))
                             .foregroundStyle(.white)
                         
@@ -257,7 +324,7 @@ struct SettingsView: View {
     // MARK: - Developer Section
     private var developerSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            sectionHeader(title: "Developer")
+            sectionHeader(title: isKoreanUI ? "개발" : "Developer")
             
             VStack(spacing: 0) {
                 // Clear All Data
@@ -266,7 +333,7 @@ struct SettingsView: View {
                     showClearDataConfirmation = true
                 } label: {
                     HStack {
-                        Text("Clear All Saved Data")
+                        Text(isKoreanUI ? "앱 리셋" : "Reset App")
                             .font(.system(size: 16))
                             .foregroundStyle(Color(hex: "ef4444"))
                         
@@ -282,13 +349,13 @@ struct SettingsView: View {
                     .fill(.white.opacity(0.04))
             )
         }
-        .alert("Clear All Data", isPresented: $showClearDataConfirmation) {
-            Button("Cancel", role: .cancel) { }
-            Button("Clear", role: .destructive) {
+        .alert(isKoreanUI ? "모든 정보 삭제" : "Clear All Data", isPresented: $showClearDataConfirmation) {
+            Button(isKoreanUI ? "취소" : "Cancel", role: .cancel) { }
+            Button(isKoreanUI ? "삭제" : "Clear", role: .destructive) {
                 clearAllSavedData()
             }
         } message: {
-            Text("This will clear all reading progress and toast history. This action cannot be undone.")
+            Text(isKoreanUI ? "모든 읽기 진행 상황과 기록이 삭제됩니다. 이 작업은 되돌릴 수 없습니다." : "This will clear all reading progress and toast history. This action cannot be undone.")
         }
     }
     
@@ -313,34 +380,88 @@ struct SettingsView: View {
     
     // MARK: - Data Persistence
     private func loadSavedTranslations() {
-        if let primaryId = UserDefaults.standard.string(forKey: "primaryTranslationId"),
-           let translation = BibleTranslation.allTranslations.first(where: { $0.id == primaryId }) {
-            primaryTranslation = translation
+        let defaults = UserDefaults.standard
+        
+        // Load primary translation
+        if let primaryId = defaults.string(forKey: "primaryTranslationId") {
+            // Try to find in hardcoded list first
+            if let translation = BibleTranslation.allTranslations.first(where: { $0.id == primaryId }) {
+                primaryTranslation = translation
+            } else {
+                // Reconstruct from saved data (for API translations not in hardcoded list)
+                let languageCode = defaults.string(forKey: "primaryLanguageCode") ?? "ko"
+                let language = defaults.string(forKey: "primaryLanguage") ?? "Korean"
+                let name = defaults.string(forKey: "primaryTranslationName") ?? primaryId
+                primaryTranslation = BibleTranslation(
+                    id: primaryId,
+                    name: name,
+                    shortName: primaryId,
+                    language: language,
+                    languageCode: languageCode
+                )
+            }
         }
         
-        if let secondaryId = UserDefaults.standard.string(forKey: "secondaryTranslationId"),
-           let translation = BibleTranslation.allTranslations.first(where: { $0.id == secondaryId }) {
-            secondaryTranslation = translation
+        // Load secondary translation
+        if let secondaryId = defaults.string(forKey: "secondaryTranslationId") {
+            // Try to find in hardcoded list first
+            if let translation = BibleTranslation.allTranslations.first(where: { $0.id == secondaryId }) {
+                secondaryTranslation = translation
+            } else {
+                // Reconstruct from saved data
+                let languageCode = defaults.string(forKey: "secondaryLanguageCode") ?? "en"
+                let language = defaults.string(forKey: "secondaryLanguage") ?? "English"
+                let name = defaults.string(forKey: "secondaryTranslationName") ?? secondaryId
+                secondaryTranslation = BibleTranslation(
+                    id: secondaryId,
+                    name: name,
+                    shortName: secondaryId,
+                    language: language,
+                    languageCode: languageCode
+                )
+            }
         }
     }
     
     private func savePrimaryTranslation() {
         UserDefaults.standard.set(primaryTranslation.id, forKey: "primaryTranslationId")
+        UserDefaults.standard.set(primaryTranslation.languageCode, forKey: "primaryLanguageCode")
+        UserDefaults.standard.set(primaryTranslation.language, forKey: "primaryLanguage")
+        UserDefaults.standard.set(primaryTranslation.name, forKey: "primaryTranslationName")
+        
+        // Update ViewModel immediately so UI updates
+        viewModel.primaryLanguageCode = primaryTranslation.languageCode
+        
+        // Clear API cache so new translation is fetched
+        Task {
+            await BibleAPIService.shared.reloadTranslations()
+        }
     }
     
     private func saveSecondaryTranslation() {
         UserDefaults.standard.set(secondaryTranslation.id, forKey: "secondaryTranslationId")
+        UserDefaults.standard.set(secondaryTranslation.languageCode, forKey: "secondaryLanguageCode")
+        UserDefaults.standard.set(secondaryTranslation.language, forKey: "secondaryLanguage")
+        UserDefaults.standard.set(secondaryTranslation.name, forKey: "secondaryTranslationName")
+        
+        // Update ViewModel immediately so UI updates
+        viewModel.secondaryLanguageCode = secondaryTranslation.languageCode
+        
+        // Clear API cache so new translation is fetched
+        Task {
+            await BibleAPIService.shared.reloadTranslations()
+        }
     }
     
     // MARK: - Mail Composer
     private func openMailComposer() {
-        let subject = "Bible App Feedback"
+        let subject = isKoreanUI ? "성경 앱 피드백" : "Bible App Feedback"
         let encodedSubject = subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         
         if let url = URL(string: "mailto:\(contactEmail)?subject=\(encodedSubject)") {
             UIApplication.shared.open(url) { success in
                 if !success {
-                    mailError = "Unable to open mail app. Please email us at \(contactEmail)"
+                    mailError = isKoreanUI ? "메일 앱을 열 수 없습니다. \(contactEmail)로 이메일을 보내주세요." : "Unable to open mail app. Please email us at \(contactEmail)"
                 }
             }
         }
@@ -351,13 +472,17 @@ struct SettingsView: View {
 struct TranslationPickerSheet: View {
     @Environment(\.dismiss) private var dismiss
     let title: String
+    var cancelLabel: String = "Cancel"
+    var searchPlaceholder: String = "Search translations"
     @Binding var selectedTranslation: BibleTranslation
     var onSelect: () -> Void
     
     @State private var searchText = ""
+    @State private var availableTranslations: [BibleTranslation] = []
+    @State private var isLoading = true
     
     private var groupedTranslations: [(String, [BibleTranslation])] {
-        let filtered = BibleTranslation.allTranslations.filter { translation in
+        let filtered = availableTranslations.filter { translation in
             searchText.isEmpty ||
             translation.name.localizedCaseInsensitiveContains(searchText) ||
             translation.shortName.localizedCaseInsensitiveContains(searchText) ||
@@ -376,50 +501,70 @@ struct TranslationPickerSheet: View {
                 Color(hex: "0a0a0a")
                     .ignoresSafeArea()
                 
-                ScrollView {
-                    LazyVStack(spacing: 20, pinnedViews: .sectionHeaders) {
-                        ForEach(groupedTranslations, id: \.0) { language, translations in
-                            Section {
-                                VStack(spacing: 0) {
-                                    ForEach(translations) { translation in
-                                        translationRow(translation: translation)
-                                        
-                                        if translation.id != translations.last?.id {
-                                            Divider()
-                                                .background(.white.opacity(0.06))
-                                                .padding(.leading, 16)
+                if isLoading {
+                    VStack(spacing: 12) {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        Text("Loading translations...")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.white.opacity(0.5))
+                    }
+                } else {
+                    ScrollView {
+                        LazyVStack(spacing: 20, pinnedViews: .sectionHeaders) {
+                            ForEach(groupedTranslations, id: \.0) { language, translations in
+                                Section {
+                                    VStack(spacing: 0) {
+                                        ForEach(translations) { translation in
+                                            translationRow(translation: translation)
+                                            
+                                            if translation.id != translations.last?.id {
+                                                Divider()
+                                                    .background(.white.opacity(0.06))
+                                                    .padding(.leading, 16)
+                                            }
                                         }
                                     }
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                            .fill(.white.opacity(0.04))
+                                    )
+                                    .padding(.horizontal, 20)
+                                } header: {
+                                    languageSectionHeader(language)
                                 }
-                                .background(
-                                    RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                        .fill(.white.opacity(0.04))
-                                )
-                                .padding(.horizontal, 20)
-                            } header: {
-                                languageSectionHeader(language)
                             }
+                            
+                            Spacer(minLength: 40)
                         }
-                        
-                        Spacer(minLength: 40)
+                        .padding(.top, 8)
                     }
-                    .padding(.top, 8)
                 }
             }
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
-            .searchable(text: $searchText, prompt: "Search translations")
+            .searchable(text: $searchText, prompt: searchPlaceholder)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
-                    Button("Cancel") {
+                    Button(cancelLabel) {
                         dismiss()
                     }
                     .foregroundStyle(.white.opacity(0.6))
                 }
             }
             .toolbarBackground(Color(hex: "0a0a0a"), for: .navigationBar)
+            .task {
+                await loadTranslations()
+            }
         }
         .preferredColorScheme(.dark)
+    }
+    
+    private func loadTranslations() async {
+        isLoading = true
+        let bollsTranslations = await TranslationService.shared.fetchAvailableTranslations()
+        availableTranslations = bollsTranslations.map { TranslationService.shared.toBibleTranslation($0) }
+        isLoading = false
     }
     
     private func languageSectionHeader(_ language: String) -> some View {
@@ -438,10 +583,14 @@ struct TranslationPickerSheet: View {
     
     private func translationRow(translation: BibleTranslation) -> some View {
         Button {
+            // Update binding first
             selectedTranslation = translation
-            onSelect()
             HapticManager.shared.selection()
-            dismiss()
+            // Save and dismiss after a small delay to ensure binding is updated
+            DispatchQueue.main.async {
+                onSelect()
+                dismiss()
+            }
         } label: {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
@@ -501,6 +650,7 @@ extension Color {
     SettingsView(
         languageMode: .constant(.en),
         readingMode: .constant(.tap),
+        viewModel: BibleViewModel(),
         onDismiss: {}
     )
 }

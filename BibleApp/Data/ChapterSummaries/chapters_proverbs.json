@@ -1,0 +1,473 @@
+{
+  "bookId": "proverbs",
+  "bookNumber": 20,
+  "bookNameKo": "잠언",
+  "bookNameEn": "Proverbs",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "지혜의 시작",
+      "titleEn": "Beginning of Wisdom",
+      "summaryKo": "잠언의 목적과 여호와를 경외함이 지식의 근본임을 선포합니다.",
+      "summaryEn": "The purpose of Proverbs and the declaration that fear of the LORD is the beginning of knowledge.",
+      "messageKo": "여호와를 경외하는 것이 지식의 근본입니다.",
+      "messageEn": "The fear of the LORD is the beginning of knowledge.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "여호와를 경외함이 지식의 근본", "eventEn": "Fear of LORD is beginning of knowledge"},
+        {"verse": 10, "eventKo": "죄인의 유혹을 따르지 말라", "eventEn": "Do not follow sinners' enticement"},
+        {"verse": 20, "eventKo": "지혜가 거리에서 외침", "eventEn": "Wisdom calls aloud in the streets"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 2,
+      "titleKo": "지혜의 가치",
+      "titleEn": "Value of Wisdom",
+      "summaryKo": "지혜를 구하면 여호와를 경외함을 깨닫고 악한 길에서 건짐받습니다.",
+      "summaryEn": "Seeking wisdom leads to understanding the fear of the LORD and deliverance from evil.",
+      "messageKo": "지혜를 보배처럼 구하면 하나님을 알게 됩니다.",
+      "messageEn": "Seek wisdom like treasure and you will understand the fear of God.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "은같이 구하며", "eventEn": "Search as for silver"},
+        {"verse": 6, "eventKo": "여호와는 지혜를 주시며", "eventEn": "LORD gives wisdom"},
+        {"verse": 16, "eventKo": "음녀에게서 건짐", "eventEn": "Saved from the adulteress"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "지혜의 축복",
+      "titleEn": "Blessings of Wisdom",
+      "summaryKo": "하나님을 신뢰하고 지혜를 얻는 자에게 임하는 축복을 말합니다.",
+      "summaryEn": "Blessings that come to those who trust God and obtain wisdom.",
+      "messageKo": "네 마음을 다하여 여호와를 신뢰하고 네 명철을 의지하지 말라.",
+      "messageEn": "Trust in the LORD with all your heart; do not lean on your own understanding.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "마음을 다하여 여호와를 신뢰하라", "eventEn": "Trust in LORD with all your heart"},
+        {"verse": 9, "eventKo": "재물로 여호와를 공경하라", "eventEn": "Honor LORD with your wealth"},
+        {"verse": 13, "eventKo": "지혜를 얻은 자는 복됨", "eventEn": "Blessed who finds wisdom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "지혜를 얻으라",
+      "titleEn": "Get Wisdom",
+      "summaryKo": "아버지가 자녀에게 지혜를 얻고 지키라고 권면합니다.",
+      "summaryEn": "A father advises children to get and guard wisdom.",
+      "messageKo": "무엇보다도 지혜를 얻으라.",
+      "messageEn": "Above all else, get wisdom.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "지혜가 제일이니 지혜를 얻으라", "eventEn": "Wisdom is supreme; get wisdom"},
+        {"verse": 18, "eventKo": "의인의 길은 점점 빛나며", "eventEn": "Path of righteous shines brighter"},
+        {"verse": 23, "eventKo": "네 마음을 지키라", "eventEn": "Guard your heart"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "음녀를 경계하라",
+      "titleEn": "Warning Against Adultery",
+      "summaryKo": "음녀의 유혹을 피하고 자기 아내와 함께 기뻐하라는 교훈입니다.",
+      "summaryEn": "Warning to avoid the adulteress and rejoice with your own wife.",
+      "messageKo": "결혼의 기쁨을 지키고 음란에서 멀리하라.",
+      "messageEn": "Preserve the joy of marriage and stay far from immorality.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "음녀의 입술은 꿀을 떨어뜨림", "eventEn": "Lips of adulteress drip honey"},
+        {"verse": 15, "eventKo": "네 우물에서 물을 마시라", "eventEn": "Drink water from your own cistern"},
+        {"verse": 18, "eventKo": "네 젊은 때의 아내와 기뻐하라", "eventEn": "Rejoice in wife of your youth"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "여섯 가지 악",
+      "titleEn": "Six Things God Hates",
+      "summaryKo": "게으름, 악한 자, 여호와께서 미워하시는 일곱 가지에 대한 경고입니다.",
+      "summaryEn": "Warnings about laziness, the wicked, and seven things the LORD hates.",
+      "messageKo": "게으른 자여, 개미에게 가서 배우라.",
+      "messageEn": "Go to the ant, you sluggard; learn from its ways.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "개미에게 가서 배우라", "eventEn": "Go to the ant and learn"},
+        {"verse": 16, "eventKo": "여호와께서 미워하시는 것", "eventEn": "What the LORD hates"},
+        {"verse": 27, "eventKo": "품에 불을 품겠느냐", "eventEn": "Can a man carry fire in his lap?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "음녀의 유혹",
+      "titleEn": "The Adulteress's Seduction",
+      "summaryKo": "젊은이가 음녀의 유혹에 빠지는 과정을 생생하게 묘사합니다.",
+      "summaryEn": "Vivid description of a young man falling to the adulteress's seduction.",
+      "messageKo": "지혜로 유혹의 길에서 벗어나라.",
+      "messageEn": "Let wisdom keep you from the path of temptation.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "지혜가 음녀에게서 지키리라", "eventEn": "Wisdom will protect from adulteress"},
+        {"verse": 21, "eventKo": "부드러운 말로 유혹함", "eventEn": "Seduced with smooth words"},
+        {"verse": 22, "eventKo": "도살장으로 가는 소처럼", "eventEn": "Like an ox going to slaughter"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "지혜의 외침",
+      "titleEn": "Wisdom's Call",
+      "summaryKo": "지혜가 자신의 가치와 태초부터의 존재를 선포합니다.",
+      "summaryEn": "Wisdom proclaims her value and eternal existence from the beginning.",
+      "messageKo": "나를 사랑하는 자들이 나의 사랑을 입으며.",
+      "messageEn": "I love those who love me, and those who seek me find me.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "지혜는 진주보다 나음", "eventEn": "Wisdom better than rubies"},
+        {"verse": 22, "eventKo": "태초에 지혜가 있었음", "eventEn": "Wisdom was there at the beginning"},
+        {"verse": 35, "eventKo": "나를 얻는 자는 생명을 얻음", "eventEn": "Whoever finds me finds life"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "지혜와 미련함",
+      "titleEn": "Wisdom and Folly",
+      "summaryKo": "지혜와 미련한 여인이 각각 사람들을 초대하는 장면입니다.",
+      "summaryEn": "Wisdom and Folly both invite people, offering contrasting paths.",
+      "messageKo": "여호와를 경외하는 것이 지혜의 근본입니다.",
+      "messageEn": "The fear of the LORD is the beginning of wisdom.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "지혜가 집을 짓고 초대함", "eventEn": "Wisdom builds her house and invites"},
+        {"verse": 10, "eventKo": "여호와를 경외함이 지혜의 근본", "eventEn": "Fear of LORD is beginning of wisdom"},
+        {"verse": 13, "eventKo": "미련한 여인의 초대", "eventEn": "Folly's invitation"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "솔로몬의 잠언 시작",
+      "titleEn": "Proverbs of Solomon Begin",
+      "summaryKo": "의인과 악인, 지혜와 미련함을 대조하는 솔로몬의 잠언이 시작됩니다.",
+      "summaryEn": "Solomon's proverbs contrasting righteous and wicked, wise and foolish.",
+      "messageKo": "미움은 다툼을 일으키되 사랑은 모든 허물을 가리우느니라.",
+      "messageEn": "Hatred stirs up conflict, but love covers all wrongs.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "지혜로운 아들은 아비를 기쁘게 함", "eventEn": "Wise son brings joy to father"},
+        {"verse": 12, "eventKo": "사랑은 모든 허물을 가림", "eventEn": "Love covers all wrongs"},
+        {"verse": 22, "eventKo": "여호와의 복은 사람을 부하게 함", "eventEn": "LORD's blessing brings wealth"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "정직과 의로움",
+      "titleEn": "Integrity and Righteousness",
+      "summaryKo": "정직한 자와 속이는 자의 결과를 대조합니다.",
+      "summaryEn": "Contrasting outcomes of the honest and the deceitful.",
+      "messageKo": "의로운 자의 후함이 자신에게 복을 가져옵니다.",
+      "messageEn": "The generosity of the righteous brings blessing to themselves.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "속이는 저울은 여호와께 미움", "eventEn": "LORD detests dishonest scales"},
+        {"verse": 24, "eventKo": "흩어 구제하여도 넉넉함", "eventEn": "One gives freely yet gains more"},
+        {"verse": 30, "eventKo": "의인의 열매는 생명나무", "eventEn": "Fruit of righteous is tree of life"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "말의 능력",
+      "titleEn": "Power of Words",
+      "summaryKo": "말의 선악과 근면과 게으름을 대조합니다.",
+      "summaryEn": "Contrasts good and evil speech, diligence and laziness.",
+      "messageKo": "진실한 입술은 영원히 보존됩니다.",
+      "messageEn": "Truthful lips endure forever.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "어진 여인은 남편의 면류관", "eventEn": "Virtuous wife is husband's crown"},
+        {"verse": 18, "eventKo": "지혜로운 자의 혀는 양약", "eventEn": "Tongue of wise brings healing"},
+        {"verse": 19, "eventKo": "진실한 입술은 영원히 보존됨", "eventEn": "Truthful lips endure forever"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "훈계와 부",
+      "titleEn": "Discipline and Wealth",
+      "summaryKo": "훈계를 받아들이는 것과 부의 올바른 사용에 대한 교훈입니다.",
+      "summaryEn": "Teachings on accepting discipline and proper use of wealth.",
+      "messageKo": "자녀를 사랑하는 자는 훈계를 게을리하지 않습니다.",
+      "messageEn": "Whoever loves their children is careful to discipline them.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "스스로 부한 체하나 가난한 자", "eventEn": "One pretends rich yet has nothing"},
+        {"verse": 12, "eventKo": "소망이 더디 이루어지면 마음이 상함", "eventEn": "Hope deferred makes heart sick"},
+        {"verse": 24, "eventKo": "초달기를 아끼는 것은 아들을 미워함", "eventEn": "Sparing rod hates child"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "지혜로운 자의 길",
+      "titleEn": "Way of the Wise",
+      "summaryKo": "지혜로운 자와 미련한 자의 행실과 결과를 대조합니다.",
+      "summaryEn": "Contrasting conduct and outcomes of wise and foolish.",
+      "messageKo": "어떤 길은 사람이 보기에 바르나 그 끝은 사망의 길입니다.",
+      "messageEn": "There is a way that seems right to man, but leads to death.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "지혜로운 여인은 자기 집을 세움", "eventEn": "Wise woman builds her house"},
+        {"verse": 12, "eventKo": "어떤 길은 바르게 보이나", "eventEn": "Way seems right but leads to death"},
+        {"verse": 31, "eventKo": "가난한 자를 학대하는 것은 조물주를 멸시함", "eventEn": "Oppressing poor shows contempt for Maker"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "부드러운 대답",
+      "titleEn": "Gentle Answer",
+      "summaryKo": "말의 능력과 여호와의 눈에 대한 교훈입니다.",
+      "summaryEn": "Teachings on the power of words and the eyes of the LORD.",
+      "messageKo": "유순한 대답은 분노를 쉬게 합니다.",
+      "messageEn": "A gentle answer turns away wrath.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "유순한 대답은 분노를 쉬게 함", "eventEn": "Gentle answer turns away wrath"},
+        {"verse": 3, "eventKo": "여호와의 눈은 어디서나 봄", "eventEn": "Eyes of LORD are everywhere"},
+        {"verse": 16, "eventKo": "가난해도 여호와를 경외함이 나음", "eventEn": "Better little with fear of LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "사람의 계획과 하나님의 주권",
+      "titleEn": "Human Plans and God's Sovereignty",
+      "summaryKo": "사람이 계획하지만 하나님이 주관하심을 말합니다.",
+      "summaryEn": "Humans plan, but God directs the outcome.",
+      "messageKo": "마음의 경영은 사람에게 있어도 말의 응답은 여호와께로부터 납니다.",
+      "messageEn": "To humans belong the plans of the heart, but from the LORD comes the reply.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "네 일을 여호와께 맡기라", "eventEn": "Commit your work to the LORD"},
+        {"verse": 9, "eventKo": "사람이 계획하나 여호와께서 인도하심", "eventEn": "Man plans, but LORD directs steps"},
+        {"verse": 18, "eventKo": "교만은 패망의 선봉", "eventEn": "Pride goes before destruction"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "평화와 관계",
+      "titleEn": "Peace and Relationships",
+      "summaryKo": "가정의 평화와 친구 관계에 대한 교훈입니다.",
+      "summaryEn": "Teachings on peace at home and friendships.",
+      "messageKo": "친구는 사랑이 끊이지 아니하고 형제는 위급한 때를 위하여 났느니라.",
+      "messageEn": "A friend loves at all times, and a brother is born for adversity.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "마른 떡 한 조각과 화목함", "eventEn": "Better dry bread with peace"},
+        {"verse": 17, "eventKo": "친구는 사랑이 끊이지 않음", "eventEn": "Friend loves at all times"},
+        {"verse": 22, "eventKo": "마음의 즐거움은 양약", "eventEn": "Cheerful heart is good medicine"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "말과 분쟁",
+      "titleEn": "Words and Quarrels",
+      "summaryKo": "말의 능력과 분쟁의 위험에 대한 교훈입니다.",
+      "summaryEn": "Teachings on the power of words and dangers of quarrels.",
+      "messageKo": "죽고 사는 것이 혀의 권세에 달렸나니.",
+      "messageEn": "The tongue has the power of life and death.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "여호와의 이름은 견고한 망대", "eventEn": "Name of LORD is strong tower"},
+        {"verse": 21, "eventKo": "죽고 사는 것이 혀의 권세에", "eventEn": "Tongue has power of life and death"},
+        {"verse": 24, "eventKo": "친구가 있는 자는 친절해야 함", "eventEn": "To have friends, be friendly"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "가난과 정직",
+      "titleEn": "Poverty and Integrity",
+      "summaryKo": "가난해도 정직한 것이 낫고 훈계의 가치를 말합니다.",
+      "summaryEn": "Better to be poor with integrity; value of discipline.",
+      "messageKo": "가난해도 성실하게 행하는 자가 낫습니다.",
+      "messageEn": "Better to be poor and walk in integrity.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "가난해도 성실함이 나음", "eventEn": "Better poor walking in integrity"},
+        {"verse": 17, "eventKo": "가난한 자를 불쌍히 여김", "eventEn": "Kind to poor lends to LORD"},
+        {"verse": 21, "eventKo": "사람의 마음에 많은 계획", "eventEn": "Many plans in human heart"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "술과 왕",
+      "titleEn": "Wine and Kings",
+      "summaryKo": "술의 위험과 왕의 지혜에 대한 교훈입니다.",
+      "summaryEn": "Warnings about wine and teachings on the wisdom of kings.",
+      "messageKo": "포도주는 거만하게 하는 것이며 독주는 떠들게 하는 것입니다.",
+      "messageEn": "Wine is a mocker, strong drink a brawler.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "포도주는 거만케 함", "eventEn": "Wine is a mocker"},
+        {"verse": 7, "eventKo": "의인의 자손은 복됨", "eventEn": "Children of righteous are blessed"},
+        {"verse": 22, "eventKo": "악을 갚겠다 하지 말라", "eventEn": "Do not say I'll pay back evil"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "왕의 마음",
+      "titleEn": "The King's Heart",
+      "summaryKo": "하나님이 왕의 마음을 주관하시며 의와 공의를 원하심을 말합니다.",
+      "summaryEn": "God directs the king's heart and desires righteousness and justice.",
+      "messageKo": "왕의 마음이 여호와의 손에 있어 물줄기 같이 인도하시느니라.",
+      "messageEn": "The king's heart is in the hand of the LORD; He directs it like a watercourse.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "왕의 마음이 여호와 손에", "eventEn": "King's heart in LORD's hand"},
+        {"verse": 3, "eventKo": "의와 공의가 제사보다 나음", "eventEn": "Righteousness better than sacrifice"},
+        {"verse": 31, "eventKo": "승리는 여호와께로부터", "eventEn": "Victory belongs to LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "좋은 이름",
+      "titleEn": "A Good Name",
+      "summaryKo": "좋은 이름의 가치와 자녀 교육에 대한 교훈입니다.",
+      "summaryEn": "Value of a good name and teachings on child-rearing.",
+      "messageKo": "많은 재물보다 명예를 택할 것이요.",
+      "messageEn": "A good name is more desirable than great riches.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "많은 재물보다 명예를", "eventEn": "Good name better than riches"},
+        {"verse": 6, "eventKo": "마땅히 행할 길을 아이에게 가르치라", "eventEn": "Train child in the way"},
+        {"verse": 17, "eventKo": "지혜 있는 자의 말씀", "eventEn": "Sayings of the wise"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "탐욕과 절제",
+      "titleEn": "Greed and Self-Control",
+      "summaryKo": "음식과 술, 탐욕에 대한 경고와 절제의 필요성입니다.",
+      "summaryEn": "Warnings about food, wine, greed, and the need for self-control.",
+      "messageKo": "술을 많이 마시는 자를 보지 말라.",
+      "messageEn": "Do not gaze at wine when it is red.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "부자 되려고 애쓰지 말라", "eventEn": "Do not wear yourself to get rich"},
+        {"verse": 17, "eventKo": "네 마음이 죄인을 부러워말라", "eventEn": "Do not envy sinners"},
+        {"verse": 29, "eventKo": "술로 인한 재앙", "eventEn": "Woes from wine"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "지혜와 의무",
+      "titleEn": "Wisdom and Duty",
+      "summaryKo": "악인을 부러워하지 말고 의무를 다하라는 교훈입니다.",
+      "summaryEn": "Do not envy the wicked; fulfill your duties.",
+      "messageKo": "의인은 일곱 번 넘어져도 다시 일어납니다.",
+      "messageEn": "Though the righteous fall seven times, they rise again.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "환난날에 낙담하면 네 힘이 적음", "eventEn": "If you falter in trouble, strength is small"},
+        {"verse": 16, "eventKo": "의인은 일곱 번 넘어져도 일어남", "eventEn": "Righteous fall seven times but rise"},
+        {"verse": 27, "eventKo": "먼저 밖의 일을 하라", "eventEn": "Finish outdoor work first"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "히스기야 시대의 잠언",
+      "titleEn": "Proverbs from Hezekiah's Time",
+      "summaryKo": "히스기야 신하들이 수집한 솔로몬의 잠언입니다.",
+      "summaryEn": "Solomon's proverbs collected by Hezekiah's men.",
+      "messageKo": "네 원수가 배고프거든 먹을 것을 주라.",
+      "messageEn": "If your enemy is hungry, give him food to eat.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "적절한 말은 금 사과", "eventEn": "Word aptly spoken is golden apple"},
+        {"verse": 21, "eventKo": "원수가 배고프면 먹이라", "eventEn": "If enemy hungry, give food"},
+        {"verse": 28, "eventKo": "자기 마음을 제어하지 못함", "eventEn": "City without walls like no self-control"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "미련한 자",
+      "titleEn": "The Fool",
+      "summaryKo": "미련한 자와 게으른 자, 말많은 자에 대한 경고입니다.",
+      "summaryEn": "Warnings about fools, sluggards, and gossips.",
+      "messageKo": "미련한 자에게 영예는 어울리지 않습니다.",
+      "messageEn": "Honor is not fitting for a fool.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "미련한 자에게 대답하지 말라", "eventEn": "Do not answer a fool"},
+        {"verse": 14, "eventKo": "게으른 자는 돌쩌귀에서 돌듯", "eventEn": "Sluggard turns on bed like door on hinges"},
+        {"verse": 20, "eventKo": "나무가 없으면 불이 꺼짐", "eventEn": "Without wood, fire goes out"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "우정과 교훈",
+      "titleEn": "Friendship and Rebuke",
+      "summaryKo": "친구의 교훈과 근면의 가치에 대해 말합니다.",
+      "summaryEn": "Value of friends' correction and diligence.",
+      "messageKo": "철이 철을 날카롭게 하는 것같이 사람이 그 친구의 얼굴을 빛나게 합니다.",
+      "messageEn": "As iron sharpens iron, so one person sharpens another.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "내일 일을 자랑하지 말라", "eventEn": "Do not boast about tomorrow"},
+        {"verse": 6, "eventKo": "친구의 상처는 충성", "eventEn": "Wounds from friend are faithful"},
+        {"verse": 17, "eventKo": "철이 철을 날카롭게 함", "eventEn": "Iron sharpens iron"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "의인과 악인",
+      "titleEn": "Righteous and Wicked",
+      "summaryKo": "의인의 담대함과 악인의 두려움을 대조합니다.",
+      "summaryEn": "Contrasts boldness of righteous and fear of wicked.",
+      "messageKo": "죄를 숨기는 자는 형통하지 못하나 고백하고 버리는 자는 불쌍히 여김을 받습니다.",
+      "messageEn": "Whoever conceals sins does not prosper; who confesses and renounces finds mercy.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "의인은 사자같이 담대함", "eventEn": "Righteous bold as lion"},
+        {"verse": 13, "eventKo": "죄를 숨기면 형통하지 못함", "eventEn": "Who hides sin won't prosper"},
+        {"verse": 26, "eventKo": "자기 마음을 믿는 자는 미련함", "eventEn": "Trusting self is foolish"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "통치와 징계",
+      "titleEn": "Leadership and Discipline",
+      "summaryKo": "올바른 통치와 자녀 훈육에 대한 교훈입니다.",
+      "summaryEn": "Teachings on proper governance and child discipline.",
+      "messageKo": "묵시가 없으면 백성이 방자히 행합니다.",
+      "messageEn": "Where there is no revelation, people cast off restraint.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "채찍과 책망이 지혜를 줌", "eventEn": "Rod and rebuke give wisdom"},
+        {"verse": 18, "eventKo": "묵시가 없으면 백성이 방자함", "eventEn": "Without vision people perish"},
+        {"verse": 25, "eventKo": "사람을 두려워하면 올무에 걸림", "eventEn": "Fear of man is a snare"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "아굴의 말씀",
+      "titleEn": "Sayings of Agur",
+      "summaryKo": "아굴의 겸손한 기도와 자연에서 배우는 지혜입니다.",
+      "summaryEn": "Agur's humble prayer and wisdom from nature.",
+      "messageKo": "나를 가난하게도 부하게도 마시고 오직 필요한 양식으로 먹이소서.",
+      "messageEn": "Give me neither poverty nor riches, but give me only my daily bread.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "하나님의 아들의 이름", "eventEn": "What is his son's name?"},
+        {"verse": 8, "eventKo": "가난도 부도 말고 필요한 양식만", "eventEn": "Neither poverty nor riches"},
+        {"verse": 24, "eventKo": "땅의 작은 것 중 지혜로운 것", "eventEn": "Small but wise creatures"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "현숙한 여인",
+      "titleEn": "The Virtuous Woman",
+      "summaryKo": "르무엘 왕의 어머니의 교훈과 현숙한 여인의 찬사입니다.",
+      "summaryEn": "King Lemuel's mother's teaching and praise of the virtuous woman.",
+      "messageKo": "여호와를 경외하는 여자는 칭찬을 받으리라.",
+      "messageEn": "A woman who fears the LORD is to be praised.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "누가 현숙한 여인을 찾을꼬", "eventEn": "Who can find a virtuous woman?"},
+        {"verse": 25, "eventKo": "능력과 존귀를 옷 삼음", "eventEn": "Clothed with strength and dignity"},
+        {"verse": 30, "eventKo": "여호와를 경외하는 여자는 칭찬받음", "eventEn": "Woman who fears LORD praised"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

@@ -13,6 +13,7 @@ struct BookGridView: View {
     
     @State private var isSearchActive = false
     @FocusState private var isSearchFocused: Bool
+    @State private var glowAnimating = false
     
     private let columns = [
         GridItem(.flexible(), spacing: 10),
@@ -70,7 +71,7 @@ struct BookGridView: View {
             if viewModel.sortOrder == .timeline {
                 // Timeline content (scrollable)
                 BibleTimelineContentView(
-                    languageMode: viewModel.languageMode,
+                    languageMode: viewModel.uiLanguage,
                     topPadding: topPadding,
                     currentBook: viewModel.currentBook,
                     searchText: searchText,
@@ -95,7 +96,7 @@ struct BookGridView: View {
                         // Old Testament section
                         if !oldTestamentBooks.isEmpty {
                             bookSection(
-                                title: viewModel.languageMode == .kr ? "구약" : "Old Testament",
+                                title: viewModel.uiLanguage == .kr ? "구약" : "Old Testament",
                                 books: oldTestamentBooks
                             )
                         }
@@ -103,7 +104,7 @@ struct BookGridView: View {
                         // New Testament section
                         if !newTestamentBooks.isEmpty {
                             bookSection(
-                                title: viewModel.languageMode == .kr ? "신약" : "New Testament",
+                                title: viewModel.uiLanguage == .kr ? "신약" : "New Testament",
                                 books: newTestamentBooks
                             )
                         }
@@ -186,7 +187,7 @@ struct BookGridView: View {
                     .foregroundStyle(.white.opacity(0.5))
                 
                 TextField(
-                    viewModel.languageMode == .kr ? "검색" : "Search",
+                    viewModel.uiLanguage == .kr ? "검색" : "Search",
                     text: $searchText
                 )
                 .font(.system(size: 16))
@@ -236,7 +237,7 @@ struct BookGridView: View {
                     }
                     HapticManager.shared.selection()
                 } label: {
-                    Text(order.displayName(for: viewModel.languageMode))
+                    Text(order.displayName(for: viewModel.uiLanguage))
                         .font(.system(size: 14, weight: isOrderSelected(order) ? .semibold : .regular))
                         .foregroundStyle(isOrderSelected(order) ? .white : .white.opacity(0.5))
                         .padding(.horizontal, 14)
@@ -262,7 +263,7 @@ struct BookGridView: View {
         VStack(alignment: .leading, spacing: 12) {
             // Section header
             Text(title)
-                .font(viewModel.languageMode == .kr 
+                .font(viewModel.uiLanguage == .kr 
                     ? FontManager.koreanSans(size: 13, weight: .semibold)
                     : .system(size: 13, weight: .semibold))
                 .foregroundStyle(.white.opacity(0.5))
@@ -273,7 +274,7 @@ struct BookGridView: View {
                 ForEach(books) { book in
                     BookCell(
                         book: book,
-                        language: viewModel.languageMode,
+                        language: viewModel.uiLanguage,
                         isSelected: book == viewModel.currentBook
                     )
                     .onTapGesture {
@@ -297,8 +298,27 @@ struct BookGridView: View {
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .fill(
+                        RadialGradient(
+                            colors: [Color.white.opacity(glowAnimating ? 0.38 : 0.25), Color.clear],
+                            center: .center,
+                            startRadius: 0,
+                            endRadius: 25
+                        )
+                    )
+                    .blur(radius: 8)
+                    .scaleEffect(glowAnimating ? 1.15 : 1.0)
+                    .allowsHitTesting(false)
+            )
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 20)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
+                    glowAnimating = true
+                }
+            }
     }
     
     // MARK: - Compact View (for panel)
@@ -309,7 +329,7 @@ struct BookGridView: View {
                     // Old Testament section
                     if !oldTestamentBooks.isEmpty {
                         compactBookSection(
-                            title: viewModel.languageMode == .kr ? "구약" : "Old Testament",
+                            title: viewModel.uiLanguage == .kr ? "구약" : "Old Testament",
                             books: oldTestamentBooks
                         )
                     }
@@ -317,7 +337,7 @@ struct BookGridView: View {
                     // New Testament section
                     if !newTestamentBooks.isEmpty {
                         compactBookSection(
-                            title: viewModel.languageMode == .kr ? "신약" : "New Testament",
+                            title: viewModel.uiLanguage == .kr ? "신약" : "New Testament",
                             books: newTestamentBooks
                         )
                     }
@@ -334,7 +354,7 @@ struct BookGridView: View {
         VStack(alignment: .leading, spacing: 12) {
             // Section header
             Text(title)
-                .font(viewModel.languageMode == .kr 
+                .font(viewModel.uiLanguage == .kr 
                     ? FontManager.koreanSans(size: 13, weight: .semibold)
                     : .system(size: 13, weight: .semibold))
                 .foregroundStyle(.white.opacity(0.5))
@@ -345,7 +365,7 @@ struct BookGridView: View {
                 ForEach(books) { book in
                     BookCell(
                         book: book,
-                        language: viewModel.languageMode,
+                        language: viewModel.uiLanguage,
                         isSelected: book == viewModel.currentBook
                     )
                     .onTapGesture {

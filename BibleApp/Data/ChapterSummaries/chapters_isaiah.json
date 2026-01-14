@@ -1,0 +1,998 @@
+{
+  "bookId": "isaiah",
+  "bookNumber": 23,
+  "bookNameKo": "이사야",
+  "bookNameEn": "Isaiah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "유다의 부패",
+      "titleEn": "Judah's Corruption",
+      "summaryKo": "이사야가 유다의 죄악과 형식적인 예배를 책망합니다.",
+      "summaryEn": "Isaiah rebukes Judah's sin and superficial worship.",
+      "messageKo": "너희 죄가 주홍 같을지라도 눈과 같이 희어지리라.",
+      "messageEn": "Though your sins are like scarlet, they shall be white as snow.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하늘이여 들으라", "eventEn": "Hear, O heavens"},
+        {"verse": 11, "eventKo": "제사가 무슨 소용", "eventEn": "What are your sacrifices to Me?"},
+        {"verse": 18, "eventKo": "주홍 같은 죄가 희어짐", "eventEn": "Scarlet sins made white"}
+      ],
+      "timelineYear": "BC 740경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "말일의 성전산",
+      "titleEn": "Mountain of the LORD",
+      "summaryKo": "말일에 여호와의 산이 높이 들리고 만국이 모여들 것입니다.",
+      "summaryEn": "In the last days, the LORD's mountain will be exalted; nations will stream to it.",
+      "messageKo": "칼을 쳐서 보습을 만들 것입니다.",
+      "messageEn": "They will beat swords into plowshares.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "여호와의 산이 높이 들림", "eventEn": "Mountain of LORD established"},
+        {"verse": 4, "eventKo": "칼을 쳐서 보습을 만듦", "eventEn": "Swords into plowshares"},
+        {"verse": 12, "eventKo": "교만한 자의 날", "eventEn": "Day against the proud"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "예루살렘의 심판",
+      "titleEn": "Judgment on Jerusalem",
+      "summaryKo": "예루살렘과 유다의 지도자들이 제거되고 무질서가 옵니다.",
+      "summaryEn": "Leaders of Jerusalem and Judah will be removed; chaos will follow.",
+      "messageKo": "지도자의 부재는 사회의 혼란을 가져옵니다.",
+      "messageEn": "Absence of leadership brings social chaos.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "지팡이와 막대기를 제함", "eventEn": "LORD removes support"},
+        {"verse": 12, "eventKo": "어린아이와 여인이 다스림", "eventEn": "Children and women rule"},
+        {"verse": 16, "eventKo": "시온 딸들의 교만", "eventEn": "Pride of Zion's daughters"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "시온의 회복",
+      "titleEn": "Restoration of Zion",
+      "summaryKo": "심판 후에 시온이 정결케 되고 하나님의 영광으로 덮입니다.",
+      "summaryEn": "After judgment, Zion is purified and covered with God's glory.",
+      "messageKo": "심판 후에 회복이 옵니다.",
+      "messageEn": "Restoration follows judgment.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "여호와의 싹이 아름다움", "eventEn": "Branch of LORD beautiful"},
+        {"verse": 4, "eventKo": "시온이 씻김을 받음", "eventEn": "Zion washed clean"},
+        {"verse": 5, "eventKo": "구름과 불", "eventEn": "Cloud and fire"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "포도원의 노래",
+      "titleEn": "Song of the Vineyard",
+      "summaryKo": "이스라엘을 포도원에 비유하며 심판을 경고하고 여섯 가지 화를 선포합니다.",
+      "summaryEn": "Israel compared to a vineyard; six woes pronounced.",
+      "messageKo": "하나님은 의를 기대하셨으나 불의가 있었습니다.",
+      "messageEn": "God expected justice but found bloodshed.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "포도원의 노래", "eventEn": "Song of the vineyard"},
+        {"verse": 7, "eventKo": "공의 대신 피", "eventEn": "Hoped for justice, saw bloodshed"},
+        {"verse": 20, "eventKo": "악을 선하다 하는 자에게 화", "eventEn": "Woe to those who call evil good"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "이사야의 소명",
+      "titleEn": "Isaiah's Calling",
+      "summaryKo": "이사야가 성전에서 하나님의 영광을 보고 선지자로 부름받습니다.",
+      "summaryEn": "Isaiah sees God's glory in the temple and is called as a prophet.",
+      "messageKo": "거룩하다 거룩하다 거룩하다 만군의 여호와여.",
+      "messageEn": "Holy, holy, holy is the LORD Almighty.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "높이 들린 보좌에 앉으신 주", "eventEn": "LORD seated on high throne"},
+        {"verse": 3, "eventKo": "거룩하다 거룩하다 거룩하다", "eventEn": "Holy, holy, holy"},
+        {"verse": 8, "eventKo": "내가 여기 있나이다 나를 보내소서", "eventEn": "Here am I. Send me!"}
+      ],
+      "timelineYear": "BC 740"
+    },
+    {
+      "chapter": 7,
+      "titleKo": "임마누엘의 표적",
+      "titleEn": "Sign of Immanuel",
+      "summaryKo": "아하스 왕에게 임마누엘 표적이 주어집니다.",
+      "summaryEn": "The sign of Immanuel is given to King Ahaz.",
+      "messageKo": "처녀가 잉태하여 아들을 낳을 것이요 그 이름을 임마누엘이라 하리라.",
+      "messageEn": "The virgin will conceive and give birth to a son, and will call him Immanuel.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "스알야숩을 데리고", "eventEn": "Take Shear-Jashub"},
+        {"verse": 14, "eventKo": "처녀가 잉태하리라", "eventEn": "Virgin will conceive"},
+        {"verse": 14, "eventKo": "임마누엘", "eventEn": "Immanuel"}
+      ],
+      "timelineYear": "BC 735"
+    },
+    {
+      "chapter": 8,
+      "titleKo": "앗수르의 침략 예언",
+      "titleEn": "Prophecy of Assyrian Invasion",
+      "summaryKo": "앗수르가 유다를 침략할 것이나 하나님이 함께하심을 선포합니다.",
+      "summaryEn": "Assyria will invade Judah, but God is with His people.",
+      "messageKo": "함께 계획하라 그러나 이루지 못하리라. 하나님이 우리와 함께 하심이라.",
+      "messageEn": "Devise a plan, but it will not stand, for God is with us.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "마헬살랄하스바스", "eventEn": "Maher-Shalal-Hash-Baz"},
+        {"verse": 10, "eventKo": "하나님이 우리와 함께 하심", "eventEn": "God is with us"},
+        {"verse": 20, "eventKo": "율법과 증거의 말씀", "eventEn": "To the law and testimony"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "평화의 왕",
+      "titleEn": "Prince of Peace",
+      "summaryKo": "어둠 속에 빛이 비추고 평화의 왕이 오실 것을 예언합니다.",
+      "summaryEn": "Light shines in darkness; the Prince of Peace is prophesied.",
+      "messageKo": "한 아기가 우리에게 났고 한 아들을 우리에게 주셨도다.",
+      "messageEn": "For to us a child is born, to us a son is given.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "어둠에 행하던 백성이 빛을 봄", "eventEn": "People in darkness have seen light"},
+        {"verse": 6, "eventKo": "한 아기가 났고", "eventEn": "A child is born"},
+        {"verse": 6, "eventKo": "기묘자 모사 전능하신 하나님", "eventEn": "Wonderful Counselor, Mighty God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "앗수르에 대한 심판",
+      "titleEn": "Judgment on Assyria",
+      "summaryKo": "앗수르가 하나님의 막대기지만 교만하면 심판받을 것입니다.",
+      "summaryEn": "Assyria is God's rod but will be judged for its pride.",
+      "messageKo": "하나님은 도구도 심판하십니다.",
+      "messageEn": "God judges even the instruments He uses.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "앗수르는 내 진노의 막대기", "eventEn": "Assyria, rod of My anger"},
+        {"verse": 12, "eventKo": "앗수르의 교만을 벌함", "eventEn": "Will punish Assyria's pride"},
+        {"verse": 21, "eventKo": "남은 자가 돌아옴", "eventEn": "Remnant will return"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "이새의 줄기",
+      "titleEn": "Branch from Jesse",
+      "summaryKo": "이새의 줄기에서 한 싹이 나며 평화의 왕국이 옵니다.",
+      "summaryEn": "A shoot from Jesse's stump; a kingdom of peace will come.",
+      "messageKo": "이새의 줄기에서 한 싹이 나며 그 뿌리에서 한 가지가 자라서 열매를 맺으리라.",
+      "messageEn": "A shoot will come from the stump of Jesse; a branch will bear fruit.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "이새의 줄기에서 싹", "eventEn": "Shoot from Jesse's stump"},
+        {"verse": 6, "eventKo": "이리와 어린양이 함께", "eventEn": "Wolf will live with lamb"},
+        {"verse": 9, "eventKo": "여호와를 아는 지식이 충만", "eventEn": "Earth full of knowledge of LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "구원의 노래",
+      "titleEn": "Song of Salvation",
+      "summaryKo": "구원받은 자들이 하나님을 찬양하는 노래입니다.",
+      "summaryEn": "A song of praise from the redeemed.",
+      "messageKo": "보라 하나님은 나의 구원이시라 내가 신뢰하고 두려움이 없으리니.",
+      "messageEn": "Surely God is my salvation; I will trust and not be afraid.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나님은 나의 구원", "eventEn": "God is my salvation"},
+        {"verse": 3, "eventKo": "구원의 우물에서 물을 긺", "eventEn": "Draw water from wells of salvation"},
+        {"verse": 6, "eventKo": "소리 높여 노래하라", "eventEn": "Shout aloud and sing"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "바벨론에 대한 심판",
+      "titleEn": "Judgment on Babylon",
+      "summaryKo": "바벨론에 대한 심판의 예언입니다.",
+      "summaryEn": "Prophecy of judgment against Babylon.",
+      "messageKo": "세상 권세는 하나님의 심판 아래 있습니다.",
+      "messageEn": "Worldly powers are under God's judgment.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "바벨론에 대한 경고", "eventEn": "Prophecy against Babylon"},
+        {"verse": 10, "eventKo": "별들이 빛을 발하지 않음", "eventEn": "Stars will not give light"},
+        {"verse": 19, "eventKo": "바벨론이 소돔처럼 될 것", "eventEn": "Babylon like Sodom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "바벨론 왕의 몰락",
+      "titleEn": "Fall of Babylon's King",
+      "summaryKo": "바벨론 왕의 교만과 몰락, 블레셋에 대한 경고입니다.",
+      "summaryEn": "Pride and fall of Babylon's king; warning to Philistia.",
+      "messageKo": "하늘에서 떨어졌도다 아침의 아들 계명성이여.",
+      "messageEn": "How you have fallen from heaven, morning star, son of the dawn!",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "바벨론 왕에 대한 풍자", "eventEn": "Taunt against Babylon's king"},
+        {"verse": 12, "eventKo": "아침의 아들 계명성", "eventEn": "Morning star, son of dawn"},
+        {"verse": 27, "eventKo": "누가 그것을 막으리요", "eventEn": "Who can thwart it?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "모압에 대한 심판",
+      "titleEn": "Judgment on Moab",
+      "summaryKo": "모압의 멸망과 탄식의 예언입니다.",
+      "summaryEn": "Prophecy of Moab's destruction and lamentation.",
+      "messageKo": "교만한 나라도 심판을 피할 수 없습니다.",
+      "messageEn": "Even proud nations cannot escape judgment.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "모압이 하룻밤에 멸망", "eventEn": "Moab destroyed overnight"},
+        {"verse": 5, "eventKo": "내 마음이 모압을 위해 슬픔", "eventEn": "My heart cries for Moab"},
+        {"verse": 9, "eventKo": "디몬 물에 피가 가득", "eventEn": "Waters of Dimon full of blood"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "모압에 대한 심판 계속",
+      "titleEn": "Judgment on Moab Continued",
+      "summaryKo": "모압에 대한 심판의 계속과 피난처를 구하라는 권고입니다.",
+      "summaryEn": "Continuation of judgment on Moab; advice to seek refuge.",
+      "messageKo": "교만 중에도 피난처가 있습니다.",
+      "messageEn": "There is refuge even amid pride.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "다윗의 장막에 보좌가 세워짐", "eventEn": "Throne established in David's tent"},
+        {"verse": 6, "eventKo": "모압의 교만", "eventEn": "Moab's pride"},
+        {"verse": 14, "eventKo": "3년 안에 멸망", "eventEn": "Within three years"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "다메섹에 대한 심판",
+      "titleEn": "Judgment on Damascus",
+      "summaryKo": "다메섹과 북이스라엘에 대한 심판 예언입니다.",
+      "summaryEn": "Prophecy of judgment against Damascus and northern Israel.",
+      "messageKo": "심판 후에 남은 자가 하나님을 바라봅니다.",
+      "messageEn": "After judgment, the remnant will look to God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "다메섹이 무너짐", "eventEn": "Damascus ruined"},
+        {"verse": 7, "eventKo": "그 날에 자기를 지으신 자를 바라봄", "eventEn": "Will look to their Maker"},
+        {"verse": 14, "eventKo": "저녁에 두려움", "eventEn": "Terror at evening"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "구스에 대한 경고",
+      "titleEn": "Warning to Cush",
+      "summaryKo": "구스(에티오피아)에 대한 예언입니다.",
+      "summaryEn": "Prophecy concerning Cush (Ethiopia).",
+      "messageKo": "모든 민족이 하나님께 예물을 드릴 것입니다.",
+      "messageEn": "All nations will bring gifts to the LORD.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "날개치는 소리 나는 땅", "eventEn": "Land of whirring wings"},
+        {"verse": 3, "eventKo": "깃발이 들릴 때", "eventEn": "When banner is raised"},
+        {"verse": 7, "eventKo": "만군의 여호와께 예물을 드림", "eventEn": "Gifts brought to LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "애굽에 대한 심판",
+      "titleEn": "Judgment on Egypt",
+      "summaryKo": "애굽에 대한 심판과 회복의 예언입니다.",
+      "summaryEn": "Prophecy of judgment and restoration for Egypt.",
+      "messageKo": "그 날에 애굽이 여호와를 알게 될 것입니다.",
+      "messageEn": "In that day Egypt will know the LORD.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와께서 애굽에 임하심", "eventEn": "LORD comes to Egypt"},
+        {"verse": 19, "eventKo": "애굽에 여호와를 위한 제단", "eventEn": "Altar to LORD in Egypt"},
+        {"verse": 25, "eventKo": "내 백성 애굽이여", "eventEn": "Blessed be Egypt My people"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "애굽과 구스의 포로",
+      "titleEn": "Egypt and Cush Captive",
+      "summaryKo": "이사야가 상징적 행동으로 애굽과 구스의 포로됨을 예언합니다.",
+      "summaryEn": "Isaiah's symbolic act prophesies captivity of Egypt and Cush.",
+      "messageKo": "세상 강대국을 의지하지 말라.",
+      "messageEn": "Do not rely on worldly powers.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "벗고 맨발로", "eventEn": "Naked and barefoot"},
+        {"verse": 5, "eventKo": "의뢰하던 자들이 부끄러워함", "eventEn": "Those who trusted will be dismayed"},
+        {"verse": 6, "eventKo": "우리가 어떻게 피하리요", "eventEn": "How can we escape?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "바벨론의 멸망 환상",
+      "titleEn": "Vision of Babylon's Fall",
+      "summaryKo": "바벨론, 에돔, 아라비아에 대한 경고입니다.",
+      "summaryEn": "Warnings against Babylon, Edom, and Arabia.",
+      "messageKo": "무너졌도다 바벨론이 무너졌도다.",
+      "messageEn": "Fallen, fallen is Babylon!",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "무너졌도다 바벨론", "eventEn": "Babylon has fallen"},
+        {"verse": 11, "eventKo": "두마에서 부르짖는 소리", "eventEn": "Calling from Seir"},
+        {"verse": 16, "eventKo": "게달의 영광이 끝남", "eventEn": "Kedar's glory will end"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "예루살렘에 대한 심판",
+      "titleEn": "Judgment on Jerusalem",
+      "summaryKo": "환상의 골짜기 예루살렘과 셉나에 대한 경고입니다.",
+      "summaryEn": "Warning to Jerusalem, the Valley of Vision, and Shebna.",
+      "messageKo": "회개 대신 향락을 추구하면 멸망합니다.",
+      "messageEn": "Pursuing pleasure instead of repentance leads to destruction.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "내 백성의 파멸로 인한 눈물", "eventEn": "Weep for people's destruction"},
+        {"verse": 12, "eventKo": "먹고 마시자 내일 죽으리라", "eventEn": "Eat and drink, for tomorrow we die"},
+        {"verse": 22, "eventKo": "다윗의 집 열쇠", "eventEn": "Key of house of David"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "두로에 대한 심판",
+      "titleEn": "Judgment on Tyre",
+      "summaryKo": "무역 도시 두로에 대한 심판 예언입니다.",
+      "summaryEn": "Prophecy of judgment against the trading city Tyre.",
+      "messageKo": "경제적 번영도 하나님의 심판을 피할 수 없습니다.",
+      "messageEn": "Economic prosperity cannot escape God's judgment.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "다시스 배들아 슬피 울라", "eventEn": "Wail, ships of Tarshish"},
+        {"verse": 9, "eventKo": "만군의 여호와의 계획", "eventEn": "LORD Almighty planned it"},
+        {"verse": 17, "eventKo": "70년 후 회복", "eventEn": "After 70 years restored"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "땅의 황폐함",
+      "titleEn": "Earth's Devastation",
+      "summaryKo": "온 땅에 대한 보편적 심판의 예언입니다.",
+      "summaryEn": "Prophecy of universal judgment on the whole earth.",
+      "messageKo": "땅이 완전히 비워지고 약탈당하리라.",
+      "messageEn": "The earth will be completely laid waste.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "땅을 황폐케 하심", "eventEn": "LORD devastates the earth"},
+        {"verse": 5, "eventKo": "영원한 언약을 어김", "eventEn": "Everlasting covenant broken"},
+        {"verse": 23, "eventKo": "만군의 여호와가 통치하심", "eventEn": "LORD Almighty will reign"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "감사의 노래",
+      "titleEn": "Song of Thanksgiving",
+      "summaryKo": "심판 후 하나님을 찬양하고 눈물을 씻어주실 것을 노래합니다.",
+      "summaryEn": "Praise to God after judgment; He will wipe away tears.",
+      "messageKo": "주께서 모든 얼굴에서 눈물을 씻기시며.",
+      "messageEn": "The LORD will wipe away tears from all faces.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와여 주는 나의 하나님", "eventEn": "LORD, You are my God"},
+        {"verse": 6, "eventKo": "살진 것과 좋은 포도주 잔치", "eventEn": "Feast of rich food"},
+        {"verse": 8, "eventKo": "사망을 영원히 멸하심", "eventEn": "Swallow up death forever"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "신뢰의 노래",
+      "titleEn": "Song of Trust",
+      "summaryKo": "하나님을 신뢰하는 자의 평강과 부활의 소망을 노래합니다.",
+      "summaryEn": "Peace for those who trust God; hope of resurrection.",
+      "messageKo": "주를 의지하는 자에게 평강을 주시나이다.",
+      "messageEn": "You will keep in perfect peace those whose minds are steadfast.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "완전한 평강을 주심", "eventEn": "Perfect peace"},
+        {"verse": 4, "eventKo": "여호와를 영원히 의지하라", "eventEn": "Trust in LORD forever"},
+        {"verse": 19, "eventKo": "주의 죽은 자들은 살아나리라", "eventEn": "Your dead will live"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "이스라엘의 회복",
+      "titleEn": "Israel's Restoration",
+      "summaryKo": "리워야단 심판과 이스라엘 포도원의 회복 예언입니다.",
+      "summaryEn": "Judgment on Leviathan and restoration of Israel's vineyard.",
+      "messageKo": "그 날에 뿌리를 내리고 꽃을 피워 세계를 채우리라.",
+      "messageEn": "In days to come Jacob will take root; Israel will blossom and fill the world.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "리워야단을 죽이심", "eventEn": "Leviathan slain"},
+        {"verse": 6, "eventKo": "이스라엘이 꽃피우리라", "eventEn": "Israel will blossom"},
+        {"verse": 13, "eventKo": "큰 나팔을 불리라", "eventEn": "Great trumpet will sound"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "에브라임에 대한 화",
+      "titleEn": "Woe to Ephraim",
+      "summaryKo": "에브라임과 유다의 취한 지도자들에 대한 경고입니다.",
+      "summaryEn": "Warning against drunken leaders of Ephraim and Judah.",
+      "messageKo": "시온에 놓인 귀한 모퉁이돌을 보라.",
+      "messageEn": "See, I lay in Zion a precious cornerstone.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "에브라임의 교만한 면류관", "eventEn": "Ephraim's proud wreath"},
+        {"verse": 16, "eventKo": "시험 받은 보배로운 모퉁이돌", "eventEn": "Tested, precious cornerstone"},
+        {"verse": 29, "eventKo": "만군의 여호와께로부터", "eventEn": "From LORD Almighty"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "아리엘에 대한 화",
+      "titleEn": "Woe to Ariel",
+      "summaryKo": "예루살렘(아리엘)에 대한 경고와 형식적 예배 책망입니다.",
+      "summaryEn": "Warning to Jerusalem (Ariel) and rebuke of superficial worship.",
+      "messageKo": "이 백성이 입으로는 나를 가까이하나 마음은 멀도다.",
+      "messageEn": "These people honor Me with their lips, but their hearts are far from Me.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "아리엘에게 화 있을진저", "eventEn": "Woe to Ariel"},
+        {"verse": 13, "eventKo": "입으로만 가까이함", "eventEn": "Honor with lips only"},
+        {"verse": 18, "eventKo": "그 날에 귀머거리가 들음", "eventEn": "Deaf will hear"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "애굽 의뢰에 대한 화",
+      "titleEn": "Woe to Those Relying on Egypt",
+      "summaryKo": "애굽을 의지하는 유다에 대한 경고와 회개의 권유입니다.",
+      "summaryEn": "Warning to Judah for relying on Egypt; call to repentance.",
+      "messageKo": "잠잠함과 신뢰함에 너희 힘이 있으리라.",
+      "messageEn": "In quietness and trust is your strength.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "애굽으로 내려가는 자에게 화", "eventEn": "Woe to those who go to Egypt"},
+        {"verse": 15, "eventKo": "잠잠함과 신뢰에 힘이 있음", "eventEn": "Strength in quietness and trust"},
+        {"verse": 21, "eventKo": "이것이 길이니 그리로 가라", "eventEn": "This is the way; walk in it"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "애굽이 아닌 하나님을 의지하라",
+      "titleEn": "Trust God, Not Egypt",
+      "summaryKo": "애굽의 말과 병거가 아닌 하나님을 의지하라는 권면입니다.",
+      "summaryEn": "Trust God, not Egypt's horses and chariots.",
+      "messageKo": "애굽 사람은 사람이요 그들의 말은 영이 아니라 육체라.",
+      "messageEn": "The Egyptians are mere mortals; their horses are flesh, not spirit.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "애굽에 내려가는 자에게 화", "eventEn": "Woe to those who go to Egypt"},
+        {"verse": 3, "eventKo": "애굽인은 사람이요 신이 아님", "eventEn": "Egyptians are men, not God"},
+        {"verse": 5, "eventKo": "여호와가 예루살렘을 보호하심", "eventEn": "LORD will shield Jerusalem"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "의로운 왕",
+      "titleEn": "Righteous King",
+      "summaryKo": "의로운 왕의 통치와 성령을 부으심에 대한 예언입니다.",
+      "summaryEn": "Prophecy of righteous king's reign and outpouring of the Spirit.",
+      "messageKo": "위에서 성령을 부어주시면 광야가 아름다운 밭이 될 것입니다.",
+      "messageEn": "When the Spirit is poured out, the desert becomes a fertile field.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "왕이 의로 통치하리라", "eventEn": "King will reign in righteousness"},
+        {"verse": 15, "eventKo": "위에서 성령을 부으심", "eventEn": "Spirit poured from on high"},
+        {"verse": 17, "eventKo": "의의 열매는 평화", "eventEn": "Fruit of righteousness is peace"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 33,
+      "titleKo": "앗수르에 대한 화",
+      "titleEn": "Woe to Assyria",
+      "summaryKo": "앗수르 멸망자에 대한 경고와 하나님의 구원 약속입니다.",
+      "summaryEn": "Warning to Assyria the destroyer; God's promise of salvation.",
+      "messageKo": "여호와는 우리의 왕이시라 우리를 구원하시리라.",
+      "messageEn": "The LORD is our king; He will save us.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "멸망시키는 자에게 화", "eventEn": "Woe to you, destroyer"},
+        {"verse": 17, "eventKo": "왕의 영광을 보리라", "eventEn": "Eyes will see the king"},
+        {"verse": 22, "eventKo": "여호와는 왕이심", "eventEn": "LORD is our king"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 34,
+      "titleKo": "민족들에 대한 심판",
+      "titleEn": "Judgment on Nations",
+      "summaryKo": "만국, 특히 에돔에 대한 심판의 예언입니다.",
+      "summaryEn": "Prophecy of judgment on all nations, especially Edom.",
+      "messageKo": "여호와의 보복의 날이 옵니다.",
+      "messageEn": "The day of the LORD's vengeance is coming.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "만국에 대한 진노", "eventEn": "LORD's anger against nations"},
+        {"verse": 5, "eventKo": "에돔 위에 내리심", "eventEn": "Sword descends on Edom"},
+        {"verse": 16, "eventKo": "여호와의 책에서 찾아보라", "eventEn": "Look in scroll of LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 35,
+      "titleKo": "구속받은 자의 기쁨",
+      "titleEn": "Joy of the Redeemed",
+      "summaryKo": "회복된 시온으로 구속받은 자들이 기쁨으로 돌아옵니다.",
+      "summaryEn": "The redeemed return to Zion with joy.",
+      "messageKo": "여호와의 속량함을 받은 자들이 돌아오며 노래하리라.",
+      "messageEn": "The ransomed of the LORD will return, singing.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "광야가 꽃을 피움", "eventEn": "Desert will bloom"},
+        {"verse": 5, "eventKo": "눈먼 자가 보며", "eventEn": "Blind will see"},
+        {"verse": 10, "eventKo": "속량함을 받은 자들이 돌아옴", "eventEn": "Ransomed will return"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 36,
+      "titleKo": "산헤립의 위협",
+      "titleEn": "Sennacherib's Threat",
+      "summaryKo": "앗수르의 산헤립이 예루살렘을 위협합니다.",
+      "summaryEn": "Assyrian king Sennacherib threatens Jerusalem.",
+      "messageKo": "위기 때 하나님께 의뢰하는 것이 유일한 길입니다.",
+      "messageEn": "Trusting God is the only way in crisis.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "산헤립의 침략", "eventEn": "Sennacherib invades"},
+        {"verse": 10, "eventKo": "랍사게의 조롱", "eventEn": "Rabshakeh's mockery"},
+        {"verse": 21, "eventKo": "대답하지 말라는 명령", "eventEn": "Do not answer him"}
+      ],
+      "timelineYear": "BC 701"
+    },
+    {
+      "chapter": 37,
+      "titleKo": "히스기야의 기도",
+      "titleEn": "Hezekiah's Prayer",
+      "summaryKo": "히스기야가 기도하고 앗수르 군대가 천사에 의해 멸망합니다.",
+      "summaryEn": "Hezekiah prays; the Assyrian army is destroyed by an angel.",
+      "messageKo": "기도는 가장 강력한 무기입니다.",
+      "messageEn": "Prayer is the most powerful weapon.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "히스기야의 기도", "eventEn": "Hezekiah's prayer"},
+        {"verse": 33, "eventKo": "이 성에 들어오지 못하리라", "eventEn": "Will not enter this city"},
+        {"verse": 36, "eventKo": "185,000명이 죽음", "eventEn": "185,000 die"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 38,
+      "titleKo": "히스기야의 병과 회복",
+      "titleEn": "Hezekiah's Illness and Recovery",
+      "summaryKo": "히스기야가 병에서 회복되고 15년 수명이 연장됩니다.",
+      "summaryEn": "Hezekiah recovers from illness; 15 years are added to his life.",
+      "messageKo": "기도하면 하나님이 들으시고 응답하십니다.",
+      "messageEn": "When we pray, God hears and answers.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "죽을 병에 걸림", "eventEn": "Hezekiah becomes ill"},
+        {"verse": 5, "eventKo": "15년 연장", "eventEn": "15 years added"},
+        {"verse": 8, "eventKo": "해가 뒤로 10도", "eventEn": "Shadow goes back 10 steps"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 39,
+      "titleKo": "바벨론 사신들",
+      "titleEn": "Babylonian Envoys",
+      "summaryKo": "히스기야가 바벨론 사신에게 보물을 보여주고 이사야가 경고합니다.",
+      "summaryEn": "Hezekiah shows treasures to Babylonian envoys; Isaiah warns him.",
+      "messageKo": "교만은 미래의 재앙을 초래합니다.",
+      "messageEn": "Pride brings future disaster.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "모든 보물을 보여줌", "eventEn": "Shows all treasures"},
+        {"verse": 6, "eventKo": "바벨론으로 끌려갈 것", "eventEn": "Carried off to Babylon"},
+        {"verse": 8, "eventKo": "내 생전에는 평화가", "eventEn": "Peace in my lifetime"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 40,
+      "titleKo": "위로하라 내 백성을",
+      "titleEn": "Comfort My People",
+      "summaryKo": "포로 후 회복의 메시지가 시작됩니다. 하나님의 위대하심을 선포합니다.",
+      "summaryEn": "Message of restoration after exile begins; God's greatness proclaimed.",
+      "messageKo": "위로하라 위로하라 내 백성을.",
+      "messageEn": "Comfort, comfort my people.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "위로하라 내 백성을", "eventEn": "Comfort my people"},
+        {"verse": 3, "eventKo": "광야에서 외치는 자의 소리", "eventEn": "Voice in the wilderness"},
+        {"verse": 31, "eventKo": "여호와를 앙망하는 자는 새 힘을 얻음", "eventEn": "Those who hope in LORD renew strength"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 41,
+      "titleKo": "두려워 말라",
+      "titleEn": "Fear Not",
+      "summaryKo": "하나님이 이스라엘을 택하시고 두려워 말라고 격려하십니다.",
+      "summaryEn": "God chose Israel and encourages them not to fear.",
+      "messageKo": "두려워하지 말라 내가 너와 함께 함이라.",
+      "messageEn": "Do not fear, for I am with you.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "두려워 말라 내가 함께함", "eventEn": "Fear not, I am with you"},
+        {"verse": 13, "eventKo": "내가 네 오른손을 붙들고", "eventEn": "I hold your right hand"},
+        {"verse": 14, "eventKo": "지렁이 같은 야곱아 두려워 말라", "eventEn": "Do not fear, little worm Jacob"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 42,
+      "titleKo": "여호와의 종",
+      "titleEn": "Servant of the LORD",
+      "summaryKo": "여호와의 종이 공의를 세우실 것을 예언합니다.",
+      "summaryEn": "Prophecy of the LORD's servant who will establish justice.",
+      "messageKo": "상한 갈대를 꺾지 아니하며 꺼져가는 등불을 끄지 아니하리라.",
+      "messageEn": "A bruised reed He will not break; a smoldering wick He will not snuff out.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "나의 종 내가 붙드는 자", "eventEn": "My servant whom I uphold"},
+        {"verse": 3, "eventKo": "상한 갈대를 꺾지 않음", "eventEn": "Bruised reed not broken"},
+        {"verse": 10, "eventKo": "새 노래로 찬양하라", "eventEn": "Sing a new song"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 43,
+      "titleKo": "너는 내 것이라",
+      "titleEn": "You Are Mine",
+      "summaryKo": "하나님이 이스라엘을 구속하시고 새 일을 행하실 것을 약속합니다.",
+      "summaryEn": "God redeems Israel and promises to do a new thing.",
+      "messageKo": "너는 내 것이라. 내가 새 일을 행하리라.",
+      "messageEn": "You are mine. See, I am doing a new thing.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "너는 내 것이라", "eventEn": "You are mine"},
+        {"verse": 2, "eventKo": "물 가운데 지나도", "eventEn": "When you pass through waters"},
+        {"verse": 19, "eventKo": "보라 내가 새 일을 행함", "eventEn": "See, I am doing a new thing"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 44,
+      "titleKo": "유일하신 하나님",
+      "titleEn": "The Only God",
+      "summaryKo": "여호와만이 하나님이시며 우상의 허망함을 선포합니다.",
+      "summaryEn": "The LORD alone is God; idols are worthless.",
+      "messageKo": "나 외에 다른 신이 없느니라.",
+      "messageEn": "There is no God apart from Me.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "마른 땅에 시내를", "eventEn": "Streams on dry ground"},
+        {"verse": 6, "eventKo": "나 외에 신이 없음", "eventEn": "Apart from Me there is no God"},
+        {"verse": 28, "eventKo": "고레스에 대한 예언", "eventEn": "Prophecy about Cyrus"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 45,
+      "titleKo": "고레스에게 주신 사명",
+      "titleEn": "Mission Given to Cyrus",
+      "summaryKo": "하나님이 고레스를 기름부어 이스라엘을 해방시키십니다.",
+      "summaryEn": "God anoints Cyrus to liberate Israel.",
+      "messageKo": "나는 여호와라 나 외에 다른 이가 없느니라.",
+      "messageEn": "I am the LORD, and there is no other.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "고레스를 기름부으심", "eventEn": "I anoint Cyrus"},
+        {"verse": 5, "eventKo": "나는 여호와 외에 없음", "eventEn": "I am LORD; there is no other"},
+        {"verse": 22, "eventKo": "땅 끝들아 나를 바라보라", "eventEn": "Turn to Me, all ends of earth"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 46,
+      "titleKo": "바벨론 신들의 몰락",
+      "titleEn": "Fall of Babylon's Gods",
+      "summaryKo": "바벨론 신들의 무능함과 하나님의 능력을 대조합니다.",
+      "summaryEn": "Contrasting powerlessness of Babylon's gods with God's power.",
+      "messageKo": "내가 지었은즉 내가 업을 것이요 들 것이요 구원하리라.",
+      "messageEn": "I have made you and I will carry you; I will sustain and rescue you.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "벨이 엎드러짐", "eventEn": "Bel bows down"},
+        {"verse": 4, "eventKo": "내가 업을 것이요 구원하리라", "eventEn": "I will carry and rescue"},
+        {"verse": 10, "eventKo": "처음부터 종말을 알림", "eventEn": "Declare end from beginning"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 47,
+      "titleKo": "바벨론의 몰락",
+      "titleEn": "Fall of Babylon",
+      "summaryKo": "바벨론의 교만과 멸망에 대한 예언입니다.",
+      "summaryEn": "Prophecy of Babylon's pride and destruction.",
+      "messageKo": "교만한 자는 갑자기 무너집니다.",
+      "messageEn": "The proud will fall suddenly.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "처녀 딸 바벨론아 내려앉으라", "eventEn": "Go down, virgin daughter Babylon"},
+        {"verse": 7, "eventKo": "나는 영원히 여주인이라 함", "eventEn": "I am forever, the eternal queen"},
+        {"verse": 11, "eventKo": "재앙이 홀연히 임함", "eventEn": "Disaster will come suddenly"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 48,
+      "titleKo": "완고한 이스라엘",
+      "titleEn": "Stubborn Israel",
+      "summaryKo": "완고한 이스라엘에게 하나님의 새 일을 선포합니다.",
+      "summaryEn": "God proclaims new things to stubborn Israel.",
+      "messageKo": "나의 이름을 위하여 노를 늦추고 참았노라.",
+      "messageEn": "For My own name's sake I delay My wrath.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "나의 이름을 위하여 참음", "eventEn": "For My name's sake I delay"},
+        {"verse": 17, "eventKo": "네게 유익하도록 가르치는 여호와", "eventEn": "LORD who teaches you what is best"},
+        {"verse": 22, "eventKo": "악인에게는 평강이 없음", "eventEn": "No peace for the wicked"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 49,
+      "titleKo": "여호와의 종의 사명",
+      "titleEn": "Mission of the LORD's Servant",
+      "summaryKo": "여호와의 종이 민족들의 빛이 될 것입니다.",
+      "summaryEn": "The LORD's servant will be a light to the nations.",
+      "messageKo": "나는 너를 이방의 빛으로 삼아 구원을 베풀리라.",
+      "messageEn": "I will make you a light for the Gentiles.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "이방의 빛이 되리라", "eventEn": "Light for the Gentiles"},
+        {"verse": 15, "eventKo": "어머니가 자식을 잊으랴", "eventEn": "Can a mother forget her child?"},
+        {"verse": 16, "eventKo": "손바닥에 새겼음", "eventEn": "Engraved on palms of My hands"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 50,
+      "titleKo": "종의 순종",
+      "titleEn": "Servant's Obedience",
+      "summaryKo": "여호와의 종이 모욕과 고난 중에도 순종합니다.",
+      "summaryEn": "The LORD's servant obeys despite insults and suffering.",
+      "messageKo": "나를 치는 자들에게 등을 맡기며.",
+      "messageEn": "I offered my back to those who beat me.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "학자의 혀를 주셨음", "eventEn": "Given an instructed tongue"},
+        {"verse": 6, "eventKo": "등을 치는 자에게 맡김", "eventEn": "Offered back to those who beat"},
+        {"verse": 10, "eventKo": "여호와의 이름을 의지하라", "eventEn": "Trust in name of LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 51,
+      "titleKo": "시온에 대한 위로",
+      "titleEn": "Comfort for Zion",
+      "summaryKo": "시온을 위로하시고 구원이 영원함을 선포합니다.",
+      "summaryEn": "Comfort for Zion; God's salvation is eternal.",
+      "messageKo": "나의 의는 영원하고 나의 구원은 대대에 이르리라.",
+      "messageEn": "My righteousness will last forever; My salvation through all generations.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "광야를 에덴같이", "eventEn": "Make desert like Eden"},
+        {"verse": 6, "eventKo": "나의 구원은 영원함", "eventEn": "My salvation lasts forever"},
+        {"verse": 11, "eventKo": "여호와의 속량함을 받은 자가 돌아옴", "eventEn": "Ransomed of LORD will return"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 52,
+      "titleKo": "깨어라 시온이여",
+      "titleEn": "Awake, Zion",
+      "summaryKo": "시온의 구원과 고난받는 종의 예언이 시작됩니다.",
+      "summaryEn": "Zion's salvation; prophecy of the suffering servant begins.",
+      "messageKo": "아름답도다 좋은 소식을 전하는 자의 발이여.",
+      "messageEn": "How beautiful are the feet of those who bring good news.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "깨어라 시온이여", "eventEn": "Awake, Zion"},
+        {"verse": 7, "eventKo": "아름다운 전령의 발", "eventEn": "Beautiful feet of messenger"},
+        {"verse": 13, "eventKo": "나의 종이 높임을 받으리라", "eventEn": "My servant will be raised"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 53,
+      "titleKo": "고난받는 종",
+      "titleEn": "Suffering Servant",
+      "summaryKo": "메시아의 대속적 고난과 죽음을 예언합니다.",
+      "summaryEn": "Prophecy of the Messiah's substitutionary suffering and death.",
+      "messageKo": "그가 찔림은 우리의 허물 때문이요.",
+      "messageEn": "He was pierced for our transgressions.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "멸시받고 버림받음", "eventEn": "Despised and rejected"},
+        {"verse": 5, "eventKo": "우리의 허물 때문에 찔림", "eventEn": "Pierced for our transgressions"},
+        {"verse": 6, "eventKo": "우리 모두 양같이 그릇 행함", "eventEn": "All we like sheep have gone astray"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 54,
+      "titleKo": "시온의 영광스러운 미래",
+      "titleEn": "Zion's Glorious Future",
+      "summaryKo": "이스라엘이 회복되고 확장될 것을 약속합니다.",
+      "summaryEn": "Promise of Israel's restoration and expansion.",
+      "messageKo": "산들이 떠나고 언덕이 옮겨져도 나의 인자함은 떠나지 아니하리라.",
+      "messageEn": "Though the mountains be shaken, My unfailing love will not be shaken.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "노래하라 잉태하지 못한 자여", "eventEn": "Sing, barren woman"},
+        {"verse": 10, "eventKo": "나의 인자함이 떠나지 않음", "eventEn": "My unfailing love will not depart"},
+        {"verse": 17, "eventKo": "너를 대적하는 자가 넘어지리라", "eventEn": "No weapon against you will prevail"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 55,
+      "titleKo": "은혜로운 초청",
+      "titleEn": "Invitation of Grace",
+      "summaryKo": "목마른 자들을 물로 초청하시는 은혜의 말씀입니다.",
+      "summaryEn": "Grace invites all who thirst to come to the waters.",
+      "messageKo": "오호라 목마른 자들아 물로 나아오라.",
+      "messageEn": "Come, all you who are thirsty, come to the waters.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "목마른 자들아 물로 오라", "eventEn": "Come to the waters"},
+        {"verse": 6, "eventKo": "여호와를 찾으라", "eventEn": "Seek the LORD"},
+        {"verse": 11, "eventKo": "나의 말도 헛되이 돌아오지 않음", "eventEn": "My word will not return empty"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 56,
+      "titleKo": "만민을 위한 구원",
+      "titleEn": "Salvation for All",
+      "summaryKo": "외국인과 고자도 하나님의 백성이 될 수 있습니다.",
+      "summaryEn": "Foreigners and eunuchs can become God's people.",
+      "messageKo": "내 집은 만민의 기도하는 집이라 일컬음을 받을 것입니다.",
+      "messageEn": "My house will be called a house of prayer for all nations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "나의 구원이 가까이 옴", "eventEn": "My salvation is close"},
+        {"verse": 7, "eventKo": "만민의 기도하는 집", "eventEn": "House of prayer for all nations"},
+        {"verse": 8, "eventKo": "흩어진 자를 모으심", "eventEn": "I will gather still others"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 57,
+      "titleKo": "우상숭배에 대한 책망",
+      "titleEn": "Rebuke of Idolatry",
+      "summaryKo": "우상숭배를 책망하고 겸손한 자에게 평화를 약속합니다.",
+      "summaryEn": "Rebuke of idolatry; peace promised to the humble.",
+      "messageKo": "겸손하고 통회하는 자와 함께 거하리라.",
+      "messageEn": "I live with the contrite and lowly in spirit.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "우상이 구원하지 못함", "eventEn": "Idols cannot save"},
+        {"verse": 15, "eventKo": "겸손한 자와 함께함", "eventEn": "Live with the lowly"},
+        {"verse": 21, "eventKo": "악인에게는 평강이 없음", "eventEn": "No peace for the wicked"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 58,
+      "titleKo": "참된 금식",
+      "titleEn": "True Fasting",
+      "summaryKo": "형식적 금식이 아닌 정의와 자비를 행하는 참된 금식입니다.",
+      "summaryEn": "True fasting is not ritual but practicing justice and mercy.",
+      "messageKo": "내가 기뻐하는 금식은 불의의 결박을 푸는 것이라.",
+      "messageEn": "The fasting I choose: to loose the chains of injustice.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "불의의 결박을 풀어주라", "eventEn": "Loose chains of injustice"},
+        {"verse": 7, "eventKo": "주린 자에게 네 양식을 나눠주라", "eventEn": "Share food with hungry"},
+        {"verse": 11, "eventKo": "여호와가 항상 인도하심", "eventEn": "LORD will guide you always"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 59,
+      "titleKo": "죄와 구원",
+      "titleEn": "Sin and Redemption",
+      "summaryKo": "죄가 하나님과의 관계를 가로막지만 구속자가 오실 것입니다.",
+      "summaryEn": "Sin separates from God, but a Redeemer will come.",
+      "messageKo": "너희 죄악이 너희와 너희 하나님 사이를 갈라 놓았느니라.",
+      "messageEn": "Your iniquities have separated you from your God.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "죄악이 하나님과 갈라놓음", "eventEn": "Iniquities separate from God"},
+        {"verse": 16, "eventKo": "자기 팔로 구원하심", "eventEn": "His own arm worked salvation"},
+        {"verse": 20, "eventKo": "구속자가 시온에 임함", "eventEn": "Redeemer will come to Zion"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 60,
+      "titleKo": "시온의 영광",
+      "titleEn": "Glory of Zion",
+      "summaryKo": "시온이 빛을 발하고 만국이 그 빛에 나아옵니다.",
+      "summaryEn": "Zion shines; nations come to its light.",
+      "messageKo": "일어나라 빛을 발하라 네 빛이 이르렀고 여호와의 영광이 네 위에 임하였음이라.",
+      "messageEn": "Arise, shine, for your light has come, and the glory of the LORD rises upon you.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "일어나라 빛을 발하라", "eventEn": "Arise, shine"},
+        {"verse": 3, "eventKo": "나라들이 네 빛으로", "eventEn": "Nations will come to your light"},
+        {"verse": 19, "eventKo": "여호와가 영원한 빛이 됨", "eventEn": "LORD will be your everlasting light"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 61,
+      "titleKo": "여호와의 영이 내게 임하셨도다",
+      "titleEn": "Spirit of the LORD Upon Me",
+      "summaryKo": "메시아의 사명과 시온의 회복을 선포합니다.",
+      "summaryEn": "The Messiah's mission and Zion's restoration proclaimed.",
+      "messageKo": "여호와의 은혜의 해와 보복의 날을 선포하리라.",
+      "messageEn": "To proclaim the year of the LORD's favor and the day of vengeance.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와의 영이 내게 임하심", "eventEn": "Spirit of LORD is on me"},
+        {"verse": 2, "eventKo": "은혜의 해를 선포", "eventEn": "Proclaim year of favor"},
+        {"verse": 3, "eventKo": "재 대신 화관을", "eventEn": "Crown of beauty for ashes"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 62,
+      "titleKo": "시온의 새 이름",
+      "titleEn": "Zion's New Name",
+      "summaryKo": "시온이 새 이름을 얻고 하나님의 기뻐하시는 자가 됩니다.",
+      "summaryEn": "Zion receives a new name and becomes God's delight.",
+      "messageKo": "너를 다시는 버림받은 자라 하지 아니하리라.",
+      "messageEn": "No longer will they call you Deserted.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "새 이름을 얻음", "eventEn": "Called by a new name"},
+        {"verse": 4, "eventKo": "헵시바, 불라", "eventEn": "Hephzibah, Beulah"},
+        {"verse": 6, "eventKo": "파수꾼을 세우심", "eventEn": "I have posted watchmen"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 63,
+      "titleKo": "복수의 날",
+      "titleEn": "Day of Vengeance",
+      "summaryKo": "하나님의 심판과 이스라엘을 위한 중보 기도입니다.",
+      "summaryEn": "God's judgment and intercessory prayer for Israel.",
+      "messageKo": "내 팔이 나를 위해 구원을 이루었도다.",
+      "messageEn": "My own arm achieved salvation for me.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "에돔에서 오시는 자", "eventEn": "Who is this coming from Edom?"},
+        {"verse": 5, "eventKo": "내 팔이 구원을 이룸", "eventEn": "My own arm achieved salvation"},
+        {"verse": 16, "eventKo": "주는 우리 아버지", "eventEn": "You are our Father"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 64,
+      "titleKo": "구원을 간구함",
+      "titleEn": "Prayer for Salvation",
+      "summaryKo": "이스라엘이 하나님의 개입을 간구하는 기도입니다.",
+      "summaryEn": "Israel's prayer for God's intervention.",
+      "messageKo": "주여 하늘을 가르고 내려오소서.",
+      "messageEn": "Oh, that You would rend the heavens and come down.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "하늘을 가르고 내려오소서", "eventEn": "Rend heavens and come down"},
+        {"verse": 6, "eventKo": "우리의 의는 더러운 옷 같음", "eventEn": "Righteousness like filthy rags"},
+        {"verse": 8, "eventKo": "주는 우리 아버지", "eventEn": "You are our Father"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 65,
+      "titleKo": "새 하늘과 새 땅",
+      "titleEn": "New Heavens and New Earth",
+      "summaryKo": "새 하늘과 새 땅을 창조하실 것을 약속하십니다.",
+      "summaryEn": "Promise of new heavens and new earth.",
+      "messageKo": "보라 내가 새 하늘과 새 땅을 창조하나니.",
+      "messageEn": "See, I will create new heavens and a new earth.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "나를 찾지 않는 자에게 나타남", "eventEn": "Found by those not seeking"},
+        {"verse": 17, "eventKo": "새 하늘과 새 땅", "eventEn": "New heavens and new earth"},
+        {"verse": 24, "eventKo": "부르기 전에 응답하리라", "eventEn": "Before they call I will answer"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 66,
+      "titleKo": "최종 심판과 영광",
+      "titleEn": "Final Judgment and Glory",
+      "summaryKo": "겸손한 자에게 복이, 불순종하는 자에게 심판이 임합니다.",
+      "summaryEn": "Blessing for the humble; judgment for the disobedient.",
+      "messageKo": "내가 본 자는 겸손하고 통회하며 내 말을 떠는 자니라.",
+      "messageEn": "These are the ones I look on: humble and contrite in spirit who tremble at My word.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "겸손하고 통회하며 말씀을 떨며", "eventEn": "Humble, contrite, tremble at word"},
+        {"verse": 18, "eventKo": "만국을 모으리라", "eventEn": "I will gather all nations"},
+        {"verse": 22, "eventKo": "새 하늘과 새 땅이 항상 있음같이", "eventEn": "As new heavens and earth endure"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

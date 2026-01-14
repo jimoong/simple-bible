@@ -1,0 +1,128 @@
+{
+  "bookId": "songofsolomon",
+  "bookNumber": 22,
+  "bookNameKo": "아가",
+  "bookNameEn": "Song of Solomon",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "사랑의 시작",
+      "titleEn": "Beginning of Love",
+      "summaryKo": "술람미 여인과 솔로몬의 사랑 노래가 시작됩니다.",
+      "summaryEn": "The love song between the Shulammite and Solomon begins.",
+      "messageKo": "참된 사랑은 서로를 향한 깊은 갈망으로 시작됩니다.",
+      "messageEn": "True love begins with deep longing for one another.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "네 입맞춤으로", "eventEn": "Let him kiss me"},
+        {"verse": 5, "eventKo": "검으나 아름다움", "eventEn": "Dark but beautiful"},
+        {"verse": 15, "eventKo": "내 사랑아 너는 어여쁘다", "eventEn": "How beautiful you are, my darling"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 2,
+      "titleKo": "사랑의 봄",
+      "titleEn": "Spring of Love",
+      "summaryKo": "신랑이 신부를 찾아오고 봄의 이미지로 사랑을 노래합니다.",
+      "summaryEn": "The bridegroom comes for the bride; love is sung with images of spring.",
+      "messageKo": "사랑은 때를 기다리며 자연스럽게 꽃피웁니다.",
+      "messageEn": "Love waits for its time and blooms naturally.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "나는 샤론의 수선화", "eventEn": "I am a rose of Sharon"},
+        {"verse": 4, "eventKo": "그의 기는 사랑이라", "eventEn": "His banner over me is love"},
+        {"verse": 7, "eventKo": "사랑이 원할 때까지 깨우지 말라", "eventEn": "Do not arouse love until it desires"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "신랑을 찾음",
+      "titleEn": "Seeking the Bridegroom",
+      "summaryKo": "신부가 밤에 신랑을 찾고, 솔로몬의 결혼 행렬이 묘사됩니다.",
+      "summaryEn": "The bride seeks the bridegroom at night; Solomon's wedding procession is described.",
+      "messageKo": "사랑하는 이를 찾으면 놓지 말아야 합니다.",
+      "messageEn": "When you find the one you love, hold on and do not let go.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "밤에 침상에서 찾음", "eventEn": "Sought him on my bed at night"},
+        {"verse": 4, "eventKo": "붙잡고 놓지 않음", "eventEn": "Held him and would not let go"},
+        {"verse": 11, "eventKo": "솔로몬의 면류관", "eventEn": "Solomon's crown"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "신부의 아름다움",
+      "titleEn": "Beauty of the Bride",
+      "summaryKo": "신랑이 신부의 아름다움을 찬양합니다.",
+      "summaryEn": "The bridegroom praises the bride's beauty.",
+      "messageKo": "사랑하는 이에게 온전한 찬사를 아끼지 말아야 합니다.",
+      "messageEn": "Do not withhold sincere praise from the one you love.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "내 사랑아 너는 어여쁘다", "eventEn": "You are beautiful, my darling"},
+        {"verse": 7, "eventKo": "흠이 없구나", "eventEn": "There is no flaw in you"},
+        {"verse": 12, "eventKo": "닫힌 동산이요 봉한 샘이로다", "eventEn": "A locked garden, a sealed spring"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "신랑을 놓침",
+      "titleEn": "Missing the Bridegroom",
+      "summaryKo": "신부가 신랑을 놓치고 찾아 헤매며 그의 아름다움을 묘사합니다.",
+      "summaryEn": "The bride misses the bridegroom, searches for him, and describes his beauty.",
+      "messageKo": "사랑에는 즉각적인 반응과 헌신이 필요합니다.",
+      "messageEn": "Love requires immediate response and commitment.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "문을 두드리시나", "eventEn": "My beloved is knocking"},
+        {"verse": 6, "eventKo": "나갔더니 가버렸음", "eventEn": "I opened, but he had gone"},
+        {"verse": 16, "eventKo": "그는 모두 사랑스럽다", "eventEn": "He is altogether lovely"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "신랑과 재회",
+      "titleEn": "Reunion with Bridegroom",
+      "summaryKo": "신부가 신랑을 찾고, 신랑이 신부의 유일무이함을 찬양합니다.",
+      "summaryEn": "The bride finds the bridegroom; he praises her uniqueness.",
+      "messageKo": "진정한 사랑은 유일무이하고 비교할 수 없습니다.",
+      "messageEn": "True love is unique and incomparable.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "나는 내 사랑의 것", "eventEn": "I am my beloved's"},
+        {"verse": 9, "eventKo": "유일한 나의 비둘기", "eventEn": "My dove, my perfect one, is unique"},
+        {"verse": 13, "eventKo": "술람미 여인", "eventEn": "The Shulammite"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "신부에 대한 찬양",
+      "titleEn": "Praise for the Bride",
+      "summaryKo": "신랑이 신부의 아름다움을 머리부터 발끝까지 찬양합니다.",
+      "summaryEn": "The bridegroom praises the bride's beauty from head to toe.",
+      "messageKo": "사랑은 상대의 전부를 아름답게 봅니다.",
+      "messageEn": "Love sees beauty in the whole of the beloved.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "왕의 딸이여", "eventEn": "How beautiful are your feet"},
+        {"verse": 6, "eventKo": "사랑이여 네가 어찌 그리 아름다운가", "eventEn": "How beautiful you are, my love"},
+        {"verse": 10, "eventKo": "나는 내 사랑의 것", "eventEn": "I belong to my beloved"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "사랑의 완성",
+      "titleEn": "Completion of Love",
+      "summaryKo": "사랑의 힘을 선포하고 영원한 헌신으로 마무리됩니다.",
+      "summaryEn": "The power of love is proclaimed, ending with eternal commitment.",
+      "messageKo": "사랑은 죽음같이 강하고 큰물도 끄지 못합니다.",
+      "messageEn": "Love is as strong as death; many waters cannot quench it.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "사랑은 죽음같이 강함", "eventEn": "Love is strong as death"},
+        {"verse": 7, "eventKo": "큰물도 사랑을 끄지 못함", "eventEn": "Many waters cannot quench love"},
+        {"verse": 14, "eventKo": "나의 사랑아 빨리 오라", "eventEn": "Come away, my beloved"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

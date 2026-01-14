@@ -35,6 +35,10 @@ final class BibleViewModel {
         didSet { saveReadingMode() }
     }
     
+    // Primary/Secondary language codes for UI language determination
+    var primaryLanguageCode: String = "ko"
+    var secondaryLanguageCode: String = "en"
+    
     var isLoading: Bool = false
     var errorMessage: String?
     var showBookshelf: Bool = false
@@ -54,13 +58,22 @@ final class BibleViewModel {
         return verses[currentVerseIndex]
     }
     
+    /// UI language based on currently active display mode
+    /// - When showing primary (languageMode == .kr): uses primaryLanguageCode
+    /// - When showing secondary (languageMode == .en): uses secondaryLanguageCode
+    /// - Falls back to EN if the language doesn't have Korean UI support
+    var uiLanguage: LanguageMode {
+        let activeLanguageCode = languageMode == .kr ? primaryLanguageCode : secondaryLanguageCode
+        return LanguageMode.from(languageCode: activeLanguageCode)
+    }
+    
     var headerText: String {
-        let bookName = currentBook.name(for: languageMode)
+        let bookName = currentBook.name(for: uiLanguage)
         return "\(bookName) \(currentChapter)"
     }
     
     var sortedBooks: [BibleBook] {
-        BibleData.sortedBooks(by: sortOrder, language: languageMode)
+        BibleData.sortedBooks(by: sortOrder, language: uiLanguage)
     }
     
     var canGoToPreviousChapter: Bool {
@@ -116,6 +129,17 @@ final class BibleViewModel {
            let mode = ReadingMode(rawValue: savedReadingMode) {
             self.readingMode = mode
         }
+        
+        // Load saved language codes for UI language
+        self.primaryLanguageCode = defaults.string(forKey: "primaryLanguageCode") ?? "ko"
+        self.secondaryLanguageCode = defaults.string(forKey: "secondaryLanguageCode") ?? "en"
+    }
+    
+    /// Reload language codes from UserDefaults (call after settings change)
+    func reloadLanguageCodes() {
+        let defaults = UserDefaults.standard
+        primaryLanguageCode = defaults.string(forKey: "primaryLanguageCode") ?? "ko"
+        secondaryLanguageCode = defaults.string(forKey: "secondaryLanguageCode") ?? "en"
     }
     
     // MARK: - Persistence
@@ -161,6 +185,12 @@ final class BibleViewModel {
         }
         
         isLoading = false
+    }
+    
+    /// Reload current chapter (e.g., after translation change)
+    func reloadCurrentChapter() async {
+        await BibleAPIService.shared.reloadTranslations()
+        await loadCurrentChapter()
     }
     
     func goToNextVerse() {

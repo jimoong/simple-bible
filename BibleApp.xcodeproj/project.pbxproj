@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0000010000000000000060 /* OfflineStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000060 /* OfflineStorageService.swift */; };
+		AA0000010000000000000061 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000061 /* DownloadManager.swift */; };
+		AA0000010000000000000062 /* OfflineDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000062 /* OfflineDownloadView.swift */; };
 		66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */; };
 		66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */; };
 		66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */; };
@@ -26,6 +29,7 @@
 		AA0000010000000000000009 /* BibleBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000009 /* BibleBook.swift */; };
 		AA0000010000000000000010 /* LanguageMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000010 /* LanguageMode.swift */; };
 		AA0000010000000000000011 /* BibleAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000011 /* BibleAPIService.swift */; };
+		AA0000010000000000000050 /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000050 /* TranslationService.swift */; };
 		AA0000010000000000000012 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000012 /* HapticManager.swift */; };
 		AA0000010000000000000013 /* BibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000013 /* BibleViewModel.swift */; };
 		AA0000010000000000000014 /* BibleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000014 /* BibleData.swift */; };
@@ -52,6 +56,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA0000020000000000000060 /* OfflineStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorageService.swift; sourceTree = "<group>"; };
+		AA0000020000000000000061 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		AA0000020000000000000062 /* OfflineDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineDownloadView.swift; sourceTree = "<group>"; };
 		66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleReferenceParser.swift; sourceTree = "<group>"; };
 		66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchService.swift; sourceTree = "<group>"; };
 		66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +78,7 @@
 		AA0000020000000000000009 /* BibleBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleBook.swift; sourceTree = "<group>"; };
 		AA0000020000000000000010 /* LanguageMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageMode.swift; sourceTree = "<group>"; };
 		AA0000020000000000000011 /* BibleAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAPIService.swift; sourceTree = "<group>"; };
+		AA0000020000000000000050 /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		AA0000020000000000000012 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		AA0000020000000000000013 /* BibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewModel.swift; sourceTree = "<group>"; };
 		AA0000020000000000000014 /* BibleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleData.swift; sourceTree = "<group>"; };
@@ -173,6 +181,7 @@
 				AA0000020000000000000021 /* ExpandableFAB.swift */,
 				AA0000020000000000000032 /* NavigateFAB.swift */,
 				AA0000020000000000000022 /* SettingsView.swift */,
+				AA0000020000000000000062 /* OfflineDownloadView.swift */,
 				AA0000020000000000000002 /* ContentView.swift */,
 				AA0000020000000000000003 /* SlotMachineView.swift */,
 				AA0000020000000000000034 /* BookReadingView.swift */,
@@ -202,6 +211,9 @@
 				66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */,
 				66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */,
 				AA0000020000000000000011 /* BibleAPIService.swift */,
+				AA0000020000000000000050 /* TranslationService.swift */,
+				AA0000020000000000000060 /* OfflineStorageService.swift */,
+				AA0000020000000000000061 /* DownloadManager.swift */,
 				AA0000020000000000000012 /* HapticManager.swift */,
 				AA0000020000000000000029 /* ChapterToastTracker.swift */,
 				AA0000020000000000000031 /* ReadingProgressTracker.swift */,
@@ -320,6 +332,7 @@
 				AA0000010000000000000009 /* BibleBook.swift in Sources */,
 				AA0000010000000000000010 /* LanguageMode.swift in Sources */,
 				AA0000010000000000000011 /* BibleAPIService.swift in Sources */,
+				AA0000010000000000000050 /* TranslationService.swift in Sources */,
 				66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */,
 				66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */,
 				66EAF8762F16329200542200 /* TimelineView.swift in Sources */,
@@ -342,6 +355,9 @@
 				66EAF8742F14AF8E00542200 /* VoiceSearchOverlay.swift in Sources */,
 				AA0000010000000000000033 /* ReadingMode.swift in Sources */,
 				AA0000010000000000000034 /* BookReadingView.swift in Sources */,
+				AA0000010000000000000060 /* OfflineStorageService.swift in Sources */,
+				AA0000010000000000000061 /* DownloadManager.swift in Sources */,
+				AA0000010000000000000062 /* OfflineDownloadView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

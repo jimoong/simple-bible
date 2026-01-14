@@ -1,0 +1,188 @@
+{
+  "bookId": "ecclesiastes",
+  "bookNumber": 21,
+  "bookNameKo": "전도서",
+  "bookNameEn": "Ecclesiastes",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "헛되고 헛되도다",
+      "titleEn": "Vanity of Vanities",
+      "summaryKo": "전도자가 해 아래 모든 것이 헛되다고 선포합니다.",
+      "summaryEn": "The Preacher declares all things under the sun are vanity.",
+      "messageKo": "해 아래에는 새것이 없고 모든 것이 헛됩니다.",
+      "messageEn": "There is nothing new under the sun; all is vanity.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "헛되고 헛되도다", "eventEn": "Vanity of vanities"},
+        {"verse": 9, "eventKo": "해 아래에는 새것이 없음", "eventEn": "Nothing new under the sun"},
+        {"verse": 18, "eventKo": "지혜가 많으면 번뇌도 많음", "eventEn": "Much wisdom, much grief"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 2,
+      "titleKo": "쾌락의 헛됨",
+      "titleEn": "Vanity of Pleasure",
+      "summaryKo": "쾌락, 부, 지혜를 추구해도 결국 헛됨을 깨닫습니다.",
+      "summaryEn": "Pursuing pleasure, wealth, and wisdom proves ultimately meaningless.",
+      "messageKo": "쾌락과 업적도 바람을 잡는 것입니다.",
+      "messageEn": "Pleasure and achievements are like chasing the wind.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "쾌락을 시험해봄", "eventEn": "Testing with pleasure"},
+        {"verse": 11, "eventKo": "모두 헛되어 바람을 잡음", "eventEn": "All meaningless, chasing wind"},
+        {"verse": 24, "eventKo": "먹고 마시며 즐기는 것이 선함", "eventEn": "Nothing better than to eat and drink"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "모든 것에 때가 있음",
+      "titleEn": "A Time for Everything",
+      "summaryKo": "천하 만사가 다 때가 있으며 하나님이 정하셨습니다.",
+      "summaryEn": "There is a time for everything, appointed by God.",
+      "messageKo": "하나님이 모든 것을 그 때에 아름답게 하셨습니다.",
+      "messageEn": "He has made everything beautiful in its time.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "천하 만사가 다 때가 있음", "eventEn": "A time for everything"},®
+        {"verse": 11, "eventKo": "그 때에 아름답게 하셨음", "eventEn": "Made everything beautiful in its time"},
+        {"verse": 14, "eventKo": "하나님이 하시는 모든 것은 영원", "eventEn": "God's works are eternal"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "사회의 부조리",
+      "titleEn": "Social Injustice",
+      "summaryKo": "억압, 외로움, 헛된 수고에 대한 관찰입니다.",
+      "summaryEn": "Observations on oppression, loneliness, and meaningless toil.",
+      "messageKo": "두 사람이 한 사람보다 나으니.",
+      "messageEn": "Two are better than one.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "학대받는 자들의 눈물", "eventEn": "Tears of the oppressed"},
+        {"verse": 9, "eventKo": "두 사람이 한 사람보다 나음", "eventEn": "Two are better than one"},
+        {"verse": 12, "eventKo": "삼겹줄은 쉽게 끊어지지 않음", "eventEn": "Threefold cord not easily broken"}
+      ],
+      "timelineYear":® null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "하나님 앞에서",
+      "titleEn": "Before God",
+      "summaryKo": "하나님 앞에서 경건히 행하고 재물의 허망함을 말합니다.",
+      "summaryEn": "Being reverent before God and the emptiness of wealth.",
+      "messageKo": "하나님이 하늘에 계시고 너는 땅에 있으니 말을 적게 하라.",
+      "messageEn": "God is in heaven and you are on earth, so let your words be few.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나님 앞에서 말을 함부로 하지 말라", "eventEn": "Do not be hasty with words"},
+        {"verse": 10, "eventKo": "은을 사랑하면 족함이 없음", "eventEn": "Whoever loves money never has enough"},
+        {"verse": 19, "eventKo": "먹고 마시며 즐기는 것이 분복", "eventEn": "To enjoy work is a gift from God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "부의 허망함",
+      "titleEn": "Vanity of Wealth",
+      "summaryKo": "부를 누리지 못하는 것의 허망함을 말합니다.",
+      "summaryEn": "The emptiness of having wealth but not enjoying it.",
+      "messageKo": "재물이 있어도 누리지 못하면 헛됩니다.",
+      "messageEn": "Wealth without enjoyment is meaningless.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "누리지 못하는 부", "eventEn": "Wealth without enjoyment"},
+        {"verse": 7, "eventKo": "수고는 입을 위함이나", "eventEn": "All labor is for the mouth"},
+        {"verse": 12, "eventKo": "무엇이 사람에게 선한지 누가 알랴", "eventEn": "Who knows what is good?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "지혜로운 조언",
+      "titleEn": "Wise Counsel",
+      "summaryKo": "삶의 지혜와 극단을 피하는 중용에 대한 교훈입니다.",
+      "summaryEn": "Wisdom for life and avoiding extremes.",
+      "messageKo": "지혜는 유산처럼 좋고 해를 보는 자에게 유익합니다.",
+      "messageEn": "Wisdom, like an inheritance, is good and benefits those who see the sun.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "좋은 이름이 보배로운 기름보다 나음", "eventEn": "Good name better than fine perfume"},
+        {"verse": 14, "eventKo": "형통한 날에는 기뻐하고", "eventEn": "When times are good, be happy"},
+        {"verse": 20, "eventKo": "의인은 하나도 없음", "eventEn": "No one on earth always does right"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "권위와 심판",
+      "titleEn": "Authority and Judgment",
+      "summaryKo": "권위에 복종하고 하나님의 심판을 신뢰하라는 교훈입니다.",
+      "summaryEn": "Submit to authority and trust in God's judgment.",
+      "messageKo": "죄인이 백 번 악을 행해도 오래 살지만 하나님을 경외하는 자가 복됩니다.",
+      "messageEn": "Though a sinner does evil a hundred times, it will go better with God-fearing people.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "명령을 지키는 자는 화를 모름", "eventEn": "Whoever obeys commands will not be harmed"},
+        {"verse": 12, "eventKo": "하나님을 경외하는 자가 복됨", "eventEn": "Better for God-fearing"},
+        {"verse": 15, "eventKo": "먹고 마시며 즐거워하는 것", "eventEn": "To eat, drink and be glad"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "공통된 운명",
+      "titleEn": "Common Destiny",
+      "summaryKo": "모든 사람에게 죽음이 임하므로 현재를 즐기라는 교훈입니다.",
+      "summaryEn": "Death comes to all, so enjoy the present.",
+      "messageKo": "죽은 사자보다 산 개가 낫습니다.",
+      "messageEn": "A living dog is better than a dead lion.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "죽은 사자보다 산 개", "eventEn": "Living dog better than dead lion"},
+        {"verse": 10, "eventKo": "손에 할 일을 힘을 다해 하라", "eventEn": "Whatever you do, do it with all your might"},
+        {"verse": 11, "eventKo": "빠른 자라고 경주에서 이기지 못함", "eventEn": "Race not to the swift"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "지혜와 어리석음",
+      "titleEn": "Wisdom and Folly",
+      "summaryKo": "지혜로운 자와 어리석은 자의 행동을 대조합니다.",
+      "summaryEn": "Contrasting behaviors of the wise and foolish.",
+      "messageKo": "작은 어리석음이 지혜와 존귀를 부패시킵니다.",
+      "messageEn": "A little folly outweighs wisdom and honor.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "죽은 파리가 향료를 부패시킴", "eventEn": "Dead flies make perfume stink"},
+        {"verse": 10, "eventKo": "철이 무디면 힘이 더 듬", "eventEn": "If ax is dull, more strength needed"},
+        {"verse": 20, "eventKo": "마음으로도 왕을 저주하지 말라", "eventEn": "Do not curse king even in thought"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "미래를 위한 투자",
+      "titleEn": "Invest in the Future",
+      "summaryKo": "미래를 알 수 없으니 열심히 일하고 청년 시절을 즐기라는 교훈입니다.",
+      "summaryEn": "Since the future is unknown, work hard and enjoy youth.",
+      "messageKo": "네 떡을 물 위에 던지라.",
+      "messageEn": "Cast your bread upon the waters.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "네 떡을 물 위에 던지라", "eventEn": "Cast bread upon waters"},
+        {"verse": 4, "eventKo": "구름만 바라보면 거두지 못함", "eventEn": "Whoever watches clouds won't reap"},
+        {"verse": 9, "eventKo": "청년 때에 즐거워하라", "eventEn": "Rejoice in your youth"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "결론: 하나님을 경외하라",
+      "titleEn": "Conclusion: Fear God",
+      "summaryKo": "젊을 때 창조주를 기억하고 하나님을 경외하라는 결론입니다.",
+      "summaryEn": "Remember your Creator in youth and fear God as the conclusion.",
+      "messageKo": "하나님을 경외하고 그의 명령들을 지킬지어다. 이것이 모든 사람의 본분이니라.",
+      "messageEn": "Fear God and keep His commandments, for this is the whole duty of man.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "청년 때에 창조주를 기억하라", "eventEn": "Remember your Creator in youth"},
+        {"verse": 8, "eventKo": "헛되고 헛되도다", "eventEn": "Vanity of vanities"},
+        {"verse": 13, "eventKo": "하나님을 경외하고 명령을 지키라", "eventEn": "Fear God and keep commandments"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

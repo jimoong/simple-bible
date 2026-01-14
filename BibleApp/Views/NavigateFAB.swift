@@ -4,15 +4,18 @@ import SwiftUI
 /// Mirror behavior of ExpandableFAB for consistency
 struct NavigateFAB: View {
     var theme: BookTheme
+    var uiLanguage: LanguageMode = .kr  // Current UI language based on active display
     var onBookshelf: () -> Void
     var onVoiceSearch: () -> Void
     @Binding var isExpanded: Bool
     var isHidden: Bool = false
     var useBlurBackground: Bool = false
     
+    private var isKoreanUI: Bool { uiLanguage == .kr }
+    
     // Layout
     private let collapsedSize: CGFloat = 52
-    private let expandedWidth: CGFloat = 180
+    private let expandedWidth: CGFloat = 210
     private let menuItemHeight: CGFloat = 48
     private let menuPadding: CGFloat = 8
     
@@ -50,16 +53,16 @@ struct NavigateFAB: View {
             
             // Content
             if isExpanded {
-                // Menu items
+                // Menu items - uses UI language based on primary translation
                 VStack(spacing: 0) {
                     // Voice search
-                    menuItem(icon: "mic.fill", label: "Voice") {
+                    menuItem(icon: "mic.fill", label: isKoreanUI ? "음성 바로가기" : "Voice") {
                         onVoiceSearch()
                         closeMenu()
                     }
                     
                     // Bookshelf
-                    menuItem(icon: "books.vertical", label: "Books") {
+                    menuItem(icon: "books.vertical", label: isKoreanUI ? "성경 목록" : "Books") {
                         onBookshelf()
                         closeMenu()
                     }
@@ -68,8 +71,8 @@ struct NavigateFAB: View {
                 .padding(.horizontal, menuPadding)
                 .transition(.opacity.animation(.easeOut(duration: 0.15).delay(0.1)))
             } else {
-                // FAB icon - location icon
-                Image(systemName: "location")
+                // FAB icon - books icon
+                Image(systemName: "books.vertical")
                     .font(.system(size: 20, weight: .bold))
                     .foregroundStyle(.white)
                     .transition(.opacity.animation(.easeOut(duration: 0.1)))
@@ -223,6 +226,7 @@ private struct NavigateMenuItemButtonStyle: ButtonStyle {
                     HStack {
                         NavigateFAB(
                             theme: BookThemes.genesis,
+                            uiLanguage: .kr,
                             onBookshelf: { print("Open bookshelf") },
                             onVoiceSearch: { print("Open voice search") },
                             isExpanded: $isExpanded

@@ -49,7 +49,7 @@ struct ChapterInfoPanel: View {
                 VStack(spacing: 0) {
                     // Title: Book + Chapter
                     Text(chapterTitle)
-                        .font(theme.display(28, language: viewModel.languageMode))
+                        .font(theme.display(28, language: viewModel.uiLanguage))
                         .foregroundStyle(theme.textPrimary)
                         .padding(.top, safeAreaTop + 20)
                     
@@ -165,8 +165,8 @@ struct ChapterInfoPanel: View {
     
     // MARK: - Title
     private var chapterTitle: String {
-        let bookName = book.name(for: viewModel.languageMode)
-        if viewModel.languageMode == .kr {
+        let bookName = book.name(for: viewModel.uiLanguage)
+        if viewModel.uiLanguage == .kr {
             return "\(bookName) \(chapter)장"
         } else {
             return "\(bookName) \(chapter)"
@@ -175,12 +175,12 @@ struct ChapterInfoPanel: View {
     
     // MARK: - Subtitle
     private var subtitle: String {
-        let versesText = viewModel.languageMode == .kr 
+        let versesText = viewModel.uiLanguage == .kr 
             ? "\(verseCount)절" 
             : "\(verseCount) verses"
         
         if let summary = chapterSummary {
-            let title = viewModel.languageMode == .kr ? summary.titleKo : summary.titleEn
+            let title = viewModel.uiLanguage == .kr ? summary.titleKo : summary.titleEn
             return "\(title) · \(versesText)"
         } else {
             return versesText
@@ -192,14 +192,14 @@ struct ChapterInfoPanel: View {
         VStack(alignment: .leading, spacing: 32) {
             VStack(alignment: .leading, spacing: 18) {
                 // Summary
-                Text(summary.summary(for: viewModel.languageMode))
-                    .font(theme.verseText(17, language: viewModel.languageMode))
+                Text(summary.summary(for: viewModel.uiLanguage))
+                    .font(theme.verseText(17, language: viewModel.uiLanguage))
                     .foregroundStyle(theme.textSecondary)
                     .lineSpacing(7)
                 
                 // Key message
-                Text(summary.message(for: viewModel.languageMode))
-                    .font(theme.verseText(17, language: viewModel.languageMode))
+                Text(summary.message(for: viewModel.uiLanguage))
+                    .font(theme.verseText(17, language: viewModel.uiLanguage))
                     .foregroundStyle(theme.textSecondary)
                     .lineSpacing(7)
             }
@@ -229,13 +229,13 @@ struct ChapterInfoPanel: View {
                     } label: {
                         HStack(alignment: .top, spacing: 16) {
                             Text("\(event.verse)")
-                                .font(theme.verseNumber(14, language: viewModel.languageMode))
+                                .font(theme.verseNumber(14, language: viewModel.uiLanguage))
                                 .foregroundStyle(theme.textSecondary.opacity(0.5))
                                 .frame(width: 28, alignment: .leading)
                                 .padding(.top, 2)
                             
-                            Text(event.event(for: viewModel.languageMode))
-                                .font(theme.verseText(17, language: viewModel.languageMode))
+                            Text(event.event(for: viewModel.uiLanguage))
+                                .font(theme.verseText(17, language: viewModel.uiLanguage))
                                 .foregroundStyle(theme.textPrimary)
                                 .lineSpacing(4)
                                 .multilineTextAlignment(.leading)
@@ -252,7 +252,7 @@ struct ChapterInfoPanel: View {
     // MARK: - Empty State
     private var emptyStateView: some View {
         VStack(spacing: 8) {
-            Text(viewModel.languageMode == .kr ? "준비 중입니다" : "Coming soon")
+            Text(viewModel.uiLanguage == .kr ? "준비 중입니다" : "Coming soon")
                 .font(.system(size: 15, weight: .medium))
                 .foregroundStyle(theme.textSecondary.opacity(0.6))
         }

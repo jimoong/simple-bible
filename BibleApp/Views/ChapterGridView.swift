@@ -67,8 +67,8 @@ struct ChapterGridView: View {
         VStack(spacing: 0) {
             // Book title (fixed header)
             VStack(spacing: 8) {
-                Text(book.name(for: viewModel.languageMode))
-                    .font(theme.display(28, language: viewModel.languageMode))
+                Text(book.name(for: viewModel.uiLanguage))
+                    .font(theme.display(28, language: viewModel.uiLanguage))
                     .foregroundStyle(theme.textPrimary)
                 
                 Text("\(book.chapterCount) \(book.chapterCount == 1 ? "chapter" : "chapters")")
@@ -88,14 +88,14 @@ struct ChapterGridView: View {
     private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
         VStack(alignment: .leading, spacing: 18) {
             // Summary
-            Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
-                .font(theme.verseText(17, language: viewModel.languageMode))
+            Text(viewModel.uiLanguage == .kr ? summary.summaryKo : summary.summaryEn)
+                .font(theme.verseText(17, language: viewModel.uiLanguage))
                 .foregroundStyle(theme.textSecondary)
                 .lineSpacing(7)
             
             // Key message
-            Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
-                .font(theme.verseText(17, language: viewModel.languageMode))
+            Text(viewModel.uiLanguage == .kr ? summary.messageKo : summary.messageEn)
+                .font(theme.verseText(17, language: viewModel.uiLanguage))
                 .foregroundStyle(theme.textSecondary)
                 .lineSpacing(7)
         }
@@ -307,8 +307,8 @@ struct FullscreenChapterGridView: View {
         VStack(spacing: 0) {
             // Book title and chapter count (fixed header)
             VStack(spacing: 8) {
-                Text(currentBook.name(for: viewModel.languageMode))
-                    .font(theme.display(28, language: viewModel.languageMode))
+                Text(currentBook.name(for: viewModel.uiLanguage))
+                    .font(theme.display(28, language: viewModel.uiLanguage))
                     .foregroundStyle(theme.textPrimary)
                 
                 Text("\(currentBook.chapterCount) \(currentBook.chapterCount == 1 ? "chapter" : "chapters")")
@@ -368,14 +368,14 @@ struct FullscreenChapterGridView: View {
     private func bookSummarySection(_ summary: BibleBookSummary) -> some View {
         VStack(alignment: .leading, spacing: 18) {
             // Summary
-            Text(viewModel.languageMode == .kr ? summary.summaryKo : summary.summaryEn)
-                .font(theme.verseText(17, language: viewModel.languageMode))
+            Text(viewModel.uiLanguage == .kr ? summary.summaryKo : summary.summaryEn)
+                .font(theme.verseText(17, language: viewModel.uiLanguage))
                 .foregroundStyle(theme.textSecondary)
                 .lineSpacing(7)
             
             // Key message
-            Text(viewModel.languageMode == .kr ? summary.messageKo : summary.messageEn)
-                .font(theme.verseText(17, language: viewModel.languageMode))
+            Text(viewModel.uiLanguage == .kr ? summary.messageKo : summary.messageEn)
+                .font(theme.verseText(17, language: viewModel.uiLanguage))
                 .foregroundStyle(theme.textSecondary)
                 .lineSpacing(7)
         }

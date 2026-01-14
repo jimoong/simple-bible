@@ -123,7 +123,7 @@ struct BookReadingView: View {
         ChapterDataManager.shared.chapterSummary(
             bookId: viewModel.currentBook.id,
             chapter: viewModel.currentChapter
-        )?.title(for: viewModel.languageMode)
+        )?.title(for: viewModel.uiLanguage)
     }
     
     // MARK: - Verse Scroll View (Book Mode)
@@ -138,7 +138,7 @@ struct BookReadingView: View {
                     // Chapter title (left-aligned)
                     if let title = chapterTitle {
                         Text(title)
-                            .font(theme.verseText(24, language: viewModel.languageMode).bold())
+                            .font(theme.verseText(24, language: viewModel.uiLanguage).bold())
                             .foregroundStyle(theme.textPrimary)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(.bottom, 40)
@@ -164,7 +164,7 @@ struct BookReadingView: View {
                     bookId: viewModel.currentBook.id,
                     chapter: viewModel.currentChapter,
                     theme: theme,
-                    languageMode: viewModel.languageMode
+                    languageMode: viewModel.uiLanguage
                 )
                 .padding(.top, 40)
                 .padding(.bottom, geometry.safeAreaInsets.bottom + 100)

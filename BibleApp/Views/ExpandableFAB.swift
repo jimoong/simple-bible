@@ -5,6 +5,9 @@ struct ExpandableFAB: View {
     @Binding var languageMode: LanguageMode
     @Binding var readingMode: ReadingMode
     var theme: BookTheme
+    var primaryLanguageCode: String = "ko"
+    var secondaryLanguageCode: String = "en"
+    var uiLanguage: LanguageMode = .kr  // Current UI language based on active display
     var onLanguageToggle: () -> Void
     var onReadingModeToggle: () -> Void
     var onSettings: () -> Void
@@ -51,11 +54,13 @@ struct ExpandableFAB: View {
             glassBackground
             
             // Content
-            if isExpanded {
+                if isExpanded {
                 // Menu items
                 VStack(spacing: 0) {
                     // Settings (closes menu)
-                    menuItem(icon: "gearshape.fill", label: "Settings") {
+                    // Use UI language based on currently active display language
+                    let isKoreanUI = uiLanguage == .kr
+                    menuItem(icon: "gearshape.fill", label: isKoreanUI ? "설정" : "Settings") {
                         onSettings()
                         closeMenu()
                     }
@@ -185,7 +190,9 @@ struct ExpandableFAB: View {
     
     // MARK: - Reading Mode Toggle Item (doesn't close menu)
     private var readingModeToggleItem: some View {
-        Button {
+        let isKoreanUI = uiLanguage == .kr
+        
+        return Button {
             withAnimation(.easeOut(duration: 0.15)) {
                 onReadingModeToggle()
             }
@@ -197,9 +204,9 @@ struct ExpandableFAB: View {
                     .foregroundStyle(.white.opacity(0.85))
                     .frame(width: 24)
                 
-                // Toggle indicator
+                // Toggle indicator - uses UI language
                 HStack(spacing: 6) {
-                    Text("Tap")
+                    Text(isKoreanUI ? "탭" : "Tap")
                         .font(.system(size: 16, weight: readingMode == .tap ? .bold : .regular))
                         .foregroundStyle(readingMode == .tap ? .white : .white.opacity(0.4))
                     
@@ -207,7 +214,7 @@ struct ExpandableFAB: View {
                         .font(.system(size: 16))
                         .foregroundStyle(.white.opacity(0.25))
                     
-                    Text("Scroll")
+                    Text(isKoreanUI ? "스크롤" : "Scroll")
                         .font(.system(size: 16, weight: readingMode == .scroll ? .bold : .regular))
                         .foregroundStyle(readingMode == .scroll ? .white : .white.opacity(0.4))
                 }
@@ -223,7 +230,15 @@ struct ExpandableFAB: View {
     
     // MARK: - Language Toggle Item (doesn't close menu)
     private var languageToggleItem: some View {
-        Button {
+        // Primary text is in textKr slot, shown when languageMode == .kr
+        // Secondary text is in textEn slot, shown when languageMode == .en
+        let isPrimaryActive = languageMode == .kr
+        let isKoreanUI = uiLanguage == .kr  // UI Korean based on currently active language
+        
+        let primaryDisplay = LanguageDisplay.displayCode(for: primaryLanguageCode, inKorean: isKoreanUI)
+        let secondaryDisplay = LanguageDisplay.displayCode(for: secondaryLanguageCode, inKorean: isKoreanUI)
+        
+        return Button {
             withAnimation(.easeOut(duration: 0.15)) {
                 onLanguageToggle()
             }
@@ -238,17 +253,17 @@ struct ExpandableFAB: View {
                 
                 // Toggle indicator
                 HStack(spacing: 6) {
-                    Text("KR")
-                        .font(.system(size: 16, weight: languageMode == .kr ? .bold : .regular))
-                        .foregroundStyle(languageMode == .kr ? .white : .white.opacity(0.4))
+                    Text(primaryDisplay)
+                        .font(.system(size: 16, weight: isPrimaryActive ? .bold : .regular))
+                        .foregroundStyle(isPrimaryActive ? .white : .white.opacity(0.4))
                     
                     Text("/")
                         .font(.system(size: 16))
                         .foregroundStyle(.white.opacity(0.25))
                     
-                    Text("EN")
-                        .font(.system(size: 16, weight: languageMode == .en ? .bold : .regular))
-                        .foregroundStyle(languageMode == .en ? .white : .white.opacity(0.4))
+                    Text(secondaryDisplay)
+                        .font(.system(size: 16, weight: !isPrimaryActive ? .bold : .regular))
+                        .foregroundStyle(!isPrimaryActive ? .white : .white.opacity(0.4))
                 }
                 
                 Spacer()
@@ -307,6 +322,7 @@ private struct MenuItemButtonStyle: ButtonStyle {
                             languageMode: $languageMode,
                             readingMode: $readingMode,
                             theme: BookThemes.genesis,
+                            uiLanguage: .en,
                             onLanguageToggle: { print("Toggle language") },
                             onReadingModeToggle: { print("Toggle reading mode") },
                             onSettings: { print("Open settings") },

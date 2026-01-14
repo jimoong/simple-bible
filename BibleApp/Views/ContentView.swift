@@ -49,7 +49,7 @@ struct ContentView: View {
                         ChapterToastContainer(
                             isVisible: $showChapterToast,
                             chapterSummary: currentChapterSummary,
-                            languageMode: viewModel.languageMode,
+                            languageMode: viewModel.uiLanguage,
                             theme: theme,
                             onTap: {
                                 markCurrentChapterToastSeen()
@@ -167,6 +167,9 @@ struct ContentView: View {
                                     languageMode: $viewModel.languageMode,
                                     readingMode: $viewModel.readingMode,
                                     theme: theme,
+                                    primaryLanguageCode: viewModel.primaryLanguageCode,
+                                    secondaryLanguageCode: viewModel.secondaryLanguageCode,
+                                    uiLanguage: viewModel.uiLanguage,
                                     onLanguageToggle: {
                                         withAnimation(.easeOut(duration: 0.2)) {
                                             viewModel.toggleLanguage()
@@ -208,7 +211,7 @@ struct ContentView: View {
                         VoiceSearchOverlay(
                             viewModel: voiceSearchViewModel,
                             theme: theme,
-                            languageMode: viewModel.languageMode
+                            languageMode: viewModel.uiLanguage
                         )
                         .frame(height: maxPanelHeight)
                         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
@@ -250,7 +253,14 @@ struct ContentView: View {
                 SettingsView(
                     languageMode: $viewModel.languageMode,
                     readingMode: $viewModel.readingMode,
-                    onDismiss: { showSettings = false }
+                    viewModel: viewModel,
+                    onDismiss: {
+                        showSettings = false
+                        // Reload verses with new translation settings
+                        Task {
+                            await viewModel.reloadCurrentChapter()
+                        }
+                    }
                 )
             }
         }
@@ -329,6 +339,7 @@ struct ContentView: View {
             // Navigate FAB - expands to show bookshelf and voice search
             NavigateFAB(
                 theme: theme,
+                uiLanguage: viewModel.uiLanguage,
                 onBookshelf: {
                     if viewModel.showBookshelf {
                         dismissBookshelf()

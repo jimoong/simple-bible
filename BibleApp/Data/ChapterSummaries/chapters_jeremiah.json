@@ -1,0 +1,788 @@
+{
+  "bookId": "jeremiah",
+  "bookNumber": 24,
+  "bookNameKo": "예레미야",
+  "bookNameEn": "Jeremiah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "예레미야의 소명",
+      "titleEn": "Jeremiah's Call",
+      "summaryKo": "예레미야가 선지자로 부름받고 두 가지 환상을 봅니다.",
+      "summaryEn": "Jeremiah is called as a prophet and sees two visions.",
+      "messageKo": "내가 너를 모태에서 짓기 전에 너를 알았고 구별하였느니라.",
+      "messageEn": "Before I formed you in the womb I knew you; before you were born I set you apart.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "모태에서 알고 구별함", "eventEn": "Known before birth"},
+        {"verse": 9, "eventKo": "입에 말씀을 넣으심", "eventEn": "Words put in his mouth"},
+        {"verse": 11, "eventKo": "살구나무 환상", "eventEn": "Vision of almond branch"}
+      ],
+      "timelineYear": "BC 627"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "이스라엘의 배반",
+      "titleEn": "Israel's Apostasy",
+      "summaryKo": "하나님이 이스라엘의 배반과 우상숭배를 책망하십니다.",
+      "summaryEn": "God rebukes Israel's apostasy and idolatry.",
+      "messageKo": "너희가 두 가지 악을 행하였나니 생수의 샘을 버리고 스스로 웅덩이를 팠느니라.",
+      "messageEn": "They have forsaken the spring of living water and dug broken cisterns.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "처음 사랑을 기억함", "eventEn": "Remembering first love"},
+        {"verse": 13, "eventKo": "생수의 샘을 버림", "eventEn": "Forsook spring of living water"},
+        {"verse": 19, "eventKo": "악이 너를 징벌하리라", "eventEn": "Your wickedness will punish you"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "돌아오라는 부르심",
+      "titleEn": "Call to Return",
+      "summaryKo": "하나님이 배역한 이스라엘과 유다에게 돌아오라고 부르십니다.",
+      "summaryEn": "God calls unfaithful Israel and Judah to return.",
+      "messageKo": "배역한 이스라엘아 돌아오라. 내가 노한 낯으로 보지 아니하리라.",
+      "messageEn": "Return, faithless Israel. I will not be angry forever.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "돌아오라", "eventEn": "Return"},
+        {"verse": 15, "eventKo": "마음에 맞는 목자를 주리라", "eventEn": "Give shepherds after My heart"},
+        {"verse": 22, "eventKo": "배역한 자녀들아 돌아오라", "eventEn": "Return, faithless children"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "북쪽에서 오는 재앙",
+      "titleEn": "Disaster from the North",
+      "summaryKo": "회개를 촉구하고 북쪽에서 오는 재앙을 경고합니다.",
+      "summaryEn": "Call to repentance; warning of disaster from the north.",
+      "messageKo": "너희 마음의 포피를 베어 버리라.",
+      "messageEn": "Circumcise your hearts.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "묵은 땅을 기경하라", "eventEn": "Break up fallow ground"},
+        {"verse": 4, "eventKo": "마음에 할례를 받으라", "eventEn": "Circumcise your hearts"},
+        {"verse": 23, "eventKo": "땅이 혼돈하고 공허함", "eventEn": "Earth was formless and empty"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "예루살렘의 죄",
+      "titleEn": "Jerusalem's Sin",
+      "summaryKo": "예루살렘의 보편적 타락과 회개 거부를 책망합니다.",
+      "summaryEn": "Rebuke of Jerusalem's universal corruption and refusal to repent.",
+      "messageKo": "정의를 행하며 진리를 구하는 자를 한 사람이라도 찾으면 용서하리라.",
+      "messageEn": "If you find one person who deals justly and seeks truth, I will forgive.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "의인 한 사람을 찾으라", "eventEn": "Find one righteous person"},
+        {"verse": 14, "eventKo": "말씀이 불이 되리라", "eventEn": "My words will be fire"},
+        {"verse": 31, "eventKo": "너희가 이를 어찌하려느냐", "eventEn": "What will you do in the end?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "예루살렘 포위 경고",
+      "titleEn": "Warning of Jerusalem's Siege",
+      "summaryKo": "예루살렘의 포위와 멸망이 임박했음을 경고합니다.",
+      "summaryEn": "Warning that Jerusalem's siege and destruction are imminent.",
+      "messageKo": "옛적 길 곧 선한 길이 어디인지 알아보고 그리로 행하라.",
+      "messageEn": "Ask for the ancient paths, the good way, and walk in it.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "평강이 없는데 평강이라 함", "eventEn": "Peace when there is no peace"},
+        {"verse": 16, "eventKo": "옛적 선한 길을 찾으라", "eventEn": "Ask for ancient paths"},
+        {"verse": 27, "eventKo": "시험하는 자로 세움", "eventEn": "Appointed as a tester"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "성전 설교",
+      "titleEn": "Temple Sermon",
+      "summaryKo": "예레미야가 성전에서 거짓된 신뢰를 책망합니다.",
+      "summaryEn": "Jeremiah rebukes false trust in the temple.",
+      "messageKo": "여호와의 성전이라 하는 거짓말을 믿지 말라.",
+      "messageEn": "Do not trust in deceptive words: 'This is the temple of the LORD.'",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "거짓말을 믿지 말라", "eventEn": "Do not trust deceptive words"},
+        {"verse": 11, "eventKo": "강도의 소굴이 되었느냐", "eventEn": "A den of robbers?"},
+        {"verse": 23, "eventKo": "내 목소리를 들으라", "eventEn": "Obey My voice"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "회개 없는 백성",
+      "titleEn": "Unrepentant People",
+      "summaryKo": "회개하지 않는 백성과 거짓 평화를 외치는 지도자들을 책망합니다.",
+      "summaryEn": "Rebuke of unrepentant people and leaders who proclaim false peace.",
+      "messageKo": "길르앗에는 유향이 없느냐 거기 의사가 없느냐.",
+      "messageEn": "Is there no balm in Gilead? Is there no physician there?",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "학이 그 시기를 아나", "eventEn": "Stork knows its seasons"},
+        {"verse": 11, "eventKo": "평강 없는데 평강이라", "eventEn": "Peace when there is no peace"},
+        {"verse": 22, "eventKo": "길르앗에 유향이 없느냐", "eventEn": "Is there no balm in Gilead?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "예레미야의 애곡",
+      "titleEn": "Jeremiah's Lament",
+      "summaryKo": "예레미야가 백성을 위해 울며 하나님만 자랑하라고 권면합니다.",
+      "summaryEn": "Jeremiah weeps for the people; exhorts to boast only in knowing God.",
+      "messageKo": "지혜롭거나 용맹하거나 부유함을 자랑하지 말고 오직 나를 아는 것을 자랑하라.",
+      "messageEn": "Let not the wise boast, but let them boast in understanding and knowing Me.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "내 머리가 물이 되고", "eventEn": "If only my head were a spring"},
+        {"verse": 23, "eventKo": "지혜를 자랑하지 말라", "eventEn": "Do not boast in wisdom"},
+        {"verse": 24, "eventKo": "나를 아는 것을 자랑하라", "eventEn": "Boast in knowing Me"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "우상의 무능함",
+      "titleEn": "Idols Are Worthless",
+      "summaryKo": "우상의 허망함과 여호와의 위대하심을 대조합니다.",
+      "summaryEn": "Contrasting worthlessness of idols with the LORD's greatness.",
+      "messageKo": "여호와 같은 이가 없나이다. 만국 중에 주와 같은 자가 없나이다.",
+      "messageEn": "No one is like You, LORD; among all the nations there is none like You.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "우상은 오이밭의 허수아비", "eventEn": "Idols like scarecrows"},
+        {"verse": 10, "eventKo": "여호와만 참 하나님", "eventEn": "LORD is true God"},
+        {"verse": 23, "eventKo": "사람의 길이 자신에게 있지 않음", "eventEn": "Man's way is not in himself"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "깨어진 언약",
+      "titleEn": "Broken Covenant",
+      "summaryKo": "유다가 언약을 어기고 예레미야에 대한 음모가 있습니다.",
+      "summaryEn": "Judah breaks the covenant; plot against Jeremiah.",
+      "messageKo": "그들이 시조들에게 한 것같이 다른 신들을 따랐느니라.",
+      "messageEn": "They followed other gods as their ancestors did.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "언약의 말을 들으라", "eventEn": "Obey the covenant"},
+        {"verse": 11, "eventKo": "내가 듣지 않으리라", "eventEn": "I will not listen"},
+        {"verse": 21, "eventKo": "아나돗 사람들의 음모", "eventEn": "Plot of men of Anathoth"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "예레미야의 질문",
+      "titleEn": "Jeremiah's Question",
+      "summaryKo": "예레미야가 악인의 형통함에 대해 질문합니다.",
+      "summaryEn": "Jeremiah questions why the wicked prosper.",
+      "messageKo": "어찌하여 악인의 길이 형통하나이까.",
+      "messageEn": "Why does the way of the wicked prosper?",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "악인이 형통함이니이까", "eventEn": "Why do wicked prosper?"},
+        {"verse": 5, "eventKo": "보행자와 경주해도 곤하면", "eventEn": "If you stumble in safe land"},
+        {"verse": 15, "eventKo": "그들을 돌이키리라", "eventEn": "I will bring them back"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "삼베 띠 비유",
+      "titleEn": "Linen Belt Parable",
+      "summaryKo": "삼베 띠의 비유로 유다의 파멸을 경고합니다.",
+      "summaryEn": "Parable of the linen belt warns of Judah's ruin.",
+      "messageKo": "에디오피아 사람이 그 피부를, 표범이 그 반점을 변할 수 있느냐.",
+      "messageEn": "Can the Ethiopian change his skin or the leopard its spots?",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "삼베 띠 비유", "eventEn": "Linen belt parable"},
+        {"verse": 11, "eventKo": "허리에 띠를 맴같이", "eventEn": "As belt clings to waist"},
+        {"verse": 23, "eventKo": "에디오피아 사람이 피부를 변할 수 있느냐", "eventEn": "Can Ethiopian change skin?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "가뭄과 기도",
+      "titleEn": "Drought and Prayer",
+      "summaryKo": "가뭄에 대한 예레미야의 중보기도와 하나님의 거절입니다.",
+      "summaryEn": "Jeremiah's intercession during drought; God's refusal.",
+      "messageKo": "이 백성을 위하여 기도하지 말라.",
+      "messageEn": "Do not pray for this people.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "주의 이름을 위하여 행하소서", "eventEn": "Act for Your name's sake"},
+        {"verse": 11, "eventKo": "기도하지 말라", "eventEn": "Do not pray"},
+        {"verse": 14, "eventKo": "거짓 예언자들", "eventEn": "False prophets"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "돌이킬 수 없는 심판",
+      "titleEn": "Irreversible Judgment",
+      "summaryKo": "심판이 확정되었으며 예레미야가 탄식합니다.",
+      "summaryEn": "Judgment is determined; Jeremiah laments.",
+      "messageKo": "주의 말씀이 내게 임하매 내가 곧 먹었사오니.",
+      "messageEn": "When Your words came, I ate them; they were my joy.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "모세와 사무엘이 서도", "eventEn": "Even if Moses and Samuel stood"},
+        {"verse": 16, "eventKo": "말씀을 먹었사오니", "eventEn": "I ate Your words"},
+        {"verse": 19, "eventKo": "네가 돌아오면 세우리라", "eventEn": "If you return, I will restore"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "예레미야의 금지된 삶",
+      "titleEn": "Jeremiah's Forbidden Life",
+      "summaryKo": "예레미야에게 결혼과 애곡이 금지됩니다.",
+      "summaryEn": "Jeremiah is forbidden to marry or mourn.",
+      "messageKo": "이 곳에서 아내를 얻지 말며 아들 딸을 두지 말라.",
+      "messageEn": "Do not marry or have children in this place.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "아내와 자녀를 두지 말라", "eventEn": "Do not marry or have children"},
+        {"verse": 14, "eventKo": "북쪽 땅에서 돌아옴", "eventEn": "Brought back from north"},
+        {"verse": 21, "eventKo": "내가 여호와인 줄 알리라", "eventEn": "They will know I am LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "유다의 죄",
+      "titleEn": "Judah's Sin",
+      "summaryKo": "유다의 죄가 심판에 새겨졌으며 하나님을 신뢰하라는 권면입니다.",
+      "summaryEn": "Judah's sin is engraved; exhortation to trust in God.",
+      "messageKo": "여호와를 의지하고 여호와를 의뢰하는 그 사람은 복을 받을 것이라.",
+      "messageEn": "Blessed is the one who trusts in the LORD.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "사람을 의지하는 자는 저주를 받음", "eventEn": "Cursed who trusts in man"},
+        {"verse": 7, "eventKo": "여호와를 의지하는 자는 복됨", "eventEn": "Blessed who trusts in LORD"},
+        {"verse": 9, "eventKo": "마음은 만물보다 거짓됨", "eventEn": "Heart is deceitful above all"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "토기장이의 집",
+      "titleEn": "Potter's House",
+      "summaryKo": "토기장이 비유로 하나님의 주권을 보여줍니다.",
+      "summaryEn": "Potter's parable demonstrates God's sovereignty.",
+      "messageKo": "진흙이 토기장이의 손에 있음같이 너희가 내 손에 있느니라.",
+      "messageEn": "Like clay in the potter's hand, so are you in My hand.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "진흙이 손에서 상하매", "eventEn": "Clay marred in potter's hands"},
+        {"verse": 6, "eventKo": "진흙같이 내 손에", "eventEn": "Like clay in My hand"},
+        {"verse": 18, "eventKo": "예레미야에 대한 음모", "eventEn": "Plot against Jeremiah"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "깨어진 항아리",
+      "titleEn": "Broken Jar",
+      "summaryKo": "깨진 항아리로 예루살렘의 파멸을 상징합니다.",
+      "summaryEn": "Broken jar symbolizes Jerusalem's destruction.",
+      "messageKo": "토기장이의 그릇을 깨뜨림같이 이 백성과 이 성을 깨뜨리리라.",
+      "messageEn": "I will smash this nation and city as this potter's jar is smashed.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "토기장이의 항아리를 사라", "eventEn": "Buy a clay jar"},
+        {"verse": 10, "eventKo": "그들 앞에서 깨뜨리라", "eventEn": "Break it before them"},
+        {"verse": 15, "eventKo": "목을 굳게 하여", "eventEn": "Stiffened their necks"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "예레미야의 탄식",
+      "titleEn": "Jeremiah's Lament",
+      "summaryKo": "바스훌에게 핍박받고 예레미야가 탄식합니다.",
+      "summaryEn": "Persecuted by Pashhur; Jeremiah laments.",
+      "messageKo": "여호와의 말씀이 내 마음에 불붙는 것 같아서 참을 수 없나이다.",
+      "messageEn": "His word is in my heart like a fire; I cannot hold it in.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바스훌이 예레미야를 침", "eventEn": "Pashhur beats Jeremiah"},
+        {"verse": 9, "eventKo": "불이 뼈에 사무쳐", "eventEn": "Fire shut up in my bones"},
+        {"verse": 14, "eventKo": "내가 난 날이 저주받으리라", "eventEn": "Cursed be the day I was born"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "시드기야에게 보낸 답변",
+      "titleEn": "Reply to Zedekiah",
+      "summaryKo": "바벨론에 항복하라는 하나님의 메시지입니다.",
+      "summaryEn": "God's message to surrender to Babylon.",
+      "messageKo": "보라 내가 너희 앞에 생명의 길과 사망의 길을 두노라.",
+      "messageEn": "See, I am setting before you the way of life and the way of death.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "시드기야가 묻다", "eventEn": "Zedekiah inquires"},
+        {"verse": 8, "eventKo": "생명의 길과 사망의 길", "eventEn": "Way of life and death"},
+        {"verse": 9, "eventKo": "항복하면 살리라", "eventEn": "Surrender and live"}
+      ],
+      "timelineYear": "BC 588"
+    },
+    {
+      "chapter": 22,
+      "titleKo": "유다 왕들에 대한 심판",
+      "titleEn": "Judgment on Judah's Kings",
+      "summaryKo": "여호아하스, 여호야김, 여호야긴에 대한 심판입니다.",
+      "summaryEn": "Judgment against Jehoahaz, Jehoiakim, and Jehoiachin.",
+      "messageKo": "공평과 정의를 행하라.",
+      "messageEn": "Do what is just and right.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "공평과 정의를 행하라", "eventEn": "Do justice and righteousness"},
+        {"verse": 13, "eventKo": "불의로 집을 짓는 자에게 화", "eventEn": "Woe to him who builds unjustly"},
+        {"verse": 30, "eventKo": "여호야긴은 자손이 없으리라", "eventEn": "Jehoiachin will be childless"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "의로운 싹",
+      "titleEn": "Righteous Branch",
+      "summaryKo": "거짓 선지자 책망과 의로운 왕의 예언입니다.",
+      "summaryEn": "Rebuke of false prophets; prophecy of the righteous king.",
+      "messageKo": "다윗에게 한 의로운 가지를 일으키리니 그가 왕이 되어 공평과 정의를 행하리라.",
+      "messageEn": "I will raise up for David a righteous Branch; He will reign wisely and do justice.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "의로운 가지", "eventEn": "Righteous Branch"},
+        {"verse": 6, "eventKo": "여호와 우리의 의", "eventEn": "The LORD Our Righteousness"},
+        {"verse": 29, "eventKo": "내 말이 불 같지 아니하냐", "eventEn": "Is not My word like fire?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "두 광주리 무화과",
+      "titleEn": "Two Baskets of Figs",
+      "summaryKo": "좋은 무화과와 나쁜 무화과의 환상입니다.",
+      "summaryEn": "Vision of good figs and bad figs.",
+      "messageKo": "좋은 무화과같이 유다 포로를 선히 돌아보리라.",
+      "messageEn": "Like these good figs, I will watch over the exiles from Judah.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "좋은 무화과처럼", "eventEn": "Like good figs"},
+        {"verse": 6, "eventKo": "선히 돌아보리라", "eventEn": "I will watch over them"},
+        {"verse": 7, "eventKo": "나를 아는 마음을 주리라", "eventEn": "Give them a heart to know Me"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 25,
+      "titleKo": "70년 포로 예언",
+      "titleEn": "Seventy Years of Captivity",
+      "summaryKo": "70년 바벨론 포로와 만국 심판을 예언합니다.",
+      "summaryEn": "Prophecy of 70 years in Babylon and judgment on all nations.",
+      "messageKo": "이 모든 땅이 70년 동안 바벨론 왕을 섬기리라.",
+      "messageEn": "These nations will serve the king of Babylon seventy years.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "내 종 느부갓네살", "eventEn": "My servant Nebuchadnezzar"},
+        {"verse": 11, "eventKo": "70년 섬김", "eventEn": "Seventy years of servitude"},
+        {"verse": 15, "eventKo": "분노의 포도주 잔", "eventEn": "Cup of wrath"}
+      ],
+      "timelineYear": "BC 605"
+    },
+    {
+      "chapter": 26,
+      "titleKo": "예레미야의 재판",
+      "titleEn": "Jeremiah's Trial",
+      "summaryKo": "예레미야가 성전 설교로 죽음의 위기에 처합니다.",
+      "summaryEn": "Jeremiah faces death for his temple sermon.",
+      "messageKo": "너희 길과 행위를 고치라.",
+      "messageEn": "Reform your ways and your actions.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "이 성을 실로같이", "eventEn": "Make this house like Shiloh"},
+        {"verse": 11, "eventKo": "죽일 죄가 있다", "eventEn": "He should be sentenced to death"},
+        {"verse": 24, "eventKo": "아히감이 보호함", "eventEn": "Ahikam protects Jeremiah"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "바벨론에 복종하라",
+      "titleEn": "Submit to Babylon",
+      "summaryKo": "멍에 비유로 바벨론에 복종하라고 명령합니다.",
+      "summaryEn": "Yoke symbolism commands submission to Babylon.",
+      "messageKo": "바벨론 왕의 멍에에 목을 넣고 그와 그의 백성을 섬기면 살리라.",
+      "messageEn": "Put your neck under the yoke of Babylon's king; serve him and live.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "멍에를 만들어 메라", "eventEn": "Make a yoke and wear it"},
+        {"verse": 8, "eventKo": "섬기지 않으면 벌하리라", "eventEn": "I will punish nations that don't serve"},
+        {"verse": 12, "eventKo": "멍에에 목을 넣으라", "eventEn": "Put neck under yoke"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "거짓 선지자 하나냐",
+      "titleEn": "False Prophet Hananiah",
+      "summaryKo": "거짓 선지자 하나냐가 2년 내 회복을 예언하고 죽습니다.",
+      "summaryEn": "False prophet Hananiah predicts restoration in 2 years and dies.",
+      "messageKo": "하나냐야 여호와께서 너를 보내지 아니하셨거늘.",
+      "messageEn": "Hananiah, the LORD has not sent you.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "2년 안에 돌아오리라", "eventEn": "Within two years"},
+        {"verse": 10, "eventKo": "멍에를 부러뜨림", "eventEn": "Breaks the yoke"},
+        {"verse": 17, "eventKo": "하나냐가 죽음", "eventEn": "Hananiah dies"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "포로들에게 보낸 편지",
+      "titleEn": "Letter to Exiles",
+      "summaryKo": "바벨론 포로들에게 정착하고 70년 후 귀환을 약속합니다.",
+      "summaryEn": "Letter to exiles: settle down; promise of return after 70 years.",
+      "messageKo": "너희를 향한 내 생각은 평안이요 재앙이 아니니라.",
+      "messageEn": "I know the plans I have for you, plans to prosper and not to harm.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "집을 짓고 살라", "eventEn": "Build houses and live"},
+        {"verse": 10, "eventKo": "70년이 지난 후", "eventEn": "After seventy years"},
+        {"verse": 11, "eventKo": "평안의 계획", "eventEn": "Plans for welfare, not harm"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "회복의 약속",
+      "titleEn": "Promise of Restoration",
+      "summaryKo": "이스라엘과 유다가 포로에서 회복될 것을 약속합니다.",
+      "summaryEn": "Promise that Israel and Judah will be restored from captivity.",
+      "messageKo": "야곱의 환난의 때이나 그가 그 가운데서 구원을 받으리라.",
+      "messageEn": "It will be a time of trouble for Jacob, but he will be saved out of it.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "포로를 돌이키리라", "eventEn": "I will bring back captives"},
+        {"verse": 7, "eventKo": "야곱의 환난의 때", "eventEn": "Time of Jacob's trouble"},
+        {"verse": 22, "eventKo": "너희는 내 백성", "eventEn": "You will be My people"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "새 언약",
+      "titleEn": "New Covenant",
+      "summaryKo": "마음에 기록하는 새 언약을 약속합니다.",
+      "summaryEn": "Promise of new covenant written on hearts.",
+      "messageKo": "내가 나의 법을 그들의 마음에 두며 그들의 마음에 기록하리라.",
+      "messageEn": "I will put My law in their minds and write it on their hearts.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "영원한 사랑으로 사랑함", "eventEn": "Loved with everlasting love"},
+        {"verse": 31, "eventKo": "새 언약을 세우리라", "eventEn": "I will make a new covenant"},
+        {"verse": 34, "eventKo": "다시 죄를 기억하지 않으리라", "eventEn": "Remember their sins no more"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "땅을 사다",
+      "titleEn": "Buying a Field",
+      "summaryKo": "예레미야가 포위 중에 땅을 사서 회복을 상징합니다.",
+      "summaryEn": "Jeremiah buys a field during siege, symbolizing restoration.",
+      "messageKo": "다시 이 땅에서 집과 밭과 포도원을 사리라.",
+      "messageEn": "Houses, fields, and vineyards will again be bought in this land.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "땅을 삼", "eventEn": "Buys the field"},
+        {"verse": 15, "eventKo": "다시 사리라", "eventEn": "Will be bought again"},
+        {"verse": 27, "eventKo": "내게 불가능한 일이 있겠느냐", "eventEn": "Is anything too hard for Me?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 33,
+      "titleKo": "회복의 약속",
+      "titleEn": "Promise of Restoration",
+      "summaryKo": "예루살렘의 회복과 다윗의 의로운 가지를 약속합니다.",
+      "summaryEn": "Promise of Jerusalem's restoration and David's righteous Branch.",
+      "messageKo": "내게 부르짖으라 내가 응답하고 크고 비밀한 일을 보이리라.",
+      "messageEn": "Call to Me and I will show you great and unsearchable things.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "내게 부르짖으라", "eventEn": "Call to Me"},
+        {"verse": 15, "eventKo": "의로운 가지", "eventEn": "Righteous Branch"},
+        {"verse": 20, "eventKo": "다윗과 세운 언약", "eventEn": "Covenant with David"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 34,
+      "titleKo": "시드기야에 대한 경고",
+      "titleEn": "Warning to Zedekiah",
+      "summaryKo": "시드기야에 대한 경고와 노예 해방 약속 위반입니다.",
+      "summaryEn": "Warning to Zedekiah; violation of slave release covenant.",
+      "messageKo": "너희가 언약을 범하였느니라.",
+      "messageEn": "You have not fulfilled the terms of the covenant.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "시드기야에게 예언", "eventEn": "Prophecy to Zedekiah"},
+        {"verse": 10, "eventKo": "노예를 풀어줌", "eventEn": "Freed slaves"},
+        {"verse": 16, "eventKo": "다시 종으로 삼음", "eventEn": "Took them back as slaves"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 35,
+      "titleKo": "레갑 사람들의 충성",
+      "titleEn": "Recabites' Faithfulness",
+      "summaryKo": "레갑 사람들의 순종이 유다의 불순종과 대조됩니다.",
+      "summaryEn": "Recabites' obedience contrasted with Judah's disobedience.",
+      "messageKo": "레갑 사람들은 조상의 명령을 지키거늘.",
+      "messageEn": "The Recabites have obeyed their forefather's command.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "포도주를 마시지 않음", "eventEn": "We do not drink wine"},
+        {"verse": 14, "eventKo": "명령을 지킴", "eventEn": "They have obeyed"},
+        {"verse": 19, "eventKo": "레갑은 항상 내 앞에 서리라", "eventEn": "Recabites will always serve Me"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 36,
+      "titleKo": "두루마리를 태움",
+      "titleEn": "Scroll Burned",
+      "summaryKo": "여호야김 왕이 예레미야의 두루마리를 태웁니다.",
+      "summaryEn": "King Jehoiakim burns Jeremiah's scroll.",
+      "messageKo": "바룩이 다시 쓰니라.",
+      "messageEn": "Baruch wrote them again.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "두루마리에 기록하라", "eventEn": "Write on a scroll"},
+        {"verse": 23, "eventKo": "왕이 두루마리를 태움", "eventEn": "King burns the scroll"},
+        {"verse": 32, "eventKo": "다시 쓰고 더 보탬", "eventEn": "Written again with additions"}
+      ],
+      "timelineYear": "BC 605"
+    },
+    {
+      "chapter": 37,
+      "titleKo": "예레미야 투옥",
+      "titleEn": "Jeremiah Imprisoned",
+      "summaryKo": "예레미야가 반역죄로 투옥됩니다.",
+      "summaryEn": "Jeremiah is imprisoned for alleged desertion.",
+      "messageKo": "바벨론 사람에게 항복하라.",
+      "messageEn": "Surrender to the Babylonians.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "시드기야가 묻다", "eventEn": "Zedekiah inquires"},
+        {"verse": 13, "eventKo": "반역죄로 잡힘", "eventEn": "Arrested for deserting"},
+        {"verse": 21, "eventKo": "감옥 뜰에 둠", "eventEn": "Kept in courtyard"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 38,
+      "titleKo": "웅덩이에 던져짐",
+      "titleEn": "Thrown into Cistern",
+      "summaryKo": "예레미야가 진흙 웅덩이에 던져졌다가 구출됩니다.",
+      "summaryEn": "Jeremiah is thrown into a cistern but rescued.",
+      "messageKo": "에벳멜렉이 예레미야를 건지니라.",
+      "messageEn": "Ebed-Melech pulled Jeremiah out.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "웅덩이에 던져짐", "eventEn": "Thrown into cistern"},
+        {"verse": 11, "eventKo": "에벳멜렉이 구출", "eventEn": "Ebed-Melech rescues"},
+        {"verse": 17, "eventKo": "항복하라", "eventEn": "Surrender"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 39,
+      "titleKo": "예루살렘 함락",
+      "titleEn": "Fall of Jerusalem",
+      "summaryKo": "예루살렘이 함락되고 시드기야가 사로잡힙니다.",
+      "summaryEn": "Jerusalem falls; Zedekiah is captured.",
+      "messageKo": "갈대아 사람의 손에 넘기우리라.",
+      "messageEn": "The city will be given into the hands of the Babylonians.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "성이 함락됨", "eventEn": "City breached"},
+        {"verse": 7, "eventKo": "시드기야의 눈을 뺌", "eventEn": "Zedekiah's eyes put out"},
+        {"verse": 18, "eventKo": "에벳멜렉을 구원함", "eventEn": "Ebed-Melech saved"}
+      ],
+      "timelineYear": "BC 586"
+    },
+    {
+      "chapter": 40,
+      "titleKo": "예레미야 석방",
+      "titleEn": "Jeremiah Released",
+      "summaryKo": "예레미야가 석방되고 그달리야가 총독이 됩니다.",
+      "summaryEn": "Jeremiah is released; Gedaliah becomes governor.",
+      "messageKo": "갈대아 사람들을 두려워하지 말라.",
+      "messageEn": "Do not be afraid to serve the Babylonians.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "예레미야 석방", "eventEn": "Jeremiah released"},
+        {"verse": 5, "eventKo": "그달리야에게 가라", "eventEn": "Go to Gedaliah"},
+        {"verse": 14, "eventKo": "이스마엘의 음모", "eventEn": "Ishmael's conspiracy"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 41,
+      "titleKo": "그달리야 암살",
+      "titleEn": "Gedaliah Assassinated",
+      "summaryKo": "이스마엘이 그달리야를 암살하고 도주합니다.",
+      "summaryEn": "Ishmael assassinates Gedaliah and flees.",
+      "messageKo": "이스마엘이 그달리야를 쳤더라.",
+      "messageEn": "Ishmael struck down Gedaliah.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "그달리야 암살", "eventEn": "Gedaliah assassinated"},
+        {"verse": 10, "eventKo": "사람들을 포로로 끌고 감", "eventEn": "Takes people captive"},
+        {"verse": 15, "eventKo": "이스마엘 도주", "eventEn": "Ishmael escapes"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 42,
+      "titleKo": "애굽으로 가지 말라",
+      "titleEn": "Do Not Go to Egypt",
+      "summaryKo": "하나님이 애굽으로 가지 말라고 경고하십니다.",
+      "summaryEn": "God warns not to go to Egypt.",
+      "messageKo": "애굽으로 내려가지 말라.",
+      "messageEn": "Do not go to Egypt.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "어디로 가야 합니까", "eventEn": "Where should we go?"},
+        {"verse": 10, "eventKo": "이 땅에 거하라", "eventEn": "Stay in this land"},
+        {"verse": 19, "eventKo": "애굽으로 가지 말라", "eventEn": "Do not go to Egypt"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 43,
+      "titleKo": "애굽으로 내려감",
+      "titleEn": "Going to Egypt",
+      "summaryKo": "백성이 하나님의 경고를 무시하고 애굽으로 갑니다.",
+      "summaryEn": "People ignore God's warning and go to Egypt.",
+      "messageKo": "그들이 여호와의 말씀을 순종하지 아니하고.",
+      "messageEn": "They disobeyed the LORD.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "거짓말이라 함", "eventEn": "You are lying"},
+        {"verse": 7, "eventKo": "애굽으로 들어감", "eventEn": "Entered Egypt"},
+        {"verse": 10, "eventKo": "느부갓네살이 칠 것", "eventEn": "Nebuchadnezzar will attack"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 44,
+      "titleKo": "애굽에서의 경고",
+      "titleEn": "Warning in Egypt",
+      "summaryKo": "애굽에서 우상숭배하는 유다 사람들을 경고합니다.",
+      "summaryEn": "Warning to Judeans in Egypt who worship idols.",
+      "messageKo": "하늘 여왕에게 분향하는 것을 그치지 아니하리라.",
+      "messageEn": "We will continue burning incense to the Queen of Heaven.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "이 가증한 일을 행하지 말라", "eventEn": "Do not do this detestable thing"},
+        {"verse": 17, "eventKo": "하늘 여왕에게 분향", "eventEn": "Burn incense to Queen of Heaven"},
+        {"verse": 28, "eventKo": "남은 자 소수만", "eventEn": "Only few will escape"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 45,
+      "titleKo": "바룩에게 주신 말씀",
+      "titleEn": "Message to Baruch",
+      "summaryKo": "하나님이 예레미야의 서기관 바룩을 위로하십니다.",
+      "summaryEn": "God comforts Baruch, Jeremiah's scribe.",
+      "messageKo": "네 생명을 전리품으로 주리라.",
+      "messageEn": "I will give you your life as a prize.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "슬픔을 더하시는구나", "eventEn": "LORD has added sorrow to pain"},
+        {"verse": 4, "eventKo": "내가 세운 것을 헐고", "eventEn": "I will overthrow what I built"},
+        {"verse": 5, "eventKo": "네 목숨을 전리품으로", "eventEn": "Your life as a prize"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 46,
+      "titleKo": "애굽에 대한 심판",
+      "titleEn": "Judgment on Egypt",
+      "summaryKo": "애굽에 대한 심판과 이스라엘의 회복 약속입니다.",
+      "summaryEn": "Judgment on Egypt; promise of Israel's restoration.",
+      "messageKo": "야곱아 두려워하지 말라.",
+      "messageEn": "Do not fear, Jacob My servant.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "애굽에 대한 예언", "eventEn": "Prophecy against Egypt"},
+        {"verse": 10, "eventKo": "여호와의 날", "eventEn": "Day of the LORD"},
+        {"verse": 28, "eventKo": "야곱아 두려워 말라", "eventEn": "Do not fear, Jacob"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 47,
+      "titleKo": "블레셋에 대한 심판",
+      "titleEn": "Judgment on Philistia",
+      "summaryKo": "블레셋에 대한 심판의 예언입니다.",
+      "summaryEn": "Prophecy of judgment against Philistia.",
+      "messageKo": "북쪽에서 물이 일어나리라.",
+      "messageEn": "Waters are rising from the north.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "블레셋에 대한 예언", "eventEn": "Prophecy against Philistia"},
+        {"verse": 4, "eventKo": "블레셋을 멸함", "eventEn": "Philistia destroyed"},
+        {"verse": 6, "eventKo": "여호와의 검이여", "eventEn": "Sword of the LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 48,
+      "titleKo": "모압에 대한 심판",
+      "titleEn": "Judgment on Moab",
+      "summaryKo": "모압의 교만과 멸망에 대한 예언입니다.",
+      "summaryEn": "Prophecy of Moab's pride and destruction.",
+      "messageKo": "모압이 그 신 그모스를 의지하므로.",
+      "messageEn": "Moab trusted in her achievements and treasures.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "그모스가 사로잡힘", "eventEn": "Chemosh will go into exile"},
+        {"verse": 29, "eventKo": "모압의 교만", "eventEn": "Moab's pride"},
+        {"verse": 47, "eventKo": "말일에 회복하리라", "eventEn": "I will restore in latter days"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 49,
+      "titleKo": "암몬, 에돔 등에 대한 심판",
+      "titleEn": "Judgment on Ammon, Edom, etc.",
+      "summaryKo": "암몬, 에돔, 다메섹, 게달, 하솔, 엘람에 대한 심판입니다.",
+      "summaryEn": "Judgment on Ammon, Edom, Damascus, Kedar, Hazor, Elam.",
+      "messageKo": "네 견고한 곳에서 너를 끌어내리리라.",
+      "messageEn": "I will bring you down from your stronghold.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "암몬에 대한 심판", "eventEn": "Judgment on Ammon"},
+        {"verse": 16, "eventKo": "에돔의 교만", "eventEn": "Edom's pride"},
+        {"verse": 39, "eventKo": "엘람의 회복", "eventEn": "Elam's restoration"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 50,
+      "titleKo": "바벨론에 대한 심판 (1)",
+      "titleEn": "Judgment on Babylon (1)",
+      "summaryKo": "바벨론의 멸망과 이스라엘의 귀환을 예언합니다.",
+      "summaryEn": "Prophecy of Babylon's fall and Israel's return.",
+      "messageKo": "바벨론이 함락되었도다.",
+      "messageEn": "Babylon is taken.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바벨론이 함락됨", "eventEn": "Babylon is captured"},
+        {"verse": 4, "eventKo": "이스라엘이 돌아옴", "eventEn": "Israel will return"},
+        {"verse": 20, "eventKo": "죄악을 찾아도 없으리라", "eventEn": "Search for sins, find none"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 51,
+      "titleKo": "바벨론에 대한 심판 (2)",
+      "titleEn": "Judgment on Babylon (2)",
+      "summaryKo": "바벨론의 완전한 멸망을 계속 예언합니다.",
+      "summaryEn": "Continued prophecy of Babylon's complete destruction.",
+      "messageKo": "바벨론이 갑자기 무너지고 파멸되었도다.",
+      "messageEn": "Babylon will suddenly fall and be broken.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "바벨론에서 도망하라", "eventEn": "Flee from Babylon"},
+        {"verse": 8, "eventKo": "바벨론이 갑자기 무너짐", "eventEn": "Babylon suddenly falls"},
+        {"verse": 63, "eventKo": "두루마리를 유브라테에 던짐", "eventEn": "Scroll thrown into Euphrates"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 52,
+      "titleKo": "예루살렘 함락 요약",
+      "titleEn": "Summary of Jerusalem's Fall",
+      "summaryKo": "예루살렘 함락과 여호야긴의 석방을 기록합니다.",
+      "summaryEn": "Record of Jerusalem's fall and Jehoiachin's release.",
+      "messageKo": "바벨론 왕이 그에게 은혜를 베풀어.",
+      "messageEn": "The king of Babylon showed him favor.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "예루살렘 포위", "eventEn": "Jerusalem besieged"},
+        {"verse": 13, "eventKo": "성전 파괴", "eventEn": "Temple destroyed"},
+        {"verse": 31, "eventKo": "여호야긴 석방", "eventEn": "Jehoiachin released"}
+      ],
+      "timelineYear": "BC 561"
+    }
+  ]
+}

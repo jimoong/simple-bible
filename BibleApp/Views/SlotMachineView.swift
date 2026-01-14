@@ -197,7 +197,7 @@ struct SlotMachineView: View {
                             bookId: viewModel.currentBook.id,
                             chapter: viewModel.currentChapter,
                             theme: theme,
-                            languageMode: viewModel.languageMode
+                            languageMode: viewModel.uiLanguage
                         )
                         .slotMachineEffect(isScrubbing: isScrubbing)
                         .id(markAsReadIndex)

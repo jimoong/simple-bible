@@ -33,60 +33,94 @@ actor BibleAPIService {
     private let session: URLSession
     private var cache: [String: [BibleVerse]] = [:]
     
+    // Current translations (loaded from UserDefaults)
+    private var primaryTranslationId: String = "KRV"
+    private var secondaryTranslationId: String = "KJV"
+    
     private init() {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 30
         config.requestCachePolicy = .returnCacheDataElseLoad
         self.session = URLSession(configuration: config)
+        
+        // Load saved translations
+        loadSavedTranslations()
     }
     
-    /// Fetch a chapter and return verses with both English and Korean text
+    private func loadSavedTranslations() {
+        primaryTranslationId = UserDefaults.standard.string(forKey: "primaryTranslationId") ?? "KRV"
+        secondaryTranslationId = UserDefaults.standard.string(forKey: "secondaryTranslationId") ?? "KJV"
+    }
+    
+    /// Reload translations from UserDefaults (call when settings change)
+    func reloadTranslations() {
+        loadSavedTranslations()
+        cache.removeAll() // Clear cache when translations change
+        print("🔄 Translations reloaded: Primary=\(primaryTranslationId), Secondary=\(secondaryTranslationId)")
+    }
+    
+    /// Fetch a chapter and return verses with primary and secondary translation text
     func fetchChapter(book: BibleBook, chapter: Int) async throws -> [BibleVerse] {
-        let cacheKey = "\(book.id)-\(chapter)"
+        // Reload translations to ensure we have latest settings
+        loadSavedTranslations()
+        
+        let cacheKey = "\(book.id)-\(chapter)-\(primaryTranslationId)-\(secondaryTranslationId)"
         
         // Check cache first
         if let cached = cache[cacheKey] {
             return cached
         }
         
-        // Fetch English (primary API)
-        let englishVerses = try await fetchEnglishChapter(book: book, chapter: chapter)
+        // Fetch primary translation (bolls.life)
+        let primaryVerses = await fetchTranslationChapterSafe(
+            book: book, 
+            chapter: chapter, 
+            translationId: primaryTranslationId
+        )
         
-        // Fetch Korean (bolls.life)
-        let koreanVerses = await fetchKoreanChapterSafe(book: book, chapter: chapter)
+        // Fetch secondary translation (bolls.life)
+        let secondaryVerses = await fetchTranslationChapterSafe(
+            book: book, 
+            chapter: chapter, 
+            translationId: secondaryTranslationId
+        )
         
-        // Deduplicate English verses by verse number (KJV API returns footnotes as separate entries)
-        // Keep only the first (main) entry for each verse number, skip footnotes
-        var englishByNumber: [Int: String] = [:]
-        for enVerse in englishVerses {
-            let verseNum = enVerse.verseNumber
-            // Only keep the first entry for each verse number (main text, not footnotes)
-            if englishByNumber[verseNum] == nil {
-                englishByNumber[verseNum] = enVerse.text
-            }
-        }
+        print("📖 Primary (\(primaryTranslationId)): \(primaryVerses.count), Secondary (\(secondaryTranslationId)): \(secondaryVerses.count)")
         
-        print("📖 English: \(englishByNumber.count) unique verses (from \(englishVerses.count) entries), Korean: \(koreanVerses.count)")
+        // Determine which has more verses (use as base)
+        let allVerseNumbers = Set(primaryVerses.map { $0.verse } + secondaryVerses.map { $0.verse }).sorted()
         
-        // Merge English and Korean verses
+        // Build verse list
         var verses: [BibleVerse] = []
         
-        // Sort by verse number to maintain order
-        let sortedVerseNumbers = englishByNumber.keys.sorted()
-        
-        for verseNum in sortedVerseNumbers {
-            let enText = englishByNumber[verseNum] ?? ""
+        for verseNum in allVerseNumbers {
+            let primaryText = primaryVerses.first(where: { $0.verse == verseNum })?.text ?? ""
+            let secondaryText = secondaryVerses.first(where: { $0.verse == verseNum })?.text ?? ""
             
-            // Find matching Korean verse
-            let krText = koreanVerses.first(where: { $0.verse == verseNum })?.text ?? ""
+            // Determine which text goes to textKr and textEn based on primary language
+            let primaryLangCode = UserDefaults.standard.string(forKey: "primaryLanguageCode") ?? "ko"
             
-            let verse = BibleVerse(
-                bookName: book.nameEn,
-                chapter: chapter,
-                verseNumber: verseNum,
-                textEn: enText,
-                textKr: krText
-            )
+            let verse: BibleVerse
+            if primaryLangCode == "ko" {
+                // Korean is primary
+                verse = BibleVerse(
+                    bookName: book.nameEn,
+                    chapter: chapter,
+                    verseNumber: verseNum,
+                    textEn: secondaryText,
+                    textKr: primaryText
+                )
+            } else {
+                // Non-Korean is primary - put in textKr slot (will be shown as primary)
+                // Secondary (usually English) goes in textEn
+                verse = BibleVerse(
+                    bookName: book.nameEn,
+                    chapter: chapter,
+                    verseNumber: verseNum,
+                    textEn: secondaryText,
+                    textKr: primaryText  // Primary text uses textKr slot
+                )
+            }
             verses.append(verse)
         }
         
@@ -94,60 +128,53 @@ actor BibleAPIService {
         return verses
     }
     
-    // MARK: - English (wldeh/bible-api)
-    private func fetchEnglishChapter(book: BibleBook, chapter: Int) async throws -> [APIVerseData] {
-        guard let url = Constants.API.chapterURL(version: "en-kjv", book: book.apiName, chapter: chapter) else {
-            print("⚠️ Invalid URL for '\(book.nameEn)' chapter \(chapter)")
-            throw BibleAPIError.invalidURL
+    // MARK: - Generic Translation Fetch (bolls.life)
+    private func fetchTranslationChapterSafe(book: BibleBook, chapter: Int, translationId: String) async -> [BollsVerseResponse] {
+        // 1. Try offline storage first
+        if let offlineVerses = await OfflineStorageService.shared.loadChapter(
+            translationId: translationId,
+            bookId: book.id,
+            chapter: chapter
+        ) {
+            print("📱 \(translationId): Loaded \(offlineVerses.count) verses from offline storage")
+            return offlineVerses.map { BollsVerseResponse(pk: $0.pk, verse: $0.verse, text: $0.text) }
         }
         
-        print("🔍 EN: \(url.absoluteString)")
-        
-        let (data, response) = try await session.data(from: url)
-        
-        guard let httpResponse = response as? HTTPURLResponse else {
-            print("✗ EN: No HTTP response for '\(book.nameEn)'")
-            throw BibleAPIError.noData
-        }
-        
-        guard (200...299).contains(httpResponse.statusCode) else {
-            print("✗ EN: HTTP \(httpResponse.statusCode) for '\(book.nameEn)' ch.\(chapter)")
-            throw BibleAPIError.noData
-        }
-        
+        // 2. Fetch from network
         do {
-            let chapterResponse = try JSONDecoder().decode(APIChapterResponse.self, from: data)
-            print("✓ EN: \(chapterResponse.data.count) verses")
-            return chapterResponse.data
+            let verses = try await fetchTranslationChapter(book: book, chapter: chapter, translationId: translationId)
+            
+            // 3. Save to offline storage for future use
+            Task {
+                let offlineVerses = verses.map { OfflineVerse(pk: $0.pk, verse: $0.verse, text: $0.text) }
+                try? await OfflineStorageService.shared.saveChapter(
+                    translationId: translationId,
+                    bookId: book.id,
+                    chapter: chapter,
+                    verses: offlineVerses
+                )
+            }
+            
+            return verses
         } catch {
-            print("✗ EN decode error for '\(book.nameEn)': \(error)")
-            throw BibleAPIError.decodingError(error)
-        }
-    }
-    
-    // MARK: - Korean (bolls.life API)
-    private func fetchKoreanChapterSafe(book: BibleBook, chapter: Int) async -> [BollsVerseResponse] {
-        do {
-            return try await fetchKoreanChapter(book: book, chapter: chapter)
-        } catch {
-            print("✗ KR failed for '\(book.nameEn)' (apiName: \(book.apiName)): \(error.localizedDescription)")
+            print("✗ \(translationId) failed for '\(book.nameEn)': \(error.localizedDescription)")
             return []
         }
     }
     
-    private func fetchKoreanChapter(book: BibleBook, chapter: Int) async throws -> [BollsVerseResponse] {
+    private func fetchTranslationChapter(book: BibleBook, chapter: Int, translationId: String) async throws -> [BollsVerseResponse] {
         guard let bookNum = Constants.bookNumbers[book.apiName] else {
             print("⚠️ No book number mapping for '\(book.apiName)'")
             throw BibleAPIError.invalidURL
         }
         
-        // bolls.life API: https://bolls.life/get-chapter/KRV/{bookNum}/{chapter}/
-        let urlString = "https://bolls.life/get-chapter/KRV/\(bookNum)/\(chapter)/"
+        // bolls.life API: https://bolls.life/get-chapter/{TRANSLATION}/{bookNum}/{chapter}/
+        let urlString = "https://bolls.life/get-chapter/\(translationId)/\(bookNum)/\(chapter)/"
         guard let url = URL(string: urlString) else {
             throw BibleAPIError.invalidURL
         }
         
-        print("🔍 KR: \(url.absoluteString)")
+        print("🔍 \(translationId): \(url.absoluteString)")
         
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -158,19 +185,13 @@ actor BibleAPIService {
             throw BibleAPIError.noData
         }
         
-        print("📡 KR status: \(httpResponse.statusCode)")
-        
         guard (200...299).contains(httpResponse.statusCode) else {
+            print("✗ \(translationId): HTTP \(httpResponse.statusCode)")
             throw BibleAPIError.noData
         }
         
-        // Debug: print first 200 chars of response
-        if let preview = String(data: data, encoding: .utf8)?.prefix(200) {
-            print("📄 KR preview: \(preview)")
-        }
-        
         let verses = try JSONDecoder().decode([BollsVerseResponse].self, from: data)
-        print("✓ KR: \(verses.count) verses")
+        print("✓ \(translationId): \(verses.count) verses (network)")
         
         return verses
     }
