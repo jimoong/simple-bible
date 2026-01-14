@@ -84,6 +84,16 @@ struct SlotMachineView: View {
             }
         }
         .onChange(of: viewModel.currentVerseIndex) { oldValue, newValue in
+            // Debug logging for Numbers navigation issue
+            #if DEBUG
+            if viewModel.currentBook.id == "numbers" && viewModel.currentChapter == 1 {
+                if newValue < viewModel.verses.count {
+                    let verse = viewModel.verses[newValue]
+                    print("📺 DISPLAY: index=\(newValue), verseNumber=\(verse.verseNumber)")
+                }
+            }
+            #endif
+            
             if scrollPosition != newValue {
                 // Skip animation during scrubbing for immediate response
                 if isScrubbing {

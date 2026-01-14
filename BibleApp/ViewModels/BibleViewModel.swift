@@ -272,8 +272,29 @@ final class BibleViewModel {
         if verse > 0 {
             if let index = verses.firstIndex(where: { $0.verseNumber == verse }) {
                 currentVerseIndex = index
+                
+                // Debug logging for Numbers navigation issue
+                #if DEBUG
+                if book.id == "numbers" && chapter == 1 {
+                    print("\n" + String(repeating: "=", count: 50))
+                    print("🎯 NAVIGATE TO Numbers 1:\(verse)")
+                    print("Found at index: \(index)")
+                    print("Verse at index \(index): verseNumber=\(verses[index].verseNumber)")
+                    if index > 0 {
+                        print("Verse at index \(index-1): verseNumber=\(verses[index-1].verseNumber)")
+                    }
+                    if index < verses.count - 1 {
+                        print("Verse at index \(index+1): verseNumber=\(verses[index+1].verseNumber)")
+                    }
+                    print("Total verses: \(verses.count)")
+                    print(String(repeating: "=", count: 50) + "\n")
+                }
+                #endif
             } else {
                 currentVerseIndex = 0
+                #if DEBUG
+                print("⚠️ Verse \(verse) NOT FOUND in \(book.id) \(chapter), falling back to index 0")
+                #endif
             }
             // Set target verse for scroll mode navigation
             targetVerseNumber = verse
