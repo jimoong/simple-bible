@@ -8,6 +8,7 @@ struct BookGridView: View {
     var safeAreaBottom: CGFloat = 0
     var topPadding: CGFloat = 0  // Space for elements above
     var isFullscreen: Bool = false
+    var startInSearchMode: Bool = false  // Start with search active and keyboard open
     var onClose: (() -> Void)? = nil
     var onBookSelect: ((BibleBook) -> Void)? = nil
     var onFavoritesSelect: (() -> Void)? = nil
@@ -15,6 +16,11 @@ struct BookGridView: View {
     @State private var isSearchActive = false
     @FocusState private var isSearchFocused: Bool
     @State private var glowAnimating = false
+    @State private var searchSelectedBook: BibleBook? = nil  // Book selected via search autocomplete
+    @State private var searchSelectedChapter: Int? = nil     // Chapter selected via search autocomplete
+    @State private var searchSelectedVerse: Int? = nil       // Verse selected via search autocomplete
+    @State private var searchVerses: [BibleVerse] = []       // Loaded verses for verse selection
+    @State private var isLoadingVerses: Bool = false
     
     private let columns = [
         GridItem(.flexible(), spacing: 10),
@@ -26,6 +32,85 @@ struct BookGridView: View {
     private let cellHeight: CGFloat = 70
     private let cellSpacing: CGFloat = 10
     private let headerHeight: CGFloat = 60
+    
+    // Chapter grid columns (5 columns like ChapterGridView)
+    private let chapterColumns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 5)
+    
+    // Theme for search selected book
+    private var searchBookTheme: BookTheme? {
+        guard let book = searchSelectedBook else { return nil }
+        return BookThemes.theme(for: book.id)
+    }
+    
+    // MARK: - Search Text Parsing
+    
+    /// Extract the chapter number query from search text (after book name)
+    private var chapterNumberQuery: String? {
+        guard let book = searchSelectedBook else { return nil }
+        let bookName = book.name(for: viewModel.uiLanguage)
+        let prefix = bookName + " "
+        
+        guard searchText.hasPrefix(prefix) else { return nil }
+        let afterBook = String(searchText.dropFirst(prefix.count))
+        
+        // If chapter is already selected (has "장 " or just space after number in English)
+        if searchSelectedChapter != nil {
+            return nil
+        }
+        
+        // Extract only digits from remaining text
+        let digits = afterBook.filter { $0.isNumber }
+        return digits.isEmpty ? nil : digits
+    }
+    
+    /// Extract the verse number query from search text (after chapter)
+    private var verseNumberQuery: String? {
+        guard let book = searchSelectedBook,
+              let chapter = searchSelectedChapter else { return nil }
+        
+        let bookName = book.name(for: viewModel.uiLanguage)
+        let chapterSuffix = viewModel.uiLanguage == .kr ? "장 " : " "
+        let expectedPrefix = "\(bookName) \(chapter)\(chapterSuffix)"
+        
+        guard searchText.hasPrefix(expectedPrefix) else { return nil }
+        
+        // If verse is already selected, no more query
+        if searchSelectedVerse != nil {
+            return nil
+        }
+        
+        let afterChapter = String(searchText.dropFirst(expectedPrefix.count))
+        let digits = afterChapter.filter { $0.isNumber }
+        return digits.isEmpty ? nil : digits
+    }
+    
+    /// Filtered chapters based on number query
+    private var filteredChapters: [Int] {
+        guard let book = searchSelectedBook else { return [] }
+        let allChapters = Array(1...book.chapterCount)
+        
+        guard let query = chapterNumberQuery, !query.isEmpty else {
+            return allChapters
+        }
+        
+        return allChapters.filter { String($0).hasPrefix(query) }
+    }
+    
+    /// Filtered verses based on number query
+    private var filteredVerses: [BibleVerse] {
+        guard searchSelectedChapter != nil else { return [] }
+        
+        // If verse is already selected, show only that verse
+        if let selectedVerse = searchSelectedVerse {
+            return searchVerses.filter { $0.verseNumber == selectedVerse }
+        }
+        
+        guard let query = verseNumberQuery, !query.isEmpty else {
+            return searchVerses
+        }
+        
+        return searchVerses.filter { String($0.verseNumber).hasPrefix(query) }
+    }
     
     var filteredBooks: [BibleBook] {
         let sorted = viewModel.sortedBooks
@@ -73,8 +158,8 @@ struct BookGridView: View {
     private var fullscreenView: some View {
         ZStack(alignment: .bottom) {
             // Content area - switches between book grid and timeline
-            if viewModel.sortOrder == .timeline {
-                // Timeline content (scrollable)
+            if viewModel.sortOrder == .timeline && !isSearchActive {
+                // Timeline content (scrollable) - hidden during search
                 BibleTimelineContentView(
                     languageMode: viewModel.uiLanguage,
                     topPadding: topPadding,
@@ -90,8 +175,12 @@ struct BookGridView: View {
                     }
                 )
                 .transition(.opacity)
+            } else if isSearchActive {
+                // Search mode: minimal UI with only book grid
+                searchModeContent
+                    .transition(.opacity)
             } else {
-                // Books grid with sections (title scrolls with content)
+                // Normal mode: Books grid with sections (title scrolls with content)
                 ScrollView {
                     VStack(spacing: 24) {
                         // Title (scrollable)
@@ -130,8 +219,177 @@ struct BookGridView: View {
                 .padding(.bottom, safeAreaBottom + 8)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
+        .background(searchBookTheme?.background ?? Color.black)
         .animation(.easeOut(duration: 0.3), value: viewModel.sortOrder)
+        .animation(.easeOut(duration: 0.3), value: isSearchActive)
+        .onAppear {
+            if startInSearchMode && !isSearchActive {
+                isSearchActive = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    isSearchFocused = true
+                }
+            }
+        }
+    }
+    
+    // MARK: - Search Mode Content (minimal UI)
+    private var searchModeContent: some View {
+        Group {
+            if let selectedBook = searchSelectedBook, let theme = searchBookTheme {
+                if searchSelectedChapter != nil {
+                    // Verse selection mode - show verse list
+                    searchVerseList(book: selectedBook, theme: theme)
+                } else {
+                    // Chapter selection mode - show chapter grid with book's theme
+                    searchChapterGrid(book: selectedBook, theme: theme)
+                }
+            } else {
+                // Book selection mode - show filtered books
+                ScrollView {
+                    LazyVGrid(columns: columns, spacing: 10) {
+                        ForEach(filteredBooks) { book in
+                            BookCell(
+                                book: book,
+                                language: viewModel.uiLanguage,
+                                isSelected: book == viewModel.currentBook
+                            )
+                            .onTapGesture {
+                                if let onBookSelect {
+                                    onBookSelect(book)
+                                } else {
+                                    viewModel.selectBook(book)
+                                }
+                                HapticManager.shared.selection()
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, topPadding + 20)
+                    .padding(.bottom, 120)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Search Chapter Grid (with book's theme)
+    private func searchChapterGrid(book: BibleBook, theme: BookTheme) -> some View {
+        let isFiltering = chapterNumberQuery != nil && !chapterNumberQuery!.isEmpty
+        let firstFilteredChapter = filteredChapters.first
+        
+        return ScrollView {
+            LazyVGrid(columns: chapterColumns, spacing: 10) {
+                ForEach(filteredChapters, id: \.self) { chapter in
+                    let isFirstFiltered = isFiltering && chapter == firstFilteredChapter
+                    
+                    Text("\(chapter)")
+                        .font(.system(size: 18, weight: book == viewModel.currentBook && chapter == viewModel.currentChapter ? .bold : .medium))
+                        .foregroundStyle(
+                            book == viewModel.currentBook && chapter == viewModel.currentChapter
+                                ? theme.background
+                                : (ReadingProgressTracker.shared.isChapterRead(bookId: book.id, chapter: chapter)
+                                    ? theme.textPrimary.opacity(0.6)
+                                    : theme.textPrimary)
+                        )
+                        .frame(maxWidth: .infinity)
+                        .frame(minHeight: 56)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(chapterCellBackground(book: book, chapter: chapter, theme: theme))
+                        )
+                        .overlay(
+                            // Highlight first filtered item
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(isFirstFiltered ? theme.accent.opacity(0.15) : Color.clear)
+                        )
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            // Navigate to selected chapter
+                            HapticManager.shared.selection()
+                            onClose?()
+                            Task {
+                                await viewModel.navigateTo(book: book, chapter: chapter)
+                            }
+                        }
+                }
+            }
+            .frame(maxWidth: 350)
+            .frame(maxWidth: .infinity)
+            .padding(.top, topPadding + 20)
+            .padding(.bottom, 120)
+        }
+    }
+    
+    /// Background color for chapter cell
+    private func chapterCellBackground(book: BibleBook, chapter: Int, theme: BookTheme) -> Color {
+        let isCurrentChapter = book == viewModel.currentBook && chapter == viewModel.currentChapter
+        let isRead = ReadingProgressTracker.shared.isChapterRead(bookId: book.id, chapter: chapter)
+        
+        if isCurrentChapter {
+            return theme.accent
+        } else if isRead {
+            return Color.black.opacity(0.3)
+        } else {
+            return theme.surface
+        }
+    }
+    
+    // MARK: - Search Verse List
+    private func searchVerseList(book: BibleBook, theme: BookTheme) -> some View {
+        let isFiltering = verseNumberQuery != nil && !verseNumberQuery!.isEmpty
+        let firstFilteredVerse = filteredVerses.first
+        
+        return ScrollView {
+            if isLoadingVerses {
+                ProgressView()
+                    .tint(theme.textSecondary)
+                    .padding(.top, 100)
+            } else {
+                LazyVStack(spacing: 0) {
+                    ForEach(filteredVerses) { verse in
+                        let isFirstFiltered = isFiltering && verse.verseNumber == firstFilteredVerse?.verseNumber
+                        
+                        searchVerseRow(verse: verse, theme: theme, isHighlighted: isFirstFiltered)
+                            .onTapGesture {
+                                // Navigate to selected verse
+                                HapticManager.shared.selection()
+                                onClose?()
+                                Task {
+                                    await viewModel.navigateTo(book: book, chapter: verse.chapter, verse: verse.verseNumber)
+                                }
+                            }
+                    }
+                }
+                .padding(.horizontal, 20)
+            }
+        }
+        .padding(.top, topPadding + 20)
+        .padding(.bottom, 120)
+    }
+    
+    // MARK: - Search Verse Row (single line with ellipsis)
+    private func searchVerseRow(verse: BibleVerse, theme: BookTheme, isHighlighted: Bool = false) -> some View {
+        HStack(alignment: .center, spacing: 12) {
+            // Verse number (full opacity for better legibility)
+            Text("\(verse.verseNumber)")
+                .font(.system(size: 14, weight: .semibold, design: .rounded))
+                .foregroundStyle(theme.textSecondary)
+                .frame(width: 28, alignment: .trailing)
+            
+            // Verse text (single line with ellipsis)
+            Text(verse.text(for: viewModel.languageMode))
+                .font(theme.verseText(16, language: viewModel.languageMode))
+                .foregroundStyle(theme.textPrimary)
+                .lineLimit(1)
+                .truncationMode(.tail)
+        }
+        .padding(.vertical, 14)
+        .padding(.horizontal, 12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .fill(isHighlighted ? theme.accent.opacity(0.15) : Color.clear)
+        )
+        .contentShape(Rectangle())
     }
     
     // MARK: - Bottom Bar (iOS Photos style)
@@ -199,10 +457,24 @@ struct BookGridView: View {
                 .font(.system(size: 16))
                 .foregroundStyle(.white)
                 .focused($isSearchFocused)
+                .onSubmit {
+                    // Enter/Return: Navigate based on current search state
+                    handleSearchEnter()
+                }
+                .onChange(of: searchText) { oldValue, newValue in
+                    // Spacebar: Autocomplete
+                    let didAutocomplete = handleSpacebarAutocomplete(oldValue: oldValue, newValue: newValue)
+                    
+                    // If text is modified (and not from autocomplete), reset states as needed
+                    if !didAutocomplete {
+                        validateAndResetSearchState(newValue: newValue)
+                    }
+                }
                 
                 if !searchText.isEmpty {
                     Button {
                         searchText = ""
+                        resetAllSearchState()
                     } label: {
                         Image(systemName: "xmark.circle.fill")
                             .font(.system(size: 16))
@@ -217,10 +489,17 @@ struct BookGridView: View {
             
             // Close search button
             Button {
-                withAnimation(.easeOut(duration: 0.25)) {
-                    isSearchActive = false
-                    searchText = ""
-                    isSearchFocused = false
+                if startInSearchMode {
+                    // Came from reading view search button - go back to reading view
+                    onClose?()
+                } else {
+                    // Came from bookshelf - just exit search mode
+                    withAnimation(.easeOut(duration: 0.25)) {
+                        isSearchActive = false
+                        searchText = ""
+                        isSearchFocused = false
+                    }
+                    resetAllSearchState()
                 }
                 HapticManager.shared.selection()
             } label: {
@@ -230,6 +509,186 @@ struct BookGridView: View {
                     .frame(width: 48, height: 48)
             }
             .buttonStyle(.glassCircle)
+        }
+    }
+    
+    /// Reset all search-related state
+    private func resetAllSearchState() {
+        searchSelectedBook = nil
+        searchSelectedChapter = nil
+        searchSelectedVerse = nil
+        searchVerses = []
+        isLoadingVerses = false
+    }
+    
+    // MARK: - Search Keyboard Helpers
+    
+    /// Navigate based on current search state (Enter key)
+    private func handleSearchEnter() {
+        guard let book = searchSelectedBook else {
+            // Book selection mode - navigate to first filtered book
+            guard let firstBook = filteredBooks.first else { return }
+            HapticManager.shared.selection()
+            if let onBookSelect {
+                onBookSelect(firstBook)
+            } else {
+                viewModel.selectBook(firstBook)
+            }
+            return
+        }
+        
+        if let chapter = searchSelectedChapter {
+            // Verse or chapter+verse selection mode
+            let targetVerse = searchSelectedVerse ?? filteredVerses.first?.verseNumber ?? 1
+            HapticManager.shared.selection()
+            onClose?()
+            Task {
+                await viewModel.navigateTo(book: book, chapter: chapter, verse: targetVerse)
+            }
+        } else {
+            // Chapter selection mode - navigate to first filtered chapter
+            guard let firstChapter = filteredChapters.first else { return }
+            HapticManager.shared.selection()
+            onClose?()
+            Task {
+                await viewModel.navigateTo(book: book, chapter: firstChapter)
+            }
+        }
+    }
+    
+    /// Autocomplete search text when spacebar is pressed
+    /// Returns true if autocomplete was performed
+    @discardableResult
+    private func handleSpacebarAutocomplete(oldValue: String, newValue: String) -> Bool {
+        // Check if user just typed a space
+        guard newValue.hasSuffix(" "),
+              !oldValue.hasSuffix(" "),
+              !oldValue.isEmpty else { return false }
+        
+        // Stage 3: Verse autocomplete (after chapter is selected)
+        if let book = searchSelectedBook, let chapter = searchSelectedChapter, searchSelectedVerse == nil {
+            // Check if we're in verse selection mode (after chapter autocomplete)
+            let bookName = book.name(for: viewModel.uiLanguage)
+            let chapterSuffix = viewModel.uiLanguage == .kr ? "장 " : " "
+            let chapterPrefix = "\(bookName) \(chapter)\(chapterSuffix)"
+            
+            if newValue.hasPrefix(chapterPrefix) {
+                let afterChapter = String(newValue.dropFirst(chapterPrefix.count).dropLast()) // remove trailing space
+                let digits = afterChapter.filter { $0.isNumber }
+                
+                if !digits.isEmpty, let firstVerse = filteredVerses.first {
+                    let verseSuffix = viewModel.uiLanguage == .kr ? "절 " : " "
+                    searchText = "\(chapterPrefix)\(firstVerse.verseNumber)\(verseSuffix)"
+                    searchSelectedVerse = firstVerse.verseNumber
+                    HapticManager.shared.selection()
+                    return true
+                }
+            }
+            return false
+        }
+        
+        // Stage 2: Chapter autocomplete (after book is selected)
+        if let book = searchSelectedBook, searchSelectedChapter == nil {
+            let bookName = book.name(for: viewModel.uiLanguage)
+            let bookPrefix = bookName + " "
+            
+            if newValue.hasPrefix(bookPrefix) {
+                let afterBook = String(newValue.dropFirst(bookPrefix.count).dropLast()) // remove trailing space
+                let digits = afterBook.filter { $0.isNumber }
+                
+                if !digits.isEmpty, let firstChapter = filteredChapters.first {
+                    let chapterSuffix = viewModel.uiLanguage == .kr ? "장 " : " "
+                    searchText = "\(bookPrefix)\(firstChapter)\(chapterSuffix)"
+                    searchSelectedChapter = firstChapter
+                    
+                    // Load verses for this chapter
+                    loadVersesForChapter(book: book, chapter: firstChapter)
+                    
+                    HapticManager.shared.selection()
+                    return true
+                }
+            }
+            return false
+        }
+        
+        // Stage 1: Book autocomplete
+        let query = String(newValue.dropLast())
+        
+        let matchingBooks = viewModel.sortedBooks.filter { book in
+            book.nameEn.localizedCaseInsensitiveContains(query) ||
+            KoreanSearchHelper.matches(query: query, target: book.nameKr) ||
+            KoreanSearchHelper.matches(query: query, target: book.abbrKr)
+        }
+        
+        if let firstMatch = matchingBooks.first {
+            let bookName = firstMatch.name(for: viewModel.uiLanguage)
+            searchText = bookName + " "
+            searchSelectedBook = firstMatch
+            HapticManager.shared.selection()
+            return true
+        }
+        return false
+    }
+    
+    /// Load verses for a specific chapter
+    private func loadVersesForChapter(book: BibleBook, chapter: Int) {
+        isLoadingVerses = true
+        Task {
+            do {
+                let verses = try await BibleAPIService.shared.fetchChapter(book: book, chapter: chapter)
+                await MainActor.run {
+                    searchVerses = verses
+                    isLoadingVerses = false
+                }
+            } catch {
+                await MainActor.run {
+                    searchVerses = []
+                    isLoadingVerses = false
+                }
+            }
+        }
+    }
+    
+    /// Validate search text and reset states if needed
+    private func validateAndResetSearchState(newValue: String) {
+        guard let book = searchSelectedBook else { return }
+        
+        let bookName = book.name(for: viewModel.uiLanguage)
+        let bookPrefix = bookName + " "
+        
+        // Check if book name is still valid
+        if !newValue.hasPrefix(bookPrefix) && newValue != bookName {
+            // Reset everything
+            searchSelectedBook = nil
+            searchSelectedChapter = nil
+            searchSelectedVerse = nil
+            searchVerses = []
+            return
+        }
+        
+        // If chapter is selected, check if chapter part is still valid
+        if let chapter = searchSelectedChapter {
+            let chapterSuffix = viewModel.uiLanguage == .kr ? "장 " : " "
+            let chapterPrefix = "\(bookPrefix)\(chapter)\(chapterSuffix)"
+            
+            if !newValue.hasPrefix(chapterPrefix) {
+                // Reset chapter and verse
+                searchSelectedChapter = nil
+                searchSelectedVerse = nil
+                searchVerses = []
+                return
+            }
+            
+            // If verse is selected, check if verse part is still valid
+            if let verse = searchSelectedVerse {
+                let verseSuffix = viewModel.uiLanguage == .kr ? "절 " : " "
+                let versePrefix = "\(chapterPrefix)\(verse)\(verseSuffix)"
+                
+                if !newValue.hasPrefix(versePrefix) {
+                    // Reset verse only
+                    searchSelectedVerse = nil
+                }
+            }
         }
     }
     

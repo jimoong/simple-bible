@@ -8,6 +8,7 @@ struct BookReadingView: View {
     
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
+    @State private var highlightedVerseNumber: Int? = nil
     
     private let swipeThreshold: CGFloat = 100
     private let verseFontSize: CGFloat = 17
@@ -130,56 +131,103 @@ struct BookReadingView: View {
     
     // MARK: - Verse Scroll View (Book Mode)
     private func verseScrollView(geometry: GeometryProxy) -> some View {
-        ScrollView(.vertical, showsIndicators: true) {
-            VStack(alignment: .leading, spacing: 28) {
-                // Top padding for header + chapter title
-                VStack(spacing: 0) {
-                    Spacer()
-                        .frame(height: geometry.safeAreaInsets.top + 40)
-                    
-                    // Chapter title (left-aligned)
-                    if let title = chapterTitle {
-                        Text(title)
-                            .font(theme.verseText(24, language: viewModel.uiLanguage).bold())
-                            .foregroundStyle(theme.textPrimary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.bottom, 40)
-                    } else {
+        ScrollViewReader { scrollProxy in
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack(alignment: .leading, spacing: 28) {
+                    // Top padding for header + chapter title
+                    VStack(spacing: 0) {
                         Spacer()
-                            .frame(height: 40)
+                            .frame(height: geometry.safeAreaInsets.top + 40)
+                        
+                        // Chapter title (left-aligned)
+                        if let title = chapterTitle {
+                            Text(title)
+                                .font(theme.verseText(24, language: viewModel.uiLanguage).bold())
+                                .foregroundStyle(theme.textPrimary)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom, 40)
+                        } else {
+                            Spacer()
+                                .frame(height: 40)
+                        }
+                    }
+                    
+                    // All verses in a continuous flow
+                    ForEach(Array(viewModel.verses.enumerated()), id: \.element.id) { index, verse in
+                        BookVerseRow(
+                            verse: verse,
+                            language: viewModel.languageMode,
+                            theme: theme,
+                            fontSize: verseFontSize,
+                            lineSpacing: verseLineSpacing,
+                            isHighlighted: highlightedVerseNumber == verse.verseNumber,
+                            onSave: {
+                                onSaveVerse?(verse)
+                            },
+                            onCopy: {
+                                onCopyVerse?(verse)
+                            }
+                        )
+                        .id(verse.verseNumber)
+                    }
+                    
+                    // Mark as read at the end
+                    MarkAsReadCard(
+                        bookId: viewModel.currentBook.id,
+                        chapter: viewModel.currentChapter,
+                        theme: theme,
+                        languageMode: viewModel.uiLanguage
+                    )
+                    .padding(.top, 40)
+                    .padding(.bottom, geometry.safeAreaInsets.bottom + 100)
+                }
+                .padding(.horizontal, 24)
+            }
+            .scrollIndicators(.visible)
+            .onChange(of: viewModel.targetVerseNumber) { _, newValue in
+                if let targetVerse = newValue {
+                    // Use animation when navigating while already in view
+                    scrollToVerse(targetVerse, proxy: scrollProxy, animated: true)
+                }
+            }
+            .onAppear {
+                // Handle initial target verse when view appears
+                if let targetVerse = viewModel.targetVerseNumber {
+                    // Small delay to ensure ScrollView is ready, then scroll without animation
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                        scrollToVerse(targetVerse, proxy: scrollProxy, animated: false)
                     }
                 }
-                
-                // All verses in a continuous flow
-                ForEach(Array(viewModel.verses.enumerated()), id: \.element.id) { index, verse in
-                    BookVerseRow(
-                        verse: verse,
-                        language: viewModel.languageMode,
-                        theme: theme,
-                        fontSize: verseFontSize,
-                        lineSpacing: verseLineSpacing,
-                        onSave: {
-                            onSaveVerse?(verse)
-                        },
-                        onCopy: {
-                            onCopyVerse?(verse)
-                        }
-                    )
-                }
-                
-                // Mark as read at the end
-                MarkAsReadCard(
-                    bookId: viewModel.currentBook.id,
-                    chapter: viewModel.currentChapter,
-                    theme: theme,
-                    languageMode: viewModel.uiLanguage
-                )
-                .padding(.top, 40)
-                .padding(.bottom, geometry.safeAreaInsets.bottom + 100)
             }
-            .padding(.horizontal, 24)
         }
-        .scrollIndicators(.visible)
+    }
+    
+    // MARK: - Scroll to Verse Helper
+    private func scrollToVerse(_ verseNumber: Int, proxy: ScrollViewProxy, animated: Bool) {
+        // Scroll to the verse, centered on screen
+        if animated {
+            withAnimation(.easeOut(duration: 0.4)) {
+                proxy.scrollTo(verseNumber, anchor: .center)
+            }
+        } else {
+            // No animation - instant scroll for initial landing
+            proxy.scrollTo(verseNumber, anchor: .center)
+        }
+        
+        // Show highlight effect (always animated for visibility)
+        withAnimation(.easeIn(duration: 0.3)) {
+            highlightedVerseNumber = verseNumber
+        }
+        
+        // Clear target verse from view model
+        viewModel.clearTargetVerse()
+        
+        // Remove highlight after 2 seconds
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            withAnimation(.easeOut(duration: 0.5)) {
+                highlightedVerseNumber = nil
+            }
+        }
     }
     
     // MARK: - Horizontal Swipe Gesture
@@ -241,6 +289,7 @@ struct BookVerseRow: View {
     let theme: BookTheme
     let fontSize: CGFloat
     let lineSpacing: CGFloat
+    var isHighlighted: Bool = false
     var onSave: (() -> Void)? = nil
     var onCopy: (() -> Void)? = nil
     
@@ -263,6 +312,15 @@ struct BookVerseRow: View {
                 .foregroundStyle(theme.textSecondary.opacity(0.6))
                 .frame(width: 18, alignment: .trailing)
         }
+        .padding(.vertical, 12)
+        .padding(.horizontal, 16)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(theme.textPrimary.opacity(isHighlighted ? 0.08 : 0))
+        )
+        .padding(.vertical, -12)
+        .padding(.horizontal, -16)
+        .animation(.easeOut(duration: 0.3), value: isHighlighted)
         .contentShape(Rectangle())
         .contextMenu {
             Button {

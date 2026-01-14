@@ -29,17 +29,6 @@ struct ExpandableFAB: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            // Tap-outside overlay to close (only when expanded)
-            if isExpanded {
-                Color.clear
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        closeMenu()
-                    }
-                    .ignoresSafeArea()
-            }
-            
             // Morphing container + content
             if !isHidden {
                 morphingMenu

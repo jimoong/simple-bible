@@ -1,242 +1,111 @@
 import SwiftUI
 
-/// Expandable navigation button - transforms from FAB into a menu panel
-/// Mirror behavior of ExpandableFAB for consistency
+/// Simple bookshelf navigation button - directly opens bookshelf on tap
 struct NavigateFAB: View {
     var theme: BookTheme
-    var uiLanguage: LanguageMode = .kr  // Current UI language based on active display
     var onBookshelf: () -> Void
-    var onVoiceSearch: () -> Void
-    @Binding var isExpanded: Bool
     var isHidden: Bool = false
     var useBlurBackground: Bool = false
     
-    private var isKoreanUI: Bool { uiLanguage == .kr }
-    
-    // Layout
-    private let collapsedSize: CGFloat = 52
-    private let expandedWidth: CGFloat = 210
-    private let menuItemHeight: CGFloat = 48
-    private let menuPadding: CGFloat = 8
-    
-    private var menuItemCount: Int { 2 } // Bookshelf + Voice
-    
-    private var expandedHeight: CGFloat {
-        CGFloat(menuItemCount) * menuItemHeight + menuPadding * 2
-    }
+    private let buttonSize: CGFloat = 52
     
     var body: some View {
-        ZStack(alignment: .bottomLeading) {
-            // Tap-outside overlay to close (only when expanded)
-            if isExpanded {
-                Color.clear
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .contentShape(Rectangle())
-                    .onTapGesture {
-                        closeMenu()
-                    }
-                    .ignoresSafeArea()
-            }
-            
-            // Morphing container + content
-            if !isHidden {
-                morphingMenu
-            }
-        }
-    }
-    
-    // MARK: - Morphing Menu
-    private var morphingMenu: some View {
-        ZStack(alignment: isExpanded ? .top : .center) {
-            // Glass background that morphs
-            glassBackground
-            
-            // Content
-            if isExpanded {
-                // Menu items - uses UI language based on primary translation
-                VStack(spacing: 0) {
-                    // Voice search
-                    menuItem(icon: "mic", label: isKoreanUI ? "음성 바로가기" : "Voice") {
-                        onVoiceSearch()
-                        closeMenu()
-                    }
+        if !isHidden {
+            Button {
+                onBookshelf()
+                HapticManager.shared.selection()
+            } label: {
+                ZStack {
+                    glassBackground
                     
-                    // Bookshelf
-                    menuItem(icon: "books.vertical", label: isKoreanUI ? "성경 목록" : "Books") {
-                        onBookshelf()
-                        closeMenu()
-                    }
+                    Image(systemName: "books.vertical")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundStyle(.white)
                 }
-                .padding(.vertical, menuPadding)
-                .padding(.horizontal, menuPadding)
-                .transition(.opacity.animation(.easeOut(duration: 0.15).delay(0.1)))
-            } else {
-                // FAB icon - books icon
-                Image(systemName: "books.vertical")
-                    .font(.system(size: 20, weight: .bold))
-                    .foregroundStyle(.white)
-                    .transition(.opacity.animation(.easeOut(duration: 0.1)))
+                .frame(width: buttonSize, height: buttonSize)
             }
+            .buttonStyle(BookshelfButtonStyle())
         }
-        .frame(
-            width: isExpanded ? expandedWidth : collapsedSize,
-            height: isExpanded ? expandedHeight : collapsedSize
-        )
-        .clipShape(
-            RoundedRectangle(
-                cornerRadius: isExpanded ? 20 : collapsedSize / 2,
-                style: .continuous
-            )
-        )
-        .onTapGesture {
-            if !isExpanded {
-                openMenu()
-            }
-        }
-        .animation(.spring(response: 0.35, dampingFraction: 0.6), value: isExpanded)
     }
     
     // MARK: - Glass Background
     @ViewBuilder
     private var glassBackground: some View {
         if useBlurBackground {
-            RoundedRectangle(
-                cornerRadius: isExpanded ? 20 : collapsedSize / 2,
-                style: .continuous
-            )
-            .fill(.regularMaterial)
-            .environment(\.colorScheme, .dark)
-            .overlay(
-                RoundedRectangle(
-                    cornerRadius: isExpanded ? 20 : collapsedSize / 2,
-                    style: .continuous
+            Circle()
+                .fill(.regularMaterial)
+                .environment(\.colorScheme, .dark)
+                .overlay(
+                    Circle()
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(0.18),
+                                    Color.white.opacity(0.05)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 1
+                        )
                 )
-                .stroke(
-                    LinearGradient(
-                        colors: [
-                            Color.white.opacity(0.18),
-                            Color.white.opacity(0.05)
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ),
-                    lineWidth: 1
+                .shadow(
+                    color: .black.opacity(0.15),
+                    radius: 6,
+                    y: 3
                 )
-            )
-            .shadow(
-                color: .black.opacity(isExpanded ? 0.20 : 0.15),
-                radius: isExpanded ? 10 : 6,
-                y: isExpanded ? 4 : 3
-            )
         } else {
-            RoundedRectangle(
-                cornerRadius: isExpanded ? 20 : collapsedSize / 2,
-                style: .continuous
-            )
-            .fill(Color.white.opacity(0.08))
-            .overlay(
-                RoundedRectangle(
-                    cornerRadius: isExpanded ? 20 : collapsedSize / 2,
-                    style: .continuous
+            Circle()
+                .fill(Color.white.opacity(0.08))
+                .overlay(
+                    Circle()
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(0.25),
+                                    Color.white.opacity(0.08)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 1
+                        )
                 )
-                .stroke(
-                    LinearGradient(
-                        colors: [
-                            Color.white.opacity(0.25),
-                            Color.white.opacity(0.08)
-                        ],
-                        startPoint: .topLeading,
-                        endPoint: .bottomTrailing
-                    ),
-                    lineWidth: 1
+                .shadow(
+                    color: .black.opacity(0.12),
+                    radius: 4,
+                    y: 2
                 )
-            )
-            .shadow(
-                color: .black.opacity(isExpanded ? 0.15 : 0.12),
-                radius: isExpanded ? 8 : 4,
-                y: isExpanded ? 4 : 2
-            )
-        }
-    }
-    
-    // MARK: - Menu Item
-    private func menuItem(icon: String, label: String, action: @escaping () -> Void) -> some View {
-        Button {
-            action()
-            HapticManager.shared.selection()
-        } label: {
-            HStack(spacing: 12) {
-                Image(systemName: icon)
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 24)
-                
-                Text(label)
-                    .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
-                
-                Spacer()
-            }
-            .padding(.horizontal, 16)
-            .frame(height: menuItemHeight)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(NavigateMenuItemButtonStyle())
-    }
-    
-    // MARK: - Helpers
-    private func openMenu() {
-        withAnimation(.spring(response: 0.35, dampingFraction: 0.6)) {
-            isExpanded = true
-        }
-        HapticManager.shared.selection()
-    }
-    
-    private func closeMenu() {
-        withAnimation(.spring(response: 0.3, dampingFraction: 0.65)) {
-            isExpanded = false
         }
     }
 }
 
-// MARK: - Menu Item Button Style
-private struct NavigateMenuItemButtonStyle: ButtonStyle {
+// MARK: - Bookshelf Button Style
+struct BookshelfButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .background(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(Color.white.opacity(configuration.isPressed ? 0.1 : 0))
-            )
-            .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
+            .scaleEffect(configuration.isPressed ? 0.92 : 1.0)
+            .opacity(configuration.isPressed ? 0.8 : 1.0)
+            .animation(.easeOut(duration: 0.15), value: configuration.isPressed)
     }
 }
 
 // MARK: - Preview
 #Preview {
-    struct PreviewWrapper: View {
-        @State private var isExpanded = false
+    ZStack {
+        BookThemes.genesis.background
+            .ignoresSafeArea()
         
-        var body: some View {
-            ZStack {
-                BookThemes.genesis.background
-                    .ignoresSafeArea()
-                
-                VStack {
-                    Spacer()
-                    HStack {
-                        NavigateFAB(
-                            theme: BookThemes.genesis,
-                            uiLanguage: .kr,
-                            onBookshelf: { print("Open bookshelf") },
-                            onVoiceSearch: { print("Open voice search") },
-                            isExpanded: $isExpanded
-                        )
-                        .padding(24)
-                        Spacer()
-                    }
-                }
+        VStack {
+            Spacer()
+            HStack {
+                NavigateFAB(
+                    theme: BookThemes.genesis,
+                    onBookshelf: { print("Open bookshelf") }
+                )
+                .padding(24)
+                Spacer()
             }
         }
     }
-    return PreviewWrapper()
 }

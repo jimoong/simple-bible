@@ -8,13 +8,15 @@ struct ContentView: View {
     @State private var showSettings = false
     @State private var showChapterToast = false
     @State private var currentChapterSummary: ChapterSummary? = nil
-    @State private var isNavigateFABExpanded = false
     @State private var isSettingsFABExpanded = false
     
     // Favorites system state
     @State private var showFavoritesInBookshelf = false  // Inline in bookshelf (same level as chapter grid)
     @State private var selectedVerseForMenu: BibleVerse? = nil
     @State private var editingFavorite: FavoriteVerse? = nil
+    
+    // Search mode
+    @State private var openSearchOnBookshelf = false  // Open bookshelf with search mode active
     
     private var theme: BookTheme {
         viewModel.currentTheme
@@ -121,6 +123,7 @@ struct ContentView: View {
                                 safeAreaBottom: geometry.safeAreaInsets.bottom,
                                 topPadding: geometry.safeAreaInsets.top,
                                 isFullscreen: true,
+                                startInSearchMode: openSearchOnBookshelf,
                                 onClose: { dismissBookshelf() },
                                 onBookSelect: { book in
                                     withAnimation(.easeInOut(duration: 0.25)) {
@@ -134,6 +137,10 @@ struct ContentView: View {
                                 }
                             )
                             .transition(.opacity)
+                            .onDisappear {
+                                // Reset search mode flag when bookshelf closes
+                                openSearchOnBookshelf = false
+                            }
                         }
                         
                         // Chapters grid (same fullscreen panel)
@@ -219,6 +226,20 @@ struct ContentView: View {
                     .zIndex(2)
                 }
                 
+                // Full-screen tap overlay to close FAB menu (blocks all other interactions)
+                if isSettingsFABExpanded {
+                    Color.clear
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .contentShape(Rectangle())
+                        .onTapGesture {
+                            withAnimation(.spring(response: 0.3, dampingFraction: 0.65)) {
+                                isSettingsFABExpanded = false
+                            }
+                        }
+                        .ignoresSafeArea()
+                        .zIndex(2.5)
+                }
+                
                 // Floating controls at bottom (hidden when in books grid, but shown in chapters/favorites)
                 if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil && !showFavoritesInBookshelf) {
                     VStack {
@@ -251,7 +272,6 @@ struct ContentView: View {
                                         showSettings = true
                                     },
                                     isExpanded: $isSettingsFABExpanded,
-                                    isHidden: isNavigateFABExpanded,
                                     useBlurBackground: viewModel.readingMode == .scroll
                                 )
                             }
@@ -450,26 +470,96 @@ struct ContentView: View {
                 HapticManager.shared.selection()
             }
         } else {
-            // Navigate FAB - expands to show bookshelf and voice search
-            NavigateFAB(
-                theme: theme,
-                uiLanguage: viewModel.uiLanguage,
-                onBookshelf: {
-                    if viewModel.showBookshelf {
-                        dismissBookshelf()
-                    } else {
-                        viewModel.openBookshelf()
-                    }
-                },
-                onVoiceSearch: {
-                    withAnimation {
-                        voiceSearchViewModel.openAndStartListening(with: viewModel.languageMode)
-                    }
-                },
-                isExpanded: $isNavigateFABExpanded,
-                isHidden: isSettingsFABExpanded,
-                useBlurBackground: viewModel.readingMode == .scroll
-            )
+            HStack(spacing: 12) {
+                // Bookshelf button - directly opens bookshelf
+                NavigateFAB(
+                    theme: theme,
+                    onBookshelf: {
+                        if viewModel.showBookshelf {
+                            dismissBookshelf()
+                        } else {
+                            viewModel.openBookshelf()
+                        }
+                    },
+                    useBlurBackground: viewModel.readingMode == .scroll
+                )
+                
+                // Search button - opens bookshelf with search mode
+                searchButton
+            }
+            .opacity(isSettingsFABExpanded ? 0 : 1)
+            .animation(.easeOut(duration: 0.2), value: isSettingsFABExpanded)
+        }
+    }
+    
+    private var searchButton: some View {
+        Button {
+            openSearchOnBookshelf = true
+            viewModel.openBookshelf()
+            HapticManager.shared.selection()
+        } label: {
+            ZStack {
+                searchButtonBackground
+                
+                Image(systemName: "magnifyingglass")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(.white)
+            }
+            .frame(width: 52, height: 52)
+        }
+        .buttonStyle(BookshelfButtonStyle())
+    }
+    
+    // Match NavigateFAB's glass background exactly
+    @ViewBuilder
+    private var searchButtonBackground: some View {
+        if viewModel.readingMode == .scroll {
+            // Regular material for scroll mode (same as NavigateFAB)
+            Circle()
+                .fill(.regularMaterial)
+                .environment(\.colorScheme, .dark)
+                .overlay(
+                    Circle()
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(0.18),
+                                    Color.white.opacity(0.05)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 1
+                        )
+                )
+                .shadow(
+                    color: .black.opacity(0.15),
+                    radius: 6,
+                    y: 3
+                )
+        } else {
+            // Clear glass for tap mode (same as NavigateFAB)
+            Circle()
+                .fill(Color.white.opacity(0.08))
+                .overlay(
+                    Circle()
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(0.25),
+                                    Color.white.opacity(0.08)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 1
+                        )
+                )
+                .shadow(
+                    color: .black.opacity(0.12),
+                    radius: 4,
+                    y: 2
+                )
         }
     }
     

@@ -45,6 +45,9 @@ final class BibleViewModel {
     var selectedBookForChapter: BibleBook?
     var isSearchActive: Bool = false
     
+    // Target verse for scroll navigation (used in scroll mode)
+    var targetVerseNumber: Int? = nil
+    
     // For chapter transition animation
     var transitionDirection: TransitionDirection = .none
     
@@ -254,11 +257,29 @@ final class BibleViewModel {
     func navigateTo(book: BibleBook, chapter: Int, verse: Int = 0) async {
         currentBook = book
         currentChapter = chapter
-        currentVerseIndex = verse
         showBookshelf = false
         selectedBookForChapter = nil
         HapticManager.shared.selection()
         await loadCurrentChapter()
+        
+        // Find the verse by its actual verse number (not assuming index = verseNumber - 1)
+        if verse > 0 {
+            if let index = verses.firstIndex(where: { $0.verseNumber == verse }) {
+                currentVerseIndex = index
+            } else {
+                currentVerseIndex = 0
+            }
+            // Set target verse for scroll mode navigation
+            targetVerseNumber = verse
+        } else {
+            currentVerseIndex = 0
+            targetVerseNumber = nil
+        }
+    }
+    
+    /// Clear the target verse (called after scroll animation completes)
+    func clearTargetVerse() {
+        targetVerseNumber = nil
     }
     
     func toggleLanguage() {
