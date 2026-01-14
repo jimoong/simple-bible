@@ -8,27 +8,10 @@
 	<string>This app uses speech recognition to understand your voice commands for finding Bible verses.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<!-- Noto Serif KR -->
+		<!-- Noto Serif KR (Variable Font) -->
 		<string>Fonts/NotoSerifKR-VariableFont_wght.ttf</string>
-		<string>Fonts/NotoSerifKR-Regular.ttf</string>
-		<string>Fonts/NotoSerifKR-Medium.ttf</string>
-		<string>Fonts/NotoSerifKR-SemiBold.ttf</string>
-		<string>Fonts/NotoSerifKR-Bold.ttf</string>
-		<string>Fonts/NotoSerifKR-Light.ttf</string>
-		<string>Fonts/NotoSerifKR-ExtraLight.ttf</string>
-		<string>Fonts/NotoSerifKR-ExtraBold.ttf</string>
-		<string>Fonts/NotoSerifKR-Black.ttf</string>
-		<!-- Noto Sans KR -->
+		<!-- Noto Sans KR (Variable Font) -->
 		<string>Fonts/NotoSansKR-VariableFont_wght.ttf</string>
-		<string>Fonts/NotoSansKR-Regular.ttf</string>
-		<string>Fonts/NotoSansKR-Medium.ttf</string>
-		<string>Fonts/NotoSansKR-SemiBold.ttf</string>
-		<string>Fonts/NotoSansKR-Bold.ttf</string>
-		<string>Fonts/NotoSansKR-Light.ttf</string>
-		<string>Fonts/NotoSansKR-ExtraLight.ttf</string>
-		<string>Fonts/NotoSansKR-Thin.ttf</string>
-		<string>Fonts/NotoSansKR-ExtraBold.ttf</string>
-		<string>Fonts/NotoSansKR-Black.ttf</string>
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>

@@ -1,34 +1,16 @@
 import SwiftUI
 import UIKit
 
-/// Font manager for multi-language typography
+/// Font manager for multi-language typography using Variable Fonts
 enum FontManager {
     
-    // MARK: - Static Font Names (PostScript names match filename without extension)
+    // MARK: - Variable Font Names
     
-    static let serifFonts: [Font.Weight: String] = [
-        .ultraLight: "NotoSerifKR-ExtraLight",
-        .thin: "NotoSerifKR-ExtraLight",
-        .light: "NotoSerifKR-Light",
-        .regular: "NotoSerifKR-Regular",
-        .medium: "NotoSerifKR-Medium",
-        .semibold: "NotoSerifKR-SemiBold",
-        .bold: "NotoSerifKR-Bold",
-        .heavy: "NotoSerifKR-ExtraBold",
-        .black: "NotoSerifKR-Black"
-    ]
+    /// Noto Serif KR Variable font family name
+    static let serifFontFamily = "Noto Serif KR"
     
-    static let sansFonts: [Font.Weight: String] = [
-        .ultraLight: "NotoSansKR-ExtraLight",
-        .thin: "NotoSansKR-Thin",
-        .light: "NotoSansKR-Light",
-        .regular: "NotoSansKR-Regular",
-        .medium: "NotoSansKR-Medium",
-        .semibold: "NotoSansKR-SemiBold",
-        .bold: "NotoSansKR-Bold",
-        .heavy: "NotoSansKR-ExtraBold",
-        .black: "NotoSansKR-Black"
-    ]
+    /// Noto Sans KR Variable font family name  
+    static let sansFontFamily = "Noto Sans KR"
     
     // MARK: - iOS Fallbacks
     
@@ -37,11 +19,11 @@ enum FontManager {
     // MARK: - Font Availability
     
     static var hasNotoSerifKR: Bool {
-        UIFont(name: "NotoSerifKR-Regular", size: 12) != nil
+        UIFont.familyNames.contains(serifFontFamily)
     }
     
     static var hasNotoSansKR: Bool {
-        UIFont(name: "NotoSansKR-Regular", size: 12) != nil
+        UIFont.familyNames.contains(sansFontFamily)
     }
     
     // MARK: - Korean Font Getters
@@ -56,14 +38,11 @@ enum FontManager {
         }
     }
     
-    /// Korean serif font using Noto Serif KR
+    /// Korean serif font using Noto Serif KR Variable Font
     static func koreanSerif(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        // Map to closest available weight
-        let targetWeight = closestWeight(weight, in: serifFonts)
-        
-        if let fontName = serifFonts[targetWeight],
-           UIFont(name: fontName, size: size) != nil {
-            return .custom(fontName, size: size)
+        if hasNotoSerifKR,
+           let uiFont = createVariableFont(family: serifFontFamily, size: size, weight: weight) {
+            return Font(uiFont)
         }
         
         // Fallback to AppleMyungjo
@@ -74,14 +53,11 @@ enum FontManager {
         return .system(size: size, weight: weight, design: .serif)
     }
     
-    /// Korean sans-serif font using Noto Sans KR
+    /// Korean sans-serif font using Noto Sans KR Variable Font
     static func koreanSans(size: CGFloat, weight: Font.Weight = .regular) -> Font {
-        // Map to closest available weight
-        let targetWeight = closestWeight(weight, in: sansFonts)
-        
-        if let fontName = sansFonts[targetWeight],
-           UIFont(name: fontName, size: size) != nil {
-            return .custom(fontName, size: size)
+        if hasNotoSansKR,
+           let uiFont = createVariableFont(family: sansFontFamily, size: size, weight: weight) {
+            return Font(uiFont)
         }
         
         // Fallback to Apple SD Gothic Neo
@@ -90,17 +66,43 @@ enum FontManager {
             return .custom(sdGothicName, size: size)
         }
         
-        #if false  // Disabled: too verbose
-        #endif
         return .system(size: size, weight: weight, design: .default)
     }
     
-    // MARK: - Helpers
+    // MARK: - Variable Font Creation
     
-    private static func closestWeight(_ weight: Font.Weight, in fonts: [Font.Weight: String]) -> Font.Weight {
-        if fonts[weight] != nil { return weight }
-        return .regular
+    /// Create a UIFont from a variable font family with specific weight
+    private static func createVariableFont(family: String, size: CGFloat, weight: Font.Weight) -> UIFont? {
+        let uiWeight = uiFontWeight(from: weight)
+        
+        // Create font descriptor with family and weight traits
+        let descriptor = UIFontDescriptor(fontAttributes: [
+            .family: family,
+            .traits: [
+                UIFontDescriptor.TraitKey.weight: uiWeight
+            ]
+        ])
+        
+        return UIFont(descriptor: descriptor, size: size)
     }
+    
+    /// Convert SwiftUI Font.Weight to UIFont.Weight
+    private static func uiFontWeight(from weight: Font.Weight) -> UIFont.Weight {
+        switch weight {
+        case .ultraLight: return .ultraLight
+        case .thin: return .thin
+        case .light: return .light
+        case .regular: return .regular
+        case .medium: return .medium
+        case .semibold: return .semibold
+        case .bold: return .bold
+        case .heavy: return .heavy
+        case .black: return .black
+        default: return .regular
+        }
+    }
+    
+    // MARK: - Helpers
     
     private static func appleSDGothicName(for weight: Font.Weight) -> String {
         switch weight {
@@ -124,21 +126,30 @@ enum FontManager {
     static func debugPrintFontStatus() {
         print("")
         print("═══════════════════════════════════════════════════════")
-        print("🔍 FONT STATUS")
+        print("🔍 FONT STATUS (Variable Fonts)")
         print("═══════════════════════════════════════════════════════")
         
-        // Check Noto Serif KR
-        print("\n📖 Noto Serif KR (checking each weight):")
-        for (_, name) in serifFonts.sorted(by: { weightOrder($0.key) < weightOrder($1.key) }) {
-            let available = UIFont(name: name, size: 12) != nil
-            print("   \(available ? "✓" : "✗") \(name)")
+        // Check Variable Fonts
+        print("\n📖 Noto Serif KR Variable:")
+        print("   \(hasNotoSerifKR ? "✓" : "✗") Family available: \(serifFontFamily)")
+        if hasNotoSerifKR {
+            let weights: [Font.Weight] = [.ultraLight, .thin, .light, .regular, .medium, .semibold, .bold, .heavy, .black]
+            for weight in weights {
+                if let font = createVariableFont(family: serifFontFamily, size: 12, weight: weight) {
+                    print("   ✓ \(weightName(weight)): \(font.fontName)")
+                }
+            }
         }
         
-        // Check Noto Sans KR
-        print("\n📝 Noto Sans KR (checking each weight):")
-        for (_, name) in sansFonts.sorted(by: { weightOrder($0.key) < weightOrder($1.key) }) {
-            let available = UIFont(name: name, size: 12) != nil
-            print("   \(available ? "✓" : "✗") \(name)")
+        print("\n📝 Noto Sans KR Variable:")
+        print("   \(hasNotoSansKR ? "✓" : "✗") Family available: \(sansFontFamily)")
+        if hasNotoSansKR {
+            let weights: [Font.Weight] = [.ultraLight, .thin, .light, .regular, .medium, .semibold, .bold, .heavy, .black]
+            for weight in weights {
+                if let font = createVariableFont(family: sansFontFamily, size: 12, weight: weight) {
+                    print("   ✓ \(weightName(weight)): \(font.fontName)")
+                }
+            }
         }
         
         // Check fallbacks
@@ -146,12 +157,12 @@ enum FontManager {
         print("   \(UIFont(name: appleMyungjo, size: 12) != nil ? "✓" : "✗") AppleMyungjo (serif)")
         print("   \(UIFont(name: "AppleSDGothicNeo-Regular", size: 12) != nil ? "✓" : "✗") Apple SD Gothic Neo (sans)")
         
-        // List ALL registered font families
-        print("\n📋 ALL registered font families (looking for Noto):")
+        // List ALL registered font families containing "Noto"
+        print("\n📋 Registered Noto font families:")
         var foundNoto = false
         for family in UIFont.familyNames.sorted() {
             let lower = family.lowercased()
-            if lower.contains("noto") || lower.contains("serif") && lower.contains("kr") {
+            if lower.contains("noto") {
                 foundNoto = true
                 print("   Family: '\(family)'")
                 for name in UIFont.fontNames(forFamilyName: family) {
@@ -171,18 +182,18 @@ enum FontManager {
         print("")
     }
     
-    private static func weightOrder(_ weight: Font.Weight) -> Int {
+    private static func weightName(_ weight: Font.Weight) -> String {
         switch weight {
-        case .ultraLight: return 0
-        case .thin: return 1
-        case .light: return 2
-        case .regular: return 3
-        case .medium: return 4
-        case .semibold: return 5
-        case .bold: return 6
-        case .heavy: return 7
-        case .black: return 8
-        default: return 3
+        case .ultraLight: return "UltraLight"
+        case .thin: return "Thin"
+        case .light: return "Light"
+        case .regular: return "Regular"
+        case .medium: return "Medium"
+        case .semibold: return "SemiBold"
+        case .bold: return "Bold"
+        case .heavy: return "Heavy"
+        case .black: return "Black"
+        default: return "Unknown"
         }
     }
 }
