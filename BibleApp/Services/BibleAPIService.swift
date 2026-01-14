@@ -65,7 +65,7 @@ actor BibleAPIService {
     func reloadTranslations() {
         loadSavedTranslations()
         cache.removeAll() // Clear cache when translations change
-        print("🔄 Translations reloaded: Primary=\(primaryTranslationId), Secondary=\(secondaryTranslationId)")
+        // print("🔄 Translations reloaded: Primary=\(primaryTranslationId), Secondary=\(secondaryTranslationId)")
     }
     
     /// Fetch a chapter and return verses with primary and secondary translation text
@@ -94,7 +94,8 @@ actor BibleAPIService {
             translationId: secondaryTranslationId
         )
         
-        print("📖 Primary (\(primaryTranslationId)): \(primaryVerses.count), Secondary (\(secondaryTranslationId)): \(secondaryVerses.count)")
+        // Uncomment for verbose logging:
+        // print("📖 Primary (\(primaryTranslationId)): \(primaryVerses.count), Secondary (\(secondaryTranslationId)): \(secondaryVerses.count)")
         
         // Determine which has more verses (use as base)
         // Filter out verse 0 (title/superscription) as it causes offset issues in navigation
@@ -102,26 +103,26 @@ actor BibleAPIService {
             .filter { $0 > 0 }  // Exclude verse 0 (titles/superscriptions)
             .sorted()
         
-        // Debug: Log verse numbers for troubleshooting
+        // Debug: Log verse numbers for troubleshooting Numbers navigation issue
         #if DEBUG
         if book.id == "numbers" && chapter == 1 {
             let primaryNums = primaryVerses.map { $0.verse }.sorted()
             let secondaryNums = secondaryVerses.map { $0.verse }.sorted()
-            print("🔍 Numbers 1 - Primary (\(primaryTranslationId)) verse numbers: \(primaryNums.prefix(5))...\(primaryNums.suffix(5))")
-            print("🔍 Numbers 1 - Secondary (\(secondaryTranslationId)) verse numbers: \(secondaryNums.prefix(5))...\(secondaryNums.suffix(5))")
-            print("🔍 Numbers 1 - Combined (filtered) verse numbers: \(allVerseNumbers.prefix(5))...\(allVerseNumbers.suffix(5))")
-            
-            // Check for missing verses around 23
-            if !allVerseNumbers.contains(23) {
-                print("⚠️ Numbers 1 is MISSING verse 23!")
-            }
-            // Check for verse 0
-            if primaryNums.first == 0 || secondaryNums.first == 0 {
-                print("⚠️ Numbers 1 had verse 0 (title verse) - filtered out to prevent offset issues")
-            }
-            // Log verses around 22-24
             let around23 = allVerseNumbers.filter { $0 >= 20 && $0 <= 26 }
-            print("🔍 Numbers 1 - Verses around 23: \(around23)")
+            
+            print("\n" + String(repeating: "=", count: 50))
+            print("🔍 NUMBERS 1 DEBUG")
+            print(String(repeating: "=", count: 50))
+            print("Primary (\(primaryTranslationId)): \(primaryNums.count) verses, first=\(primaryNums.first ?? -1)")
+            print("Secondary (\(secondaryTranslationId)): \(secondaryNums.count) verses, first=\(secondaryNums.first ?? -1)")
+            print("Verses 20-26: \(around23)")
+            if !allVerseNumbers.contains(23) {
+                print("⚠️ VERSE 23 IS MISSING!")
+            }
+            if primaryNums.first == 0 || secondaryNums.first == 0 {
+                print("⚠️ Had verse 0 (filtered out)")
+            }
+            print(String(repeating: "=", count: 50) + "\n")
         }
         #endif
         
@@ -171,7 +172,7 @@ actor BibleAPIService {
             bookId: book.id,
             chapter: chapter
         ) {
-            print("📱 \(translationId): Loaded \(offlineVerses.count) verses from offline storage")
+            // print("📱 \(translationId): Loaded \(offlineVerses.count) verses from offline storage")
             return offlineVerses.map { BollsVerseResponse(pk: $0.pk, verse: $0.verse, text: $0.text) }
         }
         
@@ -209,7 +210,7 @@ actor BibleAPIService {
             throw BibleAPIError.invalidURL
         }
         
-        print("🔍 \(translationId): \(url.absoluteString)")
+        // print("🔍 \(translationId): \(url.absoluteString)")
         
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -226,7 +227,7 @@ actor BibleAPIService {
         }
         
         let verses = try JSONDecoder().decode([BollsVerseResponse].self, from: data)
-        print("✓ \(translationId): \(verses.count) verses (network)")
+        // print("✓ \(translationId): \(verses.count) verses (network)")
         
         return verses
     }
