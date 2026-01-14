@@ -5,6 +5,8 @@ struct VerseCardView: View {
     let language: LanguageMode
     let theme: BookTheme
     let isCentered: Bool
+    var onSave: (() -> Void)? = nil
+    var onCopy: (() -> Void)? = nil
     
     // Dynamic font sizing based on character count
     // Progressively smaller fonts for longer verses
@@ -50,6 +52,8 @@ struct VerseCardView: View {
     // Height of verse number + spacing (used for optical centering)
     private let verseNumberHeight: CGFloat = 13 + 10  // font size + spacing
     
+    @State private var isFavorite: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             // Verse number
@@ -68,6 +72,28 @@ struct VerseCardView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 28)
         .padding(.bottom, verseNumberHeight)  // Compensate for verse number to optically center text
+        .contentShape(Rectangle())
+        .contextMenu {
+            Button {
+                onSave?()
+            } label: {
+                Label(
+                    isFavorite 
+                        ? (language == .kr ? "저장됨" : "Saved")
+                        : (language == .kr ? "저장" : "Save"),
+                    systemImage: isFavorite ? "heart.fill" : "heart"
+                )
+            }
+            
+            Button {
+                onCopy?()
+            } label: {
+                Label(
+                    language == .kr ? "복사" : "Copy",
+                    systemImage: "doc.on.doc"
+                )
+            }
+        }
     }
 }
 

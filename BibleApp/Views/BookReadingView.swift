@@ -3,6 +3,8 @@ import SwiftUI
 struct BookReadingView: View {
     @Bindable var viewModel: BibleViewModel
     var onHeaderTap: () -> Void = {}
+    var onSaveVerse: ((BibleVerse) -> Void)? = nil
+    var onCopyVerse: ((BibleVerse) -> Void)? = nil
     
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
@@ -155,7 +157,13 @@ struct BookReadingView: View {
                         language: viewModel.languageMode,
                         theme: theme,
                         fontSize: verseFontSize,
-                        lineSpacing: verseLineSpacing
+                        lineSpacing: verseLineSpacing,
+                        onSave: {
+                            onSaveVerse?(verse)
+                        },
+                        onCopy: {
+                            onCopyVerse?(verse)
+                        }
                     )
                 }
                 
@@ -233,6 +241,10 @@ struct BookVerseRow: View {
     let theme: BookTheme
     let fontSize: CGFloat
     let lineSpacing: CGFloat
+    var onSave: (() -> Void)? = nil
+    var onCopy: (() -> Void)? = nil
+    
+    @State private var isFavorite: Bool = false
     
     var body: some View {
         HStack(alignment: .top, spacing: 4) {
@@ -250,6 +262,28 @@ struct BookVerseRow: View {
                 .font(theme.verseNumber(12, language: language))
                 .foregroundStyle(theme.textSecondary.opacity(0.6))
                 .frame(width: 18, alignment: .trailing)
+        }
+        .contentShape(Rectangle())
+        .contextMenu {
+            Button {
+                onSave?()
+            } label: {
+                Label(
+                    isFavorite 
+                        ? (language == .kr ? "저장됨" : "Saved")
+                        : (language == .kr ? "저장" : "Save"),
+                    systemImage: isFavorite ? "heart.fill" : "heart"
+                )
+            }
+            
+            Button {
+                onCopy?()
+            } label: {
+                Label(
+                    language == .kr ? "복사" : "Copy",
+                    systemImage: "doc.on.doc"
+                )
+            }
         }
     }
 }

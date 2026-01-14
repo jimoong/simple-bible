@@ -328,7 +328,7 @@ struct SettingsView: View {
     // MARK: - Developer Section
     private var developerSection: some View {
         VStack(alignment: .leading, spacing: 10) {
-            sectionHeader(title: isKoreanUI ? "개발" : "Developer")
+            sectionHeader(title: isKoreanUI ? "개발자" : "Developer")
             
             VStack(spacing: 0) {
                 // Clear All Data
@@ -359,7 +359,7 @@ struct SettingsView: View {
                 clearAllSavedData()
             }
         } message: {
-            Text(isKoreanUI ? "모든 읽기 진행 상황과 기록이 삭제됩니다. 이 작업은 되돌릴 수 없습니다." : "This will clear all reading progress and toast history. This action cannot be undone.")
+            Text(isKoreanUI ? "모든 읽기 진행 상황, 기록, 저장된 구절이 삭제됩니다. 이 작업은 되돌릴 수 없습니다." : "This will clear all reading progress, toast history, and saved verses. This action cannot be undone.")
         }
     }
     
@@ -369,6 +369,9 @@ struct SettingsView: View {
         
         // Clear chapter toast tracker
         ChapterToastTracker.shared.clearAll()
+        
+        // Clear all favorites
+        FavoriteService.shared.clearAll()
         
         HapticManager.shared.success()
     }

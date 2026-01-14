@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0000010000000000000070 /* FavoriteVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000070 /* FavoriteVerse.swift */; };
+		AA0000010000000000000071 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000071 /* FavoriteService.swift */; };
+		AA0000010000000000000072 /* VerseContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000072 /* VerseContextMenu.swift */; };
+		AA0000010000000000000073 /* FavoriteNoteOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000073 /* FavoriteNoteOverlay.swift */; };
+		AA0000010000000000000074 /* FavoritesReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000074 /* FavoritesReadingView.swift */; };
 		AA0000010000000000000060 /* OfflineStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000060 /* OfflineStorageService.swift */; };
 		AA0000010000000000000061 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000061 /* DownloadManager.swift */; };
 		AA0000010000000000000062 /* OfflineDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000062 /* OfflineDownloadView.swift */; };
@@ -56,6 +61,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA0000020000000000000070 /* FavoriteVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVerse.swift; sourceTree = "<group>"; };
+		AA0000020000000000000071 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		AA0000020000000000000072 /* VerseContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseContextMenu.swift; sourceTree = "<group>"; };
+		AA0000020000000000000073 /* FavoriteNoteOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteNoteOverlay.swift; sourceTree = "<group>"; };
+		AA0000020000000000000074 /* FavoritesReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesReadingView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000060 /* OfflineStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineStorageService.swift; sourceTree = "<group>"; };
 		AA0000020000000000000061 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		AA0000020000000000000062 /* OfflineDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineDownloadView.swift; sourceTree = "<group>"; };
@@ -168,6 +178,7 @@
 				AA0000020000000000000025 /* ChapterSummary.swift */,
 				AA0000020000000000000030 /* BibleTranslation.swift */,
 				AA0000020000000000000033 /* ReadingMode.swift */,
+				AA0000020000000000000070 /* FavoriteVerse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +202,9 @@
 				AA0000020000000000000007 /* ChapterGridView.swift */,
 				AA0000020000000000000027 /* ChapterInfoPanel.swift */,
 				AA0000020000000000000028 /* ChapterToast.swift */,
+				AA0000020000000000000072 /* VerseContextMenu.swift */,
+				AA0000020000000000000073 /* FavoriteNoteOverlay.swift */,
+				AA0000020000000000000074 /* FavoritesReadingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +231,7 @@
 				AA0000020000000000000012 /* HapticManager.swift */,
 				AA0000020000000000000029 /* ChapterToastTracker.swift */,
 				AA0000020000000000000031 /* ReadingProgressTracker.swift */,
+				AA0000020000000000000071 /* FavoriteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -358,6 +373,11 @@
 				AA0000010000000000000060 /* OfflineStorageService.swift in Sources */,
 				AA0000010000000000000061 /* DownloadManager.swift in Sources */,
 				AA0000010000000000000062 /* OfflineDownloadView.swift in Sources */,
+				AA0000010000000000000070 /* FavoriteVerse.swift in Sources */,
+				AA0000010000000000000071 /* FavoriteService.swift in Sources */,
+				AA0000010000000000000072 /* VerseContextMenu.swift in Sources */,
+				AA0000010000000000000073 /* FavoriteNoteOverlay.swift in Sources */,
+				AA0000010000000000000074 /* FavoritesReadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

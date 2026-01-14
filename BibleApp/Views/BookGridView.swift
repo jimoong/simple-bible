@@ -10,6 +10,7 @@ struct BookGridView: View {
     var isFullscreen: Bool = false
     var onClose: (() -> Void)? = nil
     var onBookSelect: ((BibleBook) -> Void)? = nil
+    var onFavoritesSelect: (() -> Void)? = nil
     
     @State private var isSearchActive = false
     @FocusState private var isSearchFocused: Bool
@@ -92,6 +93,11 @@ struct BookGridView: View {
                         // Title (scrollable)
                         titleBar
                             .padding(.top, topPadding + 16)
+                        
+                        // Favorites section (only if has favorites)
+                        if FavoriteService.shared.hasFavorites && searchText.isEmpty {
+                            favoritesSection
+                        }
                         
                         // Old Testament section
                         if !oldTestamentBooks.isEmpty {
@@ -256,6 +262,41 @@ struct BookGridView: View {
     
     private func isOrderSelected(_ order: BookSortOrder) -> Bool {
         return viewModel.sortOrder == order
+    }
+    
+    // MARK: - Favorites Section (styled like BookCell)
+    private var favoritesSection: some View {
+        // Single favorites card in a grid layout matching book cards
+        LazyVGrid(columns: columns, spacing: 10) {
+            Button {
+                onFavoritesSelect?()
+                HapticManager.shared.selection()
+            } label: {
+                VStack(spacing: 6) {
+                    // Heart icon (like book abbreviation)
+                    Image(systemName: "heart.fill")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundStyle(.white)
+                    
+                    // Counter (like book full name)
+                    Text("\(FavoriteService.shared.count)")
+                        .font(viewModel.uiLanguage == .kr 
+                            ? FontManager.koreanSans(size: 12, weight: .medium)
+                            : .system(size: 12, weight: .medium, design: .default))
+                        .foregroundStyle(.white.opacity(0.6))
+                        .lineLimit(1)
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 18)
+                .padding(.horizontal, 8)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.white.opacity(0.08))
+                )
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(.horizontal, 20)
     }
     
     // MARK: - Book Section

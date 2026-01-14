@@ -3,6 +3,8 @@ import SwiftUI
 struct SlotMachineView: View {
     @Bindable var viewModel: BibleViewModel
     var onHeaderTap: () -> Void = {}
+    var onSaveVerse: ((BibleVerse) -> Void)? = nil
+    var onCopyVerse: ((BibleVerse) -> Void)? = nil
     @State private var scrollPosition: Int?
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
@@ -185,7 +187,13 @@ struct SlotMachineView: View {
                             verse: viewModel.verses[index],
                             language: viewModel.languageMode,
                             theme: theme,
-                            isCentered: index == viewModel.currentVerseIndex
+                            isCentered: index == viewModel.currentVerseIndex,
+                            onSave: {
+                                onSaveVerse?(viewModel.verses[index])
+                            },
+                            onCopy: {
+                                onCopyVerse?(viewModel.verses[index])
+                            }
                         )
                         .slotMachineEffect(isScrubbing: isScrubbing)
                         .id(index)

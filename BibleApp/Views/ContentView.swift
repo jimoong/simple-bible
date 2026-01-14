@@ -11,13 +11,23 @@ struct ContentView: View {
     @State private var isNavigateFABExpanded = false
     @State private var isSettingsFABExpanded = false
     
+    // Favorites system state
+    @State private var showFavoritesInBookshelf = false  // Inline in bookshelf (same level as chapter grid)
+    @State private var selectedVerseForMenu: BibleVerse? = nil
+    @State private var editingFavorite: FavoriteVerse? = nil
+    
     private var theme: BookTheme {
         viewModel.currentTheme
     }
     
-    // Fullscreen bookshelf panel (books or chapters)
+    // Fullscreen bookshelf panel (books, chapters, or favorites)
     private var isShowingFullscreenBookshelf: Bool {
         viewModel.showBookshelf && viewModel.selectedBookForChapter == nil
+    }
+    
+    // Currently showing favorites view in bookshelf
+    private var isShowingFavoritesInBookshelf: Bool {
+        isShowingFullscreenBookshelf && showFavoritesInBookshelf
     }
     
     // Top panel chapter grid (from header tap)
@@ -33,13 +43,21 @@ struct ContentView: View {
                 // Main reading view - switches based on reading mode
                 Group {
                     if viewModel.readingMode == .tap {
-                        SlotMachineView(viewModel: viewModel) {
+                        SlotMachineView(viewModel: viewModel, onHeaderTap: {
                             handleHeaderTap()
-                        }
+                        }, onSaveVerse: { verse in
+                            handleSaveVerse(verse)
+                        }, onCopyVerse: { verse in
+                            handleCopyVerse(verse)
+                        })
                     } else {
-                        BookReadingView(viewModel: viewModel) {
+                        BookReadingView(viewModel: viewModel, onHeaderTap: {
                             handleHeaderTap()
-                        }
+                        }, onSaveVerse: { verse in
+                            handleSaveVerse(verse)
+                        }, onCopyVerse: { verse in
+                            handleCopyVerse(verse)
+                        })
                     }
                 }
                 
@@ -77,18 +95,26 @@ struct ContentView: View {
                         .zIndex(1)
                 }
                 
-                // Fullscreen bookshelf panel (books grid OR chapters grid)
+                // Fullscreen bookshelf panel (books grid, chapters grid, or favorites)
                 if isShowingFullscreenBookshelf {
                     // Solid background to prevent reading view visibility during transitions
                     let panelTheme = fullscreenSelectedBook != nil 
                         ? BookThemes.theme(for: fullscreenSelectedBook!.id)
                         : theme
-                    panelTheme.background
-                        .ignoresSafeArea()
+                    
+                    // Use black for favorites, theme background for others
+                    Group {
+                        if showFavoritesInBookshelf {
+                            Color.black
+                        } else {
+                            panelTheme.background
+                        }
+                    }
+                    .ignoresSafeArea()
                     
                     ZStack {
                         // Books grid
-                        if fullscreenSelectedBook == nil {
+                        if fullscreenSelectedBook == nil && !showFavoritesInBookshelf {
                             BookGridView(
                                 viewModel: viewModel,
                                 searchText: $searchText,
@@ -100,13 +126,18 @@ struct ContentView: View {
                                     withAnimation(.easeInOut(duration: 0.25)) {
                                         fullscreenSelectedBook = book
                                     }
+                                },
+                                onFavoritesSelect: {
+                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                        showFavoritesInBookshelf = true
+                                    }
                                 }
                             )
                             .transition(.opacity)
                         }
                         
                         // Chapters grid (same fullscreen panel)
-                        if fullscreenSelectedBook != nil {
+                        if fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
                             FullscreenChapterGridView(
                                 viewModel: viewModel,
                                 book: $fullscreenSelectedBook,
@@ -117,6 +148,42 @@ struct ContentView: View {
                                     Task {
                                         await viewModel.navigateTo(book: book, chapter: chapter)
                                     }
+                                }
+                            )
+                            .transition(.opacity)
+                        }
+                        
+                        // Favorites view (same fullscreen panel, same level as chapters)
+                        if showFavoritesInBookshelf {
+                            FavoritesReadingView(
+                                language: viewModel.uiLanguage,
+                                safeAreaTop: geometry.safeAreaInsets.top,
+                                safeAreaBottom: geometry.safeAreaInsets.bottom,
+                                onClose: { dismissBookshelf() },
+                                onBack: {
+                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                        showFavoritesInBookshelf = false
+                                    }
+                                },
+                                onNavigateToVerse: { favorite in
+                                    // Navigate to the verse location
+                                    if let book = BibleData.book(by: favorite.bookId) {
+                                        dismissBookshelf()
+                                        Task {
+                                            await viewModel.navigateTo(book: book, chapter: favorite.chapter, verse: favorite.verseNumber)
+                                        }
+                                    }
+                                },
+                                onEditFavorite: { favorite in
+                                    // Create a BibleVerse from the favorite for editing
+                                    editingFavorite = favorite
+                                    selectedVerseForMenu = BibleVerse(
+                                        bookName: favorite.bookNameEn,
+                                        chapter: favorite.chapter,
+                                        verseNumber: favorite.verseNumber,
+                                        textEn: favorite.textEn,
+                                        textKr: favorite.textKr
+                                    )
                                 }
                             )
                             .transition(.opacity)
@@ -152,8 +219,8 @@ struct ContentView: View {
                     .zIndex(2)
                 }
                 
-                // Floating controls at bottom (hidden when in books grid)
-                if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil) {
+                // Floating controls at bottom (hidden when in books grid, but shown in chapters/favorites)
+                if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil && !showFavoritesInBookshelf) {
                     VStack {
                         Spacer()
                         
@@ -161,8 +228,8 @@ struct ContentView: View {
                         HStack(alignment: .bottom) {
                             leftActionButtons
                             Spacer()
-                            // Hide menu when in fullscreen chapter grid
-                            if !(isShowingFullscreenBookshelf && fullscreenSelectedBook != nil) {
+                            // Hide menu when in fullscreen chapter grid or favorites
+                            if !(isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf)) {
                                 ExpandableFAB(
                                     languageMode: $viewModel.languageMode,
                                     readingMode: $viewModel.readingMode,
@@ -221,6 +288,7 @@ struct ContentView: View {
                     .transition(.move(edge: .bottom))
                     .zIndex(10)
                 }
+                
             }
             .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.showBookshelf)
             .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.selectedBookForChapter)
@@ -260,6 +328,35 @@ struct ContentView: View {
                         Task {
                             await viewModel.reloadCurrentChapter()
                         }
+                    }
+                )
+            }
+            .fullScreenCover(item: $selectedVerseForMenu) { verse in
+                // Use book from editing favorite if available, otherwise use current book
+                let book = editingFavorite.flatMap { BibleData.book(by: $0.bookId) } ?? viewModel.currentBook
+                FavoriteNoteOverlay(
+                    verse: verse,
+                    book: book,
+                    language: viewModel.uiLanguage,
+                    existingFavorite: editingFavorite,
+                    onSave: { note in
+                        if let existing = editingFavorite {
+                            // Update existing favorite note
+                            FavoriteService.shared.updateNote(id: existing.id, note: note)
+                        } else {
+                            // Add new favorite
+                            FavoriteService.shared.addFavorite(
+                                verse: verse,
+                                book: book,
+                                note: note
+                            )
+                        }
+                        selectedVerseForMenu = nil
+                        editingFavorite = nil
+                    },
+                    onCancel: {
+                        selectedVerseForMenu = nil
+                        editingFavorite = nil
                     }
                 )
             }
@@ -306,6 +403,7 @@ struct ContentView: View {
         viewModel.isSearchActive = false
         searchText = ""
         fullscreenSelectedBook = nil
+        showFavoritesInBookshelf = false
         viewModel.dismissBookshelf()
         HapticManager.shared.selection()
     }
@@ -323,15 +421,31 @@ struct ContentView: View {
         HapticManager.shared.selection()
     }
     
+    private func handleSaveVerse(_ verse: BibleVerse) {
+        editingFavorite = nil
+        selectedVerseForMenu = verse
+    }
+    
+    private func handleCopyVerse(_ verse: BibleVerse) {
+        let text = verse.text(for: viewModel.uiLanguage)
+        let reference = "\(viewModel.currentBook.name(for: viewModel.uiLanguage)) \(verse.chapter):\(verse.verseNumber)"
+        UIPasteboard.general.string = "\(text)\n— \(reference)"
+        HapticManager.shared.success()
+    }
+    
     // MARK: - Left Action Buttons
     
     @ViewBuilder
     private var leftActionButtons: some View {
-        if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil {
-            // In fullscreen chapters - show back button
+        if isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf) {
+            // In fullscreen chapters or favorites - show back button
             actionButton(icon: "chevron.left") {
                 withAnimation(.easeInOut(duration: 0.25)) {
-                    fullscreenSelectedBook = nil
+                    if showFavoritesInBookshelf {
+                        showFavoritesInBookshelf = false
+                    } else {
+                        fullscreenSelectedBook = nil
+                    }
                 }
                 HapticManager.shared.selection()
             }
