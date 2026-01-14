@@ -581,9 +581,9 @@ struct BibleTimelineContentView: View {
             if item.type == .historicalEvent {
                 return true
             }
-            // Filter Bible books by name
+            // Filter Bible books by name (한글 초성/부분 검색 지원)
             let titleMatch = item.title.en.localizedCaseInsensitiveContains(searchText) ||
-                            item.title.ko.contains(searchText)
+                            KoreanSearchHelper.matches(query: searchText, target: item.title.ko)
             return titleMatch
         }
     }

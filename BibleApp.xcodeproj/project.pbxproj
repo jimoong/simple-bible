@@ -50,6 +50,7 @@
 		AA0000010000000000000023 /* GlassStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000023 /* GlassStyle.swift */; };
 		AA0000010000000000000024 /* BibleBookSummaries.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000024 /* BibleBookSummaries.swift */; };
 		AA0000010000000000000025 /* ChapterSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000025 /* ChapterSummary.swift */; };
+		AA0000010000000000000080 /* KoreanSearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000080 /* KoreanSearchHelper.swift */; };
 		AA0000010000000000000026 /* ChapterSummaries in Resources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000026 /* ChapterSummaries */; };
 		AA0000010000000000000027 /* ChapterInfoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000027 /* ChapterInfoPanel.swift */; };
 		AA0000010000000000000028 /* ChapterToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000028 /* ChapterToast.swift */; };
@@ -105,6 +106,7 @@
 		AA0000020000000000000023 /* GlassStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassStyle.swift; sourceTree = "<group>"; };
 		AA0000020000000000000024 /* BibleBookSummaries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleBookSummaries.swift; sourceTree = "<group>"; };
 		AA0000020000000000000025 /* ChapterSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterSummary.swift; sourceTree = "<group>"; };
+		AA0000020000000000000080 /* KoreanSearchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KoreanSearchHelper.swift; sourceTree = "<group>"; };
 		AA0000020000000000000026 /* ChapterSummaries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ChapterSummaries; sourceTree = "<group>"; };
 		AA0000020000000000000027 /* ChapterInfoPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterInfoPanel.swift; sourceTree = "<group>"; };
 		AA0000020000000000000028 /* ChapterToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterToast.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				AA0000020000000000000017 /* BookThemes.swift */,
 				AA0000020000000000000018 /* FontManager.swift */,
 				AA0000020000000000000023 /* GlassStyle.swift */,
+				AA0000020000000000000080 /* KoreanSearchHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				AA0000010000000000000072 /* VerseContextMenu.swift in Sources */,
 				AA0000010000000000000073 /* FavoriteNoteOverlay.swift in Sources */,
 				AA0000010000000000000074 /* FavoritesReadingView.swift in Sources */,
+				AA0000010000000000000080 /* KoreanSearchHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -35,8 +35,12 @@ struct BookGridView: View {
         }
         
         return sorted.filter { book in
+            // 영어 검색
             book.nameEn.localizedCaseInsensitiveContains(searchText) ||
-            book.nameKr.contains(searchText)
+            // 한글 초성/부분 검색
+            KoreanSearchHelper.matches(query: searchText, target: book.nameKr) ||
+            // 한글 약어 매칭
+            KoreanSearchHelper.matches(query: searchText, target: book.abbrKr)
         }
     }
     
@@ -145,7 +149,7 @@ struct BookGridView: View {
     
     // MARK: - Normal Bottom Bar
     private var normalBottomBar: some View {
-        HStack(alignment: .bottom) {
+        HStack(alignment: .bottom, spacing: 12) {
             // Close button (left)
             Button {
                 onClose?()
@@ -157,12 +161,8 @@ struct BookGridView: View {
             }
             .buttonStyle(.glassCircle)
             
-            Spacer()
-            
-            // Segmented sort control - centered
+            // Segmented sort control - fills remaining space
             sortSegmentedControl
-            
-            Spacer()
             
             // Search button (right)
             Button {
@@ -236,7 +236,8 @@ struct BookGridView: View {
     // MARK: - Segmented Sort Control
     private var sortSegmentedControl: some View {
         HStack(spacing: 0) {
-            ForEach(BookSortOrder.allCases, id: \.self) { order in
+            // Temporarily hide alphabetical (A-Z) option
+            ForEach(BookSortOrder.allCases.filter { $0 != .alphabetical }, id: \.self) { order in
                 Button {
                     withAnimation(.easeOut(duration: 0.2)) {
                         viewModel.sortOrder = order
@@ -246,7 +247,7 @@ struct BookGridView: View {
                     Text(order.displayName(for: viewModel.uiLanguage))
                         .font(.system(size: 14, weight: isOrderSelected(order) ? .semibold : .regular))
                         .foregroundStyle(isOrderSelected(order) ? .white : .white.opacity(0.5))
-                        .padding(.horizontal, 14)
+                        .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
                         .background(
                             Capsule()
@@ -257,6 +258,7 @@ struct BookGridView: View {
             }
         }
         .padding(4)
+        .frame(maxWidth: .infinity)
         .glassBackground(.capsule, intensity: .regular)
     }
     
