@@ -312,9 +312,10 @@ final class BibleViewModel {
         HapticManager.shared.selection()
     }
     
-    func openBookshelf(showChapters: Bool = false) {
+    func openBookshelf(showChapters: Bool = false, withSearch: Bool = false) {
         // Optionally pre-select current book to show chapter view
         selectedBookForChapter = showChapters ? currentBook : nil
+        isSearchActive = withSearch
         showBookshelf = true
         HapticManager.shared.selection()
     }
@@ -322,5 +323,6 @@ final class BibleViewModel {
     func dismissBookshelf() {
         showBookshelf = false
         selectedBookForChapter = nil
+        isSearchActive = false
     }
 }

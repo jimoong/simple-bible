@@ -16,9 +16,6 @@ struct ContentView: View {
     @State private var editingFavorite: FavoriteVerse? = nil
     @State private var isFavoritesFilterExpanded = false  // Hide back button when filter menu is open
     
-    // Search mode
-    @State private var openSearchOnBookshelf = false  // Open bookshelf with search mode active
-    
     private var theme: BookTheme {
         viewModel.currentTheme
     }
@@ -124,7 +121,7 @@ struct ContentView: View {
                                 safeAreaBottom: geometry.safeAreaInsets.bottom,
                                 topPadding: geometry.safeAreaInsets.top,
                                 isFullscreen: true,
-                                startInSearchMode: openSearchOnBookshelf,
+                                startInSearchMode: viewModel.isSearchActive,
                                 onClose: { dismissBookshelf() },
                                 onBookSelect: { book in
                                     withAnimation(.easeInOut(duration: 0.25)) {
@@ -138,10 +135,6 @@ struct ContentView: View {
                                 }
                             )
                             .transition(.opacity)
-                            .onDisappear {
-                                // Reset search mode flag when bookshelf closes
-                                openSearchOnBookshelf = false
-                            }
                         }
                         
                         // Chapters grid (same fullscreen panel)
@@ -502,9 +495,7 @@ struct ContentView: View {
     
     private var searchButton: some View {
         Button {
-            openSearchOnBookshelf = true
-            viewModel.openBookshelf()
-            HapticManager.shared.selection()
+            viewModel.openBookshelf(withSearch: true)
         } label: {
             ZStack {
                 searchButtonBackground

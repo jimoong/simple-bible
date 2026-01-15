@@ -239,11 +239,21 @@ struct BookGridView: View {
         .animation(.easeOut(duration: 0.3), value: isSearchActive)
         .onAppear {
             if startInSearchMode && !isSearchActive {
-                isSearchActive = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    isSearchFocused = true
-                }
+                activateSearchMode()
             }
+        }
+        .onChange(of: startInSearchMode) { _, newValue in
+            if newValue && !isSearchActive {
+                activateSearchMode()
+            }
+        }
+    }
+    
+    /// Activate search mode with keyboard focus
+    private func activateSearchMode() {
+        isSearchActive = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            isSearchFocused = true
         }
     }
     
@@ -399,7 +409,7 @@ struct BookGridView: View {
                 .truncationMode(.tail)
         }
         .padding(.vertical, 14)
-        .padding(.horizontal, 12)
+        .padding(.horizontal, 8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 8)
@@ -472,7 +482,6 @@ struct BookGridView: View {
                 )
                 .font(.system(size: 16))
                 .foregroundStyle(.white)
-                .keyboardType(searchSelectedBook != nil ? .numbersAndPunctuation : .default)
                 .focused($isSearchFocused)
                 .onSubmit {
                     // Enter/Return: Navigate based on current search state
