@@ -17,6 +17,10 @@ struct GamalielChatView: View {
     @State private var selectedVerseChapter: Int?
     @State private var selectedVerseNumber: Int?
     
+    // Scroll to bottom state
+    @State private var isAtBottom = true
+    @State private var scrollProxy: ScrollViewProxy?
+    
     // MARK: - Font Helper
     
     private func serifFont(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {
@@ -53,11 +57,20 @@ struct GamalielChatView: View {
                 Spacer()
             }
             
-            // Input area overlay at bottom
+            // Input area overlay at bottom with scroll button
             VStack(spacing: 0) {
                 Spacer()
+                
+                // Scroll to bottom button (above input area, centered)
+                if shouldShowScrollButton {
+                    scrollToBottomButton
+                        .padding(.bottom, 8)
+                        .transition(.opacity.combined(with: .scale(scale: 0.8)))
+                }
+                
                 inputArea
             }
+            .animation(.easeOut(duration: 0.2), value: shouldShowScrollButton)
             
             // Verse toast overlay
             VStack {
@@ -263,10 +276,20 @@ struct GamalielChatView: View {
                             onRetry: { viewModel.retryLastMessage() }
                         )
                     }
+                    
+                    // Bottom anchor for scroll detection
+                    Color.clear
+                        .frame(height: 1)
+                        .id("scrollBottom")
+                        .onAppear { isAtBottom = true }
+                        .onDisappear { isAtBottom = false }
                 }
                 .padding(.horizontal, 20)
                 .padding(.top, safeAreaTop + 70)  // Space for header
                 .padding(.bottom, safeAreaBottom + 90)  // Space for input area
+            }
+            .onAppear {
+                scrollProxy = proxy
             }
             .onChange(of: viewModel.messages.count) { oldCount, newCount in
                 // Scroll to the latest pair
@@ -284,6 +307,29 @@ struct GamalielChatView: View {
                 }
             }
         }
+    }
+    
+    // Scroll to bottom button - shows when not at bottom and no attached verse
+    private var scrollToBottomButton: some View {
+        Button {
+            withAnimation(.easeOut(duration: 0.3)) {
+                scrollProxy?.scrollTo("scrollBottom", anchor: .bottom)
+            }
+        } label: {
+            Image(systemName: "arrow.down")
+                .font(.system(size: 14, weight: .medium))
+                .foregroundStyle(.white.opacity(0.8))
+                .frame(width: 32, height: 32)
+                .background(
+                    Circle()
+                        .fill(Color.white.opacity(0.15))
+                )
+        }
+    }
+    
+    // Should show scroll to bottom button
+    private var shouldShowScrollButton: Bool {
+        !isAtBottom && viewModel.attachedVerse == nil && !isOnlyWelcomeMessage
     }
     
     // MARK: - Input Area (matching search bar style)
