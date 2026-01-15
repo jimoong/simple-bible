@@ -255,10 +255,6 @@ struct GamalielChatView: View {
                             isLastPair: index == conversationPairs.count - 1,
                             minHeight: conversationMinHeight,
                             onNavigateToVerse: handleVerseTap,
-                            onSendQuestion: { question in
-                                viewModel.inputText = question
-                                viewModel.sendMessage()
-                            }
                         )
                         .id(pair.id)
                     }
@@ -501,18 +497,17 @@ private struct ConversationPairView: View {
     let isLastPair: Bool  // Only the last pair can have minHeight
     let minHeight: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
-    var onSendQuestion: ((String) -> Void)? = nil
     
     var body: some View {
         VStack(alignment: .leading, spacing: 32) {
             // User message (if exists)
             if let userMessage = pair.userMessage {
-                MessageBubble(message: userMessage, languageMode: languageMode, onNavigateToVerse: nil, onSendQuestion: nil)
+                MessageBubble(message: userMessage, languageMode: languageMode, onNavigateToVerse: nil)
             }
             
             // Assistant message (if exists)
             if let assistantMessage = pair.assistantMessage {
-                MessageBubble(message: assistantMessage, languageMode: languageMode, onNavigateToVerse: onNavigateToVerse, onSendQuestion: onSendQuestion)
+                MessageBubble(message: assistantMessage, languageMode: languageMode, onNavigateToVerse: onNavigateToVerse)
             }
         }
         .frame(minHeight: shouldUseMinHeight ? minHeight : nil, alignment: .top)
@@ -545,7 +540,6 @@ private struct MessageBubble: View {
     let message: GamalielMessage
     let languageMode: LanguageMode
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
-    var onSendQuestion: ((String) -> Void)? = nil
     
     // Text constants
     private let chatFontSize: CGFloat = 16
@@ -577,8 +571,7 @@ private struct MessageBubble: View {
                             text: paragraph,
                             font: serifFont(chatFontSize),
                             lineSpacing: chatLineSpacing,
-                            onNavigateToVerse: onNavigateToVerse,
-                            onSendQuestion: onSendQuestion
+                            onNavigateToVerse: onNavigateToVerse
                         )
                     }
                 }
@@ -620,7 +613,6 @@ private struct BibleReferenceTextView: View {
     let font: Font
     let lineSpacing: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
-    var onSendQuestion: ((String) -> Void)? = nil
     
     // Parsed reference for tap handling
     private struct ParsedRef {
@@ -757,8 +749,7 @@ private struct BibleReferenceTextView: View {
                                 content: item,
                                 font: font,
                                 lineSpacing: lineSpacing,
-                                onNavigateToVerse: onNavigateToVerse,
-                                onSendQuestion: onSendQuestion
+                                onNavigateToVerse: onNavigateToVerse
                             )
                         }
                     }
@@ -771,8 +762,7 @@ private struct BibleReferenceTextView: View {
                                 content: item.content,
                                 font: font,
                                 lineSpacing: lineSpacing,
-                                onNavigateToVerse: onNavigateToVerse,
-                                onSendQuestion: onSendQuestion
+                                onNavigateToVerse: onNavigateToVerse
                             )
                         }
                     }
@@ -877,12 +867,6 @@ private struct BulletItemView: View {
     let font: Font
     let lineSpacing: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
-    var onSendQuestion: ((String) -> Void)? = nil
-    
-    // Check if this item is a question (ends with ?)
-    private var isQuestion: Bool {
-        content.trimmingCharacters(in: .whitespaces).hasSuffix("?")
-    }
     
     // Parsed reference for tap handling
     private struct ParsedRef {
@@ -892,18 +876,13 @@ private struct BulletItemView: View {
         let verse: Int?
     }
     
-    // Text color based on whether this is a question
-    private var textColor: Color {
-        isQuestion ? Color(hex: "C2BBA8") : .white.opacity(0.95)
-    }
-    
     var body: some View {
         let (attributedText, refs) = buildAttributedText(from: content)
         
         HStack(alignment: .top, spacing: 8) {
             Text("•")
                 .font(font)
-                .foregroundStyle(textColor)
+                .foregroundStyle(.white.opacity(0.95))
                 .offset(y: 2)  // Fine-tune vertical alignment with text
             
             Text(attributedText)
@@ -923,12 +902,6 @@ private struct BulletItemView: View {
                     return .systemAction
                 })
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            if isQuestion {
-                onSendQuestion?(content)
-            }
-        }
     }
     
     // Build AttributedString with styled Bible references as tappable links
@@ -1000,7 +973,7 @@ private struct BulletItemView: View {
         } else {
             result = AttributedString(text)
         }
-        result.foregroundColor = textColor
+        result.foregroundColor = .white.opacity(0.95)
         return result
     }
 }
@@ -1014,17 +987,6 @@ private struct OrderedItemView: View {
     let font: Font
     let lineSpacing: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
-    var onSendQuestion: ((String) -> Void)? = nil
-    
-    // Check if this item is a question (ends with ?)
-    private var isQuestion: Bool {
-        content.trimmingCharacters(in: .whitespaces).hasSuffix("?")
-    }
-    
-    // Text color based on whether this is a question
-    private var textColor: Color {
-        isQuestion ? Color(hex: "C2BBA8") : .white.opacity(0.95)
-    }
     
     // Parsed reference for tap handling
     private struct ParsedRef {
@@ -1041,7 +1003,7 @@ private struct OrderedItemView: View {
             // Number with fixed width for alignment
             Text("\(number).")
                 .font(font)
-                .foregroundStyle(textColor)
+                .foregroundStyle(.white.opacity(0.95))
                 .frame(minWidth: 20, alignment: .trailing)
             
             Text(attributedText)
@@ -1060,12 +1022,6 @@ private struct OrderedItemView: View {
                     return .systemAction
                 })
         }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            if isQuestion {
-                onSendQuestion?(content)
-            }
-        }
     }
     
     // Build AttributedString with styled Bible references as tappable links
@@ -1137,7 +1093,7 @@ private struct OrderedItemView: View {
         } else {
             result = AttributedString(text)
         }
-        result.foregroundColor = textColor
+        result.foregroundColor = .white.opacity(0.95)
         return result
     }
 }
