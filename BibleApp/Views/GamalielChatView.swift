@@ -64,7 +64,6 @@ struct GamalielChatView: View {
                 // Scroll to bottom button (above input area, centered)
                 if shouldShowScrollButton {
                     scrollToBottomButton
-                        .padding(.bottom, 8)
                         .transition(.opacity.combined(with: .scale(scale: 0.8)))
                 }
                 
