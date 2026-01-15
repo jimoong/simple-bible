@@ -1,0 +1,40 @@
+{
+  "bookId": "haggai",
+  "bookNumber": 37,
+  "bookNameKo": "학개",
+  "bookNameEn": "Haggai",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "성전 재건 촉구",
+      "titleEn": "Call to Rebuild the Temple",
+      "summaryKo": "바벨론 포로 귀환 후 성전 재건을 미루는 백성들에게 우선순위를 바로잡으라고 촉구합니다.",
+      "summaryEn": "Urges the people who delayed rebuilding the temple after returning from Babylon to set their priorities right.",
+      "messageKo": "하나님의 일을 먼저 하면 나머지는 채워주십니다.",
+      "messageEn": "When we put God's work first, He provides for the rest.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "너희는 판자집에 살면서", "eventEn": "Living in paneled houses"},
+        {"verse": 6, "eventKo": "많이 뿌려도 수확이 적음", "eventEn": "Sow much but harvest little"},
+        {"verse": 8, "eventKo": "성전을 건축하라", "eventEn": "Build the house"},
+        {"verse": 14, "eventKo": "백성이 일하기 시작함", "eventEn": "People begin to work"}
+      ],
+      "timelineYear": "BC 520"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "성전의 영광과 약속",
+      "titleEn": "Glory and Promise of the Temple",
+      "summaryKo": "새 성전이 옛 성전보다 영광스러울 것과 메시아 시대의 축복을 약속합니다.",
+      "summaryEn": "Promises that the new temple will be more glorious than the former and foretells Messianic blessings.",
+      "messageKo": "하나님의 임재가 있는 곳에 참된 영광이 있습니다.",
+      "messageEn": "True glory is where God's presence dwells.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "옛 성전을 본 자들", "eventEn": "Those who saw the former temple"},
+        {"verse": 7, "eventKo": "만국의 보배가 오리니", "eventEn": "Desire of all nations will come"},
+        {"verse": 9, "eventKo": "이 성전의 영광이 크리라", "eventEn": "Glory of this house will be greater"},
+        {"verse": 23, "eventKo": "스룹바벨을 인장 반지같이", "eventEn": "Zerubbabel like a signet ring"}
+      ],
+      "timelineYear": "BC 520"
+    }
+  ]
+}

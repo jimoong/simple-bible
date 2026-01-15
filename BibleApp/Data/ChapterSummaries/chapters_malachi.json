@@ -1,0 +1,70 @@
+{
+  "bookId": "malachi",
+  "bookNumber": 39,
+  "bookNameKo": "말라기",
+  "bookNameEn": "Malachi",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "하나님의 사랑과 흠 있는 제물",
+      "titleEn": "God's Love and Defiled Offerings",
+      "summaryKo": "하나님의 이스라엘을 향한 사랑을 선언하고, 흠 있는 제물을 드리는 제사장들을 책망합니다.",
+      "summaryEn": "Declares God's love for Israel and rebukes priests for offering defiled sacrifices.",
+      "messageKo": "하나님께는 최선의 것을 드려야 합니다.",
+      "messageEn": "We must give our best to God.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "내가 너희를 사랑하였다", "eventEn": "I have loved you"},
+        {"verse": 6, "eventKo": "아버지를 공경하지 않음", "eventEn": "Not honoring the Father"},
+        {"verse": 8, "eventKo": "눈 먼 것으로 제사함", "eventEn": "Offering blind animals"}
+      ],
+      "timelineYear": "BC 430경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "제사장들과 결혼에 대한 책망",
+      "titleEn": "Rebuke of Priests and Marriage",
+      "summaryKo": "불성실한 제사장들을 꾸짖고, 이방 여인과의 결혼과 이혼 문제를 다룹니다.",
+      "summaryEn": "Rebukes unfaithful priests and addresses intermarriage and divorce issues.",
+      "messageKo": "하나님은 신실함과 언약을 지키는 것을 원하십니다.",
+      "messageEn": "God desires faithfulness and covenant-keeping.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "제사장은 지식을 지켜야", "eventEn": "Priest should preserve knowledge"},
+        {"verse": 11, "eventKo": "이방 신의 딸과 결혼", "eventEn": "Marrying daughter of foreign god"},
+        {"verse": 16, "eventKo": "이혼을 미워함", "eventEn": "I hate divorce"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "십일조와 정금같이 연단",
+      "titleEn": "Tithes and Refining Like Gold",
+      "summaryKo": "메시아의 선구자와 정금같이 연단하시는 하나님, 그리고 십일조의 축복을 말합니다.",
+      "summaryEn": "Speaks of the Messiah's forerunner, God refining like gold, and blessings of tithing.",
+      "messageKo": "십일조로 하나님을 시험하면 복의 문을 여십니다.",
+      "messageEn": "Test God with tithes and He opens the windows of blessing.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "내 사자를 보내리라", "eventEn": "I will send my messenger"},
+        {"verse": 3, "eventKo": "금같이 연단하심", "eventEn": "Refine like gold"},
+        {"verse": 10, "eventKo": "온전한 십일조", "eventEn": "Bring the whole tithe"},
+        {"verse": 16, "eventKo": "기념책에 기록됨", "eventEn": "Book of remembrance written"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "여호와의 날과 엘리야",
+      "titleEn": "Day of the LORD and Elijah",
+      "summaryKo": "심판의 날과 의의 태양의 떠오름, 그리고 엘리야의 오심을 예언하며 구약을 마칩니다.",
+      "summaryEn": "Prophesies the day of judgment, the rising Sun of Righteousness, and Elijah's coming, concluding the Old Testament.",
+      "messageKo": "구약의 마지막 말씀은 메시아의 오심에 대한 소망입니다.",
+      "messageEn": "The final word of the Old Testament is hope for the Messiah's coming.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "풀무같은 날이 옴", "eventEn": "Day burning like a furnace"},
+        {"verse": 2, "eventKo": "의의 태양이 떠오름", "eventEn": "Sun of righteousness rises"},
+        {"verse": 5, "eventKo": "선지자 엘리야를 보냄", "eventEn": "I will send prophet Elijah"},
+        {"verse": 6, "eventKo": "아버지와 자녀의 마음을 돌이킴", "eventEn": "Turn hearts of fathers to children"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

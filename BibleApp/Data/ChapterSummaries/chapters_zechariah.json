@@ -1,0 +1,220 @@
+{
+  "bookId": "zechariah",
+  "bookNumber": 38,
+  "bookNameKo": "스가랴",
+  "bookNameEn": "Zechariah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "회개 촉구와 첫 환상",
+      "titleEn": "Call to Repentance and First Vision",
+      "summaryKo": "회개를 촉구하고 화석류나무 사이의 말 탄 자의 환상을 봅니다.",
+      "summaryEn": "Calls for repentance and sees the vision of a man riding among myrtle trees.",
+      "messageKo": "하나님께 돌아오면 하나님도 우리에게 돌아오십니다.",
+      "messageEn": "Return to God, and He will return to you.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "내게로 돌아오라", "eventEn": "Return to me"},
+        {"verse": 8, "eventKo": "화석류나무 사이의 자", "eventEn": "Man among myrtle trees"},
+        {"verse": 16, "eventKo": "예루살렘에 돌아옴", "eventEn": "Returning to Jerusalem"}
+      ],
+      "timelineYear": "BC 520"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "측량줄의 환상",
+      "titleEn": "Vision of the Measuring Line",
+      "summaryKo": "예루살렘이 성벽 없이도 번창할 것이며 하나님이 불 성벽이 되실 것을 예언합니다.",
+      "summaryEn": "Prophesies that Jerusalem will flourish without walls, for God will be a wall of fire around it.",
+      "messageKo": "하나님의 보호 안에서는 인간의 성벽이 필요 없습니다.",
+      "messageEn": "In God's protection, human walls are unnecessary.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "측량줄을 가진 자", "eventEn": "Man with measuring line"},
+        {"verse": 5, "eventKo": "불 성벽이 되리라", "eventEn": "Wall of fire around it"},
+        {"verse": 10, "eventKo": "시온아 노래하라", "eventEn": "Sing, Daughter Zion"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "대제사장 여호수아",
+      "titleEn": "Joshua the High Priest",
+      "summaryKo": "더러운 옷을 입은 대제사장 여호수아가 깨끗한 옷으로 갈아입히는 환상을 봅니다.",
+      "summaryEn": "Sees a vision of Joshua the high priest, clothed in filthy garments, being given clean robes.",
+      "messageKo": "하나님은 죄를 씻고 새 옷을 입혀주십니다.",
+      "messageEn": "God removes sin and clothes us with new garments.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "사탄이 고발함", "eventEn": "Satan accusing"},
+        {"verse": 4, "eventKo": "더러운 옷을 벗김", "eventEn": "Filthy clothes removed"},
+        {"verse": 8, "eventKo": "가지라 하는 종", "eventEn": "My servant, the Branch"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "금 등잔대와 두 올리브 나무",
+      "titleEn": "Golden Lampstand and Two Olive Trees",
+      "summaryKo": "금 등잔대와 두 올리브 나무의 환상으로 성령의 능력을 상징합니다.",
+      "summaryEn": "The vision of a golden lampstand and two olive trees symbolizes the power of the Spirit.",
+      "messageKo": "힘과 능력이 아닌 오직 성령으로 이루어집니다.",
+      "messageEn": "Not by might nor by power, but by my Spirit.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "순금 등잔대", "eventEn": "Solid gold lampstand"},
+        {"verse": 6, "eventKo": "힘도 능도 아닌 성령으로", "eventEn": "Not by might but by Spirit"},
+        {"verse": 7, "eventKo": "큰 산아 평지가 되라", "eventEn": "Mountain become level ground"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "날아가는 두루마리와 에바",
+      "titleEn": "Flying Scroll and Ephah",
+      "summaryKo": "날아가는 두루마리와 에바 통의 환상으로 죄에 대한 심판을 보여줍니다.",
+      "summaryEn": "The visions of a flying scroll and an ephah basket show judgment on sin.",
+      "messageKo": "하나님은 죄를 반드시 심판하십니다.",
+      "messageEn": "God surely judges sin.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "날아가는 두루마리", "eventEn": "Flying scroll"},
+        {"verse": 3, "eventKo": "도둑과 거짓 맹세", "eventEn": "Thieves and false swearers"},
+        {"verse": 7, "eventKo": "에바 통 속의 여인", "eventEn": "Woman in the basket"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "네 병거와 여호수아의 면류관",
+      "titleEn": "Four Chariots and Joshua's Crown",
+      "summaryKo": "네 병거의 환상과 대제사장 여호수아에게 면류관을 씌우는 예언적 행동이 나옵니다.",
+      "summaryEn": "Vision of four chariots and the symbolic crowning of Joshua the high priest.",
+      "messageKo": "왕과 제사장의 직분이 메시아 안에서 하나가 됩니다.",
+      "messageEn": "The offices of king and priest unite in the Messiah.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "네 병거", "eventEn": "Four chariots"},
+        {"verse": 11, "eventKo": "여호수아에게 면류관", "eventEn": "Crown for Joshua"},
+        {"verse": 12, "eventKo": "가지라 하는 자", "eventEn": "Man named the Branch"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "참된 금식",
+      "titleEn": "True Fasting",
+      "summaryKo": "형식적 금식을 책망하고 정의와 긍휼을 행하는 참된 경건을 요구합니다.",
+      "summaryEn": "Rebukes ritual fasting and demands true piety: justice and mercy.",
+      "messageKo": "하나님은 형식이 아닌 정의와 긍휼을 원하십니다.",
+      "messageEn": "God desires justice and mercy, not ritual.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "과연 나를 위해 금식했느냐", "eventEn": "Was it really for me you fasted?"},
+        {"verse": 9, "eventKo": "진실로 재판하라", "eventEn": "Administer true justice"},
+        {"verse": 10, "eventKo": "과부 고아를 압제하지 말라", "eventEn": "Do not oppress widows or orphans"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "예루살렘 회복의 약속",
+      "titleEn": "Promises of Jerusalem's Restoration",
+      "summaryKo": "예루살렘이 회복되어 노인과 어린이가 거리에서 즐거워하는 평화의 비전을 약속합니다.",
+      "summaryEn": "Promises restoration of Jerusalem with elderly and children playing in the streets.",
+      "messageKo": "하나님의 회복은 모든 세대가 함께 누리는 축복입니다.",
+      "messageEn": "God's restoration is a blessing enjoyed by all generations together.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "진리의 성읍", "eventEn": "City of Truth"},
+        {"verse": 5, "eventKo": "거리에서 노는 아이들", "eventEn": "Children playing in streets"},
+        {"verse": 13, "eventKo": "복의 근원이 되리라", "eventEn": "You will be a blessing"},
+        {"verse": 23, "eventKo": "열 사람이 유대인을 붙잡음", "eventEn": "Ten men take hold of one Jew"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "겸손한 왕의 오심",
+      "titleEn": "Coming of the Humble King",
+      "summaryKo": "열방에 대한 심판과 나귀를 타고 오시는 겸손한 왕 메시아를 예언합니다.",
+      "summaryEn": "Prophesies judgment on nations and the Messiah coming humbly, riding on a donkey.",
+      "messageKo": "참된 왕은 겸손과 평화로 오십니다.",
+      "messageEn": "The true King comes in humility and peace.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "나귀를 타고 오시는 왕", "eventEn": "King riding on a donkey"},
+        {"verse": 10, "eventKo": "땅 끝까지 평화를 선포", "eventEn": "Proclaim peace to the ends of earth"},
+        {"verse": 16, "eventKo": "면류관의 보석같이", "eventEn": "Like jewels in a crown"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "여호와께 비를 구하라",
+      "titleEn": "Ask the LORD for Rain",
+      "summaryKo": "우상이 아닌 여호와께 복을 구하라고 권면하며 흩어진 백성의 회복을 약속합니다.",
+      "summaryEn": "Exhorts to seek blessings from the LORD, not idols, and promises restoration of scattered people.",
+      "messageKo": "참된 공급자는 오직 여호와이십니다.",
+      "messageEn": "The true provider is the LORD alone.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와께 비를 구하라", "eventEn": "Ask the LORD for rain"},
+        {"verse": 4, "eventKo": "모퉁잇돌이 나옴", "eventEn": "From Judah the cornerstone"},
+        {"verse": 8, "eventKo": "휘파람 불어 모음", "eventEn": "Signal and gather them"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "두 목자",
+      "titleEn": "Two Shepherds",
+      "summaryKo": "선한 목자의 거절과 어리석은 목자의 등장을 예언합니다.",
+      "summaryEn": "Prophesies the rejection of the good shepherd and the rise of a foolish shepherd.",
+      "messageKo": "선한 목자를 거부하면 어리석은 목자에게 넘겨집니다.",
+      "messageEn": "Rejecting the good shepherd leads to a foolish one.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "두 막대기: 은총과 연합", "eventEn": "Two staffs: Favor and Union"},
+        {"verse": 12, "eventKo": "은 삼십에 값을 매김", "eventEn": "Thirty pieces of silver"},
+        {"verse": 15, "eventKo": "어리석은 목자", "eventEn": "Foolish shepherd"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "예루살렘을 위한 슬픔",
+      "titleEn": "Mourning for Jerusalem",
+      "summaryKo": "예루살렘을 공격하는 열방에 대한 승리와 그들이 찌른 자를 바라보는 통곡을 예언합니다.",
+      "summaryEn": "Prophesies victory over nations attacking Jerusalem and mourning for the one they pierced.",
+      "messageKo": "찌른 자를 바라볼 때 참된 회개가 시작됩니다.",
+      "messageEn": "True repentance begins when we look on the one we pierced.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "예루살렘이 취하게 하는 잔", "eventEn": "Jerusalem a cup of reeling"},
+        {"verse": 3, "eventKo": "무거운 돌", "eventEn": "Immovable rock"},
+        {"verse": 10, "eventKo": "그들이 찌른 나를 바라봄", "eventEn": "Look on me whom they pierced"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "죄를 씻는 샘",
+      "titleEn": "A Fountain for Cleansing",
+      "summaryKo": "다윗 족속을 위한 죄와 부정을 씻는 샘이 열리고 목자가 맞아 양이 흩어질 것을 예언합니다.",
+      "summaryEn": "A fountain for cleansing sin opens for David's house; the shepherd will be struck and sheep scattered.",
+      "messageKo": "하나님은 죄를 씻는 샘을 열어주십니다.",
+      "messageEn": "God opens a fountain to cleanse from sin.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "죄를 씻는 샘", "eventEn": "Fountain for cleansing"},
+        {"verse": 7, "eventKo": "목자를 치라 양이 흩어지리라", "eventEn": "Strike the shepherd, sheep scattered"},
+        {"verse": 9, "eventKo": "삼분의 일이 남음", "eventEn": "One third will remain"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "여호와의 날",
+      "titleEn": "The Day of the LORD",
+      "summaryKo": "마지막 날 예루살렘 전쟁, 여호와의 강림, 그리고 만국이 예배하러 올라오는 종말론적 비전을 선포합니다.",
+      "summaryEn": "Proclaims the eschatological vision of the final battle for Jerusalem, the LORD's coming, and nations worshiping.",
+      "messageKo": "마지막에 여호와께서 온 땅의 왕이 되십니다.",
+      "messageEn": "In the end, the LORD will be king over all the earth.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "감람산에 서심", "eventEn": "Feet on Mount of Olives"},
+        {"verse": 8, "eventKo": "생수가 흘러나옴", "eventEn": "Living water flows out"},
+        {"verse": 9, "eventKo": "온 땅의 왕이 되심", "eventEn": "King over all the earth"},
+        {"verse": 16, "eventKo": "만국이 초막절을 지킴", "eventEn": "Nations celebrate Feast of Tabernacles"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

@@ -1,0 +1,736 @@
+{
+  "bookId": "ezekiel",
+  "bookNumber": 26,
+  "bookNameKo": "에스겔",
+  "bookNameEn": "Ezekiel",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "하나님의 보좌 환상",
+      "titleEn": "Vision of God's Throne",
+      "summaryKo": "그발 강가에서 네 생물과 바퀴, 그리고 하나님의 영광의 보좌를 환상으로 봅니다.",
+      "summaryEn": "By the Kebar River, sees a vision of four living creatures, wheels, and God's glorious throne.",
+      "messageKo": "하나님의 영광은 어디서나 임재하십니다.",
+      "messageEn": "God's glory is present everywhere.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "그발 강가에서", "eventEn": "By the Kebar River"},
+        {"verse": 5, "eventKo": "네 생물", "eventEn": "Four living creatures"},
+        {"verse": 16, "eventKo": "바퀴 안에 바퀴", "eventEn": "Wheel within a wheel"},
+        {"verse": 28, "eventKo": "여호와의 영광", "eventEn": "Glory of the LORD"}
+      ],
+      "timelineYear": "BC 593"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "에스겔의 부르심",
+      "titleEn": "Ezekiel's Call",
+      "summaryKo": "에스겔이 반역하는 이스라엘 집에 선지자로 보냄을 받습니다.",
+      "summaryEn": "Ezekiel is called as a prophet to the rebellious house of Israel.",
+      "messageKo": "하나님은 듣든 안 듣든 말씀을 전하라 하십니다.",
+      "messageEn": "God commands us to speak His word whether people listen or not.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "일어서라 인자야", "eventEn": "Stand up, son of man"},
+        {"verse": 3, "eventKo": "반역하는 이스라엘에게 보냄", "eventEn": "Sent to rebellious Israel"},
+        {"verse": 9, "eventKo": "두루마리를 봄", "eventEn": "Sees a scroll"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "파수꾼으로 세움",
+      "titleEn": "Appointed as Watchman",
+      "summaryKo": "두루마리를 먹고 이스라엘의 파수꾼으로 세워집니다.",
+      "summaryEn": "Eats the scroll and is appointed as a watchman for Israel.",
+      "messageKo": "파수꾼은 경고의 책임이 있습니다.",
+      "messageEn": "A watchman is responsible to warn.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "두루마리를 먹으라", "eventEn": "Eat this scroll"},
+        {"verse": 3, "eventKo": "입에 꿀같이 담", "eventEn": "Sweet as honey"},
+        {"verse": 17, "eventKo": "파수꾼으로 세움", "eventEn": "Made a watchman"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "예루살렘 포위의 상징",
+      "titleEn": "Siege of Jerusalem Symbolized",
+      "summaryKo": "벽돌에 예루살렘을 그리고 누워서 예루살렘 포위를 상징적으로 보여줍니다.",
+      "summaryEn": "Draws Jerusalem on a brick and lies down to symbolize the siege of Jerusalem.",
+      "messageKo": "선지자는 때로 말이 아닌 행동으로 메시지를 전합니다.",
+      "messageEn": "Prophets sometimes deliver messages through actions, not words.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "벽돌에 예루살렘을 그림", "eventEn": "Draw Jerusalem on a brick"},
+        {"verse": 4, "eventKo": "390일 왼쪽으로 누움", "eventEn": "Lie on left side 390 days"},
+        {"verse": 9, "eventKo": "혼합 곡식으로 빵을 굽기", "eventEn": "Bake bread with mixed grain"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "머리카락의 심판",
+      "titleEn": "Judgment Through Hair",
+      "summaryKo": "머리카락을 세 부분으로 나눠 예루살렘에 임할 세 가지 심판을 상징합니다.",
+      "summaryEn": "Divides hair into three parts symbolizing three judgments coming upon Jerusalem.",
+      "messageKo": "하나님은 열방 중에서 예루살렘을 선택했기에 더 엄히 심판하십니다.",
+      "messageEn": "God judges Jerusalem more strictly because He chose it among nations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "머리카락을 밀어라", "eventEn": "Shave your head"},
+        {"verse": 2, "eventKo": "삼분의 일은 불에", "eventEn": "Third burned in fire"},
+        {"verse": 12, "eventKo": "역병, 기근, 칼", "eventEn": "Plague, famine, sword"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "이스라엘 산들에 대한 심판",
+      "titleEn": "Judgment on Mountains of Israel",
+      "summaryKo": "산당에서의 우상숭배를 책망하고 심판을 선포합니다.",
+      "summaryEn": "Rebukes idolatry at high places and proclaims judgment.",
+      "messageKo": "우상숭배의 장소들이 파괴됩니다.",
+      "messageEn": "Places of idolatry will be destroyed.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "이스라엘 산들아", "eventEn": "Mountains of Israel"},
+        {"verse": 6, "eventKo": "산당이 황폐해짐", "eventEn": "High places devastated"},
+        {"verse": 8, "eventKo": "남은 자를 두리라", "eventEn": "I will spare some"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "끝이 왔다",
+      "titleEn": "The End Has Come",
+      "summaryKo": "이스라엘 땅에 끝이 왔음을 선포하며 임박한 심판을 경고합니다.",
+      "summaryEn": "Proclaims that the end has come upon the land of Israel, warning of imminent judgment.",
+      "messageKo": "하나님의 심판의 날은 반드시 옵니다.",
+      "messageEn": "The day of God's judgment surely comes.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "끝이 왔다", "eventEn": "The end has come"},
+        {"verse": 19, "eventKo": "은과 금이 구하지 못함", "eventEn": "Silver and gold cannot save"},
+        {"verse": 26, "eventKo": "재앙에 재앙이 연함", "eventEn": "Disaster upon disaster"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "성전의 우상숭배",
+      "titleEn": "Idolatry in the Temple",
+      "summaryKo": "환상 중에 예루살렘 성전에서 행해지는 가증한 우상숭배를 봅니다.",
+      "summaryEn": "In a vision, sees the detestable idolatry practiced in the Jerusalem temple.",
+      "messageKo": "하나님의 성전에서 우상을 섬기는 것은 가장 큰 죄입니다.",
+      "messageEn": "Worshiping idols in God's temple is the greatest sin.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "예루살렘으로 들려감", "eventEn": "Transported to Jerusalem"},
+        {"verse": 10, "eventKo": "벽에 그려진 우상들", "eventEn": "Idols portrayed on walls"},
+        {"verse": 14, "eventKo": "담무스를 위해 우는 여인들", "eventEn": "Women weeping for Tammuz"},
+        {"verse": 16, "eventKo": "해를 향해 절함", "eventEn": "Bowing to the sun"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "표 받은 자와 심판",
+      "titleEn": "The Mark and Judgment",
+      "summaryKo": "탄식하는 자들에게 표를 주고 나머지는 심판합니다.",
+      "summaryEn": "Those who grieve receive a mark; the rest face judgment.",
+      "messageKo": "죄를 슬퍼하는 자는 심판에서 보호받습니다.",
+      "messageEn": "Those who grieve over sin are protected from judgment.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "이마에 표를 그으라", "eventEn": "Put a mark on foreheads"},
+        {"verse": 6, "eventKo": "표 있는 자는 가까이 하지 말라", "eventEn": "Do not touch those with mark"},
+        {"verse": 6, "eventKo": "성소에서 시작하라", "eventEn": "Begin at my sanctuary"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "하나님의 영광이 떠남",
+      "titleEn": "God's Glory Departs",
+      "summaryKo": "그룹들과 바퀴의 환상이 다시 나타나고 하나님의 영광이 성전을 떠납니다.",
+      "summaryEn": "The vision of cherubim and wheels reappears; God's glory departs from the temple.",
+      "messageKo": "하나님의 영광은 죄 때문에 떠나십니다.",
+      "messageEn": "God's glory departs because of sin.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "숯불을 가져오라", "eventEn": "Take coals of fire"},
+        {"verse": 4, "eventKo": "영광이 문지방으로", "eventEn": "Glory moved to threshold"},
+        {"verse": 18, "eventKo": "영광이 성전을 떠남", "eventEn": "Glory departs from temple"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "새 마음의 약속",
+      "titleEn": "Promise of a New Heart",
+      "summaryKo": "악한 지도자들을 심판하고 새 마음과 새 영을 주시겠다는 약속을 선포합니다.",
+      "summaryEn": "Judges wicked leaders and proclaims the promise of a new heart and new spirit.",
+      "messageKo": "하나님은 돌 같은 마음을 살 마음으로 바꾸십니다.",
+      "messageEn": "God replaces hearts of stone with hearts of flesh.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "블라댜가 죽음", "eventEn": "Pelatiah dies"},
+        {"verse": 19, "eventKo": "새 마음과 새 영", "eventEn": "New heart and new spirit"},
+        {"verse": 23, "eventKo": "영광이 동편 산으로", "eventEn": "Glory goes to mountain east"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "포로의 상징 행동",
+      "titleEn": "Symbolic Acts of Exile",
+      "summaryKo": "짐을 싸고 벽을 뚫는 상징적 행동으로 포로됨을 예언합니다.",
+      "summaryEn": "Prophesies exile through symbolic actions of packing baggage and digging through a wall.",
+      "messageKo": "예언은 반드시 성취됩니다.",
+      "messageEn": "Prophecy will surely be fulfilled.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "포로의 짐을 싸라", "eventEn": "Pack your belongings for exile"},
+        {"verse": 5, "eventKo": "벽을 뚫으라", "eventEn": "Dig through the wall"},
+        {"verse": 13, "eventKo": "시드기야의 포로", "eventEn": "Zedekiah's capture"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "거짓 선지자들",
+      "titleEn": "False Prophets",
+      "summaryKo": "거짓 평화를 외치는 거짓 선지자들을 책망합니다.",
+      "summaryEn": "Rebukes false prophets who proclaim false peace.",
+      "messageKo": "거짓 평화는 회칠한 담처럼 무너집니다.",
+      "messageEn": "False peace collapses like a whitewashed wall.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "어리석은 선지자들", "eventEn": "Foolish prophets"},
+        {"verse": 10, "eventKo": "회칠한 담", "eventEn": "Whitewashed wall"},
+        {"verse": 18, "eventKo": "손목에 방석을 꿰매는 자", "eventEn": "Those who sew magic charms"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "우상숭배자의 심판",
+      "titleEn": "Judgment on Idolaters",
+      "summaryKo": "마음에 우상을 품은 자들에 대한 심판과 노아, 다니엘, 욥으로도 구할 수 없음을 말합니다.",
+      "summaryEn": "Judgment on those with idols in their hearts; not even Noah, Daniel, and Job could save them.",
+      "messageKo": "마음의 우상도 심판받습니다.",
+      "messageEn": "Idols of the heart are also judged.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "마음에 우상을 품음", "eventEn": "Idols in their hearts"},
+        {"verse": 14, "eventKo": "노아, 다니엘, 욥", "eventEn": "Noah, Daniel, Job"},
+        {"verse": 21, "eventKo": "네 가지 심판", "eventEn": "Four dreadful judgments"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "쓸모없는 포도나무",
+      "titleEn": "Useless Vine",
+      "summaryKo": "예루살렘을 열매 없는 포도나무에 비유하여 심판을 경고합니다.",
+      "summaryEn": "Compares Jerusalem to a fruitless vine, warning of judgment.",
+      "messageKo": "열매 없는 포도나무는 불에 던져집니다.",
+      "messageEn": "A fruitless vine is thrown into the fire.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "포도나무가 다른 나무보다 나은가", "eventEn": "Is vine wood better than other wood?"},
+        {"verse": 4, "eventKo": "불에 던져짐", "eventEn": "Thrown into fire"},
+        {"verse": 6, "eventKo": "예루살렘을 불에 넘김", "eventEn": "Give Jerusalem to fire"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "불신실한 예루살렘",
+      "titleEn": "Unfaithful Jerusalem",
+      "summaryKo": "예루살렘을 버려진 아기에서 구해 아내로 삼았으나 음행한 여인에 비유합니다.",
+      "summaryEn": "Compares Jerusalem to an abandoned baby rescued and made a wife, but who became unfaithful.",
+      "messageKo": "하나님의 은혜를 잊고 배반하는 것은 큰 죄입니다.",
+      "messageEn": "Forgetting God's grace and betraying Him is a great sin.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "버려진 아기", "eventEn": "Abandoned baby"},
+        {"verse": 8, "eventKo": "언약을 세움", "eventEn": "Entered covenant with you"},
+        {"verse": 15, "eventKo": "아름다움을 믿고 음행", "eventEn": "Trusted beauty and became unfaithful"},
+        {"verse": 60, "eventKo": "영원한 언약 기억", "eventEn": "Remember eternal covenant"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "두 독수리와 포도나무",
+      "titleEn": "Two Eagles and a Vine",
+      "summaryKo": "두 독수리와 포도나무의 비유로 시드기야의 배반과 심판을 예언합니다.",
+      "summaryEn": "Through the parable of two eagles and a vine, prophesies Zedekiah's betrayal and judgment.",
+      "messageKo": "언약을 어기면 심판이 임합니다.",
+      "messageEn": "Breaking a covenant brings judgment.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "큰 독수리", "eventEn": "Great eagle"},
+        {"verse": 12, "eventKo": "바벨론 왕과 언약", "eventEn": "Covenant with Babylon's king"},
+        {"verse": 22, "eventKo": "백향목 가지", "eventEn": "Sprig from cedar"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "개인의 책임",
+      "titleEn": "Individual Responsibility",
+      "summaryKo": "각 사람이 자기 죄에 대해 책임지며 회개하면 살 수 있음을 선포합니다.",
+      "summaryEn": "Declares that each person is responsible for their own sin and can live if they repent.",
+      "messageKo": "하나님은 죄인의 죽음을 원치 않으시고 돌아오기를 원하십니다.",
+      "messageEn": "God does not desire the death of sinners but wants them to return.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "범죄하는 영혼이 죽음", "eventEn": "The soul who sins will die"},
+        {"verse": 20, "eventKo": "아버지의 죄를 담당하지 않음", "eventEn": "Son not bear father's guilt"},
+        {"verse": 32, "eventKo": "죽음을 기뻐하지 않음", "eventEn": "I take no pleasure in death"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "유다 왕들에 대한 애가",
+      "titleEn": "Lament for Princes of Israel",
+      "summaryKo": "유다의 마지막 왕들을 사자와 포도나무에 비유하여 애가를 부릅니다.",
+      "summaryEn": "Sings a lament comparing Judah's last kings to lions and a vine.",
+      "messageKo": "왕들의 몰락은 백성 전체의 비극입니다.",
+      "messageEn": "The fall of kings is a tragedy for all people.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "어미 사자", "eventEn": "Your mother was a lioness"},
+        {"verse": 4, "eventKo": "애굽으로 끌려감", "eventEn": "Led to Egypt"},
+        {"verse": 10, "eventKo": "포도나무 같은 어미", "eventEn": "Mother like a vine"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 20,
+      "titleKo": "이스라엘 역사의 반역",
+      "titleEn": "Israel's History of Rebellion",
+      "summaryKo": "출애굽부터 현재까지 이스라엘의 반복되는 반역의 역사를 돌아봅니다.",
+      "summaryEn": "Reviews Israel's repeated rebellion from the Exodus to the present.",
+      "messageKo": "하나님은 역사 속에서 인내하시며 회복을 계획하십니다.",
+      "messageEn": "God is patient through history and plans restoration.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "애굽에서 택함", "eventEn": "Chose them in Egypt"},
+        {"verse": 13, "eventKo": "광야에서 반역", "eventEn": "Rebelled in wilderness"},
+        {"verse": 33, "eventKo": "왕으로 다스림", "eventEn": "Rule over you as king"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "여호와의 칼",
+      "titleEn": "The LORD's Sword",
+      "summaryKo": "바벨론을 통한 심판을 여호와의 칼로 묘사합니다.",
+      "summaryEn": "Describes judgment through Babylon as the LORD's sword.",
+      "messageKo": "하나님은 심판의 도구로 열방을 사용하십니다.",
+      "messageEn": "God uses nations as instruments of judgment.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "칼을 집에서 빼심", "eventEn": "Draw sword from sheath"},
+        {"verse": 21, "eventKo": "바벨론 왕의 갈림길", "eventEn": "King of Babylon at crossroads"},
+        {"verse": 27, "eventKo": "합당한 자가 올 때까지", "eventEn": "Until he comes whose right it is"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "피 흘리는 성읍",
+      "titleEn": "City of Blood",
+      "summaryKo": "예루살렘의 모든 계층의 죄를 낱낱이 고발합니다.",
+      "summaryEn": "Exposes the sins of all classes in Jerusalem.",
+      "messageKo": "사회 전체의 부패는 심판을 부릅니다.",
+      "messageEn": "Corruption of the whole society invites judgment.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "피 흘리는 성읍", "eventEn": "City that sheds blood"},
+        {"verse": 26, "eventKo": "제사장이 율법을 범함", "eventEn": "Priests violate law"},
+        {"verse": 30, "eventKo": "성벽을 막을 자가 없음", "eventEn": "No one to stand in the gap"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "오홀라와 오홀리바",
+      "titleEn": "Oholah and Oholibah",
+      "summaryKo": "사마리아(오홀라)와 예루살렘(오홀리바)을 음녀 자매에 비유하여 책망합니다.",
+      "summaryEn": "Rebukes Samaria (Oholah) and Jerusalem (Oholibah), likening them to immoral sisters.",
+      "messageKo": "하나님을 버리고 세상과 연합하는 것은 영적 간음입니다.",
+      "messageEn": "Forsaking God for worldly alliances is spiritual adultery.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "오홀라는 사마리아", "eventEn": "Oholah is Samaria"},
+        {"verse": 4, "eventKo": "오홀리바는 예루살렘", "eventEn": "Oholibah is Jerusalem"},
+        {"verse": 37, "eventKo": "간음과 피", "eventEn": "Adultery and blood"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "끓는 솥과 에스겔 아내의 죽음",
+      "titleEn": "Boiling Pot and Ezekiel's Wife's Death",
+      "summaryKo": "예루살렘 포위가 시작되고, 에스겔 아내의 죽음이 백성에게 교훈이 됩니다.",
+      "summaryEn": "Jerusalem's siege begins; Ezekiel's wife's death becomes a lesson for the people.",
+      "messageKo": "선지자는 말씀을 위해 개인적 희생을 감당합니다.",
+      "messageEn": "The prophet bears personal sacrifice for God's message.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바로 오늘 포위 시작", "eventEn": "Siege begins this very day"},
+        {"verse": 6, "eventKo": "녹슨 솥", "eventEn": "Pot with deposit"},
+        {"verse": 16, "eventKo": "아내가 죽음", "eventEn": "Wife dies"},
+        {"verse": 17, "eventKo": "슬퍼하지 말라", "eventEn": "Do not mourn"}
+      ],
+      "timelineYear": "BC 588"
+    },
+    {
+      "chapter": 25,
+      "titleKo": "주변 민족들에 대한 심판",
+      "titleEn": "Judgment on Surrounding Nations",
+      "summaryKo": "암몬, 모압, 에돔, 블레셋에 대한 심판을 선포합니다.",
+      "summaryEn": "Proclaims judgment on Ammon, Moab, Edom, and Philistia.",
+      "messageKo": "하나님의 백성을 조롱하는 민족도 심판받습니다.",
+      "messageEn": "Nations that mock God's people will also be judged.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "암몬에 대한 심판", "eventEn": "Judgment on Ammon"},
+        {"verse": 8, "eventKo": "모압에 대한 심판", "eventEn": "Judgment on Moab"},
+        {"verse": 12, "eventKo": "에돔에 대한 심판", "eventEn": "Judgment on Edom"},
+        {"verse": 15, "eventKo": "블레셋에 대한 심판", "eventEn": "Judgment on Philistia"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 26,
+      "titleKo": "두로에 대한 심판",
+      "titleEn": "Judgment on Tyre",
+      "summaryKo": "부유한 항구 도시 두로의 멸망을 예언합니다.",
+      "summaryEn": "Prophesies the destruction of the wealthy port city of Tyre.",
+      "messageKo": "물질적 번영도 하나님의 심판을 피할 수 없습니다.",
+      "messageEn": "Material prosperity cannot escape God's judgment.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "열국이 공격함", "eventEn": "Many nations attack"},
+        {"verse": 7, "eventKo": "느부갓네살이 옴", "eventEn": "Nebuchadnezzar comes"},
+        {"verse": 14, "eventKo": "맨 바위가 됨", "eventEn": "Become a bare rock"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "두로에 대한 애가",
+      "titleEn": "Lament for Tyre",
+      "summaryKo": "두로를 화려한 배에 비유하여 그 멸망을 애도합니다.",
+      "summaryEn": "Mourns Tyre's destruction, comparing it to a magnificent ship.",
+      "messageKo": "세상의 영광은 순식간에 사라집니다.",
+      "messageEn": "The glory of the world vanishes in an instant.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아름다운 배", "eventEn": "Beautiful ship"},
+        {"verse": 25, "eventKo": "다시스 배가 운반", "eventEn": "Ships of Tarshish carry"},
+        {"verse": 34, "eventKo": "바다에 침몰", "eventEn": "Sunk in the sea"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 28,
+      "titleKo": "두로 왕과 에덴의 타락",
+      "titleEn": "King of Tyre and Fall from Eden",
+      "summaryKo": "두로 왕의 교만을 책망하며 에덴에서 쫓겨난 존재의 이미지를 사용합니다.",
+      "summaryEn": "Rebukes the pride of Tyre's king using imagery of a being cast from Eden.",
+      "messageKo": "하나님처럼 되려는 교만은 멸망의 원인입니다.",
+      "messageEn": "Pride that seeks to be like God leads to destruction.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "네 마음이 교만하여", "eventEn": "Your heart is proud"},
+        {"verse": 13, "eventKo": "에덴에 있었음", "eventEn": "You were in Eden"},
+        {"verse": 17, "eventKo": "아름다움으로 교만", "eventEn": "Pride because of beauty"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 29,
+      "titleKo": "애굽에 대한 심판",
+      "titleEn": "Judgment on Egypt",
+      "summaryKo": "바로를 큰 악어에 비유하며 애굽의 심판과 회복을 예언합니다.",
+      "summaryEn": "Compares Pharaoh to a great crocodile, prophesying Egypt's judgment and restoration.",
+      "messageKo": "강대국도 하나님의 심판 아래 있습니다.",
+      "messageEn": "Even great nations are under God's judgment.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "큰 악어", "eventEn": "Great monster"},
+        {"verse": 10, "eventKo": "황무지가 됨", "eventEn": "Become desolate"},
+        {"verse": 18, "eventKo": "느부갓네살에게 줌", "eventEn": "Given to Nebuchadnezzar"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 30,
+      "titleKo": "애굽의 멸망",
+      "titleEn": "Fall of Egypt",
+      "summaryKo": "애굽과 그 동맹국들의 멸망을 상세히 예언합니다.",
+      "summaryEn": "Prophesies in detail the destruction of Egypt and its allies.",
+      "messageKo": "인간의 힘을 의지하는 것은 결국 실패합니다.",
+      "messageEn": "Relying on human strength ultimately fails.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "여호와의 날이 가까움", "eventEn": "Day of LORD is near"},
+        {"verse": 10, "eventKo": "느부갓네살이 멸망시킴", "eventEn": "Nebuchadnezzar destroys"},
+        {"verse": 21, "eventKo": "바로의 팔이 꺾임", "eventEn": "Pharaoh's arm broken"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 31,
+      "titleKo": "레바논의 백향목",
+      "titleEn": "Cedar of Lebanon",
+      "summaryKo": "애굽을 앗수르처럼 높은 백향목에 비유하여 교만의 결과를 경고합니다.",
+      "summaryEn": "Compares Egypt to a tall cedar like Assyria, warning of pride's consequences.",
+      "messageKo": "가장 높은 나무도 베어질 수 있습니다.",
+      "messageEn": "Even the tallest tree can be cut down.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "레바논의 백향목 같음", "eventEn": "Like a cedar in Lebanon"},
+        {"verse": 10, "eventKo": "키가 크므로 교만함", "eventEn": "Pride because of height"},
+        {"verse": 14, "eventKo": "구덩이로 내려감", "eventEn": "Go down to the pit"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 32,
+      "titleKo": "바로에 대한 애가",
+      "titleEn": "Lament for Pharaoh",
+      "summaryKo": "바로와 애굽을 위한 애가와 스올에 내려가는 열국의 모습을 묘사합니다.",
+      "summaryEn": "Lament for Pharaoh and Egypt, describing nations descending to Sheol.",
+      "messageKo": "모든 강대국은 결국 같은 운명에 처합니다.",
+      "messageEn": "All great nations ultimately share the same fate.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바다의 큰 악어", "eventEn": "Monster in the seas"},
+        {"verse": 18, "eventKo": "구덩이로 내려감", "eventEn": "Descend to pit"},
+        {"verse": 32, "eventKo": "할례 받지 않은 자들과 함께", "eventEn": "With the uncircumcised"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 33,
+      "titleKo": "파수꾼의 책임",
+      "titleEn": "Watchman's Responsibility",
+      "summaryKo": "파수꾼의 책임을 다시 강조하고 예루살렘 함락 소식을 전합니다.",
+      "summaryEn": "Reemphasizes the watchman's responsibility and reports Jerusalem's fall.",
+      "messageKo": "회개하면 살고 의에서 돌아서면 죽습니다.",
+      "messageEn": "Turn and live; turn away from righteousness and die.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "파수꾼의 책임", "eventEn": "Watchman's duty"},
+        {"verse": 11, "eventKo": "돌이키고 살라", "eventEn": "Turn and live"},
+        {"verse": 21, "eventKo": "예루살렘 함락 소식", "eventEn": "News of Jerusalem's fall"}
+      ],
+      "timelineYear": "BC 586"
+    },
+    {
+      "chapter": 34,
+      "titleKo": "선한 목자",
+      "titleEn": "The Good Shepherd",
+      "summaryKo": "악한 목자들을 책망하고 하나님이 친히 목자가 되시겠다고 약속합니다.",
+      "summaryEn": "Rebukes wicked shepherds and promises that God Himself will be the shepherd.",
+      "messageKo": "하나님은 잃은 양을 찾아 친히 먹이시는 목자이십니다.",
+      "messageEn": "God is the shepherd who seeks lost sheep and feeds them Himself.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "악한 목자들", "eventEn": "Wicked shepherds"},
+        {"verse": 11, "eventKo": "내가 친히 찾으리라", "eventEn": "I myself will search"},
+        {"verse": 23, "eventKo": "내 종 다윗", "eventEn": "My servant David"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 35,
+      "titleKo": "에돔(세일 산)에 대한 심판",
+      "titleEn": "Judgment on Edom (Mount Seir)",
+      "summaryKo": "이스라엘의 환난 때 기뻐한 에돔에 대한 심판을 선포합니다.",
+      "summaryEn": "Proclaims judgment on Edom for rejoicing over Israel's distress.",
+      "messageKo": "형제의 고난을 기뻐하는 것은 심판받습니다.",
+      "messageEn": "Rejoicing over a brother's suffering brings judgment.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "영원한 원수", "eventEn": "Eternal enmity"},
+        {"verse": 10, "eventKo": "두 민족을 차지하려 함", "eventEn": "Trying to possess two nations"},
+        {"verse": 15, "eventKo": "황무지가 됨", "eventEn": "Made desolate"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 36,
+      "titleKo": "이스라엘 산들의 회복",
+      "titleEn": "Restoration of Israel's Mountains",
+      "summaryKo": "이스라엘 땅과 백성의 회복, 새 마음과 새 영의 약속을 선포합니다.",
+      "summaryEn": "Proclaims restoration of Israel's land and people, promising a new heart and spirit.",
+      "messageKo": "하나님은 거룩한 이름을 위해 회복하십니다.",
+      "messageEn": "God restores for the sake of His holy name.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "열매를 맺으리라", "eventEn": "Will produce fruit"},
+        {"verse": 25, "eventKo": "깨끗한 물을 뿌림", "eventEn": "Sprinkle clean water"},
+        {"verse": 26, "eventKo": "새 마음과 새 영", "eventEn": "New heart and new spirit"},
+        {"verse": 35, "eventKo": "에덴 동산 같이", "eventEn": "Like garden of Eden"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 37,
+      "titleKo": "마른 뼈의 환상",
+      "titleEn": "Valley of Dry Bones",
+      "summaryKo": "마른 뼈들이 살아나는 환상으로 이스라엘의 회복을 예언합니다.",
+      "summaryEn": "Prophesies Israel's restoration through the vision of dry bones coming to life.",
+      "messageKo": "하나님은 죽은 것도 살리시는 분이십니다.",
+      "messageEn": "God is the one who brings the dead to life.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "이 뼈들이 살겠느냐", "eventEn": "Can these bones live?"},
+        {"verse": 5, "eventKo": "생기가 들어감", "eventEn": "Breath enters them"},
+        {"verse": 10, "eventKo": "큰 군대가 됨", "eventEn": "Become vast army"},
+        {"verse": 24, "eventKo": "내 종 다윗이 왕", "eventEn": "David my servant king"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 38,
+      "titleKo": "곡과 마곡의 침략",
+      "titleEn": "Invasion of Gog and Magog",
+      "summaryKo": "마지막 때 곡과 마곡이 이스라엘을 침략하나 하나님이 심판하심을 예언합니다.",
+      "summaryEn": "Prophesies Gog and Magog's end-time invasion of Israel and God's judgment on them.",
+      "messageKo": "마지막 적도 하나님의 심판을 피할 수 없습니다.",
+      "messageEn": "Even the final enemy cannot escape God's judgment.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "마곡 땅의 곡", "eventEn": "Gog of land of Magog"},
+        {"verse": 14, "eventKo": "이스라엘을 침략", "eventEn": "Invade Israel"},
+        {"verse": 19, "eventKo": "큰 지진", "eventEn": "Great earthquake"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 39,
+      "titleKo": "곡의 멸망",
+      "titleEn": "Destruction of Gog",
+      "summaryKo": "곡과 그 연합군의 완전한 멸망을 예언합니다.",
+      "summaryEn": "Prophesies the complete destruction of Gog and his allies.",
+      "messageKo": "하나님은 최후에 완전한 승리를 거두십니다.",
+      "messageEn": "God achieves complete victory in the end.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "이스라엘 산에서 쓰러짐", "eventEn": "Fall on mountains of Israel"},
+        {"verse": 9, "eventKo": "7년 동안 불 땔 것", "eventEn": "Burn weapons for 7 years"},
+        {"verse": 12, "eventKo": "7개월 장사", "eventEn": "7 months for burial"},
+        {"verse": 29, "eventKo": "내 영을 부음", "eventEn": "Pour out my Spirit"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 40,
+      "titleKo": "새 성전 환상의 시작",
+      "titleEn": "Vision of the New Temple Begins",
+      "summaryKo": "새 성전의 환상이 시작되며 성전 문과 뜰의 치수를 측량합니다.",
+      "summaryEn": "The vision of the new temple begins with measurements of gates and courts.",
+      "messageKo": "하나님은 완전한 예배의 장소를 계획하십니다.",
+      "messageEn": "God plans a perfect place of worship.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "이스라엘 땅으로 데려감", "eventEn": "Brought to land of Israel"},
+        {"verse": 3, "eventKo": "놋 같은 사람", "eventEn": "Man like bronze"},
+        {"verse": 5, "eventKo": "성전 측량 시작", "eventEn": "Temple measurement begins"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 41,
+      "titleKo": "성전 본관",
+      "titleEn": "The Temple Proper",
+      "summaryKo": "성전 본관의 구조와 장식을 상세히 묘사합니다.",
+      "summaryEn": "Describes in detail the structure and decorations of the temple proper.",
+      "messageKo": "하나님의 집은 세밀하게 계획되어 있습니다.",
+      "messageEn": "God's house is meticulously planned.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "성소 측량", "eventEn": "Sanctuary measured"},
+        {"verse": 4, "eventKo": "지성소", "eventEn": "Most Holy Place"},
+        {"verse": 18, "eventKo": "그룹과 종려나무", "eventEn": "Cherubim and palm trees"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 42,
+      "titleKo": "제사장 방들",
+      "titleEn": "Priests' Chambers",
+      "summaryKo": "제사장들이 사용할 방들과 성역의 경계를 측량합니다.",
+      "summaryEn": "Measures the priests' chambers and boundaries of the sacred area.",
+      "messageKo": "거룩한 것과 속된 것은 구별되어야 합니다.",
+      "messageEn": "The holy and the common must be separated.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "북쪽 방들", "eventEn": "Northern rooms"},
+        {"verse": 13, "eventKo": "지극히 거룩한 것을 먹음", "eventEn": "Eat most holy offerings"},
+        {"verse": 20, "eventKo": "거룩한 것과 속된 것을 구별", "eventEn": "Separate holy from common"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 43,
+      "titleKo": "하나님의 영광이 돌아옴",
+      "titleEn": "God's Glory Returns",
+      "summaryKo": "하나님의 영광이 동쪽 문으로 성전에 돌아옵니다.",
+      "summaryEn": "God's glory returns to the temple through the east gate.",
+      "messageKo": "하나님의 영광이 떠났던 곳으로 다시 돌아옵니다.",
+      "messageEn": "God's glory returns to the place it had departed from.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "영광이 동쪽에서 옴", "eventEn": "Glory comes from east"},
+        {"verse": 4, "eventKo": "동문으로 들어옴", "eventEn": "Enters through east gate"},
+        {"verse": 7, "eventKo": "영원히 거하리라", "eventEn": "Will dwell forever"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 44,
+      "titleKo": "동문과 제사장 규례",
+      "titleEn": "East Gate and Priestly Regulations",
+      "summaryKo": "동문이 닫히는 이유와 제사장들의 규례를 설명합니다.",
+      "summaryEn": "Explains why the east gate is shut and gives regulations for priests.",
+      "messageKo": "하나님을 섬기는 자들은 거룩해야 합니다.",
+      "messageEn": "Those who serve God must be holy.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "동문이 닫힘", "eventEn": "East gate shut"},
+        {"verse": 15, "eventKo": "사독 자손 제사장", "eventEn": "Zadokite priests"},
+        {"verse": 23, "eventKo": "거룩과 속됨을 가르침", "eventEn": "Teach holy from common"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 45,
+      "titleKo": "거룩한 땅의 분배",
+      "titleEn": "Division of Holy Land",
+      "summaryKo": "성역과 왕과 백성을 위한 땅 분배와 절기 규례를 설명합니다.",
+      "summaryEn": "Explains land division for sanctuary, prince, and people, along with festival regulations.",
+      "messageKo": "하나님 나라에서 모든 것은 공정하게 분배됩니다.",
+      "messageEn": "In God's kingdom, everything is distributed fairly.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "거룩한 땅을 드림", "eventEn": "Sacred portion of land"},
+        {"verse": 7, "eventKo": "왕의 땅", "eventEn": "Prince's land"},
+        {"verse": 21, "eventKo": "유월절 규례", "eventEn": "Passover regulations"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 46,
+      "titleKo": "왕과 백성의 예배",
+      "titleEn": "Worship of Prince and People",
+      "summaryKo": "왕과 백성의 예배 규례와 절기 제사를 상세히 설명합니다.",
+      "summaryEn": "Details worship regulations for the prince and people, including festival offerings.",
+      "messageKo": "예배에는 질서와 규례가 있습니다.",
+      "messageEn": "Worship has order and regulations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "안식일에 문을 염", "eventEn": "Gate opened on Sabbath"},
+        {"verse": 9, "eventKo": "절기에 예배", "eventEn": "Worship at festivals"},
+        {"verse": 16, "eventKo": "왕의 상속 규례", "eventEn": "Prince's inheritance"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 47,
+      "titleKo": "성전에서 흐르는 강",
+      "titleEn": "River from the Temple",
+      "summaryKo": "성전 문지방에서 흘러나와 사해를 살리는 생명의 강을 환상으로 봅니다.",
+      "summaryEn": "Sees a vision of a life-giving river flowing from the temple threshold, making the Dead Sea alive.",
+      "messageKo": "하나님의 생명은 흘러가서 죽은 것도 살립니다.",
+      "messageEn": "God's life flows out and revives even the dead.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "문지방에서 물이 솟음", "eventEn": "Water from threshold"},
+        {"verse": 8, "eventKo": "사해를 살림", "eventEn": "Heals the Dead Sea"},
+        {"verse": 12, "eventKo": "강가의 나무", "eventEn": "Trees along the river"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 48,
+      "titleKo": "땅의 분배와 새 예루살렘",
+      "titleEn": "Land Division and New Jerusalem",
+      "summaryKo": "열두 지파에게 땅을 분배하고 새 예루살렘의 이름을 선포합니다.",
+      "summaryEn": "Divides land among twelve tribes and proclaims the name of the new Jerusalem.",
+      "messageKo": "여호와 삼마: 여호와께서 거기 계시다.",
+      "messageEn": "Yahweh Shammah: The LORD is there.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "지파별 땅 분배", "eventEn": "Land by tribes"},
+        {"verse": 30, "eventKo": "성읍의 문들", "eventEn": "Gates of the city"},
+        {"verse": 35, "eventKo": "여호와 삼마", "eventEn": "The LORD is there"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

@@ -99,6 +99,14 @@ struct SlotMachineView: View {
                 scrollPosition = newValue
             }
         }
+        .onAppear {
+            // Only sync on first appear (when scrollPosition is nil from view creation)
+            // This fixes tap/scroll mode switch bug while NOT affecting overlay returns
+            // (returning from chat, favorites, etc. preserves scrollPosition)
+            if scrollPosition == nil {
+                scrollPosition = viewModel.currentVerseIndex
+            }
+        }
         .task {
             await viewModel.loadCurrentChapter()
         }
