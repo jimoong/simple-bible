@@ -559,6 +559,7 @@ struct BibleTimelineContentView: View {
     var topPadding: CGFloat = 0
     var currentBook: BibleBook? = nil
     var searchText: String = ""
+    @Binding var scrollToBottomTrigger: Bool
     var onBookSelect: ((BibleBook) -> Void)? // Called when a Bible book is tapped
     
     @State private var timelineItems: [TimelineItem] = []
@@ -566,6 +567,22 @@ struct BibleTimelineContentView: View {
     @State private var selectedItem: TimelineItem? // For historical events only
     @State private var hasRestoredScrollPosition = false
     @State private var glowAnimating = false
+    
+    init(
+        languageMode: LanguageMode,
+        topPadding: CGFloat = 0,
+        currentBook: BibleBook? = nil,
+        searchText: String = "",
+        scrollToBottomTrigger: Binding<Bool> = .constant(false),
+        onBookSelect: ((BibleBook) -> Void)? = nil
+    ) {
+        self.languageMode = languageMode
+        self.topPadding = topPadding
+        self.currentBook = currentBook
+        self.searchText = searchText
+        self._scrollToBottomTrigger = scrollToBottomTrigger
+        self.onBookSelect = onBookSelect
+    }
     
     // Layout constants
     private let axisWidth: CGFloat = 2
@@ -615,6 +632,11 @@ struct BibleTimelineContentView: View {
                     
                     // Era-based timeline
                     timelineContent
+                    
+                    // Bottom anchor for scroll-to-bottom
+                    Color.clear
+                        .frame(height: 1)
+                        .id("timelineBottom")
                         .padding(.bottom, 120)  // Space for bottom bar
                 }
             }
@@ -631,6 +653,12 @@ struct BibleTimelineContentView: View {
             .onChange(of: eras) { _, _ in
                 // Always start at the top
                 hasRestoredScrollPosition = true
+            }
+            .onChange(of: scrollToBottomTrigger) { _, _ in
+                // Scroll to bottom when triggered
+                withAnimation(.easeOut(duration: 0.4)) {
+                    proxy.scrollTo("timelineBottom", anchor: .bottom)
+                }
             }
         }
         .onAppear {

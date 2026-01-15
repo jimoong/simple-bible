@@ -21,6 +21,8 @@ struct BookGridView: View {
     @State private var searchSelectedVerse: Int? = nil       // Verse selected via search autocomplete
     @State private var searchVerses: [BibleVerse] = []       // Loaded verses for verse selection
     @State private var isLoadingVerses: Bool = false
+    @State private var scrollToBottomTrigger: Bool = false   // Trigger to scroll to bottom of book grid
+    @State private var timelineScrollToBottomTrigger: Bool = false  // Trigger to scroll to bottom of timeline
     
     private let columns = [
         GridItem(.flexible(), spacing: 10),
@@ -165,6 +167,7 @@ struct BookGridView: View {
                     topPadding: topPadding,
                     currentBook: viewModel.currentBook,
                     searchText: searchText,
+                    scrollToBottomTrigger: $timelineScrollToBottomTrigger,
                     onBookSelect: { book in
                         // Navigate to chapter grid when tapped in timeline
                         if let onBookSelect {
@@ -181,34 +184,46 @@ struct BookGridView: View {
                     .transition(.opacity)
             } else {
                 // Normal mode: Books grid with sections (title scrolls with content)
-                ScrollView {
-                    VStack(spacing: 24) {
-                        // Title (scrollable)
-                        titleBar
-                            .padding(.top, topPadding + 16)
-                        
-                        // Favorites section (only if has favorites)
-                        if FavoriteService.shared.hasFavorites && searchText.isEmpty {
-                            favoritesSection
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        VStack(spacing: 24) {
+                            // Title (scrollable)
+                            titleBar
+                                .padding(.top, topPadding + 16)
+                            
+                            // Favorites section (only if has favorites)
+                            if FavoriteService.shared.hasFavorites && searchText.isEmpty {
+                                favoritesSection
+                            }
+                            
+                            // Old Testament section
+                            if !oldTestamentBooks.isEmpty {
+                                bookSection(
+                                    title: viewModel.uiLanguage == .kr ? "구약" : "Old Testament",
+                                    books: oldTestamentBooks
+                                )
+                            }
+                            
+                            // New Testament section
+                            if !newTestamentBooks.isEmpty {
+                                bookSection(
+                                    title: viewModel.uiLanguage == .kr ? "신약" : "New Testament",
+                                    books: newTestamentBooks
+                                )
+                            }
+                            
+                            // Bottom anchor for scroll-to-bottom
+                            Color.clear
+                                .frame(height: 1)
+                                .id("bookGridBottom")
                         }
-                        
-                        // Old Testament section
-                        if !oldTestamentBooks.isEmpty {
-                            bookSection(
-                                title: viewModel.uiLanguage == .kr ? "구약" : "Old Testament",
-                                books: oldTestamentBooks
-                            )
-                        }
-                        
-                        // New Testament section
-                        if !newTestamentBooks.isEmpty {
-                            bookSection(
-                                title: viewModel.uiLanguage == .kr ? "신약" : "New Testament",
-                                books: newTestamentBooks
-                            )
+                        .padding(.bottom, 120)  // Space for bottom controls
+                    }
+                    .onChange(of: scrollToBottomTrigger) { _, _ in
+                        withAnimation(.easeOut(duration: 0.4)) {
+                            proxy.scrollTo("bookGridBottom", anchor: .bottom)
                         }
                     }
-                    .padding(.bottom, 120)  // Space for bottom controls
                 }
                 .transition(.opacity)
             }
@@ -457,6 +472,7 @@ struct BookGridView: View {
                 )
                 .font(.system(size: 16))
                 .foregroundStyle(.white)
+                .keyboardType(searchSelectedBook != nil ? .numbersAndPunctuation : .default)
                 .focused($isSearchFocused)
                 .onSubmit {
                     // Enter/Return: Navigate based on current search state
@@ -700,8 +716,18 @@ struct BookGridView: View {
             // Temporarily hide alphabetical (A-Z) option
             ForEach(BookSortOrder.allCases.filter { $0 != .alphabetical }, id: \.self) { order in
                 Button {
-                    withAnimation(.easeOut(duration: 0.2)) {
-                        viewModel.sortOrder = order
+                    if isOrderSelected(order) {
+                        // Already selected - scroll to bottom
+                        if order == .timeline {
+                            timelineScrollToBottomTrigger.toggle()
+                        } else {
+                            scrollToBottomTrigger.toggle()
+                        }
+                    } else {
+                        // Switch to this order
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            viewModel.sortOrder = order
+                        }
                     }
                     HapticManager.shared.selection()
                 } label: {
