@@ -1033,6 +1033,44 @@ struct BookGridView: View {
     }
 }
 
+// MARK: - Circular Progress Indicator (Pie Chart Style)
+struct CircularProgressIndicator: View {
+    let progress: Double  // 0.0 to 1.0
+    let size: CGFloat
+    let lineWidth: CGFloat
+    
+    init(progress: Double, size: CGFloat = 16, lineWidth: CGFloat = 2) {
+        self.progress = progress
+        self.size = size
+        self.lineWidth = lineWidth
+    }
+    
+    var body: some View {
+        ZStack {
+            // Background circle (track)
+            Circle()
+                .stroke(Color.white.opacity(0.3), lineWidth: lineWidth)
+            
+            // Progress arc
+            Circle()
+                .trim(from: 0, to: progress)
+                .stroke(
+                    Color.white,
+                    style: StrokeStyle(lineWidth: lineWidth, lineCap: .round)
+                )
+                .rotationEffect(.degrees(-90))
+            
+            // Checkmark for completed
+            if progress >= 1.0 {
+                Image(systemName: "checkmark")
+                    .font(.system(size: size * 0.45, weight: .bold))
+                    .foregroundStyle(.white)
+            }
+        }
+        .frame(width: size, height: size)
+    }
+}
+
 struct BookCell: View {
     let book: BibleBook
     let language: LanguageMode
@@ -1046,6 +1084,11 @@ struct BookCell: View {
         ReadingProgressTracker.shared.isBookFullyRead(book: book)
     }
     
+    private var readProgress: Double {
+        let readCount = ReadingProgressTracker.shared.readChapterCount(for: book)
+        return Double(readCount) / Double(book.chapterCount)
+    }
+    
     // Very dark grey for fully read books (slightly brighter than pure black)
     private var cellBackground: Color {
         if isFullyRead {
@@ -1056,7 +1099,7 @@ struct BookCell: View {
     }
     
     var body: some View {
-        ZStack {
+        ZStack(alignment: .topTrailing) {
             VStack(spacing: 6) {
                 Text(book.abbreviation(for: language))
                     .font(theme.display(24, language: language))
@@ -1082,18 +1125,11 @@ struct BookCell: View {
                     .stroke(isSelected ? theme.accent : Color.clear, lineWidth: 2)
             )
             
-            // Checkmark indicator for fully read books
-            if isFullyRead {
-                VStack {
-                    HStack {
-                        Spacer()
-                        Image(systemName: "checkmark.circle.fill")
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(.white.opacity(0.4))
-                            .padding(8)
-                    }
-                    Spacer()
-                }
+            // Progress indicator (only show if there's any progress)
+            if readProgress > 0 {
+                CircularProgressIndicator(progress: readProgress, size: 14, lineWidth: 1.5)
+                    .padding(.top, 12)
+                    .padding(.trailing, 12)
             }
         }
     }
@@ -1115,6 +1151,11 @@ struct BookListCell: View {
     
     private var isFullyRead: Bool {
         ReadingProgressTracker.shared.isBookFullyRead(book: book)
+    }
+    
+    private var readProgress: Double {
+        let readCount = ReadingProgressTracker.shared.readChapterCount(for: book)
+        return Double(readCount) / Double(book.chapterCount)
     }
     
     private var cellBackground: Color {
@@ -1170,12 +1211,11 @@ struct BookListCell: View {
                     .stroke(isSelected ? theme.accent : Color.clear, lineWidth: 2)
             )
             
-            // Checkmark indicator for fully read books
-            if isFullyRead {
-                Image(systemName: "checkmark.circle.fill")
-                    .font(.system(size: 10, weight: .semibold))
-                    .foregroundStyle(.white.opacity(0.4))
-                    .padding(8)
+            // Progress indicator (only show if there's any progress)
+            if readProgress > 0 {
+                CircularProgressIndicator(progress: readProgress, size: 16, lineWidth: 2)
+                    .padding(.top, 12)
+                    .padding(.trailing, 12)
             }
         }
         .frame(maxWidth: .infinity) // Center in column
