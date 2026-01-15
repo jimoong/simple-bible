@@ -244,8 +244,15 @@ struct GamalielChatView: View {
                     .lineLimit(1...4)
                     .focused($isInputFocused)
                     .submitLabel(.send)
-                    .onSubmit {
-                        viewModel.sendMessage()
+                    .onChange(of: viewModel.inputText) { oldValue, newValue in
+                        // Detect Enter key (newline) and send message instead
+                        if newValue.contains("\n") && !oldValue.contains("\n") {
+                            // Remove the newline and send
+                            viewModel.inputText = newValue.replacingOccurrences(of: "\n", with: "")
+                            if !viewModel.inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                                viewModel.sendMessage()
+                            }
+                        }
                     }
                 
                 // Send button (inside input field, appears when there's text)
@@ -266,16 +273,23 @@ struct GamalielChatView: View {
             .frame(maxWidth: .infinity)
             .glassBackground(.capsule, intensity: .ultraThin)
             
-            // Close button - same as search close button
+            // Close/Dismiss keyboard button
             Button {
-                viewModel.close()
+                if isInputFocused {
+                    // Dismiss keyboard
+                    isInputFocused = false
+                } else {
+                    // Close chat
+                    viewModel.close()
+                }
             } label: {
-                Image(systemName: "xmark")
+                Image(systemName: isInputFocused ? "chevron.down" : "xmark")
                     .font(.system(size: 17, weight: .medium))
                     .foregroundStyle(.white)
                     .frame(width: 48, height: 48)
             }
             .buttonStyle(.glassCircleUltraThin)
+            .animation(.easeInOut(duration: 0.2), value: isInputFocused)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 12)
