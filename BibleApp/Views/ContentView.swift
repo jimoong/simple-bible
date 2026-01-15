@@ -50,6 +50,8 @@ struct ContentView: View {
                             handleSaveVerse(verse)
                         }, onCopyVerse: { verse in
                             handleCopyVerse(verse)
+                        }, onAskVerse: { verse in
+                            handleAskVerse(verse)
                         })
                     } else {
                         BookReadingView(viewModel: viewModel, onHeaderTap: {
@@ -58,6 +60,8 @@ struct ContentView: View {
                             handleSaveVerse(verse)
                         }, onCopyVerse: { verse in
                             handleCopyVerse(verse)
+                        }, onAskVerse: { verse in
+                            handleAskVerse(verse)
                         })
                     }
                 }
@@ -469,6 +473,17 @@ struct ContentView: View {
         let reference = "\(viewModel.currentBook.name(for: viewModel.uiLanguage)) \(verse.chapter):\(verse.verseNumber)"
         UIPasteboard.general.string = "\(text)\n— \(reference)"
         HapticManager.shared.success()
+    }
+    
+    private func handleAskVerse(_ verse: BibleVerse) {
+        let attachedVerse = AttachedVerse(
+            book: viewModel.currentBook,
+            chapter: verse.chapter,
+            verseNumber: verse.verseNumber,
+            text: verse.text(for: viewModel.uiLanguage)
+        )
+        gamalielViewModel.openWithVerse(attachedVerse, languageMode: viewModel.uiLanguage)
+        HapticManager.shared.selection()
     }
     
     // MARK: - Left Action Buttons

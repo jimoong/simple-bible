@@ -5,6 +5,7 @@ struct BookReadingView: View {
     var onHeaderTap: () -> Void = {}
     var onSaveVerse: ((BibleVerse) -> Void)? = nil
     var onCopyVerse: ((BibleVerse) -> Void)? = nil
+    var onAskVerse: ((BibleVerse) -> Void)? = nil
     
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
@@ -166,6 +167,9 @@ struct BookReadingView: View {
                             },
                             onCopy: {
                                 onCopyVerse?(verse)
+                            },
+                            onAsk: {
+                                onAskVerse?(verse)
                             }
                         )
                         .id(verse.verseNumber)
@@ -292,6 +296,7 @@ struct BookVerseRow: View {
     var isHighlighted: Bool = false
     var onSave: (() -> Void)? = nil
     var onCopy: (() -> Void)? = nil
+    var onAsk: (() -> Void)? = nil
     
     @State private var isFavorite: Bool = false
     
@@ -340,6 +345,15 @@ struct BookVerseRow: View {
                 Label(
                     language == .kr ? "복사" : "Copy",
                     systemImage: "doc.on.doc"
+                )
+            }
+            
+            Button {
+                onAsk?()
+            } label: {
+                Label(
+                    language == .kr ? "물어보기" : "Ask",
+                    systemImage: "sparkle"
                 )
             }
         }

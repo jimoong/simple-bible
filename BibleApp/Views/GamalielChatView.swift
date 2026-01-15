@@ -33,8 +33,16 @@ struct GamalielChatView: View {
     
     var body: some View {
         ZStack {
-            // Background (#0F0F0F - matches title bar tint)
-            Color(red: 15/255, green: 15/255, blue: 15/255).ignoresSafeArea()
+            // Background gradient (#0F0F0F top to #000000 bottom)
+            LinearGradient(
+                colors: [
+                    Color(red: 15/255, green: 15/255, blue: 15/255),  // #0F0F0F
+                    Color.black  // #000000
+                ],
+                startPoint: .top,
+                endPoint: .bottom
+            )
+            .ignoresSafeArea()
             
             // Chat messages (scrolls behind header and input)
             chatContent
@@ -78,6 +86,10 @@ struct GamalielChatView: View {
             // Start glow animation
             withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
                 glowAnimating = true
+            }
+            // Auto-focus input and show keyboard
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                isInputFocused = true
             }
         }
     }
@@ -144,7 +156,7 @@ struct GamalielChatView: View {
                     .fill(.ultraThinMaterial)
                     .environment(\.colorScheme, .dark)
                 // Black tint to blend with app background
-                Color.black.opacity(0.6)
+                Color.black.opacity(0.7)
             }
         }
     }
@@ -189,7 +201,11 @@ struct GamalielChatView: View {
                             languageMode: languageMode,
                             isStreaming: viewModel.isStreaming && pair.assistantMessage?.id == viewModel.streamingMessageId,
                             minHeight: conversationMinHeight,
-                            onNavigateToVerse: handleVerseTap
+                            onNavigateToVerse: handleVerseTap,
+                            onSendQuestion: { question in
+                                viewModel.inputText = question
+                                viewModel.sendMessage()
+                            }
                         )
                         .id(pair.id)
                     }
@@ -234,67 +250,140 @@ struct GamalielChatView: View {
     // MARK: - Input Area (matching search bar style)
     
     private var inputArea: some View {
-        HStack(spacing: 12) {
-            // Text input field - same style as search bar
-            HStack(spacing: 10) {
-                TextField(viewModel.inputPlaceholder, text: $viewModel.inputText, axis: .vertical)
-                    .font(.system(size: 16))
-                    .foregroundStyle(.white)
-                    .tint(.white)
-                    .lineLimit(1...4)
-                    .focused($isInputFocused)
-                    .submitLabel(.send)
-                    .onChange(of: viewModel.inputText) { oldValue, newValue in
-                        // Detect Enter key (newline) and send message instead
-                        if newValue.contains("\n") && !oldValue.contains("\n") {
-                            // Remove the newline and send
-                            viewModel.inputText = newValue.replacingOccurrences(of: "\n", with: "")
-                            if !viewModel.inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                                viewModel.sendMessage()
-                            }
+        VStack(spacing: 8) {
+            // Attached verse bubble (above input, centered)
+            if let attachedVerse = viewModel.attachedVerse {
+                AttachedVerseBubble(
+                    verse: attachedVerse,
+                    onRemove: {
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            viewModel.clearAttachedVerse()
                         }
                     }
-                
-                // Send button (inside input field, appears when there's text)
-                if !viewModel.inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                    Button {
-                        viewModel.sendMessage()
-                    } label: {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .font(.system(size: 24))
-                            .foregroundStyle(.white)
-                    }
-                    .disabled(viewModel.isThinking)
-                    .transition(.scale.combined(with: .opacity))
-                }
+                )
+                .transition(.scale.combined(with: .opacity))
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 12)
-            .frame(maxWidth: .infinity)
-            .glassBackground(.capsule, intensity: .ultraThin)
             
-            // Close/Dismiss keyboard button
-            Button {
-                if isInputFocused {
-                    // Dismiss keyboard
-                    isInputFocused = false
-                } else {
-                    // Close chat
-                    viewModel.close()
+            HStack(spacing: 12) {
+                // Text input field - same style as search bar
+                HStack(spacing: 10) {
+                    TextField(viewModel.inputPlaceholder, text: $viewModel.inputText, axis: .vertical)
+                        .font(.system(size: 16))
+                        .foregroundStyle(.white)
+                        .tint(.white)
+                        .lineLimit(1...4)
+                        .focused($isInputFocused)
+                        .submitLabel(.send)
+                        .onChange(of: viewModel.inputText) { oldValue, newValue in
+                            // Detect Enter key (newline) and send message instead
+                            if newValue.contains("\n") && !oldValue.contains("\n") {
+                                // Remove the newline and send
+                                viewModel.inputText = newValue.replacingOccurrences(of: "\n", with: "")
+                                if !viewModel.inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                                    viewModel.sendMessage()
+                                }
+                            }
+                        }
+                    
+                    // Send button (inside input field, appears when there's text)
+                    if !viewModel.inputText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                        Button {
+                            viewModel.sendMessage()
+                        } label: {
+                            Image(systemName: "arrow.up.circle.fill")
+                                .font(.system(size: 24))
+                                .foregroundStyle(.white)
+                        }
+                        .disabled(viewModel.isThinking)
+                        .transition(.scale.combined(with: .opacity))
+                    }
                 }
-            } label: {
-                Image(systemName: isInputFocused ? "chevron.down" : "xmark")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(.white)
-                    .frame(width: 48, height: 48)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .frame(maxWidth: .infinity)
+                .glassBackground(.capsule, intensity: .ultraThin)
+                
+                // Close/Dismiss keyboard button
+                Button {
+                    if isInputFocused {
+                        // Dismiss keyboard
+                        isInputFocused = false
+                    } else {
+                        // Close chat
+                        viewModel.close()
+                    }
+                } label: {
+                    Image(systemName: isInputFocused ? "chevron.down" : "xmark")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.white)
+                        .frame(width: 48, height: 48)
+                }
+                .buttonStyle(.glassCircleUltraThin)
+                .animation(.easeInOut(duration: 0.2), value: isInputFocused)
             }
-            .buttonStyle(.glassCircleUltraThin)
-            .animation(.easeInOut(duration: 0.2), value: isInputFocused)
+            .padding(.horizontal, 20)
         }
-        .padding(.horizontal, 20)
         .padding(.vertical, 12)
         .padding(.bottom, safeAreaBottom)
+        .animation(.easeOut(duration: 0.2), value: viewModel.attachedVerse != nil)
         .animation(.easeOut(duration: 0.15), value: viewModel.inputText.isEmpty)
+    }
+}
+
+// MARK: - Attached Verse Bubble
+// Shows the attached verse above the input field with book-specific styling
+
+private struct AttachedVerseBubble: View {
+    let verse: AttachedVerse
+    let onRemove: () -> Void
+    
+    private var theme: BookTheme {
+        BookThemes.theme(for: verse.book.id)
+    }
+    
+    var body: some View {
+        HStack(spacing: 8) {
+            Text(verse.referenceKr)
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(theme.textSecondary)
+            
+            Button {
+                onRemove()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundStyle(theme.textSecondary.opacity(0.7))
+            }
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 14)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(theme.background)
+        )
+    }
+}
+
+// MARK: - Message Attached Verse Bubble
+// Shows the attached verse in sent messages (no remove button)
+
+private struct MessageAttachedVerseBubble: View {
+    let verse: AttachedVerse
+    
+    private var theme: BookTheme {
+        BookThemes.theme(for: verse.book.id)
+    }
+    
+    var body: some View {
+        Text(verse.referenceKr)
+            .font(.system(size: 13, weight: .medium))
+            .foregroundStyle(theme.textSecondary)
+            .padding(.horizontal, 18)
+            .padding(.vertical, 14)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(theme.background)
+            )
     }
 }
 
@@ -320,17 +409,18 @@ private struct ConversationPairView: View {
     let isStreaming: Bool
     let minHeight: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
+    var onSendQuestion: ((String) -> Void)? = nil
     
     var body: some View {
         VStack(alignment: .leading, spacing: 32) {
             // User message (if exists)
             if let userMessage = pair.userMessage {
-                MessageBubble(message: userMessage, languageMode: languageMode, onNavigateToVerse: nil)
+                MessageBubble(message: userMessage, languageMode: languageMode, onNavigateToVerse: nil, onSendQuestion: nil)
             }
             
             // Assistant message (if exists)
             if let assistantMessage = pair.assistantMessage {
-                MessageBubble(message: assistantMessage, languageMode: languageMode, onNavigateToVerse: onNavigateToVerse)
+                MessageBubble(message: assistantMessage, languageMode: languageMode, onNavigateToVerse: onNavigateToVerse, onSendQuestion: onSendQuestion)
             }
         }
         .frame(minHeight: shouldUseMinHeight ? minHeight : nil, alignment: .top)
@@ -362,6 +452,7 @@ private struct MessageBubble: View {
     let message: GamalielMessage
     let languageMode: LanguageMode
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
+    var onSendQuestion: ((String) -> Void)? = nil
     
     // Text constants
     private let chatFontSize: CGFloat = 16
@@ -393,15 +484,21 @@ private struct MessageBubble: View {
                             text: paragraph,
                             font: serifFont(chatFontSize),
                             lineSpacing: chatLineSpacing,
-                            onNavigateToVerse: onNavigateToVerse
+                            onNavigateToVerse: onNavigateToVerse,
+                            onSendQuestion: onSendQuestion
                         )
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             } else {
                 // User message - with bubble (max 80% of screen width, right-aligned bubble, left-aligned text)
-                HStack {
-                    Spacer()
+                VStack(alignment: .trailing, spacing: 2) {
+                    // Attached verse bubble (if present)
+                    if let attachedVerse = message.attachedVerse {
+                        MessageAttachedVerseBubble(verse: attachedVerse)
+                    }
+                    
+                    // User message bubble
                     Text(message.content)
                         .font(serifFont(15))
                         .foregroundStyle(.white.opacity(0.95))
@@ -416,6 +513,7 @@ private struct MessageBubble: View {
                         )
                         .frame(maxWidth: UIScreen.main.bounds.width * 0.8, alignment: .trailing)
                 }
+                .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }
     }
@@ -429,6 +527,7 @@ private struct BibleReferenceTextView: View {
     let font: Font
     let lineSpacing: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
+    var onSendQuestion: ((String) -> Void)? = nil
     
     // Parsed reference for tap handling
     private struct ParsedRef {
@@ -563,7 +662,8 @@ private struct BibleReferenceTextView: View {
                                 content: item,
                                 font: font,
                                 lineSpacing: lineSpacing,
-                                onNavigateToVerse: onNavigateToVerse
+                                onNavigateToVerse: onNavigateToVerse,
+                                onSendQuestion: onSendQuestion
                             )
                         }
                     }
@@ -576,7 +676,8 @@ private struct BibleReferenceTextView: View {
                                 content: item.content,
                                 font: font,
                                 lineSpacing: lineSpacing,
-                                onNavigateToVerse: onNavigateToVerse
+                                onNavigateToVerse: onNavigateToVerse,
+                                onSendQuestion: onSendQuestion
                             )
                         }
                     }
@@ -681,6 +782,12 @@ private struct BulletItemView: View {
     let font: Font
     let lineSpacing: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
+    var onSendQuestion: ((String) -> Void)? = nil
+    
+    // Check if this item is a question (ends with ?)
+    private var isQuestion: Bool {
+        content.trimmingCharacters(in: .whitespaces).hasSuffix("?")
+    }
     
     // Parsed reference for tap handling
     private struct ParsedRef {
@@ -690,13 +797,18 @@ private struct BulletItemView: View {
         let verse: Int?
     }
     
+    // Text color based on whether this is a question
+    private var textColor: Color {
+        isQuestion ? Color(hex: "C2BBA8") : .white.opacity(0.95)
+    }
+    
     var body: some View {
         let (attributedText, refs) = buildAttributedText(from: content)
         
         HStack(alignment: .top, spacing: 8) {
             Text("•")
                 .font(font)
-                .foregroundStyle(.white.opacity(0.95))
+                .foregroundStyle(textColor)
                 .offset(y: 2)  // Fine-tune vertical alignment with text
             
             Text(attributedText)
@@ -716,6 +828,12 @@ private struct BulletItemView: View {
                     return .systemAction
                 })
         }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            if isQuestion {
+                onSendQuestion?(content)
+            }
+        }
     }
     
     // Build AttributedString with styled Bible references as tappable links
@@ -787,7 +905,7 @@ private struct BulletItemView: View {
         } else {
             result = AttributedString(text)
         }
-        result.foregroundColor = .white.opacity(0.95)
+        result.foregroundColor = textColor
         return result
     }
 }
@@ -801,6 +919,17 @@ private struct OrderedItemView: View {
     let font: Font
     let lineSpacing: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
+    var onSendQuestion: ((String) -> Void)? = nil
+    
+    // Check if this item is a question (ends with ?)
+    private var isQuestion: Bool {
+        content.trimmingCharacters(in: .whitespaces).hasSuffix("?")
+    }
+    
+    // Text color based on whether this is a question
+    private var textColor: Color {
+        isQuestion ? Color(hex: "C2BBA8") : .white.opacity(0.95)
+    }
     
     // Parsed reference for tap handling
     private struct ParsedRef {
@@ -817,7 +946,7 @@ private struct OrderedItemView: View {
             // Number with fixed width for alignment
             Text("\(number).")
                 .font(font)
-                .foregroundStyle(.white.opacity(0.95))
+                .foregroundStyle(textColor)
                 .frame(minWidth: 20, alignment: .trailing)
             
             Text(attributedText)
@@ -836,6 +965,12 @@ private struct OrderedItemView: View {
                     return .systemAction
                 })
         }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            if isQuestion {
+                onSendQuestion?(content)
+            }
+        }
     }
     
     // Build AttributedString with styled Bible references as tappable links
@@ -907,7 +1042,7 @@ private struct OrderedItemView: View {
         } else {
             result = AttributedString(text)
         }
-        result.foregroundColor = .white.opacity(0.95)
+        result.foregroundColor = textColor
         return result
     }
 }

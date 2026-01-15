@@ -14,10 +14,31 @@ struct GamalielMessage: Identifiable, Equatable {
     let role: MessageRole
     var content: String  // Mutable for streaming
     let timestamp: Date
+    var attachedVerse: AttachedVerse? = nil  // Optional attached verse for user messages
     
     enum MessageRole: String, Equatable {
         case user
         case assistant
+    }
+}
+
+/// Attached verse for context-aware questions
+struct AttachedVerse: Equatable {
+    let book: BibleBook
+    let chapter: Int
+    let verseNumber: Int
+    let text: String
+    
+    var referenceKr: String {
+        "\(book.nameKr) \(chapter)장 \(verseNumber)절"
+    }
+    
+    var referenceEn: String {
+        "\(book.nameEn) \(chapter):\(verseNumber)"
+    }
+    
+    func reference(for language: LanguageMode) -> String {
+        language == .kr ? referenceKr : referenceEn
     }
 }
 
@@ -32,6 +53,7 @@ final class GamalielViewModel {
     var inputText: String = ""
     var isStreaming = false  // Track if response is currently streaming
     var streamingMessageId: UUID? = nil  // ID of message being streamed
+    var attachedVerse: AttachedVerse? = nil  // Verse attached to next message
     
     // MARK: - Settings
     private var language: LanguageMode = .kr
@@ -107,34 +129,83 @@ final class GamalielViewModel {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { return }
         
-        // Add user message
+        // Capture attached verse before clearing
+        let currentAttachedVerse = attachedVerse
+        
+        // Add user message with attached verse
         let userMessage = GamalielMessage(
             role: .user,
             content: text,
-            timestamp: Date()
+            timestamp: Date(),
+            attachedVerse: currentAttachedVerse
         )
         messages.append(userMessage)
         inputText = ""
+        attachedVerse = nil  // Clear attachment after sending
         
         // Start thinking
         state = .thinking
         HapticManager.shared.lightClick()
         
-        // Send to API
+        // Send to API with verse context
         Task {
-            await fetchResponse(for: text)
+            await fetchResponse(for: text, verseContext: currentAttachedVerse)
         }
     }
     
-    private func fetchResponse(for question: String) async {
+    func clearAttachedVerse() {
+        attachedVerse = nil
+    }
+    
+    /// Open chat with an attached verse for asking questions
+    func openWithVerse(_ verse: AttachedVerse, languageMode: LanguageMode) {
+        self.language = languageMode
+        self.attachedVerse = verse
+        showOverlay = true
+        state = .idle
+        
+        // Add welcome message if no messages
+        if messages.isEmpty {
+            messages.append(GamalielMessage(
+                role: .assistant,
+                content: welcomeMessage,
+                timestamp: Date()
+            ))
+        }
+    }
+    
+    private func fetchResponse(for question: String, verseContext: AttachedVerse? = nil) async {
         do {
+            // Build the question with verse context if provided
+            var fullQuestion = question
+            if let verse = verseContext {
+                let contextPrefix = language == .kr
+                    ? "다음 성경 구절을 참고하여 답변해 주세요:\n\(verse.referenceKr): \"\(verse.text)\"\n\n질문: "
+                    : "Please answer with reference to this Bible verse:\n\(verse.referenceEn): \"\(verse.text)\"\n\nQuestion: "
+                fullQuestion = contextPrefix + question
+            }
+            
             // Build conversation history for context (Gemini uses "model" instead of "assistant")
-            let conversationMessages = messages.suffix(10).map { msg in
-                GamalielService.ChatMessage(
+            var conversationMessages = messages.dropLast().suffix(9).map { msg in
+                // For messages with attached verses, include the context
+                var content = msg.content
+                if let attachedVerse = msg.attachedVerse, msg.role == .user {
+                    let prefix = language == .kr
+                        ? "[\(attachedVerse.referenceKr) 참조]\n"
+                        : "[Ref: \(attachedVerse.referenceEn)]\n"
+                    content = prefix + content
+                }
+                return GamalielService.ChatMessage(
                     role: msg.role == .user ? "user" : "model",
-                    content: msg.content
+                    content: content
                 )
             }
+            
+            // Add current question with context
+            conversationMessages.append(GamalielService.ChatMessage(
+                role: "user",
+                content: fullQuestion
+            ))
             
             // Create placeholder message for streaming
             let assistantMessage = GamalielMessage(

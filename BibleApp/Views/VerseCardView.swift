@@ -7,6 +7,7 @@ struct VerseCardView: View {
     let isCentered: Bool
     var onSave: (() -> Void)? = nil
     var onCopy: (() -> Void)? = nil
+    var onAsk: (() -> Void)? = nil
     
     // Dynamic font sizing based on character count
     // Progressively smaller fonts for longer verses
@@ -91,6 +92,15 @@ struct VerseCardView: View {
                 Label(
                     language == .kr ? "복사" : "Copy",
                     systemImage: "doc.on.doc"
+                )
+            }
+            
+            Button {
+                onAsk?()
+            } label: {
+                Label(
+                    language == .kr ? "물어보기" : "Ask",
+                    systemImage: "sparkle"
                 )
             }
         }

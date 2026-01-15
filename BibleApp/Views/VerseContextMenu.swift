@@ -17,6 +17,7 @@ struct VerseSelectionOverlay: View {
     let anchorPosition: CGPoint
     let onSave: () -> Void
     let onCopy: () -> Void
+    let onAsk: () -> Void
     let onDismiss: () -> Void
     
     @State private var isAppearing = false
@@ -168,6 +169,24 @@ struct VerseSelectionOverlay: View {
                 .contentShape(Rectangle())
             }
             .buttonStyle(.plain)
+            
+            Divider()
+            
+            // Ask action
+            Button {
+                onAsk()
+            } label: {
+                HStack {
+                    Text(language == .kr ? "물어보기" : "Ask")
+                    Spacer()
+                    Image(systemName: "sparkle")
+                }
+                .font(.system(size: 17))
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
         }
         .frame(width: 200)
         .background(.regularMaterial)
@@ -200,6 +219,7 @@ struct VerseSelectionOverlay: View {
         anchorPosition: CGPoint(x: 200, y: 400),
         onSave: {},
         onCopy: {},
+        onAsk: {},
         onDismiss: {}
     )
 }
