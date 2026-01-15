@@ -10,6 +10,8 @@ struct SlotMachineView: View {
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
     @State private var isScrubbing: Bool = false
+    @State private var scrubberTouchY: CGFloat = 0  // Y position of touch during scrubbing
+    @State private var scrubberFrameMinY: CGFloat = 0  // Global Y position of scrubber
     
     private let swipeThreshold: CGFloat = 100
     
@@ -33,36 +35,43 @@ struct SlotMachineView: View {
                     } else if let error = viewModel.errorMessage {
                         errorView(error)
                     } else {
-                        HStack(spacing: 0) {
-                            verseScrollView(geometry: geometry)
-                                .contentShape(Rectangle())
-                                .onTapGesture { location in
-                                    // Top 30% = previous verse, bottom 70% = next verse
-                                    let tapY = location.y
-                                    let threshold = geometry.size.height * 0.3
-                                    // Total items includes verses + mark as read card
-                                    let maxIndex = viewModel.verses.count // Last index is the mark as read card
-                                    
-                                    if tapY < threshold {
-                                        // Top 30% - go to previous verse
-                                        let prevIndex = max((scrollPosition ?? viewModel.currentVerseIndex) - 1, 0)
-                                        guard prevIndex != scrollPosition else { return }
-                                        withAnimation(.easeOut(duration: 0.25)) {
-                                            scrollPosition = prevIndex
-                                        }
-                                    } else {
-                                        // Bottom 70% - go to next item (verse or mark as read card)
-                                        let currentPos = scrollPosition ?? viewModel.currentVerseIndex
-                                        let nextIndex = min(currentPos + 1, maxIndex)
-                                        guard nextIndex != scrollPosition else { return }
-                                        withAnimation(.easeOut(duration: 0.25)) {
-                                            scrollPosition = nextIndex
+                        ZStack(alignment: .trailing) {
+                            HStack(spacing: 0) {
+                                verseScrollView(geometry: geometry)
+                                    .contentShape(Rectangle())
+                                    .onTapGesture { location in
+                                        // Top 30% = previous verse, bottom 70% = next verse
+                                        let tapY = location.y
+                                        let threshold = geometry.size.height * 0.3
+                                        // Total items includes verses + mark as read card
+                                        let maxIndex = viewModel.verses.count // Last index is the mark as read card
+                                        
+                                        if tapY < threshold {
+                                            // Top 30% - go to previous verse
+                                            let prevIndex = max((scrollPosition ?? viewModel.currentVerseIndex) - 1, 0)
+                                            guard prevIndex != scrollPosition else { return }
+                                            withAnimation(.easeOut(duration: 0.25)) {
+                                                scrollPosition = prevIndex
+                                            }
+                                        } else {
+                                            // Bottom 70% - go to next item (verse or mark as read card)
+                                            let currentPos = scrollPosition ?? viewModel.currentVerseIndex
+                                            let nextIndex = min(currentPos + 1, maxIndex)
+                                            guard nextIndex != scrollPosition else { return }
+                                            withAnimation(.easeOut(duration: 0.25)) {
+                                                scrollPosition = nextIndex
+                                            }
                                         }
                                     }
-                                }
+                                
+                                // Verse index scrubber on right edge
+                                verseIndexScrubber(geometry: geometry)
+                            }
                             
-                            // Verse index scrubber on right edge
-                            verseIndexScrubber(geometry: geometry)
+                            // Scrubbing verse number overlay
+                            if isScrubbing {
+                                scrubberOverlay(geometry: geometry)
+                            }
                         }
                     }
                     
@@ -246,13 +255,28 @@ struct SlotMachineView: View {
         }
         .frame(width: 28, height: contentHeight)
         .contentShape(Rectangle())
+        .background(
+            GeometryReader { geo in
+                Color.clear
+                    .onAppear {
+                        scrubberFrameMinY = geo.frame(in: .global).minY
+                    }
+                    .onChange(of: geo.frame(in: .global).minY) { _, newValue in
+                        scrubberFrameMinY = newValue
+                    }
+            }
+        )
         .gesture(
-            DragGesture(minimumDistance: 0, coordinateSpace: .local)
+            DragGesture(minimumDistance: 0, coordinateSpace: .global)
                 .onChanged { value in
                     guard contentHeight > 0, totalVerses > 0 else { return }
                     
-                    // Map Y position (0 to contentHeight) to verse index (0 to totalVerses-1)
-                    let clampedY = max(0, min(contentHeight, value.location.y))
+                    // Update touch Y position for overlay (global coordinates)
+                    scrubberTouchY = value.location.y
+                    
+                    // Map local Y position to verse index
+                    let localY = value.location.y - scrubberFrameMinY
+                    let clampedY = max(0, min(contentHeight, localY))
                     let fraction = clampedY / contentHeight
                     let targetIndex = Int(round(fraction * CGFloat(totalVerses - 1)))
                     let finalIndex = max(0, min(totalVerses - 1, targetIndex))
@@ -351,6 +375,53 @@ struct SlotMachineView: View {
                 theme.textSecondary.opacity(0.35)
             )
             .frame(width: 28, height: item.isDot ? 10 : 14)  // Smaller height for dots
+    }
+    
+    // MARK: - Scrubber Verse Number Overlay
+    private func scrubberOverlay(geometry: GeometryProxy) -> some View {
+        let currentVerseNumber = (scrollPosition ?? viewModel.currentVerseIndex) + 1
+        let overlaySize: CGFloat = 72
+        let scrubberWidth: CGFloat = 32  // Width of scrubber + padding
+        
+        // Calculate vertical position - align with touch point
+        // Convert global touch Y to local coordinates within the ZStack
+        let localY = scrubberTouchY - geometry.frame(in: .global).minY
+        let clampedY = max(overlaySize / 2 + geometry.safeAreaInsets.top, 
+                          min(geometry.size.height - overlaySize / 2 - geometry.safeAreaInsets.bottom, localY))
+        
+        return ZStack {
+            // Circular background with blur + clear glass effect
+            Circle()
+                .fill(.ultraThinMaterial)
+                .environment(\.colorScheme, .dark)
+                .overlay(
+                    Circle()
+                        .stroke(
+                            LinearGradient(
+                                colors: [
+                                    Color.white.opacity(0.25),
+                                    Color.white.opacity(0.08)
+                                ],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            ),
+                            lineWidth: 1
+                        )
+                )
+                .shadow(color: .black.opacity(0.2), radius: 8, x: -2, y: 2)
+            
+            // Verse number
+            Text("\(currentVerseNumber)")
+                .font(.system(size: 28, weight: .bold, design: theme.titleFont))
+                .foregroundStyle(theme.textSecondary)
+        }
+        .frame(width: overlaySize, height: overlaySize)
+        .position(
+            x: geometry.size.width - scrubberWidth - overlaySize / 2 - 12,  // Left of scrubber with padding
+            y: clampedY
+        )
+        .transition(.opacity.combined(with: .scale(scale: 0.8)))
+        .animation(.easeOut(duration: 0.15), value: isScrubbing)
     }
     
     // MARK: - Horizontal Swipe Gesture
