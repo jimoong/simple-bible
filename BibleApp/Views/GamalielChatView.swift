@@ -189,9 +189,48 @@ struct GamalielChatView: View {
         UIScreen.main.bounds.height - safeAreaTop - 70 - safeAreaBottom - 90
     }
     
+    // Check if only welcome message exists (standalone assistant message with no user messages)
+    private var isOnlyWelcomeMessage: Bool {
+        viewModel.messages.count == 1 && viewModel.messages.first?.role == .assistant
+    }
+    
     // MARK: - Chat Content
     
     private var chatContent: some View {
+        Group {
+            if isOnlyWelcomeMessage {
+                // Centered welcome message
+                welcomeMessageView
+            } else {
+                // Regular chat content
+                regularChatContent
+            }
+        }
+    }
+    
+    // Welcome message view - centered with 60% width
+    private var welcomeMessageView: some View {
+        GeometryReader { geo in
+            VStack {
+                Spacer()
+                
+                if let welcomeMessage = viewModel.messages.first {
+                    Text(welcomeMessage.content)
+                        .font(.custom("Lora-Regular", size: 16))
+                        .lineSpacing(7)
+                        .foregroundStyle(.white.opacity(0.85))
+                        .multilineTextAlignment(.center)
+                        .frame(width: geo.size.width * 0.6)
+                }
+                
+                Spacer()
+            }
+            .frame(maxWidth: .infinity)
+        }
+    }
+    
+    // Regular chat content with message pairs
+    private var regularChatContent: some View {
         ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(spacing: 32) {

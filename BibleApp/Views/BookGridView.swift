@@ -46,6 +46,12 @@ struct BookGridView: View {
         GridItem(.flexible(), spacing: 10)
     ]
     
+    // 2-column layout for list view (목차순) - centered items with equal spacing
+    private let listColumns = [
+        GridItem(.flexible(), spacing: 20),
+        GridItem(.flexible(), spacing: 20)
+    ]
+    
     // Each cell is ~70pt height + 10pt spacing
     private let cellHeight: CGFloat = 70
     private let cellSpacing: CGFloat = 10
@@ -815,37 +821,72 @@ struct BookGridView: View {
     
     // MARK: - Favorites Section (styled like BookCell)
     private var favoritesSection: some View {
-        // Single favorites card in a grid layout matching book cards
-        LazyVGrid(columns: columns, spacing: 10) {
-            Button {
-                onFavoritesSelect?()
-                HapticManager.shared.selection()
-            } label: {
-                VStack(spacing: 6) {
-                    // Heart icon (like book abbreviation)
-                    Image(systemName: "heart.fill")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundStyle(.white)
-                    
-                    // Counter (like book full name)
-                    Text("\(FavoriteService.shared.count)")
-                        .font(viewModel.uiLanguage == .kr 
-                            ? FontManager.koreanSans(size: 12, weight: .medium)
-                            : .system(size: 12, weight: .medium, design: .default))
-                        .foregroundStyle(.white.opacity(0.6))
-                        .lineLimit(1)
+        Group {
+            if viewModel.sortOrder == .canonical {
+                // 2-column layout matching book cards
+                LazyVGrid(columns: listColumns, spacing: 30) {
+                    Button {
+                        onFavoritesSelect?()
+                        HapticManager.shared.selection()
+                    } label: {
+                        VStack(spacing: 6) {
+                            // Heart icon (like book abbreviation)
+                            Image(systemName: "heart.fill")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundStyle(.white)
+                            
+                            // Counter (like book full name)
+                            Text("\(FavoriteService.shared.count)")
+                                .font(viewModel.uiLanguage == .kr 
+                                    ? FontManager.koreanSans(size: 12, weight: .medium)
+                                    : .system(size: 12, weight: .medium, design: .default))
+                                .foregroundStyle(.white.opacity(0.6))
+                                .lineLimit(1)
+                        }
+                        .frame(width: BookListCell.bookWidth, height: BookListCell.bookHeight)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white.opacity(0.08))
+                        )
+                        .frame(maxWidth: .infinity)
+                    }
+                    .buttonStyle(.plain)
                 }
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 18)
-                .padding(.horizontal, 8)
-                .background(
-                    RoundedRectangle(cornerRadius: 12)
-                        .fill(Color.white.opacity(0.08))
-                )
+                .padding(.horizontal, 24)
+            } else {
+                // 3-column layout
+                LazyVGrid(columns: columns, spacing: 10) {
+                    Button {
+                        onFavoritesSelect?()
+                        HapticManager.shared.selection()
+                    } label: {
+                        VStack(spacing: 6) {
+                            // Heart icon (like book abbreviation)
+                            Image(systemName: "heart.fill")
+                                .font(.system(size: 24, weight: .bold))
+                                .foregroundStyle(.white)
+                            
+                            // Counter (like book full name)
+                            Text("\(FavoriteService.shared.count)")
+                                .font(viewModel.uiLanguage == .kr 
+                                    ? FontManager.koreanSans(size: 12, weight: .medium)
+                                    : .system(size: 12, weight: .medium, design: .default))
+                                .foregroundStyle(.white.opacity(0.6))
+                                .lineLimit(1)
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 18)
+                        .padding(.horizontal, 8)
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .fill(Color.white.opacity(0.08))
+                        )
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.horizontal, 20)
             }
-            .buttonStyle(.plain)
         }
-        .padding(.horizontal, 20)
     }
     
     // MARK: - Book Section
@@ -859,25 +900,48 @@ struct BookGridView: View {
                 .foregroundStyle(.white.opacity(0.5))
                 .padding(.horizontal, 20)
             
-            // Books grid
-            LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(books) { book in
-                    BookCell(
-                        book: book,
-                        language: viewModel.uiLanguage,
-                        isSelected: book == viewModel.currentBook
-                    )
-                    .onTapGesture {
-                        if let onBookSelect {
-                            onBookSelect(book)
-                        } else {
-                            viewModel.selectBook(book)
+            // Books grid - 2-column for canonical, 3-column for others
+            if viewModel.sortOrder == .canonical {
+                // 2-column list view with summary (book-like cards)
+                LazyVGrid(columns: listColumns, spacing: 30) {
+                    ForEach(books) { book in
+                        BookListCell(
+                            book: book,
+                            language: viewModel.uiLanguage,
+                            isSelected: book == viewModel.currentBook
+                        )
+                        .onTapGesture {
+                            if let onBookSelect {
+                                onBookSelect(book)
+                            } else {
+                                viewModel.selectBook(book)
+                            }
+                            HapticManager.shared.selection()
                         }
-                        HapticManager.shared.selection()
                     }
                 }
+                .padding(.horizontal, 24)
+            } else {
+                // 3-column compact grid
+                LazyVGrid(columns: columns, spacing: 10) {
+                    ForEach(books) { book in
+                        BookCell(
+                            book: book,
+                            language: viewModel.uiLanguage,
+                            isSelected: book == viewModel.currentBook
+                        )
+                        .onTapGesture {
+                            if let onBookSelect {
+                                onBookSelect(book)
+                            } else {
+                                viewModel.selectBook(book)
+                            }
+                            HapticManager.shared.selection()
+                        }
+                    }
+                }
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
         }
     }
     
@@ -1032,6 +1096,89 @@ struct BookCell: View {
                 }
             }
         }
+    }
+}
+
+// MARK: - Book List Cell (2-column view with summary)
+struct BookListCell: View {
+    let book: BibleBook
+    let language: LanguageMode
+    let isSelected: Bool
+    
+    // Fixed book-like dimensions (width:height ≈ 2:3 ratio)
+    static let bookWidth: CGFloat = 150
+    static let bookHeight: CGFloat = 195
+    
+    private var theme: BookTheme {
+        BookThemes.theme(for: book.id)
+    }
+    
+    private var isFullyRead: Bool {
+        ReadingProgressTracker.shared.isBookFullyRead(book: book)
+    }
+    
+    private var cellBackground: Color {
+        if isFullyRead {
+            return Color(red: 0.12, green: 0.12, blue: 0.12)
+        } else {
+            return theme.surface
+        }
+    }
+    
+    private var bookSummary: BibleBookSummary? {
+        BibleBookSummaries.summary(for: book.id)
+    }
+    
+    var body: some View {
+        ZStack(alignment: .topTrailing) {
+            VStack(spacing: 4) {
+                // Title section: Abbreviation + Name (centered like BookCell)
+                Text(book.abbreviation(for: language))
+                    .font(theme.display(22, language: language))
+                    .foregroundStyle(isFullyRead ? theme.textPrimary.opacity(0.5) : theme.textPrimary)
+                
+                Text(book.name(for: language))
+                    .font(language == .kr 
+                        ? FontManager.koreanSans(size: 11, weight: .medium)
+                        : .system(size: 11, weight: .medium, design: .default))
+                    .foregroundStyle(isFullyRead ? theme.textSecondary.opacity(0.5) : theme.textSecondary)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.8)
+                    .padding(.bottom, 20)
+                
+                // Summary section
+                if let summary = bookSummary {
+                    Text(language == .kr ? summary.summaryKo : summary.summaryEn)
+                        .font(language == .kr 
+                            ? FontManager.koreanSans(size: 10, weight: .regular)
+                            : .system(size: 10, weight: .regular))
+                        .foregroundStyle(isFullyRead ? theme.textSecondary.opacity(0.5) : theme.textSecondary)
+                        .lineLimit(4)
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+            }
+            .padding(.vertical, 20)
+            .padding(.horizontal, 20)
+            .frame(width: Self.bookWidth, height: Self.bookHeight)
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(cellBackground)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(isSelected ? theme.accent : Color.clear, lineWidth: 2)
+            )
+            
+            // Checkmark indicator for fully read books
+            if isFullyRead {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 10, weight: .semibold))
+                    .foregroundStyle(.white.opacity(0.4))
+                    .padding(8)
+            }
+        }
+        .frame(maxWidth: .infinity) // Center in column
     }
 }
 

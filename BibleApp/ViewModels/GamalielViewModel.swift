@@ -129,6 +129,11 @@ final class GamalielViewModel {
         let text = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !text.isEmpty else { return }
         
+        // Remove welcome message if it's the first user message
+        if messages.count == 1, messages.first?.role == .assistant {
+            messages.removeAll()
+        }
+        
         // Capture attached verse before clearing
         let currentAttachedVerse = attachedVerse
         
