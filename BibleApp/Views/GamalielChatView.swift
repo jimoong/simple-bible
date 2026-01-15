@@ -8,6 +8,7 @@ struct GamalielChatView: View {
     let safeAreaBottom: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil  // book, chapter, verse
     
+    @Environment(\.scenePhase) private var scenePhase
     @FocusState private var isInputFocused: Bool
     @State private var glowAnimating = false
     
@@ -20,6 +21,93 @@ struct GamalielChatView: View {
     // Scroll to bottom state
     @State private var isAtBottom = true
     @State private var scrollProxy: ScrollViewProxy?
+    
+    // Background color rotation state
+    @State private var currentColorIndex = 0
+    @State private var colorRotationTimer: Timer?
+    
+    // All 66 book background colors
+    private let bookBackgroundColors: [Color] = [
+        // Pentateuch
+        BookThemes.genesis.background,
+        BookThemes.exodus.background,
+        BookThemes.leviticus.background,
+        BookThemes.numbers.background,
+        BookThemes.deuteronomy.background,
+        // Historical Books
+        BookThemes.joshua.background,
+        BookThemes.judges.background,
+        BookThemes.ruth.background,
+        BookThemes.samuel1.background,
+        BookThemes.samuel2.background,
+        BookThemes.kings1.background,
+        BookThemes.kings2.background,
+        BookThemes.chronicles1.background,
+        BookThemes.chronicles2.background,
+        BookThemes.ezra.background,
+        BookThemes.nehemiah.background,
+        BookThemes.esther.background,
+        // Poetry & Wisdom
+        BookThemes.job.background,
+        BookThemes.psalms.background,
+        BookThemes.proverbs.background,
+        BookThemes.ecclesiastes.background,
+        BookThemes.songOfSolomon.background,
+        // Major Prophets
+        BookThemes.isaiah.background,
+        BookThemes.jeremiah.background,
+        BookThemes.lamentations.background,
+        BookThemes.ezekiel.background,
+        BookThemes.daniel.background,
+        // Minor Prophets
+        BookThemes.hosea.background,
+        BookThemes.joel.background,
+        BookThemes.amos.background,
+        BookThemes.obadiah.background,
+        BookThemes.jonah.background,
+        BookThemes.micah.background,
+        BookThemes.nahum.background,
+        BookThemes.habakkuk.background,
+        BookThemes.zephaniah.background,
+        BookThemes.haggai.background,
+        BookThemes.zechariah.background,
+        BookThemes.malachi.background,
+        // Gospels & Acts
+        BookThemes.matthew.background,
+        BookThemes.mark.background,
+        BookThemes.luke.background,
+        BookThemes.john.background,
+        BookThemes.acts.background,
+        // Pauline Epistles
+        BookThemes.romans.background,
+        BookThemes.corinthians1.background,
+        BookThemes.corinthians2.background,
+        BookThemes.galatians.background,
+        BookThemes.ephesians.background,
+        BookThemes.philippians.background,
+        BookThemes.colossians.background,
+        BookThemes.thessalonians1.background,
+        BookThemes.thessalonians2.background,
+        BookThemes.timothy1.background,
+        BookThemes.timothy2.background,
+        BookThemes.titus.background,
+        BookThemes.philemon.background,
+        // General Epistles
+        BookThemes.hebrews.background,
+        BookThemes.james.background,
+        BookThemes.peter1.background,
+        BookThemes.peter2.background,
+        BookThemes.john1.background,
+        BookThemes.john2.background,
+        BookThemes.john3.background,
+        BookThemes.jude.background,
+        // Revelation
+        BookThemes.revelation.background
+    ]
+    
+    private var currentBottomColor: Color {
+        bookBackgroundColors[currentColorIndex]
+    }
     
     // MARK: - Font Helper
     
@@ -37,16 +125,18 @@ struct GamalielChatView: View {
     
     var body: some View {
         ZStack {
-            // Background gradient (#0F0F0F top to #000000 bottom)
+            // Background gradient (#0F0F0F top to rotating book colors bottom)
             LinearGradient(
-                colors: [
-                    Color(red: 15/255, green: 15/255, blue: 15/255),  // #0F0F0F
-                    Color.black  // #000000
+                stops: [
+                    .init(color: Color(red: 15/255, green: 15/255, blue: 15/255), location: 0.0),  // #0F0F0F
+                    .init(color: currentBottomColor, location: 0.65),  // Start transition
+                    .init(color: currentBottomColor, location: 1.0)   // Solid at bottom
                 ],
                 startPoint: .top,
                 endPoint: .bottom
             )
             .ignoresSafeArea()
+            .animation(.easeInOut(duration: 2.0), value: currentColorIndex)
             
             // Chat messages (scrolls behind header and input)
             chatContent
@@ -103,7 +193,40 @@ struct GamalielChatView: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                 isInputFocused = true
             }
+            // Start background color rotation
+            startColorRotation()
         }
+        .onDisappear {
+            stopColorRotation()
+        }
+        .onChange(of: scenePhase) { oldPhase, newPhase in
+            switch newPhase {
+            case .active:
+                startColorRotation()
+            case .inactive, .background:
+                stopColorRotation()
+            @unknown default:
+                break
+            }
+        }
+    }
+    
+    // MARK: - Color Rotation
+    
+    private func startColorRotation() {
+        // Don't start if already running
+        guard colorRotationTimer == nil else { return }
+        
+        colorRotationTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: true) { _ in
+            withAnimation(.easeInOut(duration: 2.0)) {
+                currentColorIndex = (currentColorIndex + 1) % bookBackgroundColors.count
+            }
+        }
+    }
+    
+    private func stopColorRotation() {
+        colorRotationTimer?.invalidate()
+        colorRotationTimer = nil
     }
     
     // Handle verse reference tap
