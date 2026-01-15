@@ -25,6 +25,20 @@ struct BookGridView: View {
     @State private var bookGridScrollToBottom: Bool = true   // true = scroll to bottom, false = scroll to top
     @State private var timelineScrollTrigger: Bool = false   // Trigger to scroll timeline
     @State private var timelineScrollToBottom: Bool = true   // true = scroll to bottom, false = scroll to top
+    @State private var keyboardHeight: CGFloat = 0          // Current keyboard height
+    
+    // Bottom padding for search mode content (accounts for keyboard + search bar)
+    private var searchModeBottomPadding: CGFloat {
+        let searchBarHeight: CGFloat = 72  // Search bar + padding
+        let baseBottom: CGFloat = 120
+        
+        if keyboardHeight > 0 {
+            // Keyboard is visible: keyboard height + search bar height
+            return keyboardHeight + searchBarHeight
+        } else {
+            return baseBottom
+        }
+    }
     
     private let columns = [
         GridItem(.flexible(), spacing: 10),
@@ -262,6 +276,18 @@ struct BookGridView: View {
                 activateSearchMode()
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
+            if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
+                withAnimation(.easeOut(duration: 0.25)) {
+                    keyboardHeight = keyboardFrame.height
+                }
+            }
+        }
+        .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
+            withAnimation(.easeOut(duration: 0.25)) {
+                keyboardHeight = 0
+            }
+        }
     }
     
     /// Activate search mode with keyboard focus
@@ -305,7 +331,7 @@ struct BookGridView: View {
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, topPadding + 20)
-                    .padding(.bottom, 120)
+                    .padding(.bottom, searchModeBottomPadding)
                 }
             }
         }
@@ -355,7 +381,7 @@ struct BookGridView: View {
             .frame(maxWidth: 350)
             .frame(maxWidth: .infinity)
             .padding(.top, topPadding + 20)
-            .padding(.bottom, 120)
+            .padding(.bottom, searchModeBottomPadding)
         }
     }
     
@@ -404,7 +430,7 @@ struct BookGridView: View {
             }
         }
         .padding(.top, topPadding + 20)
-        .padding(.bottom, 120)
+        .padding(.bottom, searchModeBottomPadding)
     }
     
     // MARK: - Search Verse Row (single line with ellipsis)
