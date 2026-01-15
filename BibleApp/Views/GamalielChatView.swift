@@ -569,8 +569,10 @@ private struct BibleReferenceTextView: View {
         let lines = text.components(separatedBy: "\n")
         
         for line in lines {
-            let isBullet = line.hasPrefix("* ") || line.hasPrefix("- ") || line.hasPrefix("• ")
-            let orderedItem = parseOrderedListItem(line)
+            // Trim leading whitespace for prefix checking (handles indented lists)
+            let trimmedLine = line.trimmingCharacters(in: .whitespaces)
+            let isBullet = trimmedLine.hasPrefix("* ") || trimmedLine.hasPrefix("- ") || trimmedLine.hasPrefix("• ")
+            let orderedItem = parseOrderedListItem(trimmedLine)
             
             if isBullet {
                 // Flush any accumulated text or ordered list
@@ -583,13 +585,13 @@ private struct BibleReferenceTextView: View {
                     currentOrderedItems = []
                 }
                 // Add to bullet list - remove prefix and trim whitespace
-                var bulletContent = line
-                if line.hasPrefix("* ") {
-                    bulletContent = String(line.dropFirst(2)).trimmingCharacters(in: .whitespaces)
-                } else if line.hasPrefix("- ") {
-                    bulletContent = String(line.dropFirst(2)).trimmingCharacters(in: .whitespaces)
-                } else if line.hasPrefix("• ") {
-                    bulletContent = String(line.dropFirst(2)).trimmingCharacters(in: .whitespaces)
+                var bulletContent = trimmedLine
+                if trimmedLine.hasPrefix("* ") {
+                    bulletContent = String(trimmedLine.dropFirst(2)).trimmingCharacters(in: .whitespaces)
+                } else if trimmedLine.hasPrefix("- ") {
+                    bulletContent = String(trimmedLine.dropFirst(2)).trimmingCharacters(in: .whitespaces)
+                } else if trimmedLine.hasPrefix("• ") {
+                    bulletContent = String(trimmedLine.dropFirst(2)).trimmingCharacters(in: .whitespaces)
                 }
                 currentBulletLines.append(bulletContent)
             } else if let item = orderedItem {
