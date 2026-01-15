@@ -412,7 +412,7 @@ struct SlotMachineView: View {
             
             // Verse number
             Text("\(currentVerseNumber)")
-                .font(.system(size: 28, weight: .bold, design: theme.titleFont))
+                .font(.system(size: 28, weight: .regular, design: theme.titleFont))
                 .foregroundStyle(theme.textSecondary)
         }
         .frame(width: overlaySize, height: overlaySize)

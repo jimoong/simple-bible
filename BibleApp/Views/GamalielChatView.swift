@@ -220,7 +220,7 @@ struct GamalielChatView: View {
         }
     }
     
-    // Welcome message view - centered with 60% width
+    // Welcome message view - centered with 60% width (adjusts for keyboard)
     private var welcomeMessageView: some View {
         GeometryReader { geo in
             VStack {
@@ -237,7 +237,9 @@ struct GamalielChatView: View {
                 
                 Spacer()
             }
-            .frame(maxWidth: .infinity)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.bottom, isInputFocused ? geo.size.height * 0.35 : 0)  // Push up when keyboard is visible
+            .animation(.easeOut(duration: 0.25), value: isInputFocused)
         }
     }
     
