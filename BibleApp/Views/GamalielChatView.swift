@@ -463,7 +463,6 @@ private struct ConversationPairView: View {
             }
         }
         .frame(minHeight: shouldUseMinHeight ? minHeight : nil, alignment: .top)
-        .animation(.easeOut(duration: 0.3), value: isStreaming)
     }
     
     // Use minimum height only when:
