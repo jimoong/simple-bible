@@ -1,0 +1,54 @@
+{
+  "bookId": "habakkuk",
+  "bookNumber": 35,
+  "bookNameKo": "하박국",
+  "bookNameEn": "Habakkuk",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "하박국의 질문",
+      "titleEn": "Habakkuk's Questions",
+      "summaryKo": "선지자가 악의 번성에 대해 하나님께 질문하고, 바벨론을 통한 심판을 들습니다.",
+      "summaryEn": "The prophet questions God about the prosperity of evil and hears of judgment through Babylon.",
+      "messageKo": "하나님께 정직하게 질문해도 됩니다.",
+      "messageEn": "It's okay to question God honestly.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "어느 때까지 부르짖으리이까", "eventEn": "How long shall I cry?"},
+        {"verse": 6, "eventKo": "갈대아인을 일으킴", "eventEn": "Raising up Babylonians"},
+        {"verse": 13, "eventKo": "악한 자가 삼키는 것을 봄", "eventEn": "Watching wicked swallow righteous"}
+      ],
+      "timelineYear": "BC 608경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "의인은 믿음으로 살리라",
+      "titleEn": "The Righteous Shall Live by Faith",
+      "summaryKo": "하나님의 응답을 기다리며, 의인은 믿음으로 산다는 핵심 메시지와 다섯 가지 화를 선포합니다.",
+      "summaryEn": "Waiting for God's answer, proclaiming the key message that the righteous live by faith and five woes.",
+      "messageKo": "의인은 그의 믿음으로 말미암아 살리라.",
+      "messageEn": "The righteous shall live by faith.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "망대 위에서 기다림", "eventEn": "Standing watch on rampart"},
+        {"verse": 4, "eventKo": "의인은 믿음으로 삶", "eventEn": "Righteous live by faith"},
+        {"verse": 14, "eventKo": "여호와의 영광이 충만", "eventEn": "Earth filled with LORD's glory"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "하박국의 기도와 찬양",
+      "titleEn": "Habakkuk's Prayer and Praise",
+      "summaryKo": "하나님의 위엄을 노래하며, 어떤 상황에서도 기뻐하겠다는 신앙 고백으로 마무리합니다.",
+      "summaryEn": "Singing of God's majesty, concluding with a confession of faith to rejoice in any circumstance.",
+      "messageKo": "환경이 아무리 어려워도 하나님 안에서 기뻐할 수 있습니다.",
+      "messageEn": "We can rejoice in God no matter how difficult circumstances become.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "주의 일을 부흥하소서", "eventEn": "Revive your work, LORD"},
+        {"verse": 3, "eventKo": "하나님이 데만에서 오심", "eventEn": "God comes from Teman"},
+        {"verse": 17, "eventKo": "무화과나무에 열매가 없어도", "eventEn": "Though fig tree does not bud"},
+        {"verse": 18, "eventKo": "여호와로 말미암아 즐거워함", "eventEn": "I will rejoice in the LORD"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

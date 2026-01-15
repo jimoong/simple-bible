@@ -1,0 +1,113 @@
+{
+  "bookId": "micah",
+  "bookNumber": 33,
+  "bookNameKo": "미가",
+  "bookNameEn": "Micah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "사마리아와 예루살렘에 대한 심판",
+      "titleEn": "Judgment on Samaria and Jerusalem",
+      "summaryKo": "하나님이 사마리아와 예루살렘의 우상숭배를 심판하러 오심을 선포합니다.",
+      "summaryEn": "Proclaims that God is coming to judge the idolatry of Samaria and Jerusalem.",
+      "messageKo": "하나님은 불의한 도시들을 심판하십니다.",
+      "messageEn": "God judges cities of injustice.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "주 여호와께서 증거하심", "eventEn": "Lord GOD as witness"},
+        {"verse": 6, "eventKo": "사마리아를 돌무더기로", "eventEn": "Samaria made a heap of rubble"},
+        {"verse": 9, "eventKo": "상처가 예루살렘까지", "eventEn": "Wound reaches Jerusalem"}
+      ],
+      "timelineYear": "BC 735경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "탐욕한 자들에 대한 화",
+      "titleEn": "Woe to the Greedy",
+      "summaryKo": "밤에 악을 꾀하고 가난한 자의 땅을 빼앗는 자들에게 심판을 선포합니다.",
+      "summaryEn": "Proclaims judgment on those who plot evil at night and seize the poor's land.",
+      "messageKo": "가난한 자를 착취하는 탐욕은 심판을 부릅니다.",
+      "messageEn": "Greed that exploits the poor invites judgment.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "침상에서 악을 꾀함", "eventEn": "Planning evil on beds"},
+        {"verse": 2, "eventKo": "밭과 집을 빼앗음", "eventEn": "Seizing fields and houses"},
+        {"verse": 12, "eventKo": "남은 자를 모으리라", "eventEn": "Will gather the remnant"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "지도자들의 부패",
+      "titleEn": "Corruption of Leaders",
+      "summaryKo": "백성을 착취하는 지도자들, 뇌물 받는 선지자들과 제사장들을 책망합니다.",
+      "summaryEn": "Rebukes leaders who exploit the people, prophets and priests who take bribes.",
+      "messageKo": "부패한 지도자는 백성 전체에 재앙을 가져옵니다.",
+      "messageEn": "Corrupt leaders bring disaster upon all the people.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "백성의 가죽을 벗김", "eventEn": "Tearing skin off people"},
+        {"verse": 5, "eventKo": "선지자들의 타락", "eventEn": "Prophets who lead astray"},
+        {"verse": 12, "eventKo": "시온이 밭같이 갈림", "eventEn": "Zion plowed like a field"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "말일의 평화",
+      "titleEn": "Peace in the Last Days",
+      "summaryKo": "말일에 여호와의 성전 산이 높아지고 만국이 모여오는 평화의 비전을 선포합니다.",
+      "summaryEn": "Proclaims a vision of peace where the LORD's temple mount is exalted and nations gather in the last days.",
+      "messageKo": "하나님 나라의 완성은 영원한 평화입니다.",
+      "messageEn": "The completion of God's kingdom is eternal peace.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와의 전의 산", "eventEn": "Mountain of LORD's temple"},
+        {"verse": 3, "eventKo": "칼을 쳐서 보습을", "eventEn": "Swords into plowshares"},
+        {"verse": 5, "eventKo": "여호와의 이름으로 행함", "eventEn": "Walk in name of the LORD"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "베들레헴에서 오실 통치자",
+      "titleEn": "Ruler from Bethlehem",
+      "summaryKo": "베들레헴에서 이스라엘을 다스릴 자가 나올 것을 예언합니다 - 메시아 예언.",
+      "summaryEn": "Prophesies that a ruler over Israel will come from Bethlehem - a Messianic prophecy.",
+      "messageKo": "작은 곳에서 위대한 구원자가 나옵니다.",
+      "messageEn": "From small places come great saviors.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "베들레헴 에브라다", "eventEn": "Bethlehem Ephrathah"},
+        {"verse": 4, "eventKo": "여호와의 이름의 위엄으로", "eventEn": "In majesty of LORD's name"},
+        {"verse": 5, "eventKo": "그가 평강이 되리라", "eventEn": "He will be their peace"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "하나님의 송사",
+      "titleEn": "God's Case Against Israel",
+      "summaryKo": "하나님이 이스라엘과 소송하시며, 제사보다 정의와 인자와 겸손을 요구하십니다.",
+      "summaryEn": "God brings His case against Israel, requiring justice, mercy, and humility over sacrifice.",
+      "messageKo": "하나님이 원하시는 것은 공의, 인자, 겸손입니다.",
+      "messageEn": "What God requires is justice, mercy, and humility.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "내가 무엇을 하였느냐", "eventEn": "What have I done to you?"},
+        {"verse": 6, "eventKo": "무엇으로 나아갈까", "eventEn": "With what shall I come?"},
+        {"verse": 8, "eventKo": "공의, 인자, 겸손", "eventEn": "Justice, mercy, humility"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "소망과 회복",
+      "titleEn": "Hope and Restoration",
+      "summaryKo": "암흑 속에서도 여호와를 바라보며, 죄를 용서하시는 하나님을 찬양합니다.",
+      "summaryEn": "Looking to the LORD even in darkness, praising God who forgives sins.",
+      "messageKo": "어둠 중에도 여호와는 나의 빛이 되십니다.",
+      "messageEn": "Even in darkness, the LORD is my light.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "나는 여호와를 바라봄", "eventEn": "I watch for the LORD"},
+        {"verse": 8, "eventKo": "넘어져도 일어남", "eventEn": "Though I fall, I will rise"},
+        {"verse": 18, "eventKo": "죄를 사유하시는 하나님", "eventEn": "God who pardons sin"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

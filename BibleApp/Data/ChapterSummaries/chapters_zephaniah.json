@@ -1,0 +1,55 @@
+{
+  "bookId": "zephaniah",
+  "bookNumber": 36,
+  "bookNameKo": "스바냐",
+  "bookNameEn": "Zephaniah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "여호와의 날의 심판",
+      "titleEn": "Judgment on the Day of the LORD",
+      "summaryKo": "유다와 예루살렘, 그리고 온 땅에 임할 여호와의 날의 심판을 경고합니다.",
+      "summaryEn": "Warns of the Day of the LORD's judgment coming upon Judah, Jerusalem, and the whole earth.",
+      "messageKo": "여호와의 날은 진노와 환난의 날입니다.",
+      "messageEn": "The Day of the LORD is a day of wrath and distress.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "모든 것을 지면에서 쓸어버림", "eventEn": "Sweep away everything"},
+        {"verse": 12, "eventKo": "안일한 자들을 심판", "eventEn": "Punish those complacent"},
+        {"verse": 14, "eventKo": "여호와의 큰 날이 가까움", "eventEn": "Great day of LORD is near"}
+      ],
+      "timelineYear": "BC 630경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "열방에 대한 심판",
+      "titleEn": "Judgment on the Nations",
+      "summaryKo": "블레셋, 모압, 암몬, 구스, 앗수르 등 주변 열방에 대한 심판을 선포합니다.",
+      "summaryEn": "Proclaims judgment on surrounding nations: Philistia, Moab, Ammon, Cush, and Assyria.",
+      "messageKo": "하나님의 백성을 조롱하는 민족은 심판받습니다.",
+      "messageEn": "Nations that mock God's people will be judged.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "모이라 부끄러운 민족아", "eventEn": "Gather together, shameful nation"},
+        {"verse": 3, "eventKo": "여호와를 찾으라", "eventEn": "Seek the LORD"},
+        {"verse": 9, "eventKo": "모압이 소돔같이 됨", "eventEn": "Moab like Sodom"},
+        {"verse": 13, "eventKo": "앗수르를 멸하심", "eventEn": "Destroy Assyria"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "예루살렘의 회복",
+      "titleEn": "Restoration of Jerusalem",
+      "summaryKo": "예루살렘의 죄를 책망하나, 남은 자의 회복과 하나님의 기뻐하심을 약속합니다.",
+      "summaryEn": "Rebukes Jerusalem's sins but promises restoration of the remnant and God's delight.",
+      "messageKo": "하나님은 기쁨으로 너로 말미암아 즐거워하십니다.",
+      "messageEn": "God rejoices over you with gladness.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "그 중에 여호와는 의로우심", "eventEn": "The LORD within is righteous"},
+        {"verse": 9, "eventKo": "순결한 입술로 바꿈", "eventEn": "Purify lips of peoples"},
+        {"verse": 12, "eventKo": "겸손하고 가난한 백성", "eventEn": "Meek and humble people"},
+        {"verse": 17, "eventKo": "너로 말미암아 즐거워하심", "eventEn": "He will rejoice over you"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

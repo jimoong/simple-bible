@@ -1,0 +1,53 @@
+{
+  "bookId": "nahum",
+  "bookNumber": 34,
+  "bookNameKo": "나훔",
+  "bookNameEn": "Nahum",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "하나님의 진노",
+      "titleEn": "God's Wrath",
+      "summaryKo": "질투하시며 보복하시는 하나님이 니느웨를 심판하실 것을 선포합니다.",
+      "summaryEn": "Proclaims that the jealous and avenging God will judge Nineveh.",
+      "messageKo": "하나님은 대적에게 진노하시나 신뢰하는 자에게는 피난처가 되십니다.",
+      "messageEn": "God is wrathful to enemies but a refuge to those who trust Him.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "질투하시며 보복하시는 하나님", "eventEn": "Jealous and avenging God"},
+        {"verse": 7, "eventKo": "환난 날의 피난처", "eventEn": "Refuge in day of trouble"},
+        {"verse": 15, "eventKo": "좋은 소식 전하는 자의 발", "eventEn": "Feet of one bringing good news"}
+      ],
+      "timelineYear": "BC 650경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "니느웨의 멸망",
+      "titleEn": "Fall of Nineveh",
+      "summaryKo": "니느웨 성의 함락과 파괴를 생생하게 묘사합니다.",
+      "summaryEn": "Vividly describes the capture and destruction of Nineveh.",
+      "messageKo": "아무리 강한 제국도 하나님의 심판 앞에 무너집니다.",
+      "messageEn": "Even the strongest empires fall before God's judgment.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "붉은 방패와 군사들", "eventEn": "Red shields and soldiers"},
+        {"verse": 6, "eventKo": "강의 수문이 열림", "eventEn": "River gates thrown open"},
+        {"verse": 11, "eventKo": "사자 굴이 어디 있느냐", "eventEn": "Where is the lions' den?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "피의 성에 대한 화",
+      "titleEn": "Woe to the City of Blood",
+      "summaryKo": "잔인하고 음란한 니느웨의 완전한 멸망과 회복 불가능을 선언합니다.",
+      "summaryEn": "Declares the complete destruction of cruel and immoral Nineveh with no recovery.",
+      "messageKo": "잔인과 거짓으로 세운 나라는 영원할 수 없습니다.",
+      "messageEn": "Nations built on cruelty and lies cannot last forever.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "피의 성읍이여", "eventEn": "Woe to city of blood"},
+        {"verse": 5, "eventKo": "치마를 들어 수치를 보임", "eventEn": "Skirts lifted, shame exposed"},
+        {"verse": 19, "eventKo": "상처를 고칠 수 없음", "eventEn": "Wound is incurable"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}
