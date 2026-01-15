@@ -18,7 +18,7 @@ struct NavigateFAB: View {
                 ZStack {
                     glassBackground
                     
-                    Image(systemName: "books.vertical")
+                    Image(systemName: "book.closed")
                         .font(.system(size: 20, weight: .bold))
                         .foregroundStyle(.white)
                 }

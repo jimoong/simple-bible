@@ -2,6 +2,22 @@ import Foundation
 import SwiftUI
 
 enum Constants {
+    
+    // MARK: - Google Gemini API Configuration
+    enum Gemini {
+        /// API key loaded from Secrets.swift (gitignored)
+        /// Get your key at: https://aistudio.google.com/app/apikey
+        static let apiKey = Secrets.geminiKey
+        
+        /// Model to use
+        static let model = "gemini-2.0-flash"  // Options: "gemini-2.0-flash", "gemini-1.5-pro", "gemini-1.5-flash"
+        
+        /// API endpoint
+        static var apiURL: String {
+            "https://generativelanguage.googleapis.com/v1beta/models/\(model):generateContent?key=\(apiKey)"
+        }
+    }
+    
     enum API {
         // Primary API (English)
         static let primaryBaseURL = "https://cdn.jsdelivr.net/gh/wldeh/bible-api/bibles"

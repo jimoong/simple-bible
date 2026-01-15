@@ -1,3 +1,6 @@
+# Secrets (API Keys)
+**/Secrets.swift
+
 # Xcode
 .DS_Store
 */build/*

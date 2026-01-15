@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0000010000000000000090 /* GamalielService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000090 /* GamalielService.swift */; };
+		AA0000010000000000000091 /* GamalielViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000091 /* GamalielViewModel.swift */; };
+		AA0000010000000000000092 /* GamalielChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000092 /* GamalielChatView.swift */; };
+		AA0000010000000000000093 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000093 /* Secrets.swift */; };
 		AA0000010000000000000070 /* FavoriteVerse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000070 /* FavoriteVerse.swift */; };
 		AA0000010000000000000071 /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000071 /* FavoriteService.swift */; };
 		AA0000010000000000000072 /* VerseContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000072 /* VerseContextMenu.swift */; };
@@ -62,6 +66,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA0000020000000000000090 /* GamalielService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamalielService.swift; sourceTree = "<group>"; };
+		AA0000020000000000000091 /* GamalielViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamalielViewModel.swift; sourceTree = "<group>"; };
+		AA0000020000000000000092 /* GamalielChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamalielChatView.swift; sourceTree = "<group>"; };
+		AA0000020000000000000093 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		AA0000020000000000000070 /* FavoriteVerse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVerse.swift; sourceTree = "<group>"; };
 		AA0000020000000000000071 /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		AA0000020000000000000072 /* VerseContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseContextMenu.swift; sourceTree = "<group>"; };
@@ -190,6 +198,7 @@
 			children = (
 				66EAF8752F16329200542200 /* TimelineView.swift */,
 				66EAF8732F14AF8E00542200 /* VoiceSearchOverlay.swift */,
+				AA0000020000000000000092 /* GamalielChatView.swift */,
 				AA0000020000000000000020 /* SplashScreenView.swift */,
 				AA0000020000000000000021 /* ExpandableFAB.swift */,
 				AA0000020000000000000032 /* NavigateFAB.swift */,
@@ -215,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */,
+				AA0000020000000000000091 /* GamalielViewModel.swift */,
 				AA0000020000000000000013 /* BibleViewModel.swift */,
 			);
 			path = ViewModels;
@@ -226,6 +236,7 @@
 				66EAF8792F1632A800542200 /* TimelineService.swift */,
 				66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */,
 				66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */,
+				AA0000020000000000000090 /* GamalielService.swift */,
 				AA0000020000000000000011 /* BibleAPIService.swift */,
 				AA0000020000000000000050 /* TranslationService.swift */,
 				AA0000020000000000000060 /* OfflineStorageService.swift */,
@@ -244,6 +255,7 @@
 				AA0000020000000000000014 /* BibleData.swift */,
 				AA0000020000000000000024 /* BibleBookSummaries.swift */,
 				AA0000020000000000000015 /* Constants.swift */,
+				AA0000020000000000000093 /* Secrets.swift */,
 				AA0000020000000000000017 /* BookThemes.swift */,
 				AA0000020000000000000018 /* FontManager.swift */,
 				AA0000020000000000000023 /* GlassStyle.swift */,
@@ -382,6 +394,10 @@
 				AA0000010000000000000073 /* FavoriteNoteOverlay.swift in Sources */,
 				AA0000010000000000000074 /* FavoritesReadingView.swift in Sources */,
 				AA0000010000000000000080 /* KoreanSearchHelper.swift in Sources */,
+				AA0000010000000000000090 /* GamalielService.swift in Sources */,
+				AA0000010000000000000091 /* GamalielViewModel.swift in Sources */,
+				AA0000010000000000000092 /* GamalielChatView.swift in Sources */,
+				AA0000010000000000000093 /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,6 +17,7 @@ struct SettingsView: View {
     @State private var showClearDataConfirmation = false
     @State private var downloadedCount: Int = 0
     
+    
     private let appVersion = "1.0.0"
     private let contactEmail = "jiwoong.net@gmail.com"
     

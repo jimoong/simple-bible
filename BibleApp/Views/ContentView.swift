@@ -4,6 +4,7 @@ struct ContentView: View {
     @State private var viewModel = BibleViewModel()
     @State private var searchText: String = ""
     @State private var voiceSearchViewModel = VoiceSearchViewModel()
+    @State private var gamalielViewModel = GamalielViewModel()  // AI chatbot
     @State private var fullscreenSelectedBook: BibleBook? = nil  // Book selected within fullscreen bookshelf
     @State private var showSettings = false
     @State private var showChapterToast = false
@@ -274,7 +275,7 @@ struct ContentView: View {
                                 )
                             }
                         }
-                        .padding(.horizontal, 24)
+                        .padding(.horizontal, 20)
                         .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
                     }
                     .ignoresSafeArea()
@@ -307,10 +308,29 @@ struct ContentView: View {
                     .zIndex(10)
                 }
                 
+                // Gamaliel AI chat - Full screen with fade in
+                if gamalielViewModel.showOverlay {
+                    GamalielChatView(
+                        viewModel: gamalielViewModel,
+                        languageMode: viewModel.uiLanguage,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        onNavigateToVerse: { book, chapter, verse in
+                            Task {
+                                await viewModel.navigateTo(book: book, chapter: chapter, verse: verse ?? 1)
+                            }
+                        }
+                    )
+                    .ignoresSafeArea()
+                    .transition(.opacity)
+                    .zIndex(20)
+                }
+                
             }
             .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.showBookshelf)
             .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.selectedBookForChapter)
             .animation(.easeOut(duration: 0.25), value: voiceSearchViewModel.showOverlay)
+            .animation(.easeOut(duration: 0.25), value: gamalielViewModel.showOverlay)
             .onAppear {
                 setupVoiceSearchNavigation()
                 showChapterToastIfAvailable()
@@ -471,7 +491,7 @@ struct ContentView: View {
             .opacity(isFavoritesFilterExpanded ? 0 : 1)
             .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
         } else {
-            HStack(spacing: 12) {
+            HStack(spacing: 10) {
                 // Bookshelf button - directly opens bookshelf
                 NavigateFAB(
                     theme: theme,
@@ -487,6 +507,9 @@ struct ContentView: View {
                 
                 // Search button - opens bookshelf with search mode
                 searchButton
+                
+                // AI chatbot button - opens Gamaliel
+                aiChatButton
             }
             .opacity(isSettingsFABExpanded ? 0 : 1)
             .animation(.easeOut(duration: 0.2), value: isSettingsFABExpanded)
@@ -501,6 +524,22 @@ struct ContentView: View {
                 searchButtonBackground
                 
                 Image(systemName: "magnifyingglass")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(.white)
+            }
+            .frame(width: 52, height: 52)
+        }
+        .buttonStyle(BookshelfButtonStyle())
+    }
+    
+    private var aiChatButton: some View {
+        Button {
+            gamalielViewModel.open(with: viewModel.uiLanguage)
+        } label: {
+            ZStack {
+                searchButtonBackground  // Same style as search button
+                
+                Image(systemName: "sparkle")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.white)
             }

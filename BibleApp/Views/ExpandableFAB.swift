@@ -17,9 +17,9 @@ struct ExpandableFAB: View {
     
     // Layout
     private let collapsedSize: CGFloat = 52
-    private let expandedWidth: CGFloat = 210
-    private let menuItemHeight: CGFloat = 48
-    private let menuPadding: CGFloat = 8
+    private let expandedWidth: CGFloat = 175  // Reduced to fit with 3 left buttons
+    private let menuItemHeight: CGFloat = 44
+    private let menuPadding: CGFloat = 6
     
     private var menuItemCount: Int { 3 } // Settings + Reading Mode + Language
     
@@ -158,19 +158,19 @@ struct ExpandableFAB: View {
             action()
             HapticManager.shared.selection()
         } label: {
-            HStack(spacing: 12) {
+            HStack(spacing: 10) {
                 Image(systemName: icon)
-                    .font(.system(size: 16, weight: .medium))
+                    .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 24)
+                    .frame(width: 20)
                 
                 Text(label)
-                    .font(.system(size: 16, weight: .medium))
+                    .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
                 
                 Spacer()
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 12)
             .frame(height: menuItemHeight)
             .contentShape(Rectangle())
         }
@@ -187,30 +187,30 @@ struct ExpandableFAB: View {
             }
             HapticManager.shared.selection()
         } label: {
-            HStack(spacing: 12) {
+            HStack(spacing: 10) {
                 Image(systemName: "hand.point.up")
-                    .font(.system(size: 16, weight: .medium))
+                    .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 24)
+                    .frame(width: 20)
                 
                 // Toggle indicator - uses UI language
-                HStack(spacing: 6) {
+                HStack(spacing: 4) {
                     Text(isKoreanUI ? "탭" : "Tap")
-                        .font(.system(size: 16, weight: readingMode == .tap ? .bold : .regular))
+                        .font(.system(size: 14, weight: readingMode == .tap ? .bold : .regular))
                         .foregroundStyle(readingMode == .tap ? .white : .white.opacity(0.4))
                     
                     Text("/")
-                        .font(.system(size: 16))
+                        .font(.system(size: 14))
                         .foregroundStyle(.white.opacity(0.25))
                     
                     Text(isKoreanUI ? "스크롤" : "Scroll")
-                        .font(.system(size: 16, weight: readingMode == .scroll ? .bold : .regular))
+                        .font(.system(size: 14, weight: readingMode == .scroll ? .bold : .regular))
                         .foregroundStyle(readingMode == .scroll ? .white : .white.opacity(0.4))
                 }
                 
                 Spacer()
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 12)
             .frame(height: menuItemHeight)
             .contentShape(Rectangle())
         }
@@ -234,30 +234,30 @@ struct ExpandableFAB: View {
             HapticManager.shared.selection()
             // Note: Does NOT close menu
         } label: {
-            HStack(spacing: 12) {
+            HStack(spacing: 10) {
                 Image(systemName: "globe")
-                    .font(.system(size: 16, weight: .medium))
+                    .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 24)
+                    .frame(width: 20)
                 
                 // Toggle indicator
-                HStack(spacing: 6) {
+                HStack(spacing: 4) {
                     Text(primaryDisplay)
-                        .font(.system(size: 16, weight: isPrimaryActive ? .bold : .regular))
+                        .font(.system(size: 14, weight: isPrimaryActive ? .bold : .regular))
                         .foregroundStyle(isPrimaryActive ? .white : .white.opacity(0.4))
                     
                     Text("/")
-                        .font(.system(size: 16))
+                        .font(.system(size: 14))
                         .foregroundStyle(.white.opacity(0.25))
                     
                     Text(secondaryDisplay)
-                        .font(.system(size: 16, weight: !isPrimaryActive ? .bold : .regular))
+                        .font(.system(size: 14, weight: !isPrimaryActive ? .bold : .regular))
                         .foregroundStyle(!isPrimaryActive ? .white : .white.opacity(0.4))
                 }
                 
                 Spacer()
             }
-            .padding(.horizontal, 16)
+            .padding(.horizontal, 12)
             .frame(height: menuItemHeight)
             .contentShape(Rectangle())
         }
