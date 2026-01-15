@@ -243,8 +243,8 @@ struct ContentView: View {
                         .zIndex(2.5)
                 }
                 
-                // Floating controls at bottom (hidden when in books grid, but shown in chapters/favorites)
-                if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil && !showFavoritesInBookshelf) {
+                // Floating controls at bottom (hidden when in books grid or top panel chapters)
+                if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil && !showFavoritesInBookshelf) && !isShowingTopPanelChapters {
                     VStack {
                         Spacer()
                         
@@ -252,6 +252,12 @@ struct ContentView: View {
                         HStack(alignment: .bottom) {
                             leftActionButtons
                             Spacer()
+                            // Show book navigation when in fullscreen chapter grid
+                            if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
+                                bookNavigationButtons
+                                    .opacity(isFavoritesFilterExpanded ? 0 : 1)
+                                    .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
+                            }
                             // Hide menu when in fullscreen chapter grid or favorites
                             if !(isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf)) {
                                 ExpandableFAB(
@@ -493,7 +499,7 @@ struct ContentView: View {
         if isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf) {
             // In fullscreen chapters or favorites - show back button
             // Hide when favorites filter menu is expanded
-            actionButton(icon: "chevron.left") {
+            actionButton(icon: "arrow.left") {
                 withAnimation(.easeInOut(duration: 0.25)) {
                     if showFavoritesInBookshelf {
                         showFavoritesInBookshelf = false
@@ -624,6 +630,47 @@ struct ContentView: View {
                 .frame(width: 48, height: 48)
         }
         .buttonStyle(.glassCircle)
+    }
+    
+    // MARK: - Book Navigation Buttons (for chapter grid)
+    
+    private var previousBookForNavigation: BibleBook? {
+        guard let book = fullscreenSelectedBook else { return nil }
+        return BibleData.previousBook(before: book)
+    }
+    
+    private var nextBookForNavigation: BibleBook? {
+        guard let book = fullscreenSelectedBook else { return nil }
+        return BibleData.nextBook(after: book)
+    }
+    
+    @ViewBuilder
+    private var bookNavigationButtons: some View {
+        HStack(spacing: 8) {
+            // Previous book button
+            actionButton(icon: "chevron.left") {
+                if let prevBook = previousBookForNavigation {
+                    withAnimation(.easeInOut(duration: 0.25)) {
+                        fullscreenSelectedBook = prevBook
+                    }
+                    HapticManager.shared.selection()
+                }
+            }
+            .opacity(previousBookForNavigation != nil ? 1 : 0.3)
+            .disabled(previousBookForNavigation == nil)
+            
+            // Next book button
+            actionButton(icon: "chevron.right") {
+                if let nextBook = nextBookForNavigation {
+                    withAnimation(.easeInOut(duration: 0.25)) {
+                        fullscreenSelectedBook = nextBook
+                    }
+                    HapticManager.shared.selection()
+                }
+            }
+            .opacity(nextBookForNavigation != nil ? 1 : 0.3)
+            .disabled(nextBookForNavigation == nil)
+        }
     }
 }
 

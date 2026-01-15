@@ -204,7 +204,14 @@ struct SlotMachineView: View {
                             bookId: viewModel.currentBook.id,
                             chapter: viewModel.currentChapter,
                             theme: theme,
-                            languageMode: viewModel.uiLanguage
+                            languageMode: viewModel.uiLanguage,
+                            canGoToNextChapter: viewModel.canGoToNextChapter,
+                            onNextChapter: {
+                                Task {
+                                    await viewModel.goToNextChapter()
+                                    scrollPosition = 0
+                                }
+                            }
                         )
                         .slotMachineEffect(isScrubbing: isScrubbing)
                         .id(markAsReadIndex)
@@ -412,11 +419,13 @@ struct MarkAsReadCard: View {
     let chapter: Int
     let theme: BookTheme
     let languageMode: LanguageMode
+    var canGoToNextChapter: Bool = true
+    var onNextChapter: (() -> Void)? = nil
     
     @State private var isRead: Bool = false
     
     var body: some View {
-        VStack {
+        VStack(spacing: 16) {
             // Mark as read toggle button
             Button {
                 withAnimation(.easeOut(duration: 0.2)) {
@@ -445,6 +454,30 @@ struct MarkAsReadCard: View {
                 )
             }
             .buttonStyle(.plain)
+            
+            // Next chapter button
+            if canGoToNextChapter, let onNextChapter {
+                Button {
+                    onNextChapter()
+                    HapticManager.shared.selection()
+                } label: {
+                    HStack(spacing: 8) {
+                        Text(languageMode == .kr ? "다음 장으로" : "Next Chapter")
+                            .font(.system(size: 15, weight: .semibold))
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 12, weight: .bold))
+                    }
+                    .foregroundStyle(theme.textPrimary)
+                    .padding(.horizontal, 24)
+                    .padding(.vertical, 14)
+                    .background(
+                        Capsule()
+                            .fill(theme.surface)
+                    )
+                }
+                .buttonStyle(.plain)
+            }
         }
         .frame(maxWidth: .infinity, alignment: .center)
         .padding(.horizontal, 28)

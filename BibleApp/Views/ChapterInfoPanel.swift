@@ -12,7 +12,6 @@ struct ChapterInfoPanel: View {
     var maxHeight: CGFloat = .infinity
     var safeAreaTop: CGFloat = 0
     
-    @State private var measuredHeight: CGFloat = 0
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
     
@@ -44,49 +43,59 @@ struct ChapterInfoPanel: View {
             // Background
             theme.background
             
-            // Content
-            ScrollView {
-                VStack(spacing: 0) {
-                    // Title: Book + Chapter
-                    Text(chapterTitle)
-                        .font(theme.display(28, language: viewModel.uiLanguage))
-                        .foregroundStyle(theme.textPrimary)
-                        .padding(.top, safeAreaTop + 20)
-                    
-                    // Subtitle: Chapter title + verse count
-                    Text(subtitle)
-                        .font(.system(size: 14, weight: .regular))
-                        .foregroundStyle(theme.textSecondary)
-                        .padding(.top, 8)
-                        .padding(.bottom, 24)
-                    
-                    // Chapter summary and message (if available)
-                    if let summary = chapterSummary {
-                        chapterContentSection(summary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(.horizontal, 20)
-                    } else {
-                        // Empty state
-                        emptyStateView
-                            .padding(.horizontal, 20)
+            // Content layout: ScrollView + Fixed bottom buttons
+            VStack(spacing: 0) {
+                // Scrollable content
+                ScrollView {
+                    VStack(spacing: 0) {
+                        // Title: Book + Chapter
+                        Text(chapterTitle)
+                            .font(theme.display(28, language: viewModel.uiLanguage))
+                            .foregroundStyle(theme.textPrimary)
+                            .padding(.top, safeAreaTop + 20)
+                        
+                        // Subtitle: Chapter title + verse count
+                        Text(subtitle)
+                            .font(.system(size: 14, weight: .regular))
+                            .foregroundStyle(theme.textSecondary)
+                            .padding(.top, 8)
+                            .padding(.bottom, 24)
+                        
+                        // Chapter summary and message (if available)
+                        if let summary = chapterSummary {
+                            chapterContentSection(summary)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 20)
+                        } else {
+                            // Empty state
+                            emptyStateView
+                                .padding(.horizontal, 20)
+                        }
                     }
+                    .padding(.bottom, 20)
                 }
-                .padding(.bottom, 40)
-                .background(
-                    GeometryReader { geo in
-                        Color.clear.onAppear {
-                            measuredHeight = geo.size.height
-                        }
-                        .onChange(of: geo.size.height) { _, newValue in
-                            measuredHeight = newValue
-                        }
-                    }
-                )
+                
+                // Fixed bottom navigation buttons
+                chapterNavigationButtons
+                    .padding(.horizontal, 20)
+                    .padding(.bottom, 24)
+                    .padding(.top, 16)
+                    .background(
+                        // Gradient fade from background
+                        LinearGradient(
+                            colors: [theme.background.opacity(0), theme.background],
+                            startPoint: .top,
+                            endPoint: .bottom
+                        )
+                        .frame(height: 40)
+                        .offset(y: -40),
+                        alignment: .top
+                    )
             }
             .offset(x: dragOffset)
             .gesture(horizontalSwipeGesture)
         }
-        .frame(height: min(measuredHeight, maxHeight))
+        .frame(height: maxHeight)
     }
     
     // MARK: - Horizontal Swipe Gesture
@@ -257,6 +266,44 @@ struct ChapterInfoPanel: View {
         }
         .frame(maxWidth: .infinity)
         .padding(.vertical, 32)
+    }
+    
+    // MARK: - Chapter Navigation Buttons
+    private var chapterNavigationButtons: some View {
+        HStack(spacing: 12) {
+            // Previous chapter button
+            Button {
+                Task {
+                    await viewModel.goToPreviousChapter()
+                }
+                HapticManager.shared.selection()
+            } label: {
+                Image(systemName: "chevron.left")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(theme.textPrimary)
+                    .frame(width: 48, height: 48)
+            }
+            .buttonStyle(.glassCircleClear)
+            .opacity(viewModel.canGoToPreviousChapter ? 1 : 0.3)
+            .disabled(!viewModel.canGoToPreviousChapter)
+            
+            // Next chapter button
+            Button {
+                Task {
+                    await viewModel.goToNextChapter()
+                }
+                HapticManager.shared.selection()
+            } label: {
+                Image(systemName: "chevron.right")
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(theme.textPrimary)
+                    .frame(width: 48, height: 48)
+            }
+            .buttonStyle(.glassCircleClear)
+            .opacity(viewModel.canGoToNextChapter ? 1 : 0.3)
+            .disabled(!viewModel.canGoToNextChapter)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 

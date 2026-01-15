@@ -180,7 +180,13 @@ struct BookReadingView: View {
                         bookId: viewModel.currentBook.id,
                         chapter: viewModel.currentChapter,
                         theme: theme,
-                        languageMode: viewModel.uiLanguage
+                        languageMode: viewModel.uiLanguage,
+                        canGoToNextChapter: viewModel.canGoToNextChapter,
+                        onNextChapter: {
+                            Task {
+                                await viewModel.goToNextChapter()
+                            }
+                        }
                     )
                     .padding(.top, 40)
                     .padding(.bottom, geometry.safeAreaInsets.bottom + 100)
