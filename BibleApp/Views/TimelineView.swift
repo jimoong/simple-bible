@@ -559,7 +559,8 @@ struct BibleTimelineContentView: View {
     var topPadding: CGFloat = 0
     var currentBook: BibleBook? = nil
     var searchText: String = ""
-    @Binding var scrollToBottomTrigger: Bool
+    @Binding var scrollTrigger: Bool
+    @Binding var scrollToBottom: Bool  // true = scroll to bottom, false = scroll to top
     var onBookSelect: ((BibleBook) -> Void)? // Called when a Bible book is tapped
     
     @State private var timelineItems: [TimelineItem] = []
@@ -573,14 +574,16 @@ struct BibleTimelineContentView: View {
         topPadding: CGFloat = 0,
         currentBook: BibleBook? = nil,
         searchText: String = "",
-        scrollToBottomTrigger: Binding<Bool> = .constant(false),
+        scrollTrigger: Binding<Bool> = .constant(false),
+        scrollToBottom: Binding<Bool> = .constant(true),
         onBookSelect: ((BibleBook) -> Void)? = nil
     ) {
         self.languageMode = languageMode
         self.topPadding = topPadding
         self.currentBook = currentBook
         self.searchText = searchText
-        self._scrollToBottomTrigger = scrollToBottomTrigger
+        self._scrollTrigger = scrollTrigger
+        self._scrollToBottom = scrollToBottom
         self.onBookSelect = onBookSelect
     }
     
@@ -626,6 +629,11 @@ struct BibleTimelineContentView: View {
         ScrollViewReader { proxy in
             ScrollView(.vertical, showsIndicators: false) {
                 VStack(spacing: 0) {
+                    // Top anchor for scroll-to-top
+                    Color.clear
+                        .frame(height: 1)
+                        .id("timelineTop")
+                    
                     // Title
                     titleSection
                         .padding(.top, topPadding + 16)
@@ -654,10 +662,14 @@ struct BibleTimelineContentView: View {
                 // Always start at the top
                 hasRestoredScrollPosition = true
             }
-            .onChange(of: scrollToBottomTrigger) { _, _ in
-                // Scroll to bottom when triggered
+            .onChange(of: scrollTrigger) { _, _ in
+                // Toggle scroll between top and bottom
                 withAnimation(.easeOut(duration: 0.4)) {
-                    proxy.scrollTo("timelineBottom", anchor: .bottom)
+                    if scrollToBottom {
+                        proxy.scrollTo("timelineBottom", anchor: .bottom)
+                    } else {
+                        proxy.scrollTo("timelineTop", anchor: .top)
+                    }
                 }
             }
         }

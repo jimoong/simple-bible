@@ -21,8 +21,10 @@ struct BookGridView: View {
     @State private var searchSelectedVerse: Int? = nil       // Verse selected via search autocomplete
     @State private var searchVerses: [BibleVerse] = []       // Loaded verses for verse selection
     @State private var isLoadingVerses: Bool = false
-    @State private var scrollToBottomTrigger: Bool = false   // Trigger to scroll to bottom of book grid
-    @State private var timelineScrollToBottomTrigger: Bool = false  // Trigger to scroll to bottom of timeline
+    @State private var bookGridScrollTrigger: Bool = false   // Trigger to scroll book grid
+    @State private var bookGridScrollToBottom: Bool = true   // true = scroll to bottom, false = scroll to top
+    @State private var timelineScrollTrigger: Bool = false   // Trigger to scroll timeline
+    @State private var timelineScrollToBottom: Bool = true   // true = scroll to bottom, false = scroll to top
     
     private let columns = [
         GridItem(.flexible(), spacing: 10),
@@ -167,7 +169,8 @@ struct BookGridView: View {
                     topPadding: topPadding,
                     currentBook: viewModel.currentBook,
                     searchText: searchText,
-                    scrollToBottomTrigger: $timelineScrollToBottomTrigger,
+                    scrollTrigger: $timelineScrollTrigger,
+                    scrollToBottom: $timelineScrollToBottom,
                     onBookSelect: { book in
                         // Navigate to chapter grid when tapped in timeline
                         if let onBookSelect {
@@ -186,7 +189,12 @@ struct BookGridView: View {
                 // Normal mode: Books grid with sections (title scrolls with content)
                 ScrollViewReader { proxy in
                     ScrollView {
-                        VStack(spacing: 24) {
+                        VStack(spacing: 0) {
+                            // Top anchor for scroll-to-top
+                            Color.clear
+                                .frame(height: 1)
+                                .id("bookGridTop")
+                            
                             // Title (scrollable)
                             titleBar
                                 .padding(.top, topPadding + 16)
@@ -194,6 +202,7 @@ struct BookGridView: View {
                             // Favorites section (only if has favorites)
                             if FavoriteService.shared.hasFavorites && searchText.isEmpty {
                                 favoritesSection
+                                    .padding(.top, 24)
                             }
                             
                             // Old Testament section
@@ -202,6 +211,7 @@ struct BookGridView: View {
                                     title: viewModel.uiLanguage == .kr ? "구약" : "Old Testament",
                                     books: oldTestamentBooks
                                 )
+                                .padding(.top, 24)
                             }
                             
                             // New Testament section
@@ -210,6 +220,7 @@ struct BookGridView: View {
                                     title: viewModel.uiLanguage == .kr ? "신약" : "New Testament",
                                     books: newTestamentBooks
                                 )
+                                .padding(.top, 24)
                             }
                             
                             // Bottom anchor for scroll-to-bottom
@@ -219,9 +230,13 @@ struct BookGridView: View {
                         }
                         .padding(.bottom, 120)  // Space for bottom controls
                     }
-                    .onChange(of: scrollToBottomTrigger) { _, _ in
+                    .onChange(of: bookGridScrollTrigger) { _, _ in
                         withAnimation(.easeOut(duration: 0.4)) {
-                            proxy.scrollTo("bookGridBottom", anchor: .bottom)
+                            if bookGridScrollToBottom {
+                                proxy.scrollTo("bookGridBottom", anchor: .bottom)
+                            } else {
+                                proxy.scrollTo("bookGridTop", anchor: .top)
+                            }
                         }
                     }
                 }
@@ -726,14 +741,24 @@ struct BookGridView: View {
             ForEach(BookSortOrder.allCases.filter { $0 != .alphabetical }, id: \.self) { order in
                 Button {
                     if isOrderSelected(order) {
-                        // Already selected - scroll to bottom
+                        // Already selected - toggle scroll between top and bottom
                         if order == .timeline {
-                            timelineScrollToBottomTrigger.toggle()
+                            timelineScrollTrigger.toggle()
+                            // Toggle direction for next tap
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                timelineScrollToBottom.toggle()
+                            }
                         } else {
-                            scrollToBottomTrigger.toggle()
+                            bookGridScrollTrigger.toggle()
+                            // Toggle direction for next tap
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                bookGridScrollToBottom.toggle()
+                            }
                         }
                     } else {
-                        // Switch to this order
+                        // Switch to this order - reset scroll direction to bottom
+                        bookGridScrollToBottom = true
+                        timelineScrollToBottom = true
                         withAnimation(.easeOut(duration: 0.2)) {
                             viewModel.sortOrder = order
                         }
@@ -853,6 +878,7 @@ struct BookGridView: View {
             )
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 20)
+            .padding(.bottom, 8)  // Match timeline view
             .onAppear {
                 withAnimation(.easeInOut(duration: 2.5).repeatForever(autoreverses: true)) {
                     glowAnimating = true
