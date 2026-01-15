@@ -285,14 +285,18 @@ struct GamalielChatView: View {
                         .onDisappear { isAtBottom = false }
                 }
                 .padding(.horizontal, 20)
-                .padding(.top, safeAreaTop + 70)  // Space for header
-                .padding(.bottom, safeAreaBottom + 90)  // Space for input area
+            }
+            .safeAreaInset(edge: .top) {
+                Color.clear.frame(height: safeAreaTop + 70)
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: safeAreaBottom + 90)
             }
             .onAppear {
                 scrollProxy = proxy
             }
             .onChange(of: viewModel.messages.count) { oldCount, newCount in
-                // Scroll to the latest pair
+                // Scroll to the latest pair - position user message below header
                 if let lastPair = conversationPairs.last {
                     withAnimation(.easeOut(duration: 0.3)) {
                         proxy.scrollTo(lastPair.id, anchor: .top)
