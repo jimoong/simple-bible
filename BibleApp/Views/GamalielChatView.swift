@@ -321,12 +321,13 @@ struct GamalielChatView: View {
             }
         } label: {
             Image(systemName: "arrow.down")
-                .font(.system(size: 14, weight: .medium))
-                .foregroundStyle(.white.opacity(0.8))
-                .frame(width: 32, height: 32)
+                .font(.system(size: 14, weight: .semibold))
+                .foregroundStyle(.white)
+                .frame(width: 36, height: 36)
                 .background(
                     Circle()
-                        .fill(Color.white.opacity(0.15))
+                        .fill(.regularMaterial)
+                        .environment(\.colorScheme, .dark)
                 )
         }
     }
