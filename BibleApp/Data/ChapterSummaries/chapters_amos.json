@@ -1,0 +1,143 @@
+{
+  "bookId": "amos",
+  "bookNumber": 30,
+  "bookNameKo": "아모스",
+  "bookNameEn": "Amos",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "열방에 대한 심판",
+      "titleEn": "Judgment on the Nations",
+      "summaryKo": "드고아 목자 아모스가 다메섹, 가사, 두로, 에돔에 대한 심판을 선포합니다.",
+      "summaryEn": "Amos, a shepherd from Tekoa, proclaims judgment against Damascus, Gaza, Tyre, and Edom.",
+      "messageKo": "하나님은 모든 민족의 죄를 심판하십니다.",
+      "messageEn": "God judges the sins of all nations.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "드고아 목자 아모스", "eventEn": "Amos, shepherd from Tekoa"},
+        {"verse": 3, "eventKo": "다메섹에 대한 심판", "eventEn": "Judgment on Damascus"},
+        {"verse": 6, "eventKo": "가사에 대한 심판", "eventEn": "Judgment on Gaza"}
+      ],
+      "timelineYear": "BC 760경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "유다와 이스라엘에 대한 심판",
+      "titleEn": "Judgment on Judah and Israel",
+      "summaryKo": "모압, 유다에 이어 이스라엘의 사회적 불의와 도덕적 타락을 고발합니다.",
+      "summaryEn": "After Moab and Judah, Israel's social injustice and moral corruption are condemned.",
+      "messageKo": "택함 받은 백성일수록 더 큰 책임이 있습니다.",
+      "messageEn": "Chosen people bear greater responsibility.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "유다에 대한 심판", "eventEn": "Judgment on Judah"},
+        {"verse": 6, "eventKo": "가난한 자를 팖", "eventEn": "Selling the poor"},
+        {"verse": 12, "eventKo": "나실인에게 술을 먹임", "eventEn": "Made Nazirites drink wine"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "선택받은 자의 책임",
+      "titleEn": "Responsibility of the Chosen",
+      "summaryKo": "이스라엘이 택함 받았기에 오히려 더 엄격히 심판받을 것을 선포합니다.",
+      "summaryEn": "Declares that Israel will be judged more strictly because they were chosen.",
+      "messageKo": "특권에는 책임이 따르고, 책임을 저버리면 심판이 따릅니다.",
+      "messageEn": "Privilege comes with responsibility; forsaking responsibility brings judgment.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "너희만 알았으므로", "eventEn": "You only have I known"},
+        {"verse": 7, "eventKo": "선지자에게 비밀을 보임", "eventEn": "Reveals secrets to prophets"},
+        {"verse": 12, "eventKo": "조금만 건짐 받음", "eventEn": "Only fragments rescued"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "회개하지 않는 이스라엘",
+      "titleEn": "Unrepentant Israel",
+      "summaryKo": "여러 재앙에도 돌아오지 않는 이스라엘을 책망하고 하나님을 만날 준비를 촉구합니다.",
+      "summaryEn": "Rebukes Israel for not returning despite many calamities and urges them to prepare to meet God.",
+      "messageKo": "반복된 경고에도 돌아오지 않으면 심판이 임합니다.",
+      "messageEn": "Judgment comes to those who don't return despite repeated warnings.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "바산 암소들아", "eventEn": "Cows of Bashan"},
+        {"verse": 6, "eventKo": "그래도 돌아오지 않음", "eventEn": "Yet you did not return"},
+        {"verse": 12, "eventKo": "네 하나님 만날 준비를 하라", "eventEn": "Prepare to meet your God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "선을 구하라",
+      "titleEn": "Seek Good",
+      "summaryKo": "이스라엘에 대한 애가를 부르며 악을 버리고 선을 구하라고 권면합니다.",
+      "summaryEn": "Singing a lament for Israel and urging them to abandon evil and seek good.",
+      "messageKo": "여호와를 찾으면 살고, 악을 미워하고 선을 사랑하라.",
+      "messageEn": "Seek the LORD and live; hate evil and love good.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "나를 찾으라 그리하면 살리라", "eventEn": "Seek me and live"},
+        {"verse": 15, "eventKo": "악을 미워하고 선을 사랑하라", "eventEn": "Hate evil, love good"},
+        {"verse": 24, "eventKo": "정의를 물같이 흐르게 하라", "eventEn": "Let justice roll like waters"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "안일한 자들에게 화 있을진저",
+      "titleEn": "Woe to the Complacent",
+      "summaryKo": "시온과 사마리아에서 안일하게 사는 지도자들의 사치와 무관심을 책망합니다.",
+      "summaryEn": "Rebukes the luxury and indifference of complacent leaders in Zion and Samaria.",
+      "messageKo": "물질적 풍요 속 영적 무감각은 멸망을 초래합니다.",
+      "messageEn": "Spiritual numbness amid material abundance leads to destruction.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "시온에서 안일한 자들", "eventEn": "Those at ease in Zion"},
+        {"verse": 4, "eventKo": "상아 침상에 누움", "eventEn": "Lying on ivory beds"},
+        {"verse": 6, "eventKo": "요셉의 환난을 걱정하지 않음", "eventEn": "Not grieved over Joseph's ruin"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "세 가지 환상과 아마샤와의 충돌",
+      "titleEn": "Three Visions and Conflict with Amaziah",
+      "summaryKo": "메뚜기, 불, 다림줄의 환상을 보고, 벧엘 제사장 아마샤와 충돌합니다.",
+      "summaryEn": "Visions of locusts, fire, and plumb line are seen; conflict with Amaziah the priest of Bethel.",
+      "messageKo": "진정한 선지자는 두려움 없이 하나님의 말씀을 전합니다.",
+      "messageEn": "True prophets speak God's word without fear.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "메뚜기 환상", "eventEn": "Vision of locusts"},
+        {"verse": 7, "eventKo": "다림줄 환상", "eventEn": "Vision of plumb line"},
+        {"verse": 14, "eventKo": "나는 선지자가 아니라 목자였다", "eventEn": "I was not a prophet but a shepherd"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "여름 과일 환상",
+      "titleEn": "Vision of Summer Fruit",
+      "summaryKo": "익은 여름 과일 환상을 통해 심판의 때가 무르익었음을 선포합니다.",
+      "summaryEn": "Through the vision of ripe summer fruit, declares that the time for judgment is ripe.",
+      "messageKo": "가난한 자를 착취하는 죄는 심판을 재촉합니다.",
+      "messageEn": "Exploiting the poor hastens judgment.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여름 과일 광주리", "eventEn": "Basket of summer fruit"},
+        {"verse": 5, "eventKo": "저울을 속임", "eventEn": "Cheating with scales"},
+        {"verse": 11, "eventKo": "말씀 기근의 날", "eventEn": "Famine of hearing God's words"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "심판과 회복",
+      "titleEn": "Judgment and Restoration",
+      "summaryKo": "피할 수 없는 심판이 선포되나, 다윗의 장막 회복과 번영의 약속으로 마무리됩니다.",
+      "summaryEn": "Inescapable judgment is proclaimed, but concludes with promises of David's tent restoration and prosperity.",
+      "messageKo": "심판 후에 하나님은 회복과 번영을 약속하십니다.",
+      "messageEn": "After judgment, God promises restoration and prosperity.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "제단 위에 주님을 봄", "eventEn": "Lord standing by the altar"},
+        {"verse": 9, "eventKo": "체로 치듯 흩으심", "eventEn": "Shaken as with a sieve"},
+        {"verse": 11, "eventKo": "다윗의 무너진 장막 복구", "eventEn": "Restore David's fallen tent"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

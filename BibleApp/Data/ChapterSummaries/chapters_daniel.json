@@ -1,0 +1,188 @@
+{
+  "bookId": "daniel",
+  "bookNumber": 27,
+  "bookNameKo": "다니엘",
+  "bookNameEn": "Daniel",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "바벨론 포로와 다니엘의 결심",
+      "titleEn": "Babylonian Captivity and Daniel's Resolve",
+      "summaryKo": "다니엘과 세 친구가 바벨론에 포로로 잡혀가 왕의 음식을 거부하고 채식으로 건강을 유지합니다.",
+      "summaryEn": "Daniel and his three friends are taken captive to Babylon, refuse the king's food, and thrive on vegetables.",
+      "messageKo": "세상에서 하나님을 향한 신앙을 지키는 결단이 중요합니다.",
+      "messageEn": "Resolving to keep faith in God while living in the world is crucial.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "바벨론 포로", "eventEn": "Babylonian captivity"},
+        {"verse": 8, "eventKo": "다니엘의 결심", "eventEn": "Daniel's resolve"},
+        {"verse": 17, "eventKo": "지혜와 총명을 받음", "eventEn": "Given wisdom and understanding"}
+      ],
+      "timelineYear": "BC 605"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "느부갓네살의 꿈 해석",
+      "titleEn": "Nebuchadnezzar's Dream Interpreted",
+      "summaryKo": "다니엘이 왕의 꿈을 해석하여 세계 역사의 흐름과 하나님 나라의 도래를 예언합니다.",
+      "summaryEn": "Daniel interprets the king's dream, prophesying the course of world history and the coming of God's kingdom.",
+      "messageKo": "모든 세상 나라는 지나가고 하나님의 나라만 영원합니다.",
+      "messageEn": "All earthly kingdoms pass away; only God's kingdom is eternal.",
+      "keyEvents": [
+        {"verse": 19, "eventKo": "비밀이 계시됨", "eventEn": "Mystery revealed to Daniel"},
+        {"verse": 31, "eventKo": "신상의 꿈", "eventEn": "Dream of the statue"},
+        {"verse": 44, "eventKo": "영원한 나라 예언", "eventEn": "Prophecy of eternal kingdom"}
+      ],
+      "timelineYear": "BC 603"
+    },
+    {
+      "chapter": 3,
+      "titleKo": "풀무불 속의 세 친구",
+      "titleEn": "Three Friends in the Fiery Furnace",
+      "summaryKo": "사드락, 메삭, 아벳느고가 금 신상에 절하기를 거부하고 풀무불에 던져지나 구원받습니다.",
+      "summaryEn": "Shadrach, Meshach, and Abednego refuse to worship the golden image and are saved from the fiery furnace.",
+      "messageKo": "하나님은 신앙을 지키는 자를 보호하시고 높이십니다.",
+      "messageEn": "God protects and exalts those who remain faithful.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "금 신상 숭배 명령", "eventEn": "Command to worship golden image"},
+        {"verse": 17, "eventKo": "세 친구의 신앙 고백", "eventEn": "Three friends' declaration of faith"},
+        {"verse": 25, "eventKo": "네 번째 사람의 출현", "eventEn": "Fourth figure in the fire"}
+      ],
+      "timelineYear": "BC 586경"
+    },
+    {
+      "chapter": 4,
+      "titleKo": "느부갓네살의 교만과 회복",
+      "titleEn": "Nebuchadnezzar's Pride and Restoration",
+      "summaryKo": "느부갓네살왕이 교만으로 인해 짐승처럼 되었다가 하나님을 인정하고 회복됩니다.",
+      "summaryEn": "King Nebuchadnezzar becomes like a beast due to pride but is restored after acknowledging God.",
+      "messageKo": "교만은 몰락을 가져오고 겸손은 회복을 가져옵니다.",
+      "messageEn": "Pride leads to downfall, but humility brings restoration.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "큰 나무의 꿈", "eventEn": "Dream of the great tree"},
+        {"verse": 30, "eventKo": "왕의 교만", "eventEn": "King's pride"},
+        {"verse": 34, "eventKo": "정신 회복과 찬양", "eventEn": "Sanity restored and praise given"}
+      ],
+      "timelineYear": "BC 570경"
+    },
+    {
+      "chapter": 5,
+      "titleKo": "벽에 쓴 글자",
+      "titleEn": "Writing on the Wall",
+      "summaryKo": "벨사살왕의 잔치 중 신비한 손이 벽에 글을 쓰고, 다니엘이 바벨론 멸망을 예언합니다.",
+      "summaryEn": "During Belshazzar's feast, a mysterious hand writes on the wall; Daniel prophesies Babylon's fall.",
+      "messageKo": "하나님을 거역하는 교만한 나라는 심판을 피할 수 없습니다.",
+      "messageEn": "Arrogant nations that oppose God cannot escape judgment.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "벽에 쓰는 손", "eventEn": "Hand writing on the wall"},
+        {"verse": 25, "eventKo": "메네 메네 데겔 우바르신", "eventEn": "MENE, MENE, TEKEL, PARSIN"},
+        {"verse": 30, "eventKo": "벨사살의 죽음", "eventEn": "Belshazzar's death"}
+      ],
+      "timelineYear": "BC 539"
+    },
+    {
+      "chapter": 6,
+      "titleKo": "사자굴 속의 다니엘",
+      "titleEn": "Daniel in the Lions' Den",
+      "summaryKo": "다니엘이 기도를 포기하지 않아 사자굴에 던져지나 하나님이 구원하십니다.",
+      "summaryEn": "Daniel refuses to stop praying and is thrown into the lions' den, but God delivers him.",
+      "messageKo": "어떤 상황에서도 기도를 멈추지 않는 신앙이 승리합니다.",
+      "messageEn": "Faith that persists in prayer through any circumstance triumphs.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "창을 열고 기도함", "eventEn": "Daniel prays at open window"},
+        {"verse": 16, "eventKo": "사자굴에 던져짐", "eventEn": "Thrown into lions' den"},
+        {"verse": 22, "eventKo": "사자 입을 막으심", "eventEn": "God shuts lions' mouths"}
+      ],
+      "timelineYear": "BC 538"
+    },
+    {
+      "chapter": 7,
+      "titleKo": "네 짐승의 환상",
+      "titleEn": "Vision of Four Beasts",
+      "summaryKo": "다니엘이 네 짐승과 인자 같은 이의 환상을 보며 세계 역사의 흐름을 예견합니다.",
+      "summaryEn": "Daniel sees a vision of four beasts and one like a son of man, foreseeing the course of world history.",
+      "messageKo": "역사의 종국에 하나님의 영원한 나라가 세워집니다.",
+      "messageEn": "At the end of history, God's eternal kingdom will be established.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "네 큰 짐승", "eventEn": "Four great beasts"},
+        {"verse": 13, "eventKo": "인자 같은 이", "eventEn": "One like a son of man"},
+        {"verse": 27, "eventKo": "성도들의 나라", "eventEn": "Kingdom given to the saints"}
+      ],
+      "timelineYear": "BC 553"
+    },
+    {
+      "chapter": 8,
+      "titleKo": "숫양과 숫염소의 환상",
+      "titleEn": "Vision of Ram and Goat",
+      "summaryKo": "숫양과 숫염소의 환상을 통해 메대-바사와 그리스 제국, 그리고 작은 뿔의 등장을 예언합니다.",
+      "summaryEn": "Through the vision of ram and goat, the Medo-Persian and Greek empires and the little horn are prophesied.",
+      "messageKo": "하나님은 역사의 흐름을 미리 알려주십니다.",
+      "messageEn": "God reveals the course of history in advance.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "두 뿔 가진 숫양", "eventEn": "Ram with two horns"},
+        {"verse": 5, "eventKo": "숫염소와 큰 뿔", "eventEn": "Goat with prominent horn"},
+        {"verse": 23, "eventKo": "작은 뿔의 왕", "eventEn": "King from little horn"}
+      ],
+      "timelineYear": "BC 551"
+    },
+    {
+      "chapter": 9,
+      "titleKo": "다니엘의 기도와 70이레 예언",
+      "titleEn": "Daniel's Prayer and Seventy Weeks Prophecy",
+      "summaryKo": "다니엘이 민족의 죄를 고백하며 기도하고, 70이레의 메시아 예언을 받습니다.",
+      "summaryEn": "Daniel confesses the sins of his people in prayer and receives the prophecy of seventy weeks regarding the Messiah.",
+      "messageKo": "회개의 기도는 하나님의 계획을 알게 하는 문을 엽니다.",
+      "messageEn": "Prayers of repentance open the door to understanding God's plan.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "금식하며 기도함", "eventEn": "Prayer with fasting"},
+        {"verse": 20, "eventKo": "가브리엘의 출현", "eventEn": "Gabriel appears"},
+        {"verse": 24, "eventKo": "70이레 예언", "eventEn": "Seventy weeks prophecy"}
+      ],
+      "timelineYear": "BC 538"
+    },
+    {
+      "chapter": 10,
+      "titleKo": "천사의 방문",
+      "titleEn": "The Angel's Visit",
+      "summaryKo": "다니엘이 3주간 금식 기도 후 영광스러운 천사의 방문을 받습니다.",
+      "summaryEn": "After three weeks of fasting and prayer, Daniel receives a visit from a glorious angel.",
+      "messageKo": "영적 전쟁 속에서도 기도는 응답됩니다.",
+      "messageEn": "Even amid spiritual warfare, prayers are answered.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "3주간의 금식", "eventEn": "Three weeks of mourning"},
+        {"verse": 5, "eventKo": "세마포 입은 사람", "eventEn": "Man dressed in linen"},
+        {"verse": 13, "eventKo": "바사 군주와의 싸움", "eventEn": "Battle with prince of Persia"}
+      ],
+      "timelineYear": "BC 536"
+    },
+    {
+      "chapter": 11,
+      "titleKo": "남방 왕과 북방 왕",
+      "titleEn": "Kings of South and North",
+      "summaryKo": "남방 왕(이집트)과 북방 왕(시리아)의 전쟁과 미래 역사가 상세히 예언됩니다.",
+      "summaryEn": "Wars between kings of the South (Egypt) and North (Syria) and future history are prophesied in detail.",
+      "messageKo": "인간의 역사는 하나님의 주권 아래 있습니다.",
+      "messageEn": "Human history is under God's sovereign control.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바사의 네 왕", "eventEn": "Four more kings of Persia"},
+        {"verse": 21, "eventKo": "비천한 자의 등장", "eventEn": "Contemptible person arises"},
+        {"verse": 36, "eventKo": "자의로 행하는 왕", "eventEn": "King who exalts himself"}
+      ],
+      "timelineYear": "BC 536"
+    },
+    {
+      "chapter": 12,
+      "titleKo": "마지막 때와 부활",
+      "titleEn": "End Times and Resurrection",
+      "summaryKo": "큰 환난과 부활, 그리고 최종 심판의 때가 예언됩니다.",
+      "summaryEn": "Great tribulation, resurrection, and the time of final judgment are prophesied.",
+      "messageKo": "궁극적 승리와 영생은 하나님께 신실한 자들의 것입니다.",
+      "messageEn": "Ultimate victory and eternal life belong to those faithful to God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "미가엘의 일어남", "eventEn": "Michael arises"},
+        {"verse": 2, "eventKo": "부활 예언", "eventEn": "Prophecy of resurrection"},
+        {"verse": 13, "eventKo": "마지막 때까지 가라", "eventEn": "Go until the end"}
+      ],
+      "timelineYear": "BC 536"
+    }
+  ]
+}

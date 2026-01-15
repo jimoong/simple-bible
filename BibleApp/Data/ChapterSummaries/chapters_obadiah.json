@@ -1,0 +1,25 @@
+{
+  "bookId": "obadiah",
+  "bookNumber": 31,
+  "bookNameKo": "오바댜",
+  "bookNameEn": "Obadiah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "에돔에 대한 심판",
+      "titleEn": "Judgment on Edom",
+      "summaryKo": "야곱의 형제 에서의 후손 에돔이 이스라엘의 환난 때 배신한 죄로 심판받을 것을 예언합니다.",
+      "summaryEn": "Prophesies judgment on Edom, descendants of Esau, for betraying Israel in their time of distress.",
+      "messageKo": "형제를 배신하는 교만은 반드시 심판받습니다.",
+      "messageEn": "Pride that betrays brothers will certainly be judged.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "바위 틈에 사는 교만", "eventEn": "Pride of dwelling in rock clefts"},
+        {"verse": 10, "eventKo": "야곱에게 행한 폭행", "eventEn": "Violence against Jacob"},
+        {"verse": 12, "eventKo": "환난 날에 방관함", "eventEn": "Standing aloof in day of disaster"},
+        {"verse": 15, "eventKo": "여호와의 날이 가까움", "eventEn": "Day of the LORD is near"},
+        {"verse": 21, "eventKo": "나라가 여호와께 속함", "eventEn": "Kingdom will be the LORD's"}
+      ],
+      "timelineYear": "BC 586경"
+    }
+  ]
+}

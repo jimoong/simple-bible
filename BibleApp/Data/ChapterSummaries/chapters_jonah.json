@@ -1,0 +1,68 @@
+{
+  "bookId": "jonah",
+  "bookNumber": 32,
+  "bookNameKo": "요나",
+  "bookNameEn": "Jonah",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "요나의 도피",
+      "titleEn": "Jonah's Flight",
+      "summaryKo": "요나가 니느웨로 가라는 명령을 거부하고 다시스로 도망치다 폭풍을 만나 바다에 던져집니다.",
+      "summaryEn": "Jonah refuses to go to Nineveh, flees to Tarshish, encounters a storm, and is thrown into the sea.",
+      "messageKo": "하나님의 부르심을 피할 수 없습니다.",
+      "messageEn": "You cannot escape God's calling.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "니느웨로 가라는 명령", "eventEn": "Command to go to Nineveh"},
+        {"verse": 3, "eventKo": "다시스로 도망", "eventEn": "Flees to Tarshish"},
+        {"verse": 15, "eventKo": "바다에 던져짐", "eventEn": "Thrown into the sea"}
+      ],
+      "timelineYear": "BC 780경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "물고기 뱃속에서의 기도",
+      "titleEn": "Prayer from the Fish",
+      "summaryKo": "큰 물고기 뱃속에서 3일간 있으면서 요나가 하나님께 감사와 회개의 기도를 드립니다.",
+      "summaryEn": "Inside the great fish for three days, Jonah prays to God in thanksgiving and repentance.",
+      "messageKo": "어떤 깊은 곳에서도 하나님께 부르짖으면 응답하십니다.",
+      "messageEn": "God answers when we cry out from the deepest places.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "물고기 뱃속에서 기도", "eventEn": "Prays from fish's belly"},
+        {"verse": 6, "eventKo": "구덩이에서 건져주심", "eventEn": "Brought up from the pit"},
+        {"verse": 10, "eventKo": "뭍에 토해냄", "eventEn": "Vomited onto dry land"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "니느웨의 회개",
+      "titleEn": "Nineveh's Repentance",
+      "summaryKo": "요나가 니느웨에서 심판을 선포하자 왕부터 백성까지 모두 회개하고 하나님이 재앙을 거두십니다.",
+      "summaryEn": "Jonah proclaims judgment in Nineveh; from king to people, all repent, and God relents from disaster.",
+      "messageKo": "진정한 회개는 하나님의 마음을 돌이키게 합니다.",
+      "messageEn": "True repentance turns God's heart.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "40일 후 멸망 선포", "eventEn": "Forty days until overthrow"},
+        {"verse": 6, "eventKo": "왕이 굵은 베를 입음", "eventEn": "King puts on sackcloth"},
+        {"verse": 10, "eventKo": "하나님이 뜻을 돌이키심", "eventEn": "God relents from disaster"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "요나의 분노와 하나님의 교훈",
+      "titleEn": "Jonah's Anger and God's Lesson",
+      "summaryKo": "요나가 니느웨의 구원에 분노하고, 하나님이 박넝쿨을 통해 긍휼의 교훈을 주십니다.",
+      "summaryEn": "Jonah is angry at Nineveh's salvation; God teaches him about compassion through a vine.",
+      "messageKo": "하나님의 긍휼은 모든 민족에게 미칩니다.",
+      "messageEn": "God's compassion extends to all nations.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "은혜로우신 하나님을 알았음", "eventEn": "Knew God was gracious"},
+        {"verse": 6, "eventKo": "박넝쿨이 자라남", "eventEn": "Vine grows up"},
+        {"verse": 11, "eventKo": "12만 명을 아끼지 않겠느냐", "eventEn": "Should I not care for 120,000?"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

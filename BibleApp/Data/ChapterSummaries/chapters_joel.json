@@ -1,0 +1,53 @@
+{
+  "bookId": "joel",
+  "bookNumber": 29,
+  "bookNameKo": "요엘",
+  "bookNameEn": "Joel",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "메뚜기 재앙",
+      "titleEn": "The Locust Plague",
+      "summaryKo": "전례 없는 메뚜기 재앙이 유다 땅을 황폐케 하고, 백성에게 금식과 회개를 촉구합니다.",
+      "summaryEn": "An unprecedented locust plague devastates Judah, and the people are called to fasting and repentance.",
+      "messageKo": "재앙은 하나님께 돌아가라는 경종입니다.",
+      "messageEn": "Disaster is a wake-up call to return to God.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "네 종류의 메뚜기", "eventEn": "Four kinds of locusts"},
+        {"verse": 13, "eventKo": "제사장들의 금식 촉구", "eventEn": "Priests called to fast"},
+        {"verse": 15, "eventKo": "여호와의 날이 가까움", "eventEn": "Day of the LORD is near"}
+      ],
+      "timelineYear": "BC 835경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "여호와의 날과 회개",
+      "titleEn": "Day of the LORD and Repentance",
+      "summaryKo": "임박한 심판을 경고하고 진심 어린 회개를 촉구하며, 성령 부어주심의 약속을 선포합니다.",
+      "summaryEn": "Warning of imminent judgment, calling for heartfelt repentance, and proclaiming the promise of the Spirit's outpouring.",
+      "messageKo": "하나님은 옷이 아닌 마음을 찢는 회개를 원하십니다.",
+      "messageEn": "God desires repentance that tears the heart, not garments.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "마음을 다하여 돌아오라", "eventEn": "Return with all your heart"},
+        {"verse": 13, "eventKo": "옷이 아닌 마음을 찢으라", "eventEn": "Rend your heart, not garments"},
+        {"verse": 28, "eventKo": "성령 부어주심 약속", "eventEn": "Promise of Spirit's outpouring"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "열방에 대한 심판",
+      "titleEn": "Judgment on the Nations",
+      "summaryKo": "여호사밧 골짜기에서의 열방 심판과 유다의 궁극적 회복을 예언합니다.",
+      "summaryEn": "Prophesies judgment on nations in the Valley of Jehoshaphat and Judah's ultimate restoration.",
+      "messageKo": "하나님의 백성을 대적하는 자들은 심판을 받습니다.",
+      "messageEn": "Those who oppose God's people will face judgment.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "여호사밧 골짜기", "eventEn": "Valley of Jehoshaphat"},
+        {"verse": 10, "eventKo": "보습을 쳐서 칼을 만들라", "eventEn": "Beat plowshares into swords"},
+        {"verse": 18, "eventKo": "유다의 영원한 거함", "eventEn": "Judah inhabited forever"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "bookId": "hosea",
+  "bookNumber": 28,
+  "bookNameKo": "호세아",
+  "bookNameEn": "Hosea",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "호세아의 결혼",
+      "titleEn": "Hosea's Marriage",
+      "summaryKo": "호세아가 음녀 고멜과 결혼하여 이스라엘의 불신앙을 상징적으로 보여줍니다.",
+      "summaryEn": "Hosea marries the unfaithful Gomer, symbolizing Israel's spiritual adultery.",
+      "messageKo": "하나님은 불신실한 백성도 포기하지 않고 사랑하십니다.",
+      "messageEn": "God loves His unfaithful people and does not give up on them.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "음녀와 결혼 명령", "eventEn": "Command to marry unfaithful wife"},
+        {"verse": 4, "eventKo": "아들 이스르엘", "eventEn": "Son named Jezreel"},
+        {"verse": 9, "eventKo": "아들 로암미", "eventEn": "Son named Lo-Ammi"}
+      ],
+      "timelineYear": "BC 753경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "불신실한 아내와 신실한 남편",
+      "titleEn": "Unfaithful Wife and Faithful Husband",
+      "summaryKo": "이스라엘의 우상숭배를 꾸짖으나 하나님의 회복의 약속도 선포합니다.",
+      "summaryEn": "Israel's idolatry is rebuked, but God's promise of restoration is also proclaimed.",
+      "messageKo": "심판 후에도 회복과 새 언약의 소망이 있습니다.",
+      "messageEn": "Even after judgment, there is hope for restoration and a new covenant.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "바알을 따름", "eventEn": "Following Baal"},
+        {"verse": 14, "eventKo": "광야로 인도함", "eventEn": "Allured into wilderness"},
+        {"verse": 23, "eventKo": "내 백성이라 부름", "eventEn": "Called 'My People'"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "고멜을 다시 사랑함",
+      "titleEn": "Loving Gomer Again",
+      "summaryKo": "호세아가 떠났던 아내 고멜을 다시 사서 사랑하며 이스라엘의 회복을 예표합니다.",
+      "summaryEn": "Hosea redeems and loves Gomer again, foreshadowing Israel's restoration.",
+      "messageKo": "하나님의 사랑은 대가를 치르고도 다시 받아주시는 사랑입니다.",
+      "messageEn": "God's love is a redeeming love that takes back at great cost.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "다시 사랑하라는 명령", "eventEn": "Command to love again"},
+        {"verse": 2, "eventKo": "은 열다섯과 보리로 삼", "eventEn": "Bought for fifteen shekels and barley"},
+        {"verse": 5, "eventKo": "다윗을 구할 것임", "eventEn": "Will seek David their king"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "이스라엘의 죄에 대한 고발",
+      "titleEn": "Charge Against Israel",
+      "summaryKo": "이스라엘의 진실, 인애, 하나님 지식의 결핍을 고발합니다.",
+      "summaryEn": "Israel is charged with lacking faithfulness, love, and knowledge of God.",
+      "messageKo": "하나님을 아는 지식이 없으면 백성이 망합니다.",
+      "messageEn": "Without knowledge of God, people are destroyed.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와의 고발", "eventEn": "LORD's charge"},
+        {"verse": 6, "eventKo": "지식이 없어 망함", "eventEn": "Destroyed for lack of knowledge"},
+        {"verse": 12, "eventKo": "우상에게 물음", "eventEn": "Consulting idols"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "지도자들에 대한 심판",
+      "titleEn": "Judgment on Leaders",
+      "summaryKo": "제사장과 왕족의 죄를 꾸짖고 다가오는 심판을 경고합니다.",
+      "summaryEn": "The sins of priests and royalty are rebuked, and coming judgment is warned.",
+      "messageKo": "지도자들의 타락은 온 백성에게 영향을 미칩니다.",
+      "messageEn": "The corruption of leaders affects all the people.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "제사장들에게 경고", "eventEn": "Warning to priests"},
+        {"verse": 4, "eventKo": "교만이 증거함", "eventEn": "Pride testifies against them"},
+        {"verse": 15, "eventKo": "내 처소로 돌아감", "eventEn": "God withdraws"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "거짓 회개",
+      "titleEn": "False Repentance",
+      "summaryKo": "이스라엘의 피상적인 회개와 하나님이 원하시는 참된 인애와 지식을 대조합니다.",
+      "summaryEn": "Israel's superficial repentance is contrasted with the true love and knowledge God desires.",
+      "messageKo": "하나님은 제사보다 인애와 진정한 앎을 원하십니다.",
+      "messageEn": "God desires mercy and true knowledge over sacrifice.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "여호와께로 돌아가자", "eventEn": "Let us return to the LORD"},
+        {"verse": 4, "eventKo": "아침 구름 같은 인애", "eventEn": "Love like morning mist"},
+        {"verse": 6, "eventKo": "인애를 원함", "eventEn": "Desires mercy, not sacrifice"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "이스라엘의 부패",
+      "titleEn": "Israel's Corruption",
+      "summaryKo": "이스라엘의 내적 부패와 외교적 기회주의를 풀무, 뒤집지 않은 떡에 비유합니다.",
+      "summaryEn": "Israel's internal corruption and diplomatic opportunism are likened to an oven and unturned bread.",
+      "messageKo": "하나님 없이 인간적 방법으로 문제를 해결하려는 시도는 실패합니다.",
+      "messageEn": "Attempts to solve problems through human means without God will fail.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "불 붙은 화덕 같음", "eventEn": "Like a heated oven"},
+        {"verse": 8, "eventKo": "뒤집지 않은 떡", "eventEn": "Cake not turned"},
+        {"verse": 11, "eventKo": "미련한 비둘기", "eventEn": "Silly dove without sense"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "심판의 폭풍",
+      "titleEn": "The Storm of Judgment",
+      "summaryKo": "언약 파기와 우상숭배로 인해 바람을 심고 폭풍을 거두게 됩니다.",
+      "summaryEn": "Breaking covenant and idolatry lead to sowing wind and reaping the whirlwind.",
+      "messageKo": "죄의 결과는 심은 것보다 훨씬 큰 재앙으로 돌아옵니다.",
+      "messageEn": "The consequences of sin return as disasters far greater than what was sown.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "독수리처럼 임함", "eventEn": "Eagle swoops down"},
+        {"verse": 7, "eventKo": "바람을 심고 폭풍을 거둠", "eventEn": "Sow wind, reap whirlwind"},
+        {"verse": 14, "eventKo": "창조주를 잊음", "eventEn": "Israel forgot Maker"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "포로의 예언",
+      "titleEn": "Prophecy of Exile",
+      "summaryKo": "이스라엘이 이집트와 앗수르로 흩어질 것을 예언합니다.",
+      "summaryEn": "Prophesies that Israel will be scattered to Egypt and Assyria.",
+      "messageKo": "하나님을 버린 민족은 방랑자가 됩니다.",
+      "messageEn": "A nation that forsakes God becomes wanderers.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "애굽으로 돌아감", "eventEn": "Return to Egypt"},
+        {"verse": 7, "eventKo": "보응의 날이 옴", "eventEn": "Days of reckoning come"},
+        {"verse": 17, "eventKo": "열방 중 유리함", "eventEn": "Wanderers among nations"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "무성한 포도나무의 타락",
+      "titleEn": "Corruption of a Luxuriant Vine",
+      "summaryKo": "번영할수록 우상에 빠진 이스라엘에게 심판이 임합니다.",
+      "summaryEn": "Judgment comes upon Israel, which fell into idolatry as it prospered.",
+      "messageKo": "물질적 번영이 영적 타락의 원인이 될 수 있습니다.",
+      "messageEn": "Material prosperity can become a cause of spiritual corruption.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "무성한 포도나무", "eventEn": "Luxuriant vine"},
+        {"verse": 8, "eventKo": "산아 우리를 덮으라", "eventEn": "Mountains, cover us"},
+        {"verse": 12, "eventKo": "의를 심고 인애를 거둠", "eventEn": "Sow righteousness, reap love"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "하나님의 아버지 같은 사랑",
+      "titleEn": "God's Fatherly Love",
+      "summaryKo": "이스라엘을 어린 아이처럼 사랑하신 하나님의 마음과 심판의 갈등이 표현됩니다.",
+      "summaryEn": "God's love for Israel as a child and His inner conflict over judgment are expressed.",
+      "messageKo": "하나님의 사랑은 인간의 배신에도 변함이 없습니다.",
+      "messageEn": "God's love remains constant despite human betrayal.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "애굽에서 불러냄", "eventEn": "Called out of Egypt"},
+        {"verse": 3, "eventKo": "걸음마를 가르침", "eventEn": "Taught them to walk"},
+        {"verse": 8, "eventKo": "어찌 버리랴", "eventEn": "How can I give you up?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "야곱의 교훈",
+      "titleEn": "Lessons from Jacob",
+      "summaryKo": "조상 야곱의 이야기를 통해 이스라엘에게 회개를 촉구합니다.",
+      "summaryEn": "Through the story of ancestor Jacob, Israel is urged to repent.",
+      "messageKo": "조상의 신앙을 기억하고 하나님께 돌아와야 합니다.",
+      "messageEn": "Remember the faith of ancestors and return to God.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "야곱의 씨름", "eventEn": "Jacob's wrestling"},
+        {"verse": 6, "eventKo": "하나님께로 돌아오라", "eventEn": "Return to your God"},
+        {"verse": 13, "eventKo": "선지자로 인도함", "eventEn": "Led by a prophet"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "심판의 불가피성",
+      "titleEn": "Inevitability of Judgment",
+      "summaryKo": "바알 숭배로 인한 이스라엘의 멸망이 선언되나 부활의 소망도 암시됩니다.",
+      "summaryEn": "Israel's destruction due to Baal worship is declared, but hope of resurrection is also hinted.",
+      "messageKo": "사망도 이기시는 하나님의 능력이 최후의 소망입니다.",
+      "messageEn": "God's power to overcome death is the ultimate hope.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "송아지에게 입맞춤", "eventEn": "Kissing calf idols"},
+        {"verse": 9, "eventKo": "스스로 멸망함", "eventEn": "Self-destruction"},
+        {"verse": 14, "eventKo": "사망에서 구속함", "eventEn": "Ransom from death"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "회복의 약속",
+      "titleEn": "Promise of Restoration",
+      "summaryKo": "진정한 회개에 대한 권고와 회복과 치유의 아름다운 약속으로 마무리됩니다.",
+      "summaryEn": "The book concludes with exhortation to true repentance and beautiful promises of restoration and healing.",
+      "messageKo": "진심으로 돌아오는 자에게 하나님은 치유와 번영을 주십니다.",
+      "messageEn": "God gives healing and prosperity to those who sincerely return.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "말씀을 가지고 돌아오라", "eventEn": "Return with words"},
+        {"verse": 4, "eventKo": "배역함을 고치리라", "eventEn": "I will heal their waywardness"},
+        {"verse": 5, "eventKo": "이슬 같으리라", "eventEn": "I will be like the dew"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}
