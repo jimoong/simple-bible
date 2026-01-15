@@ -216,7 +216,7 @@ struct GamalielChatView: View {
                 
                 if let welcomeMessage = viewModel.messages.first {
                     Text(welcomeMessage.content)
-                        .font(.custom("Lora-Regular", size: 16))
+                        .font(serifFont(16))
                         .lineSpacing(7)
                         .foregroundStyle(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
