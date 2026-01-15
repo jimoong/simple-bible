@@ -247,11 +247,12 @@ struct GamalielChatView: View {
         ScrollViewReader { proxy in
             ScrollView {
                 LazyVStack(spacing: 32) {
-                    ForEach(conversationPairs) { pair in
+                    ForEach(Array(conversationPairs.enumerated()), id: \.element.id) { index, pair in
                         ConversationPairView(
                             pair: pair,
                             languageMode: languageMode,
                             isStreaming: viewModel.isStreaming && pair.assistantMessage?.id == viewModel.streamingMessageId,
+                            isLastPair: index == conversationPairs.count - 1,
                             minHeight: conversationMinHeight,
                             onNavigateToVerse: handleVerseTap,
                             onSendQuestion: { question in
@@ -497,6 +498,7 @@ private struct ConversationPairView: View {
     let pair: ConversationPair
     let languageMode: LanguageMode
     let isStreaming: Bool
+    let isLastPair: Bool  // Only the last pair can have minHeight
     let minHeight: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
     var onSendQuestion: ((String) -> Void)? = nil
@@ -517,9 +519,11 @@ private struct ConversationPairView: View {
     }
     
     // Use minimum height only when:
+    // - This is the LAST pair AND
     // - This pair has a user message AND
     // - Either streaming is active OR assistant message is empty/nil
     private var shouldUseMinHeight: Bool {
+        guard isLastPair else { return false }
         guard pair.userMessage != nil else { return false }
         
         if isStreaming {
