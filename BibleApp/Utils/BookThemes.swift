@@ -38,7 +38,10 @@ struct BookTheme {
     private func fontFor(size: CGFloat, weight: Font.Weight, design: Font.Design, language: LanguageMode) -> Font {
         switch language {
         case .en:
-            // English uses system fonts with design
+            // English uses Spectral for serif, system fonts for others
+            if design == .serif {
+                return FontManager.englishSerif(size: size, weight: weight)
+            }
             return .system(size: size, weight: weight, design: design)
         case .kr:
             // Korean uses FontManager to get appropriate Korean font

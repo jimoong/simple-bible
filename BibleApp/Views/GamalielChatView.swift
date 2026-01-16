@@ -115,7 +115,7 @@ struct GamalielChatView: View {
         if languageMode == .kr {
             return FontManager.korean(size: size, weight: weight, design: .serif)
         } else {
-            return .system(size: size, weight: weight, design: .serif)
+            return FontManager.englishSerif(size: size, weight: weight)
         }
     }
     
@@ -689,7 +689,7 @@ private struct MessageBubble: View {
         if languageMode == .kr {
             return FontManager.korean(size: size, weight: weight, design: .serif)
         } else {
-            return .system(size: size, weight: weight, design: .serif)
+            return FontManager.englishSerif(size: size, weight: weight)
         }
     }
     
@@ -1249,7 +1249,7 @@ private struct ThinkingIndicator: View {
         if languageMode == .kr {
             return FontManager.korean(size: size, weight: weight, design: .serif)
         } else {
-            return .system(size: size, weight: weight, design: .serif)
+            return FontManager.englishSerif(size: size, weight: weight)
         }
     }
     
@@ -1283,7 +1283,7 @@ private struct ErrorView: View {
         if languageMode == .kr {
             return FontManager.korean(size: size, weight: weight, design: .serif)
         } else {
-            return .system(size: size, weight: weight, design: .serif)
+            return FontManager.englishSerif(size: size, weight: weight)
         }
     }
     

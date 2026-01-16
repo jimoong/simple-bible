@@ -12,6 +12,9 @@ enum FontManager {
     /// Noto Sans KR Variable font family name  
     static let sansFontFamily = "Noto Sans KR"
     
+    /// Spectral font family name (English serif - optimized for screen reading)
+    static let englishSerifFontFamily = "Spectral"
+    
     // MARK: - iOS Fallbacks
     
     static let appleMyungjo = "AppleMyungjo"
@@ -24,6 +27,10 @@ enum FontManager {
     
     static var hasNotoSansKR: Bool {
         UIFont.familyNames.contains(sansFontFamily)
+    }
+    
+    static var hasSpectral: Bool {
+        UIFont.familyNames.contains(englishSerifFontFamily)
     }
     
     // MARK: - Korean Font Getters
@@ -50,6 +57,19 @@ enum FontManager {
             return .custom(appleMyungjo, size: size)
         }
         
+        return .system(size: size, weight: weight, design: .serif)
+    }
+    
+    /// English serif font using Spectral (optimized for screen reading)
+    static func englishSerif(size: CGFloat, weight: Font.Weight = .regular) -> Font {
+        if hasSpectral {
+            let fontName = spectralFontName(for: weight)
+            if UIFont(name: fontName, size: size) != nil {
+                return .custom(fontName, size: size)
+            }
+        }
+        
+        // Fallback to system serif
         return .system(size: size, weight: weight, design: .serif)
     }
     
@@ -121,6 +141,21 @@ enum FontManager {
         }
     }
     
+    private static func spectralFontName(for weight: Font.Weight) -> String {
+        switch weight {
+        case .ultraLight, .thin, .light:
+            return "Spectral-Light"
+        case .medium:
+            return "Spectral-Medium"
+        case .semibold:
+            return "Spectral-SemiBold"
+        case .bold, .heavy, .black:
+            return "Spectral-Bold"
+        default:
+            return "Spectral-Regular"
+        }
+    }
+    
     // MARK: - Debug
     
     static func debugPrintFontStatus() {
@@ -149,6 +184,18 @@ enum FontManager {
                 if let font = createVariableFont(family: sansFontFamily, size: 12, weight: weight) {
                     print("   ✓ \(weightName(weight)): \(font.fontName)")
                 }
+            }
+        }
+        
+        // Check English Serif
+        print("\n📜 Spectral (English Serif):")
+        print("   \(hasSpectral ? "✓" : "✗") Family available: \(englishSerifFontFamily)")
+        if hasSpectral {
+            let weights: [Font.Weight] = [.light, .regular, .medium, .semibold, .bold]
+            for weight in weights {
+                let fontName = spectralFontName(for: weight)
+                let available = UIFont(name: fontName, size: 12) != nil
+                print("   \(available ? "✓" : "✗") \(weightName(weight)): \(fontName)")
             }
         }
         

@@ -12,6 +12,12 @@
 		<string>Fonts/NotoSerifKR-VariableFont_wght.ttf</string>
 		<!-- Noto Sans KR (Variable Font) -->
 		<string>Fonts/NotoSansKR-VariableFont_wght.ttf</string>
+		<!-- Spectral (English Serif) -->
+		<string>Fonts/Spectral-Light.ttf</string>
+		<string>Fonts/Spectral-Regular.ttf</string>
+		<string>Fonts/Spectral-Medium.ttf</string>
+		<string>Fonts/Spectral-SemiBold.ttf</string>
+		<string>Fonts/Spectral-Bold.ttf</string>
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>

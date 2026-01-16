@@ -54,7 +54,7 @@ struct BookReadingView: View {
                     .ignoresSafeArea(edges: .top)
                 }
                 .offset(x: dragOffset)
-                .gesture(horizontalSwipeGesture)
+                .simultaneousGesture(horizontalSwipeGesture)
             }
         }
         .task {
@@ -143,7 +143,7 @@ struct BookReadingView: View {
     private func verseScrollView(geometry: GeometryProxy) -> some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: true) {
-                VStack(alignment: .leading, spacing: 28) {
+                VStack(alignment: .leading, spacing: 20) {
                     // Top padding for header + chapter title
                     VStack(spacing: 0) {
                         Spacer()
@@ -269,10 +269,18 @@ struct BookReadingView: View {
     
     // MARK: - Horizontal Swipe Gesture
     private var horizontalSwipeGesture: some Gesture {
-        DragGesture(minimumDistance: 20)
+        DragGesture(minimumDistance: 30)
             .onChanged { value in
-                if abs(value.translation.width) > abs(value.translation.height) {
+                // Only recognize as horizontal swipe if width is significantly greater than height
+                let horizontalAmount = abs(value.translation.width)
+                let verticalAmount = abs(value.translation.height)
+                
+                // Must be predominantly horizontal (at least 2:1 ratio) to start dragging
+                if horizontalAmount > verticalAmount * 2 && horizontalAmount > 30 {
                     isDragging = true
+                    dragOffset = value.translation.width
+                } else if isDragging {
+                    // Already dragging, continue to track
                     dragOffset = value.translation.width
                 }
             }
