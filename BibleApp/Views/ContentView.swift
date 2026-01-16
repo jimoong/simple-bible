@@ -282,6 +282,7 @@ struct ContentView: View {
                         // Bottom: Action buttons (left) + Expandable menu (right)
                         HStack(alignment: .bottom) {
                             leftActionButtons
+                                .animation(.easeOut(duration: 0.25), value: isSettingsFABExpanded)
                             Spacer()
                             // Show book navigation when in fullscreen chapter grid
                             if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
@@ -611,28 +612,30 @@ struct ContentView: View {
             .opacity(isFavoritesFilterExpanded ? 0 : 1)
             .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
         } else {
-            HStack(spacing: 10) {
-                // Bookshelf button - directly opens bookshelf
-                NavigateFAB(
-                    theme: theme,
-                    onBookshelf: {
-                        if viewModel.showBookshelf {
-                            dismissBookshelf()
-                        } else {
-                            viewModel.openBookshelf()
-                        }
-                    },
-                    useBlurBackground: viewModel.readingMode == .scroll
-                )
-                
-                // Search button - opens bookshelf with search mode
-                searchButton
-                
-                // AI chatbot button - opens Gamaliel
-                aiChatButton
+            // Hide completely when settings FAB is expanded to give menu more space
+            if !isSettingsFABExpanded {
+                HStack(spacing: 10) {
+                    // Bookshelf button - directly opens bookshelf
+                    NavigateFAB(
+                        theme: theme,
+                        onBookshelf: {
+                            if viewModel.showBookshelf {
+                                dismissBookshelf()
+                            } else {
+                                viewModel.openBookshelf()
+                            }
+                        },
+                        useBlurBackground: viewModel.readingMode == .scroll
+                    )
+                    
+                    // Search button - opens bookshelf with search mode
+                    searchButton
+                    
+                    // AI chatbot button - opens Gamaliel
+                    aiChatButton
+                }
+                .transition(.opacity.combined(with: .scale(scale: 0.8, anchor: .bottomLeading)))
             }
-            .opacity(isSettingsFABExpanded ? 0 : 1)
-            .animation(.easeOut(duration: 0.2), value: isSettingsFABExpanded)
         }
     }
     

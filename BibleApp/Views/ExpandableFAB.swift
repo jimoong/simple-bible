@@ -24,9 +24,9 @@ struct ExpandableFAB: View {
     
     // Layout
     private let collapsedSize: CGFloat = 52
-    private let expandedWidth: CGFloat = 175  // Reduced to fit with 3 left buttons
-    private let menuItemHeight: CGFloat = 44
-    private let menuPadding: CGFloat = 6
+    private let expandedWidth: CGFloat = 210  // Larger - left buttons hidden when expanded
+    private let menuItemHeight: CGFloat = 48  // Taller items
+    private let menuPadding: CGFloat = 8
     
     private var menuItemCount: Int { 4 } // Settings + Listening + Reading Mode + Language
     
@@ -90,7 +90,7 @@ struct ExpandableFAB: View {
         )
         .clipShape(
             RoundedRectangle(
-                cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                cornerRadius: isExpanded ? 32 : collapsedSize / 2,
                 style: .continuous
             )
         )
@@ -107,14 +107,14 @@ struct ExpandableFAB: View {
     private var glassBackground: some View {
         if useBlurBackground {
             RoundedRectangle(
-                cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                cornerRadius: isExpanded ? 32 : collapsedSize / 2,
                 style: .continuous
             )
             .fill(.regularMaterial)
             .environment(\.colorScheme, .dark)
             .overlay(
                 RoundedRectangle(
-                    cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                    cornerRadius: isExpanded ? 32 : collapsedSize / 2,
                     style: .continuous
                 )
                 .stroke(
@@ -130,19 +130,19 @@ struct ExpandableFAB: View {
                 )
             )
             .shadow(
-                color: .black.opacity(isExpanded ? 0.20 : 0.15),
-                radius: isExpanded ? 10 : 6,
-                y: isExpanded ? 4 : 3
+                color: .black.opacity(isExpanded ? 0.25 : 0.15),
+                radius: isExpanded ? 16 : 6,
+                y: isExpanded ? 6 : 3
             )
         } else {
             RoundedRectangle(
-                cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                cornerRadius: isExpanded ? 32 : collapsedSize / 2,
                 style: .continuous
             )
             .fill(Color.white.opacity(0.08))
             .overlay(
                 RoundedRectangle(
-                    cornerRadius: isExpanded ? 20 : collapsedSize / 2,
+                    cornerRadius: isExpanded ? 32 : collapsedSize / 2,
                     style: .continuous
                 )
                 .stroke(
@@ -158,9 +158,9 @@ struct ExpandableFAB: View {
                 )
             )
             .shadow(
-                color: .black.opacity(isExpanded ? 0.15 : 0.12),
-                radius: isExpanded ? 8 : 4,
-                y: isExpanded ? 4 : 2
+                color: .black.opacity(isExpanded ? 0.20 : 0.12),
+                radius: isExpanded ? 12 : 4,
+                y: isExpanded ? 6 : 2
             )
         }
     }
@@ -171,19 +171,19 @@ struct ExpandableFAB: View {
             action()
             HapticManager.shared.selection()
         } label: {
-            HStack(spacing: 10) {
+            HStack(spacing: 12) {
                 Image(systemName: icon)
-                    .font(.system(size: buttonFontSize, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 20)
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.white.opacity(0.9))
+                    .frame(width: 24)
                 
                 Text(label)
-                    .font(.system(size: buttonFontSize, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
+                    .font(.system(size: 17, weight: .regular))
+                    .foregroundStyle(.white.opacity(0.9))
                 
                 Spacer()
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 16)
             .frame(height: menuItemHeight)
             .contentShape(Rectangle())
         }
@@ -200,30 +200,30 @@ struct ExpandableFAB: View {
             }
             HapticManager.shared.selection()
         } label: {
-            HStack(spacing: 10) {
+            HStack(spacing: 12) {
                 Image(systemName: "hand.point.up")
-                    .font(.system(size: buttonFontSize, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 20)
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.white.opacity(0.9))
+                    .frame(width: 24)
                 
                 // Toggle indicator - uses UI language
-                HStack(spacing: 4) {
+                HStack(spacing: 6) {
                     Text(isKoreanUI ? "탭" : "Tap")
-                        .font(.system(size: buttonFontSize, weight: readingMode == .tap ? .bold : .regular))
+                        .font(.system(size: 17, weight: readingMode == .tap ? .semibold : .regular))
                         .foregroundStyle(readingMode == .tap ? .white : .white.opacity(0.4))
                     
                     Text("/")
-                        .font(.system(size: buttonFontSize))
+                        .font(.system(size: 17))
                         .foregroundStyle(.white.opacity(0.25))
                     
                     Text(isKoreanUI ? "스크롤" : "Scroll")
-                        .font(.system(size: buttonFontSize, weight: readingMode == .scroll ? .bold : .regular))
+                        .font(.system(size: 17, weight: readingMode == .scroll ? .semibold : .regular))
                         .foregroundStyle(readingMode == .scroll ? .white : .white.opacity(0.4))
                 }
                 
                 Spacer()
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 16)
             .frame(height: menuItemHeight)
             .contentShape(Rectangle())
         }
@@ -247,30 +247,30 @@ struct ExpandableFAB: View {
             HapticManager.shared.selection()
             // Note: Does NOT close menu
         } label: {
-            HStack(spacing: 10) {
+            HStack(spacing: 12) {
                 Image(systemName: "globe")
-                    .font(.system(size: buttonFontSize, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.85))
-                    .frame(width: 20)
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundStyle(.white.opacity(0.9))
+                    .frame(width: 24)
                 
                 // Toggle indicator
-                HStack(spacing: 4) {
+                HStack(spacing: 6) {
                     Text(primaryDisplay)
-                        .font(.system(size: buttonFontSize, weight: isPrimaryActive ? .bold : .regular))
+                        .font(.system(size: 17, weight: isPrimaryActive ? .semibold : .regular))
                         .foregroundStyle(isPrimaryActive ? .white : .white.opacity(0.4))
                     
                     Text("/")
-                        .font(.system(size: buttonFontSize))
+                        .font(.system(size: 17))
                         .foregroundStyle(.white.opacity(0.25))
                     
                     Text(secondaryDisplay)
-                        .font(.system(size: buttonFontSize, weight: !isPrimaryActive ? .bold : .regular))
+                        .font(.system(size: 17, weight: !isPrimaryActive ? .semibold : .regular))
                         .foregroundStyle(!isPrimaryActive ? .white : .white.opacity(0.4))
                 }
                 
                 Spacer()
             }
-            .padding(.horizontal, 12)
+            .padding(.horizontal, 16)
             .frame(height: menuItemHeight)
             .contentShape(Rectangle())
         }
@@ -297,8 +297,8 @@ private struct MenuItemButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .background(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(Color.white.opacity(configuration.isPressed ? 0.1 : 0))
+                Capsule()
+                    .fill(Color.white.opacity(configuration.isPressed ? 0.12 : 0))
             )
             .animation(.easeOut(duration: 0.1), value: configuration.isPressed)
     }
