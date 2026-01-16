@@ -356,14 +356,20 @@ struct GamalielChatView: View {
             VStack {
                 Spacer()
                 
-                if let welcomeMessage = viewModel.messages.first {
-                    Text(welcomeMessage.content)
-                        .font(serifFont(16))
-                        .lineSpacing(7)
+                VStack(spacing: 12) {
+                    // Main message
+                    Text(languageMode == .kr ? "안녕하세요, 성경에 대해 무엇이 궁금하신가요?" : "Hello, what would you like to know about the Bible?")
+                        .font(serifFont(19))
                         .foregroundStyle(.white.opacity(0.85))
                         .multilineTextAlignment(.center)
-                        .frame(width: geo.size.width * 0.6)
+                    
+                    // Disclaimer
+                    Text(languageMode == .kr ? "AI는 실수할 수 있습니다. 성경 원문을 확인하세요." : "AI can make mistakes. Please verify with the Bible.")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.white.opacity(0.45))
+                        .multilineTextAlignment(.center)
                 }
+                .frame(width: geo.size.width * 0.6)
                 
                 Spacer()
             }

@@ -559,6 +559,7 @@ struct BibleTimelineContentView: View {
     var topPadding: CGFloat = 0
     var currentBook: BibleBook? = nil
     var searchText: String = ""
+    var categoryFilter: BibleBookCategory? = nil  // Category filter for books
     @Binding var scrollTrigger: Bool
     @Binding var scrollToBottom: Bool  // true = scroll to bottom, false = scroll to top
     var onBookSelect: ((BibleBook) -> Void)? // Called when a Bible book is tapped
@@ -574,6 +575,7 @@ struct BibleTimelineContentView: View {
         topPadding: CGFloat = 0,
         currentBook: BibleBook? = nil,
         searchText: String = "",
+        categoryFilter: BibleBookCategory? = nil,
         scrollTrigger: Binding<Bool> = .constant(false),
         scrollToBottom: Binding<Bool> = .constant(true),
         onBookSelect: ((BibleBook) -> Void)? = nil
@@ -582,6 +584,7 @@ struct BibleTimelineContentView: View {
         self.topPadding = topPadding
         self.currentBook = currentBook
         self.searchText = searchText
+        self.categoryFilter = categoryFilter
         self._scrollTrigger = scrollTrigger
         self._scrollToBottom = scrollToBottom
         self.onBookSelect = onBookSelect
@@ -592,20 +595,41 @@ struct BibleTimelineContentView: View {
     private let yearLabelWidth: CGFloat = 60
     private let verticalSpacing: CGFloat = 16
     
-    // Filtered items based on search
+    // Filtered items based on search and category filter
     private var filteredTimelineItems: [TimelineItem] {
-        guard !searchText.isEmpty else { return timelineItems }
+        var items = timelineItems
         
-        return timelineItems.filter { item in
-            // Always keep historical events
-            if item.type == .historicalEvent {
-                return true
+        // Apply category filter to Bible books
+        if let filter = categoryFilter {
+            items = items.filter { item in
+                // Always keep historical events
+                if item.type == .historicalEvent {
+                    return true
+                }
+                // Filter Bible books by category (bookId is the order number)
+                guard let bookOrder = item.bookId,
+                      let book = BibleData.book(at: bookOrder) else {
+                    return false
+                }
+                return book.category == filter
             }
-            // Filter Bible books by name (한글 초성/부분 검색 지원)
-            let titleMatch = item.title.en.localizedCaseInsensitiveContains(searchText) ||
-                            KoreanSearchHelper.matches(query: searchText, target: item.title.ko)
-            return titleMatch
         }
+        
+        // Apply search filter
+        if !searchText.isEmpty {
+            items = items.filter { item in
+                // Always keep historical events
+                if item.type == .historicalEvent {
+                    return true
+                }
+                // Filter Bible books by name (한글 초성/부분 검색 지원)
+                let titleMatch = item.title.en.localizedCaseInsensitiveContains(searchText) ||
+                                KoreanSearchHelper.matches(query: searchText, target: item.title.ko)
+                return titleMatch
+            }
+        }
+        
+        return items
     }
     
     // Eras that have at least one item (for search filtering)

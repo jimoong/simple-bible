@@ -12,6 +12,7 @@ final class BibleViewModel {
         static let languageMode = "savedLanguageMode"
         static let sortOrder = "savedSortOrder"
         static let readingMode = "savedReadingMode"
+        static let categoryFilter = "savedCategoryFilter"
     }
     
     // MARK: - State
@@ -33,6 +34,9 @@ final class BibleViewModel {
     }
     var readingMode: ReadingMode = .tap {
         didSet { saveReadingMode() }
+    }
+    var categoryFilter: BibleBookCategory? = nil {
+        didSet { saveCategoryFilter() }
     }
     
     // Primary/Secondary language codes for UI language determination
@@ -79,7 +83,14 @@ final class BibleViewModel {
     }
     
     var sortedBooks: [BibleBook] {
-        BibleData.sortedBooks(by: sortOrder, language: uiLanguage)
+        let books = BibleData.sortedBooks(by: sortOrder, language: uiLanguage)
+        guard let filter = categoryFilter else { return books }
+        return books.filter { $0.category == filter }
+    }
+    
+    /// Check if a category filter is active
+    var hasActiveFilter: Bool {
+        categoryFilter != nil
     }
     
     var canGoToPreviousChapter: Bool {
@@ -136,6 +147,12 @@ final class BibleViewModel {
             self.readingMode = mode
         }
         
+        // Load saved category filter
+        if let savedCategoryFilter = defaults.string(forKey: StorageKeys.categoryFilter),
+           let category = BibleBookCategory(rawValue: savedCategoryFilter) {
+            self.categoryFilter = category
+        }
+        
         // Load saved language codes for UI language
         self.primaryLanguageCode = defaults.string(forKey: "primaryLanguageCode") ?? "ko"
         self.secondaryLanguageCode = defaults.string(forKey: "secondaryLanguageCode") ?? "en"
@@ -166,6 +183,14 @@ final class BibleViewModel {
     
     private func saveReadingMode() {
         UserDefaults.standard.set(readingMode.rawValue, forKey: StorageKeys.readingMode)
+    }
+    
+    private func saveCategoryFilter() {
+        if let filter = categoryFilter {
+            UserDefaults.standard.set(filter.rawValue, forKey: StorageKeys.categoryFilter)
+        } else {
+            UserDefaults.standard.removeObject(forKey: StorageKeys.categoryFilter)
+        }
     }
     
     // MARK: - Actions
@@ -304,6 +329,16 @@ final class BibleViewModel {
     
     func toggleSortOrder() {
         sortOrder = sortOrder == .canonical ? .alphabetical : .canonical
+        HapticManager.shared.selection()
+    }
+    
+    func setCategoryFilter(_ category: BibleBookCategory?) {
+        categoryFilter = category
+        HapticManager.shared.selection()
+    }
+    
+    func clearCategoryFilter() {
+        categoryFilter = nil
         HapticManager.shared.selection()
     }
     

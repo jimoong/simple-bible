@@ -162,6 +162,21 @@ struct BookGridView: View {
         filteredBooks.filter { $0.isNewTestament }
     }
     
+    // Section title based on active filter
+    private var oldTestamentSectionTitle: String {
+        if let filter = viewModel.categoryFilter, filter.isOldTestament {
+            return filter.displayName(for: viewModel.uiLanguage)
+        }
+        return viewModel.uiLanguage == .kr ? "구약" : "Old Testament"
+    }
+    
+    private var newTestamentSectionTitle: String {
+        if let filter = viewModel.categoryFilter, filter.isNewTestament {
+            return filter.displayName(for: viewModel.uiLanguage)
+        }
+        return viewModel.uiLanguage == .kr ? "신약" : "New Testament"
+    }
+    
     // Calculate content height based on number of rows (including safe area)
     private var contentHeight: CGFloat {
         let bookCount = filteredBooks.count
@@ -190,6 +205,7 @@ struct BookGridView: View {
                     topPadding: topPadding,
                     currentBook: viewModel.currentBook,
                     searchText: searchText,
+                    categoryFilter: viewModel.categoryFilter,
                     scrollTrigger: $timelineScrollTrigger,
                     scrollToBottom: $timelineScrollToBottom,
                     onBookSelect: { book in
@@ -229,7 +245,7 @@ struct BookGridView: View {
                             // Old Testament section
                             if !oldTestamentBooks.isEmpty {
                                 bookSection(
-                                    title: viewModel.uiLanguage == .kr ? "구약" : "Old Testament",
+                                    title: oldTestamentSectionTitle,
                                     books: oldTestamentBooks
                                 )
                                 .padding(.top, 24)
@@ -238,7 +254,7 @@ struct BookGridView: View {
                             // New Testament section
                             if !newTestamentBooks.isEmpty {
                                 bookSection(
-                                    title: viewModel.uiLanguage == .kr ? "신약" : "New Testament",
+                                    title: newTestamentSectionTitle,
                                     books: newTestamentBooks
                                 )
                                 .padding(.top, 24)
@@ -498,22 +514,75 @@ struct BookGridView: View {
             // Segmented sort control - fills remaining space
             sortSegmentedControl
             
-            // Search button (right)
+            // Filter button (right) - with native iOS Menu
+            filterMenuButton
+        }
+    }
+    
+    // MARK: - Filter Menu Button
+    private var filterMenuButton: some View {
+        Menu {
+            // "All" option to clear filter
             Button {
-                withAnimation(.easeOut(duration: 0.25)) {
-                    isSearchActive = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    isSearchFocused = true
-                }
-                HapticManager.shared.selection()
+                viewModel.clearCategoryFilter()
             } label: {
-                Image(systemName: "magnifyingglass")
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(.white)
-                    .frame(width: 48, height: 48)
+                filterMenuItem(
+                    text: viewModel.uiLanguage == .kr ? "전체" : "All",
+                    isSelected: viewModel.categoryFilter == nil
+                )
             }
-            .buttonStyle(.glassCircle)
+            
+            // Old Testament section
+            Section(viewModel.uiLanguage == .kr ? "구약" : "Old Testament") {
+                ForEach(BibleBookCategory.oldTestamentCategories, id: \.self) { category in
+                    Button {
+                        viewModel.setCategoryFilter(category)
+                    } label: {
+                        filterMenuItem(
+                            text: category.displayName(for: viewModel.uiLanguage),
+                            isSelected: viewModel.categoryFilter == category
+                        )
+                    }
+                }
+            }
+            
+            // New Testament section
+            Section(viewModel.uiLanguage == .kr ? "신약" : "New Testament") {
+                ForEach(BibleBookCategory.newTestamentCategories, id: \.self) { category in
+                    Button {
+                        viewModel.setCategoryFilter(category)
+                    } label: {
+                        filterMenuItem(
+                            text: category.displayName(for: viewModel.uiLanguage),
+                            isSelected: viewModel.categoryFilter == category
+                        )
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: "line.3.horizontal.decrease")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(viewModel.hasActiveFilter ? .blue : .white)
+                .frame(width: 48, height: 48)
+                .background(
+                    Circle()
+                        .fill(viewModel.hasActiveFilter ? Color.white : Color.white.opacity(0.15))
+                )
+                .overlay(
+                    Circle()
+                        .stroke(Color.white.opacity(0.2), lineWidth: 0.5)
+                )
+        }
+        .menuOrder(.fixed)
+    }
+    
+    // Filter menu item - selected items show checkmark via Label
+    @ViewBuilder
+    private func filterMenuItem(text: String, isSelected: Bool) -> some View {
+        if isSelected {
+            Label(text, systemImage: "checkmark")
+        } else {
+            Text(text)
         }
     }
     
@@ -989,7 +1058,7 @@ struct BookGridView: View {
                     // Old Testament section
                     if !oldTestamentBooks.isEmpty {
                         compactBookSection(
-                            title: viewModel.uiLanguage == .kr ? "구약" : "Old Testament",
+                            title: oldTestamentSectionTitle,
                             books: oldTestamentBooks
                         )
                     }
@@ -997,7 +1066,7 @@ struct BookGridView: View {
                     // New Testament section
                     if !newTestamentBooks.isEmpty {
                         compactBookSection(
-                            title: viewModel.uiLanguage == .kr ? "신약" : "New Testament",
+                            title: newTestamentSectionTitle,
                             books: newTestamentBooks
                         )
                     }
