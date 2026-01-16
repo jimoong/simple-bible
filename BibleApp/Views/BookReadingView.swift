@@ -203,11 +203,12 @@ struct BookReadingView: View {
                 .padding(.horizontal, 24)
             }
             .scrollIndicators(.visible)
+            .scrollDisabled(isDragging)  // Lock vertical scroll during horizontal swipe
             .simultaneousGesture(
                 DragGesture(minimumDistance: 10)
                     .onChanged { _ in
                         // User started scrolling - hide controls
-                        if !controlsHidden {
+                        if !controlsHidden && !isDragging {
                             controlsHidden = true
                             onScrollStateChange?(true)
                         }
