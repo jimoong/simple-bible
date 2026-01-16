@@ -1,0 +1,264 @@
+{
+  "bookId": "romans",
+  "bookNumber": 45,
+  "bookNameKo": "로마서",
+  "bookNameEn": "Romans",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "복음의 능력",
+      "titleEn": "Power of the Gospel",
+      "summaryKo": "복음이 구원의 능력임을 선포하고 이방인의 죄를 고발합니다.",
+      "summaryEn": "Proclaims gospel as power of salvation and indicts Gentile sin.",
+      "messageKo": "복음은 믿는 모든 자에게 구원을 주시는 하나님의 능력이다.",
+      "messageEn": "The gospel is the power of God for salvation to everyone who believes.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "예수 그리스도의 종 바울", "eventEn": "Paul, servant of Christ Jesus"},
+        {"verse": 16, "eventKo": "복음은 구원의 능력", "eventEn": "Gospel is power for salvation"},
+        {"verse": 17, "eventKo": "의인은 믿음으로 살리라", "eventEn": "The righteous will live by faith"},
+        {"verse": 20, "eventKo": "창조물을 통해 하나님을 앎", "eventEn": "God known through creation"}
+      ],
+      "timelineYear": "AD 57"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "하나님의 공의로운 심판",
+      "titleEn": "God's Righteous Judgment",
+      "summaryKo": "유대인과 이방인 모두 하나님의 심판 아래 있음을 선언합니다.",
+      "summaryEn": "Declares both Jews and Gentiles under God's judgment.",
+      "messageKo": "하나님은 외모를 보지 않고 행한 대로 심판하신다.",
+      "messageEn": "God judges impartially according to deeds.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "남을 판단하는 자도 죄인", "eventEn": "You who judge are sinners too"},
+        {"verse": 11, "eventKo": "하나님은 외모를 보지 않음", "eventEn": "God does not show favoritism"},
+        {"verse": 15, "eventKo": "양심의 증거", "eventEn": "Conscience bears witness"},
+        {"verse": 29, "eventKo": "마음에 할례", "eventEn": "Circumcision of heart"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "믿음으로 의롭다 하심",
+      "titleEn": "Righteousness Through Faith",
+      "summaryKo": "모든 사람이 죄인이나 예수 그리스도를 믿음으로 의롭다 함을 받습니다.",
+      "summaryEn": "All are sinners but justified by faith in Jesus Christ.",
+      "messageKo": "의로운 자는 없나니 하나도 없다.",
+      "messageEn": "There is no one righteous, not even one.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "의인은 없나니", "eventEn": "There is no one righteous"},
+        {"verse": 23, "eventKo": "모든 사람이 죄를 범하여", "eventEn": "All have sinned"},
+        {"verse": 24, "eventKo": "은혜로 의롭다 하심", "eventEn": "Justified freely by grace"},
+        {"verse": 28, "eventKo": "믿음으로 의롭다 함", "eventEn": "Justified by faith"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "아브라함의 믿음",
+      "titleEn": "Abraham's Faith",
+      "summaryKo": "아브라함이 믿음으로 의롭다 함을 받은 것을 예로 들어 설명합니다.",
+      "summaryEn": "Uses Abraham as example of justification by faith.",
+      "messageKo": "아브라함이 하나님을 믿으니 이것이 그에게 의로 여겨졌다.",
+      "messageEn": "Abraham believed God, and it was credited to him as righteousness.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아브라함이 하나님을 믿으매", "eventEn": "Abraham believed God"},
+        {"verse": 5, "eventKo": "일하지 않고 믿는 자", "eventEn": "One who does not work but believes"},
+        {"verse": 17, "eventKo": "죽은 자를 살리시는 하나님", "eventEn": "God who gives life to dead"},
+        {"verse": 25, "eventKo": "우리의 의롭다 하심을 위해 살리심", "eventEn": "Raised for our justification"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "그리스도 안에서의 화평",
+      "titleEn": "Peace in Christ",
+      "summaryKo": "믿음으로 의롭다 함을 받아 평화를 누리며, 아담과 그리스도를 대조합니다.",
+      "summaryEn": "Peace through justification by faith; contrasts Adam and Christ.",
+      "messageKo": "우리가 아직 죄인 되었을 때에 그리스도께서 우리를 위하여 죽으셨다.",
+      "messageEn": "While we were still sinners, Christ died for us.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "하나님과 화평을 누림", "eventEn": "Peace with God"},
+        {"verse": 8, "eventKo": "죄인 되었을 때 그리스도께서 죽으심", "eventEn": "Christ died while we were sinners"},
+        {"verse": 12, "eventKo": "아담으로 죄가 들어옴", "eventEn": "Sin entered through Adam"},
+        {"verse": 20, "eventKo": "은혜가 더욱 넘침", "eventEn": "Grace increased all the more"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "죄에 대하여 죽음",
+      "titleEn": "Dead to Sin",
+      "summaryKo": "세례를 통해 그리스도와 함께 죽고 새 생명으로 살아남을 설명합니다.",
+      "summaryEn": "Explains dying with Christ through baptism and living in new life.",
+      "messageKo": "죄의 삯은 사망이요 하나님의 은사는 영생이니라.",
+      "messageEn": "The wages of sin is death, but the gift of God is eternal life.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "세례로 그리스도와 함께 죽음", "eventEn": "Buried with Christ through baptism"},
+        {"verse": 6, "eventKo": "옛 사람이 십자가에 못 박힘", "eventEn": "Old self crucified with him"},
+        {"verse": 14, "eventKo": "죄가 너희를 주장하지 못함", "eventEn": "Sin shall not be your master"},
+        {"verse": 23, "eventKo": "죄의 삯은 사망", "eventEn": "Wages of sin is death"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "율법과 죄의 싸움",
+      "titleEn": "Law and the Struggle with Sin",
+      "summaryKo": "율법의 역할과 내면의 죄와의 싸움을 고백합니다.",
+      "summaryEn": "Confesses the role of law and inner struggle with sin.",
+      "messageKo": "오호라 나는 곤고한 사람이로다. 이 사망의 몸에서 누가 나를 건져내랴.",
+      "messageEn": "What a wretched man I am! Who will rescue me from this body of death?",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "율법으로 죄를 앎", "eventEn": "Through law we know sin"},
+        {"verse": 15, "eventKo": "원하는 선은 안 하고", "eventEn": "Do not do good I want"},
+        {"verse": 24, "eventKo": "오호라 나는 곤고한 사람", "eventEn": "What a wretched man I am"},
+        {"verse": 25, "eventKo": "예수 그리스도로 감사", "eventEn": "Thanks be to God through Jesus"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "성령 안에서의 생명",
+      "titleEn": "Life in the Spirit",
+      "summaryKo": "성령 안에서의 자유와 승리, 하나님의 변함없는 사랑을 선포합니다.",
+      "summaryEn": "Proclaims freedom and victory in the Spirit, God's unchanging love.",
+      "messageKo": "그리스도 예수 안에 있는 자에게는 결코 정죄함이 없다.",
+      "messageEn": "There is now no condemnation for those who are in Christ Jesus.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "정죄함이 없다", "eventEn": "No condemnation"},
+        {"verse": 14, "eventKo": "하나님의 아들들", "eventEn": "Children of God"},
+        {"verse": 28, "eventKo": "모든 것이 합력하여 선을 이룸", "eventEn": "All things work for good"},
+        {"verse": 38, "eventKo": "어떤 것도 사랑에서 끊을 수 없음", "eventEn": "Nothing can separate from God's love"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "하나님의 주권적 선택",
+      "titleEn": "God's Sovereign Choice",
+      "summaryKo": "이스라엘에 대한 하나님의 주권적 선택과 계획을 설명합니다.",
+      "summaryEn": "Explains God's sovereign choice and plan for Israel.",
+      "messageKo": "토기장이가 진흙을 주관하지 못하겠느냐.",
+      "messageEn": "Does not the potter have the right to make from the same lump of clay?",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "동족을 위해 저주받기도 원함", "eventEn": "Wish to be cursed for kinsmen"},
+        {"verse": 15, "eventKo": "긍휼히 여길 자를 긍휼히", "eventEn": "I will have mercy on whom I have mercy"},
+        {"verse": 21, "eventKo": "토기장이의 권리", "eventEn": "Potter's right"},
+        {"verse": 33, "eventKo": "시온에 거치는 돌", "eventEn": "Stone in Zion that causes stumbling"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "믿음의 말씀",
+      "titleEn": "Word of Faith",
+      "summaryKo": "예수를 주로 시인하고 믿으면 구원받음을 선포합니다.",
+      "summaryEn": "Proclaims salvation through confessing Jesus as Lord and believing.",
+      "messageKo": "네가 예수를 주로 시인하고 하나님이 살리신 것을 믿으면 구원을 받으리라.",
+      "messageEn": "If you confess with your mouth Jesus is Lord and believe God raised him, you will be saved.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "그리스도는 율법의 마침", "eventEn": "Christ is end of law"},
+        {"verse": 9, "eventKo": "입으로 시인하고 마음으로 믿으면", "eventEn": "Confess with mouth, believe in heart"},
+        {"verse": 13, "eventKo": "주의 이름을 부르는 자는 구원", "eventEn": "Everyone who calls on Lord will be saved"},
+        {"verse": 17, "eventKo": "믿음은 들음에서", "eventEn": "Faith comes from hearing"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "이스라엘의 회복",
+      "titleEn": "Israel's Restoration",
+      "summaryKo": "이스라엘의 일부가 완악해졌으나 궁극적으로 회복될 것을 예언합니다.",
+      "summaryEn": "Prophesies that though part of Israel hardened, they will ultimately be restored.",
+      "messageKo": "하나님의 부르심과 은사는 후회하심이 없다.",
+      "messageEn": "God's gifts and his call are irrevocable.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "하나님이 자기 백성을 버리지 않음", "eventEn": "God did not reject his people"},
+        {"verse": 17, "eventKo": "감람나무 비유", "eventEn": "Olive tree metaphor"},
+        {"verse": 26, "eventKo": "온 이스라엘이 구원받음", "eventEn": "All Israel will be saved"},
+        {"verse": 33, "eventKo": "하나님의 지혜와 지식의 깊이", "eventEn": "Depth of riches of God's wisdom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "산 제사",
+      "titleEn": "Living Sacrifice",
+      "summaryKo": "몸을 산 제사로 드리며 겸손하게 섬기라고 권면합니다.",
+      "summaryEn": "Urges offering bodies as living sacrifice and serving humbly.",
+      "messageKo": "너희 몸을 하나님이 기뻐하시는 거룩한 산 제사로 드리라.",
+      "messageEn": "Offer your bodies as a living sacrifice, holy and pleasing to God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "몸을 산 제사로 드리라", "eventEn": "Offer bodies as living sacrifice"},
+        {"verse": 2, "eventKo": "마음을 새롭게 함으로 변화", "eventEn": "Transformed by renewing of mind"},
+        {"verse": 6, "eventKo": "은사대로 섬기라", "eventEn": "Gifts differ according to grace"},
+        {"verse": 21, "eventKo": "선으로 악을 이기라", "eventEn": "Overcome evil with good"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "권세에 복종",
+      "titleEn": "Submission to Authorities",
+      "summaryKo": "권세에 복종하고 사랑으로 율법을 완성하라고 가르칩니다.",
+      "summaryEn": "Teaches submission to authorities and fulfilling law through love.",
+      "messageKo": "사랑은 이웃에게 악을 행하지 않으니 사랑은 율법의 완성이다.",
+      "messageEn": "Love does no harm to a neighbor. Therefore love is the fulfillment of the law.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "위에 있는 권세에 복종", "eventEn": "Submit to governing authorities"},
+        {"verse": 8, "eventKo": "서로 사랑하라", "eventEn": "Love one another"},
+        {"verse": 10, "eventKo": "사랑은 율법의 완성", "eventEn": "Love is fulfillment of law"},
+        {"verse": 14, "eventKo": "주 예수 그리스도로 옷 입으라", "eventEn": "Clothe yourselves with Lord Jesus"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "연약한 자를 받으라",
+      "titleEn": "Accept the Weak",
+      "summaryKo": "믿음이 연약한 자를 판단하지 말고 받아들이라고 가르칩니다.",
+      "summaryEn": "Teaches to accept the weak in faith without passing judgment.",
+      "messageKo": "하나님 나라는 먹는 것과 마시는 것이 아니요 성령 안에서 의와 평강과 희락이라.",
+      "messageEn": "The kingdom of God is not a matter of eating and drinking, but righteousness, peace and joy in the Holy Spirit.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "믿음이 연약한 자를 받으라", "eventEn": "Accept the weak in faith"},
+        {"verse": 10, "eventKo": "그리스도의 심판대 앞에 설 것", "eventEn": "Will stand before Christ's judgment seat"},
+        {"verse": 13, "eventKo": "형제에게 거치는 것을 놓지 말라", "eventEn": "Not put stumbling block before brother"},
+        {"verse": 17, "eventKo": "의와 평강과 희락", "eventEn": "Righteousness, peace and joy"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "그리스도의 본",
+      "titleEn": "Christ's Example",
+      "summaryKo": "그리스도의 본을 따라 서로 받아들이고, 바울의 사역 계획을 나눕니다.",
+      "summaryEn": "Urges following Christ's example of acceptance; shares Paul's ministry plans.",
+      "messageKo": "그리스도께서 하나님의 영광을 위하여 너희를 받아주신 것같이.",
+      "messageEn": "Accept one another, just as Christ accepted you, to bring praise to God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "강한 자가 약한 자를 담당", "eventEn": "Strong ought to bear with weak"},
+        {"verse": 7, "eventKo": "그리스도께서 받으신 것같이", "eventEn": "As Christ accepted you"},
+        {"verse": 13, "eventKo": "소망의 하나님", "eventEn": "God of hope"},
+        {"verse": 24, "eventKo": "서바나로 가려 함", "eventEn": "Plan to go to Spain"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "인사와 마무리",
+      "titleEn": "Greetings and Conclusion",
+      "summaryKo": "동역자들에게 인사하고 분쟁을 일으키는 자들을 경계하며 마무리합니다.",
+      "summaryEn": "Greets co-workers, warns against divisive people, and concludes.",
+      "messageKo": "평강의 하나님이 속히 사탄을 너희 발 아래에서 부수시리라.",
+      "messageEn": "The God of peace will soon crush Satan under your feet.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "뵈뵈를 추천", "eventEn": "Commends Phoebe"},
+        {"verse": 3, "eventKo": "브리스가와 아굴라에게 문안", "eventEn": "Greetings to Priscilla and Aquila"},
+        {"verse": 17, "eventKo": "분쟁을 일으키는 자를 살피라", "eventEn": "Watch out for divisive people"},
+        {"verse": 27, "eventKo": "영광이 영원토록", "eventEn": "To God be glory forever"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

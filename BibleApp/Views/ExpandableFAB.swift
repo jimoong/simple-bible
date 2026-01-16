@@ -11,6 +11,7 @@ struct ExpandableFAB: View {
     var onLanguageToggle: () -> Void
     var onReadingModeToggle: () -> Void
     var onSettings: () -> Void
+    var onListening: () -> Void = {}  // New: listening mode callback
     @Binding var isExpanded: Bool
     var isHidden: Bool = false
     var useBlurBackground: Bool = false
@@ -27,7 +28,7 @@ struct ExpandableFAB: View {
     private let menuItemHeight: CGFloat = 44
     private let menuPadding: CGFloat = 6
     
-    private var menuItemCount: Int { 3 } // Settings + Reading Mode + Language
+    private var menuItemCount: Int { 4 } // Settings + Listening + Reading Mode + Language
     
     private var expandedHeight: CGFloat {
         CGFloat(menuItemCount) * menuItemHeight + menuPadding * 2
@@ -57,6 +58,12 @@ struct ExpandableFAB: View {
                     let isKoreanUI = uiLanguage == .kr
                     menuItem(icon: "gear", label: isKoreanUI ? "설정" : "Settings") {
                         onSettings()
+                        closeMenu()
+                    }
+                    
+                    // Listening mode (closes menu and enters listening mode)
+                    menuItem(icon: "play.fill", label: isKoreanUI ? "듣기" : "Listen") {
+                        onListening()
                         closeMenu()
                     }
                     
@@ -321,6 +328,7 @@ private struct MenuItemButtonStyle: ButtonStyle {
                             onLanguageToggle: { print("Toggle language") },
                             onReadingModeToggle: { print("Toggle reading mode") },
                             onSettings: { print("Open settings") },
+                            onListening: { print("Open listening mode") },
                             isExpanded: $isExpanded
                         )
                         .padding(24)

@@ -12,6 +12,7 @@ struct BookGridView: View {
     var onClose: (() -> Void)? = nil
     var onBookSelect: ((BibleBook) -> Void)? = nil
     var onFavoritesSelect: (() -> Void)? = nil
+    var onNavigate: ((BibleBook, Int, Int?) -> Void)? = nil  // Called when search navigates: (book, chapter, verse?)
     
     @State private var isSearchActive = false
     @FocusState private var isSearchFocused: Bool
@@ -380,6 +381,7 @@ struct BookGridView: View {
                             onClose?()
                             Task {
                                 await viewModel.navigateTo(book: book, chapter: chapter)
+                                onNavigate?(book, chapter, nil)  // Call after navigation completes
                             }
                         }
                 }
@@ -428,6 +430,7 @@ struct BookGridView: View {
                                 onClose?()
                                 Task {
                                     await viewModel.navigateTo(book: book, chapter: verse.chapter, verse: verse.verseNumber)
+                                    onNavigate?(book, verse.chapter, verse.verseNumber)  // Call after navigation completes
                                 }
                             }
                     }
@@ -618,6 +621,7 @@ struct BookGridView: View {
             onClose?()
             Task {
                 await viewModel.navigateTo(book: book, chapter: chapter, verse: targetVerse)
+                onNavigate?(book, chapter, targetVerse)  // Call after navigation completes
             }
         } else {
             // Chapter selection mode - navigate to first filtered chapter
@@ -626,6 +630,7 @@ struct BookGridView: View {
             onClose?()
             Task {
                 await viewModel.navigateTo(book: book, chapter: firstChapter)
+                onNavigate?(book, firstChapter, nil)  // Call after navigation completes
             }
         }
     }

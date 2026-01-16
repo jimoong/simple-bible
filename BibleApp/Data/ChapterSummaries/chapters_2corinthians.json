@@ -1,0 +1,216 @@
+{
+  "bookId": "2corinthians",
+  "bookNumber": 47,
+  "bookNameKo": "고린도후서",
+  "bookNameEn": "2 Corinthians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "위로의 하나님",
+      "titleEn": "God of Comfort",
+      "summaryKo": "모든 환난에서 위로하시는 하나님을 찬양하며 바울의 고난과 계획을 나눕니다.",
+      "summaryEn": "Praises God who comforts in all troubles; shares Paul's sufferings and plans.",
+      "messageKo": "우리의 모든 환난 중에서 우리를 위로하시는 하나님을 찬송하라.",
+      "messageEn": "Praise be to the God of all comfort, who comforts us in all our troubles.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "위로의 하나님", "eventEn": "God of all comfort"},
+        {"verse": 4, "eventKo": "받은 위로로 다른 이를 위로", "eventEn": "Comfort others with comfort received"},
+        {"verse": 8, "eventKo": "아시아에서 당한 환난", "eventEn": "Hardships in Asia"},
+        {"verse": 20, "eventKo": "하나님의 약속은 아멘이라", "eventEn": "God's promises are Yes in Christ"}
+      ],
+      "timelineYear": "AD 56"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "용서와 승리",
+      "titleEn": "Forgiveness and Triumph",
+      "summaryKo": "죄인을 용서하라 권면하고 그리스도 안에서의 승리를 선포합니다.",
+      "summaryEn": "Urges forgiveness of the sinner and proclaims triumph in Christ.",
+      "messageKo": "우리는 그리스도의 향기니라.",
+      "messageEn": "We are the aroma of Christ.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "용서하고 위로하라", "eventEn": "Forgive and comfort"},
+        {"verse": 11, "eventKo": "사탄의 간계를 모르지 않음", "eventEn": "Not unaware of Satan's schemes"},
+        {"verse": 14, "eventKo": "그리스도 안에서 이기게 하심", "eventEn": "Leads us in triumph in Christ"},
+        {"verse": 15, "eventKo": "그리스도의 향기", "eventEn": "Aroma of Christ"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "새 언약의 영광",
+      "titleEn": "Glory of New Covenant",
+      "summaryKo": "새 언약이 옛 언약보다 더 영광스러움을 대조합니다.",
+      "summaryEn": "Contrasts the greater glory of new covenant over old.",
+      "messageKo": "주의 영이 계신 곳에는 자유가 있느니라.",
+      "messageEn": "Where the Spirit of the Lord is, there is freedom.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "살아계신 하나님의 영으로 쓴 편지", "eventEn": "Letter written by Spirit of living God"},
+        {"verse": 6, "eventKo": "새 언약의 일꾼", "eventEn": "Ministers of new covenant"},
+        {"verse": 17, "eventKo": "주의 영이 계신 곳에 자유", "eventEn": "Where Spirit of Lord is, there is freedom"},
+        {"verse": 18, "eventKo": "주의 영광을 보며 변화됨", "eventEn": "Transformed into his image"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "질그릇에 담긴 보배",
+      "titleEn": "Treasure in Jars of Clay",
+      "summaryKo": "연약한 인간 안에 담긴 복음의 보배와 능력을 설명합니다.",
+      "summaryEn": "Explains treasure of gospel in weak human vessels.",
+      "messageKo": "이 보배를 질그릇에 가졌으니 능력이 하나님께 있고 우리에게 있지 아니함이라.",
+      "messageEn": "We have this treasure in jars of clay to show that surpassing power belongs to God.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "그리스도의 영광의 복음", "eventEn": "Gospel of glory of Christ"},
+        {"verse": 7, "eventKo": "질그릇에 담긴 보배", "eventEn": "Treasure in jars of clay"},
+        {"verse": 16, "eventKo": "겉 사람은 낡아지나 속 사람은 새로워짐", "eventEn": "Outwardly wasting, inwardly renewed"},
+        {"verse": 18, "eventKo": "보이는 것은 잠깐이요", "eventEn": "What is seen is temporary"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "화목의 직분",
+      "titleEn": "Ministry of Reconciliation",
+      "summaryKo": "영원한 집을 소망하며 화목의 직분을 맡은 사신임을 선포합니다.",
+      "summaryEn": "Looks forward to eternal home and proclaims ministry of reconciliation.",
+      "messageKo": "누구든지 그리스도 안에 있으면 새로운 피조물이라.",
+      "messageEn": "If anyone is in Christ, the new creation has come.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "하늘에 있는 영원한 집", "eventEn": "Eternal house in heaven"},
+        {"verse": 10, "eventKo": "그리스도의 심판대 앞에 서야 함", "eventEn": "Appear before judgment seat of Christ"},
+        {"verse": 17, "eventKo": "새로운 피조물", "eventEn": "New creation"},
+        {"verse": 21, "eventKo": "죄를 모르신 이가 우리를 위해 죄가 되심", "eventEn": "He who knew no sin became sin for us"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "하나님의 동역자",
+      "titleEn": "God's Fellow Workers",
+      "summaryKo": "은혜를 헛되이 받지 말라 권면하고 거룩한 분리를 가르칩니다.",
+      "summaryEn": "Urges not to receive grace in vain and teaches holy separation.",
+      "messageKo": "보라 지금은 은혜 받을 때요 보라 지금은 구원의 날이로다.",
+      "messageEn": "Now is the time of God's favor, now is the day of salvation.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "지금은 은혜 받을 때", "eventEn": "Now is time of God's favor"},
+        {"verse": 4, "eventKo": "하나님의 일꾼으로 자천함", "eventEn": "Commend ourselves as God's servants"},
+        {"verse": 14, "eventKo": "믿지 않는 자와 멍에를 같이 하지 말라", "eventEn": "Do not be yoked with unbelievers"},
+        {"verse": 17, "eventKo": "그들 중에서 나와 구별되라", "eventEn": "Come out and be separate"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "경건한 슬픔",
+      "titleEn": "Godly Sorrow",
+      "summaryKo": "디도의 소식에 기뻐하며 경건한 슬픔과 세상 슬픔을 구별합니다.",
+      "summaryEn": "Rejoices at Titus' news and distinguishes godly from worldly sorrow.",
+      "messageKo": "하나님의 뜻대로 하는 근심은 후회할 것 없는 구원에 이르는 회개를 이루느니라.",
+      "messageEn": "Godly sorrow brings repentance that leads to salvation and leaves no regret.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "기쁨이 넘침", "eventEn": "Overflowing with joy"},
+        {"verse": 6, "eventKo": "디도의 위로", "eventEn": "God comforted us by Titus"},
+        {"verse": 10, "eventKo": "경건한 슬픔은 구원에 이르는 회개", "eventEn": "Godly sorrow leads to salvation"},
+        {"verse": 11, "eventKo": "열심과 변명과 분함", "eventEn": "Earnestness, eagerness, indignation"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "관대한 헌금",
+      "titleEn": "Generous Giving",
+      "summaryKo": "마게도냐 교회의 관대함을 예로 들어 예루살렘 성도 돕기를 권면합니다.",
+      "summaryEn": "Uses Macedonia's generosity as example to urge giving for Jerusalem saints.",
+      "messageKo": "그리스도께서 부요하나 가난하게 되심은 그 가난함으로 너희가 부요하게 하려 함이라.",
+      "messageEn": "Though he was rich, yet for your sake he became poor, so that through his poverty you might become rich.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "깊은 가난 중에 넘치는 기쁨", "eventEn": "Overflowing joy in severe trial"},
+        {"verse": 9, "eventKo": "부요하나 가난하게 되심", "eventEn": "Though rich, became poor"},
+        {"verse": 12, "eventKo": "있는 대로 받으심", "eventEn": "Gift acceptable according to what one has"},
+        {"verse": 21, "eventKo": "주 앞에서만 아니라 사람 앞에서도 선한 일", "eventEn": "Honorable before Lord and men"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "즐거이 내는 자",
+      "titleEn": "Cheerful Giver",
+      "summaryKo": "하나님이 즐거이 내는 자를 사랑하심과 헌금의 축복을 가르칩니다.",
+      "summaryEn": "Teaches God loves a cheerful giver and the blessings of giving.",
+      "messageKo": "각자 마음에 정한 대로 할 것이요 인색함이나 억지로 말지니 하나님은 즐거이 내는 자를 사랑하시느니라.",
+      "messageEn": "Each should give what he has decided in his heart, not reluctantly, for God loves a cheerful giver.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "많이 심는 자가 많이 거둠", "eventEn": "Whoever sows generously reaps generously"},
+        {"verse": 7, "eventKo": "즐거이 내는 자를 사랑하심", "eventEn": "God loves a cheerful giver"},
+        {"verse": 8, "eventKo": "모든 은혜를 넘치게 하심", "eventEn": "God able to bless abundantly"},
+        {"verse": 15, "eventKo": "말할 수 없는 은사로 감사", "eventEn": "Thanks for indescribable gift"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "영적 전쟁",
+      "titleEn": "Spiritual Warfare",
+      "summaryKo": "바울의 권위를 변호하고 영적 무기로 싸우는 것을 설명합니다.",
+      "summaryEn": "Defends Paul's authority and explains fighting with spiritual weapons.",
+      "messageKo": "우리의 무기는 육체에 속한 것이 아니요 오직 하나님 앞에서 견고한 진을 파하는 능력이라.",
+      "messageEn": "The weapons we fight with are not the weapons of the world. They have divine power to demolish strongholds.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "우리의 무기는 육체에 속하지 않음", "eventEn": "Weapons not of the world"},
+        {"verse": 5, "eventKo": "모든 생각을 사로잡음", "eventEn": "Take every thought captive"},
+        {"verse": 12, "eventKo": "자기끼리 비교하는 것은 지혜롭지 못함", "eventEn": "Unwise to compare among themselves"},
+        {"verse": 17, "eventKo": "자랑하는 자는 주 안에서 자랑", "eventEn": "Let him who boasts boast in the Lord"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "바울의 고난",
+      "titleEn": "Paul's Sufferings",
+      "summaryKo": "거짓 사도들을 경계하고 바울의 사도로서의 고난을 열거합니다.",
+      "summaryEn": "Warns against false apostles and lists Paul's sufferings as an apostle.",
+      "messageKo": "내가 어리석은 자 같이 말하노니 나의 수고가 더 많고 옥에 갇힌 것도 더 많고.",
+      "messageEn": "I am speaking as a fool - I have worked much harder, been in prison more frequently.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "다른 예수, 다른 복음을 경계", "eventEn": "Warning against different Jesus, gospel"},
+        {"verse": 14, "eventKo": "사탄도 광명의 천사로 가장함", "eventEn": "Satan masquerades as angel of light"},
+        {"verse": 25, "eventKo": "세 번 매 맞고 돌에 맞음", "eventEn": "Three times beaten, once stoned"},
+        {"verse": 28, "eventKo": "모든 교회를 위하여 염려함", "eventEn": "Concern for all the churches"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "약함 속의 능력",
+      "titleEn": "Power in Weakness",
+      "summaryKo": "셋째 하늘 경험과 육체의 가시, 약함 속에 나타나는 하나님의 능력을 말합니다.",
+      "summaryEn": "Shares third heaven experience, thorn in flesh, and God's power in weakness.",
+      "messageKo": "내 은혜가 네게 족하도다 이는 내 능력이 약한 데서 온전하여짐이라.",
+      "messageEn": "My grace is sufficient for you, for my power is made perfect in weakness.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "셋째 하늘에 이끌려 올라감", "eventEn": "Caught up to third heaven"},
+        {"verse": 7, "eventKo": "육체의 가시", "eventEn": "Thorn in the flesh"},
+        {"verse": 9, "eventKo": "내 은혜가 족하다", "eventEn": "My grace is sufficient"},
+        {"verse": 10, "eventKo": "약한 그때에 내가 강함", "eventEn": "When I am weak, then I am strong"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "마지막 권면",
+      "titleEn": "Final Exhortations",
+      "summaryKo": "스스로 믿음이 있는지 시험하라 권면하고 축복으로 마무리합니다.",
+      "summaryEn": "Urges self-examination of faith and concludes with blessing.",
+      "messageKo": "주 예수 그리스도의 은혜와 하나님의 사랑과 성령의 교통하심이 함께 있기를 원하노라.",
+      "messageEn": "May the grace of the Lord Jesus Christ, and the love of God, and the fellowship of the Holy Spirit be with you all.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "믿음이 있는지 스스로 시험하라", "eventEn": "Examine yourselves to see if in faith"},
+        {"verse": 9, "eventKo": "너희가 강하면 기뻐함", "eventEn": "Glad when we are weak and you strong"},
+        {"verse": 11, "eventKo": "온전하게 되라", "eventEn": "Aim for perfection"},
+        {"verse": 14, "eventKo": "삼위일체 축복", "eventEn": "Trinitarian blessing"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

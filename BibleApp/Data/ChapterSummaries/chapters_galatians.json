@@ -1,0 +1,104 @@
+{
+  "bookId": "galatians",
+  "bookNumber": 48,
+  "bookNameKo": "갈라디아서",
+  "bookNameEn": "Galatians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "다른 복음은 없다",
+      "titleEn": "No Other Gospel",
+      "summaryKo": "다른 복음이 없음을 선언하고 바울의 복음이 하나님께 받은 것임을 증거합니다.",
+      "summaryEn": "Declares there is no other gospel and testifies Paul received his gospel from God.",
+      "messageKo": "다른 복음은 없나니 다만 어떤 사람들이 복음을 변하게 하려 하느니라.",
+      "messageEn": "There is no other gospel - evidently some are throwing you into confusion and trying to pervert the gospel.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "다른 복음으로 옮겨감에 놀라움", "eventEn": "Astonished at turning to different gospel"},
+        {"verse": 8, "eventKo": "다른 복음 전하면 저주", "eventEn": "If preaches other gospel, let him be cursed"},
+        {"verse": 12, "eventKo": "사람에게서 받은 것이 아님", "eventEn": "Did not receive it from man"},
+        {"verse": 15, "eventKo": "모태로부터 택정하심", "eventEn": "Set apart from mother's womb"}
+      ],
+      "timelineYear": "AD 49"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "믿음으로 의롭다 함",
+      "titleEn": "Justified by Faith",
+      "summaryKo": "예루살렘 사도들의 인정과 율법이 아닌 믿음으로 의롭다 함을 받음을 말합니다.",
+      "summaryEn": "Shares recognition by Jerusalem apostles and justification by faith, not law.",
+      "messageKo": "내가 그리스도와 함께 십자가에 못 박혔나니 그런즉 이제는 내가 사는 것이 아니요 오직 내 안에 그리스도께서 사시는 것이라.",
+      "messageEn": "I have been crucified with Christ and I no longer live, but Christ lives in me.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "기둥같이 여기는 야고보, 게바, 요한", "eventEn": "James, Cephas, John as pillars"},
+        {"verse": 11, "eventKo": "베드로를 면책함", "eventEn": "Opposed Cephas to his face"},
+        {"verse": 16, "eventKo": "율법의 행위로는 의롭다 함을 얻지 못함", "eventEn": "Not justified by works of law"},
+        {"verse": 20, "eventKo": "그리스도와 함께 십자가에 못 박힘", "eventEn": "Crucified with Christ"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "율법과 약속",
+      "titleEn": "Law and Promise",
+      "summaryKo": "아브라함의 믿음을 예로 들어 율법이 아닌 믿음으로 의롭다 함을 설명합니다.",
+      "summaryEn": "Uses Abraham's faith to explain justification by faith, not law.",
+      "messageKo": "율법 아래에 있는 자는 다 저주 아래에 있나니 의인은 믿음으로 살리라.",
+      "messageEn": "All under the law are under a curse. The righteous will live by faith.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "아브라함이 하나님을 믿으매", "eventEn": "Abraham believed God"},
+        {"verse": 10, "eventKo": "율법 아래 있는 자는 저주 아래", "eventEn": "Under law are under curse"},
+        {"verse": 13, "eventKo": "그리스도께서 저주에서 속량", "eventEn": "Christ redeemed us from curse"},
+        {"verse": 28, "eventKo": "유대인 헬라인 종 자유인 남자 여자가 없음", "eventEn": "No Jew or Gentile, slave or free, male or female"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "아들의 신분",
+      "titleEn": "Sons and Heirs",
+      "summaryKo": "율법 아래서 종의 상태였다가 아들의 신분을 얻었음을 설명합니다.",
+      "summaryEn": "Explains how we were slaves under law but received adoption as sons.",
+      "messageKo": "너희가 아들이므로 하나님이 그 아들의 영을 우리 마음 가운데 보내사 아바 아버지라 부르게 하셨느니라.",
+      "messageEn": "Because you are sons, God sent the Spirit of his Son into our hearts, crying, 'Abba, Father.'",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "때가 차매 아들을 보내심", "eventEn": "When time came, sent his Son"},
+        {"verse": 6, "eventKo": "아바 아버지", "eventEn": "Abba, Father"},
+        {"verse": 7, "eventKo": "종이 아니요 아들이니", "eventEn": "No longer slave, but son"},
+        {"verse": 26, "eventKo": "위에 있는 예루살렘은 자유로운 자", "eventEn": "Jerusalem above is free"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "자유와 성령의 열매",
+      "titleEn": "Freedom and Fruit of Spirit",
+      "summaryKo": "그리스도 안에서의 자유와 성령의 열매를 가르칩니다.",
+      "summaryEn": "Teaches freedom in Christ and fruit of the Spirit.",
+      "messageKo": "성령의 열매는 사랑과 희락과 화평과 오래 참음과 자비와 양선과 충성과 온유와 절제니.",
+      "messageEn": "The fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and self-control.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "자유케 하려고 자유를 주셨으니", "eventEn": "For freedom Christ set us free"},
+        {"verse": 6, "eventKo": "사랑으로 역사하는 믿음", "eventEn": "Faith expressing itself through love"},
+        {"verse": 17, "eventKo": "육체와 성령이 서로 대적", "eventEn": "Flesh and Spirit conflict"},
+        {"verse": 22, "eventKo": "성령의 열매", "eventEn": "Fruit of the Spirit"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "서로 짐을 지라",
+      "titleEn": "Bear One Another's Burdens",
+      "summaryKo": "서로 짐을 지고 선을 행하라 권면하며 십자가만을 자랑합니다.",
+      "summaryEn": "Urges bearing burdens and doing good; boasts only in the cross.",
+      "messageKo": "심는 대로 거두리라. 성령을 위하여 심는 자는 영생을 거두리라.",
+      "messageEn": "A man reaps what he sows. Whoever sows to please the Spirit will reap eternal life.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "서로 짐을 지라", "eventEn": "Carry each other's burdens"},
+        {"verse": 7, "eventKo": "심는 대로 거둠", "eventEn": "Reap what you sow"},
+        {"verse": 9, "eventKo": "선을 행하다 낙심하지 말라", "eventEn": "Not grow weary doing good"},
+        {"verse": 14, "eventKo": "십자가 외에 자랑할 것이 없음", "eventEn": "Never boast except in the cross"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

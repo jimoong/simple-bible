@@ -11,6 +11,7 @@ struct ChapterInfoPanel: View {
     var viewModel: BibleViewModel
     var maxHeight: CGFloat = .infinity
     var safeAreaTop: CGFloat = 0
+    var onNavigate: (() -> Void)? = nil  // Called after navigation completes
     
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
@@ -233,6 +234,7 @@ struct ChapterInfoPanel: View {
                                 chapter: chapter, 
                                 verse: event.verse
                             )
+                            onNavigate?()
                         }
                     } label: {
                         HStack(alignment: .top, spacing: 16) {
@@ -275,6 +277,7 @@ struct ChapterInfoPanel: View {
             Button {
                 Task {
                     await viewModel.goToPreviousChapter()
+                    onNavigate?()
                 }
                 HapticManager.shared.selection()
             } label: {
@@ -291,6 +294,7 @@ struct ChapterInfoPanel: View {
             Button {
                 Task {
                     await viewModel.goToNextChapter()
+                    onNavigate?()
                 }
                 HapticManager.shared.selection()
             } label: {

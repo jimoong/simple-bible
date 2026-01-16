@@ -1,0 +1,264 @@
+{
+  "bookId": "1corinthians",
+  "bookNumber": 46,
+  "bookNameKo": "고린도전서",
+  "bookNameEn": "1 Corinthians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "분쟁을 꾸짖음",
+      "titleEn": "Rebuke of Divisions",
+      "summaryKo": "고린도 교회의 분쟁을 책망하고 십자가의 지혜를 선포합니다.",
+      "summaryEn": "Rebukes divisions in Corinthian church and proclaims wisdom of the cross.",
+      "messageKo": "십자가의 도가 멸망하는 자들에게는 미련한 것이요 구원받는 우리에게는 하나님의 능력이라.",
+      "messageEn": "The message of the cross is foolishness to those perishing, but to us being saved it is the power of God.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "분쟁이 없이 합하라", "eventEn": "Be perfectly united"},
+        {"verse": 12, "eventKo": "바울파 아볼로파 게바파", "eventEn": "Paul, Apollos, Cephas factions"},
+        {"verse": 18, "eventKo": "십자가의 도", "eventEn": "Message of the cross"},
+        {"verse": 27, "eventKo": "미련한 것으로 지혜로운 자를 부끄럽게", "eventEn": "Foolish things shame the wise"}
+      ],
+      "timelineYear": "AD 55"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "하나님의 지혜",
+      "titleEn": "God's Wisdom",
+      "summaryKo": "바울이 인간의 지혜가 아닌 성령의 능력으로 복음을 전했음을 증거합니다.",
+      "summaryEn": "Paul testifies he preached by Spirit's power, not human wisdom.",
+      "messageKo": "우리에게는 그리스도의 마음이 있다.",
+      "messageEn": "We have the mind of Christ.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "예수 그리스도와 십자가에 못 박힌 것 외에는", "eventEn": "Know nothing except Christ crucified"},
+        {"verse": 4, "eventKo": "성령의 나타남과 능력", "eventEn": "Demonstration of Spirit's power"},
+        {"verse": 9, "eventKo": "눈으로 보지 못하고 귀로 듣지 못한 것", "eventEn": "No eye has seen, no ear heard"},
+        {"verse": 16, "eventKo": "그리스도의 마음이 있다", "eventEn": "We have mind of Christ"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "하나님의 밭과 건물",
+      "titleEn": "God's Field and Building",
+      "summaryKo": "사역자들은 하나님의 동역자이며 교회는 하나님의 성전임을 가르칩니다.",
+      "summaryEn": "Teaches that workers are God's co-workers and church is God's temple.",
+      "messageKo": "너희는 하나님의 성전이니 하나님의 성령이 너희 안에 거하시느니라.",
+      "messageEn": "You are God's temple and God's Spirit dwells in your midst.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "심고 물을 주나 자라게 하시는 이는 하나님", "eventEn": "I planted, Apollos watered, God made grow"},
+        {"verse": 9, "eventKo": "하나님의 동역자", "eventEn": "God's co-workers"},
+        {"verse": 11, "eventKo": "터는 예수 그리스도", "eventEn": "Foundation is Jesus Christ"},
+        {"verse": 16, "eventKo": "너희는 하나님의 성전", "eventEn": "You are God's temple"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "그리스도의 일꾼",
+      "titleEn": "Servants of Christ",
+      "summaryKo": "사도를 그리스도의 일꾼과 비밀을 맡은 자로 묘사합니다.",
+      "summaryEn": "Describes apostles as servants of Christ and stewards of mysteries.",
+      "messageKo": "구할 것은 맡은 자들에게 충성이니라.",
+      "messageEn": "Those who have been given a trust must prove faithful.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "그리스도의 일꾼", "eventEn": "Servants of Christ"},
+        {"verse": 2, "eventKo": "충성이 요구됨", "eventEn": "Faithfulness required"},
+        {"verse": 7, "eventKo": "받지 않은 것이 무엇이냐", "eventEn": "What do you have that you did not receive?"},
+        {"verse": 20, "eventKo": "하나님 나라는 말에 있지 않고 능력에", "eventEn": "Kingdom not of talk but of power"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "음행하는 자를 내쫓으라",
+      "titleEn": "Expel the Immoral Brother",
+      "summaryKo": "교회 내 음행 문제를 다루며 징계의 필요성을 가르칩니다.",
+      "summaryEn": "Addresses sexual immorality in church and teaches need for discipline.",
+      "messageKo": "적은 누룩이 온 덩어리에 퍼지느니라.",
+      "messageEn": "A little yeast leavens the whole batch of dough.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "음행이 있다 함", "eventEn": "Sexual immorality reported"},
+        {"verse": 5, "eventKo": "사탄에게 내줌", "eventEn": "Hand over to Satan"},
+        {"verse": 6, "eventKo": "적은 누룩", "eventEn": "Little yeast"},
+        {"verse": 11, "eventKo": "그런 자와 사귀지 말라", "eventEn": "Do not associate with such people"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "몸은 성령의 전",
+      "titleEn": "Body is Temple of Spirit",
+      "summaryKo": "형제 간 소송을 책망하고 몸이 성령의 전임을 가르칩니다.",
+      "summaryEn": "Rebukes lawsuits between believers and teaches body is temple of Spirit.",
+      "messageKo": "너희 몸은 성령의 전이니 너희가 값으로 산 것이 되었으니 몸으로 하나님께 영광을 돌리라.",
+      "messageEn": "Your body is a temple of the Holy Spirit. You were bought at a price. Honor God with your body.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "형제를 고소함", "eventEn": "Lawsuits between believers"},
+        {"verse": 9, "eventKo": "불의한 자는 하나님 나라를 유업으로 받지 못함", "eventEn": "Wrongdoers won't inherit kingdom"},
+        {"verse": 19, "eventKo": "몸은 성령의 전", "eventEn": "Body is temple of Spirit"},
+        {"verse": 20, "eventKo": "값으로 산 것", "eventEn": "Bought at a price"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "결혼에 관하여",
+      "titleEn": "Concerning Marriage",
+      "summaryKo": "결혼, 독신, 이혼에 대한 가르침을 전합니다.",
+      "summaryEn": "Gives teaching on marriage, singleness, and divorce.",
+      "messageKo": "각 사람이 하나님께 받은 대로 주께서 각 사람을 부르신 대로 행하라.",
+      "messageEn": "Each person should live as the Lord has assigned, just as God has called them.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "음행을 피하기 위해 결혼", "eventEn": "Marry to avoid immorality"},
+        {"verse": 10, "eventKo": "아내는 남편을 떠나지 말라", "eventEn": "Wife must not separate"},
+        {"verse": 17, "eventKo": "부름 받은 대로 행하라", "eventEn": "Live as you are called"},
+        {"verse": 32, "eventKo": "염려 없이 주의 일을 돌아봄", "eventEn": "Free from concern for Lord's affairs"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "우상 제물",
+      "titleEn": "Food Sacrificed to Idols",
+      "summaryKo": "우상에게 바친 음식에 대해 지식보다 사랑이 중요함을 가르칩니다.",
+      "summaryEn": "Teaches love over knowledge regarding food sacrificed to idols.",
+      "messageKo": "지식은 교만하게 하며 사랑은 덕을 세우느니라.",
+      "messageEn": "Knowledge puffs up while love builds up.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "지식은 교만, 사랑은 덕을 세움", "eventEn": "Knowledge puffs up, love builds up"},
+        {"verse": 4, "eventKo": "우상은 아무것도 아님", "eventEn": "Idol is nothing"},
+        {"verse": 9, "eventKo": "걸림돌이 되지 않도록", "eventEn": "Do not become stumbling block"},
+        {"verse": 13, "eventKo": "형제를 실족하게 하면 고기를 안 먹겠음", "eventEn": "Will never eat meat if it causes stumbling"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "사도의 권리 포기",
+      "titleEn": "Rights of an Apostle",
+      "summaryKo": "바울이 복음을 위해 자신의 권리를 포기한 것을 설명합니다.",
+      "summaryEn": "Explains Paul's giving up his rights for the gospel.",
+      "messageKo": "썩지 아니할 면류관을 얻고자 하여 모든 일에 절제하느니라.",
+      "messageEn": "They do it to get a crown that will not last, but we do it to get a crown that will last forever.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "권리를 쓰지 않음", "eventEn": "Did not use this right"},
+        {"verse": 19, "eventKo": "더 많은 사람을 얻으려", "eventEn": "To win as many as possible"},
+        {"verse": 22, "eventKo": "모든 사람에게 모든 것이 됨", "eventEn": "All things to all people"},
+        {"verse": 27, "eventKo": "내 몸을 복종시킴", "eventEn": "Beat my body"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "시험을 이기는 법",
+      "titleEn": "Overcoming Temptation",
+      "summaryKo": "이스라엘의 실패에서 배우고, 하나님은 시험당할 때 피할 길을 주심을 가르칩니다.",
+      "summaryEn": "Learn from Israel's failures; God provides way out in temptation.",
+      "messageKo": "하나님은 시험당할 때 피할 길을 내사 능히 감당하게 하시느니라.",
+      "messageEn": "God will not let you be tempted beyond what you can bear. He will provide a way out.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "이스라엘의 경고", "eventEn": "Warning from Israel"},
+        {"verse": 12, "eventKo": "선 줄로 생각하는 자가 넘어지지 않도록", "eventEn": "If you think you stand, take heed"},
+        {"verse": 13, "eventKo": "피할 길을 내심", "eventEn": "Provides way out"},
+        {"verse": 31, "eventKo": "무엇을 하든지 하나님의 영광을 위해", "eventEn": "Do all for glory of God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "주의 만찬",
+      "titleEn": "Lord's Supper",
+      "summaryKo": "예배 질서와 주의 만찬에 대한 올바른 태도를 가르칩니다.",
+      "summaryEn": "Teaches proper conduct in worship and at Lord's Supper.",
+      "messageKo": "너희가 이 떡을 먹고 이 잔을 마실 때마다 주의 죽으심을 기념하느니라.",
+      "messageEn": "Whenever you eat this bread and drink this cup, you proclaim the Lord's death until he comes.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "남자의 머리는 그리스도", "eventEn": "Head of man is Christ"},
+        {"verse": 23, "eventKo": "내가 주께 받은 것", "eventEn": "I received from the Lord"},
+        {"verse": 26, "eventKo": "주의 죽으심을 전함", "eventEn": "Proclaim Lord's death"},
+        {"verse": 28, "eventKo": "자기를 살피라", "eventEn": "Examine yourselves"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "성령의 은사",
+      "titleEn": "Spiritual Gifts",
+      "summaryKo": "성령의 다양한 은사와 한 몸의 지체 비유를 가르칩니다.",
+      "summaryEn": "Teaches various spiritual gifts and analogy of one body with many parts.",
+      "messageKo": "몸은 하나인데 많은 지체가 있고 몸의 지체가 많으나 한 몸인 것같이.",
+      "messageEn": "The body is one with many parts, and all parts form one body.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "은사는 여러 가지나 성령은 같음", "eventEn": "Different gifts, same Spirit"},
+        {"verse": 12, "eventKo": "한 몸에 많은 지체", "eventEn": "One body, many parts"},
+        {"verse": 22, "eventKo": "더 약해 보이는 지체가 필요함", "eventEn": "Weaker parts are indispensable"},
+        {"verse": 31, "eventKo": "더 큰 은사를 사모하라", "eventEn": "Eagerly desire greater gifts"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "사랑의 장",
+      "titleEn": "Love Chapter",
+      "summaryKo": "사랑이 가장 뛰어난 길임을 아름답게 묘사합니다.",
+      "summaryEn": "Beautifully describes love as the most excellent way.",
+      "messageKo": "사랑은 오래 참고, 사랑은 온유하며, 사랑은 시기하지 아니하느니라.",
+      "messageEn": "Love is patient, love is kind. It does not envy.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "사랑이 없으면 소리나는 꽹과리", "eventEn": "Without love, resounding gong"},
+        {"verse": 4, "eventKo": "사랑은 오래 참고 온유함", "eventEn": "Love is patient and kind"},
+        {"verse": 8, "eventKo": "사랑은 언제까지나 떨어지지 않음", "eventEn": "Love never fails"},
+        {"verse": 13, "eventKo": "믿음, 소망, 사랑 중 사랑이 제일", "eventEn": "Faith, hope, love - greatest is love"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "예언과 방언",
+      "titleEn": "Prophecy and Tongues",
+      "summaryKo": "예언과 방언의 바른 사용과 질서 있는 예배를 가르칩니다.",
+      "summaryEn": "Teaches proper use of prophecy and tongues, orderly worship.",
+      "messageKo": "하나님은 무질서의 하나님이 아니시요 오직 화평의 하나님이시니라.",
+      "messageEn": "God is not a God of disorder but of peace.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "예언하기를 더 사모하라", "eventEn": "Especially desire prophecy"},
+        {"verse": 12, "eventKo": "교회의 덕을 세우기를 구하라", "eventEn": "Try to excel in building up church"},
+        {"verse": 26, "eventKo": "모든 것을 덕을 세우기 위해", "eventEn": "All must be done for strengthening"},
+        {"verse": 40, "eventKo": "질서대로 하라", "eventEn": "Everything done decently and in order"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "부활",
+      "titleEn": "Resurrection",
+      "summaryKo": "그리스도의 부활과 성도의 부활을 상세히 설명합니다.",
+      "summaryEn": "Explains in detail Christ's resurrection and believers' resurrection.",
+      "messageKo": "그리스도께서 다시 살아나지 못하셨으면 너희 믿음도 헛되고 너희가 여전히 죄 가운데 있으리라.",
+      "messageEn": "If Christ has not been raised, your faith is futile; you are still in your sins.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "그리스도께서 죽으시고 장사되셨다가 다시 살아나심", "eventEn": "Christ died, buried, raised"},
+        {"verse": 14, "eventKo": "그리스도께서 안 살아나셨으면 믿음도 헛됨", "eventEn": "If not raised, faith is futile"},
+        {"verse": 42, "eventKo": "썩을 것으로 심고 썩지 않는 것으로 다시 살고", "eventEn": "Sown perishable, raised imperishable"},
+        {"verse": 55, "eventKo": "사망아 네 이기는 것이 어디 있느냐", "eventEn": "Where, O death, is your victory?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "마무리 권면",
+      "titleEn": "Final Instructions",
+      "summaryKo": "연보, 방문 계획, 인사와 마무리 권면을 전합니다.",
+      "summaryEn": "Gives instructions on collection, travel plans, greetings and final exhortations.",
+      "messageKo": "깨어 믿음에 굳건히 서서 남자답게 강건하라.",
+      "messageEn": "Be on your guard; stand firm in the faith; be courageous; be strong.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "매주 첫날에 연보를 모으라", "eventEn": "Set aside money on first day"},
+        {"verse": 9, "eventKo": "크고 유효한 문이 열림", "eventEn": "Great door of opportunity"},
+        {"verse": 13, "eventKo": "깨어 믿음에 굳건히 서라", "eventEn": "Be on guard, stand firm"},
+        {"verse": 22, "eventKo": "마라나타 - 주여 오시옵소서", "eventEn": "Maranatha - Come, O Lord"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

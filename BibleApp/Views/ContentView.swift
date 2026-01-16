@@ -5,6 +5,7 @@ struct ContentView: View {
     @State private var searchText: String = ""
     @State private var voiceSearchViewModel = VoiceSearchViewModel()
     @State private var gamalielViewModel = GamalielViewModel()  // AI chatbot
+    @State private var listeningViewModel = ListeningViewModel()  // TTS listening mode
     @State private var fullscreenSelectedBook: BibleBook? = nil  // Book selected within fullscreen bookshelf
     @State private var showSettings = false
     @State private var showChapterToast = false
@@ -104,7 +105,7 @@ struct ContentView: View {
                         .onTapGesture {
                             dismissBookshelf()
                         }
-                        .zIndex(1)
+                        .zIndex(26)  // Above listening mode (25) so panel appears on top
                 }
                 
                 // Fullscreen bookshelf panel (books grid, chapters grid, or favorites)
@@ -144,6 +145,13 @@ struct ContentView: View {
                                     withAnimation(.easeInOut(duration: 0.25)) {
                                         showFavoritesInBookshelf = true
                                     }
+                                },
+                                onNavigate: { book, chapter, verse in
+                                    // Restart listening mode with new chapter if was listening
+                                    // This is called AFTER navigation completes, so verses are loaded
+                                    if listeningViewModel.isActive {
+                                        listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+                                    }
                                 }
                             )
                             .transition(.opacity)
@@ -157,9 +165,14 @@ struct ContentView: View {
                                 topPadding: geometry.safeAreaInsets.top,
                                 onClose: { dismissBookshelf() },
                                 onChapterSelect: { book, chapter in
+                                    let wasInListeningMode = listeningViewModel.isActive
                                     dismissBookshelf()
                                     Task {
                                         await viewModel.navigateTo(book: book, chapter: chapter)
+                                        // Restart listening mode with new chapter if was listening
+                                        if wasInListeningMode {
+                                            listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+                                        }
                                     }
                                 }
                             )
@@ -184,9 +197,14 @@ struct ContentView: View {
                                         // Set navigating flag BEFORE dismissing bookshelf to prevent race condition
                                         // where SlotMachineView snaps to position 0 before navigateTo runs
                                         viewModel.isNavigating = true
+                                        let wasInListeningMode = listeningViewModel.isActive
                                         dismissBookshelf()
                                         Task {
                                             await viewModel.navigateTo(book: book, chapter: favorite.chapter, verse: favorite.verseNumber)
+                                            // Restart listening mode with new chapter if was listening
+                                            if wasInListeningMode {
+                                                listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+                                            }
                                         }
                                     }
                                 },
@@ -207,7 +225,7 @@ struct ContentView: View {
                         }
                     }
                     .ignoresSafeArea()
-                    .zIndex(2)
+                    .zIndex(27)  // Above listening mode (25) so bookshelf appears on top
                 }
                 
                 // Chapter info panel - top panel (from header tap)
@@ -216,7 +234,13 @@ struct ContentView: View {
                         ChapterInfoPanel(
                             viewModel: viewModel,
                             maxHeight: maxPanelHeight,
-                            safeAreaTop: geometry.safeAreaInsets.top
+                            safeAreaTop: geometry.safeAreaInsets.top,
+                            onNavigate: {
+                                // Restart listening mode with new chapter if was listening
+                                if listeningViewModel.isActive {
+                                    listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+                                }
+                            }
                         )
                         .clipShape(
                             UnevenRoundedRectangle(
@@ -233,7 +257,7 @@ struct ContentView: View {
                     }
                     .ignoresSafeArea(edges: .top)
                     .transition(.move(edge: .top))
-                    .zIndex(2)
+                    .zIndex(28)  // Above listening mode (25) so panel appears on top
                 }
                 
                 // Full-screen tap overlay to close FAB menu (blocks all other interactions)
@@ -288,6 +312,9 @@ struct ContentView: View {
                                     onSettings: {
                                         showSettings = true
                                     },
+                                    onListening: {
+                                        enterListeningMode()
+                                    },
                                     isExpanded: $isSettingsFABExpanded,
                                     useBlurBackground: viewModel.readingMode == .scroll
                                 )
@@ -336,14 +363,57 @@ struct ContentView: View {
                         safeAreaTop: geometry.safeAreaInsets.top,
                         safeAreaBottom: geometry.safeAreaInsets.bottom,
                         onNavigateToVerse: { book, chapter, verse in
+                            let wasInListeningMode = listeningViewModel.isActive
                             Task {
                                 await viewModel.navigateTo(book: book, chapter: chapter, verse: verse ?? 1)
+                                // Restart listening mode with new chapter if was listening
+                                if wasInListeningMode {
+                                    listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+                                }
                             }
                         }
                     )
                     .ignoresSafeArea()
                     .transition(.opacity)
-                    .zIndex(20)
+                    .zIndex(30)  // Above listening mode (25) so chat appears on top
+                }
+                
+                // Listening mode - Full screen overlay
+                if listeningViewModel.isActive {
+                    ListeningModeView(
+                        viewModel: listeningViewModel,
+                        bibleViewModel: viewModel,
+                        theme: theme,
+                        safeAreaTop: geometry.safeAreaInsets.top,
+                        safeAreaBottom: geometry.safeAreaInsets.bottom,
+                        onExit: {
+                            exitListeningMode()
+                        },
+                        onHeaderTap: {
+                            // Same as handleHeaderTap() - opens chapter info panel
+                            listeningViewModel.pauseForNavigation()
+                            if viewModel.showBookshelf {
+                                dismissBookshelf()
+                            } else {
+                                viewModel.openBookshelf(showChapters: true)
+                            }
+                            HapticManager.shared.selection()
+                        },
+                        onBookshelf: {
+                            listeningViewModel.pauseForNavigation()
+                            viewModel.openBookshelf()
+                        },
+                        onSearch: {
+                            listeningViewModel.pauseForNavigation()
+                            viewModel.openBookshelf(withSearch: true)
+                        },
+                        onChat: {
+                            listeningViewModel.pauseForNavigation()
+                            gamalielViewModel.open(with: viewModel.uiLanguage)
+                        }
+                    )
+                    .transition(.opacity)
+                    .zIndex(25)
                 }
                 
             }
@@ -351,6 +421,7 @@ struct ContentView: View {
             .animation(.spring(response: 0.35, dampingFraction: 0.85), value: viewModel.selectedBookForChapter)
             .animation(.easeOut(duration: 0.25), value: voiceSearchViewModel.showOverlay)
             .animation(.easeOut(duration: 0.25), value: gamalielViewModel.showOverlay)
+            .animation(.easeOut(duration: 0.3), value: listeningViewModel.isActive)
             .onAppear {
                 setupVoiceSearchNavigation()
                 showChapterToastIfAvailable()
@@ -499,6 +570,24 @@ struct ContentView: View {
             text: verse.text(for: viewModel.uiLanguage)
         )
         gamalielViewModel.openWithVerse(attachedVerse, languageMode: viewModel.uiLanguage)
+        HapticManager.shared.selection()
+    }
+    
+    // MARK: - Listening Mode
+    
+    private func enterListeningMode() {
+        // Dismiss any open panels
+        if viewModel.showBookshelf {
+            dismissBookshelf()
+        }
+        
+        // Start listening mode with current chapter's verses
+        listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+        HapticManager.shared.selection()
+    }
+    
+    private func exitListeningMode() {
+        listeningViewModel.exit()
         HapticManager.shared.selection()
     }
     

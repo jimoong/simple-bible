@@ -1,0 +1,287 @@
+import SwiftUI
+
+/// Bottom player panel for listening mode
+struct ListeningPlayerView: View {
+    @Bindable var viewModel: ListeningViewModel
+    let theme: BookTheme
+    let safeAreaBottom: CGFloat
+    let languageMode: LanguageMode
+    
+    // Action callbacks
+    var onBookshelf: () -> Void = {}
+    var onSearch: () -> Void = {}
+    var onChat: () -> Void = {}
+    var onExit: () -> Void = {}
+    
+    private let buttonSize: CGFloat = 52
+    
+    var body: some View {
+        VStack(spacing: 30) {
+            // Segmented progress bar
+            segmentedProgressBar
+                .padding(.top, 30)
+                .padding(.horizontal, 10)  // Additional 10 (total 30 with parent's 20)
+            
+            // Playback controls - simple SF Symbols
+            playbackControls
+            
+            // Bottom: Action buttons (left) + Close button (right)
+            bottomActionButtons
+        }
+        .padding(.horizontal, 20)
+        .padding(.bottom, safeAreaBottom + 8)
+        .background(playerBackground)
+    }
+    
+    // MARK: - Player Background
+    
+    private var playerBackground: some View {
+        UnevenRoundedRectangle(
+            topLeadingRadius: 24,
+            bottomLeadingRadius: 0,
+            bottomTrailingRadius: 0,
+            topTrailingRadius: 24,
+            style: .continuous
+        )
+        .fill(.ultraThinMaterial)
+        .environment(\.colorScheme, .dark)
+        .overlay(
+            UnevenRoundedRectangle(
+                topLeadingRadius: 24,
+                bottomLeadingRadius: 0,
+                bottomTrailingRadius: 0,
+                topTrailingRadius: 24,
+                style: .continuous
+            )
+            .stroke(
+                LinearGradient(
+                    colors: [
+                        Color.white.opacity(0.2),
+                        Color.white.opacity(0.05)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                ),
+                lineWidth: 1
+            )
+        )
+    }
+    
+    // MARK: - Segmented Progress Bar
+    
+    private var segmentedProgressBar: some View {
+        let segments = viewModel.verseProgressSegments
+        let totalSegments = segments.count
+        // Remove spacing if there are many verses to prevent overflow
+        let segmentSpacing: CGFloat = totalSegments > 30 ? 0 : 2
+        
+        return GeometryReader { geometry in
+            let totalWidth = geometry.size.width
+            
+            HStack(spacing: segmentSpacing) {
+                ForEach(Array(segments.enumerated()), id: \.element.id) { index, segment in
+                    let isFirst = index == 0
+                    let isLast = index == totalSegments - 1
+                    segmentView(
+                        segment: segment,
+                        totalWidth: totalWidth,
+                        totalSegments: totalSegments,
+                        segmentSpacing: segmentSpacing,
+                        isFirst: isFirst,
+                        isLast: isLast
+                    )
+                }
+            }
+        }
+        .frame(height: 6)  // 1.5x thicker (was 4)
+    }
+    
+    private func segmentView(segment: VerseProgressSegment, totalWidth: CGFloat, totalSegments: Int, segmentSpacing: CGFloat, isFirst: Bool, isLast: Bool) -> some View {
+        // Calculate available width after accounting for all spacing
+        let totalSpacing = segmentSpacing * CGFloat(totalSegments - 1)
+        let availableWidth = totalWidth - totalSpacing
+        let segmentWidth = segment.width * availableWidth
+        let cornerRadius: CGFloat = segmentSpacing > 0 ? 3 : 0
+        
+        // Only round corners on outer edges (and only if spacing exists)
+        let corners: UIRectCorner = {
+            if segmentSpacing == 0 {
+                if isFirst && isLast {
+                    return .allCorners
+                } else if isFirst {
+                    return [.topLeft, .bottomLeft]
+                } else if isLast {
+                    return [.topRight, .bottomRight]
+                } else {
+                    return []
+                }
+            }
+            if isFirst && isLast {
+                return .allCorners
+            } else if isFirst {
+                return [.topLeft, .bottomLeft]
+            } else if isLast {
+                return [.topRight, .bottomRight]
+            } else {
+                return []
+            }
+        }()
+        
+        return ZStack(alignment: .leading) {
+            // Background
+            RoundedCornersShape(corners: corners, radius: cornerRadius)
+                .fill(Color.white.opacity(0.15))
+            
+            // Fill based on state
+            if segment.state == .completed {
+                RoundedCornersShape(corners: corners, radius: cornerRadius)
+                    .fill(Color.white.opacity(0.8))
+            } else if segment.state == .playing {
+                GeometryReader { geo in
+                    let fillProgress = calculateSegmentFill(segment: segment)
+                    // For playing segment, only round left corners if first
+                    let fillCorners: UIRectCorner = isFirst ? [.topLeft, .bottomLeft] : []
+                    RoundedCornersShape(corners: fillCorners, radius: cornerRadius)
+                        .fill(Color.white.opacity(0.8))
+                        .frame(width: geo.size.width * fillProgress)
+                }
+            }
+        }
+        .frame(width: max(2, segmentWidth))
+    }
+    
+    private func calculateSegmentFill(segment: VerseProgressSegment) -> Double {
+        let progress = viewModel.playbackProgress
+        guard segment.state == .playing else { return 0 }
+        
+        let segmentProgress = (progress - segment.startProgress) / segment.width
+        return min(1, max(0, segmentProgress))
+    }
+    
+    // MARK: - Playback Controls (Simple SF Symbols)
+    
+    private var playbackControls: some View {
+        HStack(spacing: 32) {
+            // Previous verse
+            Button {
+                viewModel.previousVerse()
+                HapticManager.shared.selection()
+            } label: {
+                Image(systemName: "backward.end.fill")
+                    .font(.system(size: 24, weight: .medium))
+                    .foregroundStyle(.white.opacity(viewModel.currentVerseIndex > 0 ? 0.9 : 0.3))
+            }
+            .disabled(viewModel.currentVerseIndex == 0)
+            
+            // Play/Pause
+            Button {
+                viewModel.togglePlayPause()
+                HapticManager.shared.selection()
+            } label: {
+                Image(systemName: viewModel.isPlaying ? "pause.fill" : "play.fill")
+                    .font(.system(size: 36, weight: .medium))
+                    .foregroundStyle(.white)
+            }
+            
+            // Next verse
+            Button {
+                viewModel.nextVerse()
+                HapticManager.shared.selection()
+            } label: {
+                Image(systemName: "forward.end.fill")
+                    .font(.system(size: 24, weight: .medium))
+                    .foregroundStyle(.white.opacity(viewModel.currentVerseIndex < viewModel.totalVerses - 1 ? 0.9 : 0.3))
+            }
+            .disabled(viewModel.currentVerseIndex >= viewModel.totalVerses - 1)
+        }
+        .padding(.vertical, 8)
+    }
+    
+    // MARK: - Bottom Action Buttons (Same as Reading Mode)
+    
+    private var bottomActionButtons: some View {
+        HStack(alignment: .bottom) {
+            // Left buttons - same as reading mode
+            HStack(spacing: 10) {
+                // Bookshelf button
+                fabButton(icon: "book.closed") {
+                    viewModel.pauseForNavigation()
+                    onBookshelf()
+                }
+                
+                // Search button
+                fabButton(icon: "magnifyingglass") {
+                    viewModel.pauseForNavigation()
+                    onSearch()
+                }
+                
+                // Chat button
+                fabButton(icon: "sparkle") {
+                    viewModel.pauseForNavigation()
+                    onChat()
+                }
+            }
+            
+            Spacer()
+            
+            // Close button - same position and style as ExpandableFAB
+            fabButton(icon: "xmark") {
+                onExit()
+            }
+        }
+    }
+    
+    // FAB button - integrated into panel (no shadow, no border, ultrathin only)
+    private func fabButton(icon: String, action: @escaping () -> Void) -> some View {
+        Button {
+            action()
+            HapticManager.shared.selection()
+        } label: {
+            ZStack {
+                // Ultrathin material only - part of the panel
+                Circle()
+                    .fill(.ultraThinMaterial)
+                    .environment(\.colorScheme, .dark)
+                
+                Image(systemName: icon)
+                    .font(.system(size: 20, weight: .bold))
+                    .foregroundStyle(.white)
+            }
+            .frame(width: buttonSize, height: buttonSize)
+        }
+        .buttonStyle(BookshelfButtonStyle())
+    }
+    
+}
+
+// MARK: - Rounded Corners Shape (selective corners)
+
+struct RoundedCornersShape: Shape {
+    let corners: UIRectCorner
+    let radius: CGFloat
+    
+    func path(in rect: CGRect) -> Path {
+        let path = UIBezierPath(
+            roundedRect: rect,
+            byRoundingCorners: corners,
+            cornerRadii: CGSize(width: radius, height: radius)
+        )
+        return Path(path.cgPath)
+    }
+}
+
+#Preview {
+    ZStack {
+        Color.black.ignoresSafeArea()
+        
+        VStack {
+            Spacer()
+            ListeningPlayerView(
+                viewModel: ListeningViewModel(),
+                theme: BookThemes.genesis,
+                safeAreaBottom: 34,
+                languageMode: .kr
+            )
+        }
+    }
+}

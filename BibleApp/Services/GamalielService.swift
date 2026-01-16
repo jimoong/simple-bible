@@ -1,6 +1,6 @@
 import Foundation
 
-/// Gamaliel AI Service - Bible-based AI chatbot powered by Google Gemini
+/// Gamaliel AI Service - Bible-based AI chatbot powered by OpenAI GPT
 /// Based on https://github.com/gamaliel-ai/gamaliel-prompts
 actor GamalielService {
     static let shared = GamalielService()
@@ -98,58 +98,51 @@ actor GamalielService {
         }
     }
     
-    // MARK: - Gemini API Models
+    // MARK: - OpenAI API Models
     
-    struct GeminiRequest: Codable {
-        let contents: [Content]
-        let systemInstruction: SystemInstruction?
-        let generationConfig: GenerationConfig?
+    struct OpenAIRequest: Codable {
+        let model: String
+        let messages: [Message]
+        let temperature: Double?
+        let max_tokens: Int?
+        let stream: Bool?
         
-        struct Content: Codable {
+        struct Message: Codable {
             let role: String
-            let parts: [Part]
-        }
-        
-        struct Part: Codable {
-            let text: String
-        }
-        
-        struct SystemInstruction: Codable {
-            let parts: [Part]
-        }
-        
-        struct GenerationConfig: Codable {
-            let temperature: Double?
-            let maxOutputTokens: Int?
+            let content: String
         }
     }
     
-    struct GeminiResponse: Codable {
-        let candidates: [Candidate]?
-        let error: GeminiError?
+    struct OpenAIResponse: Codable {
+        let id: String?
+        let choices: [Choice]?
+        let error: OpenAIError?
         
-        struct Candidate: Codable {
-            let content: Content?
+        struct Choice: Codable {
+            let message: Message?
+            let delta: Delta?
+            let finish_reason: String?
             
-            struct Content: Codable {
-                let parts: [Part]?
-                
-                struct Part: Codable {
-                    let text: String?
-                }
+            struct Message: Codable {
+                let role: String?
+                let content: String?
+            }
+            
+            struct Delta: Codable {
+                let content: String?
             }
         }
         
-        struct GeminiError: Codable {
+        struct OpenAIError: Codable {
             let message: String?
-            let status: String?
+            let type: String?
         }
     }
     
     // MARK: - Chat Message (for conversation history)
     
     struct ChatMessage {
-        let role: String  // "user" or "model"
+        let role: String  // "user" or "assistant"
         let content: String
     }
     
@@ -164,7 +157,7 @@ actor GamalielService {
         var errorDescription: String? {
             switch self {
             case .noAPIKey:
-                return "Google Gemini API 키가 설정되지 않았습니다."
+                return "OpenAI API 키가 설정되지 않았습니다."
             case .networkError(let error):
                 return "네트워크 오류: \(error.localizedDescription)"
             case .invalidResponse:
@@ -182,39 +175,42 @@ actor GamalielService {
         messages: [ChatMessage],
         language: String = "ko"
     ) async throws -> String {
-        let apiKey = Constants.Gemini.apiKey
+        let apiKey = Constants.OpenAI.apiKey
         
         guard !apiKey.isEmpty && !apiKey.contains("YOUR") else {
             throw GamalielError.noAPIKey
         }
         
-        guard let url = URL(string: Constants.Gemini.apiURL) else {
+        guard let url = URL(string: Constants.OpenAI.chatURL) else {
             throw GamalielError.invalidResponse
         }
         
-        // Build contents array from messages
-        let contents = messages.map { msg in
-            GeminiRequest.Content(
-                role: msg.role == "user" ? "user" : "model",
-                parts: [GeminiRequest.Part(text: msg.content)]
+        // Build messages array with system prompt
+        var openAIMessages: [OpenAIRequest.Message] = [
+            OpenAIRequest.Message(role: "system", content: buildSystemPrompt(language: language))
+        ]
+        
+        // Add conversation history
+        openAIMessages += messages.map { msg in
+            OpenAIRequest.Message(
+                role: msg.role == "user" ? "user" : "assistant",
+                content: msg.content
             )
         }
         
-        // Build request with system instruction
-        let request = GeminiRequest(
-            contents: contents,
-            systemInstruction: GeminiRequest.SystemInstruction(
-                parts: [GeminiRequest.Part(text: buildSystemPrompt(language: language))]
-            ),
-            generationConfig: GeminiRequest.GenerationConfig(
-                temperature: 0.7,
-                maxOutputTokens: 2048
-            )
+        // Build request
+        let request = OpenAIRequest(
+            model: Constants.OpenAI.chatModel,
+            messages: openAIMessages,
+            temperature: 0.7,
+            max_tokens: 2048,
+            stream: false
         )
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
         urlRequest.httpBody = try JSONEncoder().encode(request)
         
         let (data, response) = try await session.data(for: urlRequest)
@@ -223,15 +219,15 @@ actor GamalielService {
             throw GamalielError.invalidResponse
         }
         
-        let geminiResponse = try JSONDecoder().decode(GeminiResponse.self, from: data)
+        let openAIResponse = try JSONDecoder().decode(OpenAIResponse.self, from: data)
         
         // Check for API error
-        if let error = geminiResponse.error {
+        if let error = openAIResponse.error {
             throw GamalielError.apiError(error.message ?? "Unknown error (HTTP \(httpResponse.statusCode))")
         }
         
         // Extract text from response
-        guard let text = geminiResponse.candidates?.first?.content?.parts?.first?.text else {
+        guard let text = openAIResponse.choices?.first?.message?.content else {
             if httpResponse.statusCode != 200 {
                 throw GamalielError.apiError("HTTP \(httpResponse.statusCode)")
             }
@@ -249,7 +245,7 @@ actor GamalielService {
     
     /// Check if API key is configured
     func isConfigured() -> Bool {
-        let key = Constants.Gemini.apiKey
+        let key = Constants.OpenAI.apiKey
         return !key.isEmpty && !key.contains("YOUR")
     }
     
@@ -263,45 +259,43 @@ actor GamalielService {
         AsyncThrowingStream { continuation in
             Task {
                 do {
-                    let apiKey = Constants.Gemini.apiKey
+                    let apiKey = Constants.OpenAI.apiKey
                     
                     guard !apiKey.isEmpty && !apiKey.contains("YOUR") else {
                         continuation.finish(throwing: GamalielError.noAPIKey)
                         return
                     }
                     
-                    // Build streaming URL directly
-                    let model = Constants.Gemini.model
-                    let streamURLString = "https://generativelanguage.googleapis.com/v1beta/models/\(model):streamGenerateContent?alt=sse&key=\(apiKey)"
-                    
-                    guard let url = URL(string: streamURLString) else {
+                    guard let url = URL(string: Constants.OpenAI.chatURL) else {
                         continuation.finish(throwing: GamalielError.invalidResponse)
                         return
                     }
                     
-                    // Build contents array from messages
-                    let contents = messages.map { msg in
-                        GeminiRequest.Content(
-                            role: msg.role == "user" ? "user" : "model",
-                            parts: [GeminiRequest.Part(text: msg.content)]
+                    // Build messages array with system prompt
+                    var openAIMessages: [OpenAIRequest.Message] = [
+                        OpenAIRequest.Message(role: "system", content: self.buildSystemPrompt(language: language))
+                    ]
+                    
+                    openAIMessages += messages.map { msg in
+                        OpenAIRequest.Message(
+                            role: msg.role == "user" ? "user" : "assistant",
+                            content: msg.content
                         )
                     }
                     
-                    // Build request with system instruction
-                    let request = GeminiRequest(
-                        contents: contents,
-                        systemInstruction: GeminiRequest.SystemInstruction(
-                            parts: [GeminiRequest.Part(text: self.buildSystemPrompt(language: language))]
-                        ),
-                        generationConfig: GeminiRequest.GenerationConfig(
-                            temperature: 0.7,
-                            maxOutputTokens: 2048
-                        )
+                    // Build request with streaming enabled
+                    let request = OpenAIRequest(
+                        model: Constants.OpenAI.chatModel,
+                        messages: openAIMessages,
+                        temperature: 0.7,
+                        max_tokens: 2048,
+                        stream: true
                     )
                     
                     var urlRequest = URLRequest(url: url)
                     urlRequest.httpMethod = "POST"
                     urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                    urlRequest.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
                     urlRequest.httpBody = try JSONEncoder().encode(request)
                     
                     let (bytes, response) = try await self.session.bytes(for: urlRequest)
@@ -323,13 +317,19 @@ actor GamalielService {
                     
                     // Parse SSE stream
                     for try await line in bytes.lines {
-                        // SSE format: "data: {...json...}"
+                        // SSE format: "data: {...json...}" or "data: [DONE]"
                         if line.hasPrefix("data: ") {
                             let jsonString = String(line.dropFirst(6))
+                            
+                            // Check for stream end
+                            if jsonString == "[DONE]" {
+                                break
+                            }
+                            
                             if let data = jsonString.data(using: .utf8),
-                               let chunk = try? JSONDecoder().decode(GeminiResponse.self, from: data),
-                               let text = chunk.candidates?.first?.content?.parts?.first?.text {
-                                continuation.yield(text)
+                               let chunk = try? JSONDecoder().decode(OpenAIResponse.self, from: data),
+                               let content = chunk.choices?.first?.delta?.content {
+                                continuation.yield(content)
                             }
                         }
                     }

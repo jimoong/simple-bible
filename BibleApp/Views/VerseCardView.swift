@@ -127,7 +127,7 @@ struct VerseCardView: View {
         .padding(.horizontal, 28)
         .padding(.bottom, verseNumberHeight)  // Compensate for verse number to optically center text
         .contentShape(Rectangle())
-        .contextMenu {
+        .contextMenu(isCentered ? ContextMenu {
             Button {
                 onSave?()
                 // Toggle immediately for instant feedback
@@ -158,7 +158,7 @@ struct VerseCardView: View {
                     systemImage: "sparkle"
                 )
             }
-        }
+        } : nil)
     }
     
     // Animate highlight like drawing with a highlighter pen

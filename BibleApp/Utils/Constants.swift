@@ -3,7 +3,27 @@ import SwiftUI
 
 enum Constants {
     
-    // MARK: - Google Gemini API Configuration
+    // MARK: - OpenAI API Configuration
+    enum OpenAI {
+        /// API key loaded from Secrets.swift (gitignored)
+        /// Get your key at: https://platform.openai.com/api-keys
+        static let apiKey = Secrets.openAIKey
+        
+        /// Chat model to use
+        static let chatModel = "gpt-4o"  // Options: "gpt-4o", "gpt-4o-mini", "gpt-4-turbo"
+        
+        /// TTS model
+        static let ttsModel = "tts-1"  // Options: "tts-1", "tts-1-hd" (higher quality)
+        
+        /// TTS voice
+        static let ttsVoice = "nova"  // Options: "alloy", "echo", "fable", "onyx", "nova", "shimmer"
+        
+        /// API endpoints
+        static let chatURL = "https://api.openai.com/v1/chat/completions"
+        static let ttsURL = "https://api.openai.com/v1/audio/speech"
+    }
+    
+    // MARK: - Google Gemini API Configuration (Legacy - kept for reference)
     enum Gemini {
         /// API key loaded from Secrets.swift (gitignored)
         /// Get your key at: https://aistudio.google.com/app/apikey
