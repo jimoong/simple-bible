@@ -21,6 +21,11 @@ struct SettingsView: View {
     @State private var downloadedCount: Int = 0
     @State private var isPlayingVoiceDemo: Bool = false
     
+    // Legal document sheets
+    @State private var showPrivacyPolicy: Bool = false
+    @State private var showTermsOfService: Bool = false
+    @State private var showAIDisclosure: Bool = false
+    
     
     private let appVersion = "1.0.0"
     private let contactEmail = "jiwoong.net@gmail.com"
@@ -93,6 +98,7 @@ struct SettingsView: View {
             TranslationPickerSheet(
                 title: isKoreanUI ? "주 언어" : "Primary Language",
                 cancelLabel: isKoreanUI ? "취소" : "Cancel",
+                saveLabel: isKoreanUI ? "저장" : "Save",
                 searchPlaceholder: isKoreanUI ? "번역 검색" : "Search translations",
                 selectedTranslation: $primaryTranslation,
                 onSelect: { savePrimaryTranslation() }
@@ -102,6 +108,7 @@ struct SettingsView: View {
             TranslationPickerSheet(
                 title: isKoreanUI ? "보조 언어" : "Secondary Language",
                 cancelLabel: isKoreanUI ? "취소" : "Cancel",
+                saveLabel: isKoreanUI ? "저장" : "Save",
                 searchPlaceholder: isKoreanUI ? "번역 검색" : "Search translations",
                 selectedTranslation: $secondaryTranslation,
                 onSelect: { saveSecondaryTranslation() }
@@ -482,6 +489,84 @@ struct SettingsView: View {
                     .background(.white.opacity(0.06))
                     .padding(.leading, 16)
                 
+                // AI Assistant Info
+                Button {
+                    HapticManager.shared.selection()
+                    showAIDisclosure = true
+                } label: {
+                    HStack {
+                        Text(isKoreanUI ? "AI 도우미 정보" : "AI Assistant Info")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.white.opacity(0.3))
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                
+                Divider()
+                    .background(.white.opacity(0.06))
+                    .padding(.leading, 16)
+                
+                // Privacy Policy
+                Button {
+                    HapticManager.shared.selection()
+                    showPrivacyPolicy = true
+                } label: {
+                    HStack {
+                        Text(isKoreanUI ? "개인정보 처리방침" : "Privacy Policy")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.white.opacity(0.3))
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                
+                Divider()
+                    .background(.white.opacity(0.06))
+                    .padding(.leading, 16)
+                
+                // Terms of Service
+                Button {
+                    HapticManager.shared.selection()
+                    showTermsOfService = true
+                } label: {
+                    HStack {
+                        Text(isKoreanUI ? "이용약관" : "Terms of Service")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white)
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.white.opacity(0.3))
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                
+                Divider()
+                    .background(.white.opacity(0.06))
+                    .padding(.leading, 16)
+                
                 // Contact
                 Button {
                     HapticManager.shared.selection()
@@ -507,6 +592,27 @@ struct SettingsView: View {
             .background(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .fill(.white.opacity(0.04))
+            )
+        }
+        .sheet(isPresented: $showPrivacyPolicy) {
+            LegalTextSheet(
+                title: isKoreanUI ? "개인정보 처리방침" : "Privacy Policy",
+                content: AppLegalTexts.privacyPolicy(isKorean: isKoreanUI),
+                isKoreanUI: isKoreanUI
+            )
+        }
+        .sheet(isPresented: $showTermsOfService) {
+            LegalTextSheet(
+                title: isKoreanUI ? "이용약관" : "Terms of Service",
+                content: AppLegalTexts.termsOfService(isKorean: isKoreanUI),
+                isKoreanUI: isKoreanUI
+            )
+        }
+        .sheet(isPresented: $showAIDisclosure) {
+            LegalTextSheet(
+                title: isKoreanUI ? "AI 도우미 정보" : "AI Assistant Info",
+                content: AppLegalTexts.aiDisclosure(isKorean: isKoreanUI),
+                isKoreanUI: isKoreanUI
             )
         }
     }
@@ -717,6 +823,7 @@ struct TranslationPickerSheet: View {
     @Environment(\.dismiss) private var dismiss
     let title: String
     var cancelLabel: String = "Cancel"
+    var saveLabel: String = "Save"
     var searchPlaceholder: String = "Search translations"
     @Binding var selectedTranslation: BibleTranslation
     var onSelect: () -> Void
@@ -724,6 +831,7 @@ struct TranslationPickerSheet: View {
     @State private var searchText = ""
     @State private var availableTranslations: [BibleTranslation] = []
     @State private var isLoading = true
+    @State private var tempSelectedTranslation: BibleTranslation? = nil
     
     private var groupedTranslations: [(String, [BibleTranslation])] {
         let filtered = availableTranslations.filter { translation in
@@ -791,17 +899,39 @@ struct TranslationPickerSheet: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button(cancelLabel) {
+                        // Dismiss without saving
                         dismiss()
                     }
                     .foregroundStyle(.white.opacity(0.6))
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(saveLabel) {
+                        // Save the selection and dismiss
+                        if let temp = tempSelectedTranslation {
+                            selectedTranslation = temp
+                            onSelect()
+                        }
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                    .foregroundStyle(hasChanges ? Color(hex: "007AFF") : .white.opacity(0.4))
+                    .disabled(!hasChanges)
                 }
             }
             .toolbarBackground(Color(hex: "0a0a0a"), for: .navigationBar)
             .task {
                 await loadTranslations()
             }
+            .onAppear {
+                tempSelectedTranslation = selectedTranslation
+            }
         }
         .preferredColorScheme(.dark)
+    }
+    
+    private var hasChanges: Bool {
+        guard let temp = tempSelectedTranslation else { return false }
+        return temp.id != selectedTranslation.id
     }
     
     private func loadTranslations() async {
@@ -827,14 +957,9 @@ struct TranslationPickerSheet: View {
     
     private func translationRow(translation: BibleTranslation) -> some View {
         Button {
-            // Update binding first
-            selectedTranslation = translation
+            // Update temporary selection only
+            tempSelectedTranslation = translation
             HapticManager.shared.selection()
-            // Save and dismiss after a small delay to ensure binding is updated
-            DispatchQueue.main.async {
-                onSelect()
-                dismiss()
-            }
         } label: {
             HStack {
                 VStack(alignment: .leading, spacing: 2) {
@@ -850,10 +975,10 @@ struct TranslationPickerSheet: View {
                 
                 Spacer()
                 
-                if selectedTranslation.id == translation.id {
-                    Text("✓")
+                if tempSelectedTranslation?.id == translation.id {
+                    Image(systemName: "checkmark")
                         .font(.system(size: 16, weight: .medium))
-                        .foregroundStyle(Color(hex: "22c55e"))
+                        .foregroundStyle(Color(hex: "007AFF"))
                 }
             }
             .padding(.horizontal, 16)
@@ -870,6 +995,9 @@ struct VoicePickerSheet: View {
     @Binding var selectedVoice: String
     var onSelect: (String) -> Void
     var onPlayDemo: (String) -> Void
+    
+    // Temporary selection (only saved when "Save" is pressed)
+    @State private var tempSelectedVoice: String = ""
     
     // Voice data grouped by gender
     private let femaleVoices = [
@@ -915,14 +1043,28 @@ struct VoicePickerSheet: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button(isKoreanUI ? "취소" : "Cancel") {
+                        // Dismiss without saving
                         dismiss()
                     }
                     .foregroundStyle(.white.opacity(0.6))
+                }
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(isKoreanUI ? "저장" : "Save") {
+                        // Save the selection and dismiss
+                        onSelect(tempSelectedVoice)
+                        dismiss()
+                    }
+                    .fontWeight(.semibold)
+                    .foregroundStyle(tempSelectedVoice != selectedVoice ? Color(hex: "007AFF") : .white.opacity(0.4))
+                    .disabled(tempSelectedVoice == selectedVoice)
                 }
             }
             .toolbarBackground(Color(hex: "0a0a0a"), for: .navigationBar)
         }
         .preferredColorScheme(.dark)
+        .onAppear {
+            tempSelectedVoice = selectedVoice
+        }
     }
     
     private func voiceGroup(title: String, voices: [(String, String, String)]) -> some View {
@@ -955,20 +1097,20 @@ struct VoicePickerSheet: View {
             HStack(spacing: 12) {
                 // Checkmark area (fixed width for alignment)
                 Group {
-                    if selectedVoice == id {
+                    if tempSelectedVoice == id {
                         Image(systemName: "checkmark")
                             .font(.system(size: 16, weight: .medium))
-                            .foregroundStyle(Color(hex: "22c55e"))
+                            .foregroundStyle(Color(hex: "007AFF"))
                     } else {
                         Color.clear
                     }
                 }
                 .frame(width: 20)
                 
-                // Tappable row content (selects voice)
+                // Tappable row content (selects voice temporarily)
                 Button {
                     HapticManager.shared.selection()
-                    onSelect(id)
+                    tempSelectedVoice = id
                 } label: {
                     HStack {
                         VStack(alignment: .leading, spacing: 2) {
@@ -1010,6 +1152,56 @@ struct VoicePickerSheet: View {
                     .padding(.leading, 48)  // Align with text after checkmark
             }
         }
+    }
+}
+
+// MARK: - Legal Text Sheet
+struct LegalTextSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    let title: String
+    let content: String
+    let isKoreanUI: Bool
+    
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                Color(hex: "0a0a0a")
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    Text(content)
+                        .font(.system(size: 15))
+                        .foregroundStyle(.white.opacity(0.85))
+                        .lineSpacing(6)
+                        .padding(.horizontal, 20)
+                        .padding(.top, 16)
+                        .padding(.bottom, 60)
+                }
+            }
+            .navigationTitle(title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        HapticManager.shared.selection()
+                        dismiss()
+                    } label: {
+                        ZStack {
+                            Circle()
+                                .fill(.white.opacity(0.08))
+                                .frame(width: 30, height: 30)
+                            
+                            Image(systemName: "xmark")
+                                .font(.system(size: 12, weight: .semibold))
+                                .foregroundStyle(.white.opacity(0.5))
+                        }
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .toolbarBackground(Color(hex: "0a0a0a"), for: .navigationBar)
+        }
+        .preferredColorScheme(.dark)
     }
 }
 

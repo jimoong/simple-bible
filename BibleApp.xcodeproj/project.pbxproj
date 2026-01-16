@@ -19,6 +19,7 @@
 		66EAF8832F1A1A9800542200 /* ListeningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8822F1A1A9800542200 /* ListeningViewModel.swift */; };
 		66EAF8862F1A1AA500542200 /* ListeningPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8852F1A1AA500542200 /* ListeningPlayerView.swift */; };
 		66EAF8872F1A1AA500542200 /* ListeningModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8842F1A1AA500542200 /* ListeningModeView.swift */; };
+		66EAF8892F1AC58700542200 /* AppLegalTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8882F1AC58700542200 /* AppLegalTexts.swift */; };
 		AA0000010000000000000001 /* BibleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000001 /* BibleAppApp.swift */; };
 		AA0000010000000000000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000002 /* ContentView.swift */; };
 		AA0000010000000000000003 /* SlotMachineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000003 /* SlotMachineView.swift */; };
@@ -83,6 +84,7 @@
 		66EAF8822F1A1A9800542200 /* ListeningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningViewModel.swift; sourceTree = "<group>"; };
 		66EAF8842F1A1AA500542200 /* ListeningModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningModeView.swift; sourceTree = "<group>"; };
 		66EAF8852F1A1AA500542200 /* ListeningPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListeningPlayerView.swift; sourceTree = "<group>"; };
+		66EAF8882F1AC58700542200 /* AppLegalTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLegalTexts.swift; sourceTree = "<group>"; };
 		AA0000020000000000000001 /* BibleAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleAppApp.swift; sourceTree = "<group>"; };
 		AA0000020000000000000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000003 /* SlotMachineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotMachineView.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		AA0000050000000000000008 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				66EAF8882F1AC58700542200 /* AppLegalTexts.swift */,
 				AA0000020000000000000014 /* BibleData.swift */,
 				AA0000020000000000000024 /* BibleBookSummaries.swift */,
 				AA0000020000000000000015 /* Constants.swift */,
@@ -373,6 +376,7 @@
 				AA0000010000000000000006 /* BookGridView.swift in Sources */,
 				66EAF8782F1632A000542200 /* TimelineItem.swift in Sources */,
 				AA0000010000000000000007 /* ChapterGridView.swift in Sources */,
+				66EAF8892F1AC58700542200 /* AppLegalTexts.swift in Sources */,
 				AA0000010000000000000008 /* BibleVerse.swift in Sources */,
 				AA0000010000000000000009 /* BibleBook.swift in Sources */,
 				AA0000010000000000000010 /* LanguageMode.swift in Sources */,
