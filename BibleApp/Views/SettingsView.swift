@@ -223,6 +223,8 @@ struct SettingsView: View {
     }
     
     // MARK: - Reading Section
+    @ObservedObject private var fontSizeSettings = FontSizeSettings.shared
+    
     private var readingSection: some View {
         VStack(alignment: .leading, spacing: 10) {
             sectionHeader(title: isKoreanUI ? "읽기" : "Reading")
@@ -253,6 +255,48 @@ struct SettingsView: View {
                                     .background(
                                         RoundedRectangle(cornerRadius: 8, style: .continuous)
                                             .fill(readingMode == mode ? .white.opacity(0.15) : .clear)
+                                    )
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .background(
+                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                            .fill(.white.opacity(0.06))
+                    )
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 14)
+                
+                Divider()
+                    .background(.white.opacity(0.06))
+                    .padding(.leading, 16)
+                
+                // Font Size Toggle
+                HStack {
+                    Text(isKoreanUI ? "글자 크기" : "Font Size")
+                        .font(.system(size: 16))
+                        .foregroundStyle(.white)
+                    
+                    Spacer()
+                    
+                    // Segmented Picker
+                    HStack(spacing: 0) {
+                        ForEach(FontSizeMode.allCases, id: \.self) { mode in
+                            Button {
+                                HapticManager.shared.selection()
+                                withAnimation(.easeOut(duration: 0.15)) {
+                                    fontSizeSettings.mode = mode
+                                }
+                            } label: {
+                                Text(mode.displayName(for: isKoreanUI ? .kr : .en))
+                                    .font(.system(size: 14, weight: fontSizeSettings.mode == mode ? .semibold : .regular))
+                                    .foregroundStyle(fontSizeSettings.mode == mode ? .white : .white.opacity(0.5))
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                                            .fill(fontSizeSettings.mode == mode ? .white.opacity(0.15) : .clear)
                                     )
                             }
                             .buttonStyle(.plain)

@@ -120,8 +120,15 @@ struct GamalielChatView: View {
     }
     
     // Text constants (matching BookReadingView scroll mode)
-    private let chatFontSize: CGFloat = 16
-    private let chatLineSpacing: CGFloat = 7
+    @ObservedObject private var fontSizeSettings = FontSizeSettings.shared
+    
+    private var chatFontSize: CGFloat {
+        fontSizeSettings.mode.chatMessageSize
+    }
+    
+    private var chatLineSpacing: CGFloat {
+        fontSizeSettings.mode.chatLineSpacing
+    }
     
     var body: some View {
         ZStack {
@@ -666,8 +673,16 @@ private struct MessageBubble: View {
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
     
     // Text constants
-    private let chatFontSize: CGFloat = 16
-    private let chatLineSpacing: CGFloat = 7
+    @ObservedObject private var fontSizeSettings = FontSizeSettings.shared
+    
+    private var chatFontSize: CGFloat {
+        fontSizeSettings.mode.chatMessageSize
+    }
+    
+    private var chatLineSpacing: CGFloat {
+        fontSizeSettings.mode.chatLineSpacing
+    }
+    
     private let paragraphSpacing: CGFloat = 24  // Spacing between paragraphs (double line breaks)
     
     private func serifFont(_ size: CGFloat, weight: Font.Weight = .regular) -> Font {

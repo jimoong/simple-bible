@@ -1,0 +1,263 @@
+{
+  "bookId": "mark",
+  "bookNumber": 41,
+  "bookNameKo": "마가복음",
+  "bookNameEn": "Mark",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "세례 요한과 예수의 사역 시작",
+      "titleEn": "John the Baptist and Beginning of Jesus' Ministry",
+      "summaryKo": "세례 요한의 사역, 예수님의 세례와 시험, 그리고 갈릴리 사역의 시작을 기록합니다.",
+      "summaryEn": "Records John the Baptist's ministry, Jesus' baptism and temptation, and the beginning of His Galilean ministry.",
+      "messageKo": "하나님 나라가 가까이 왔으니 회개하고 복음을 믿으라.",
+      "messageEn": "The kingdom of God is near; repent and believe the good news.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "예수님의 세례", "eventEn": "Jesus' baptism"},
+        {"verse": 15, "eventKo": "복음을 전파하심", "eventEn": "Proclaiming the gospel"},
+        {"verse": 17, "eventKo": "첫 제자들을 부르심", "eventEn": "Calling first disciples"},
+        {"verse": 34, "eventKo": "많은 병자를 고치심", "eventEn": "Heals many sick"}
+      ],
+      "timelineYear": "AD 27경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "권위 있는 가르침과 논쟁",
+      "titleEn": "Authoritative Teaching and Controversies",
+      "summaryKo": "중풍병자 치유, 레위의 부르심, 안식일 논쟁 등 예수님의 권위가 드러납니다.",
+      "summaryEn": "Jesus' authority is revealed through healing a paralytic, calling Levi, and Sabbath controversies.",
+      "messageKo": "인자는 안식일에도 주인이시다.",
+      "messageEn": "The Son of Man is Lord even of the Sabbath.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "네 죄가 사함을 받았다", "eventEn": "Your sins are forgiven"},
+        {"verse": 14, "eventKo": "레위를 부르심", "eventEn": "Calling of Levi"},
+        {"verse": 17, "eventKo": "죄인을 부르러 왔다", "eventEn": "Came to call sinners"},
+        {"verse": 27, "eventKo": "안식일은 사람을 위해", "eventEn": "Sabbath made for man"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "열두 제자 임명",
+      "titleEn": "Appointing the Twelve",
+      "summaryKo": "안식일 논쟁이 계속되고, 열두 제자를 임명하며, 성령 훼방 죄를 경고합니다.",
+      "summaryEn": "Sabbath controversies continue, twelve apostles are appointed, and blasphemy against the Spirit is warned.",
+      "messageKo": "하나님의 뜻을 행하는 자가 참 가족이다.",
+      "messageEn": "Whoever does God's will is true family.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "안식일에 손 마른 자를 고침", "eventEn": "Heals man with withered hand"},
+        {"verse": 14, "eventKo": "열두 제자 임명", "eventEn": "Appoints the Twelve"},
+        {"verse": 29, "eventKo": "성령 훼방 죄", "eventEn": "Blasphemy against Spirit"},
+        {"verse": 35, "eventKo": "누가 내 어머니냐", "eventEn": "Who is my mother?"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "씨 뿌리는 자의 비유",
+      "titleEn": "Parable of the Sower",
+      "summaryKo": "여러 비유로 하나님 나라를 가르치시고 풍랑을 잠잠케 하십니다.",
+      "summaryEn": "Teaches about God's kingdom through parables and calms the storm.",
+      "messageKo": "하나님 나라는 씨앗처럼 자라나 큰 열매를 맺습니다.",
+      "messageEn": "God's kingdom grows like a seed and bears great fruit.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "씨 뿌리는 자 비유", "eventEn": "Parable of the sower"},
+        {"verse": 26, "eventKo": "자라는 씨 비유", "eventEn": "Parable of growing seed"},
+        {"verse": 31, "eventKo": "겨자씨 비유", "eventEn": "Parable of mustard seed"},
+        {"verse": 39, "eventKo": "풍랑을 잠잠케 하심", "eventEn": "Calms the storm"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "권능의 사역",
+      "titleEn": "Powerful Ministry",
+      "summaryKo": "군대 귀신을 내쫓고, 혈루증 여인을 고치며, 야이로의 딸을 살리십니다.",
+      "summaryEn": "Casts out Legion, heals woman with bleeding, and raises Jairus' daughter.",
+      "messageKo": "예수님은 죽음까지도 이기시는 분이십니다.",
+      "messageEn": "Jesus has power even over death.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "군대 귀신", "eventEn": "Legion of demons"},
+        {"verse": 34, "eventKo": "혈루증 여인의 믿음", "eventEn": "Woman's faith heals her"},
+        {"verse": 41, "eventKo": "달리다굼", "eventEn": "Talitha koum"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "오천 명을 먹이심",
+      "titleEn": "Feeding Five Thousand",
+      "summaryKo": "고향에서 배척받고, 제자들을 파송하며, 오천 명을 먹이고 물 위를 걸으십니다.",
+      "summaryEn": "Rejected in hometown, sends out disciples, feeds five thousand, and walks on water.",
+      "messageKo": "예수님은 우리의 부족함을 풍성케 하십니다.",
+      "messageEn": "Jesus makes our insufficiency abundant.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "고향에서 배척", "eventEn": "Rejected in hometown"},
+        {"verse": 7, "eventKo": "열둘을 파송", "eventEn": "Sends out the Twelve"},
+        {"verse": 41, "eventKo": "오천 명을 먹이심", "eventEn": "Feeds five thousand"},
+        {"verse": 48, "eventKo": "물 위를 걸으심", "eventEn": "Walks on water"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "마음의 정결",
+      "titleEn": "Clean Hearts",
+      "summaryKo": "전통보다 마음의 정결을 강조하시고 이방인들도 치유하십니다.",
+      "summaryEn": "Emphasizes inner purity over tradition and heals Gentiles.",
+      "messageKo": "밖에서 들어가는 것이 아니라 마음에서 나오는 것이 사람을 더럽힙니다.",
+      "messageEn": "What comes from the heart defiles, not what goes in from outside.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "입술로만 공경함", "eventEn": "Honor with lips only"},
+        {"verse": 15, "eventKo": "마음에서 나오는 것", "eventEn": "What comes from heart"},
+        {"verse": 29, "eventKo": "수로보니게 여인의 딸", "eventEn": "Syrophoenician woman's daughter"},
+        {"verse": 34, "eventKo": "에바다 - 열리라", "eventEn": "Ephphatha - Be opened"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "베드로의 신앙 고백",
+      "titleEn": "Peter's Confession",
+      "summaryKo": "사천 명을 먹이시고, 베드로가 그리스도임을 고백하며, 첫 번째 수난 예고를 하십니다.",
+      "summaryEn": "Feeds four thousand, Peter confesses Jesus as Christ, and first prediction of suffering.",
+      "messageKo": "자기를 부인하고 자기 십자가를 지고 나를 따르라.",
+      "messageEn": "Deny yourself, take up your cross, and follow me.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "사천 명을 먹이심", "eventEn": "Feeds four thousand"},
+        {"verse": 29, "eventKo": "주는 그리스도시니이다", "eventEn": "You are the Christ"},
+        {"verse": 31, "eventKo": "첫 번째 수난 예고", "eventEn": "First passion prediction"},
+        {"verse": 34, "eventKo": "자기를 부인하라", "eventEn": "Deny yourself"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "변화산과 귀신 들린 아이",
+      "titleEn": "Transfiguration and Demon-possessed Boy",
+      "summaryKo": "변화산에서 영광을 보이시고, 귀신 들린 아이를 고치시며, 두 번째 수난 예고를 하십니다.",
+      "summaryEn": "Reveals glory at transfiguration, heals demon-possessed boy, second prediction of suffering.",
+      "messageKo": "믿음이 없는 세대여, 믿는 자에게는 능치 못할 일이 없다.",
+      "messageEn": "Unbelieving generation! Everything is possible for one who believes.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "변화산", "eventEn": "Transfiguration"},
+        {"verse": 24, "eventKo": "믿음 없는 것을 도와주소서", "eventEn": "Help my unbelief"},
+        {"verse": 31, "eventKo": "두 번째 수난 예고", "eventEn": "Second passion prediction"},
+        {"verse": 35, "eventKo": "첫째가 되려면 꼴찌가 되라", "eventEn": "First must be last"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "섬기러 오신 인자",
+      "titleEn": "Son of Man Came to Serve",
+      "summaryKo": "이혼, 부자 청년, 야고보와 요한의 요청 등을 통해 제자도를 가르치십니다.",
+      "summaryEn": "Teaches discipleship through divorce, rich young man, and James and John's request.",
+      "messageKo": "인자가 온 것은 섬김을 받으려 함이 아니라 섬기려 함이라.",
+      "messageEn": "The Son of Man came not to be served, but to serve.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "어린아이들을 용납하라", "eventEn": "Let the children come"},
+        {"verse": 21, "eventKo": "가진 것을 팔아 가난한 자에게", "eventEn": "Sell and give to poor"},
+        {"verse": 45, "eventKo": "대속물로 주려 함", "eventEn": "Give life as ransom"},
+        {"verse": 52, "eventKo": "바디매오의 치유", "eventEn": "Healing of Bartimaeus"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "예루살렘 입성",
+      "titleEn": "Entry into Jerusalem",
+      "summaryKo": "나귀를 타고 예루살렘에 입성하시고 성전을 정화하십니다.",
+      "summaryEn": "Enters Jerusalem on a donkey and cleanses the temple.",
+      "messageKo": "내 집은 만민이 기도하는 집이라 불릴 것이다.",
+      "messageEn": "My house will be called a house of prayer for all nations.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "호산나!", "eventEn": "Hosanna!"},
+        {"verse": 15, "eventKo": "성전 정화", "eventEn": "Cleanses temple"},
+        {"verse": 20, "eventKo": "무화과나무가 마름", "eventEn": "Fig tree withered"},
+        {"verse": 24, "eventKo": "믿음으로 기도하라", "eventEn": "Pray with faith"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 12,
+      "titleKo": "포도원 농부 비유",
+      "titleEn": "Parable of the Tenants",
+      "summaryKo": "포도원 농부 비유, 세금 논쟁, 가장 큰 계명, 과부의 헌금 등을 기록합니다.",
+      "summaryEn": "Records parable of tenants, tax question, greatest commandment, and widow's offering.",
+      "messageKo": "네 마음과 목숨과 뜻과 힘을 다하여 주 너의 하나님을 사랑하라.",
+      "messageEn": "Love the Lord your God with all your heart, soul, mind and strength.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "건축자들이 버린 돌", "eventEn": "Stone the builders rejected"},
+        {"verse": 17, "eventKo": "가이사의 것은 가이사에게", "eventEn": "Give to Caesar what is Caesar's"},
+        {"verse": 30, "eventKo": "가장 큰 계명", "eventEn": "Greatest commandment"},
+        {"verse": 43, "eventKo": "과부의 두 렙돈", "eventEn": "Widow's two small coins"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "감람산 강화",
+      "titleEn": "Olivet Discourse",
+      "summaryKo": "성전 파괴와 마지막 때의 징조, 재림에 대해 가르치십니다.",
+      "summaryEn": "Teaches about temple destruction, signs of the end, and the Second Coming.",
+      "messageKo": "그 날과 그 때는 아무도 모르니 깨어 있으라.",
+      "messageEn": "No one knows that day or hour; stay alert.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "성전 파괴 예언", "eventEn": "Temple destruction predicted"},
+        {"verse": 10, "eventKo": "복음이 먼저 전파됨", "eventEn": "Gospel must first be preached"},
+        {"verse": 26, "eventKo": "인자가 구름 타고 옴", "eventEn": "Son of Man coming in clouds"},
+        {"verse": 37, "eventKo": "깨어 있으라", "eventEn": "Watch!"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "최후의 만찬과 겟세마네",
+      "titleEn": "Last Supper and Gethsemane",
+      "summaryKo": "베다니의 향유 붓기, 최후의 만찬, 겟세마네 기도, 체포와 재판을 기록합니다.",
+      "summaryEn": "Records anointing at Bethany, Last Supper, Gethsemane prayer, arrest and trial.",
+      "messageKo": "내 뜻대로 마시옵고 아버지 뜻대로 하옵소서.",
+      "messageEn": "Not what I will, but what You will.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "향유를 부음", "eventEn": "Anointing with perfume"},
+        {"verse": 22, "eventKo": "이것은 내 몸이니라", "eventEn": "This is my body"},
+        {"verse": 36, "eventKo": "겟세마네 기도", "eventEn": "Gethsemane prayer"},
+        {"verse": 72, "eventKo": "베드로의 부인", "eventEn": "Peter's denial"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "십자가와 죽음",
+      "titleEn": "Crucifixion and Death",
+      "summaryKo": "빌라도 앞 재판, 십자가 처형, 죽음과 장사를 기록합니다.",
+      "summaryEn": "Records trial before Pilate, crucifixion, death and burial.",
+      "messageKo": "이 사람은 진정 하나님의 아들이었다.",
+      "messageEn": "Surely this man was the Son of God.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "바라바를 놓아줌", "eventEn": "Releases Barabbas"},
+        {"verse": 24, "eventKo": "십자가에 못 박음", "eventEn": "Crucified"},
+        {"verse": 34, "eventKo": "엘리 엘리 라마 사박다니", "eventEn": "Eloi, Eloi, lema sabachthani"},
+        {"verse": 46, "eventKo": "아리마대 요셉의 장사", "eventEn": "Joseph of Arimathea's burial"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 16,
+      "titleKo": "부활",
+      "titleEn": "Resurrection",
+      "summaryKo": "빈 무덤, 부활하신 예수님의 나타나심, 그리고 승천을 기록합니다.",
+      "summaryEn": "Records the empty tomb, appearances of risen Jesus, and ascension.",
+      "messageKo": "온 천하에 다니며 만민에게 복음을 전파하라.",
+      "messageEn": "Go into all the world and preach the gospel to all creation.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "그가 살아나셨다", "eventEn": "He has risen"},
+        {"verse": 9, "eventKo": "막달라 마리아에게 나타남", "eventEn": "Appears to Mary Magdalene"},
+        {"verse": 15, "eventKo": "온 천하에 복음을 전파하라", "eventEn": "Preach gospel to all creation"},
+        {"verse": 19, "eventKo": "하늘로 올라가심", "eventEn": "Taken up into heaven"}
+      ],
+      "timelineYear": "AD 30"
+    }
+  ]
+}

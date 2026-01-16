@@ -6,6 +6,7 @@ struct BookTheme {
     let textPrimary: Color
     let textSecondary: Color
     let accent: Color
+    let highlightAccent: Color  // Vibrant complementary color for text highlights
     
     // Typography style - applies to BOTH English and Korean
     let titleFont: Font.Design  // .serif, .default (sans), .rounded, .monospaced
@@ -56,6 +57,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.92, blue: 1.0),
         textSecondary: Color(red: 0.65, green: 0.58, blue: 0.78),
         accent: Color(red: 0.75, green: 0.65, blue: 1.0),
+        highlightAccent: Color(red: 0.2, green: 1.0, blue: 0.5),  // Vivid mint
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -66,6 +68,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.95, blue: 0.90),
         textSecondary: Color(red: 0.78, green: 0.58, blue: 0.45),
         accent: Color(red: 1.0, green: 0.72, blue: 0.45),
+        highlightAccent: Color(red: 0.0, green: 0.9, blue: 1.0),  // Vivid cyan
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -76,6 +79,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.92, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.55, green: 0.68, blue: 0.82),
         accent: Color(red: 0.65, green: 0.82, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.85, blue: 0.0),  // Vivid gold
         titleFont: .default,
         bodyFont: .default  // Sans-serif
     )
@@ -86,6 +90,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.98, blue: 0.94),
         textSecondary: Color(red: 0.60, green: 0.75, blue: 0.60),
         accent: Color(red: 0.70, green: 0.92, blue: 0.70),
+        highlightAccent: Color(red: 1.0, green: 0.3, blue: 0.6),  // Vivid pink
         titleFont: .rounded,
         bodyFont: .default  // Sans-serif
     )
@@ -96,6 +101,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.97, blue: 0.92),
         textSecondary: Color(red: 0.75, green: 0.65, blue: 0.50),
         accent: Color(red: 0.95, green: 0.82, blue: 0.55),
+        highlightAccent: Color(red: 0.2, green: 0.8, blue: 1.0),  // Vivid sky blue
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -107,6 +113,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.98, blue: 0.88),
         textSecondary: Color(red: 0.72, green: 0.68, blue: 0.48),
         accent: Color(red: 0.92, green: 0.85, blue: 0.50),
+        highlightAccent: Color(red: 0.2, green: 0.6, blue: 1.0),  // Vivid blue
         titleFont: .default,
         bodyFont: .default
     )
@@ -117,6 +124,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.94, blue: 0.94),
         textSecondary: Color(red: 0.82, green: 0.55, blue: 0.55),
         accent: Color(red: 1.0, green: 0.60, blue: 0.55),
+        highlightAccent: Color(red: 0.0, green: 1.0, blue: 0.85),  // Vivid teal
         titleFont: .default,
         bodyFont: .default
     )
@@ -127,6 +135,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.96, blue: 0.97),
         textSecondary: Color(red: 0.85, green: 0.65, blue: 0.72),
         accent: Color(red: 1.0, green: 0.75, blue: 0.82),
+        highlightAccent: Color(red: 0.2, green: 1.0, blue: 0.7),  // Vivid mint
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -137,6 +146,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.58, green: 0.65, blue: 0.85),
         accent: Color(red: 0.68, green: 0.78, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.85, blue: 0.0),  // Vivid gold
         titleFont: .default,
         bodyFont: .default
     )
@@ -147,6 +157,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.94, blue: 1.0),
         textSecondary: Color(red: 0.68, green: 0.62, blue: 0.88),
         accent: Color(red: 0.78, green: 0.72, blue: 1.0),
+        highlightAccent: Color(red: 0.8, green: 1.0, blue: 0.0),  // Vivid lime
         titleFont: .default,
         bodyFont: .default
     )
@@ -157,6 +168,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.98, green: 0.98, blue: 0.92),
         textSecondary: Color(red: 0.75, green: 0.75, blue: 0.58),
         accent: Color(red: 0.92, green: 0.90, blue: 0.65),
+        highlightAccent: Color(red: 0.4, green: 0.5, blue: 1.0),  // Vivid periwinkle
         titleFont: .serif,
         bodyFont: .default
     )
@@ -167,6 +179,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.96, blue: 0.98),
         textSecondary: Color(red: 0.68, green: 0.68, blue: 0.78),
         accent: Color(red: 0.82, green: 0.82, blue: 0.95),
+        highlightAccent: Color(red: 1.0, green: 0.9, blue: 0.0),  // Vivid yellow
         titleFont: .serif,
         bodyFont: .default
     )
@@ -177,6 +190,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.98, blue: 0.98),
         textSecondary: Color(red: 0.58, green: 0.75, blue: 0.75),
         accent: Color(red: 0.65, green: 0.90, blue: 0.88),
+        highlightAccent: Color(red: 1.0, green: 0.4, blue: 0.5),  // Vivid coral
         titleFont: .default,
         bodyFont: .default
     )
@@ -187,6 +201,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.98, blue: 0.97),
         textSecondary: Color(red: 0.62, green: 0.78, blue: 0.72),
         accent: Color(red: 0.70, green: 0.92, blue: 0.85),
+        highlightAccent: Color(red: 1.0, green: 0.3, blue: 0.55),  // Vivid pink
         titleFont: .default,
         bodyFont: .default
     )
@@ -197,6 +212,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.95, blue: 0.98),
         textSecondary: Color(red: 0.72, green: 0.65, blue: 0.78),
         accent: Color(red: 0.85, green: 0.78, blue: 0.95),
+        highlightAccent: Color(red: 0.7, green: 1.0, blue: 0.2),  // Vivid lime
         titleFont: .default,
         bodyFont: .serif
     )
@@ -207,6 +223,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.95, blue: 0.98),
         textSecondary: Color(red: 0.65, green: 0.65, blue: 0.78),
         accent: Color(red: 0.78, green: 0.78, blue: 0.95),
+        highlightAccent: Color(red: 1.0, green: 0.85, blue: 0.0),  // Vivid gold
         titleFont: .default,
         bodyFont: .default
     )
@@ -217,6 +234,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.94, blue: 0.97),
         textSecondary: Color(red: 0.88, green: 0.58, blue: 0.72),
         accent: Color(red: 1.0, green: 0.65, blue: 0.82),
+        highlightAccent: Color(red: 0.0, green: 1.0, blue: 0.7),  // Vivid aqua
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -228,6 +246,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.94, blue: 0.97),
         textSecondary: Color(red: 0.60, green: 0.60, blue: 0.72),
         accent: Color(red: 0.75, green: 0.75, blue: 0.92),
+        highlightAccent: Color(red: 1.0, green: 0.85, blue: 0.0),  // Vivid gold
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -238,6 +257,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.93, blue: 1.0),
         textSecondary: Color(red: 0.70, green: 0.58, blue: 0.88),
         accent: Color(red: 0.85, green: 0.70, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.95, blue: 0.0),  // Vivid bright yellow
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -248,6 +268,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.98, blue: 0.90),
         textSecondary: Color(red: 0.78, green: 0.72, blue: 0.48),
         accent: Color(red: 1.0, green: 0.90, blue: 0.55),
+        highlightAccent: Color(red: 0.2, green: 0.6, blue: 1.0),  // Vivid sky blue
         titleFont: .rounded,
         bodyFont: .default
     )
@@ -258,6 +279,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.95, blue: 0.95),
         textSecondary: Color(red: 0.62, green: 0.62, blue: 0.62),
         accent: Color(red: 0.80, green: 0.80, blue: 0.80),
+        highlightAccent: Color(red: 0.3, green: 0.9, blue: 1.0),  // Vivid cyan
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -268,6 +290,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.93, blue: 0.95),
         textSecondary: Color(red: 0.92, green: 0.55, blue: 0.65),
         accent: Color(red: 1.0, green: 0.62, blue: 0.72),
+        highlightAccent: Color(red: 0.0, green: 1.0, blue: 0.8),  // Vivid turquoise
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -279,6 +302,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.92, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.52, green: 0.68, blue: 0.90),
         accent: Color(red: 0.60, green: 0.80, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.7, blue: 0.0),  // Vivid amber
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -289,6 +313,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.94, blue: 0.99),
         textSecondary: Color(red: 0.72, green: 0.62, blue: 0.82),
         accent: Color(red: 0.88, green: 0.75, blue: 1.0),
+        highlightAccent: Color(red: 0.5, green: 1.0, blue: 0.2),  // Vivid lime
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -299,6 +324,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.94, blue: 0.96),
         textSecondary: Color(red: 0.58, green: 0.58, blue: 0.68),
         accent: Color(red: 0.72, green: 0.72, blue: 0.85),
+        highlightAccent: Color(red: 1.0, green: 0.75, blue: 0.3),  // Vivid peach
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -309,6 +335,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.93, green: 0.97, blue: 0.99),
         textSecondary: Color(red: 0.55, green: 0.72, blue: 0.82),
         accent: Color(red: 0.62, green: 0.85, blue: 0.95),
+        highlightAccent: Color(red: 1.0, green: 0.5, blue: 0.0),  // Vivid orange
         titleFont: .default,
         bodyFont: .default
     )
@@ -319,6 +346,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.94, blue: 1.0),
         textSecondary: Color(red: 0.60, green: 0.60, blue: 0.88),
         accent: Color(red: 0.72, green: 0.72, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.9, blue: 0.0),  // Vivid yellow
         titleFont: .default,
         bodyFont: .default
     )
@@ -330,6 +358,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.94, blue: 0.96),
         textSecondary: Color(red: 0.85, green: 0.60, blue: 0.70),
         accent: Color(red: 1.0, green: 0.70, blue: 0.80),
+        highlightAccent: Color(red: 0.0, green: 1.0, blue: 0.75),  // Vivid seafoam
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -340,6 +369,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.98, blue: 0.95),
         textSecondary: Color(red: 0.58, green: 0.78, blue: 0.65),
         accent: Color(red: 0.68, green: 0.92, blue: 0.75),
+        highlightAccent: Color(red: 1.0, green: 0.2, blue: 0.6),  // Vivid hot pink
         titleFont: .default,
         bodyFont: .default
     )
@@ -350,6 +380,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.98, green: 0.96, blue: 0.92),
         textSecondary: Color(red: 0.78, green: 0.68, blue: 0.52),
         accent: Color(red: 0.95, green: 0.82, blue: 0.58),
+        highlightAccent: Color(red: 0.2, green: 0.65, blue: 1.0),  // Vivid cornflower
         titleFont: .default,
         bodyFont: .default
     )
@@ -360,6 +391,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.94, blue: 0.94),
         textSecondary: Color(red: 0.75, green: 0.60, blue: 0.60),
         accent: Color(red: 0.92, green: 0.72, blue: 0.72),
+        highlightAccent: Color(red: 0.0, green: 0.95, blue: 0.95),  // Vivid cyan
         titleFont: .default,
         bodyFont: .serif
     )
@@ -370,6 +402,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.93, green: 0.98, blue: 1.0),
         textSecondary: Color(red: 0.55, green: 0.78, blue: 0.90),
         accent: Color(red: 0.62, green: 0.88, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.6, blue: 0.0),  // Vivid tangerine
         titleFont: .rounded,
         bodyFont: .default
     )
@@ -380,6 +413,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.95, blue: 0.98),
         textSecondary: Color(red: 0.65, green: 0.65, blue: 0.78),
         accent: Color(red: 0.78, green: 0.78, blue: 0.95),
+        highlightAccent: Color(red: 1.0, green: 0.85, blue: 0.0),  // Vivid gold
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -390,6 +424,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.95, blue: 0.92),
         textSecondary: Color(red: 0.85, green: 0.62, blue: 0.50),
         accent: Color(red: 1.0, green: 0.75, blue: 0.58),
+        highlightAccent: Color(red: 0.0, green: 0.85, blue: 1.0),  // Vivid azure
         titleFont: .default,
         bodyFont: .default
     )
@@ -400,6 +435,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.96, blue: 0.99),
         textSecondary: Color(red: 0.65, green: 0.70, blue: 0.85),
         accent: Color(red: 0.78, green: 0.82, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.75, blue: 0.0),  // Vivid honey
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -410,6 +446,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.95, blue: 0.99),
         textSecondary: Color(red: 0.72, green: 0.65, blue: 0.82),
         accent: Color(red: 0.85, green: 0.78, blue: 0.98),
+        highlightAccent: Color(red: 0.75, green: 1.0, blue: 0.0),  // Vivid chartreuse
         titleFont: .default,
         bodyFont: .serif
     )
@@ -420,6 +457,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.98, green: 0.97, blue: 0.94),
         textSecondary: Color(red: 0.78, green: 0.72, blue: 0.58),
         accent: Color(red: 0.95, green: 0.88, blue: 0.68),
+        highlightAccent: Color(red: 0.3, green: 0.6, blue: 1.0),  // Vivid periwinkle
         titleFont: .default,
         bodyFont: .default
     )
@@ -430,6 +468,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.60, green: 0.68, blue: 0.88),
         accent: Color(red: 0.72, green: 0.80, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.8, blue: 0.0),  // Vivid gold
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -440,6 +479,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.96, blue: 0.93),
         textSecondary: Color(red: 0.85, green: 0.68, blue: 0.55),
         accent: Color(red: 1.0, green: 0.80, blue: 0.62),
+        highlightAccent: Color(red: 0.0, green: 0.8, blue: 1.0),  // Vivid sky blue
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -451,6 +491,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.92, green: 0.97, blue: 1.0),
         textSecondary: Color(red: 0.52, green: 0.72, blue: 0.90),
         accent: Color(red: 0.58, green: 0.82, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.7, blue: 0.0),  // Vivid amber
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -461,6 +502,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.96, blue: 0.92),
         textSecondary: Color(red: 0.85, green: 0.70, blue: 0.52),
         accent: Color(red: 1.0, green: 0.82, blue: 0.58),
+        highlightAccent: Color(red: 0.0, green: 0.85, blue: 1.0),  // Vivid azure
         titleFont: .default,
         bodyFont: .default
     )
@@ -471,6 +513,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.93, green: 0.98, blue: 0.97),
         textSecondary: Color(red: 0.55, green: 0.78, blue: 0.72),
         accent: Color(red: 0.62, green: 0.92, blue: 0.85),
+        highlightAccent: Color(red: 1.0, green: 0.35, blue: 0.5),  // Vivid coral
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -481,6 +524,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.93, blue: 1.0),
         textSecondary: Color(red: 0.68, green: 0.58, blue: 0.90),
         accent: Color(red: 0.80, green: 0.70, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.95, blue: 0.0),  // Vivid bright yellow
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -491,6 +535,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.95, blue: 0.92),
         textSecondary: Color(red: 0.82, green: 0.62, blue: 0.50),
         accent: Color(red: 1.0, green: 0.75, blue: 0.55),
+        highlightAccent: Color(red: 0.0, green: 0.9, blue: 1.0),  // Vivid cyan
         titleFont: .default,
         bodyFont: .default
     )
@@ -502,6 +547,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.92, blue: 0.95),
         textSecondary: Color(red: 0.88, green: 0.52, blue: 0.65),
         accent: Color(red: 1.0, green: 0.58, blue: 0.72),
+        highlightAccent: Color(red: 0.0, green: 1.0, blue: 0.75),  // Vivid aqua
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -512,6 +558,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.95, blue: 1.0),
         textSecondary: Color(red: 0.72, green: 0.62, blue: 0.90),
         accent: Color(red: 0.85, green: 0.75, blue: 1.0),
+        highlightAccent: Color(red: 0.75, green: 1.0, blue: 0.0),  // Vivid lime
         titleFont: .default,
         bodyFont: .default
     )
@@ -522,6 +569,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.68, green: 0.68, blue: 0.90),
         accent: Color(red: 0.80, green: 0.80, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.95, blue: 0.0),  // Vivid yellow
         titleFont: .default,
         bodyFont: .default
     )
@@ -532,6 +580,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.98, blue: 0.94),
         textSecondary: Color(red: 0.68, green: 0.78, blue: 0.58),
         accent: Color(red: 0.80, green: 0.92, blue: 0.68),
+        highlightAccent: Color(red: 1.0, green: 0.3, blue: 0.7),  // Vivid orchid
         titleFont: .default,
         bodyFont: .serif
     )
@@ -542,6 +591,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.93, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.55, green: 0.68, blue: 0.92),
         accent: Color(red: 0.62, green: 0.78, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.7, blue: 0.0),  // Vivid amber
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -552,6 +602,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.99, blue: 0.95),
         textSecondary: Color(red: 0.72, green: 0.82, blue: 0.62),
         accent: Color(red: 0.85, green: 0.95, blue: 0.72),
+        highlightAccent: Color(red: 1.0, green: 0.2, blue: 0.6),  // Vivid hot pink
         titleFont: .rounded,
         bodyFont: .default
     )
@@ -562,6 +613,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.97, blue: 0.99),
         textSecondary: Color(red: 0.60, green: 0.72, blue: 0.82),
         accent: Color(red: 0.70, green: 0.85, blue: 0.95),
+        highlightAccent: Color(red: 1.0, green: 0.6, blue: 0.0),  // Vivid peach/orange
         titleFont: .default,
         bodyFont: .serif
     )
@@ -572,6 +624,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.96, blue: 0.99),
         textSecondary: Color(red: 0.72, green: 0.68, blue: 0.82),
         accent: Color(red: 0.85, green: 0.80, blue: 0.98),
+        highlightAccent: Color(red: 0.8, green: 1.0, blue: 0.0),  // Vivid chartreuse
         titleFont: .default,
         bodyFont: .default
     )
@@ -582,6 +635,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.97, blue: 0.99),
         textSecondary: Color(red: 0.68, green: 0.72, blue: 0.82),
         accent: Color(red: 0.80, green: 0.85, blue: 0.98),
+        highlightAccent: Color(red: 1.0, green: 0.85, blue: 0.0),  // Vivid gold
         titleFont: .default,
         bodyFont: .default
     )
@@ -592,6 +646,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.98, green: 0.97, blue: 0.94),
         textSecondary: Color(red: 0.78, green: 0.72, blue: 0.60),
         accent: Color(red: 0.95, green: 0.88, blue: 0.70),
+        highlightAccent: Color(red: 0.2, green: 0.75, blue: 1.0),  // Vivid sky blue
         titleFont: .default,
         bodyFont: .default
     )
@@ -602,6 +657,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.97, blue: 0.96),
         textSecondary: Color(red: 0.72, green: 0.72, blue: 0.68),
         accent: Color(red: 0.88, green: 0.88, blue: 0.82),
+        highlightAccent: Color(red: 0.3, green: 0.8, blue: 1.0),  // Vivid light blue
         titleFont: .default,
         bodyFont: .default
     )
@@ -612,6 +668,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.98, blue: 0.98),
         textSecondary: Color(red: 0.60, green: 0.78, blue: 0.78),
         accent: Color(red: 0.70, green: 0.92, blue: 0.92),
+        highlightAccent: Color(red: 1.0, green: 0.35, blue: 0.45),  // Vivid salmon
         titleFont: .default,
         bodyFont: .default
     )
@@ -622,6 +679,7 @@ enum BookThemes {
         textPrimary: Color(red: 1.0, green: 0.97, blue: 0.94),
         textSecondary: Color(red: 0.82, green: 0.72, blue: 0.60),
         accent: Color(red: 0.98, green: 0.85, blue: 0.70),
+        highlightAccent: Color(red: 0.15, green: 0.75, blue: 1.0),  // Vivid azure
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -633,6 +691,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.97, green: 0.94, blue: 0.99),
         textSecondary: Color(red: 0.72, green: 0.62, blue: 0.82),
         accent: Color(red: 0.88, green: 0.75, blue: 0.98),
+        highlightAccent: Color(red: 0.6, green: 1.0, blue: 0.2),  // Vivid lime
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -643,6 +702,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.97, blue: 0.94),
         textSecondary: Color(red: 0.68, green: 0.72, blue: 0.60),
         accent: Color(red: 0.82, green: 0.88, blue: 0.72),
+        highlightAccent: Color(red: 1.0, green: 0.3, blue: 0.7),  // Vivid magenta
         titleFont: .default,
         bodyFont: .default
     )
@@ -653,6 +713,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.94, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.60, green: 0.68, blue: 0.88),
         accent: Color(red: 0.72, green: 0.80, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.8, blue: 0.0),  // Vivid gold
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -663,6 +724,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.68, green: 0.68, blue: 0.88),
         accent: Color(red: 0.80, green: 0.80, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.85, blue: 0.0),  // Vivid yellow
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -673,6 +735,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.95, green: 0.95, blue: 1.0),
         textSecondary: Color(red: 0.65, green: 0.65, blue: 0.92),
         accent: Color(red: 0.78, green: 0.78, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.95, blue: 0.0),  // Vivid bright yellow
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -683,6 +746,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.95, blue: 1.0),
         textSecondary: Color(red: 0.70, green: 0.65, blue: 0.92),
         accent: Color(red: 0.82, green: 0.78, blue: 1.0),
+        highlightAccent: Color(red: 0.85, green: 1.0, blue: 0.0),  // Vivid chartreuse
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -693,6 +757,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.96, green: 0.96, blue: 1.0),
         textSecondary: Color(red: 0.70, green: 0.70, blue: 0.92),
         accent: Color(red: 0.82, green: 0.82, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.9, blue: 0.0),  // Vivid gold
         titleFont: .serif,
         bodyFont: .serif
     )
@@ -703,6 +768,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.98, green: 0.94, blue: 0.97),
         textSecondary: Color(red: 0.80, green: 0.62, blue: 0.72),
         accent: Color(red: 0.95, green: 0.75, blue: 0.85),
+        highlightAccent: Color(red: 0.0, green: 1.0, blue: 0.7),  // Vivid seafoam
         titleFont: .default,
         bodyFont: .serif
     )
@@ -714,6 +780,7 @@ enum BookThemes {
         textPrimary: Color(red: 0.92, green: 0.92, blue: 1.0),
         textSecondary: Color(red: 0.55, green: 0.55, blue: 0.90),
         accent: Color(red: 0.68, green: 0.68, blue: 1.0),
+        highlightAccent: Color(red: 1.0, green: 0.8, blue: 0.0),  // Vivid gold
         titleFont: .serif,
         bodyFont: .serif
     )

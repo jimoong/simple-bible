@@ -17,6 +17,9 @@ struct ContentView: View {
     @State private var editingFavorite: FavoriteVerse? = nil
     @State private var isFavoritesFilterExpanded = false  // Hide back button when filter menu is open
     
+    // Clean reading mode - hide controls while scrolling
+    @State private var hideControlsWhileScrolling = false
+    
     private var theme: BookTheme {
         viewModel.currentTheme
     }
@@ -62,6 +65,10 @@ struct ContentView: View {
                             handleCopyVerse(verse)
                         }, onAskVerse: { verse in
                             handleAskVerse(verse)
+                        }, onScrollStateChange: { isScrolling in
+                            withAnimation(.easeOut(duration: 0.25)) {
+                                hideControlsWhileScrolling = isScrolling
+                            }
                         })
                     }
                 }
@@ -275,6 +282,7 @@ struct ContentView: View {
                                     onReadingModeToggle: {
                                         withAnimation(.easeOut(duration: 0.2)) {
                                             viewModel.readingMode = viewModel.readingMode == .tap ? .scroll : .tap
+                                            hideControlsWhileScrolling = false  // Reset on mode change
                                         }
                                     },
                                     onSettings: {
@@ -287,6 +295,8 @@ struct ContentView: View {
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
+                        // Hide controls while scrolling in scroll mode (clean reading experience)
+                        .opacity(hideControlsWhileScrolling && viewModel.readingMode == .scroll ? 0 : 1)
                     }
                     .ignoresSafeArea()
                     .zIndex(3)

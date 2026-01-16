@@ -63,6 +63,7 @@
 		AA0000010000000000000091 /* GamalielViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000091 /* GamalielViewModel.swift */; };
 		AA0000010000000000000092 /* GamalielChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000092 /* GamalielChatView.swift */; };
 		AA0000010000000000000093 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000093 /* Secrets.swift */; };
+		AA0000010000000000000094 /* FontSizeMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000020000000000000094 /* FontSizeMode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -123,6 +124,7 @@
 		AA0000020000000000000091 /* GamalielViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamalielViewModel.swift; sourceTree = "<group>"; };
 		AA0000020000000000000092 /* GamalielChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamalielChatView.swift; sourceTree = "<group>"; };
 		AA0000020000000000000093 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		AA0000020000000000000094 /* FontSizeMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeMode.swift; sourceTree = "<group>"; };
 		AA0000030000000000000001 /* BibleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BibleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 				AA0000020000000000000030 /* BibleTranslation.swift */,
 				AA0000020000000000000033 /* ReadingMode.swift */,
 				AA0000020000000000000070 /* FavoriteVerse.swift */,
+				AA0000020000000000000094 /* FontSizeMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				AA0000010000000000000091 /* GamalielViewModel.swift in Sources */,
 				AA0000010000000000000092 /* GamalielChatView.swift in Sources */,
 				AA0000010000000000000093 /* Secrets.swift in Sources */,
+				AA0000010000000000000094 /* FontSizeMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

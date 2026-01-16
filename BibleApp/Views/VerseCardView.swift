@@ -54,6 +54,24 @@ struct VerseCardView: View {
     private let verseNumberHeight: CGFloat = 13 + 10  // font size + spacing
     
     @State private var isFavorite: Bool = false
+    @State private var highlightedCharCount: Int = 0
+    @State private var highlightTimer: Timer?
+    
+    // Highlighted text for saved verses - progressively highlights characters
+    private var highlightedText: AttributedString {
+        let verseString = verse.text(for: language)
+        var text = AttributedString(verseString)
+        
+        if isFavorite && highlightedCharCount > 0 {
+            let endIndex = min(highlightedCharCount, verseString.count)
+            if endIndex > 0 {
+                let startIdx = text.startIndex
+                let endIdx = text.index(startIdx, offsetByCharacters: endIndex)
+                text[startIdx..<endIdx].backgroundColor = Color(theme.highlightAccent.opacity(0.25))
+            }
+        }
+        return text
+    }
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -63,12 +81,47 @@ struct VerseCardView: View {
                 .foregroundStyle(theme.textSecondary.opacity(0.5))
             
             // Verse text - dynamic font size, no clipping
-            Text(verse.text(for: language))
+            Text(highlightedText)
                 .font(theme.verseText(fontSize, language: language))
                 .foregroundStyle(theme.textPrimary)
                 .lineSpacing(lineSpacing)
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
+        }
+        .onAppear {
+            let wasFavorite = FavoriteService.shared.isFavorite(
+                bookName: verse.bookName,
+                chapter: verse.chapter,
+                verseNumber: verse.verseNumber
+            )
+            isFavorite = wasFavorite
+            if wasFavorite {
+                highlightedCharCount = verse.text(for: language).count
+            }
+        }
+        .onChange(of: isFavorite) { oldValue, newValue in
+            if !newValue && oldValue {
+                // Removed from favorites
+                highlightTimer?.invalidate()
+                highlightedCharCount = 0
+            }
+        }
+        .onDisappear {
+            highlightTimer?.invalidate()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .verseFavoriteSaved)) { notification in
+            // Check if this notification is for this verse
+            guard let userInfo = notification.userInfo,
+                  let bookName = userInfo["bookName"] as? String,
+                  let chapter = userInfo["chapter"] as? Int,
+                  let verseNumber = userInfo["verseNumber"] as? Int,
+                  bookName == verse.bookName,
+                  chapter == verse.chapter,
+                  verseNumber == verse.verseNumber else { return }
+            
+            // Update favorite state and animate after delay
+            isFavorite = true
+            animateHighlight()
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 28)
@@ -77,6 +130,8 @@ struct VerseCardView: View {
         .contextMenu {
             Button {
                 onSave?()
+                // Toggle immediately for instant feedback
+                isFavorite.toggle()
             } label: {
                 Label(
                     isFavorite 
@@ -102,6 +157,28 @@ struct VerseCardView: View {
                     language == .kr ? "물어보기" : "Ask",
                     systemImage: "sparkle"
                 )
+            }
+        }
+    }
+    
+    // Animate highlight like drawing with a highlighter pen
+    private func animateHighlight() {
+        let totalChars = verse.text(for: language).count
+        highlightedCharCount = 0
+        
+        // Wait for overlay to close, then animate
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let duration: Double = 0.6  // Slower animation for visibility
+            let charsPerTick = max(1, totalChars / 20)
+            let interval = duration / Double(max(1, totalChars / charsPerTick))
+            
+            highlightTimer?.invalidate()
+            highlightTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
+                if highlightedCharCount < totalChars {
+                    highlightedCharCount = min(highlightedCharCount + charsPerTick, totalChars)
+                } else {
+                    timer.invalidate()
+                }
             }
         }
     }

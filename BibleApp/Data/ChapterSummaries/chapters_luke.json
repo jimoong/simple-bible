@@ -1,0 +1,392 @@
+{
+  "bookId": "luke",
+  "bookNumber": 42,
+  "bookNameKo": "누가복음",
+  "bookNameEn": "Luke",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "탄생 예고",
+      "titleEn": "Birth Announcements",
+      "summaryKo": "세례 요한과 예수님의 탄생 예고, 마리아의 찬가를 기록합니다.",
+      "summaryEn": "Records announcements of John and Jesus' births, and Mary's song.",
+      "messageKo": "하나님의 말씀은 이루어지지 않는 것이 없습니다.",
+      "messageEn": "No word from God will ever fail.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "요한 탄생 예고", "eventEn": "John's birth announced"},
+        {"verse": 31, "eventKo": "예수 탄생 예고", "eventEn": "Jesus' birth announced"},
+        {"verse": 46, "eventKo": "마리아의 찬가", "eventEn": "Mary's Magnificat"},
+        {"verse": 68, "eventKo": "사가랴의 찬가", "eventEn": "Zechariah's song"}
+      ],
+      "timelineYear": "BC 5경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "예수님의 탄생",
+      "titleEn": "Birth of Jesus",
+      "summaryKo": "베들레헴 탄생, 목자들의 방문, 성전 봉헌, 소년 예수를 기록합니다.",
+      "summaryEn": "Records birth in Bethlehem, shepherds' visit, temple presentation, and boy Jesus.",
+      "messageKo": "오늘 다윗의 동네에 구주가 나셨다.",
+      "messageEn": "Today a Savior has been born to you in the town of David.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "구유에 뉘임", "eventEn": "Laid in a manger"},
+        {"verse": 14, "eventKo": "천사들의 찬양", "eventEn": "Angels' praise"},
+        {"verse": 29, "eventKo": "시므온의 찬가", "eventEn": "Simeon's song"},
+        {"verse": 49, "eventKo": "내 아버지의 집", "eventEn": "My Father's house"}
+      ],
+      "timelineYear": "BC 4경"
+    },
+    {
+      "chapter": 3,
+      "titleKo": "세례 요한과 예수님의 세례",
+      "titleEn": "John the Baptist and Jesus' Baptism",
+      "summaryKo": "세례 요한의 사역, 예수님의 세례, 예수님의 족보를 기록합니다.",
+      "summaryEn": "Records John's ministry, Jesus' baptism, and Jesus' genealogy.",
+      "messageKo": "너는 내 사랑하는 아들이라, 내가 너를 기뻐하노라.",
+      "messageEn": "You are my Son, whom I love; with you I am well pleased.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "회개의 세례", "eventEn": "Baptism of repentance"},
+        {"verse": 16, "eventKo": "성령과 불로 세례 주실 자", "eventEn": "One who baptizes with Spirit and fire"},
+        {"verse": 22, "eventKo": "예수님의 세례", "eventEn": "Jesus' baptism"},
+        {"verse": 23, "eventKo": "족보 - 아담까지", "eventEn": "Genealogy to Adam"}
+      ],
+      "timelineYear": "AD 27경"
+    },
+    {
+      "chapter": 4,
+      "titleKo": "시험과 나사렛 회당",
+      "titleEn": "Temptation and Nazareth Synagogue",
+      "summaryKo": "광야의 시험, 나사렛 회당 설교, 그리고 갈릴리 사역의 시작을 기록합니다.",
+      "summaryEn": "Records wilderness temptation, Nazareth synagogue sermon, and beginning of Galilean ministry.",
+      "messageKo": "주의 성령이 내게 임하셨으니 복음을 전하게 하셨다.",
+      "messageEn": "The Spirit of the Lord is on me to proclaim good news.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사람이 떡으로만 살 것이 아니라", "eventEn": "Man shall not live on bread alone"},
+        {"verse": 18, "eventKo": "이사야서 낭독", "eventEn": "Reading from Isaiah"},
+        {"verse": 24, "eventKo": "선지자가 고향에서 환영받지 못함", "eventEn": "No prophet accepted in hometown"},
+        {"verse": 36, "eventKo": "귀신을 쫓아내심", "eventEn": "Drives out demons"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "첫 제자들과 권능",
+      "titleEn": "First Disciples and Power",
+      "summaryKo": "고기 잡는 기적, 제자들의 부르심, 나병 환자와 중풍병자 치유를 기록합니다.",
+      "summaryEn": "Records miraculous catch, calling disciples, healing of leper and paralytic.",
+      "messageKo": "두려워하지 말라, 이제 후로 네가 사람을 취하리라.",
+      "messageEn": "Don't be afraid; from now on you will fish for people.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "그물이 찢어지도록", "eventEn": "Nets breaking with fish"},
+        {"verse": 8, "eventKo": "베드로의 회개", "eventEn": "Peter's confession"},
+        {"verse": 20, "eventKo": "네 죄 사함을 받았다", "eventEn": "Your sins are forgiven"},
+        {"verse": 27, "eventKo": "레위의 부르심", "eventEn": "Calling of Levi"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "평지 설교",
+      "titleEn": "Sermon on the Plain",
+      "summaryKo": "열두 제자 선택과 복과 화, 원수 사랑, 판단하지 말라는 가르침을 기록합니다.",
+      "summaryEn": "Records choosing twelve, blessings and woes, loving enemies, not judging.",
+      "messageKo": "너희 원수를 사랑하며 선대하라.",
+      "messageEn": "Love your enemies, do good to them.",
+      "keyEvents": [
+        {"verse": 13, "eventKo": "열두 사도 선택", "eventEn": "Chooses twelve apostles"},
+        {"verse": 20, "eventKo": "가난한 자는 복이 있다", "eventEn": "Blessed are the poor"},
+        {"verse": 27, "eventKo": "원수를 사랑하라", "eventEn": "Love your enemies"},
+        {"verse": 48, "eventKo": "반석 위에 지은 집", "eventEn": "House built on rock"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "백부장의 믿음",
+      "titleEn": "Centurion's Faith",
+      "summaryKo": "백부장의 종 치유, 나인 과부의 아들 살림, 요한의 질문, 죄 많은 여인을 기록합니다.",
+      "summaryEn": "Records healing centurion's servant, raising widow's son, John's question, sinful woman.",
+      "messageKo": "이스라엘 중에서도 이만한 믿음을 본 적이 없다.",
+      "messageEn": "I have not found such great faith even in Israel.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "백부장의 믿음", "eventEn": "Centurion's faith"},
+        {"verse": 14, "eventKo": "청년아 일어나라", "eventEn": "Young man, get up!"},
+        {"verse": 22, "eventKo": "요한의 질문에 답하심", "eventEn": "Answer to John's question"},
+        {"verse": 47, "eventKo": "많이 사함 받은 자", "eventEn": "Forgiven much, loves much"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "비유와 이적",
+      "titleEn": "Parables and Miracles",
+      "summaryKo": "씨 뿌리는 자 비유, 풍랑 잠잠케 함, 군대 귀신, 야이로의 딸을 기록합니다.",
+      "summaryEn": "Records sower parable, calming storm, Legion, and Jairus' daughter.",
+      "messageKo": "말씀을 듣고 지키는 자가 참 가족이다.",
+      "messageEn": "Those who hear God's word and put it into practice are true family.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "씨는 하나님의 말씀", "eventEn": "Seed is God's word"},
+        {"verse": 24, "eventKo": "풍랑을 잠잠케 하심", "eventEn": "Calms the storm"},
+        {"verse": 30, "eventKo": "군대 귀신", "eventEn": "Legion"},
+        {"verse": 54, "eventKo": "아이야 일어나라", "eventEn": "Child, get up!"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "오천 명과 변화산",
+      "titleEn": "Five Thousand and Transfiguration",
+      "summaryKo": "열둘의 파송, 오천 명 먹이심, 베드로의 고백, 변화산, 제자도를 기록합니다.",
+      "summaryEn": "Records sending twelve, feeding five thousand, Peter's confession, transfiguration, discipleship.",
+      "messageKo": "누구든지 나를 따라오려거든 자기를 부인하고 날마다 자기 십자가를 지라.",
+      "messageEn": "Whoever wants to follow me must deny themselves and take up their cross daily.",
+      "keyEvents": [
+        {"verse": 16, "eventKo": "오천 명을 먹이심", "eventEn": "Feeds five thousand"},
+        {"verse": 20, "eventKo": "하나님의 그리스도", "eventEn": "God's Messiah"},
+        {"verse": 29, "eventKo": "변화산", "eventEn": "Transfiguration"},
+        {"verse": 62, "eventKo": "손을 쟁기에 대고 뒤를 보지 말라", "eventEn": "No one who puts hand to plow and looks back"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "칠십 인 파송과 선한 사마리아인",
+      "titleEn": "Sending Seventy-two and Good Samaritan",
+      "summaryKo": "칠십 인 파송, 선한 사마리아인 비유, 마르다와 마리아를 기록합니다.",
+      "summaryEn": "Records sending seventy-two, Good Samaritan parable, Martha and Mary.",
+      "messageKo": "가서 너도 이와 같이 하라.",
+      "messageEn": "Go and do likewise.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "추수할 것은 많으나", "eventEn": "Harvest is plentiful"},
+        {"verse": 20, "eventKo": "이름이 하늘에 기록됨", "eventEn": "Names written in heaven"},
+        {"verse": 33, "eventKo": "선한 사마리아인", "eventEn": "Good Samaritan"},
+        {"verse": 42, "eventKo": "필요한 것은 한 가지", "eventEn": "Only one thing is needed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "기도와 경고",
+      "titleEn": "Prayer and Warnings",
+      "summaryKo": "주기도문, 끈질긴 기도, 바리새인과 율법사에 대한 화를 기록합니다.",
+      "summaryEn": "Records Lord's Prayer, persistent prayer, woes to Pharisees and experts in law.",
+      "messageKo": "구하라 그러면 받을 것이요, 찾으라 그러면 찾을 것이요.",
+      "messageEn": "Ask and it will be given; seek and you will find.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "주기도문", "eventEn": "Lord's Prayer"},
+        {"verse": 9, "eventKo": "구하라 찾으라 두드리라", "eventEn": "Ask, seek, knock"},
+        {"verse": 29, "eventKo": "요나의 표적", "eventEn": "Sign of Jonah"},
+        {"verse": 42, "eventKo": "바리새인들에게 화 있을진저", "eventEn": "Woe to Pharisees"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "두려워 말라",
+      "titleEn": "Do Not Be Afraid",
+      "summaryKo": "위선 경계, 참새 한 마리도, 어리석은 부자, 깨어 있으라를 기록합니다.",
+      "summaryEn": "Records warning against hypocrisy, value of sparrows, rich fool, being ready.",
+      "messageKo": "참새 다섯 마리도 하나님 앞에서 잊혀지지 않습니다.",
+      "messageEn": "Not one sparrow is forgotten by God.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "참새 다섯 마리", "eventEn": "Five sparrows"},
+        {"verse": 20, "eventKo": "어리석은 부자", "eventEn": "Rich fool"},
+        {"verse": 32, "eventKo": "작은 무리여 무서워 말라", "eventEn": "Do not be afraid, little flock"},
+        {"verse": 40, "eventKo": "인자도 생각하지 않은 때에 오리라", "eventEn": "Son of Man comes unexpectedly"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "회개와 좁은 문",
+      "titleEn": "Repentance and Narrow Door",
+      "summaryKo": "회개하지 않으면 멸망, 무화과나무, 겨자씨, 좁은 문을 기록합니다.",
+      "summaryEn": "Records repent or perish, fig tree, mustard seed, narrow door.",
+      "messageKo": "좁은 문으로 들어가기를 힘쓰라.",
+      "messageEn": "Make every effort to enter through the narrow door.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "회개하지 않으면 멸망", "eventEn": "Unless you repent, you will perish"},
+        {"verse": 18, "eventKo": "겨자씨와 누룩 비유", "eventEn": "Mustard seed and yeast"},
+        {"verse": 24, "eventKo": "좁은 문으로 들어가라", "eventEn": "Enter through narrow door"},
+        {"verse": 34, "eventKo": "예루살렘을 탄식하심", "eventEn": "Jesus' lament over Jerusalem"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "잔치의 비유",
+      "titleEn": "Parables of the Banquet",
+      "summaryKo": "안식일 치유, 겸손, 큰 잔치, 제자의 대가를 기록합니다.",
+      "summaryEn": "Records Sabbath healing, humility, great banquet, cost of discipleship.",
+      "messageKo": "자기 십자가를 지지 않으면 내 제자가 될 수 없다.",
+      "messageEn": "Anyone who does not carry their cross cannot be my disciple.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "자기를 높이는 자가 낮아짐", "eventEn": "Who exalts himself will be humbled"},
+        {"verse": 16, "eventKo": "큰 잔치 비유", "eventEn": "Great banquet parable"},
+        {"verse": 26, "eventKo": "제자의 조건", "eventEn": "Cost of discipleship"},
+        {"verse": 34, "eventKo": "맛 잃은 소금", "eventEn": "Salt that loses saltiness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "잃은 것을 찾는 비유",
+      "titleEn": "Parables of the Lost",
+      "summaryKo": "잃은 양, 잃은 드라크마, 탕자의 세 비유를 기록합니다.",
+      "summaryEn": "Records three parables: lost sheep, lost coin, prodigal son.",
+      "messageKo": "잃었던 것을 찾았으니 즐거워하는 것이 마땅하다.",
+      "messageEn": "We had to celebrate because what was lost has been found.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "잃은 양 비유", "eventEn": "Lost sheep parable"},
+        {"verse": 8, "eventKo": "잃은 드라크마 비유", "eventEn": "Lost coin parable"},
+        {"verse": 20, "eventKo": "탕자의 귀환", "eventEn": "Prodigal's return"},
+        {"verse": 28, "eventKo": "형의 분노", "eventEn": "Older brother's anger"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "부자와 나사로",
+      "titleEn": "Rich Man and Lazarus",
+      "summaryKo": "불의한 청지기, 이혼, 부자와 나사로를 기록합니다.",
+      "summaryEn": "Records shrewd manager, divorce, rich man and Lazarus.",
+      "messageKo": "모세와 선지자의 말을 듣지 않으면 부활한 자의 말도 듣지 않는다.",
+      "messageEn": "If they do not listen to Moses and Prophets, they will not be convinced even if someone rises from the dead.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "작은 일에 충성", "eventEn": "Faithful in little things"},
+        {"verse": 13, "eventKo": "두 주인을 섬기지 못함", "eventEn": "Cannot serve two masters"},
+        {"verse": 22, "eventKo": "부자와 나사로", "eventEn": "Rich man and Lazarus"},
+        {"verse": 31, "eventKo": "모세와 선지자들", "eventEn": "Moses and the Prophets"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "믿음과 하나님 나라",
+      "titleEn": "Faith and God's Kingdom",
+      "summaryKo": "실족하게 함, 용서, 겨자씨 믿음, 열 나병 환자, 하나님 나라를 기록합니다.",
+      "summaryEn": "Records causing to stumble, forgiveness, mustard seed faith, ten lepers, kingdom of God.",
+      "messageKo": "하나님 나라는 볼 수 있게 임하는 것이 아니라 너희 안에 있다.",
+      "messageEn": "The kingdom of God does not come with observation; it is within you.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "하루 일곱 번이라도 용서", "eventEn": "Forgive seven times a day"},
+        {"verse": 6, "eventKo": "겨자씨만한 믿음", "eventEn": "Faith like a mustard seed"},
+        {"verse": 15, "eventKo": "열 나병 환자 중 하나", "eventEn": "One of ten lepers returns"},
+        {"verse": 21, "eventKo": "하나님 나라는 너희 안에", "eventEn": "Kingdom of God is within you"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "기도와 구원",
+      "titleEn": "Prayer and Salvation",
+      "summaryKo": "끈질긴 과부, 바리새인과 세리, 어린아이, 부자 관원, 삭개오를 기록합니다.",
+      "summaryEn": "Records persistent widow, Pharisee and tax collector, little children, rich ruler, blind beggar.",
+      "messageKo": "하나님이여 죄인인 나를 불쌍히 여기소서.",
+      "messageEn": "God, have mercy on me, a sinner.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "끈질긴 과부", "eventEn": "Persistent widow"},
+        {"verse": 13, "eventKo": "세리의 기도", "eventEn": "Tax collector's prayer"},
+        {"verse": 17, "eventKo": "어린아이같이", "eventEn": "Like little children"},
+        {"verse": 42, "eventKo": "맹인 거지의 치유", "eventEn": "Blind beggar healed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "삭개오와 예루살렘 입성",
+      "titleEn": "Zacchaeus and Entry to Jerusalem",
+      "summaryKo": "삭개오, 므나 비유, 예루살렘 입성, 성전 정화를 기록합니다.",
+      "summaryEn": "Records Zacchaeus, parable of ten minas, triumphal entry, temple cleansing.",
+      "messageKo": "인자가 온 것은 잃어버린 자를 찾아 구원하려 함이라.",
+      "messageEn": "The Son of Man came to seek and to save the lost.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "삭개오야 내려오라", "eventEn": "Zacchaeus, come down"},
+        {"verse": 10, "eventKo": "잃은 자를 찾아 구원", "eventEn": "Seek and save the lost"},
+        {"verse": 38, "eventKo": "호산나!", "eventEn": "Hosanna!"},
+        {"verse": 46, "eventKo": "내 집은 기도하는 집", "eventEn": "My house is a house of prayer"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 20,
+      "titleKo": "논쟁과 가르침",
+      "titleEn": "Controversies and Teaching",
+      "summaryKo": "권위 질문, 포도원 농부, 가이사의 것, 부활 논쟁을 기록합니다.",
+      "summaryEn": "Records question of authority, tenants, paying taxes, resurrection debate.",
+      "messageKo": "건축자들이 버린 돌이 모퉁잇돌이 되었다.",
+      "messageEn": "The stone the builders rejected has become the cornerstone.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "무슨 권위로 하느냐", "eventEn": "By what authority?"},
+        {"verse": 17, "eventKo": "모퉁잇돌", "eventEn": "Cornerstone"},
+        {"verse": 25, "eventKo": "가이사의 것은 가이사에게", "eventEn": "Give to Caesar what is Caesar's"},
+        {"verse": 38, "eventKo": "산 자의 하나님", "eventEn": "God of the living"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 21,
+      "titleKo": "과부의 헌금과 종말 강화",
+      "titleEn": "Widow's Offering and End Times Discourse",
+      "summaryKo": "과부의 두 렙돈, 성전 파괴 예언, 종말의 징조를 기록합니다.",
+      "summaryEn": "Records widow's two coins, temple destruction prediction, signs of the end.",
+      "messageKo": "하늘과 땅은 없어지겠으나 내 말은 없어지지 않는다.",
+      "messageEn": "Heaven and earth will pass away, but my words will never pass away.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "과부의 두 렙돈", "eventEn": "Widow's two coins"},
+        {"verse": 6, "eventKo": "성전 파괴 예언", "eventEn": "Temple destruction predicted"},
+        {"verse": 27, "eventKo": "인자가 구름 타고 옴", "eventEn": "Son of Man coming in cloud"},
+        {"verse": 36, "eventKo": "깨어 기도하라", "eventEn": "Watch and pray"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 22,
+      "titleKo": "최후의 만찬과 배반",
+      "titleEn": "Last Supper and Betrayal",
+      "summaryKo": "최후의 만찬, 겟세마네 기도, 유다의 배반, 베드로의 부인을 기록합니다.",
+      "summaryEn": "Records Last Supper, Gethsemane prayer, Judas' betrayal, Peter's denial.",
+      "messageKo": "이 잔은 내 피로 세우는 새 언약이니 너희를 위해 붓는 것이다.",
+      "messageEn": "This cup is the new covenant in my blood, which is poured out for you.",
+      "keyEvents": [
+        {"verse": 19, "eventKo": "이것은 내 몸이라", "eventEn": "This is my body"},
+        {"verse": 42, "eventKo": "내 뜻대로 말고 아버지 뜻대로", "eventEn": "Not my will but yours"},
+        {"verse": 48, "eventKo": "입맞춤으로 배반", "eventEn": "Betrayal with a kiss"},
+        {"verse": 62, "eventKo": "베드로의 통곡", "eventEn": "Peter weeps bitterly"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "십자가",
+      "titleEn": "Crucifixion",
+      "summaryKo": "빌라도와 헤롯 앞 재판, 십자가, 강도의 회개, 예수님의 죽음을 기록합니다.",
+      "summaryEn": "Records trials before Pilate and Herod, crucifixion, repentant thief, Jesus' death.",
+      "messageKo": "오늘 네가 나와 함께 낙원에 있으리라.",
+      "messageEn": "Today you will be with me in paradise.",
+      "keyEvents": [
+        {"verse": 21, "eventKo": "바라바를 놓아줌", "eventEn": "Barabbas released"},
+        {"verse": 34, "eventKo": "저들을 사하여 주소서", "eventEn": "Father, forgive them"},
+        {"verse": 43, "eventKo": "낙원에 있으리라", "eventEn": "Today in paradise"},
+        {"verse": 46, "eventKo": "내 영혼을 아버지께", "eventEn": "Into your hands I commit my spirit"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 24,
+      "titleKo": "부활과 승천",
+      "titleEn": "Resurrection and Ascension",
+      "summaryKo": "빈 무덤, 엠마오 도상, 제자들에게 나타나심, 승천을 기록합니다.",
+      "summaryEn": "Records empty tomb, road to Emmaus, appearing to disciples, ascension.",
+      "messageKo": "모든 민족에게 회개와 죄 사함을 전파하라.",
+      "messageEn": "Repentance for forgiveness of sins will be preached in his name to all nations.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "여기 계시지 않고 살아나셨다", "eventEn": "He is not here; he has risen"},
+        {"verse": 31, "eventKo": "엠마오에서 눈이 열림", "eventEn": "Eyes opened at Emmaus"},
+        {"verse": 47, "eventKo": "모든 민족에게 전파하라", "eventEn": "Preach to all nations"},
+        {"verse": 51, "eventKo": "하늘로 올려지심", "eventEn": "Taken up into heaven"}
+      ],
+      "timelineYear": "AD 30"
+    }
+  ]
+}

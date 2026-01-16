@@ -8,6 +8,11 @@
 import Foundation
 import SwiftUI
 
+// Notification for when a verse is saved as favorite
+extension Notification.Name {
+    static let verseFavoriteSaved = Notification.Name("verseFavoriteSaved")
+}
+
 @MainActor
 @Observable
 final class FavoriteService {
@@ -35,6 +40,15 @@ final class FavoriteService {
         return isFavorite(bookId: book.id, chapter: verse.chapter, verseNumber: verse.verseNumber)
     }
     
+    /// Check if a verse is favorited by book name (English)
+    func isFavorite(bookName: String, chapter: Int, verseNumber: Int) -> Bool {
+        // Find book by English name
+        guard let book = BibleData.books.first(where: { $0.nameEn == bookName }) else {
+            return false
+        }
+        return isFavorite(bookId: book.id, chapter: chapter, verseNumber: verseNumber)
+    }
+    
     /// Get a favorite by its key
     func getFavorite(bookId: String, chapter: Int, verseNumber: Int) -> FavoriteVerse? {
         let key = makeKey(bookId: bookId, chapter: chapter, verseNumber: verseNumber)
@@ -50,6 +64,17 @@ final class FavoriteService {
         favorites.insert(favorite, at: 0) // Add to beginning (newest first)
         saveFavorites()
         HapticManager.shared.success()
+        
+        // Post notification with verse info for highlight animation
+        NotificationCenter.default.post(
+            name: .verseFavoriteSaved,
+            object: nil,
+            userInfo: [
+                "bookName": verse.bookName,
+                "chapter": verse.chapter,
+                "verseNumber": verse.verseNumber
+            ]
+        )
     }
     
     /// Remove a verse from favorites

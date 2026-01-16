@@ -6,14 +6,23 @@ struct BookReadingView: View {
     var onSaveVerse: ((BibleVerse) -> Void)? = nil
     var onCopyVerse: ((BibleVerse) -> Void)? = nil
     var onAskVerse: ((BibleVerse) -> Void)? = nil
+    var onScrollStateChange: ((Bool) -> Void)? = nil  // true = scrolling, false = idle
     
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
     @State private var highlightedVerseNumber: Int? = nil
+    @State private var controlsHidden: Bool = false  // Track if controls are hidden due to scrolling
+    @ObservedObject private var fontSizeSettings = FontSizeSettings.shared
     
     private let swipeThreshold: CGFloat = 100
-    private let verseFontSize: CGFloat = 17
-    private let verseLineSpacing: CGFloat = 6
+    
+    private var verseFontSize: CGFloat {
+        fontSizeSettings.mode.scrollBodySize
+    }
+    
+    private var verseLineSpacing: CGFloat {
+        fontSizeSettings.mode.scrollLineSpacing
+    }
     
     private var theme: BookTheme {
         viewModel.currentTheme
@@ -194,6 +203,16 @@ struct BookReadingView: View {
                 .padding(.horizontal, 24)
             }
             .scrollIndicators(.visible)
+            .simultaneousGesture(
+                DragGesture(minimumDistance: 10)
+                    .onChanged { _ in
+                        // User started scrolling - hide controls
+                        if !controlsHidden {
+                            controlsHidden = true
+                            onScrollStateChange?(true)
+                        }
+                    }
+            )
             .onChange(of: viewModel.targetVerseNumber) { _, newValue in
                 if let targetVerse = newValue {
                     // Use animation when navigating while already in view
@@ -208,6 +227,14 @@ struct BookReadingView: View {
                         scrollToVerse(targetVerse, proxy: scrollProxy, animated: false)
                     }
                 }
+            }
+        }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            // Tap to show controls if hidden
+            if controlsHidden {
+                controlsHidden = false
+                onScrollStateChange?(false)
             }
         }
     }
@@ -305,11 +332,29 @@ struct BookVerseRow: View {
     var onAsk: (() -> Void)? = nil
     
     @State private var isFavorite: Bool = false
+    @State private var highlightedCharCount: Int = 0
+    @State private var highlightTimer: Timer?
+    
+    // Highlighted text for saved verses - progressively highlights characters
+    private var highlightedText: AttributedString {
+        let verseString = verse.text(for: language)
+        var text = AttributedString(verseString)
+        
+        if isFavorite && highlightedCharCount > 0 {
+            let endIndex = min(highlightedCharCount, verseString.count)
+            if endIndex > 0 {
+                let startIdx = text.startIndex
+                let endIdx = text.index(startIdx, offsetByCharacters: endIndex)
+                text[startIdx..<endIdx].backgroundColor = Color(theme.highlightAccent.opacity(0.25))
+            }
+        }
+        return text
+    }
     
     var body: some View {
         HStack(alignment: .top, spacing: 4) {
             // Verse text on the left - takes remaining space
-            Text(verse.text(for: language))
+            Text(highlightedText)
                 .font(theme.verseText(fontSize, language: language))
                 .foregroundStyle(theme.textPrimary)
                 .lineSpacing(lineSpacing)
@@ -333,9 +378,47 @@ struct BookVerseRow: View {
         .padding(.horizontal, -16)
         .animation(.easeOut(duration: 0.3), value: isHighlighted)
         .contentShape(Rectangle())
+        .onAppear {
+            let wasFavorite = FavoriteService.shared.isFavorite(
+                bookName: verse.bookName,
+                chapter: verse.chapter,
+                verseNumber: verse.verseNumber
+            )
+            isFavorite = wasFavorite
+            if wasFavorite {
+                // Already favorite - show full highlight immediately
+                highlightedCharCount = verse.text(for: language).count
+            }
+        }
+        .onChange(of: isFavorite) { oldValue, newValue in
+            if !newValue && oldValue {
+                // Removed from favorites
+                highlightTimer?.invalidate()
+                highlightedCharCount = 0
+            }
+        }
+        .onDisappear {
+            highlightTimer?.invalidate()
+        }
+        .onReceive(NotificationCenter.default.publisher(for: .verseFavoriteSaved)) { notification in
+            // Check if this notification is for this verse
+            guard let userInfo = notification.userInfo,
+                  let bookName = userInfo["bookName"] as? String,
+                  let chapter = userInfo["chapter"] as? Int,
+                  let verseNumber = userInfo["verseNumber"] as? Int,
+                  bookName == verse.bookName,
+                  chapter == verse.chapter,
+                  verseNumber == verse.verseNumber else { return }
+            
+            // Update favorite state and animate after delay
+            isFavorite = true
+            animateHighlight()
+        }
         .contextMenu {
             Button {
                 onSave?()
+                // Toggle immediately for instant feedback
+                isFavorite.toggle()
             } label: {
                 Label(
                     isFavorite 
@@ -361,6 +444,28 @@ struct BookVerseRow: View {
                     language == .kr ? "물어보기" : "Ask",
                     systemImage: "sparkle"
                 )
+            }
+        }
+    }
+    
+    // Animate highlight like drawing with a highlighter pen
+    private func animateHighlight() {
+        let totalChars = verse.text(for: language).count
+        highlightedCharCount = 0
+        
+        // Wait for context menu to close, then animate
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let duration: Double = 0.6  // Slower animation for visibility
+            let charsPerTick = max(1, totalChars / 20)  // More ticks for smoother animation
+            let interval = duration / Double(max(1, totalChars / charsPerTick))
+            
+            highlightTimer?.invalidate()
+            highlightTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { timer in
+                if highlightedCharCount < totalChars {
+                    highlightedCharCount = min(highlightedCharCount + charsPerTick, totalChars)
+                } else {
+                    timer.invalidate()
+                }
             }
         }
     }

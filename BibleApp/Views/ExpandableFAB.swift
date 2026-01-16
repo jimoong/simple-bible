@@ -15,6 +15,12 @@ struct ExpandableFAB: View {
     var isHidden: Bool = false
     var useBlurBackground: Bool = false
     
+    @ObservedObject private var fontSizeSettings = FontSizeSettings.shared
+    
+    private var buttonFontSize: CGFloat {
+        fontSizeSettings.mode.buttonLabelSize
+    }
+    
     // Layout
     private let collapsedSize: CGFloat = 52
     private let expandedWidth: CGFloat = 175  // Reduced to fit with 3 left buttons
@@ -160,12 +166,12 @@ struct ExpandableFAB: View {
         } label: {
             HStack(spacing: 10) {
                 Image(systemName: icon)
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.system(size: buttonFontSize, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
                     .frame(width: 20)
                 
                 Text(label)
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.system(size: buttonFontSize, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
                 
                 Spacer()
@@ -189,22 +195,22 @@ struct ExpandableFAB: View {
         } label: {
             HStack(spacing: 10) {
                 Image(systemName: "hand.point.up")
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.system(size: buttonFontSize, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
                     .frame(width: 20)
                 
                 // Toggle indicator - uses UI language
                 HStack(spacing: 4) {
                     Text(isKoreanUI ? "탭" : "Tap")
-                        .font(.system(size: 14, weight: readingMode == .tap ? .bold : .regular))
+                        .font(.system(size: buttonFontSize, weight: readingMode == .tap ? .bold : .regular))
                         .foregroundStyle(readingMode == .tap ? .white : .white.opacity(0.4))
                     
                     Text("/")
-                        .font(.system(size: 14))
+                        .font(.system(size: buttonFontSize))
                         .foregroundStyle(.white.opacity(0.25))
                     
                     Text(isKoreanUI ? "스크롤" : "Scroll")
-                        .font(.system(size: 14, weight: readingMode == .scroll ? .bold : .regular))
+                        .font(.system(size: buttonFontSize, weight: readingMode == .scroll ? .bold : .regular))
                         .foregroundStyle(readingMode == .scroll ? .white : .white.opacity(0.4))
                 }
                 
@@ -236,22 +242,22 @@ struct ExpandableFAB: View {
         } label: {
             HStack(spacing: 10) {
                 Image(systemName: "globe")
-                    .font(.system(size: 14, weight: .medium))
+                    .font(.system(size: buttonFontSize, weight: .medium))
                     .foregroundStyle(.white.opacity(0.85))
                     .frame(width: 20)
                 
                 // Toggle indicator
                 HStack(spacing: 4) {
                     Text(primaryDisplay)
-                        .font(.system(size: 14, weight: isPrimaryActive ? .bold : .regular))
+                        .font(.system(size: buttonFontSize, weight: isPrimaryActive ? .bold : .regular))
                         .foregroundStyle(isPrimaryActive ? .white : .white.opacity(0.4))
                     
                     Text("/")
-                        .font(.system(size: 14))
+                        .font(.system(size: buttonFontSize))
                         .foregroundStyle(.white.opacity(0.25))
                     
                     Text(secondaryDisplay)
-                        .font(.system(size: 14, weight: !isPrimaryActive ? .bold : .regular))
+                        .font(.system(size: buttonFontSize, weight: !isPrimaryActive ? .bold : .regular))
                         .foregroundStyle(!isPrimaryActive ? .white : .white.opacity(0.4))
                 }
                 

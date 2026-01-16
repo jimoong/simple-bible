@@ -425,7 +425,7 @@ struct SlotMachineView: View {
         }
         .frame(width: overlaySize, height: overlaySize)
         .position(
-            x: geometry.size.width - scrubberWidth - overlaySize / 2 - 12,  // Left of scrubber with padding
+            x: geometry.size.width - scrubberWidth - overlaySize / 2 - 28,  // Left of scrubber with padding
             y: clampedY
         )
         .transition(.opacity.combined(with: .scale(scale: 0.8)))
