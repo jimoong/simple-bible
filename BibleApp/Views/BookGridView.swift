@@ -138,7 +138,16 @@ struct BookGridView: View {
     }
     
     var filteredBooks: [BibleBook] {
-        let sorted = viewModel.sortedBooks
+        // In search mode, search ALL books (ignore category filter)
+        // In normal mode, respect category filter
+        let sorted: [BibleBook]
+        if isSearchActive {
+            // Search mode: use all books without category filter
+            sorted = BibleData.sortedBooks(by: viewModel.sortOrder, language: viewModel.uiLanguage)
+        } else {
+            // Normal mode: use filtered books
+            sorted = viewModel.sortedBooks
+        }
         
         if searchText.isEmpty {
             return sorted
@@ -551,7 +560,7 @@ struct BookGridView: View {
                 ForEach(BibleBookCategory.newTestamentCategories, id: \.self) { category in
                     Button {
                         viewModel.setCategoryFilter(category)
-                    } label: {
+            } label: {
                         filterMenuItem(
                             text: category.displayName(for: viewModel.uiLanguage),
                             isSelected: viewModel.categoryFilter == category
@@ -561,9 +570,9 @@ struct BookGridView: View {
             }
         } label: {
             Image(systemName: "line.3.horizontal.decrease")
-                .font(.system(size: 17, weight: .medium))
+                    .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(viewModel.hasActiveFilter ? .blue : .white)
-                .frame(width: 48, height: 48)
+                    .frame(width: 48, height: 48)
                 .background(
                     Circle()
                         .fill(viewModel.hasActiveFilter ? Color.white : Color.white.opacity(0.15))
