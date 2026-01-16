@@ -1,0 +1,88 @@
+{
+  "bookId": "1peter",
+  "bookNumber": 60,
+  "bookNameKo": "베드로전서",
+  "bookNameEn": "1 Peter",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "산 소망",
+      "titleEn": "Living Hope",
+      "summaryKo": "그리스도의 부활로 인한 산 소망과 거룩한 삶을 권면합니다.",
+      "summaryEn": "Proclaims living hope through Christ's resurrection; urges holy living.",
+      "messageKo": "예수 그리스도를 죽은 자 가운데서 부활하게 하신 것으로 말미암아 우리를 거듭나게 하사 산 소망이 있게 하셨으니.",
+      "messageEn": "In his great mercy he has given us new birth into a living hope through the resurrection of Jesus Christ.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "산 소망을 주심", "eventEn": "Given new birth into living hope"},
+        {"verse": 7, "eventKo": "믿음의 확실함이 불로 연단하는 금보다 귀함", "eventEn": "Faith more precious than gold refined by fire"},
+        {"verse": 15, "eventKo": "거룩하라 나도 거룩함이니라", "eventEn": "Be holy because I am holy"},
+        {"verse": 23, "eventKo": "썩지 아니할 씨로 거듭남", "eventEn": "Born again of imperishable seed"}
+      ],
+      "timelineYear": "AD 62-64"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "산 돌과 택한 백성",
+      "titleEn": "Living Stone and Chosen People",
+      "summaryKo": "그리스도가 산 돌이시며 우리가 택함받은 왕 같은 제사장임을 선포합니다.",
+      "summaryEn": "Proclaims Christ as living stone; we are chosen royal priesthood.",
+      "messageKo": "너희는 택하신 족속이요 왕 같은 제사장들이요 거룩한 나라요 그의 소유가 된 백성이니.",
+      "messageEn": "You are a chosen people, a royal priesthood, a holy nation, God's special possession.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "산 돌같이 신령한 집으로 세워짐", "eventEn": "Built into spiritual house as living stones"},
+        {"verse": 9, "eventKo": "택한 족속, 왕 같은 제사장", "eventEn": "Chosen people, royal priesthood"},
+        {"verse": 21, "eventKo": "그리스도도 고난을 받으사 본을 남기심", "eventEn": "Christ suffered leaving us an example"},
+        {"verse": 24, "eventKo": "그 채찍에 맞음으로 너희가 나음을 얻었음", "eventEn": "By his wounds you have been healed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "고난 중에도 선을 행함",
+      "titleEn": "Doing Good in Suffering",
+      "summaryKo": "부부 관계와 고난 중에도 선을 행하며 변호할 준비를 가르칩니다.",
+      "summaryEn": "Teaches marital relationships and doing good in suffering; be ready to give answer.",
+      "messageKo": "너희 마음에 그리스도를 주로 삼아 거룩하게 하고 너희 속에 있는 소망에 관하여 묻는 자에게 대답할 것을 항상 준비하되.",
+      "messageEn": "In your hearts revere Christ as Lord. Always be prepared to give an answer to everyone who asks you to give the reason for the hope that you have.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "아내들아 남편에게 순종하라", "eventEn": "Wives submit to your husbands"},
+        {"verse": 7, "eventKo": "남편들아 지식을 따라 아내와 동거하라", "eventEn": "Husbands be considerate with your wives"},
+        {"verse": 15, "eventKo": "소망에 관하여 묻는 자에게 대답할 준비", "eventEn": "Be prepared to give answer for your hope"},
+        {"verse": 18, "eventKo": "그리스도도 한 번 죄를 위해 고난받으심", "eventEn": "Christ suffered once for sins"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "고난의 의미",
+      "titleEn": "Meaning of Suffering",
+      "summaryKo": "그리스도를 위한 고난을 기뻐하며 은사로 서로 섬기라 권면합니다.",
+      "summaryEn": "Urges rejoicing in suffering for Christ and serving one another with gifts.",
+      "messageKo": "그리스도의 이름으로 욕을 받으면 복 있는 자로다 영광의 영 곧 하나님의 영이 너희 위에 계심이라.",
+      "messageEn": "If you are insulted because of the name of Christ, you are blessed, for the Spirit of glory and of God rests on you.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "만물의 마지막이 가까웠으니 기도하기를 힘쓰라", "eventEn": "End of all things near, be clear-minded for prayer"},
+        {"verse": 8, "eventKo": "사랑은 허다한 죄를 덮음", "eventEn": "Love covers over a multitude of sins"},
+        {"verse": 10, "eventKo": "은사를 받은 대로 서로 섬기라", "eventEn": "Use gifts to serve one another"},
+        {"verse": 14, "eventKo": "그리스도의 이름으로 욕을 받으면 복", "eventEn": "Blessed if insulted for name of Christ"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "장로와 겸손",
+      "titleEn": "Elders and Humility",
+      "summaryKo": "장로들에게 양떼를 치라 하고 모든 이에게 겸손을 권면합니다.",
+      "summaryEn": "Urges elders to shepherd the flock and all to be humble.",
+      "messageKo": "너희 염려를 다 주께 맡기라 이는 그가 너희를 돌보심이라.",
+      "messageEn": "Cast all your anxiety on him because he cares for you.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "하나님의 양떼를 치되 억지로 말고", "eventEn": "Be shepherds of God's flock, not under compulsion"},
+        {"verse": 5, "eventKo": "겸손으로 서로 복종하라", "eventEn": "Clothe yourselves with humility"},
+        {"verse": 7, "eventKo": "너희 염려를 주께 맡기라", "eventEn": "Cast all anxiety on him"},
+        {"verse": 8, "eventKo": "마귀가 우는 사자같이 두루 다님", "eventEn": "Devil prowls like roaring lion"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

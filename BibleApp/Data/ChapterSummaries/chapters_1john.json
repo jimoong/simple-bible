@@ -1,0 +1,88 @@
+{
+  "bookId": "1john",
+  "bookNumber": 62,
+  "bookNameKo": "요한1서",
+  "bookNameEn": "1 John",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "빛 가운데 행함",
+      "titleEn": "Walking in the Light",
+      "summaryKo": "생명의 말씀을 증거하고 빛 가운데 행하며 죄를 고백하라 권면합니다.",
+      "summaryEn": "Testifies to Word of life; urges walking in light and confessing sins.",
+      "messageKo": "만일 우리가 우리 죄를 자백하면 그는 미쁘시고 의로우사 우리 죄를 사하시며 우리를 모든 불의에서 깨끗하게 하실 것이요.",
+      "messageEn": "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "처음부터 있는 것, 생명의 말씀", "eventEn": "What was from beginning, Word of life"},
+        {"verse": 5, "eventKo": "하나님은 빛이시라", "eventEn": "God is light"},
+        {"verse": 7, "eventKo": "그 아들의 피가 모든 죄에서 깨끗하게 함", "eventEn": "Blood of Jesus purifies from all sin"},
+        {"verse": 9, "eventKo": "죄를 자백하면 사하심", "eventEn": "Confess sins, he will forgive"}
+      ],
+      "timelineYear": "AD 85-95"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "세상을 사랑하지 말라",
+      "titleEn": "Do Not Love the World",
+      "summaryKo": "예수가 대언자시며 형제 사랑과 세상을 사랑하지 말 것을 가르칩니다.",
+      "summaryEn": "Teaches Jesus as our advocate, brotherly love, and not loving the world.",
+      "messageKo": "이 세상도, 그 정욕도 지나가되 오직 하나님의 뜻을 행하는 자는 영원히 거하느니라.",
+      "messageEn": "The world and its desires pass away, but whoever does the will of God lives forever.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "우리에게 대언자가 계시니 예수 그리스도", "eventEn": "We have advocate, Jesus Christ"},
+        {"verse": 2, "eventKo": "그는 우리 죄를 위한 화목 제물", "eventEn": "He is atoning sacrifice for our sins"},
+        {"verse": 15, "eventKo": "이 세상이나 세상에 있는 것을 사랑하지 말라", "eventEn": "Do not love the world"},
+        {"verse": 17, "eventKo": "하나님의 뜻을 행하는 자는 영원히 거함", "eventEn": "Whoever does God's will lives forever"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "하나님의 자녀",
+      "titleEn": "Children of God",
+      "summaryKo": "하나님의 자녀 된 자의 정체성과 서로 사랑하라는 명령을 가르칩니다.",
+      "summaryEn": "Teaches identity as God's children and command to love one another.",
+      "messageKo": "우리가 형제를 사랑함으로 사망에서 옮겨 생명으로 들어간 줄을 알거니와.",
+      "messageEn": "We know that we have passed from death to life, because we love each other.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "하나님의 자녀라 일컬음을 받음", "eventEn": "Called children of God"},
+        {"verse": 2, "eventKo": "그가 나타나시면 우리도 그와 같을 것", "eventEn": "When he appears we shall be like him"},
+        {"verse": 14, "eventKo": "형제를 사랑함으로 사망에서 생명으로", "eventEn": "Passed from death to life because we love"},
+        {"verse": 16, "eventKo": "그가 우리를 위해 목숨을 버리셨으니", "eventEn": "Jesus laid down his life for us"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "하나님은 사랑이시라",
+      "titleEn": "God Is Love",
+      "summaryKo": "영을 분별하고 하나님이 사랑이심을 선포합니다.",
+      "summaryEn": "Teaches testing spirits and proclaims God is love.",
+      "messageKo": "하나님은 사랑이시라 사랑 안에 거하는 자는 하나님 안에 거하고 하나님도 그의 안에 거하시느니라.",
+      "messageEn": "God is love. Whoever lives in love lives in God, and God in them.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "영을 다 믿지 말고 시험하라", "eventEn": "Test the spirits"},
+        {"verse": 8, "eventKo": "하나님은 사랑이시라", "eventEn": "God is love"},
+        {"verse": 10, "eventKo": "그가 먼저 우리를 사랑하심", "eventEn": "He loved us first"},
+        {"verse": 18, "eventKo": "사랑 안에 두려움이 없음", "eventEn": "No fear in love"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "영생의 확신",
+      "titleEn": "Assurance of Eternal Life",
+      "summaryKo": "믿음으로 세상을 이기고 영생의 확신을 갖게 합니다.",
+      "summaryEn": "Teaches overcoming the world by faith and assurance of eternal life.",
+      "messageKo": "하나님이 우리에게 영생을 주신 것과 이 생명이 그의 아들 안에 있는 것이니라.",
+      "messageEn": "God has given us eternal life, and this life is in his Son.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "세상을 이기는 것은 우리의 믿음", "eventEn": "Faith is victory that overcomes world"},
+        {"verse": 11, "eventKo": "영생은 그의 아들 안에 있음", "eventEn": "Eternal life is in his Son"},
+        {"verse": 13, "eventKo": "영생이 있음을 알게 함", "eventEn": "Know that you have eternal life"},
+        {"verse": 14, "eventKo": "그의 뜻대로 구하면 들으심", "eventEn": "If we ask according to his will, he hears"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

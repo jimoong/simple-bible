@@ -1,0 +1,26 @@
+{
+  "bookId": "jude",
+  "bookNumber": 65,
+  "bookNameKo": "유다서",
+  "bookNameEn": "Jude",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "믿음을 위해 싸우라",
+      "titleEn": "Contend for the Faith",
+      "summaryKo": "거짓 교사들을 경계하고 성도에게 한 번 주신 믿음을 위해 싸우라 권면합니다.",
+      "summaryEn": "Warns against false teachers and urges contending for the faith once delivered to saints.",
+      "messageKo": "성도에게 단번에 주신 믿음의 도를 위하여 힘써 싸우라.",
+      "messageEn": "Contend for the faith that was once for all entrusted to God's holy people.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "단번에 주신 믿음을 위해 힘써 싸우라", "eventEn": "Contend for faith once delivered"},
+        {"verse": 4, "eventKo": "가만히 들어온 불경건한 자들", "eventEn": "Ungodly people secretly slipped in"},
+        {"verse": 9, "eventKo": "미가엘이 모세의 시체에 관해 다툼", "eventEn": "Michael disputed about body of Moses"},
+        {"verse": 14, "eventKo": "에녹의 예언", "eventEn": "Enoch's prophecy"},
+        {"verse": 20, "eventKo": "너희는 지극히 거룩한 믿음 위에 자신을 세우라", "eventEn": "Build yourselves up in holy faith"},
+        {"verse": 24, "eventKo": "능히 너희를 넘어지지 않게 지키시는 분", "eventEn": "Him who is able to keep you from stumbling"}
+      ],
+      "timelineYear": "AD 65-80"
+    }
+  ]
+}

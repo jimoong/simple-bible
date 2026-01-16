@@ -1,0 +1,56 @@
+{
+  "bookId": "2peter",
+  "bookNumber": 61,
+  "bookNameKo": "베드로후서",
+  "bookNameEn": "2 Peter",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "부르심과 택함을 굳게",
+      "titleEn": "Confirm Your Calling",
+      "summaryKo": "신의 성품에 참여하고 부르심과 택함을 굳게 하라 권면합니다.",
+      "summaryEn": "Urges participation in divine nature; make calling and election sure.",
+      "messageKo": "이로써 그 보배롭고 지극히 큰 약속을 우리에게 주사 이 약속으로 말미암아 너희가 신성한 성품에 참여하게 하셨느니라.",
+      "messageEn": "He has given us his very great and precious promises, so that through them you may participate in the divine nature.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "신성한 성품에 참여함", "eventEn": "Participate in divine nature"},
+        {"verse": 5, "eventKo": "믿음에 덕, 지식, 절제, 인내, 경건, 우애, 사랑을 더하라", "eventEn": "Add virtue, knowledge, self-control, perseverance, godliness, love"},
+        {"verse": 10, "eventKo": "부르심과 택함을 굳게 하라", "eventEn": "Make your calling and election sure"},
+        {"verse": 21, "eventKo": "성령에 의해 감동된 사람들이 말함", "eventEn": "Prophets spoke as carried along by Spirit"}
+      ],
+      "timelineYear": "AD 65-68"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "거짓 선지자들",
+      "titleEn": "False Prophets",
+      "summaryKo": "거짓 선지자와 교사들의 특성과 심판을 경고합니다.",
+      "summaryEn": "Warns of characteristics and judgment of false prophets and teachers.",
+      "messageKo": "거짓 선지자들이 백성 중에 있었던 것 같이 너희 중에도 거짓 선생들이 있으리니.",
+      "messageEn": "There were also false prophets among the people, just as there will be false teachers among you.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "거짓 선생들이 멸망케 할 이단을 가져옴", "eventEn": "False teachers bring destructive heresies"},
+        {"verse": 4, "eventKo": "범죄한 천사들도 용서하지 않으심", "eventEn": "God did not spare angels when they sinned"},
+        {"verse": 9, "eventKo": "경건한 자를 시험에서 건지심", "eventEn": "Lord knows how to rescue godly from trials"},
+        {"verse": 19, "eventKo": "자유를 약속하되 자기는 멸망의 종", "eventEn": "Promise freedom but are slaves of depravity"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "주의 날",
+      "titleEn": "Day of the Lord",
+      "summaryKo": "주의 재림을 조롱하는 자들을 경계하고 새 하늘 새 땅을 소망하라 권면합니다.",
+      "summaryEn": "Warns against scoffers of Lord's coming; look forward to new heaven and earth.",
+      "messageKo": "주의 약속은 어떤 이들이 더디다고 생각하는 것 같이 더딘 것이 아니라 오직 한 사람이라도 멸망하지 않고 다 회개하기에 이르기를 원하시느니라.",
+      "messageEn": "The Lord is not slow in keeping his promise. Instead he is patient with you, not wanting anyone to perish, but everyone to come to repentance.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "그의 오신다는 약속이 어디 있느냐", "eventEn": "Where is the promise of his coming?"},
+        {"verse": 8, "eventKo": "하루가 천 년 같고 천 년이 하루 같음", "eventEn": "One day like thousand years"},
+        {"verse": 9, "eventKo": "한 사람도 멸망하지 않기를 원하심", "eventEn": "Not wanting anyone to perish"},
+        {"verse": 13, "eventKo": "새 하늘과 새 땅을 바라봄", "eventEn": "Looking forward to new heaven and earth"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

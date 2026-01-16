@@ -1,0 +1,26 @@
+{
+  "bookId": "3john",
+  "bookNumber": 64,
+  "bookNameKo": "요한3서",
+  "bookNameEn": "3 John",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "가이오에게 보내는 편지",
+      "titleEn": "Letter to Gaius",
+      "summaryKo": "가이오의 신실함을 칭찬하고 디오드레베를 경계하며 데메드리오를 추천합니다.",
+      "summaryEn": "Commends Gaius' faithfulness, warns against Diotrephes, recommends Demetrius.",
+      "messageKo": "사랑하는 자여 네 영혼이 잘됨 같이 네가 범사에 잘되고 강건하기를 내가 간구하노라.",
+      "messageEn": "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "영혼이 잘됨같이 범사에 잘되기를", "eventEn": "Pray all go well as your soul prospers"},
+        {"verse": 4, "eventKo": "내 자녀들이 진리 안에서 행함을 들음이 최고의 기쁨", "eventEn": "Greatest joy is children walking in truth"},
+        {"verse": 5, "eventKo": "형제들과 나그네들에게 행한 것은 신실한 일", "eventEn": "Faithful in what you do for brothers and strangers"},
+        {"verse": 9, "eventKo": "디오드레베가 으뜸 되기를 좋아함", "eventEn": "Diotrephes loves to be first"},
+        {"verse": 11, "eventKo": "악을 본받지 말고 선을 본받으라", "eventEn": "Do not imitate evil but good"},
+        {"verse": 12, "eventKo": "데메드리오는 모든 사람에게 칭찬을 받음", "eventEn": "Demetrius well spoken of by everyone"}
+      ],
+      "timelineYear": "AD 85-95"
+    }
+  ]
+}

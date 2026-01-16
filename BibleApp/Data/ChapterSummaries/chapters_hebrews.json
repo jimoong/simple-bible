@@ -1,0 +1,216 @@
+{
+  "bookId": "hebrews",
+  "bookNumber": 58,
+  "bookNameKo": "히브리서",
+  "bookNameEn": "Hebrews",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "아들을 통한 계시",
+      "titleEn": "Revelation Through the Son",
+      "summaryKo": "하나님이 아들을 통해 말씀하셨으며 아들이 천사보다 뛰어나심을 선포합니다.",
+      "summaryEn": "Proclaims God spoke through his Son; Son is superior to angels.",
+      "messageKo": "이 모든 날 마지막에는 아들을 통하여 우리에게 말씀하셨으니 이 아들을 만유의 상속자로 세우셨다.",
+      "messageEn": "In these last days he has spoken to us by his Son, whom he appointed heir of all things.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "아들을 만유의 상속자로 세우심", "eventEn": "Appointed Son heir of all things"},
+        {"verse": 3, "eventKo": "하나님의 영광의 광채", "eventEn": "Radiance of God's glory"},
+        {"verse": 4, "eventKo": "천사보다 뛰어남", "eventEn": "Superior to angels"},
+        {"verse": 14, "eventKo": "천사는 섬기는 영", "eventEn": "Angels are ministering spirits"}
+      ],
+      "timelineYear": "AD 60-70"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "구원의 창시자",
+      "titleEn": "Author of Salvation",
+      "summaryKo": "큰 구원을 등한히 여기지 말며 예수가 구원의 창시자 되심을 말합니다.",
+      "summaryEn": "Warns not to neglect salvation; Jesus is the author of salvation.",
+      "messageKo": "우리가 들은 것에 더욱 유념함으로 혹 흘러 떠내려가지 않도록 하자.",
+      "messageEn": "We must pay the most careful attention to what we have heard, so that we do not drift away.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "흘러 떠내려가지 않도록", "eventEn": "Do not drift away"},
+        {"verse": 9, "eventKo": "예수께서 모든 사람을 위해 죽음을 맛보심", "eventEn": "Jesus tasted death for everyone"},
+        {"verse": 10, "eventKo": "구원의 창시자를 온전하게 하심", "eventEn": "Made author of salvation perfect"},
+        {"verse": 17, "eventKo": "자비롭고 신실한 대제사장", "eventEn": "Merciful and faithful high priest"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "모세보다 위대하신 예수",
+      "titleEn": "Jesus Greater Than Moses",
+      "summaryKo": "예수가 모세보다 뛰어나시며 믿음 없는 세대의 경고를 상기시킵니다.",
+      "summaryEn": "Declares Jesus superior to Moses; warns against unbelief like wilderness generation.",
+      "messageKo": "오늘 너희가 그의 음성을 듣거든 광야에서 시험하던 때와 같이 너희 마음을 완악하게 하지 말라.",
+      "messageEn": "Today, if you hear his voice, do not harden your hearts as you did in the rebellion.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "예수께서 모세보다 더 큰 영광에 합당함", "eventEn": "Jesus worthy of greater honor than Moses"},
+        {"verse": 6, "eventKo": "그리스도는 아들로서 그의 집을 맡음", "eventEn": "Christ is faithful as Son over God's house"},
+        {"verse": 12, "eventKo": "삼가 불신앙의 악한 마음을 버리라", "eventEn": "See that none has sinful unbelieving heart"},
+        {"verse": 15, "eventKo": "마음을 완악하게 하지 말라", "eventEn": "Do not harden your hearts"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "안식에 들어감",
+      "titleEn": "Entering God's Rest",
+      "summaryKo": "하나님의 안식에 들어가기를 힘쓰고 대제사장 예수께 담대히 나아가라 권면합니다.",
+      "summaryEn": "Urges striving to enter God's rest and boldly approaching Jesus our high priest.",
+      "messageKo": "하나님의 말씀은 살아 있고 활력이 있어 좌우에 날선 어떤 검보다도 예리하여.",
+      "messageEn": "The word of God is alive and active, sharper than any double-edged sword.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "하나님의 백성에게 안식이 남아 있음", "eventEn": "Sabbath rest remains for God's people"},
+        {"verse": 11, "eventKo": "그 안식에 들어가기를 힘쓰라", "eventEn": "Make every effort to enter that rest"},
+        {"verse": 12, "eventKo": "하나님의 말씀은 살아있고 활력 있음", "eventEn": "Word of God is alive and active"},
+        {"verse": 16, "eventKo": "은혜의 보좌 앞에 담대히 나아감", "eventEn": "Approach throne of grace with confidence"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "멜기세덱의 반차를 따른 대제사장",
+      "titleEn": "High Priest in Order of Melchizedek",
+      "summaryKo": "예수가 멜기세덱의 반차를 따른 영원한 대제사장임을 소개합니다.",
+      "summaryEn": "Introduces Jesus as eternal high priest in order of Melchizedek.",
+      "messageKo": "그가 아들이시면서도 받으신 고난으로 순종함을 배우셨다.",
+      "messageEn": "Son though he was, he learned obedience from what he suffered.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "네가 영원히 멜기세덱의 반차를 따른 제사장", "eventEn": "Priest forever in order of Melchizedek"},
+        {"verse": 8, "eventKo": "아들이시나 고난으로 순종을 배우심", "eventEn": "Learned obedience through suffering"},
+        {"verse": 9, "eventKo": "영원한 구원의 근원", "eventEn": "Source of eternal salvation"},
+        {"verse": 12, "eventKo": "젖이 필요하지 단단한 음식이 아님", "eventEn": "Need milk, not solid food"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "성숙으로 나아감",
+      "titleEn": "Moving Toward Maturity",
+      "summaryKo": "초보를 버리고 완전한 데로 나아가며 하나님의 약속의 확실함을 말합니다.",
+      "summaryEn": "Urges leaving basics and moving toward maturity; assures God's promises.",
+      "messageKo": "이 소망은 우리 영혼의 닻 같아서 튼튼하고 견고하여 휘장 안에 들어가나니.",
+      "messageEn": "We have this hope as an anchor for the soul, firm and secure.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "그리스도 도의 초보를 버리고 완전한 데로", "eventEn": "Leave elementary teachings, go on to maturity"},
+        {"verse": 10, "eventKo": "하나님은 불의하지 않아 너희 행위를 잊지 않으심", "eventEn": "God will not forget your work"},
+        {"verse": 18, "eventKo": "강한 위로를 받음", "eventEn": "Greatly encouraged"},
+        {"verse": 19, "eventKo": "소망은 영혼의 닻", "eventEn": "Hope as anchor for the soul"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "멜기세덱과 예수",
+      "titleEn": "Melchizedek and Jesus",
+      "summaryKo": "멜기세덱의 제사장직과 예수의 영원한 제사장직을 비교합니다.",
+      "summaryEn": "Compares Melchizedek's priesthood with Jesus' eternal priesthood.",
+      "messageKo": "그러므로 자기를 힘입어 하나님께 나아가는 자들을 온전히 구원하실 수 있으니 이는 그가 항상 살아 계셔서 그들을 위하여 간구하심이라.",
+      "messageEn": "He is able to save completely those who come to God through him, because he always lives to intercede for them.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아버지도 없고 어머니도 없고", "eventEn": "Without father or mother"},
+        {"verse": 17, "eventKo": "영원히 멜기세덱의 반차를 따른 제사장", "eventEn": "Priest forever in order of Melchizedek"},
+        {"verse": 25, "eventKo": "항상 살아서 간구하심", "eventEn": "Always lives to intercede"},
+        {"verse": 27, "eventKo": "단번에 자기를 드려 이루심", "eventEn": "Offered himself once for all"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "새 언약",
+      "titleEn": "New Covenant",
+      "summaryKo": "예수가 더 좋은 언약의 중보자시며 새 언약이 옛 것보다 나음을 말합니다.",
+      "summaryEn": "Declares Jesus mediator of better covenant; new covenant superior to old.",
+      "messageKo": "내 법을 그들의 생각에 두고 그들의 마음에 이것을 기록하리라.",
+      "messageEn": "I will put my laws in their minds and write them on their hearts.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "우리에게 이러한 대제사장이 있으니", "eventEn": "We have such a high priest"},
+        {"verse": 6, "eventKo": "더 좋은 언약의 중보자", "eventEn": "Mediator of superior covenant"},
+        {"verse": 10, "eventKo": "내 법을 마음에 기록", "eventEn": "Put my laws in their minds"},
+        {"verse": 13, "eventKo": "첫 것은 낡아지고 쇠퇴함", "eventEn": "First covenant is obsolete"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "그리스도의 피",
+      "titleEn": "Blood of Christ",
+      "summaryKo": "옛 언약의 제사와 그리스도의 단번 제사의 완전함을 비교합니다.",
+      "summaryEn": "Compares old covenant sacrifices with perfection of Christ's once-for-all sacrifice.",
+      "messageKo": "그리스도는 영원한 성령으로 말미암아 흠 없는 자기를 하나님께 드렸으니.",
+      "messageEn": "Christ through the eternal Spirit offered himself unblemished to God.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "자기 피로 영원한 속죄를 이루심", "eventEn": "By his own blood obtained eternal redemption"},
+        {"verse": 14, "eventKo": "영원한 성령으로 흠 없는 자기를 드림", "eventEn": "Through eternal Spirit offered himself unblemished"},
+        {"verse": 22, "eventKo": "피 흘림이 없은즉 사함이 없음", "eventEn": "Without shedding of blood no forgiveness"},
+        {"verse": 28, "eventKo": "단번에 나타나사 죄를 없이 하심", "eventEn": "Appeared once to do away with sin"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "믿음으로 나아감",
+      "titleEn": "Drawing Near in Faith",
+      "summaryKo": "그리스도의 한 번 제사로 온전케 되었으니 담대히 나아가라 권면합니다.",
+      "summaryEn": "Urges drawing near with confidence since Christ's one sacrifice has perfected us.",
+      "messageKo": "서로 돌아보아 사랑과 선행을 격려하며 모이기를 폐하지 말고.",
+      "messageEn": "Let us consider how we may spur one another on toward love and good deeds, not giving up meeting together.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "예수 그리스도의 몸을 단번에 드리심", "eventEn": "Sanctified through body of Jesus once for all"},
+        {"verse": 19, "eventKo": "예수의 피를 힘입어 성소에 들어감", "eventEn": "Enter sanctuary by blood of Jesus"},
+        {"verse": 24, "eventKo": "사랑과 선행을 격려하며", "eventEn": "Spur one another to love and good deeds"},
+        {"verse": 25, "eventKo": "모이기를 폐하지 말라", "eventEn": "Not give up meeting together"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "믿음의 선진들",
+      "titleEn": "Heroes of Faith",
+      "summaryKo": "아벨부터 시작해 구약의 믿음의 선진들을 열거합니다.",
+      "summaryEn": "Lists heroes of faith from Abel through Old Testament saints.",
+      "messageKo": "믿음은 바라는 것들의 실상이요 보이지 않는 것들의 증거니.",
+      "messageEn": "Faith is confidence in what we hope for and assurance about what we do not see.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "믿음은 바라는 것들의 실상", "eventEn": "Faith is confidence in what we hope for"},
+        {"verse": 6, "eventKo": "믿음 없이는 하나님을 기쁘시게 할 수 없음", "eventEn": "Without faith impossible to please God"},
+        {"verse": 8, "eventKo": "아브라함이 부름을 받았을 때 순종", "eventEn": "Abraham obeyed when called"},
+        {"verse": 39, "eventKo": "믿음으로 증거를 받았으나 약속을 못 받음", "eventEn": "Commended for faith yet did not receive promise"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "믿음의 경주",
+      "titleEn": "Race of Faith",
+      "summaryKo": "믿음의 경주를 인내로 달리며 주의 징계를 받으라 권면합니다.",
+      "summaryEn": "Urges running race with perseverance; accept Lord's discipline.",
+      "messageKo": "인내로써 우리 앞에 당한 경주를 달리며 믿음의 주요 또 온전하게 하시는 이인 예수를 바라보자.",
+      "messageEn": "Let us run with perseverance the race marked out for us, fixing our eyes on Jesus, the pioneer and perfecter of faith.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "인내로 경주를 달리며", "eventEn": "Run with perseverance"},
+        {"verse": 2, "eventKo": "믿음의 주요 온전케 하시는 이 예수를 바라봄", "eventEn": "Fixing eyes on Jesus, pioneer of faith"},
+        {"verse": 6, "eventKo": "주께서 사랑하시는 자를 징계하심", "eventEn": "Lord disciplines those he loves"},
+        {"verse": 28, "eventKo": "흔들리지 않는 나라를 받았으니", "eventEn": "Receiving a kingdom that cannot be shaken"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 13,
+      "titleKo": "마지막 권면",
+      "titleEn": "Final Exhortations",
+      "summaryKo": "형제 사랑, 지도자 순종, 영문 밖 그리스도를 따르라 권면합니다.",
+      "summaryEn": "Urges brotherly love, obedience to leaders, and following Christ outside the camp.",
+      "messageKo": "예수 그리스도는 어제나 오늘이나 영원토록 동일하시니라.",
+      "messageEn": "Jesus Christ is the same yesterday and today and forever.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "손님 대접하기를 잊지 말라", "eventEn": "Do not forget to show hospitality"},
+        {"verse": 5, "eventKo": "돈을 사랑하지 말라", "eventEn": "Keep lives free from love of money"},
+        {"verse": 8, "eventKo": "예수 그리스도는 영원토록 동일", "eventEn": "Jesus Christ same yesterday, today, forever"},
+        {"verse": 17, "eventKo": "인도자들에게 순종하라", "eventEn": "Have confidence in your leaders"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

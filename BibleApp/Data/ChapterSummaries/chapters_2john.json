@@ -1,0 +1,26 @@
+{
+  "bookId": "2john",
+  "bookNumber": 63,
+  "bookNameKo": "요한2서",
+  "bookNameEn": "2 John",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "진리와 사랑",
+      "titleEn": "Truth and Love",
+      "summaryKo": "진리 안에서 걷고 서로 사랑하며 거짓 교사를 경계하라 권면합니다.",
+      "summaryEn": "Urges walking in truth, loving one another, and guarding against false teachers.",
+      "messageKo": "처음부터 들은 바와 같이 서로 사랑하자.",
+      "messageEn": "Let us love one another, as we have heard from the beginning.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "택하심을 받은 부녀와 그 자녀에게", "eventEn": "To the lady chosen by God and her children"},
+        {"verse": 4, "eventKo": "네 자녀 중에 진리 안에서 행하는 자를 봄", "eventEn": "Found children walking in truth"},
+        {"verse": 5, "eventKo": "서로 사랑하자", "eventEn": "Let us love one another"},
+        {"verse": 7, "eventKo": "미혹하는 자가 많이 나왔으니", "eventEn": "Many deceivers have gone out"},
+        {"verse": 9, "eventKo": "그리스도의 교훈 안에 거하는 자는 아버지와 아들을 모심", "eventEn": "Whoever continues in teaching has both Father and Son"},
+        {"verse": 10, "eventKo": "이 교훈을 가지지 않으면 집에 들이지 말라", "eventEn": "Do not take them into your house"}
+      ],
+      "timelineYear": "AD 85-95"
+    }
+  ]
+}

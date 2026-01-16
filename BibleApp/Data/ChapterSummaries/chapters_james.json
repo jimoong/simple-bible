@@ -1,0 +1,88 @@
+{
+  "bookId": "james",
+  "bookNumber": 59,
+  "bookNameKo": "야고보서",
+  "bookNameEn": "James",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "시험과 지혜",
+      "titleEn": "Trials and Wisdom",
+      "summaryKo": "시험을 기쁨으로 여기고 지혜를 구하며 말씀을 행하라 권면합니다.",
+      "summaryEn": "Urges considering trials as joy, asking for wisdom, and doing the word.",
+      "messageKo": "너희 중에 누구든지 지혜가 부족하거든 모든 사람에게 후히 주시고 꾸짖지 아니하시는 하나님께 구하라.",
+      "messageEn": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "여러 가지 시험을 기쁨으로 여기라", "eventEn": "Consider trials pure joy"},
+        {"verse": 5, "eventKo": "지혜가 부족하면 하나님께 구하라", "eventEn": "Ask God for wisdom"},
+        {"verse": 17, "eventKo": "온갖 좋은 은사는 위로부터", "eventEn": "Every good gift from above"},
+        {"verse": 22, "eventKo": "말씀을 행하는 자가 되라", "eventEn": "Be doers of the word"}
+      ],
+      "timelineYear": "AD 45-49"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "믿음과 행함",
+      "titleEn": "Faith and Deeds",
+      "summaryKo": "사람을 차별하지 말며 행함 없는 믿음은 죽은 것임을 가르칩니다.",
+      "summaryEn": "Warns against favoritism; teaches faith without deeds is dead.",
+      "messageKo": "영혼 없는 몸이 죽은 것 같이 행함이 없는 믿음은 죽은 것이니라.",
+      "messageEn": "As the body without the spirit is dead, so faith without deeds is dead.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "사람을 차별하지 말라", "eventEn": "Don't show favoritism"},
+        {"verse": 8, "eventKo": "네 이웃을 네 몸과 같이 사랑하라", "eventEn": "Love your neighbor as yourself"},
+        {"verse": 17, "eventKo": "행함이 없는 믿음은 죽은 것", "eventEn": "Faith without deeds is dead"},
+        {"verse": 26, "eventKo": "영혼 없는 몸이 죽은 것 같이", "eventEn": "Body without spirit is dead"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "혀를 다스림",
+      "titleEn": "Taming the Tongue",
+      "summaryKo": "혀의 위험성과 위로부터 오는 지혜를 가르칩니다.",
+      "summaryEn": "Teaches danger of tongue and wisdom that comes from above.",
+      "messageKo": "혀는 능히 길들일 사람이 없나니 쉬지 않는 악이요 죽이는 독이 가득하니라.",
+      "messageEn": "No human being can tame the tongue. It is a restless evil, full of deadly poison.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "말에 실수가 없으면 온전한 사람", "eventEn": "Never at fault in word is perfect"},
+        {"verse": 5, "eventKo": "혀는 작은 지체로되 큰 것을 자랑함", "eventEn": "Tongue is small but makes great boasts"},
+        {"verse": 8, "eventKo": "혀는 길들일 수 없는 악", "eventEn": "Tongue no human can tame"},
+        {"verse": 17, "eventKo": "위로부터 오는 지혜는 정결하고 화평함", "eventEn": "Wisdom from above is pure, peace-loving"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "하나님께 가까이",
+      "titleEn": "Come Near to God",
+      "summaryKo": "세상과 친구 됨을 경계하고 겸손히 하나님께 가까이 가라 권면합니다.",
+      "summaryEn": "Warns against friendship with world; urges humbly drawing near to God.",
+      "messageKo": "하나님께 가까이 하라 그리하면 너희에게 가까이 하시리라.",
+      "messageEn": "Come near to God and he will come near to you.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "세상과 친구가 되는 것은 하나님과 원수", "eventEn": "Friendship with world is enmity with God"},
+        {"verse": 7, "eventKo": "하나님께 복종하고 마귀를 대적하라", "eventEn": "Submit to God, resist the devil"},
+        {"verse": 8, "eventKo": "하나님께 가까이 하라", "eventEn": "Come near to God"},
+        {"verse": 10, "eventKo": "주 앞에서 낮추라 그러면 높이시리라", "eventEn": "Humble yourselves before Lord"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "인내와 기도",
+      "titleEn": "Patience and Prayer",
+      "summaryKo": "주의 오심까지 인내하고 서로를 위해 기도하라 권면합니다.",
+      "summaryEn": "Urges patience until Lord's coming and prayer for one another.",
+      "messageKo": "의인의 간구는 역사하는 힘이 큼이라.",
+      "messageEn": "The prayer of a righteous person is powerful and effective.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "주의 오심까지 길이 참으라", "eventEn": "Be patient until Lord's coming"},
+        {"verse": 11, "eventKo": "욥의 인내와 주의 결말", "eventEn": "Job's perseverance and Lord's purpose"},
+        {"verse": 14, "eventKo": "아픈 자는 장로들을 청하여 기도하게", "eventEn": "Call elders to pray over sick"},
+        {"verse": 16, "eventKo": "의인의 기도는 역사하는 힘이 큼", "eventEn": "Prayer of righteous is powerful"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}
