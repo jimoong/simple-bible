@@ -130,8 +130,7 @@ struct VerseCardView: View {
         .contextMenu(isCentered ? ContextMenu {
             Button {
                 onSave?()
-                // Toggle immediately for instant feedback
-                isFavorite.toggle()
+                // State change handled by notification after actual save
             } label: {
                 Label(
                     isFavorite 

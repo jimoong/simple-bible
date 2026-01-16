@@ -1,0 +1,104 @@
+{
+  "bookId": "1timothy",
+  "bookNumber": 54,
+  "bookNameKo": "디모데전서",
+  "bookNameEn": "1 Timothy",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "율법과 은혜",
+      "titleEn": "Law and Grace",
+      "summaryKo": "다른 교훈을 경계하고 바울 자신이 받은 은혜를 증거합니다.",
+      "summaryEn": "Warns against false teaching and testifies to grace Paul received.",
+      "messageKo": "그리스도 예수께서 죄인을 구원하시려고 세상에 임하셨다 하였도다 죄인 중에 내가 괴수니라.",
+      "messageEn": "Christ Jesus came into the world to save sinners—of whom I am the worst.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "계명의 목적은 사랑", "eventEn": "Goal of command is love"},
+        {"verse": 15, "eventKo": "죄인을 구원하려고 오심, 내가 괴수", "eventEn": "Came to save sinners, I am worst"},
+        {"verse": 17, "eventKo": "영원한 왕께 존귀와 영광", "eventEn": "Honor and glory to eternal King"},
+        {"verse": 18, "eventKo": "믿음과 선한 양심을 가지라", "eventEn": "Hold on to faith and good conscience"}
+      ],
+      "timelineYear": "AD 62-64"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "기도와 예배",
+      "titleEn": "Prayer and Worship",
+      "summaryKo": "모든 사람을 위한 기도와 예배의 질서를 가르칩니다.",
+      "summaryEn": "Teaches prayer for all people and order in worship.",
+      "messageKo": "하나님은 한 분이시요 또 하나님과 사람 사이에 중보자도 한 분이시니 곧 사람이신 그리스도 예수라.",
+      "messageEn": "There is one God and one mediator between God and mankind, the man Christ Jesus.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "모든 사람을 위하여 기도하라", "eventEn": "Pray for all people"},
+        {"verse": 4, "eventKo": "모든 사람이 구원받기 원하심", "eventEn": "God wants all people to be saved"},
+        {"verse": 5, "eventKo": "중보자는 한 분 그리스도 예수", "eventEn": "One mediator, the man Christ Jesus"},
+        {"verse": 8, "eventKo": "거룩한 손을 들어 기도하라", "eventEn": "Lift up holy hands in prayer"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "교회 지도자의 자격",
+      "titleEn": "Qualifications for Leaders",
+      "summaryKo": "감독과 집사의 자격과 교회의 기둥됨을 가르칩니다.",
+      "summaryEn": "Teaches qualifications for overseers and deacons; church as pillar of truth.",
+      "messageKo": "경건의 비밀이 크도다 그는 육신으로 나타나셨다.",
+      "messageEn": "Beyond all question, the mystery of godliness is great: He appeared in the flesh.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "감독은 책망할 것이 없어야", "eventEn": "Overseer must be above reproach"},
+        {"verse": 8, "eventKo": "집사도 정중하고 일구이언을 하지 않고", "eventEn": "Deacons worthy of respect, sincere"},
+        {"verse": 15, "eventKo": "진리의 기둥과 터", "eventEn": "Pillar and foundation of truth"},
+        {"verse": 16, "eventKo": "경건의 비밀이 크도다", "eventEn": "Mystery of godliness is great"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "좋은 일꾼",
+      "titleEn": "Good Minister",
+      "summaryKo": "거짓 가르침을 경계하고 좋은 일꾼의 자세를 가르칩니다.",
+      "summaryEn": "Warns against false teaching and teaches conduct of a good minister.",
+      "messageKo": "네가 젊다고 아무도 너를 업신여기지 못하게 하라 오직 말과 행실과 사랑과 믿음과 정절에 있어서 믿는 자에게 본이 되라.",
+      "messageEn": "Don't let anyone look down on you because you are young, but set an example in speech, conduct, love, faith and purity.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "후일에 어떤 사람들이 믿음에서 떠남", "eventEn": "Some will abandon faith in later times"},
+        {"verse": 8, "eventKo": "육체의 연습은 약간의 유익, 경건은 범사에 유익", "eventEn": "Godliness has value for all things"},
+        {"verse": 12, "eventKo": "네가 젊다고 업신여기지 못하게", "eventEn": "Don't let anyone despise your youth"},
+        {"verse": 16, "eventKo": "네 자신과 가르침을 살피라", "eventEn": "Watch your life and doctrine closely"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "여러 그룹에 대한 지침",
+      "titleEn": "Instructions for Groups",
+      "summaryKo": "과부, 장로 등 교회 내 여러 그룹에 대한 지침을 줍니다.",
+      "summaryEn": "Gives instructions regarding widows, elders, and other groups in church.",
+      "messageKo": "잘 다스리는 장로들을 배나 존경할 자로 알되 말씀과 가르침에 수고하는 자들에게는 더욱 그리할 것이니라.",
+      "messageEn": "Elders who direct well are worthy of double honor, especially those who preach and teach.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "노인을 꾸짖지 말고 권면하라", "eventEn": "Do not rebuke older man but exhort"},
+        {"verse": 8, "eventKo": "자기 집안을 돌보지 않으면 믿음을 배반", "eventEn": "Not providing for family denied the faith"},
+        {"verse": 17, "eventKo": "잘 다스리는 장로를 존경하라", "eventEn": "Elders who direct well worthy of honor"},
+        {"verse": 22, "eventKo": "아무에게나 경솔히 안수하지 말라", "eventEn": "Do not be hasty in laying on of hands"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "참된 부요함",
+      "titleEn": "True Riches",
+      "summaryKo": "경건이 참된 유익임을 가르치고 선한 싸움을 싸우라 권면합니다.",
+      "summaryEn": "Teaches godliness with contentment is true gain; urges fighting good fight.",
+      "messageKo": "돈을 사랑함이 일만 악의 뿌리가 되나니.",
+      "messageEn": "The love of money is a root of all kinds of evil.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "자족하는 마음이 있으면 경건이 큰 이득", "eventEn": "Godliness with contentment is great gain"},
+        {"verse": 10, "eventKo": "돈을 사랑함이 일만 악의 뿌리", "eventEn": "Love of money root of all evil"},
+        {"verse": 12, "eventKo": "믿음의 선한 싸움을 싸우라", "eventEn": "Fight the good fight of faith"},
+        {"verse": 20, "eventKo": "맡긴 것을 지키라", "eventEn": "Guard what has been entrusted"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

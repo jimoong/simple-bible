@@ -1,0 +1,72 @@
+{
+  "bookId": "philippians",
+  "bookNumber": 50,
+  "bookNameKo": "빌립보서",
+  "bookNameEn": "Philippians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "그리스도를 전파함",
+      "titleEn": "Proclaiming Christ",
+      "summaryKo": "빌립보 성도들을 위한 감사와 바울의 투옥 상황, 복음 전파를 나눕니다.",
+      "summaryEn": "Shares thanksgiving for Philippians, Paul's imprisonment, and gospel advance.",
+      "messageKo": "내게 사는 것이 그리스도니 죽는 것도 유익함이라.",
+      "messageEn": "For to me, to live is Christ and to die is gain.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "선한 일을 시작하신 분이 완성하심", "eventEn": "He who began good work will complete it"},
+        {"verse": 12, "eventKo": "내 일이 복음 전파에 유익이 됨", "eventEn": "What happened to me advanced the gospel"},
+        {"verse": 21, "eventKo": "사는 것이 그리스도요 죽는 것도 유익", "eventEn": "To live is Christ, to die is gain"},
+        {"verse": 27, "eventKo": "복음에 합당하게 생활하라", "eventEn": "Conduct worthy of the gospel"}
+      ],
+      "timelineYear": "AD 61-62"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "그리스도의 겸손",
+      "titleEn": "Christ's Humility",
+      "summaryKo": "그리스도의 겸손을 본받아 한마음을 품고 구원을 이루라 권면합니다.",
+      "summaryEn": "Urges imitating Christ's humility, being one in mind, and working out salvation.",
+      "messageKo": "그가 하나님의 모습이셨으나 스스로 비워 종의 형체를 가지셨다.",
+      "messageEn": "Who, being in very nature God, made himself nothing, taking the very nature of a servant.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "겸손한 마음으로 남을 자기보다 낫게", "eventEn": "In humility value others above yourselves"},
+        {"verse": 6, "eventKo": "그리스도 찬가", "eventEn": "Christ hymn"},
+        {"verse": 10, "eventKo": "모든 무릎을 꿇게 하심", "eventEn": "Every knee should bow"},
+        {"verse": 12, "eventKo": "두렵고 떨림으로 구원을 이루라", "eventEn": "Work out salvation with fear and trembling"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "그리스도를 아는 지식",
+      "titleEn": "Knowing Christ",
+      "summaryKo": "바울의 이전 신분을 버리고 그리스도를 아는 것이 가장 고상함을 증거합니다.",
+      "summaryEn": "Testifies to giving up former status; knowing Christ is supreme.",
+      "messageKo": "내가 그리스도 예수를 아는 지식이 가장 고상하므로 모든 것을 해로 여기노라.",
+      "messageEn": "I consider everything a loss because of the surpassing worth of knowing Christ Jesus my Lord.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "히브리인 중의 히브리인", "eventEn": "Hebrew of Hebrews"},
+        {"verse": 8, "eventKo": "그리스도를 아는 것이 가장 고상함", "eventEn": "Surpassing worth of knowing Christ"},
+        {"verse": 13, "eventKo": "앞에 있는 것을 잡으려고", "eventEn": "Straining toward what is ahead"},
+        {"verse": 20, "eventKo": "우리의 시민권은 하늘에", "eventEn": "Our citizenship is in heaven"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "주 안에서 기뻐하라",
+      "titleEn": "Rejoice in the Lord",
+      "summaryKo": "기뻐하라, 염려하지 말라, 생각할 것들을 권면하며 감사로 마무리합니다.",
+      "summaryEn": "Urges rejoicing, not being anxious, things to think about; closes with thanks.",
+      "messageKo": "아무것도 염려하지 말고 다만 모든 일에 기도와 간구로 감사함으로 하나님께 아뢰라.",
+      "messageEn": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "주 안에서 항상 기뻐하라", "eventEn": "Rejoice in the Lord always"},
+        {"verse": 6, "eventKo": "아무것도 염려하지 말라", "eventEn": "Do not be anxious"},
+        {"verse": 7, "eventKo": "모든 지각에 뛰어난 하나님의 평강", "eventEn": "Peace of God transcending all understanding"},
+        {"verse": 13, "eventKo": "내게 능력 주시는 자 안에서 모든 것을 할 수 있음", "eventEn": "I can do all things through him who gives me strength"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

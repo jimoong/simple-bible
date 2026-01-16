@@ -1,0 +1,72 @@
+{
+  "bookId": "2timothy",
+  "bookNumber": 55,
+  "bookNameKo": "디모데후서",
+  "bookNameEn": "2 Timothy",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "담대함의 영",
+      "titleEn": "Spirit of Power",
+      "summaryKo": "두려움이 아닌 능력과 사랑과 절제의 영을 받았음을 상기시킵니다.",
+      "summaryEn": "Reminds Timothy of spirit of power, love, and self-discipline, not fear.",
+      "messageKo": "하나님이 우리에게 주신 것은 두려워하는 마음이 아니요 오직 능력과 사랑과 절제하는 마음이니.",
+      "messageEn": "God has not given us a spirit of fear, but of power and of love and of a sound mind.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "거짓 없는 믿음이 네 안에", "eventEn": "Sincere faith in you"},
+        {"verse": 7, "eventKo": "두려워하는 마음이 아니요 능력과 사랑과 절제", "eventEn": "Spirit of power, love, self-discipline"},
+        {"verse": 10, "eventKo": "사망을 폐하시고 생명을 드러내심", "eventEn": "Destroyed death, brought life to light"},
+        {"verse": 12, "eventKo": "내가 맡긴 것을 지키실 줄 앎", "eventEn": "Convinced he is able to guard what I entrusted"}
+      ],
+      "timelineYear": "AD 66-67"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "충성된 군사",
+      "titleEn": "Faithful Soldier",
+      "summaryKo": "그리스도의 좋은 군사로서 부지런하고 부끄럽지 않은 일꾼이 되라 권면합니다.",
+      "summaryEn": "Urges being a good soldier of Christ, diligent workman unashamed.",
+      "messageKo": "네가 진리의 말씀을 옳게 분별하며 부끄러울 것이 없는 일꾼으로 하나님 앞에 인정받도록 힘쓰라.",
+      "messageEn": "Do your best to present yourself to God as one approved, a worker who correctly handles the word of truth.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "그리스도 예수의 좋은 군사로 고난을 받으라", "eventEn": "Endure hardship as good soldier"},
+        {"verse": 11, "eventKo": "함께 죽으면 함께 살고", "eventEn": "If we died with him, we will live"},
+        {"verse": 15, "eventKo": "진리의 말씀을 옳게 분별하는 일꾼", "eventEn": "Worker who correctly handles word of truth"},
+        {"verse": 22, "eventKo": "청년의 정욕을 피하고 의와 믿음과 사랑과 화평을 쫓으라", "eventEn": "Flee youthful passions, pursue righteousness"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "말세의 경건",
+      "titleEn": "Godliness in Last Days",
+      "summaryKo": "말세의 어려움을 경고하고 성경의 권위와 유익을 가르칩니다.",
+      "summaryEn": "Warns of difficulties in last days; teaches authority and usefulness of Scripture.",
+      "messageKo": "모든 성경은 하나님의 감동으로 된 것으로 교훈과 책망과 바르게 함과 의로 교육하기에 유익하니.",
+      "messageEn": "All Scripture is God-breathed and is useful for teaching, rebuking, correcting and training in righteousness.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "말세에 고통하는 때가 이르리라", "eventEn": "Terrible times in last days"},
+        {"verse": 5, "eventKo": "경건의 모양은 있으나 능력은 부인", "eventEn": "Form of godliness but deny its power"},
+        {"verse": 12, "eventKo": "경건하게 살려는 자는 핍박을 받음", "eventEn": "Godly in Christ Jesus will be persecuted"},
+        {"verse": 16, "eventKo": "모든 성경은 하나님의 감동으로", "eventEn": "All Scripture is God-breathed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "바울의 유언",
+      "titleEn": "Paul's Final Words",
+      "summaryKo": "말씀을 전파하라 명하고 바울의 마지막 증거와 부탁을 전합니다.",
+      "summaryEn": "Commands to preach the word; shares Paul's final testimony and requests.",
+      "messageKo": "나는 선한 싸움을 싸우고 나의 달려갈 길을 마치고 믿음을 지켰으니.",
+      "messageEn": "I have fought the good fight, I have finished the race, I have kept the faith.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "말씀을 전파하라 때를 얻든지 못 얻든지", "eventEn": "Preach the word, in season and out"},
+        {"verse": 5, "eventKo": "복음 전하는 자의 일을 하라", "eventEn": "Do the work of an evangelist"},
+        {"verse": 7, "eventKo": "선한 싸움을 싸우고 달려갈 길을 마침", "eventEn": "Fought good fight, finished the race"},
+        {"verse": 8, "eventKo": "의의 면류관이 예비되어 있음", "eventEn": "Crown of righteousness awaits"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

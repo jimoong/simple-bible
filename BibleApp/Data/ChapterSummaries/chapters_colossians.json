@@ -1,0 +1,72 @@
+{
+  "bookId": "colossians",
+  "bookNumber": 51,
+  "bookNameKo": "골로새서",
+  "bookNameEn": "Colossians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "그리스도의 최고성",
+      "titleEn": "Supremacy of Christ",
+      "summaryKo": "그리스도가 만물 위에 으뜸이시며 화목케 하셨음을 선포합니다.",
+      "summaryEn": "Proclaims Christ as supreme over all creation and our reconciler.",
+      "messageKo": "그는 보이지 아니하는 하나님의 형상이요 모든 피조물보다 먼저 나신 이시니.",
+      "messageEn": "The Son is the image of the invisible God, the firstborn over all creation.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "보이지 않는 하나님의 형상", "eventEn": "Image of the invisible God"},
+        {"verse": 16, "eventKo": "만물이 그로 말미암고 그를 위하여 창조됨", "eventEn": "All things created by him and for him"},
+        {"verse": 18, "eventKo": "교회의 머리", "eventEn": "Head of the church"},
+        {"verse": 20, "eventKo": "십자가의 피로 화평을 이루심", "eventEn": "Made peace through blood of cross"}
+      ],
+      "timelineYear": "AD 60-62"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "거짓 가르침을 경계",
+      "titleEn": "Warning Against False Teaching",
+      "summaryKo": "그리스도 안에 충만이 있으니 헛된 철학과 율법주의를 경계합니다.",
+      "summaryEn": "Warns against hollow philosophy and legalism; fullness is in Christ.",
+      "messageKo": "그 안에는 신성의 모든 충만이 육체로 거하시니.",
+      "messageEn": "For in Christ all the fullness of the Deity lives in bodily form.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "지혜와 지식의 모든 보화가 그리스도 안에", "eventEn": "All treasures of wisdom in Christ"},
+        {"verse": 8, "eventKo": "헛된 철학을 조심하라", "eventEn": "Beware of hollow philosophy"},
+        {"verse": 9, "eventKo": "신성의 모든 충만이 그리스도 안에", "eventEn": "Fullness of Deity in Christ"},
+        {"verse": 14, "eventKo": "증거를 지우시고 십자가에 못 박으심", "eventEn": "Canceled charge, nailing it to cross"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "새 사람을 입으라",
+      "titleEn": "Put On the New Self",
+      "summaryKo": "위엣 것을 생각하고 새 사람을 입으며 가정의 질서를 가르칩니다.",
+      "summaryEn": "Urges setting minds on things above, putting on new self, and household order.",
+      "messageKo": "무엇을 하든지 말에나 일에나 다 주 예수의 이름으로 하고 그를 힘입어 하나님 아버지께 감사하라.",
+      "messageEn": "Whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "위엣 것을 찾으라", "eventEn": "Set your hearts on things above"},
+        {"verse": 5, "eventKo": "땅에 있는 지체를 죽이라", "eventEn": "Put to death earthly nature"},
+        {"verse": 12, "eventKo": "긍휼, 자비, 겸손, 온유, 오래 참음을 입으라", "eventEn": "Clothe with compassion, kindness, humility"},
+        {"verse": 17, "eventKo": "무엇을 하든지 주의 이름으로", "eventEn": "Do everything in name of Lord Jesus"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "기도와 인사",
+      "titleEn": "Prayer and Greetings",
+      "summaryKo": "기도에 힘쓰고 지혜롭게 행하라 권면하며 인사로 마무리합니다.",
+      "summaryEn": "Urges devotion to prayer and wise conduct; closes with greetings.",
+      "messageKo": "너희 말을 항상 은혜 가운데서 소금으로 맛을 낸 것 같이 하라.",
+      "messageEn": "Let your conversation be always full of grace, seasoned with salt.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "기도에 힘쓰고 깨어 감사하라", "eventEn": "Devote to prayer, being watchful"},
+        {"verse": 5, "eventKo": "외인에게 지혜롭게 행하라", "eventEn": "Be wise toward outsiders"},
+        {"verse": 6, "eventKo": "말을 은혜 가운데서 소금으로", "eventEn": "Speech full of grace, seasoned with salt"},
+        {"verse": 14, "eventKo": "의사 누가의 문안", "eventEn": "Greetings from Luke the doctor"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

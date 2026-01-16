@@ -1,0 +1,104 @@
+{
+  "bookId": "ephesians",
+  "bookNumber": 49,
+  "bookNameKo": "에베소서",
+  "bookNameEn": "Ephesians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "그리스도 안에서의 축복",
+      "titleEn": "Blessings in Christ",
+      "summaryKo": "그리스도 안에서 받은 모든 신령한 축복과 구속의 비밀을 찬양합니다.",
+      "summaryEn": "Praises all spiritual blessings in Christ and the mystery of redemption.",
+      "messageKo": "그리스도 안에서 하늘에 속한 모든 신령한 복을 우리에게 주시되.",
+      "messageEn": "Praise be to God who has blessed us with every spiritual blessing in Christ.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "모든 신령한 복", "eventEn": "Every spiritual blessing"},
+        {"verse": 4, "eventKo": "창세 전에 택하심", "eventEn": "Chosen before creation of world"},
+        {"verse": 7, "eventKo": "그의 피로 구속함", "eventEn": "Redemption through his blood"},
+        {"verse": 13, "eventKo": "약속의 성령으로 인침", "eventEn": "Sealed with promised Holy Spirit"}
+      ],
+      "timelineYear": "AD 60-62"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "은혜로 구원받음",
+      "titleEn": "Saved by Grace",
+      "summaryKo": "은혜로 믿음으로 구원받았으며 유대인과 이방인이 하나됨을 선포합니다.",
+      "summaryEn": "Proclaims salvation by grace through faith and unity of Jew and Gentile.",
+      "messageKo": "너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요 하나님의 선물이라.",
+      "messageEn": "For it is by grace you have been saved, through faith—and this is not from yourselves, it is the gift of God.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "죄로 죽었던 너희", "eventEn": "Dead in transgressions"},
+        {"verse": 8, "eventKo": "은혜로 믿음으로 구원", "eventEn": "Saved by grace through faith"},
+        {"verse": 10, "eventKo": "선한 일을 위해 지으심", "eventEn": "Created for good works"},
+        {"verse": 14, "eventKo": "막힌 담을 허심", "eventEn": "Dividing wall of hostility destroyed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "이방인을 위한 복음",
+      "titleEn": "Gospel for the Gentiles",
+      "summaryKo": "이방인에게 복음을 전하는 바울의 사명과 그리스도의 사랑을 기도합니다.",
+      "summaryEn": "Shares Paul's mission to preach to Gentiles and prays for Christ's love.",
+      "messageKo": "그리스도의 사랑의 넓이와 길이와 높이와 깊이가 어떠함을 알게 하옵소서.",
+      "messageEn": "May you grasp how wide and long and high and deep is the love of Christ.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "이방인도 함께 상속자", "eventEn": "Gentiles are heirs together"},
+        {"verse": 8, "eventKo": "측량할 수 없는 그리스도의 풍성", "eventEn": "Unsearchable riches of Christ"},
+        {"verse": 18, "eventKo": "사랑의 넓이 길이 높이 깊이", "eventEn": "Wide, long, high, deep love"},
+        {"verse": 20, "eventKo": "구하는 것 이상으로 행하시는 분", "eventEn": "Able to do immeasurably more"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "한 몸 안에서의 연합",
+      "titleEn": "Unity in One Body",
+      "summaryKo": "성령 안에서 하나됨을 힘쓰고 새 사람을 입으라 권면합니다.",
+      "summaryEn": "Urges unity in the Spirit and putting on the new self.",
+      "messageKo": "평안의 매는 줄로 성령이 하나 되게 하신 것을 힘써 지키라.",
+      "messageEn": "Make every effort to keep the unity of the Spirit through the bond of peace.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "성령이 하나 되게 하신 것을 지키라", "eventEn": "Keep unity of the Spirit"},
+        {"verse": 11, "eventKo": "사도, 선지자, 복음전도자, 목사, 교사", "eventEn": "Apostles, prophets, evangelists, pastors, teachers"},
+        {"verse": 15, "eventKo": "사랑 안에서 참된 것을 말함", "eventEn": "Speaking truth in love"},
+        {"verse": 24, "eventKo": "새 사람을 입으라", "eventEn": "Put on the new self"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "빛의 자녀",
+      "titleEn": "Children of Light",
+      "summaryKo": "빛의 자녀로 행하고 그리스도와 교회의 관계로 부부 관계를 가르칩니다.",
+      "summaryEn": "Urges walking as children of light; teaches marriage as Christ and church.",
+      "messageKo": "성령으로 충만함을 받으라.",
+      "messageEn": "Be filled with the Spirit.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "사랑 가운데서 행하라", "eventEn": "Walk in love"},
+        {"verse": 8, "eventKo": "빛의 자녀로서 행하라", "eventEn": "Walk as children of light"},
+        {"verse": 18, "eventKo": "성령으로 충만함을 받으라", "eventEn": "Be filled with the Spirit"},
+        {"verse": 25, "eventKo": "남편들아 아내 사랑하기를 그리스도께서 교회를 사랑함같이", "eventEn": "Husbands love wives as Christ loved church"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "하나님의 전신갑주",
+      "titleEn": "Armor of God",
+      "summaryKo": "가정의 질서와 마귀의 간계를 대적하는 전신갑주를 가르칩니다.",
+      "summaryEn": "Teaches household order and armor of God to stand against devil's schemes.",
+      "messageKo": "하나님의 전신갑주를 입으라 이는 마귀의 간계를 능히 대적하게 하려 함이라.",
+      "messageEn": "Put on the full armor of God, so that you can take your stand against the devil's schemes.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "자녀들아 부모에게 순종하라", "eventEn": "Children obey your parents"},
+        {"verse": 11, "eventKo": "전신갑주를 입으라", "eventEn": "Put on full armor of God"},
+        {"verse": 12, "eventKo": "혈과 육에 대한 것이 아니요", "eventEn": "Not against flesh and blood"},
+        {"verse": 17, "eventKo": "구원의 투구와 성령의 검", "eventEn": "Helmet of salvation, sword of Spirit"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

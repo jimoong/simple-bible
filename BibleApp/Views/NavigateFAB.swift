@@ -7,7 +7,7 @@ struct NavigateFAB: View {
     var isHidden: Bool = false
     var useBlurBackground: Bool = false
     
-    private let buttonSize: CGFloat = 52
+    private let buttonSize: CGFloat = 48
     
     var body: some View {
         if !isHidden {

@@ -38,8 +38,8 @@ struct BibleTimelineView: View {
             
             // Bottom close button
             bottomBar
-                .padding(.horizontal, 24)
-                .padding(.bottom, safeAreaBottom - 4)
+                .padding(.horizontal, 28)
+                .padding(.bottom, safeAreaBottom - 16)
         }
         .background(Color.black)
         .onAppear {

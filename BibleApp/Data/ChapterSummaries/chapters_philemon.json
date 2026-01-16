@@ -1,0 +1,26 @@
+{
+  "bookId": "philemon",
+  "bookNumber": 57,
+  "bookNameKo": "빌레몬서",
+  "bookNameEn": "Philemon",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "오네시모를 위한 탄원",
+      "titleEn": "Appeal for Onesimus",
+      "summaryKo": "도망친 종 오네시모를 형제로 받아주길 빌레몬에게 탄원합니다.",
+      "summaryEn": "Appeals to Philemon to receive runaway slave Onesimus as a brother.",
+      "messageKo": "그가 전에는 네게 무익하였으나 이제는 나와 네게 유익하니라.",
+      "messageEn": "Formerly he was useless to you, but now he has become useful both to you and to me.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "믿음의 교제가 역사하기를", "eventEn": "Sharing of faith be effective"},
+        {"verse": 10, "eventKo": "내 아들 오네시모를 위해 간구함", "eventEn": "Appeal for my son Onesimus"},
+        {"verse": 11, "eventKo": "전에는 무익했으나 이제는 유익", "eventEn": "Formerly useless, now useful"},
+        {"verse": 16, "eventKo": "종이 아니요 사랑받는 형제로", "eventEn": "No longer slave but dear brother"},
+        {"verse": 18, "eventKo": "그가 빚진 것이 있으면 내게 청구하라", "eventEn": "If he owes, charge it to me"},
+        {"verse": 21, "eventKo": "네 순종을 확신하고 씀", "eventEn": "Confident of your obedience"}
+      ],
+      "timelineYear": "AD 60-62"
+    }
+  ]
+}

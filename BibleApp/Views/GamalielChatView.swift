@@ -539,10 +539,10 @@ struct GamalielChatView: View {
                 .buttonStyle(.glassCircleUltraThin)
                 .animation(.easeInOut(duration: 0.2), value: isInputFocused)
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, isInputFocused ? 8 : 28)
         }
         .padding(.vertical, 12)
-        .padding(.bottom, safeAreaBottom)
+        .padding(.bottom, safeAreaBottom - 16 + (isInputFocused ? 12 : 0))
         .animation(.easeOut(duration: 0.2), value: viewModel.attachedVerse != nil)
         .animation(.easeOut(duration: 0.15), value: viewModel.inputText.isEmpty)
     }

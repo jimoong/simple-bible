@@ -94,8 +94,11 @@ struct SlotMachineView: View {
             }
         }
         .onChange(of: viewModel.currentVerseIndex) { oldValue, newValue in
-            if scrollPosition != newValue {
-                // Set immediately without animation to ensure correct positioning
+            // Always update scroll position when verse index changes (during navigation)
+            // Use transaction to disable animation for instant positioning
+            var transaction = Transaction()
+            transaction.disablesAnimations = true
+            withTransaction(transaction) {
                 scrollPosition = newValue
             }
         }

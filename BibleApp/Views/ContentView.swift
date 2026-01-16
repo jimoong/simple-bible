@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var selectedVerseForMenu: BibleVerse? = nil
     @State private var editingFavorite: FavoriteVerse? = nil
     @State private var isFavoritesFilterExpanded = false  // Hide back button when filter menu is open
+    @State private var scrollToFavoriteId: String? = nil  // Scroll to specific favorite on open
     
     // Clean reading mode - hide controls while scrolling
     @State private var hideControlsWhileScrolling = false
@@ -142,9 +143,8 @@ struct ContentView: View {
                                     }
                                 },
                                 onFavoritesSelect: {
-                                    withAnimation(.easeInOut(duration: 0.25)) {
-                                        showFavoritesInBookshelf = true
-                                    }
+                                    // Set state immediately, then animate the transition
+                                    showFavoritesInBookshelf = true
                                 },
                                 onNavigate: { book, chapter, verse in
                                     // Restart listening mode with new chapter if was listening
@@ -194,13 +194,13 @@ struct ContentView: View {
                                 onNavigateToVerse: { favorite in
                                     // Navigate to the verse location
                                     if let book = BibleData.book(by: favorite.bookId) {
-                                        // Set navigating flag BEFORE dismissing bookshelf to prevent race condition
-                                        // where SlotMachineView snaps to position 0 before navigateTo runs
-                                        viewModel.isNavigating = true
                                         let wasInListeningMode = listeningViewModel.isActive
-                                        dismissBookshelf()
+                                        // Navigate FIRST, then dismiss bookshelf
+                                        // This ensures the correct verse position is set before the reading view appears
                                         Task {
                                             await viewModel.navigateTo(book: book, chapter: favorite.chapter, verse: favorite.verseNumber)
+                                            // Now dismiss bookshelf after navigation is complete
+                                            dismissBookshelf()
                                             // Restart listening mode with new chapter if was listening
                                             if wasInListeningMode {
                                                 listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
@@ -219,9 +219,16 @@ struct ContentView: View {
                                         textKr: favorite.textKr
                                     )
                                 },
-                                isFilterExpanded: $isFavoritesFilterExpanded
+                                isFilterExpanded: $isFavoritesFilterExpanded,
+                                scrollToId: scrollToFavoriteId
                             )
                             .transition(.opacity)
+                            .onAppear {
+                                // Clear scrollToId after view appears (so it doesn't scroll again on re-appear)
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    scrollToFavoriteId = nil
+                                }
+                            }
                         }
                     }
                     .ignoresSafeArea()
@@ -260,7 +267,7 @@ struct ContentView: View {
                     .zIndex(28)  // Above listening mode (25) so panel appears on top
                 }
                 
-                // Full-screen tap overlay to close FAB menu (blocks all other interactions)
+                // Full-screen tap overlay to close FAB menu (blocks other interactions but NOT the FAB itself)
                 if isSettingsFABExpanded {
                     Color.clear
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -271,11 +278,11 @@ struct ContentView: View {
                             }
                         }
                         .ignoresSafeArea()
-                        .zIndex(2.5)
+                        .zIndex(28.5)  // Below floating controls (29) but above chapter info panel (28)
                 }
                 
-                // Floating controls at bottom (hidden when in books grid or top panel chapters)
-                if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil && !showFavoritesInBookshelf) && !isShowingTopPanelChapters {
+                // Floating controls at bottom (hidden when in books grid, top panel chapters, or listening mode)
+                if !(isShowingFullscreenBookshelf && fullscreenSelectedBook == nil && !showFavoritesInBookshelf) && !isShowingTopPanelChapters && !listeningViewModel.isActive {
                     VStack {
                         Spacer()
                         
@@ -321,13 +328,13 @@ struct ContentView: View {
                                 )
                             }
                         }
-                        .padding(.horizontal, 20)
-                        .padding(.bottom, geometry.safeAreaInsets.bottom + 8)
+                        .padding(.horizontal, 28)
+                        .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
                         // Hide controls while scrolling in scroll mode (clean reading experience)
                         .opacity(hideControlsWhileScrolling && viewModel.readingMode == .scroll ? 0 : 1)
                     }
                     .ignoresSafeArea()
-                    .zIndex(3)
+                    .zIndex(29)  // Above bookshelf (27) and chapter info panel (28)
                 }
                 
                 // Voice search overlay
@@ -552,8 +559,33 @@ struct ContentView: View {
     }
     
     private func handleSaveVerse(_ verse: BibleVerse) {
-        editingFavorite = nil
-        selectedVerseForMenu = verse
+        // Check if already saved
+        let favoriteId = "\(viewModel.currentBook.id)_\(verse.chapter)_\(verse.verseNumber)"
+        if FavoriteService.shared.isFavorite(verse: verse, book: viewModel.currentBook) {
+            // Already saved - navigate to favorites list scrolled to this item
+            navigateToFavorite(id: favoriteId)
+        } else {
+            // Not saved - open note overlay to save
+            editingFavorite = nil
+            selectedVerseForMenu = verse
+        }
+    }
+    
+    private func navigateToFavorite(id: String) {
+        // Set scroll target and navigate to favorites
+        scrollToFavoriteId = id
+        
+        // Reset navigation state and set favorites flag FIRST (before animation)
+        // This ensures the favorites view shows when bookshelf opens
+        fullscreenSelectedBook = nil
+        viewModel.selectedBookForChapter = nil
+        showFavoritesInBookshelf = true
+        
+        // Then animate the bookshelf opening
+        withAnimation(.easeInOut(duration: 0.25)) {
+            viewModel.showBookshelf = true
+        }
+        HapticManager.shared.selection()
     }
     
     private func handleCopyVerse(_ verse: BibleVerse) {
@@ -650,7 +682,7 @@ struct ContentView: View {
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.white)
             }
-            .frame(width: 52, height: 52)
+            .frame(width: 48, height: 48)
         }
         .buttonStyle(BookshelfButtonStyle())
     }
@@ -666,7 +698,7 @@ struct ContentView: View {
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.white)
             }
-            .frame(width: 52, height: 52)
+            .frame(width: 48, height: 48)
         }
         .buttonStyle(BookshelfButtonStyle())
     }

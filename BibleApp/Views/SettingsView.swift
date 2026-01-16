@@ -1,5 +1,6 @@
 import SwiftUI
 import MessageUI
+import AVFoundation
 
 struct SettingsView: View {
     @Binding var languageMode: LanguageMode
@@ -13,9 +14,12 @@ struct SettingsView: View {
     @State private var showPrimaryPicker: Bool = false
     @State private var showSecondaryPicker: Bool = false
     @State private var showOfflineDownloads: Bool = false
+    @State private var showVoicePicker: Bool = false
+    @State private var selectedVoice: String = TTSService.shared.selectedVoice
     @State private var mailError: String?
     @State private var showClearDataConfirmation = false
     @State private var downloadedCount: Int = 0
+    @State private var isPlayingVoiceDemo: Bool = false
     
     
     private let appVersion = "1.0.0"
@@ -37,14 +41,17 @@ struct SettingsView: View {
                         // Languages Section
                         languagesSection
                         
-                        // Offline Downloads Section
-                        offlineSection
-                        
                         // Reading Section
                         readingSection
                         
+                        // Listening Section
+                        listeningSection
+                        
                         // About Section
                         aboutSection
+                        
+                        // Offline Downloads Section
+                        offlineSection
                         
                         // Developer Section
                         developerSection
@@ -103,6 +110,19 @@ struct SettingsView: View {
         .sheet(isPresented: $showOfflineDownloads) {
             OfflineDownloadView(isKoreanUI: isKoreanUI)
         }
+        .sheet(isPresented: $showVoicePicker) {
+            VoicePickerSheet(
+                isKoreanUI: isKoreanUI,
+                selectedVoice: $selectedVoice,
+                onSelect: { voice in
+                    TTSService.shared.selectedVoice = voice
+                    selectedVoice = voice
+                },
+                onPlayDemo: { voice in
+                    playVoiceDemo(voice: voice)
+                }
+            )
+        }
         .alert(isKoreanUI ? "메일 오류" : "Mail Error", isPresented: .constant(mailError != nil)) {
             Button(isKoreanUI ? "확인" : "OK") { mailError = nil }
         } message: {
@@ -134,6 +154,7 @@ struct SettingsView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 
@@ -159,6 +180,7 @@ struct SettingsView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             }
@@ -200,6 +222,7 @@ struct SettingsView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             }
@@ -317,6 +340,123 @@ struct SettingsView: View {
         }
     }
     
+    // MARK: - Listening Section
+    private var listeningSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            sectionHeader(title: isKoreanUI ? "듣기" : "Listening")
+            
+            VStack(spacing: 0) {
+                // Voice Selection
+                Button {
+                    HapticManager.shared.selection()
+                    showVoicePicker = true
+                } label: {
+                    HStack {
+                        Text(isKoreanUI ? "목소리" : "Voice")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white)
+                        
+                        Spacer()
+                        
+                        HStack(spacing: 8) {
+                            Text(selectedVoice.capitalized)
+                                .font(.system(size: 16))
+                                .foregroundStyle(.white.opacity(0.4))
+                            
+                            Image(systemName: "chevron.right")
+                                .font(.system(size: 14, weight: .medium))
+                                .foregroundStyle(.white.opacity(0.3))
+                        }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 14)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(.white.opacity(0.04))
+            )
+        }
+    }
+    
+    private func playVoiceDemo(voice: String) {
+        guard !isPlayingVoiceDemo else { return }
+        isPlayingVoiceDemo = true
+        
+        let voiceDisplayName = voice.capitalized
+        let demoText = isKoreanUI 
+            ? "안녕하세요, 반갑습니다. 저는 \(voiceDisplayName)입니다."
+            : "Hi, nice to meet you. I'm \(voiceDisplayName)."
+        
+        // Temporarily change voice to play demo
+        let originalVoice = TTSService.shared.selectedVoice
+        TTSService.shared.selectedVoice = voice
+        
+        Task {
+            do {
+                let audioData = try await generateDemoSpeech(text: demoText)
+                await MainActor.run {
+                    playDemoAudio(data: audioData)
+                }
+            } catch {
+                print("Voice demo error: \(error)")
+            }
+            
+            // Restore original voice after demo
+            await MainActor.run {
+                TTSService.shared.selectedVoice = originalVoice
+                isPlayingVoiceDemo = false
+            }
+        }
+    }
+    
+    private func generateDemoSpeech(text: String) async throws -> Data {
+        let apiKey = Constants.OpenAI.apiKey
+        guard !apiKey.isEmpty && !apiKey.contains("YOUR") else {
+            throw NSError(domain: "TTS", code: -1, userInfo: [NSLocalizedDescriptionKey: "No API key"])
+        }
+        
+        guard let url = URL(string: Constants.OpenAI.ttsURL) else {
+            throw NSError(domain: "TTS", code: -1, userInfo: [NSLocalizedDescriptionKey: "Invalid URL"])
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("Bearer \(apiKey)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        let body: [String: Any] = [
+            "model": Constants.OpenAI.ttsModel,
+            "voice": TTSService.shared.selectedVoice,
+            "input": text,
+            "speed": 1.0,
+            "response_format": "mp3"
+        ]
+        
+        request.httpBody = try JSONSerialization.data(withJSONObject: body)
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            throw NSError(domain: "TTS", code: -1, userInfo: [NSLocalizedDescriptionKey: "API Error"])
+        }
+        
+        return data
+    }
+    
+    @State private var demoAudioPlayer: AVAudioPlayer?
+    
+    private func playDemoAudio(data: Data) {
+        do {
+            demoAudioPlayer = try AVAudioPlayer(data: data)
+            demoAudioPlayer?.play()
+        } catch {
+            print("Audio playback error: \(error)")
+        }
+    }
+    
     // MARK: - About Section
     private var aboutSection: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -360,6 +500,7 @@ struct SettingsView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             }
@@ -392,6 +533,7 @@ struct SettingsView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
                 
@@ -413,6 +555,7 @@ struct SettingsView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
             }
@@ -717,6 +860,156 @@ struct TranslationPickerSheet: View {
             .padding(.vertical, 12)
         }
         .buttonStyle(.plain)
+    }
+}
+
+// MARK: - Voice Picker Sheet
+struct VoicePickerSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    let isKoreanUI: Bool
+    @Binding var selectedVoice: String
+    var onSelect: (String) -> Void
+    var onPlayDemo: (String) -> Void
+    
+    // Voice data grouped by gender
+    private let femaleVoices = [
+        ("nova", "Nova", "밝고 친근한"),
+        ("shimmer", "Shimmer", "부드럽고 표현력 있는"),
+        ("fable", "Fable", "영국식, 스토리텔링")
+    ]
+    
+    private let maleVoices = [
+        ("alloy", "Alloy", "중성적, 균형 잡힌"),
+        ("echo", "Echo", "깊고 울림 있는"),
+        ("onyx", "Onyx", "깊고 권위 있는")
+    ]
+    
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                Color(hex: "0a0a0a")
+                    .ignoresSafeArea()
+                
+                ScrollView {
+                    VStack(spacing: 20) {
+                        // Female voices
+                        voiceGroup(
+                            title: isKoreanUI ? "여성" : "Female",
+                            voices: femaleVoices
+                        )
+                        
+                        // Male voices
+                        voiceGroup(
+                            title: isKoreanUI ? "남성" : "Male",
+                            voices: maleVoices
+                        )
+                        
+                        Spacer(minLength: 40)
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.top, 16)
+                }
+            }
+            .navigationTitle(isKoreanUI ? "목소리 선택" : "Select Voice")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(isKoreanUI ? "취소" : "Cancel") {
+                        dismiss()
+                    }
+                    .foregroundStyle(.white.opacity(0.6))
+                }
+            }
+            .toolbarBackground(Color(hex: "0a0a0a"), for: .navigationBar)
+        }
+        .preferredColorScheme(.dark)
+    }
+    
+    private func voiceGroup(title: String, voices: [(String, String, String)]) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(title.uppercased())
+                .font(.system(size: 12, weight: .medium))
+                .foregroundStyle(.white.opacity(0.35))
+                .kerning(0.8)
+                .padding(.leading, 4)
+            
+            VStack(spacing: 0) {
+                ForEach(Array(voices.enumerated()), id: \.1.0) { index, voice in
+                    voiceRow(
+                        id: voice.0,
+                        name: voice.1,
+                        description: voice.2,
+                        isLast: index == voices.count - 1
+                    )
+                }
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(.white.opacity(0.04))
+            )
+        }
+    }
+    
+    private func voiceRow(id: String, name: String, description: String, isLast: Bool) -> some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 12) {
+                // Checkmark area (fixed width for alignment)
+                Group {
+                    if selectedVoice == id {
+                        Image(systemName: "checkmark")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundStyle(Color(hex: "22c55e"))
+                    } else {
+                        Color.clear
+                    }
+                }
+                .frame(width: 20)
+                
+                // Tappable row content (selects voice)
+                Button {
+                    HapticManager.shared.selection()
+                    onSelect(id)
+                } label: {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 2) {
+                            Text(name)
+                                .font(.system(size: 16))
+                                .foregroundStyle(.white)
+                            
+                            Text(description)
+                                .font(.system(size: 13))
+                                .foregroundStyle(.white.opacity(0.4))
+                        }
+                        
+                        Spacer()
+                    }
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                
+                // Play button (plays demo only, doesn't select)
+                Button {
+                    HapticManager.shared.selection()
+                    onPlayDemo(id)
+                } label: {
+                    Image(systemName: "play.circle.fill")
+                        .font(.system(size: 28))
+                        .foregroundStyle(.white.opacity(0.6))
+                        .frame(width: 44, height: 44)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+            }
+            .padding(.leading, 16)
+            .padding(.trailing, 8)
+            .padding(.vertical, 6)
+            
+            if !isLast {
+                Divider()
+                    .background(.white.opacity(0.06))
+                    .padding(.leading, 48)  // Align with text after checkmark
+            }
+        }
     }
 }
 

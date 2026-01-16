@@ -1,0 +1,88 @@
+{
+  "bookId": "1thessalonians",
+  "bookNumber": 52,
+  "bookNameKo": "데살로니가전서",
+  "bookNameEn": "1 Thessalonians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "믿음의 본이 된 교회",
+      "titleEn": "Model Church",
+      "summaryKo": "데살로니가 교회의 믿음과 소망과 사랑을 칭찬합니다.",
+      "summaryEn": "Commends Thessalonians for their faith, hope, and love.",
+      "messageKo": "너희가 모든 믿는 자의 본이 되었으니.",
+      "messageEn": "You became a model to all the believers.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "믿음의 역사, 사랑의 수고, 소망의 인내", "eventEn": "Work of faith, labor of love, endurance of hope"},
+        {"verse": 5, "eventKo": "복음이 말뿐 아니라 능력과 성령으로", "eventEn": "Gospel came not only in words but power"},
+        {"verse": 7, "eventKo": "모든 믿는 자의 본이 됨", "eventEn": "Model to all believers"},
+        {"verse": 9, "eventKo": "우상에서 돌이켜 살아 계신 하나님께", "eventEn": "Turned from idols to serve living God"}
+      ],
+      "timelineYear": "AD 50-51"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "바울의 사역",
+      "titleEn": "Paul's Ministry",
+      "summaryKo": "데살로니가에서의 바울의 진실한 사역과 성도에 대한 사랑을 회상합니다.",
+      "summaryEn": "Recalls Paul's sincere ministry and love for the believers in Thessalonica.",
+      "messageKo": "어머니가 자기 자녀를 기름과 같이 너희 가운데서 유순하게 행하였다.",
+      "messageEn": "We were like a nursing mother caring for her children.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사람을 기쁘게 함이 아니요 하나님을", "eventEn": "Not trying to please people but God"},
+        {"verse": 7, "eventKo": "어머니가 자녀를 기름같이", "eventEn": "Like nursing mother caring for children"},
+        {"verse": 11, "eventKo": "아버지가 자녀에게 하듯이 권면", "eventEn": "Like father dealt with each of you"},
+        {"verse": 19, "eventKo": "너희가 우리의 소망이요 기쁨이요 면류관", "eventEn": "You are our hope, joy, and crown"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "디모데의 격려",
+      "titleEn": "Timothy's Encouragement",
+      "summaryKo": "디모데를 보내어 믿음을 확인하고 좋은 소식에 기뻐합니다.",
+      "summaryEn": "Sent Timothy to strengthen faith and rejoices at good news.",
+      "messageKo": "지금 우리가 사는 것은 너희가 주 안에 서 있으면이니.",
+      "messageEn": "For now we really live, since you are standing firm in the Lord.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "디모데를 보내어 굳건하게 하려고", "eventEn": "Sent Timothy to strengthen"},
+        {"verse": 6, "eventKo": "디모데가 좋은 소식을 전함", "eventEn": "Timothy brought good news"},
+        {"verse": 8, "eventKo": "너희가 주 안에 서 있으면 우리가 삶", "eventEn": "We live if you stand firm"},
+        {"verse": 12, "eventKo": "서로 사랑이 넘치기를", "eventEn": "Love increase and overflow"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "거룩한 삶과 재림",
+      "titleEn": "Holy Living and Christ's Return",
+      "summaryKo": "거룩하게 살라 권면하고 주의 재림과 부활의 소망을 가르칩니다.",
+      "summaryEn": "Urges holy living and teaches hope of Lord's return and resurrection.",
+      "messageKo": "주께서 호령과 천사장의 소리와 하나님의 나팔 소리로 친히 하늘로부터 강림하시리니.",
+      "messageEn": "The Lord himself will come down from heaven with a loud command, with the voice of the archangel and the trumpet call of God.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "하나님의 뜻은 너희의 거룩함", "eventEn": "God's will is your sanctification"},
+        {"verse": 11, "eventKo": "조용히 자기 일을 하라", "eventEn": "Live quietly, mind your own business"},
+        {"verse": 14, "eventKo": "예수 안에서 자는 자를 함께 데려오심", "eventEn": "God will bring with Jesus those fallen asleep"},
+        {"verse": 17, "eventKo": "공중에서 주를 영접함", "eventEn": "Caught up to meet the Lord in the air"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "주의 날을 준비",
+      "titleEn": "Ready for Lord's Day",
+      "summaryKo": "주의 날이 도적같이 오니 깨어 있으라 권면합니다.",
+      "summaryEn": "Urges readiness as Lord's day comes like a thief.",
+      "messageKo": "항상 기뻐하라 쉬지 말고 기도하라 범사에 감사하라.",
+      "messageEn": "Rejoice always, pray continually, give thanks in all circumstances.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "주의 날이 도적같이 임함", "eventEn": "Lord's day comes like thief"},
+        {"verse": 8, "eventKo": "믿음과 사랑의 호심경, 구원의 소망의 투구", "eventEn": "Breastplate of faith and love, helmet of hope"},
+        {"verse": 16, "eventKo": "항상 기뻐하라", "eventEn": "Rejoice always"},
+        {"verse": 17, "eventKo": "쉬지 말고 기도하라", "eventEn": "Pray continually"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

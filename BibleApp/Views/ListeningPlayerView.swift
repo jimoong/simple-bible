@@ -13,7 +13,7 @@ struct ListeningPlayerView: View {
     var onChat: () -> Void = {}
     var onExit: () -> Void = {}
     
-    private let buttonSize: CGFloat = 52
+    private let buttonSize: CGFloat = 48
     
     var body: some View {
         VStack(spacing: 30) {
@@ -28,8 +28,8 @@ struct ListeningPlayerView: View {
             // Bottom: Action buttons (left) + Close button (right)
             bottomActionButtons
         }
-        .padding(.horizontal, 20)
-        .padding(.bottom, safeAreaBottom + 8)
+        .padding(.horizontal, 28)
+        .padding(.bottom, safeAreaBottom - 4)
         .background(playerBackground)
     }
     

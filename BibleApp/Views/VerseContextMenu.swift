@@ -16,6 +16,7 @@ struct VerseSelectionOverlay: View {
     let language: LanguageMode
     let anchorPosition: CGPoint
     let onSave: () -> Void
+    let onNavigateToSaved: () -> Void  // Navigate to favorites list when already saved
     let onCopy: () -> Void
     let onAsk: () -> Void
     let onDismiss: () -> Void
@@ -134,9 +135,13 @@ struct VerseSelectionOverlay: View {
     // MARK: - Native iOS Context Menu Action Group
     private var actionMenuGroup: some View {
         VStack(spacing: 0) {
-            // Save/Like action
+            // Save/Like action - different behavior based on saved state
             Button {
-                onSave()
+                if isFavorite {
+                    onNavigateToSaved()  // Navigate to favorites list
+                } else {
+                    onSave()  // Open note overlay to save
+                }
             } label: {
                 HStack {
                     Text(isFavorite 
@@ -218,6 +223,7 @@ struct VerseSelectionOverlay: View {
         language: .kr,
         anchorPosition: CGPoint(x: 200, y: 400),
         onSave: {},
+        onNavigateToSaved: {},
         onCopy: {},
         onAsk: {},
         onDismiss: {}

@@ -1,0 +1,56 @@
+{
+  "bookId": "2thessalonians",
+  "bookNumber": 53,
+  "bookNameKo": "데살로니가후서",
+  "bookNameEn": "2 Thessalonians",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "핍박 중의 위로",
+      "titleEn": "Comfort in Persecution",
+      "summaryKo": "핍박 중에도 자라는 믿음을 칭찬하고 심판 때의 보응을 말합니다.",
+      "summaryEn": "Commends growing faith amid persecution and speaks of coming judgment.",
+      "messageKo": "너희의 믿음이 더욱 자라고 서로 사랑함이 풍성하니.",
+      "messageEn": "Your faith is growing more and more, and the love all of you have for one another is increasing.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "믿음이 자라고 사랑이 풍성함", "eventEn": "Faith growing, love increasing"},
+        {"verse": 5, "eventKo": "하나님 나라에 합당하게 여김 받음", "eventEn": "Counted worthy of kingdom of God"},
+        {"verse": 7, "eventKo": "주 예수께서 하늘에서 나타나실 때", "eventEn": "When Lord Jesus is revealed from heaven"},
+        {"verse": 10, "eventKo": "그의 성도들에게서 영광을 받으심", "eventEn": "Glorified in his holy people"}
+      ],
+      "timelineYear": "AD 51-52"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "불법의 사람",
+      "titleEn": "Man of Lawlessness",
+      "summaryKo": "주의 날이 오기 전에 불법의 사람이 나타남을 가르칩니다.",
+      "summaryEn": "Teaches that man of lawlessness must appear before Lord's day.",
+      "messageKo": "먼저 배교하는 일이 있고 저 불법의 사람 곧 멸망의 아들이 나타나리라.",
+      "messageEn": "That day will not come until the rebellion occurs and the man of lawlessness is revealed.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "먼저 배교하는 일이 있고", "eventEn": "Rebellion comes first"},
+        {"verse": 4, "eventKo": "불법의 사람이 하나님 성전에 앉음", "eventEn": "Man of lawlessness sets up in temple"},
+        {"verse": 8, "eventKo": "주께서 입의 기운으로 멸하심", "eventEn": "Lord will overthrow with breath of his mouth"},
+        {"verse": 15, "eventKo": "전통을 굳게 지키라", "eventEn": "Stand firm, hold to teachings"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "게으른 자를 경계",
+      "titleEn": "Warning Against Idleness",
+      "summaryKo": "기도를 부탁하고 게으른 자를 경계하며 부지런히 일하라 권면합니다.",
+      "summaryEn": "Requests prayer, warns against idleness, urges diligent work.",
+      "messageKo": "일하기 싫어하거든 먹지도 말게 하라.",
+      "messageEn": "The one who is unwilling to work shall not eat.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "주의 말씀이 달려가기를", "eventEn": "Pray that word of Lord may spread"},
+        {"verse": 6, "eventKo": "게으르게 행하는 자를 멀리하라", "eventEn": "Keep away from idle believers"},
+        {"verse": 10, "eventKo": "일하기 싫으면 먹지도 말라", "eventEn": "Unwilling to work shall not eat"},
+        {"verse": 13, "eventKo": "선을 행하다 낙심하지 말라", "eventEn": "Never tire of doing good"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "bookId": "titus",
+  "bookNumber": 56,
+  "bookNameKo": "디도서",
+  "bookNameEn": "Titus",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "장로의 자격",
+      "titleEn": "Qualifications for Elders",
+      "summaryKo": "그레데 교회의 장로 임명과 자격, 거짓 교사 경계를 가르칩니다.",
+      "summaryEn": "Teaches appointing elders in Crete, their qualifications, and warning against false teachers.",
+      "messageKo": "책망할 것이 없고 한 아내의 남편이며 자녀들도 신자로서 방탕하다는 비난을 받거나 불순종하는 일이 없는 자라야 할지라.",
+      "messageEn": "An elder must be blameless, faithful to his wife, with believing children not open to accusation of being wild.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "각 성에서 장로들을 세우라", "eventEn": "Appoint elders in every town"},
+        {"verse": 6, "eventKo": "책망할 것이 없고 한 아내의 남편", "eventEn": "Blameless, husband of one wife"},
+        {"verse": 9, "eventKo": "미쁜 말씀을 굳게 지키며", "eventEn": "Hold firmly to trustworthy message"},
+        {"verse": 16, "eventKo": "하나님을 시인하나 행위로는 부인", "eventEn": "Claim to know God but deny by actions"}
+      ],
+      "timelineYear": "AD 63-65"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "바른 가르침",
+      "titleEn": "Sound Doctrine",
+      "summaryKo": "각 연령과 신분에 맞는 바른 가르침과 경건한 삶을 권면합니다.",
+      "summaryEn": "Urges sound teaching appropriate for each age and status, and godly living.",
+      "messageKo": "우리를 대속하시고 우리를 깨끗하게 하사 선한 일을 열심히 하는 자기 백성이 되게 하셨느니라.",
+      "messageEn": "He gave himself for us to redeem us and to purify for himself a people eager to do good.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "늙은 남자는 절제하며 경건하며", "eventEn": "Older men be temperate, worthy"},
+        {"verse": 4, "eventKo": "젊은 여자를 교훈하여", "eventEn": "Train younger women"},
+        {"verse": 11, "eventKo": "모든 사람에게 구원을 주시는 은혜가 나타남", "eventEn": "Grace that brings salvation appeared"},
+        {"verse": 14, "eventKo": "선한 일을 열심히 하는 백성", "eventEn": "People eager to do good"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "선한 행실",
+      "titleEn": "Doing Good",
+      "summaryKo": "관원에게 순종하고 선한 일에 힘쓰며 분쟁을 피하라 권면합니다.",
+      "summaryEn": "Urges submission to authorities, devotion to doing good, and avoiding quarrels.",
+      "messageKo": "우리를 구원하시되 우리가 행한 바 의로운 행위로 말미암지 아니하고 오직 그의 긍휼하심을 따라 중생의 씻음과 성령의 새롭게 하심으로 하셨나니.",
+      "messageEn": "He saved us, not because of righteous things we had done, but because of his mercy through the washing of rebirth and renewal by the Holy Spirit.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "관원들에게 복종하라", "eventEn": "Submit to rulers and authorities"},
+        {"verse": 3, "eventKo": "우리도 전에는 어리석고", "eventEn": "We ourselves were once foolish"},
+        {"verse": 5, "eventKo": "의로운 행위가 아니라 긍휼로 구원", "eventEn": "Saved not by works but by mercy"},
+        {"verse": 8, "eventKo": "선한 일을 힘쓰게 하라", "eventEn": "Devote themselves to doing good"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}

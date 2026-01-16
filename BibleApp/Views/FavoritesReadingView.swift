@@ -16,6 +16,7 @@ struct FavoritesReadingView: View {
     let onNavigateToVerse: (FavoriteVerse) -> Void
     let onEditFavorite: (FavoriteVerse) -> Void
     @Binding var isFilterExpanded: Bool  // Expose to parent to hide back button
+    var scrollToId: String? = nil  // Scroll to specific favorite on appear
     
     @State private var favorites: [FavoriteVerse] = []
     @State private var glowAnimating = false
@@ -75,8 +76,8 @@ struct FavoritesReadingView: View {
                             isExpanded: $isFilterExpanded
                         )
                     }
-                    .padding(.horizontal, 24)
-                    .padding(.bottom, safeAreaBottom + 8)
+                    .padding(.horizontal, 28)
+                    .padding(.bottom, safeAreaBottom - 4)
                 }
             }
         }
@@ -159,38 +160,51 @@ struct FavoritesReadingView: View {
     
     // MARK: - Favorites Scroll View
     private var favoritesScrollView: some View {
-        ScrollView(.vertical, showsIndicators: true) {
-            VStack(spacing: 24) {
-                // Title (same position as bookshelf)
-                titleSection
-                    .padding(.top, safeAreaTop + 16)
-                
-                // Favorites list (filtered)
-                LazyVStack(spacing: 10) {
-                    ForEach(filteredFavorites) { favorite in
-                        FavoriteVerseRow(
-                            favorite: favorite,
-                            language: language,
-                            onTap: {
-                                onNavigateToVerse(favorite)
-                            },
-                            onCopy: {
-                                copyVerse(favorite)
-                            },
-                            onEdit: {
-                                onEditFavorite(favorite)
-                            },
-                            onDelete: {
-                                deleteFavorite(favorite)
-                            }
-                        )
+        ScrollViewReader { proxy in
+            ScrollView(.vertical, showsIndicators: true) {
+                VStack(spacing: 24) {
+                    // Title (same position as bookshelf)
+                    titleSection
+                        .padding(.top, safeAreaTop + 16)
+                    
+                    // Favorites list (filtered)
+                    LazyVStack(spacing: 10) {
+                        ForEach(filteredFavorites) { favorite in
+                            FavoriteVerseRow(
+                                favorite: favorite,
+                                language: language,
+                                onTap: {
+                                    onNavigateToVerse(favorite)
+                                },
+                                onCopy: {
+                                    copyVerse(favorite)
+                                },
+                                onEdit: {
+                                    onEditFavorite(favorite)
+                                },
+                                onDelete: {
+                                    deleteFavorite(favorite)
+                                }
+                            )
+                            .id(favorite.id)  // For ScrollViewReader
+                        }
+                    }
+                    .padding(.horizontal, 10)
+                }
+                .padding(.bottom, safeAreaBottom + 100)
+            }
+            .scrollIndicators(.visible)
+            .onAppear {
+                // Scroll to specific favorite if requested
+                if let targetId = scrollToId {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        withAnimation(.easeOut(duration: 0.4)) {
+                            proxy.scrollTo(targetId, anchor: .center)
+                        }
                     }
                 }
-                .padding(.horizontal, 10)
             }
-            .padding(.bottom, safeAreaBottom + 100)
         }
-        .scrollIndicators(.visible)
     }
     
     // MARK: - Helper Methods
@@ -408,6 +422,7 @@ struct FilterFAB: View {
                     .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(.white)
                     .lineLimit(1)
+                    .fixedSize(horizontal: true, vertical: false)
                 
                 Text("\(displayCount)")
                     .font(.system(size: 13, weight: .semibold))
@@ -418,9 +433,11 @@ struct FilterFAB: View {
                         Capsule()
                             .fill(.white.opacity(0.12))
                     )
+                    .fixedSize(horizontal: true, vertical: false)
             }
             .padding(.horizontal, 14)
             .frame(height: collapsedHeight)
+            .fixedSize(horizontal: true, vertical: false)
             .background(
                 Capsule()
                     .fill(.ultraThinMaterial)

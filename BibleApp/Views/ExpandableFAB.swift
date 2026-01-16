@@ -23,7 +23,7 @@ struct ExpandableFAB: View {
     }
     
     // Layout
-    private let collapsedSize: CGFloat = 52
+    private let collapsedSize: CGFloat = 48
     private let expandedWidth: CGFloat = 210  // Larger - left buttons hidden when expanded
     private let menuItemHeight: CGFloat = 48  // Taller items
     private let menuPadding: CGFloat = 8
