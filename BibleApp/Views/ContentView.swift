@@ -57,6 +57,8 @@ struct ContentView: View {
                             handleCopyVerse(verse)
                         }, onAskVerse: { verse in
                             handleAskVerse(verse)
+                        }, onListenFromVerse: { verseIndex in
+                            enterListeningMode(fromVerseIndex: verseIndex)
                         })
                     } else {
                         BookReadingView(viewModel: viewModel, onHeaderTap: {
@@ -67,6 +69,8 @@ struct ContentView: View {
                             handleCopyVerse(verse)
                         }, onAskVerse: { verse in
                             handleAskVerse(verse)
+                        }, onListenFromVerse: { verseIndex in
+                            enterListeningMode(fromVerseIndex: verseIndex)
                         }, onScrollStateChange: { isScrolling in
                             withAnimation(.easeOut(duration: 0.25)) {
                                 hideControlsWhileScrolling = isScrolling
@@ -608,14 +612,18 @@ struct ContentView: View {
     
     // MARK: - Listening Mode
     
-    private func enterListeningMode() {
+    private func enterListeningMode(fromVerseIndex: Int = 0) {
         // Dismiss any open panels
         if viewModel.showBookshelf {
             dismissBookshelf()
         }
         
         // Start listening mode with current chapter's verses
-        listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+        if fromVerseIndex > 0 {
+            listeningViewModel.startFrom(verses: viewModel.verses, language: viewModel.languageMode, verseIndex: fromVerseIndex)
+        } else {
+            listeningViewModel.start(verses: viewModel.verses, language: viewModel.languageMode)
+        }
         HapticManager.shared.selection()
     }
     

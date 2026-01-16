@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 
 /// Bottom player panel for listening mode
 struct ListeningPlayerView: View {
@@ -13,6 +14,9 @@ struct ListeningPlayerView: View {
     var onChat: () -> Void = {}
     var onExit: () -> Void = {}
     
+    // Volume control
+    @State private var volume: Float = TTSService.shared.volume
+    
     private let buttonSize: CGFloat = 48
     
     var body: some View {
@@ -24,6 +28,10 @@ struct ListeningPlayerView: View {
             
             // Playback controls - simple SF Symbols
             playbackControls
+            
+            // Volume control
+            volumeControl
+                .padding(.horizontal, 10)  // Match progress bar horizontal padding
             
             // Bottom: Action buttons (left) + Close button (right)
             bottomActionButtons
@@ -194,7 +202,46 @@ struct ListeningPlayerView: View {
             }
             .disabled(viewModel.currentVerseIndex >= viewModel.totalVerses - 1)
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, 16)
+    }
+    
+    // MARK: - Volume Control
+    
+    private var volumeControl: some View {
+        HStack(spacing: 8) {
+            // Low volume icon
+            Image(systemName: "speaker.fill")
+                .font(.system(size: 10, weight: .medium))
+                .foregroundStyle(.white.opacity(0.5))
+            
+            // Volume slider
+            GeometryReader { geometry in
+                ZStack(alignment: .leading) {
+                    // Background track
+                    Capsule()
+                        .fill(Color.white.opacity(0.2))
+                    
+                    // Fill track
+                    Capsule()
+                        .fill(Color.white.opacity(0.8))
+                        .frame(width: geometry.size.width * CGFloat(volume))
+                }
+                .gesture(
+                    DragGesture(minimumDistance: 0)
+                        .onChanged { value in
+                            let newVolume = Float(value.location.x / geometry.size.width)
+                            volume = min(1, max(0, newVolume))
+                            TTSService.shared.volume = volume
+                        }
+                )
+            }
+            .frame(height: 6)  // Same height as progress bar
+            
+            // High volume icon
+            Image(systemName: "speaker.wave.3.fill")
+                .font(.system(size: 10, weight: .medium))
+                .foregroundStyle(.white.opacity(0.5))
+        }
     }
     
     // MARK: - Bottom Action Buttons (Same as Reading Mode)

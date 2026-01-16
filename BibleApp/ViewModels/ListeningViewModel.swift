@@ -159,6 +159,11 @@ class ListeningViewModel {
     
     /// Enter listening mode with verses
     func start(verses: [BibleVerse], language: LanguageMode) {
+        startFrom(verses: verses, language: language, verseIndex: 0)
+    }
+    
+    /// Enter listening mode starting from a specific verse
+    func startFrom(verses: [BibleVerse], language: LanguageMode, verseIndex: Int) {
         // Stop any existing playback first
         ttsService.stop()
         
@@ -166,9 +171,9 @@ class ListeningViewModel {
         self.sessionId = UUID()
         
         // Reset all state
-        self.currentVerseIndex = 0
+        self.currentVerseIndex = verseIndex
         self.showCompletionButtons = false
-        self.shouldAutoScroll = false
+        self.shouldAutoScroll = verseIndex > 0  // Auto-scroll if not starting from beginning
         self.highlightedRange = nil
         self.verseReadPositions = [:]  // Reset tracking
         
@@ -177,6 +182,16 @@ class ListeningViewModel {
         self.languageMode = language
         self.isActive = true
         
+        // Mark all previous verses as fully read
+        if verseIndex > 0 {
+            var positions: [Int: Int] = [:]
+            for i in 0..<verseIndex {
+                let verseLength = verses[i].text(for: language).count
+                positions[i] = verseLength
+            }
+            self.verseReadPositions = positions
+        }
+        
         // Re-setup callbacks to ensure they're connected to this instance
         setupCallbacks()
         
@@ -184,7 +199,7 @@ class ListeningViewModel {
         Task { @MainActor in
             // Small delay to allow SwiftUI to process state changes
             try? await Task.sleep(nanoseconds: 100_000_000)  // 100ms
-            self.ttsService.speakVerses(self.verseTexts, language: language)
+            self.ttsService.speakFrom(index: verseIndex, texts: self.verseTexts, language: language)
         }
     }
     
@@ -251,6 +266,11 @@ class ListeningViewModel {
     /// Check if a verse has started playing
     func hasStartedPlaying(verseIndex: Int) -> Bool {
         return verseReadPositions[verseIndex] != nil
+    }
+    
+    /// Refresh callbacks - called when view appears to ensure proper observation
+    func refreshCallbacks() {
+        setupCallbacks()
     }
 }
 

@@ -19,6 +19,7 @@ struct VerseSelectionOverlay: View {
     let onNavigateToSaved: () -> Void  // Navigate to favorites list when already saved
     let onCopy: () -> Void
     let onAsk: () -> Void
+    let onListen: () -> Void  // Listen from this verse
     let onDismiss: () -> Void
     
     @State private var isAppearing = false
@@ -177,6 +178,24 @@ struct VerseSelectionOverlay: View {
             
             Divider()
             
+            // Listen from here action
+            Button {
+                onListen()
+            } label: {
+                HStack {
+                    Text(language == .kr ? "여기서부터 듣기" : "Listen from here")
+                    Spacer()
+                    Image(systemName: "play.fill")
+                }
+                .font(.system(size: 17))
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(.plain)
+            
+            Divider()
+            
             // Ask action
             Button {
                 onAsk()
@@ -226,6 +245,7 @@ struct VerseSelectionOverlay: View {
         onNavigateToSaved: {},
         onCopy: {},
         onAsk: {},
+        onListen: {},
         onDismiss: {}
     )
 }

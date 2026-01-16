@@ -8,6 +8,7 @@ struct VerseCardView: View {
     var onSave: (() -> Void)? = nil
     var onCopy: (() -> Void)? = nil
     var onAsk: (() -> Void)? = nil
+    var onListen: (() -> Void)? = nil
     
     // Dynamic font sizing based on character count
     // Progressively smaller fonts for longer verses
@@ -146,6 +147,15 @@ struct VerseCardView: View {
                 Label(
                     language == .kr ? "복사" : "Copy",
                     systemImage: "doc.on.doc"
+                )
+            }
+            
+            Button {
+                onListen?()
+            } label: {
+                Label(
+                    language == .kr ? "여기서부터 듣기" : "Listen from here",
+                    systemImage: "play.fill"
                 )
             }
             

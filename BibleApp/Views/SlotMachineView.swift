@@ -6,6 +6,7 @@ struct SlotMachineView: View {
     var onSaveVerse: ((BibleVerse) -> Void)? = nil
     var onCopyVerse: ((BibleVerse) -> Void)? = nil
     var onAskVerse: ((BibleVerse) -> Void)? = nil
+    var onListenFromVerse: ((Int) -> Void)? = nil
     @State private var scrollPosition: Int?
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
@@ -212,6 +213,9 @@ struct SlotMachineView: View {
                             },
                             onAsk: {
                                 onAskVerse?(viewModel.verses[index])
+                            },
+                            onListen: {
+                                onListenFromVerse?(index)
                             }
                         )
                         .slotMachineEffect(isScrubbing: isScrubbing)

@@ -82,6 +82,10 @@ struct ListeningModeView: View {
                 scrollToEnd()
             }
         }
+        .onAppear {
+            // Refresh callbacks when view appears to ensure proper observation
+            viewModel.refreshCallbacks()
+        }
     }
     
     // MARK: - Header View (EXACT copy from BookReadingView)
@@ -170,6 +174,13 @@ struct ListeningModeView: View {
             .id(viewModel.sessionId)  // Force scroll view refresh when chapter changes
             .onAppear {
                 scrollProxy = proxy
+                // Initial scroll to starting verse if not from beginning
+                if viewModel.currentVerseIndex > 0 {
+                    // Small delay to ensure view is rendered
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        scrollToVerse(viewModel.currentVerseIndex)
+                    }
+                }
             }
         }
     }

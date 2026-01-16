@@ -47,6 +47,13 @@ class TTSService: NSObject {
         }
     }
     
+    var volume: Float = 1.0 {  // 0.0 to 1.0
+        didSet {
+            audioPlayer?.volume = volume
+            UserDefaults.standard.set(volume, forKey: "tts_volume")
+        }
+    }
+    
     // Available OpenAI voices
     static let availableVoices = ["alloy", "echo", "fable", "onyx", "nova", "shimmer"]
     
@@ -60,6 +67,9 @@ class TTSService: NSObject {
     private func loadSettings() {
         if UserDefaults.standard.object(forKey: "tts_speech_rate") != nil {
             speechRate = UserDefaults.standard.float(forKey: "tts_speech_rate")
+        }
+        if UserDefaults.standard.object(forKey: "tts_volume") != nil {
+            volume = UserDefaults.standard.float(forKey: "tts_volume")
         }
     }
     
@@ -200,6 +210,7 @@ class TTSService: NSObject {
         do {
             audioPlayer = try AVAudioPlayer(data: data)
             audioPlayer?.delegate = self
+            audioPlayer?.volume = volume
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
             

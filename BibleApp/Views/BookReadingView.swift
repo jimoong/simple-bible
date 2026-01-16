@@ -6,6 +6,7 @@ struct BookReadingView: View {
     var onSaveVerse: ((BibleVerse) -> Void)? = nil
     var onCopyVerse: ((BibleVerse) -> Void)? = nil
     var onAskVerse: ((BibleVerse) -> Void)? = nil
+    var onListenFromVerse: ((Int) -> Void)? = nil  // Listen from verse index
     var onScrollStateChange: ((Bool) -> Void)? = nil  // true = scrolling, false = idle
     
     @State private var dragOffset: CGFloat = 0
@@ -179,6 +180,9 @@ struct BookReadingView: View {
                             },
                             onAsk: {
                                 onAskVerse?(verse)
+                            },
+                            onListen: {
+                                onListenFromVerse?(index)
                             }
                         )
                         .id(verse.verseNumber)
@@ -339,6 +343,7 @@ struct BookVerseRow: View {
     var onSave: (() -> Void)? = nil
     var onCopy: (() -> Void)? = nil
     var onAsk: (() -> Void)? = nil
+    var onListen: (() -> Void)? = nil
     
     @State private var isFavorite: Bool = false
     @State private var highlightedCharCount: Int = 0
@@ -442,6 +447,15 @@ struct BookVerseRow: View {
                 Label(
                     language == .kr ? "복사" : "Copy",
                     systemImage: "doc.on.doc"
+                )
+            }
+            
+            Button {
+                onListen?()
+            } label: {
+                Label(
+                    language == .kr ? "여기서부터 듣기" : "Listen from here",
+                    systemImage: "play.fill"
                 )
             }
             
