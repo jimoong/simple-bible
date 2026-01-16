@@ -633,12 +633,12 @@ private struct ConversationPairView: View {
         VStack(alignment: .leading, spacing: 32) {
             // User message (if exists)
             if let userMessage = pair.userMessage {
-                MessageBubble(message: userMessage, languageMode: languageMode, onNavigateToVerse: nil)
+                MessageBubble(message: userMessage, languageMode: languageMode, isStreaming: false, onNavigateToVerse: nil)
             }
             
             // Assistant message (if exists)
             if let assistantMessage = pair.assistantMessage {
-                MessageBubble(message: assistantMessage, languageMode: languageMode, onNavigateToVerse: onNavigateToVerse)
+                MessageBubble(message: assistantMessage, languageMode: languageMode, isStreaming: isStreaming, onNavigateToVerse: onNavigateToVerse)
             }
         }
         .frame(minHeight: shouldUseMinHeight ? minHeight : nil, alignment: .top)
@@ -670,6 +670,7 @@ private struct ConversationPairView: View {
 private struct MessageBubble: View {
     let message: GamalielMessage
     let languageMode: LanguageMode
+    let isStreaming: Bool  // Whether this message is currently streaming
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
     
     // Text constants
@@ -700,6 +701,34 @@ private struct MessageBubble: View {
             .filter { !$0.isEmpty }
     }
     
+    // Share content via iOS share sheet
+    private func shareContent(_ text: String) {
+        let activityVC = UIActivityViewController(
+            activityItems: [text],
+            applicationActivities: nil
+        )
+        
+        // Get the key window scene
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first,
+           let rootVC = window.rootViewController {
+            // Find the topmost presented view controller
+            var topVC = rootVC
+            while let presented = topVC.presentedViewController {
+                topVC = presented
+            }
+            
+            // For iPad - set popover presentation
+            if let popover = activityVC.popoverPresentationController {
+                popover.sourceView = window
+                popover.sourceRect = CGRect(x: window.bounds.midX, y: window.bounds.midY, width: 0, height: 0)
+                popover.permittedArrowDirections = []
+            }
+            
+            topVC.present(activityVC, animated: true)
+        }
+    }
+    
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             if message.role == .assistant {
@@ -712,6 +741,36 @@ private struct MessageBubble: View {
                             lineSpacing: chatLineSpacing,
                             onNavigateToVerse: onNavigateToVerse
                         )
+                    }
+                    
+                    // Action buttons (copy, share) - only show when not streaming
+                    if !isStreaming && !message.content.isEmpty {
+                        HStack(spacing: 4) {
+                            // Copy button
+                            Button {
+                                UIPasteboard.general.string = message.content
+                                HapticManager.shared.lightClick()
+                            } label: {
+                                Image(systemName: "doc.on.doc")
+                                    .font(.system(size: 17, weight: .regular))
+                                    .foregroundStyle(.white.opacity(0.4))
+                                    .frame(width: 44, height: 44)
+                                    .contentShape(Rectangle())
+                            }
+                            
+                            // Share button
+                            Button {
+                                shareContent(message.content)
+                            } label: {
+                                Image(systemName: "square.and.arrow.up")
+                                    .font(.system(size: 17, weight: .regular))
+                                    .foregroundStyle(.white.opacity(0.4))
+                                    .frame(width: 44, height: 44)
+                                    .contentShape(Rectangle())
+                            }
+                            
+                            Spacer()
+                        }
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

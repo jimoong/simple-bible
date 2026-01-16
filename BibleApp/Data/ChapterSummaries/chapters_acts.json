@@ -1,0 +1,452 @@
+{
+  "bookId": "acts",
+  "bookNumber": 44,
+  "bookNameKo": "사도행전",
+  "bookNameEn": "Acts",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "승천과 맛디아 선출",
+      "titleEn": "Ascension and Matthias' Selection",
+      "summaryKo": "예수님의 승천과 유다를 대신할 맛디아의 선출을 기록합니다.",
+      "summaryEn": "Records Jesus' ascension and selection of Matthias to replace Judas.",
+      "messageKo": "성령이 너희에게 임하시면 땅 끝까지 증인이 되리라.",
+      "messageEn": "You will receive power when the Holy Spirit comes and be my witnesses to the ends of the earth.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "땅 끝까지 증인", "eventEn": "Witnesses to ends of earth"},
+        {"verse": 9, "eventKo": "구름 타고 승천", "eventEn": "Taken up in a cloud"},
+        {"verse": 11, "eventKo": "다시 오시리라", "eventEn": "Will come back"},
+        {"verse": 26, "eventKo": "맛디아 선출", "eventEn": "Matthias chosen"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "오순절 성령 강림",
+      "titleEn": "Pentecost",
+      "summaryKo": "오순절에 성령이 임하시고 베드로의 설교로 삼천 명이 회심합니다.",
+      "summaryEn": "Holy Spirit comes at Pentecost; three thousand converted through Peter's sermon.",
+      "messageKo": "누구든지 주의 이름을 부르는 자는 구원을 받으리라.",
+      "messageEn": "Everyone who calls on the name of the Lord will be saved.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "불의 혀같이 갈라지는 것", "eventEn": "Tongues of fire"},
+        {"verse": 4, "eventKo": "방언을 말함", "eventEn": "Speaking in tongues"},
+        {"verse": 38, "eventKo": "회개하고 세례를 받으라", "eventEn": "Repent and be baptized"},
+        {"verse": 41, "eventKo": "삼천 명이 더해짐", "eventEn": "Three thousand added"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 3,
+      "titleKo": "앉은뱅이 치유",
+      "titleEn": "Healing the Lame Beggar",
+      "summaryKo": "성전 미문의 앉은뱅이를 치유하고 베드로가 회개를 촉구합니다.",
+      "summaryEn": "Heals lame beggar at temple gate; Peter urges repentance.",
+      "messageKo": "은과 금은 내게 없으나 내게 있는 것으로 네게 주노니.",
+      "messageEn": "Silver or gold I do not have, but what I do have I give you.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "은과 금은 없으나", "eventEn": "Silver and gold I do not have"},
+        {"verse": 8, "eventKo": "뛰며 하나님을 찬양", "eventEn": "Walking and praising God"},
+        {"verse": 19, "eventKo": "회개하고 돌아오라", "eventEn": "Repent and turn to God"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "박해의 시작",
+      "titleEn": "Beginning of Persecution",
+      "summaryKo": "베드로와 요한이 체포되나 담대히 증거하고 성도들이 한마음이 됩니다.",
+      "summaryEn": "Peter and John arrested but testify boldly; believers united in one heart.",
+      "messageKo": "이 이름 외에 다른 이름으로는 구원받을 수 없다.",
+      "messageEn": "Salvation is found in no one else, for there is no other name under heaven.",
+      "keyEvents": [
+        {"verse": 12, "eventKo": "이 이름 외에 구원 없다", "eventEn": "No other name for salvation"},
+        {"verse": 13, "eventKo": "베드로와 요한의 담대함", "eventEn": "Boldness of Peter and John"},
+        {"verse": 31, "eventKo": "다 담대히 하나님의 말씀 전함", "eventEn": "All spoke word boldly"},
+        {"verse": 32, "eventKo": "한 마음과 한 뜻", "eventEn": "One in heart and mind"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "아나니아와 삽비라",
+      "titleEn": "Ananias and Sapphira",
+      "summaryKo": "아나니아와 삽비라의 죽음, 많은 표적, 사도들의 투옥과 석방을 기록합니다.",
+      "summaryEn": "Records death of Ananias and Sapphira, many signs, apostles' imprisonment and release.",
+      "messageKo": "사람보다 하나님께 순종하는 것이 마땅하다.",
+      "messageEn": "We must obey God rather than human beings!",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "아나니아의 죽음", "eventEn": "Ananias dies"},
+        {"verse": 10, "eventKo": "삽비라의 죽음", "eventEn": "Sapphira dies"},
+        {"verse": 29, "eventKo": "사람보다 하나님께 순종", "eventEn": "Obey God rather than men"},
+        {"verse": 41, "eventKo": "욕을 당하며 기뻐함", "eventEn": "Rejoicing in suffering disgrace"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "일곱 집사와 스데반",
+      "titleEn": "Seven Deacons and Stephen",
+      "summaryKo": "일곱 집사가 선출되고 스데반이 잡혀 공회 앞에 섭니다.",
+      "summaryEn": "Seven deacons chosen; Stephen seized and brought before Sanhedrin.",
+      "messageKo": "말씀 봉사에 전념하기 위해 구제를 맡길 사람을 택하라.",
+      "messageEn": "Choose seven men to handle daily distribution so we can give attention to prayer and ministry of the word.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "일곱 사람을 택하라", "eventEn": "Choose seven men"},
+        {"verse": 5, "eventKo": "스데반을 택함", "eventEn": "Stephen chosen"},
+        {"verse": 10, "eventKo": "지혜와 성령으로 말함", "eventEn": "Spoke with wisdom and Spirit"},
+        {"verse": 15, "eventKo": "천사의 얼굴 같이", "eventEn": "Face like an angel"}
+      ],
+      "timelineYear": "AD 33경"
+    },
+    {
+      "chapter": 7,
+      "titleKo": "스데반의 설교와 순교",
+      "titleEn": "Stephen's Speech and Martyrdom",
+      "summaryKo": "스데반이 이스라엘 역사를 설교하고 순교하며 첫 순교자가 됩니다.",
+      "summaryEn": "Stephen preaches Israel's history and becomes the first Christian martyr.",
+      "messageKo": "주 예수여 내 영혼을 받으시옵소서.",
+      "messageEn": "Lord Jesus, receive my spirit.",
+      "keyEvents": [
+        {"verse": 51, "eventKo": "목이 곧은 자들", "eventEn": "Stiff-necked people"},
+        {"verse": 56, "eventKo": "인자가 서 계심을 봄", "eventEn": "I see the Son of Man standing"},
+        {"verse": 59, "eventKo": "내 영혼을 받으소서", "eventEn": "Receive my spirit"},
+        {"verse": 60, "eventKo": "이 죄를 저들에게 돌리지 마소서", "eventEn": "Do not hold this sin against them"}
+      ],
+      "timelineYear": "AD 34경"
+    },
+    {
+      "chapter": 8,
+      "titleKo": "박해와 복음 전파",
+      "titleEn": "Persecution and Gospel Spread",
+      "summaryKo": "박해로 흩어진 성도들이 복음을 전파하고, 빌립이 에디오피아 내시에게 복음을 전합니다.",
+      "summaryEn": "Scattered believers spread the gospel; Philip shares with Ethiopian eunuch.",
+      "messageKo": "흩어진 자들이 두루 다니며 복음을 전했다.",
+      "messageEn": "Those who had been scattered preached the word wherever they went.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "사울의 박해", "eventEn": "Saul's persecution"},
+        {"verse": 5, "eventKo": "빌립의 사마리아 전도", "eventEn": "Philip in Samaria"},
+        {"verse": 26, "eventKo": "에디오피아 내시", "eventEn": "Ethiopian eunuch"},
+        {"verse": 39, "eventKo": "빌립이 다른 곳으로 이끌려감", "eventEn": "Philip taken away"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "사울의 회심",
+      "titleEn": "Saul's Conversion",
+      "summaryKo": "다메섹 도상에서 사울이 회심하고 베드로가 다비다를 살립니다.",
+      "summaryEn": "Saul converts on road to Damascus; Peter raises Tabitha.",
+      "messageKo": "사울아 사울아 네가 왜 나를 박해하느냐?",
+      "messageEn": "Saul, Saul, why do you persecute me?",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "사울아 왜 나를 박해하느냐", "eventEn": "Saul, why do you persecute me?"},
+        {"verse": 15, "eventKo": "택한 그릇", "eventEn": "Chosen instrument"},
+        {"verse": 20, "eventKo": "예수가 하나님의 아들이라 전함", "eventEn": "Preached Jesus is Son of God"},
+        {"verse": 40, "eventKo": "다비다가 살아남", "eventEn": "Tabitha raised"}
+      ],
+      "timelineYear": "AD 35경"
+    },
+    {
+      "chapter": 10,
+      "titleKo": "고넬료의 회심",
+      "titleEn": "Cornelius' Conversion",
+      "summaryKo": "베드로가 환상을 보고 이방인 고넬료에게 복음을 전합니다.",
+      "summaryEn": "Peter has a vision and shares gospel with Gentile Cornelius.",
+      "messageKo": "하나님은 외모로 사람을 차별하지 않으신다.",
+      "messageEn": "God does not show favoritism.",
+      "keyEvents": [
+        {"verse": 15, "eventKo": "하나님이 깨끗하게 하신 것", "eventEn": "What God has made clean"},
+        {"verse": 34, "eventKo": "하나님은 외모로 차별하지 않으신다", "eventEn": "God does not show favoritism"},
+        {"verse": 44, "eventKo": "이방인에게 성령이 임함", "eventEn": "Holy Spirit on Gentiles"},
+        {"verse": 48, "eventKo": "이방인에게 세례를 줌", "eventEn": "Gentiles baptized"}
+      ],
+      "timelineYear": "AD 40경"
+    },
+    {
+      "chapter": 11,
+      "titleKo": "안디옥 교회의 시작",
+      "titleEn": "Church at Antioch Begins",
+      "summaryKo": "베드로가 예루살렘에 보고하고 안디옥에서 교회가 세워집니다.",
+      "summaryEn": "Peter reports to Jerusalem; church established in Antioch.",
+      "messageKo": "안디옥에서 처음으로 그리스도인이라 불렸다.",
+      "messageEn": "The disciples were called Christians first at Antioch.",
+      "keyEvents": [
+        {"verse": 18, "eventKo": "이방인에게도 회개를 주셨다", "eventEn": "God granted repentance to Gentiles"},
+        {"verse": 21, "eventKo": "안디옥에서 많은 사람이 믿음", "eventEn": "Many believed in Antioch"},
+        {"verse": 26, "eventKo": "그리스도인이라 불림", "eventEn": "Called Christians"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "야고보의 순교와 베드로 투옥",
+      "titleEn": "James' Martyrdom and Peter's Imprisonment",
+      "summaryKo": "야고보가 순교하고 베드로가 투옥되었다가 천사로 인해 풀려납니다.",
+      "summaryEn": "James martyred; Peter imprisoned but freed by an angel.",
+      "messageKo": "기도가 끊이지 않았고 천사가 그를 이끌어냈다.",
+      "messageEn": "Prayer was being made earnestly, and an angel led him out.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "야고보를 칼로 죽임", "eventEn": "James killed with sword"},
+        {"verse": 5, "eventKo": "교회가 간절히 기도함", "eventEn": "Church prayed earnestly"},
+        {"verse": 7, "eventKo": "천사가 베드로를 이끌어냄", "eventEn": "Angel leads Peter out"},
+        {"verse": 23, "eventKo": "헤롯이 벌레에게 먹혀 죽음", "eventEn": "Herod eaten by worms"}
+      ],
+      "timelineYear": "AD 44"
+    },
+    {
+      "chapter": 13,
+      "titleKo": "바울의 1차 전도여행 시작",
+      "titleEn": "Paul's First Missionary Journey Begins",
+      "summaryKo": "바울과 바나바가 안디옥 교회에서 파송되어 전도여행을 시작합니다.",
+      "summaryEn": "Paul and Barnabas sent from Antioch church to begin missionary journey.",
+      "messageKo": "성령이 이르시되 바나바와 사울을 따로 세우라.",
+      "messageEn": "Set apart for me Barnabas and Saul for the work to which I have called them.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "바나바와 사울을 따로 세우라", "eventEn": "Set apart Barnabas and Saul"},
+        {"verse": 9, "eventKo": "바울로 불림", "eventEn": "Called Paul"},
+        {"verse": 38, "eventKo": "예수로 말미암아 죄 사함을 얻음", "eventEn": "Forgiveness through Jesus"},
+        {"verse": 47, "eventKo": "땅 끝까지 구원에 이르게", "eventEn": "Salvation to ends of earth"}
+      ],
+      "timelineYear": "AD 47"
+    },
+    {
+      "chapter": 14,
+      "titleKo": "이고니온, 루스드라, 더베",
+      "titleEn": "Iconium, Lystra, Derbe",
+      "summaryKo": "바울이 루스드라에서 앉은뱅이를 고치고 돌에 맞으나 전도를 계속합니다.",
+      "summaryEn": "Paul heals lame man at Lystra, is stoned but continues preaching.",
+      "messageKo": "우리가 하나님 나라에 들어가려면 많은 환난을 겪어야 한다.",
+      "messageEn": "We must go through many hardships to enter the kingdom of God.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "루스드라의 앉은뱅이 치유", "eventEn": "Lame man healed at Lystra"},
+        {"verse": 12, "eventKo": "신으로 오해 받음", "eventEn": "Mistaken for gods"},
+        {"verse": 19, "eventKo": "바울이 돌에 맞음", "eventEn": "Paul stoned"},
+        {"verse": 22, "eventKo": "많은 환난을 통해 하나님 나라에", "eventEn": "Through many hardships enter kingdom"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "예루살렘 공의회",
+      "titleEn": "Jerusalem Council",
+      "summaryKo": "이방인 구원에 대한 논쟁이 예루살렘 공의회에서 해결됩니다.",
+      "summaryEn": "Dispute about Gentile salvation resolved at Jerusalem Council.",
+      "messageKo": "우리는 주 예수의 은혜로 구원받는 줄을 믿는다.",
+      "messageEn": "We believe it is through the grace of our Lord Jesus that we are saved.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "할례 논쟁", "eventEn": "Circumcision controversy"},
+        {"verse": 11, "eventKo": "은혜로 구원받음", "eventEn": "Saved through grace"},
+        {"verse": 28, "eventKo": "성령과 우리가 결정함", "eventEn": "Holy Spirit and us decided"},
+        {"verse": 39, "eventKo": "바울과 바나바가 헤어짐", "eventEn": "Paul and Barnabas part ways"}
+      ],
+      "timelineYear": "AD 49"
+    },
+    {
+      "chapter": 16,
+      "titleKo": "2차 전도여행과 빌립보",
+      "titleEn": "Second Journey and Philippi",
+      "summaryKo": "디모데가 합류하고, 마게도냐 환상 후 빌립보에서 전도합니다.",
+      "summaryEn": "Timothy joins; after Macedonian vision, ministry in Philippi.",
+      "messageKo": "주 예수를 믿으라. 그리하면 너와 네 집이 구원을 받으리라.",
+      "messageEn": "Believe in the Lord Jesus, and you will be saved—you and your household.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "디모데가 합류", "eventEn": "Timothy joins"},
+        {"verse": 9, "eventKo": "마게도냐 환상", "eventEn": "Macedonian vision"},
+        {"verse": 14, "eventKo": "루디아의 회심", "eventEn": "Lydia's conversion"},
+        {"verse": 31, "eventKo": "주 예수를 믿으라", "eventEn": "Believe in Lord Jesus"}
+      ],
+      "timelineYear": "AD 50"
+    },
+    {
+      "chapter": 17,
+      "titleKo": "데살로니가, 베뢰아, 아덴",
+      "titleEn": "Thessalonica, Berea, Athens",
+      "summaryKo": "데살로니가와 베뢰아를 거쳐 아덴에서 철학자들에게 복음을 전합니다.",
+      "summaryEn": "Through Thessalonica and Berea to Athens, preaching to philosophers.",
+      "messageKo": "우리가 그를 힘입어 살며 기동하며 존재한다.",
+      "messageEn": "In him we live and move and have our being.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "천하를 어지럽게 하는 자들", "eventEn": "Those who caused trouble everywhere"},
+        {"verse": 11, "eventKo": "베뢰아 사람들의 성경 연구", "eventEn": "Bereans examined Scriptures"},
+        {"verse": 23, "eventKo": "알지 못하는 신에게", "eventEn": "To an unknown god"},
+        {"verse": 28, "eventKo": "그를 힘입어 살며 기동하며", "eventEn": "In him we live and move"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "고린도 사역",
+      "titleEn": "Ministry in Corinth",
+      "summaryKo": "바울이 고린도에서 1년 반 동안 사역하고 아볼로가 소개됩니다.",
+      "summaryEn": "Paul ministers in Corinth for 18 months; Apollos introduced.",
+      "messageKo": "두려워하지 말고 잠잠하지 말라. 내가 너와 함께 있다.",
+      "messageEn": "Do not be afraid; keep on speaking, do not be silent. For I am with you.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "아굴라와 브리스길라", "eventEn": "Aquila and Priscilla"},
+        {"verse": 9, "eventKo": "두려워 말라 내가 함께 있다", "eventEn": "Do not be afraid, I am with you"},
+        {"verse": 11, "eventKo": "1년 6개월 동안 머무름", "eventEn": "Stayed year and a half"},
+        {"verse": 24, "eventKo": "아볼로", "eventEn": "Apollos"}
+      ],
+      "timelineYear": "AD 51-52"
+    },
+    {
+      "chapter": 19,
+      "titleKo": "에베소 사역",
+      "titleEn": "Ministry in Ephesus",
+      "summaryKo": "에베소에서 강력한 사역과 은장이 소동이 일어납니다.",
+      "summaryEn": "Powerful ministry in Ephesus; silversmith riot occurs.",
+      "messageKo": "주의 말씀이 흥왕하여 세력을 얻었다.",
+      "messageEn": "The word of the Lord spread widely and grew in power.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "성령이 임함", "eventEn": "Holy Spirit came on them"},
+        {"verse": 11, "eventKo": "비상한 능력을 행하심", "eventEn": "Extraordinary miracles"},
+        {"verse": 19, "eventKo": "마술책들을 불태움", "eventEn": "Sorcery scrolls burned"},
+        {"verse": 28, "eventKo": "은장이 데메드리오의 소동", "eventEn": "Riot by silversmith Demetrius"}
+      ],
+      "timelineYear": "AD 54-57"
+    },
+    {
+      "chapter": 20,
+      "titleKo": "밀레도 고별 설교",
+      "titleEn": "Farewell at Miletus",
+      "summaryKo": "유두고를 살리고 에베소 장로들에게 고별 설교를 합니다.",
+      "summaryEn": "Raises Eutychus and delivers farewell address to Ephesian elders.",
+      "messageKo": "주는 것이 받는 것보다 복이 있다.",
+      "messageEn": "It is more blessed to give than to receive.",
+      "keyEvents": [
+        {"verse": 10, "eventKo": "유두고를 살리심", "eventEn": "Eutychus raised"},
+        {"verse": 24, "eventKo": "달려갈 길을 마치려 함", "eventEn": "Finish the race"},
+        {"verse": 28, "eventKo": "양 무리를 보살피라", "eventEn": "Keep watch over the flock"},
+        {"verse": 35, "eventKo": "주는 것이 더 복됨", "eventEn": "More blessed to give"}
+      ],
+      "timelineYear": "AD 57"
+    },
+    {
+      "chapter": 21,
+      "titleKo": "예루살렘 도착과 체포",
+      "titleEn": "Arrival in Jerusalem and Arrest",
+      "summaryKo": "바울이 예루살렘에 도착하고 성전에서 체포됩니다.",
+      "summaryEn": "Paul arrives in Jerusalem and is arrested in the temple.",
+      "messageKo": "주의 뜻대로 되기를 원합니다.",
+      "messageEn": "The Lord's will be done.",
+      "keyEvents": [
+        {"verse": 4, "eventKo": "제자들이 예루살렘 가지 말라 함", "eventEn": "Disciples urge Paul not to go"},
+        {"verse": 13, "eventKo": "주의 이름을 위해 죽을 준비", "eventEn": "Ready to die for Lord's name"},
+        {"verse": 30, "eventKo": "바울이 성전에서 체포됨", "eventEn": "Paul arrested in temple"}
+      ],
+      "timelineYear": "AD 57"
+    },
+    {
+      "chapter": 22,
+      "titleKo": "바울의 변론 1",
+      "titleEn": "Paul's Defense 1",
+      "summaryKo": "바울이 예루살렘 백성들 앞에서 자신의 회심을 증거합니다.",
+      "summaryEn": "Paul testifies about his conversion before the Jerusalem crowd.",
+      "messageKo": "내가 박해하던 그 예수께서 나를 부르셨다.",
+      "messageEn": "The Jesus I was persecuting called me.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "가말리엘 문하에서 교육", "eventEn": "Educated under Gamaliel"},
+        {"verse": 8, "eventKo": "나는 나사렛 예수라", "eventEn": "I am Jesus of Nazareth"},
+        {"verse": 21, "eventKo": "이방인에게 보내심", "eventEn": "Sent to Gentiles"},
+        {"verse": 25, "eventKo": "로마 시민권 주장", "eventEn": "Claims Roman citizenship"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 23,
+      "titleKo": "공회 앞에서의 변론",
+      "titleEn": "Before the Sanhedrin",
+      "summaryKo": "바울이 공회 앞에서 변론하고 암살 음모를 피해 가이사랴로 보내집니다.",
+      "summaryEn": "Paul defends before Sanhedrin; escapes assassination plot to Caesarea.",
+      "messageKo": "담대하라. 네가 로마에서도 증언해야 한다.",
+      "messageEn": "Take courage! As you have testified about me in Jerusalem, so you must also testify in Rome.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "부활 소망으로 재판 받음", "eventEn": "On trial for hope in resurrection"},
+        {"verse": 11, "eventKo": "담대하라 로마에서도 증언", "eventEn": "Take courage, testify in Rome"},
+        {"verse": 12, "eventKo": "40명 이상의 암살 음모", "eventEn": "Plot by more than forty men"},
+        {"verse": 23, "eventKo": "가이사랴로 호송", "eventEn": "Transferred to Caesarea"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 24,
+      "titleKo": "벨릭스 앞에서의 재판",
+      "titleEn": "Trial Before Felix",
+      "summaryKo": "바울이 총독 벨릭스 앞에서 변론하고 2년간 구금됩니다.",
+      "summaryEn": "Paul defends before Governor Felix; kept in custody for two years.",
+      "messageKo": "의와 절제와 장래 심판에 대해 강론했다.",
+      "messageEn": "Paul spoke about righteousness, self-control and the judgment to come.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "이 도를 따라 하나님을 섬김", "eventEn": "Worship God according to the Way"},
+        {"verse": 15, "eventKo": "의인과 악인의 부활", "eventEn": "Resurrection of righteous and wicked"},
+        {"verse": 25, "eventKo": "의와 절제와 심판에 대해 강론", "eventEn": "Spoke of righteousness, judgment"},
+        {"verse": 27, "eventKo": "2년간 구금", "eventEn": "Two years in prison"}
+      ],
+      "timelineYear": "AD 57-59"
+    },
+    {
+      "chapter": 25,
+      "titleKo": "베스도와 아그립바",
+      "titleEn": "Festus and Agrippa",
+      "summaryKo": "바울이 가이사에게 상소하고 아그립바 왕 앞에서 변론합니다.",
+      "summaryEn": "Paul appeals to Caesar and defends before King Agrippa.",
+      "messageKo": "나는 가이사에게 상소합니다.",
+      "messageEn": "I appeal to Caesar!",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "아무 죄도 범하지 않았다", "eventEn": "Done nothing wrong"},
+        {"verse": 11, "eventKo": "가이사에게 상소", "eventEn": "Appeal to Caesar"},
+        {"verse": 23, "eventKo": "아그립바와 버니게", "eventEn": "Agrippa and Bernice"}
+      ],
+      "timelineYear": "AD 59"
+    },
+    {
+      "chapter": 26,
+      "titleKo": "아그립바 앞에서의 변론",
+      "titleEn": "Defense Before Agrippa",
+      "summaryKo": "바울이 아그립바 왕 앞에서 회심과 사명을 증거합니다.",
+      "summaryEn": "Paul testifies about conversion and mission before King Agrippa.",
+      "messageKo": "아그립바 왕이여, 왕도 그리스도인이 되겠습니까?",
+      "messageEn": "King Agrippa, do you believe the prophets?",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "가시채를 뒷발질하기 어렵다", "eventEn": "Hard to kick against the goads"},
+        {"verse": 18, "eventKo": "어둠에서 빛으로", "eventEn": "From darkness to light"},
+        {"verse": 28, "eventKo": "적은 말로 그리스도인이 되게 하려는가", "eventEn": "Short time to persuade me to be Christian"},
+        {"verse": 32, "eventKo": "상소하지 않았으면 놓였을 것", "eventEn": "Could have been set free"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 27,
+      "titleKo": "로마로 항해와 파선",
+      "titleEn": "Voyage to Rome and Shipwreck",
+      "summaryKo": "로마로 가는 항해 중 유라굴로 광풍을 만나 파선하지만 모두 구출됩니다.",
+      "summaryEn": "On voyage to Rome, shipwrecked in Euroclydon storm but all rescued.",
+      "messageKo": "하나님을 믿으라. 아무도 잃지 않을 것이다.",
+      "messageEn": "Keep up your courage, men. Not one of you will be lost.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "유라굴로 광풍", "eventEn": "Euroclydon storm"},
+        {"verse": 22, "eventKo": "아무도 생명을 잃지 않으리라", "eventEn": "Not one of you will be lost"},
+        {"verse": 35, "eventKo": "떡을 떼어 먹음", "eventEn": "Broke bread and ate"},
+        {"verse": 44, "eventKo": "모두 무사히 육지에", "eventEn": "Everyone safely to land"}
+      ],
+      "timelineYear": "AD 60"
+    },
+    {
+      "chapter": 28,
+      "titleKo": "로마에 도착",
+      "titleEn": "Arrival in Rome",
+      "summaryKo": "멜리데 섬에서의 사건 후 로마에 도착하여 2년간 복음을 전합니다.",
+      "summaryEn": "After events on Malta, arrives in Rome and preaches for two years.",
+      "messageKo": "바울이 로마에서 담대히 하나님 나라를 전파하였다.",
+      "messageEn": "Paul proclaimed the kingdom of God and taught about the Lord Jesus Christ boldly.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "독사에 물렸으나 해 없음", "eventEn": "Bitten by viper but unharmed"},
+        {"verse": 8, "eventKo": "보블리오의 아버지 치유", "eventEn": "Heals Publius' father"},
+        {"verse": 23, "eventKo": "유대인들에게 하나님 나라 강론", "eventEn": "Explaining kingdom to Jews"},
+        {"verse": 31, "eventKo": "2년간 담대히 전파함", "eventEn": "Two years preaching boldly"}
+      ],
+      "timelineYear": "AD 60-62"
+    }
+  ]
+}

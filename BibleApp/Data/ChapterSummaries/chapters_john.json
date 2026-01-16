@@ -1,0 +1,344 @@
+{
+  "bookId": "john",
+  "bookNumber": 43,
+  "bookNameKo": "요한복음",
+  "bookNameEn": "John",
+  "chapters": [
+    {
+      "chapter": 1,
+      "titleKo": "말씀이 육신이 되어",
+      "titleEn": "The Word Became Flesh",
+      "summaryKo": "태초의 말씀, 세례 요한의 증거, 첫 제자들의 부르심을 기록합니다.",
+      "summaryEn": "Records the Word in the beginning, John's testimony, and calling of first disciples.",
+      "messageKo": "말씀이 육신이 되어 우리 가운데 거하셨다.",
+      "messageEn": "The Word became flesh and made his dwelling among us.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "태초에 말씀이 계시니라", "eventEn": "In the beginning was the Word"},
+        {"verse": 14, "eventKo": "말씀이 육신이 되어", "eventEn": "Word became flesh"},
+        {"verse": 29, "eventKo": "세상 죄를 지고 가는 하나님의 어린 양", "eventEn": "Lamb of God who takes away sin"},
+        {"verse": 42, "eventKo": "베드로의 부르심", "eventEn": "Peter called"}
+      ],
+      "timelineYear": "AD 27경"
+    },
+    {
+      "chapter": 2,
+      "titleKo": "가나의 혼인 잔치",
+      "titleEn": "Wedding at Cana",
+      "summaryKo": "가나의 혼인 잔치에서 첫 표적을 행하시고 성전을 정화하십니다.",
+      "summaryEn": "Performs first sign at wedding in Cana and cleanses the temple.",
+      "messageKo": "예수님은 부족함을 풍성함으로 바꾸십니다.",
+      "messageEn": "Jesus turns scarcity into abundance.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "가나 혼인 잔치", "eventEn": "Wedding at Cana"},
+        {"verse": 11, "eventKo": "첫 번째 표적", "eventEn": "First sign"},
+        {"verse": 15, "eventKo": "성전 정화", "eventEn": "Cleanses temple"},
+        {"verse": 19, "eventKo": "이 성전을 헐라 삼일 만에", "eventEn": "Destroy this temple, three days"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 3,
+      "titleKo": "니고데모와 거듭남",
+      "titleEn": "Nicodemus and Being Born Again",
+      "summaryKo": "니고데모에게 거듭남을 가르치시고 요한 3:16의 복음을 선포합니다.",
+      "summaryEn": "Teaches Nicodemus about being born again and proclaims John 3:16.",
+      "messageKo": "하나님이 세상을 이처럼 사랑하사 독생자를 주셨다.",
+      "messageEn": "God so loved the world that he gave his one and only Son.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "거듭나야 하나님 나라를 볼 수 있다", "eventEn": "Must be born again"},
+        {"verse": 14, "eventKo": "놋뱀처럼 들려야", "eventEn": "Must be lifted up like serpent"},
+        {"verse": 16, "eventKo": "하나님이 세상을 이처럼 사랑하사", "eventEn": "God so loved the world"},
+        {"verse": 30, "eventKo": "그는 흥하고 나는 쇠하리라", "eventEn": "He must increase, I must decrease"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 4,
+      "titleKo": "사마리아 여인",
+      "titleEn": "Samaritan Woman",
+      "summaryKo": "사마리아 여인에게 생수를 말씀하시고 왕의 신하의 아들을 고치십니다.",
+      "summaryEn": "Speaks of living water to Samaritan woman and heals royal official's son.",
+      "messageKo": "내가 주는 물을 마시는 자는 영원히 목마르지 않는다.",
+      "messageEn": "Whoever drinks the water I give will never thirst.",
+      "keyEvents": [
+        {"verse": 14, "eventKo": "영원히 목마르지 않는 물", "eventEn": "Water that never makes thirsty"},
+        {"verse": 24, "eventKo": "영과 진리로 예배", "eventEn": "Worship in spirit and truth"},
+        {"verse": 26, "eventKo": "내가 그라", "eventEn": "I am he"},
+        {"verse": 50, "eventKo": "왕의 신하 아들 치유", "eventEn": "Royal official's son healed"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 5,
+      "titleKo": "베데스다 치유",
+      "titleEn": "Healing at Bethesda",
+      "summaryKo": "38년 된 병자를 베데스다에서 치유하시고 아버지와의 관계를 말씀합니다.",
+      "summaryEn": "Heals man sick for 38 years at Bethesda and speaks of relationship with the Father.",
+      "messageKo": "아버지께서 일하시니 나도 일한다.",
+      "messageEn": "My Father is always at work, and so am I.",
+      "keyEvents": [
+        {"verse": 8, "eventKo": "일어나 네 자리를 들고 걸으라", "eventEn": "Get up! Pick up your mat and walk"},
+        {"verse": 17, "eventKo": "아버지께서 일하시니", "eventEn": "My Father is always working"},
+        {"verse": 24, "eventKo": "사망에서 생명으로 옮김", "eventEn": "Crossed from death to life"},
+        {"verse": 39, "eventKo": "성경이 내게 대해 증언함", "eventEn": "Scriptures testify about me"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 6,
+      "titleKo": "생명의 떡",
+      "titleEn": "Bread of Life",
+      "summaryKo": "오천 명을 먹이시고 물 위를 걸으시며 생명의 떡 강화를 하십니다.",
+      "summaryEn": "Feeds five thousand, walks on water, and gives Bread of Life discourse.",
+      "messageKo": "나는 생명의 떡이니 내게 오는 자는 결코 주리지 않는다.",
+      "messageEn": "I am the bread of life. Whoever comes to me will never go hungry.",
+      "keyEvents": [
+        {"verse": 11, "eventKo": "오천 명을 먹이심", "eventEn": "Feeds five thousand"},
+        {"verse": 20, "eventKo": "내니 두려워하지 말라", "eventEn": "It is I; don't be afraid"},
+        {"verse": 35, "eventKo": "나는 생명의 떡이라", "eventEn": "I am the bread of life"},
+        {"verse": 68, "eventKo": "영생의 말씀이 있사옵나이다", "eventEn": "You have words of eternal life"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 7,
+      "titleKo": "초막절의 가르침",
+      "titleEn": "Teaching at Festival of Tabernacles",
+      "summaryKo": "초막절에 예루살렘에서 가르치시며 목마른 자에게 생수를 약속합니다.",
+      "summaryEn": "Teaches in Jerusalem during Festival of Tabernacles, promising living water to the thirsty.",
+      "messageKo": "목마른 자는 내게 와서 마시라.",
+      "messageEn": "Let anyone who is thirsty come to me and drink.",
+      "keyEvents": [
+        {"verse": 17, "eventKo": "내 교훈이 하나님께로부터", "eventEn": "My teaching is from God"},
+        {"verse": 37, "eventKo": "목마른 자는 내게로 와서 마시라", "eventEn": "Let anyone thirsty come to me"},
+        {"verse": 43, "eventKo": "무리 중에 분쟁", "eventEn": "Division among the people"},
+        {"verse": 46, "eventKo": "이 사람처럼 말한 자는 없었다", "eventEn": "No one ever spoke like this man"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 8,
+      "titleKo": "세상의 빛",
+      "titleEn": "Light of the World",
+      "summaryKo": "간음한 여인을 용서하시고 세상의 빛이심을 선포하시며 진리의 자유를 가르칩니다.",
+      "summaryEn": "Forgives adulterous woman, proclaims He is light of the world, teaches freedom through truth.",
+      "messageKo": "나는 세상의 빛이니 나를 따르는 자는 어둠에 다니지 않는다.",
+      "messageEn": "I am the light of the world. Whoever follows me will never walk in darkness.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "죄 없는 자가 먼저 돌로 치라", "eventEn": "Let him without sin cast first stone"},
+        {"verse": 12, "eventKo": "나는 세상의 빛이라", "eventEn": "I am the light of the world"},
+        {"verse": 32, "eventKo": "진리가 너희를 자유롭게 하리라", "eventEn": "Truth will set you free"},
+        {"verse": 58, "eventKo": "아브라함이 나기 전에 내가 있노라", "eventEn": "Before Abraham was, I am"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 9,
+      "titleKo": "맹인을 고치심",
+      "titleEn": "Healing the Blind Man",
+      "summaryKo": "날 때부터 소경된 자를 고치시고 영적 소경에 대해 가르치십니다.",
+      "summaryEn": "Heals man born blind and teaches about spiritual blindness.",
+      "messageKo": "내가 세상에 있는 동안 나는 세상의 빛이다.",
+      "messageEn": "While I am in the world, I am the light of the world.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "하나님의 일을 나타내기 위해", "eventEn": "So God's works might be displayed"},
+        {"verse": 7, "eventKo": "실로암에 가서 씻으라", "eventEn": "Go wash in Pool of Siloam"},
+        {"verse": 25, "eventKo": "한 가지 아는 것은 소경이 지금 보는 것", "eventEn": "One thing I know: I was blind but now I see"},
+        {"verse": 38, "eventKo": "주여 내가 믿나이다", "eventEn": "Lord, I believe"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 10,
+      "titleKo": "선한 목자",
+      "titleEn": "Good Shepherd",
+      "summaryKo": "선한 목자 비유를 말씀하시고 아버지와 하나이심을 선언합니다.",
+      "summaryEn": "Speaks the Good Shepherd parable and declares oneness with the Father.",
+      "messageKo": "나는 선한 목자라. 선한 목자는 양들을 위해 목숨을 버린다.",
+      "messageEn": "I am the good shepherd. The good shepherd lays down his life for the sheep.",
+      "keyEvents": [
+        {"verse": 9, "eventKo": "나는 문이라", "eventEn": "I am the gate"},
+        {"verse": 11, "eventKo": "나는 선한 목자라", "eventEn": "I am the good shepherd"},
+        {"verse": 28, "eventKo": "영생을 주며 영원히 멸망하지 않음", "eventEn": "I give eternal life; they shall never perish"},
+        {"verse": 30, "eventKo": "나와 아버지는 하나이니라", "eventEn": "I and the Father are one"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 11,
+      "titleKo": "나사로의 부활",
+      "titleEn": "Raising of Lazarus",
+      "summaryKo": "죽은 나사로를 살리시며 부활이요 생명이심을 선언합니다.",
+      "summaryEn": "Raises dead Lazarus and declares He is the resurrection and the life.",
+      "messageKo": "나는 부활이요 생명이니 나를 믿는 자는 죽어도 살겠고.",
+      "messageEn": "I am the resurrection and the life. The one who believes in me will live, even though they die.",
+      "keyEvents": [
+        {"verse": 25, "eventKo": "나는 부활이요 생명이니", "eventEn": "I am the resurrection and life"},
+        {"verse": 35, "eventKo": "예수께서 눈물을 흘리시더라", "eventEn": "Jesus wept"},
+        {"verse": 43, "eventKo": "나사로야 나오라", "eventEn": "Lazarus, come out!"},
+        {"verse": 53, "eventKo": "예수를 죽이기로 모의", "eventEn": "Plot to kill Jesus"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 12,
+      "titleKo": "예루살렘 입성",
+      "titleEn": "Entry into Jerusalem",
+      "summaryKo": "마리아의 향유 붓기, 예루살렘 입성, 죽음에 대한 예언을 기록합니다.",
+      "summaryEn": "Records Mary's anointing, triumphal entry, and prediction of death.",
+      "messageKo": "한 알의 밀이 땅에 떨어져 죽으면 많은 열매를 맺는다.",
+      "messageEn": "Unless a kernel of wheat falls to the ground and dies, it remains only a single seed.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "마리아의 향유 붓기", "eventEn": "Mary's anointing"},
+        {"verse": 13, "eventKo": "호산나!", "eventEn": "Hosanna!"},
+        {"verse": 24, "eventKo": "한 알의 밀", "eventEn": "Kernel of wheat"},
+        {"verse": 32, "eventKo": "내가 땅에서 들리면 만민을 내게로", "eventEn": "When lifted up, will draw all people"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 13,
+      "titleKo": "제자들의 발을 씻기심",
+      "titleEn": "Washing Disciples' Feet",
+      "summaryKo": "제자들의 발을 씻기시며 섬김을 가르치시고 새 계명을 주십니다.",
+      "summaryEn": "Washes disciples' feet teaching service, and gives new commandment.",
+      "messageKo": "서로 사랑하라. 내가 너희를 사랑한 것같이.",
+      "messageEn": "Love one another. As I have loved you, so you must love one another.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "제자들의 발을 씻기심", "eventEn": "Washes disciples' feet"},
+        {"verse": 14, "eventKo": "너희도 서로 발을 씻기라", "eventEn": "You also should wash one another's feet"},
+        {"verse": 34, "eventKo": "새 계명: 서로 사랑하라", "eventEn": "New command: Love one another"},
+        {"verse": 38, "eventKo": "닭 울기 전 세 번 부인", "eventEn": "Deny me three times before rooster crows"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 14,
+      "titleKo": "길이요 진리요 생명",
+      "titleEn": "Way, Truth, and Life",
+      "summaryKo": "아버지의 집, 길이요 진리요 생명, 보혜사 성령의 약속을 말씀합니다.",
+      "summaryEn": "Speaks of Father's house, being the way, truth, and life, and promises the Holy Spirit.",
+      "messageKo": "나는 길이요 진리요 생명이니 나로 말미암지 않고는 아버지께로 올 자가 없다.",
+      "messageEn": "I am the way and the truth and the life. No one comes to the Father except through me.",
+      "keyEvents": [
+        {"verse": 2, "eventKo": "아버지 집에 거할 곳이 많다", "eventEn": "Many rooms in Father's house"},
+        {"verse": 6, "eventKo": "나는 길이요 진리요 생명이니", "eventEn": "I am the way, truth, life"},
+        {"verse": 16, "eventKo": "보혜사를 보내시리니", "eventEn": "I will send the Advocate"},
+        {"verse": 27, "eventKo": "평안을 너희에게 끼치노니", "eventEn": "Peace I leave with you"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 15,
+      "titleKo": "참 포도나무",
+      "titleEn": "True Vine",
+      "summaryKo": "참 포도나무 비유로 열매 맺는 삶과 서로 사랑하라는 명령을 가르칩니다.",
+      "summaryEn": "Through True Vine parable teaches fruitful living and command to love one another.",
+      "messageKo": "나는 포도나무요 너희는 가지라. 내 안에 거하면 많은 열매를 맺는다.",
+      "messageEn": "I am the vine; you are the branches. If you remain in me, you will bear much fruit.",
+      "keyEvents": [
+        {"verse": 1, "eventKo": "나는 참 포도나무", "eventEn": "I am the true vine"},
+        {"verse": 5, "eventKo": "내 안에 거하라", "eventEn": "Remain in me"},
+        {"verse": 13, "eventKo": "친구를 위해 목숨을 버림", "eventEn": "Lay down life for friends"},
+        {"verse": 18, "eventKo": "세상이 너희를 미워하면", "eventEn": "If the world hates you"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 16,
+      "titleKo": "성령의 사역",
+      "titleEn": "Work of the Holy Spirit",
+      "summaryKo": "성령의 사역, 슬픔이 기쁨으로, 세상을 이김을 말씀합니다.",
+      "summaryEn": "Speaks of Spirit's work, sorrow turning to joy, and overcoming the world.",
+      "messageKo": "세상에서는 환난을 당하나 담대하라. 내가 세상을 이기었노라.",
+      "messageEn": "In this world you will have trouble. But take heart! I have overcome the world.",
+      "keyEvents": [
+        {"verse": 7, "eventKo": "내가 떠나가는 것이 유익", "eventEn": "It is for your good that I go"},
+        {"verse": 13, "eventKo": "진리의 영이 모든 진리로 인도", "eventEn": "Spirit will guide into all truth"},
+        {"verse": 22, "eventKo": "슬픔이 도리어 기쁨이 되리라", "eventEn": "Grief will turn to joy"},
+        {"verse": 33, "eventKo": "내가 세상을 이기었노라", "eventEn": "I have overcome the world"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 17,
+      "titleKo": "대제사장적 기도",
+      "titleEn": "High Priestly Prayer",
+      "summaryKo": "예수님이 자신과 제자들과 모든 믿는 자들을 위해 기도하십니다.",
+      "summaryEn": "Jesus prays for Himself, His disciples, and all believers.",
+      "messageKo": "아버지여, 그들도 하나가 되게 하소서.",
+      "messageEn": "Father, may they be one as we are one.",
+      "keyEvents": [
+        {"verse": 3, "eventKo": "영생은 아버지와 예수 그리스도를 아는 것", "eventEn": "Eternal life: knowing Father and Jesus"},
+        {"verse": 11, "eventKo": "하나가 되게 하소서", "eventEn": "May they be one"},
+        {"verse": 15, "eventKo": "악에서 지키소서", "eventEn": "Protect them from evil"},
+        {"verse": 21, "eventKo": "모두 하나가 되어", "eventEn": "That all may be one"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 18,
+      "titleKo": "체포와 재판",
+      "titleEn": "Arrest and Trial",
+      "summaryKo": "겟세마네에서 체포되시고 대제사장과 빌라도 앞에서 재판받으십니다.",
+      "summaryEn": "Arrested in Gethsemane, tried before high priest and Pilate.",
+      "messageKo": "내 나라는 이 세상에 속한 것이 아니니라.",
+      "messageEn": "My kingdom is not of this world.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "내가 그라 하시니 물러감", "eventEn": "I am he - they drew back"},
+        {"verse": 11, "eventKo": "아버지께서 주신 잔", "eventEn": "Cup the Father has given"},
+        {"verse": 36, "eventKo": "내 나라는 이 세상에 속한 것이 아니다", "eventEn": "My kingdom not of this world"},
+        {"verse": 40, "eventKo": "바라바를 달라", "eventEn": "Give us Barabbas"}
+      ],
+      "timelineYear": null
+    },
+    {
+      "chapter": 19,
+      "titleKo": "십자가와 죽음",
+      "titleEn": "Crucifixion and Death",
+      "summaryKo": "채찍질, 십자가 처형, 죽음, 장사를 기록합니다.",
+      "summaryEn": "Records flogging, crucifixion, death, and burial.",
+      "messageKo": "다 이루었다.",
+      "messageEn": "It is finished.",
+      "keyEvents": [
+        {"verse": 5, "eventKo": "보라 이 사람이로다", "eventEn": "Here is the man!"},
+        {"verse": 17, "eventKo": "해골이라는 곳", "eventEn": "Place of the Skull"},
+        {"verse": 26, "eventKo": "보소서 어머니의 아들", "eventEn": "Here is your son"},
+        {"verse": 30, "eventKo": "다 이루었다", "eventEn": "It is finished"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 20,
+      "titleKo": "부활",
+      "titleEn": "Resurrection",
+      "summaryKo": "빈 무덤, 막달라 마리아와 제자들에게 나타나심, 도마의 고백을 기록합니다.",
+      "summaryEn": "Records empty tomb, appearances to Mary and disciples, Thomas' confession.",
+      "messageKo": "나의 주시며 나의 하나님이시니이다.",
+      "messageEn": "My Lord and my God!",
+      "keyEvents": [
+        {"verse": 16, "eventKo": "마리아야!", "eventEn": "Mary!"},
+        {"verse": 21, "eventKo": "아버지께서 보내신 것같이 너희를 보내노라", "eventEn": "As Father sent me, I send you"},
+        {"verse": 28, "eventKo": "나의 주시며 나의 하나님이시니이다", "eventEn": "My Lord and my God!"},
+        {"verse": 31, "eventKo": "예수가 그리스도심을 믿게 하려 함", "eventEn": "Written that you may believe"}
+      ],
+      "timelineYear": "AD 30"
+    },
+    {
+      "chapter": 21,
+      "titleKo": "에필로그: 베드로의 회복",
+      "titleEn": "Epilogue: Peter's Restoration",
+      "summaryKo": "디베랴 바다에서 나타나시고 베드로를 세 번 회복시키십니다.",
+      "summaryEn": "Appears at Sea of Tiberias and restores Peter three times.",
+      "messageKo": "네가 나를 사랑하느냐? 내 양을 먹이라.",
+      "messageEn": "Do you love me? Feed my sheep.",
+      "keyEvents": [
+        {"verse": 6, "eventKo": "그물을 오른편에 던지라", "eventEn": "Throw net on right side"},
+        {"verse": 15, "eventKo": "네가 나를 사랑하느냐", "eventEn": "Do you love me?"},
+        {"verse": 17, "eventKo": "내 양을 먹이라", "eventEn": "Feed my sheep"},
+        {"verse": 22, "eventKo": "네가 나를 따르라", "eventEn": "You must follow me"}
+      ],
+      "timelineYear": null
+    }
+  ]
+}
