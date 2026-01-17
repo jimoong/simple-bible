@@ -63,12 +63,24 @@ struct MultiSelectSaveOverlay: View {
         }
     }
     
+    // Check if selected verses are continuous
+    private var isContinuous: Bool {
+        let numbers = verses.map { $0.verseNumber }.sorted()
+        guard let first = numbers.first, let last = numbers.last else { return true }
+        return numbers == Array(first...last)
+    }
+    
     // Combined verse text (no verse numbers, continuous flow)
     private var combinedVerseText: String {
         verses
             .sorted { $0.verseNumber < $1.verseNumber }
             .map { $0.text(for: language) }
             .joined(separator: " ")
+    }
+    
+    // Sorted verses for non-continuous display
+    private var sortedVerses: [BibleVerse] {
+        verses.sorted { $0.verseNumber < $1.verseNumber }
     }
     
     var body: some View {
@@ -139,11 +151,32 @@ struct MultiSelectSaveOverlay: View {
                 .font(theme.verseNumber(12, language: language))
                 .foregroundStyle(theme.textSecondary.opacity(0.6))
             
-            // Combined verse text - scroll mode style without verse numbers
-            Text(combinedVerseText)
-                .font(theme.verseText(verseFontSize, language: language))
-                .foregroundStyle(theme.textPrimary)
-                .lineSpacing(verseLineSpacing)
+            // Verse content - continuous vs non-continuous display
+            if isContinuous {
+                // Combined verse text - scroll mode style without verse numbers
+                Text(combinedVerseText)
+                    .font(theme.verseText(verseFontSize, language: language))
+                    .foregroundStyle(theme.textPrimary)
+                    .lineSpacing(verseLineSpacing)
+            } else {
+                // Non-continuous: show each verse with number on right (scroll mode layout)
+                VStack(alignment: .leading, spacing: 20) {
+                    ForEach(sortedVerses, id: \.verseNumber) { verse in
+                        HStack(alignment: .top, spacing: 4) {
+                            Text(verse.text(for: language))
+                                .font(theme.verseText(verseFontSize, language: language))
+                                .foregroundStyle(theme.textPrimary)
+                                .lineSpacing(verseLineSpacing)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            
+                            Text("\(verse.verseNumber)")
+                                .font(theme.verseNumber(12, language: language))
+                                .foregroundStyle(theme.textSecondary.opacity(0.6))
+                                .frame(width: 18, alignment: .trailing)
+                        }
+                    }
+                }
+            }
         }
         .padding(.horizontal, 30)
         .padding(.vertical, 40)

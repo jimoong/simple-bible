@@ -39,10 +39,16 @@ final class FavoriteService {
         
         // Check if verse is part of any saved passage
         return favorites.contains { favorite in
-            favorite.bookId == bookId &&
-            favorite.chapter == chapter &&
-            favorite.verseNumber <= verseNumber &&
-            (favorite.verseNumberEnd ?? favorite.verseNumber) >= verseNumber
+            guard favorite.bookId == bookId && favorite.chapter == chapter else { return false }
+            
+            // If non-continuous with explicit verse numbers, check the array
+            if let numbers = favorite.verseNumbers {
+                return numbers.contains(verseNumber)
+            }
+            
+            // Otherwise check continuous range
+            return favorite.verseNumber <= verseNumber &&
+                   (favorite.verseNumberEnd ?? favorite.verseNumber) >= verseNumber
         }
     }
     

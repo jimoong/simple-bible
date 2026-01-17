@@ -239,13 +239,21 @@ struct FavoriteVerseRow: View {
     let onEdit: () -> Void
     let onDelete: () -> Void
     
+    @ObservedObject private var fontSizeSettings = FontSizeSettings.shared
+    
     // Get the specific book's theme - used for card styling (matches FavoriteNoteOverlay)
     private var bookTheme: BookTheme {
         BookThemes.theme(for: favorite.bookId)
     }
     
-    // Dynamic font sizing based on character count (same as tap mode)
+    // Font size: passages use scroll mode fixed size, single verses use dynamic sizing
     private var fontSize: CGFloat {
+        // Passages (multi-verse) always use scroll mode settings
+        if favorite.isPassage {
+            return fontSizeSettings.mode.scrollBodySize
+        }
+        
+        // Single verse: dynamic font sizing based on character count (tap mode style)
         let text = favorite.text(for: language)
         let count = text.count
         
@@ -266,6 +274,12 @@ struct FavoriteVerseRow: View {
     }
     
     private var verseLineSpacing: CGFloat {
+        // Passages (multi-verse) always use scroll mode settings
+        if favorite.isPassage {
+            return fontSizeSettings.mode.scrollLineSpacing
+        }
+        
+        // Single verse: dynamic line spacing
         let text = favorite.text(for: language)
         let count = text.count
         
@@ -283,6 +297,11 @@ struct FavoriteVerseRow: View {
         }
     }
     
+    // Parse verse text into paragraphs (for non-continuous display)
+    private var verseParagraphs: [String] {
+        favorite.text(for: language).components(separatedBy: "\n\n")
+    }
+    
     var body: some View {
         Button {
             onTap()
@@ -293,13 +312,38 @@ struct FavoriteVerseRow: View {
                     .font(bookTheme.verseNumber(12, language: language))
                     .foregroundStyle(bookTheme.textSecondary.opacity(0.6))
                 
-                // Verse text - dynamic font size based on length
-                Text(favorite.text(for: language))
-                    .font(bookTheme.verseText(fontSize, language: language))
-                    .foregroundStyle(bookTheme.textPrimary)
-                    .lineSpacing(verseLineSpacing)
-                    .multilineTextAlignment(.leading)
-                    .fixedSize(horizontal: false, vertical: true)
+                // Verse text - show with spacing for non-continuous passages
+                if favorite.isNonContinuous,
+                   let verseNumbers = favorite.verseNumbers,
+                   verseParagraphs.count == verseNumbers.count {
+                    // Non-continuous: show each verse with number on right (scroll mode layout)
+                    VStack(alignment: .leading, spacing: 20) {
+                        ForEach(verseParagraphs.indices, id: \.self) { index in
+                            HStack(alignment: .top, spacing: 4) {
+                                Text(verseParagraphs[index])
+                                    .font(bookTheme.verseText(fontSize, language: language))
+                                    .foregroundStyle(bookTheme.textPrimary)
+                                    .lineSpacing(verseLineSpacing)
+                                    .multilineTextAlignment(.leading)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                
+                                Text("\(verseNumbers[index])")
+                                    .font(bookTheme.verseNumber(12, language: language))
+                                    .foregroundStyle(bookTheme.textSecondary.opacity(0.6))
+                                    .frame(width: 18, alignment: .trailing)
+                            }
+                        }
+                    }
+                } else {
+                    // Single verse or continuous passage - normal display
+                    Text(favorite.text(for: language))
+                        .font(bookTheme.verseText(fontSize, language: language))
+                        .foregroundStyle(bookTheme.textPrimary)
+                        .lineSpacing(verseLineSpacing)
+                        .multilineTextAlignment(.leading)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 
                 // Note (if exists) - no icon, just text
                 if let note = favorite.note, !note.isEmpty {
