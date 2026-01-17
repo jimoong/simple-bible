@@ -11,7 +11,8 @@ struct ExpandableFAB: View {
     var onLanguageToggle: () -> Void
     var onReadingModeToggle: () -> Void
     var onSettings: () -> Void
-    var onListening: () -> Void = {}  // New: listening mode callback
+    var onListening: () -> Void = {}  // Listening mode callback
+    var onMultiSelect: () -> Void = {}  // Multi-select mode callback
     @Binding var isExpanded: Bool
     var isHidden: Bool = false
     var useBlurBackground: Bool = false
@@ -28,10 +29,11 @@ struct ExpandableFAB: View {
     private let menuItemHeight: CGFloat = 48  // Taller items
     private let menuPadding: CGFloat = 8
     
-    private var menuItemCount: Int { 4 } // Settings + Listening + Reading Mode + Language
+    private var menuItemCount: Int { 5 } // Settings + Divider/Select + Listening + Reading Mode + Language
+    private let dividerHeight: CGFloat = 1
     
     private var expandedHeight: CGFloat {
-        CGFloat(menuItemCount) * menuItemHeight + menuPadding * 2
+        CGFloat(menuItemCount) * menuItemHeight + menuPadding * 2 + dividerHeight + 16 // +16 for divider padding
     }
     
     var body: some View {
@@ -58,6 +60,19 @@ struct ExpandableFAB: View {
                     let isKoreanUI = uiLanguage == .kr
                     menuItem(icon: "gear", label: isKoreanUI ? "설정" : "Settings") {
                         onSettings()
+                        closeMenu()
+                    }
+                    
+                    // Divider line
+                    Rectangle()
+                        .fill(Color.white.opacity(0.1))
+                        .frame(height: dividerHeight)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                    
+                    // Multi-select mode (closes menu and enters selection mode)
+                    menuItem(icon: "checkmark.circle", label: isKoreanUI ? "선택하기" : "Select") {
+                        onMultiSelect()
                         closeMenu()
                     }
                     
@@ -329,6 +344,7 @@ private struct MenuItemButtonStyle: ButtonStyle {
                             onReadingModeToggle: { print("Toggle reading mode") },
                             onSettings: { print("Open settings") },
                             onListening: { print("Open listening mode") },
+                            onMultiSelect: { print("Enter multi-select mode") },
                             isExpanded: $isExpanded
                         )
                         .padding(24)

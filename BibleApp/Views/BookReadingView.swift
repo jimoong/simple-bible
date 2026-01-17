@@ -2,6 +2,8 @@ import SwiftUI
 
 struct BookReadingView: View {
     @Bindable var viewModel: BibleViewModel
+    var isMultiSelectMode: Bool = false
+    @Binding var selectedVerseIndices: Set<Int>
     var onHeaderTap: () -> Void = {}
     var onSaveVerse: ((BibleVerse) -> Void)? = nil
     var onCopyVerse: ((BibleVerse) -> Void)? = nil
@@ -172,6 +174,8 @@ struct BookReadingView: View {
                             fontSize: verseFontSize,
                             lineSpacing: verseLineSpacing,
                             isHighlighted: highlightedVerseNumber == verse.verseNumber,
+                            isMultiSelectMode: isMultiSelectMode,
+                            isSelected: selectedVerseIndices.contains(index),
                             onSave: {
                                 onSaveVerse?(verse)
                             },
@@ -183,6 +187,9 @@ struct BookReadingView: View {
                             },
                             onListen: {
                                 onListenFromVerse?(index)
+                            },
+                            onSelect: {
+                                toggleVerseSelection(index)
                             }
                         )
                         .id(verse.verseNumber)
@@ -244,6 +251,16 @@ struct BookReadingView: View {
                 onScrollStateChange?(false)
             }
         }
+    }
+    
+    // MARK: - Multi-Select Helper
+    private func toggleVerseSelection(_ index: Int) {
+        if selectedVerseIndices.contains(index) {
+            selectedVerseIndices.remove(index)
+        } else {
+            selectedVerseIndices.insert(index)
+        }
+        HapticManager.shared.selection()
     }
     
     // MARK: - Scroll to Verse Helper
@@ -342,10 +359,13 @@ struct BookVerseRow: View {
     let fontSize: CGFloat
     let lineSpacing: CGFloat
     var isHighlighted: Bool = false
+    var isMultiSelectMode: Bool = false
+    var isSelected: Bool = false
     var onSave: (() -> Void)? = nil
     var onCopy: (() -> Void)? = nil
     var onAsk: (() -> Void)? = nil
     var onListen: (() -> Void)? = nil
+    var onSelect: (() -> Void)? = nil  // Tap handler for multi-select mode
     
     @State private var isFavorite: Bool = false
     @State private var highlightedCharCount: Int = 0
@@ -384,16 +404,42 @@ struct BookVerseRow: View {
                 .foregroundStyle(theme.textSecondary.opacity(0.6))
                 .frame(width: 18, alignment: .trailing)
         }
-        .padding(.vertical, 12)
-        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .padding(.horizontal, 12)
         .background(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(theme.textPrimary.opacity(isHighlighted ? 0.08 : 0))
+            Group {
+                if isMultiSelectMode {
+                    if isSelected {
+                        // Selected: filled background, no border
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .fill(theme.textPrimary.opacity(0.08))
+                    } else {
+                        // Unselected: border only
+                        RoundedRectangle(cornerRadius: 12, style: .continuous)
+                            .stroke(theme.textSecondary.opacity(0.2), lineWidth: 1)
+                    }
+                } else {
+                    // Normal mode: highlight on navigation
+                    RoundedRectangle(cornerRadius: 12, style: .continuous)
+                        .fill(theme.textPrimary.opacity(isHighlighted ? 0.08 : 0))
+                }
+            }
         )
-        .padding(.vertical, -12)
-        .padding(.horizontal, -16)
+        .padding(.vertical, -8)
+        .padding(.horizontal, -12)
         .animation(.easeOut(duration: 0.3), value: isHighlighted)
+        .animation(.easeOut(duration: 0.15), value: isSelected)
         .contentShape(Rectangle())
+        .overlay {
+            // Tap overlay only active in multi-select mode
+            if isMultiSelectMode {
+                Color.clear
+                    .contentShape(Rectangle())
+                    .onTapGesture {
+                        onSelect?()
+                    }
+            }
+        }
         .onAppear {
             let wasFavorite = FavoriteService.shared.isFavorite(
                 bookName: verse.bookName,
@@ -430,7 +476,7 @@ struct BookVerseRow: View {
             isFavorite = true
             animateHighlight()
         }
-        .contextMenu {
+        .contextMenu(isMultiSelectMode ? nil : ContextMenu {
             Button {
                 onSave?()
                 // State change handled by notification after actual save
@@ -469,7 +515,7 @@ struct BookVerseRow: View {
                     systemImage: "sparkle"
                 )
             }
-        }
+        })
     }
     
     // Animate highlight like drawing with a highlighter pen
@@ -496,5 +542,15 @@ struct BookVerseRow: View {
 }
 
 #Preview {
-    BookReadingView(viewModel: BibleViewModel())
+    struct PreviewWrapper: View {
+        @State private var selectedIndices: Set<Int> = []
+        
+        var body: some View {
+            BookReadingView(
+                viewModel: BibleViewModel(),
+                selectedVerseIndices: $selectedIndices
+            )
+        }
+    }
+    return PreviewWrapper()
 }

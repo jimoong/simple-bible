@@ -22,6 +22,11 @@ struct ContentView: View {
     // Clean reading mode - hide controls while scrolling
     @State private var hideControlsWhileScrolling = false
     
+    // Multi-select mode state
+    @State private var isMultiSelectMode = false
+    @State private var selectedVerseIndices: Set<Int> = []
+    @State private var showMultiSelectSaveOverlay = false
+    
     private var theme: BookTheme {
         viewModel.currentTheme
     }
@@ -53,33 +58,52 @@ struct ContentView: View {
                 // Main reading view - switches based on reading mode
                 Group {
                     if viewModel.readingMode == .tap {
-                        SlotMachineView(viewModel: viewModel, onHeaderTap: {
-                            handleHeaderTap()
-                        }, onSaveVerse: { verse in
-                            handleSaveVerse(verse)
-                        }, onCopyVerse: { verse in
-                            handleCopyVerse(verse)
-                        }, onAskVerse: { verse in
-                            handleAskVerse(verse)
-                        }, onListenFromVerse: { verseIndex in
-                            enterListeningMode(fromVerseIndex: verseIndex)
-                        })
-                    } else {
-                        BookReadingView(viewModel: viewModel, onHeaderTap: {
-                            handleHeaderTap()
-                        }, onSaveVerse: { verse in
-                            handleSaveVerse(verse)
-                        }, onCopyVerse: { verse in
-                            handleCopyVerse(verse)
-                        }, onAskVerse: { verse in
-                            handleAskVerse(verse)
-                        }, onListenFromVerse: { verseIndex in
-                            enterListeningMode(fromVerseIndex: verseIndex)
-                        }, onScrollStateChange: { isScrolling in
-                            withAnimation(.easeOut(duration: 0.25)) {
-                                hideControlsWhileScrolling = isScrolling
+                        SlotMachineView(
+                            viewModel: viewModel,
+                            isMultiSelectMode: isMultiSelectMode,
+                            selectedVerseIndices: $selectedVerseIndices,
+                            onHeaderTap: {
+                                handleHeaderTap()
+                            },
+                            onSaveVerse: { verse in
+                                handleSaveVerse(verse)
+                            },
+                            onCopyVerse: { verse in
+                                handleCopyVerse(verse)
+                            },
+                            onAskVerse: { verse in
+                                handleAskVerse(verse)
+                            },
+                            onListenFromVerse: { verseIndex in
+                                enterListeningMode(fromVerseIndex: verseIndex)
                             }
-                        })
+                        )
+                    } else {
+                        BookReadingView(
+                            viewModel: viewModel,
+                            isMultiSelectMode: isMultiSelectMode,
+                            selectedVerseIndices: $selectedVerseIndices,
+                            onHeaderTap: {
+                                handleHeaderTap()
+                            },
+                            onSaveVerse: { verse in
+                                handleSaveVerse(verse)
+                            },
+                            onCopyVerse: { verse in
+                                handleCopyVerse(verse)
+                            },
+                            onAskVerse: { verse in
+                                handleAskVerse(verse)
+                            },
+                            onListenFromVerse: { verseIndex in
+                                enterListeningMode(fromVerseIndex: verseIndex)
+                            },
+                            onScrollStateChange: { isScrolling in
+                                withAnimation(.easeOut(duration: 0.25)) {
+                                    hideControlsWhileScrolling = isScrolling
+                                }
+                            }
+                        )
                     }
                 }
                 
@@ -294,52 +318,75 @@ struct ContentView: View {
                     VStack {
                         Spacer()
                         
-                        // Bottom: Action buttons (left) + Expandable menu (right)
-                        HStack(alignment: .bottom) {
-                            leftActionButtons
-                                .animation(.easeOut(duration: 0.25), value: isSettingsFABExpanded)
-                            Spacer()
-                            // Show book navigation when in fullscreen chapter grid
-                            if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
-                                bookNavigationButtons
-                                    .opacity(isFavoritesFilterExpanded ? 0 : 1)
-                                    .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
+                        // Multi-select mode action bar OR normal bottom controls
+                        if isMultiSelectMode {
+                            MultiSelectActionBar(
+                                selectedCount: selectedVerseIndices.count,
+                                languageMode: viewModel.uiLanguage,
+                                useBlurBackground: viewModel.readingMode == .scroll,
+                                onSave: {
+                                    handleMultiSelectSave()
+                                },
+                                onCopy: {
+                                    handleMultiSelectCopy()
+                                },
+                                onClose: {
+                                    exitMultiSelectMode()
+                                }
+                            )
+                            .padding(.horizontal, 28)
+                            .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
+                        } else {
+                            // Bottom: Action buttons (left) + Expandable menu (right)
+                            HStack(alignment: .bottom) {
+                                leftActionButtons
+                                    .animation(.easeOut(duration: 0.25), value: isSettingsFABExpanded)
+                                Spacer()
+                                // Show book navigation when in fullscreen chapter grid
+                                if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
+                                    bookNavigationButtons
+                                        .opacity(isFavoritesFilterExpanded ? 0 : 1)
+                                        .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
+                                }
+                                // Hide menu when in fullscreen chapter grid or favorites
+                                if !(isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf)) {
+                                    ExpandableFAB(
+                                        languageMode: $viewModel.languageMode,
+                                        readingMode: $viewModel.readingMode,
+                                        theme: theme,
+                                        primaryLanguageCode: viewModel.primaryLanguageCode,
+                                        secondaryLanguageCode: viewModel.secondaryLanguageCode,
+                                        uiLanguage: viewModel.uiLanguage,
+                                        onLanguageToggle: {
+                                            withAnimation(.easeOut(duration: 0.2)) {
+                                                viewModel.toggleLanguage()
+                                            }
+                                        },
+                                        onReadingModeToggle: {
+                                            withAnimation(.easeOut(duration: 0.2)) {
+                                                viewModel.readingMode = viewModel.readingMode == .tap ? .scroll : .tap
+                                                hideControlsWhileScrolling = false  // Reset on mode change
+                                            }
+                                        },
+                                        onSettings: {
+                                            showSettings = true
+                                        },
+                                        onListening: {
+                                            enterListeningMode()
+                                        },
+                                        onMultiSelect: {
+                                            enterMultiSelectMode()
+                                        },
+                                        isExpanded: $isSettingsFABExpanded,
+                                        useBlurBackground: viewModel.readingMode == .scroll
+                                    )
+                                }
                             }
-                            // Hide menu when in fullscreen chapter grid or favorites
-                            if !(isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf)) {
-                                ExpandableFAB(
-                                    languageMode: $viewModel.languageMode,
-                                    readingMode: $viewModel.readingMode,
-                                    theme: theme,
-                                    primaryLanguageCode: viewModel.primaryLanguageCode,
-                                    secondaryLanguageCode: viewModel.secondaryLanguageCode,
-                                    uiLanguage: viewModel.uiLanguage,
-                                    onLanguageToggle: {
-                                        withAnimation(.easeOut(duration: 0.2)) {
-                                            viewModel.toggleLanguage()
-                                        }
-                                    },
-                                    onReadingModeToggle: {
-                                        withAnimation(.easeOut(duration: 0.2)) {
-                                            viewModel.readingMode = viewModel.readingMode == .tap ? .scroll : .tap
-                                            hideControlsWhileScrolling = false  // Reset on mode change
-                                        }
-                                    },
-                                    onSettings: {
-                                        showSettings = true
-                                    },
-                                    onListening: {
-                                        enterListeningMode()
-                                    },
-                                    isExpanded: $isSettingsFABExpanded,
-                                    useBlurBackground: viewModel.readingMode == .scroll
-                                )
-                            }
+                            .padding(.horizontal, 28)
+                            .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
+                            // Hide controls while scrolling in scroll mode (clean reading experience)
+                            .opacity(hideControlsWhileScrolling && viewModel.readingMode == .scroll ? 0 : 1)
                         }
-                        .padding(.horizontal, 28)
-                        .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
-                        // Hide controls while scrolling in scroll mode (clean reading experience)
-                        .opacity(hideControlsWhileScrolling && viewModel.readingMode == .scroll ? 0 : 1)
                     }
                     .ignoresSafeArea()
                     .zIndex(29)  // Above bookshelf (27) and chapter info panel (28)
@@ -454,6 +501,11 @@ struct ContentView: View {
                     markCurrentChapterToastSeen()
                 }
                 showChapterToastIfAvailable()
+                
+                // Clear multi-select when chapter changes
+                if isMultiSelectMode {
+                    selectedVerseIndices.removeAll()
+                }
             }
             .onChange(of: viewModel.currentBook) { _, _ in
                 // Quick dismiss current toast when book changes
@@ -464,6 +516,11 @@ struct ContentView: View {
                     markCurrentChapterToastSeen()
                 }
                 showChapterToastIfAvailable()
+                
+                // Exit multi-select mode when book changes
+                if isMultiSelectMode {
+                    exitMultiSelectMode()
+                }
             }
             .fullScreenCover(isPresented: $showSettings) {
                 SettingsView(
@@ -505,6 +562,32 @@ struct ContentView: View {
                     onCancel: {
                         selectedVerseForMenu = nil
                         editingFavorite = nil
+                    }
+                )
+            }
+            .fullScreenCover(isPresented: $showMultiSelectSaveOverlay) {
+                let selectedVerses = selectedVerseIndices.sorted().compactMap { index -> BibleVerse? in
+                    guard index < viewModel.verses.count else { return nil }
+                    return viewModel.verses[index]
+                }
+                
+                MultiSelectSaveOverlay(
+                    verses: selectedVerses,
+                    book: viewModel.currentBook,
+                    chapter: viewModel.currentChapter,
+                    language: viewModel.uiLanguage,
+                    onSave: { note in
+                        // Save all selected verses as a single passage
+                        FavoriteService.shared.addFavoritePassage(
+                            verses: selectedVerses,
+                            book: viewModel.currentBook,
+                            note: note
+                        )
+                        showMultiSelectSaveOverlay = false
+                        exitMultiSelectMode()
+                    },
+                    onCancel: {
+                        showMultiSelectSaveOverlay = false
                     }
                 )
             }
@@ -627,6 +710,77 @@ struct ContentView: View {
             verseNumber: viewModel.readingMode == .tap ? (viewModel.currentVerseIndex + 1) : nil,
             readingMode: viewModel.readingMode
         )
+    }
+    
+    // MARK: - Multi-Select Mode
+    
+    private func enterMultiSelectMode() {
+        withAnimation(.easeOut(duration: 0.2)) {
+            // Force switch to scroll mode for multi-select (tap mode uses taps for navigation)
+            if viewModel.readingMode == .tap {
+                viewModel.readingMode = .scroll
+            }
+            isMultiSelectMode = true
+            selectedVerseIndices.removeAll()
+        }
+        HapticManager.shared.selection()
+    }
+    
+    private func exitMultiSelectMode() {
+        withAnimation(.easeOut(duration: 0.2)) {
+            isMultiSelectMode = false
+            selectedVerseIndices.removeAll()
+        }
+        HapticManager.shared.selection()
+    }
+    
+    private func handleMultiSelectSave() {
+        guard !selectedVerseIndices.isEmpty else { return }
+        showMultiSelectSaveOverlay = true
+        HapticManager.shared.selection()
+    }
+    
+    private func handleMultiSelectCopy() {
+        guard !selectedVerseIndices.isEmpty else { return }
+        
+        // Sort indices and get verses
+        let sortedIndices = selectedVerseIndices.sorted()
+        let selectedVerses = sortedIndices.compactMap { index -> BibleVerse? in
+            guard index < viewModel.verses.count else { return nil }
+            return viewModel.verses[index]
+        }
+        
+        guard !selectedVerses.isEmpty else { return }
+        
+        // Build copy text
+        let versesText = selectedVerses.map { $0.text(for: viewModel.uiLanguage) }.joined(separator: " ")
+        let bookName = viewModel.currentBook.name(for: viewModel.uiLanguage)
+        let verseNumbers = sortedIndices.map { $0 + 1 }
+        let reference: String
+        
+        if viewModel.uiLanguage == .kr {
+            if verseNumbers.count == 1 {
+                reference = "\(bookName) \(viewModel.currentChapter)장 \(verseNumbers[0])절"
+            } else if let first = verseNumbers.first, let last = verseNumbers.last, verseNumbers == Array(first...last) {
+                // Continuous range
+                reference = "\(bookName) \(viewModel.currentChapter)장 \(first)-\(last)절"
+            } else {
+                // Non-continuous
+                reference = "\(bookName) \(viewModel.currentChapter)장 \(verseNumbers.map { String($0) }.joined(separator: ", "))절"
+            }
+        } else {
+            if verseNumbers.count == 1 {
+                reference = "\(bookName) \(viewModel.currentChapter):\(verseNumbers[0])"
+            } else if let first = verseNumbers.first, let last = verseNumbers.last, verseNumbers == Array(first...last) {
+                reference = "\(bookName) \(viewModel.currentChapter):\(first)-\(last)"
+            } else {
+                reference = "\(bookName) \(viewModel.currentChapter):\(verseNumbers.map { String($0) }.joined(separator: ", "))"
+            }
+        }
+        
+        UIPasteboard.general.string = "\(versesText)\n— \(reference)"
+        HapticManager.shared.success()
+        FeedbackManager.shared.showSuccess(viewModel.uiLanguage == .kr ? "클립보드에 복사되었습니다" : "Copied to clipboard")
     }
     
     // MARK: - Listening Mode

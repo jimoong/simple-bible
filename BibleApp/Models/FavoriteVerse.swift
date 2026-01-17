@@ -14,12 +14,18 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
     let bookNameKr: String
     let chapter: Int
     let verseNumber: Int
+    let verseNumberEnd: Int?  // For passages (e.g., verses 1-3), nil for single verse
     let textEn: String
     let textKr: String
     let likedAt: Date
     var note: String?
     
-    /// Create a FavoriteVerse from a BibleVerse
+    /// Check if this is a passage (multiple verses)
+    var isPassage: Bool {
+        verseNumberEnd != nil && verseNumberEnd! > verseNumber
+    }
+    
+    /// Create a FavoriteVerse from a BibleVerse (single verse)
     init(from verse: BibleVerse, book: BibleBook, note: String? = nil) {
         self.id = "\(book.id)_\(verse.chapter)_\(verse.verseNumber)"
         self.bookId = book.id
@@ -27,8 +33,41 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         self.bookNameKr = book.nameKr
         self.chapter = verse.chapter
         self.verseNumber = verse.verseNumber
+        self.verseNumberEnd = nil
         self.textEn = verse.textEn
         self.textKr = verse.textKr
+        self.likedAt = Date()
+        self.note = note
+    }
+    
+    /// Create a FavoriteVerse from multiple verses (passage)
+    init(from verses: [BibleVerse], book: BibleBook, note: String? = nil) {
+        let sortedVerses = verses.sorted { $0.verseNumber < $1.verseNumber }
+        guard let first = sortedVerses.first, let last = sortedVerses.last else {
+            // Fallback to empty (shouldn't happen)
+            self.id = "\(book.id)_0_0"
+            self.bookId = book.id
+            self.bookNameEn = book.nameEn
+            self.bookNameKr = book.nameKr
+            self.chapter = 0
+            self.verseNumber = 0
+            self.verseNumberEnd = nil
+            self.textEn = ""
+            self.textKr = ""
+            self.likedAt = Date()
+            self.note = note
+            return
+        }
+        
+        self.id = "\(book.id)_\(first.chapter)_\(first.verseNumber)-\(last.verseNumber)"
+        self.bookId = book.id
+        self.bookNameEn = book.nameEn
+        self.bookNameKr = book.nameKr
+        self.chapter = first.chapter
+        self.verseNumber = first.verseNumber
+        self.verseNumberEnd = sortedVerses.count > 1 ? last.verseNumber : nil
+        self.textEn = sortedVerses.map { $0.textEn }.joined(separator: " ")
+        self.textKr = sortedVerses.map { $0.textKr }.joined(separator: " ")
         self.likedAt = Date()
         self.note = note
     }
@@ -41,6 +80,7 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         bookNameKr: String,
         chapter: Int,
         verseNumber: Int,
+        verseNumberEnd: Int? = nil,
         textEn: String,
         textKr: String,
         likedAt: Date,
@@ -52,6 +92,7 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         self.bookNameKr = bookNameKr
         self.chapter = chapter
         self.verseNumber = verseNumber
+        self.verseNumberEnd = verseNumberEnd
         self.textEn = textEn
         self.textKr = textKr
         self.likedAt = likedAt
@@ -81,8 +122,14 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         let name = bookName(for: language)
         switch language {
         case .kr:
+            if let end = verseNumberEnd, end > verseNumber {
+                return "\(name) \(chapter)장 \(verseNumber)-\(end)절"
+            }
             return "\(name) \(chapter)장 \(verseNumber)절"
         case .en:
+            if let end = verseNumberEnd, end > verseNumber {
+                return "\(name) \(chapter):\(verseNumber)-\(end)"
+            }
             return "\(name) \(chapter):\(verseNumber)"
         }
     }
@@ -92,9 +139,15 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         // Get abbreviation from BibleData if available
         if let book = BibleData.book(by: bookId) {
             let abbrev = book.abbreviation(for: language)
+            if let end = verseNumberEnd, end > verseNumber {
+                return "\(abbrev) \(chapter):\(verseNumber)-\(end)"
+            }
             return "\(abbrev) \(chapter):\(verseNumber)"
         }
         // Fallback
+        if let end = verseNumberEnd, end > verseNumber {
+            return "\(chapter):\(verseNumber)-\(end)"
+        }
         return "\(chapter):\(verseNumber)"
     }
 }

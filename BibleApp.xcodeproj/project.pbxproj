@@ -11,6 +11,8 @@
 		662A3A8B2F1B5891004F674A /* ErrorReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A892F1B5891004F674A /* ErrorReporter.swift */; };
 		662A3A8C2F1B5891004F674A /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A8A2F1B5891004F674A /* FeedbackManager.swift */; };
 		662A3A8D2F1B5891004F674A /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A882F1B5891004F674A /* ErrorLogger.swift */; };
+		662A3A902F1C2A8B004F674A /* MultiSelectActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A8E2F1C2A8B004F674A /* MultiSelectActionBar.swift */; };
+		662A3A912F1C2A8B004F674A /* MultiSelectSaveOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A8F2F1C2A8B004F674A /* MultiSelectSaveOverlay.swift */; };
 		66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */; };
 		66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */; };
 		66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */; };
@@ -80,6 +82,8 @@
 		662A3A882F1B5891004F674A /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
 		662A3A892F1B5891004F674A /* ErrorReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorReporter.swift; sourceTree = "<group>"; };
 		662A3A8A2F1B5891004F674A /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
+		662A3A8E2F1C2A8B004F674A /* MultiSelectActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectActionBar.swift; sourceTree = "<group>"; };
+		662A3A8F2F1C2A8B004F674A /* MultiSelectSaveOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectSaveOverlay.swift; sourceTree = "<group>"; };
 		66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleReferenceParser.swift; sourceTree = "<group>"; };
 		66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchService.swift; sourceTree = "<group>"; };
 		66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchViewModel.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 		AA0000050000000000000005 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				662A3A8E2F1C2A8B004F674A /* MultiSelectActionBar.swift */,
+				662A3A8F2F1C2A8B004F674A /* MultiSelectSaveOverlay.swift */,
 				662A3A862F1B5740004F674A /* AppToast.swift */,
 				66EAF8842F1A1AA500542200 /* ListeningModeView.swift */,
 				66EAF8852F1A1AA500542200 /* ListeningPlayerView.swift */,
@@ -380,6 +386,8 @@
 				AA0000010000000000000020 /* SplashScreenView.swift in Sources */,
 				AA0000010000000000000021 /* ExpandableFAB.swift in Sources */,
 				AA0000010000000000000032 /* NavigateFAB.swift in Sources */,
+				662A3A902F1C2A8B004F674A /* MultiSelectActionBar.swift in Sources */,
+				662A3A912F1C2A8B004F674A /* MultiSelectSaveOverlay.swift in Sources */,
 				AA0000010000000000000022 /* SettingsView.swift in Sources */,
 				662A3A8B2F1B5891004F674A /* ErrorReporter.swift in Sources */,
 				662A3A8C2F1B5891004F674A /* FeedbackManager.swift in Sources */,

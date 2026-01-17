@@ -5,6 +5,8 @@ struct VerseCardView: View {
     let language: LanguageMode
     let theme: BookTheme
     let isCentered: Bool
+    var isMultiSelectMode: Bool = false
+    var isSelected: Bool = false
     var onSave: (() -> Void)? = nil
     var onCopy: (() -> Void)? = nil
     var onAsk: (() -> Void)? = nil
@@ -127,8 +129,27 @@ struct VerseCardView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 28)
         .padding(.bottom, verseNumberHeight)  // Compensate for verse number to optically center text
+        .padding(.vertical, isMultiSelectMode ? 16 : 0)
+        .padding(.horizontal, isMultiSelectMode ? -12 : 0)  // Expand for border/fill
+        .background(
+            Group {
+                if isMultiSelectMode {
+                    if isSelected {
+                        // Selected: filled background, no border
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .fill(theme.textPrimary.opacity(0.08))
+                    } else {
+                        // Unselected: border only
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .stroke(theme.textSecondary.opacity(0.2), lineWidth: 1)
+                    }
+                }
+            }
+        )
+        .padding(.horizontal, isMultiSelectMode ? 12 : 0)  // Restore padding after background
+        .animation(.easeOut(duration: 0.15), value: isSelected)
         .contentShape(Rectangle())
-        .contextMenu(isCentered ? ContextMenu {
+        .contextMenu(isCentered && !isMultiSelectMode ? ContextMenu {
             Button {
                 onSave?()
                 // State change handled by notification after actual save

@@ -29,10 +29,21 @@ final class FavoriteService {
     
     // MARK: - Public API
     
-    /// Check if a verse is already favorited
+    /// Check if a verse is already favorited (either as single verse or part of a passage)
     func isFavorite(bookId: String, chapter: Int, verseNumber: Int) -> Bool {
+        // Check for exact single verse match
         let key = makeKey(bookId: bookId, chapter: chapter, verseNumber: verseNumber)
-        return favorites.contains { $0.id == key }
+        if favorites.contains(where: { $0.id == key }) {
+            return true
+        }
+        
+        // Check if verse is part of any saved passage
+        return favorites.contains { favorite in
+            favorite.bookId == bookId &&
+            favorite.chapter == chapter &&
+            favorite.verseNumber <= verseNumber &&
+            (favorite.verseNumberEnd ?? favorite.verseNumber) >= verseNumber
+        }
     }
     
     /// Check if a BibleVerse is already favorited
@@ -75,6 +86,39 @@ final class FavoriteService {
                 "verseNumber": verse.verseNumber
             ]
         )
+    }
+    
+    /// Add multiple verses as a single passage to favorites
+    func addFavoritePassage(verses: [BibleVerse], book: BibleBook, note: String? = nil) {
+        guard !verses.isEmpty else { return }
+        
+        // For single verse, use regular addFavorite
+        if verses.count == 1, let verse = verses.first {
+            addFavorite(verse: verse, book: book, note: note)
+            return
+        }
+        
+        let favorite = FavoriteVerse(from: verses, book: book, note: note)
+        
+        // Check if this exact passage already exists
+        if favorites.contains(where: { $0.id == favorite.id }) { return }
+        
+        favorites.insert(favorite, at: 0) // Add to beginning (newest first)
+        saveFavorites()
+        HapticManager.shared.success()
+        
+        // Post notification for each verse in the passage for highlight animation
+        for verse in verses {
+            NotificationCenter.default.post(
+                name: .verseFavoriteSaved,
+                object: nil,
+                userInfo: [
+                    "bookName": verse.bookName,
+                    "chapter": verse.chapter,
+                    "verseNumber": verse.verseNumber
+                ]
+            )
+        }
     }
     
     /// Remove a verse from favorites

@@ -2,6 +2,8 @@ import SwiftUI
 
 struct SlotMachineView: View {
     @Bindable var viewModel: BibleViewModel
+    var isMultiSelectMode: Bool = false
+    @Binding var selectedVerseIndices: Set<Int>
     var onHeaderTap: () -> Void = {}
     var onSaveVerse: ((BibleVerse) -> Void)? = nil
     var onCopyVerse: ((BibleVerse) -> Void)? = nil
@@ -41,7 +43,16 @@ struct SlotMachineView: View {
                                 verseScrollView(geometry: geometry)
                                     .contentShape(Rectangle())
                                     .onTapGesture { location in
-                                        // Top 30% = previous verse, bottom 70% = next verse
+                                        // In multi-select mode, toggle selection of current verse
+                                        if isMultiSelectMode {
+                                            let currentIndex = scrollPosition ?? viewModel.currentVerseIndex
+                                            if currentIndex < viewModel.verses.count {
+                                                toggleVerseSelection(currentIndex)
+                                            }
+                                            return
+                                        }
+                                        
+                                        // Normal mode: Top 30% = previous verse, bottom 70% = next verse
                                         let tapY = location.y
                                         let threshold = geometry.size.height * 0.3
                                         // Total items includes verses + mark as read card
@@ -187,6 +198,16 @@ struct SlotMachineView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
     
+    // MARK: - Multi-Select Helper
+    private func toggleVerseSelection(_ index: Int) {
+        if selectedVerseIndices.contains(index) {
+            selectedVerseIndices.remove(index)
+        } else {
+            selectedVerseIndices.insert(index)
+        }
+        HapticManager.shared.selection()
+    }
+    
     // MARK: - Verse Scroll View
     private func verseScrollView(geometry: GeometryProxy) -> some View {
         let verseHeight = geometry.size.height * 0.38
@@ -205,6 +226,8 @@ struct SlotMachineView: View {
                             language: viewModel.languageMode,
                             theme: theme,
                             isCentered: index == viewModel.currentVerseIndex,
+                            isMultiSelectMode: isMultiSelectMode,
+                            isSelected: selectedVerseIndices.contains(index),
                             onSave: {
                                 onSaveVerse?(viewModel.verses[index])
                             },
@@ -580,5 +603,15 @@ struct MarkAsReadCard: View {
 }
 
 #Preview {
-    SlotMachineView(viewModel: BibleViewModel())
+    struct PreviewWrapper: View {
+        @State private var selectedIndices: Set<Int> = []
+        
+        var body: some View {
+            SlotMachineView(
+                viewModel: BibleViewModel(),
+                selectedVerseIndices: $selectedIndices
+            )
+        }
+    }
+    return PreviewWrapper()
 }
