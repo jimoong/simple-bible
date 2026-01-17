@@ -9,6 +9,7 @@ struct BookReadingView: View {
     var onCopyVerse: ((BibleVerse) -> Void)? = nil
     var onAskVerse: ((BibleVerse) -> Void)? = nil
     var onListenFromVerse: ((Int) -> Void)? = nil  // Listen from verse index
+    var onMultiSelectVerse: ((Int) -> Void)? = nil  // Enter multi-select with this verse index
     var onScrollStateChange: ((Bool) -> Void)? = nil  // true = scrolling, false = idle
     var externalControlsHidden: Bool = false  // External state to sync with
     
@@ -191,6 +192,9 @@ struct BookReadingView: View {
                             },
                             onSelect: {
                                 toggleVerseSelection(index)
+                            },
+                            onMultiSelect: {
+                                onMultiSelectVerse?(index)
                             }
                         )
                         .id(verse.verseNumber)
@@ -373,6 +377,7 @@ struct BookVerseRow: View {
     var onAsk: (() -> Void)? = nil
     var onListen: (() -> Void)? = nil
     var onSelect: (() -> Void)? = nil  // Tap handler for multi-select mode
+    var onMultiSelect: (() -> Void)? = nil  // Enter multi-select mode with this verse selected
     
     @State private var isFavorite: Bool = false
     @State private var highlightedCharCount: Int = 0
@@ -502,6 +507,15 @@ struct BookVerseRow: View {
                 Label(
                     language == .kr ? "복사" : "Copy",
                     systemImage: "doc.on.doc"
+                )
+            }
+            
+            Button {
+                onMultiSelect?()
+            } label: {
+                Label(
+                    language == .kr ? "선택하기" : "Select",
+                    systemImage: "checkmark.circle"
                 )
             }
             

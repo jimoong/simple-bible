@@ -11,6 +11,7 @@ struct VerseCardView: View {
     var onCopy: (() -> Void)? = nil
     var onAsk: (() -> Void)? = nil
     var onListen: (() -> Void)? = nil
+    var onMultiSelect: (() -> Void)? = nil  // Enter multi-select mode with this verse selected
     
     // Dynamic font sizing based on character count
     // Progressively smaller fonts for longer verses
@@ -168,6 +169,15 @@ struct VerseCardView: View {
                 Label(
                     language == .kr ? "복사" : "Copy",
                     systemImage: "doc.on.doc"
+                )
+            }
+            
+            Button {
+                onMultiSelect?()
+            } label: {
+                Label(
+                    language == .kr ? "선택하기" : "Select",
+                    systemImage: "checkmark.circle"
                 )
             }
             

@@ -77,6 +77,9 @@ struct ContentView: View {
                             },
                             onListenFromVerse: { verseIndex in
                                 enterListeningMode(fromVerseIndex: verseIndex)
+                            },
+                            onMultiSelectVerse: { verseIndex in
+                                enterMultiSelectModeWithVerse(verseIndex)
                             }
                         )
                     } else {
@@ -98,6 +101,9 @@ struct ContentView: View {
                             },
                             onListenFromVerse: { verseIndex in
                                 enterListeningMode(fromVerseIndex: verseIndex)
+                            },
+                            onMultiSelectVerse: { verseIndex in
+                                enterMultiSelectModeWithVerse(verseIndex)
                             },
                             onScrollStateChange: { isScrolling in
                                 withAnimation(.easeOut(duration: 0.25)) {
@@ -764,6 +770,18 @@ struct ContentView: View {
             isMultiSelectMode = true
             selectedVerseIndices.removeAll()
         }
+        HapticManager.shared.selection()
+    }
+    
+    private func enterMultiSelectModeWithVerse(_ verseIndex: Int) {
+        // No animation - prevents visual glitch with background expansion
+        // Force switch to scroll mode for multi-select (tap mode uses taps for navigation)
+        if viewModel.readingMode == .tap {
+            viewModel.readingMode = .scroll
+        }
+        isMultiSelectMode = true
+        selectedVerseIndices.removeAll()
+        selectedVerseIndices.insert(verseIndex)  // Pre-select the verse
         HapticManager.shared.selection()
     }
     
