@@ -374,6 +374,11 @@ struct GamalielChatView: View {
         }
     }
     
+    // Minimum height for content to ensure scrollability
+    private var contentMinHeight: CGFloat {
+        UIScreen.main.bounds.height - safeAreaTop - 70 - safeAreaBottom - 90
+    }
+    
     // Regular chat content with message pairs
     private var regularChatContent: some View {
         ScrollViewReader { proxy in
@@ -411,6 +416,7 @@ struct GamalielChatView: View {
                         .onAppear { isAtBottom = true }
                         .onDisappear { isAtBottom = false }
                 }
+                .frame(minHeight: contentMinHeight, alignment: .top)
                 .padding(.horizontal, 20)
             }
             .safeAreaInset(edge: .top) {
