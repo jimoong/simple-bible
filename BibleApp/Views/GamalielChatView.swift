@@ -806,10 +806,21 @@ private struct BibleReferenceTextView: View {
     }
     
     // Content block type for rendering
-    private enum ContentBlock {
+    private enum ContentBlock: Identifiable {
         case text(String)
         case bulletList([String])
         case orderedList([(number: String, content: String)])
+        
+        var id: String {
+            switch self {
+            case .text(let content):
+                return "text-\(content.hashValue)"
+            case .bulletList(let items):
+                return "bullet-\(items.joined().hashValue)"
+            case .orderedList(let items):
+                return "ordered-\(items.map { $0.content }.joined().hashValue)"
+            }
+        }
     }
     
     // Check if line is a numbered list item (e.g., "1. ", "10. ")
@@ -904,7 +915,7 @@ private struct BibleReferenceTextView: View {
         let blocks = parseContentBlocks(text)
         
         VStack(alignment: .leading, spacing: lineSpacing + 4) {
-            ForEach(Array(blocks.enumerated()), id: \.offset) { _, block in
+            ForEach(Array(blocks.enumerated()), id: \.element.id) { _, block in
                 switch block {
                 case .text(let content):
                     let (attributedText, refs) = buildAttributedText(from: content)
@@ -926,7 +937,7 @@ private struct BibleReferenceTextView: View {
                     
                 case .bulletList(let items):
                     VStack(alignment: .leading, spacing: lineSpacing + 10) {
-                        ForEach(Array(items.enumerated()), id: \.offset) { _, item in
+                        ForEach(Array(items.enumerated()), id: \.element.hashValue) { _, item in
                             BulletItemView(
                                 content: item,
                                 font: font,
@@ -938,7 +949,7 @@ private struct BibleReferenceTextView: View {
                     
                 case .orderedList(let items):
                     VStack(alignment: .leading, spacing: lineSpacing + 10) {
-                        ForEach(Array(items.enumerated()), id: \.offset) { _, item in
+                        ForEach(Array(items.enumerated()), id: \.element.content.hashValue) { _, item in
                             OrderedItemView(
                                 number: item.number,
                                 content: item.content,
