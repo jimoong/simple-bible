@@ -116,7 +116,7 @@ struct ListeningModeView: View {
     private func verseScrollView(geometry: GeometryProxy) -> some View {
         ScrollViewReader { proxy in
             ScrollView(.vertical, showsIndicators: true) {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 4) {
                     // Top padding for header + chapter title (same as BookReadingView)
                     VStack(spacing: 0) {
                         Spacer()
@@ -128,6 +128,7 @@ struct ListeningModeView: View {
                                 .font(theme.verseText(24, language: bibleViewModel.uiLanguage).bold())
                                 .foregroundStyle(theme.textPrimary)
                                 .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 16)
                                 .padding(.bottom, 40)
                         } else {
                             Spacer()
@@ -168,7 +169,7 @@ struct ListeningModeView: View {
                     .padding(.top, 40)
                     .id("markAsRead")
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 8)
             }
             .safeAreaInset(edge: .bottom) {
                 Color.clear.frame(height: geometry.safeAreaInsets.bottom + 280)  // Extra space for player
@@ -256,10 +257,8 @@ struct ListeningVerseRow: View {
                 .foregroundStyle(theme.textSecondary.opacity(verseNumberOpacity))
                 .frame(width: 18, alignment: .trailing)
         }
-        .padding(.vertical, 12)
+        .padding(.vertical, 8)
         .padding(.horizontal, 16)
-        .padding(.vertical, -12)
-        .padding(.horizontal, -16)
     }
     
     // Create attributed text with progressive opacity based on reading progress

@@ -148,7 +148,7 @@ struct BookReadingView: View {
     private func verseScrollView(geometry: GeometryProxy) -> some View {
         ScrollViewReader { scrollProxy in
             ScrollView(.vertical, showsIndicators: true) {
-                VStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 4) {
                     // Top padding for header + chapter title
                     VStack(spacing: 0) {
                         Spacer()
@@ -160,6 +160,7 @@ struct BookReadingView: View {
                                 .font(theme.verseText(24, language: viewModel.uiLanguage).bold())
                                 .foregroundStyle(theme.textPrimary)
                                 .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.horizontal, 12)
                                 .padding(.bottom, 40)
                         } else {
                             Spacer()
@@ -215,7 +216,7 @@ struct BookReadingView: View {
                     )
                     .padding(.top, 40)
                 }
-                .padding(.horizontal, 24)
+                .padding(.horizontal, 12)
             }
             .safeAreaInset(edge: .bottom) {
                 Color.clear.frame(height: geometry.safeAreaInsets.bottom + 100)
@@ -437,8 +438,6 @@ struct BookVerseRow: View {
                 }
             }
         )
-        .padding(.vertical, -8)
-        .padding(.horizontal, -12)
         .animation(.easeOut(duration: 0.3), value: isHighlighted)
         .animation(.easeOut(duration: 0.15), value: isSelected)
         .contentShape(Rectangle())
