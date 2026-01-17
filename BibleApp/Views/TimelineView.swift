@@ -31,8 +31,10 @@ struct BibleTimelineView: View {
                         
                         // Era-based timeline
                         timelineContent
-                            .padding(.bottom, 120)
                     }
+                }
+                .safeAreaInset(edge: .bottom) {
+                    Color.clear.frame(height: 120)  // Space for bottom bar
                 }
             }
             
@@ -669,8 +671,10 @@ struct BibleTimelineContentView: View {
                     Color.clear
                         .frame(height: 1)
                         .id("timelineBottom")
-                        .padding(.bottom, 120)  // Space for bottom bar
                 }
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: 120)  // Space for bottom bar
             }
             .coordinateSpace(name: "timelineScroll")
             .onChange(of: searchText) { _, newValue in

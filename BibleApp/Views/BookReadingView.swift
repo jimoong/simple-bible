@@ -202,9 +202,11 @@ struct BookReadingView: View {
                         }
                     )
                     .padding(.top, 40)
-                    .padding(.bottom, geometry.safeAreaInsets.bottom + 100)
                 }
                 .padding(.horizontal, 24)
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: geometry.safeAreaInsets.bottom + 100)
             }
             .scrollIndicators(.visible)
             .scrollDisabled(isDragging)  // Lock vertical scroll during horizontal swipe

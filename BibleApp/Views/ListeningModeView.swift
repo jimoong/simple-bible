@@ -166,10 +166,12 @@ struct ListeningModeView: View {
                         }
                     )
                     .padding(.top, 40)
-                    .padding(.bottom, geometry.safeAreaInsets.bottom + 280)  // Extra space for player
                     .id("markAsRead")
                 }
                 .padding(.horizontal, 24)
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: geometry.safeAreaInsets.bottom + 280)  // Extra space for player
             }
             .scrollIndicators(.visible)
             .id(viewModel.sessionId)  // Force scroll view refresh when chapter changes

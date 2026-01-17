@@ -191,7 +191,9 @@ struct FavoritesReadingView: View {
                     }
                     .padding(.horizontal, 10)
                 }
-                .padding(.bottom, safeAreaBottom + 100)
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: safeAreaBottom + 100)
             }
             .scrollIndicators(.visible)
             .onAppear {

@@ -274,7 +274,9 @@ struct BookGridView: View {
                                 .frame(height: 1)
                                 .id("bookGridBottom")
                         }
-                        .padding(.bottom, 120)  // Space for bottom controls
+                    }
+                    .safeAreaInset(edge: .bottom) {
+                        Color.clear.frame(height: 120)  // Space for bottom controls
                     }
                     .onChange(of: bookGridScrollTrigger) { _, _ in
                         withAnimation(.easeOut(duration: 0.4)) {
