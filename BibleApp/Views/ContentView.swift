@@ -42,6 +42,10 @@ struct ContentView: View {
     }
     
     var body: some View {
+        // Force SwiftUI to observe listeningViewModel properties (fixes cold start issue)
+        let _ = listeningViewModel.verseReadPositions.count
+        let _ = listeningViewModel.highlightedRange
+        
         GeometryReader { geometry in
             let maxPanelHeight = geometry.size.height * 0.8
             
@@ -424,6 +428,7 @@ struct ContentView: View {
                             gamalielViewModel.open(with: viewModel.uiLanguage, readingContext: currentReadingContext)
                         }
                     )
+                    .id(listeningViewModel.sessionId)  // Force complete view recreation on each session
                     .transition(.opacity)
                     .zIndex(25)
                 }
@@ -437,6 +442,8 @@ struct ContentView: View {
             .onAppear {
                 setupVoiceSearchNavigation()
                 showChapterToastIfAvailable()
+                // Warm up TTSService on app launch to fix cold start issues
+                _ = TTSService.shared
             }
             .onChange(of: viewModel.currentChapter) { _, _ in
                 // Quick dismiss current toast when chapter changes (user swiped)

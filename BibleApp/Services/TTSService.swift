@@ -80,10 +80,24 @@ class TTSService: NSObject {
     
     private func setupAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .spokenAudio)
-            try AVAudioSession.sharedInstance().setActive(true)
+            let session = AVAudioSession.sharedInstance()
+            try session.setCategory(.playback, mode: .spokenAudio)
+            try session.setActive(true)
         } catch {
             print("Failed to setup audio session: \(error)")
+        }
+    }
+    
+    /// Ensure audio session is ready before playback
+    private func ensureAudioSessionReady() {
+        do {
+            let session = AVAudioSession.sharedInstance()
+            // Re-activate session if needed (fixes cold start issue)
+            if !session.isOtherAudioPlaying {
+                try session.setActive(true)
+            }
+        } catch {
+            print("Failed to ensure audio session: \(error)")
         }
     }
     
@@ -208,6 +222,8 @@ class TTSService: NSObject {
             await MainActor.run {
                 guard sessionId == playbackSessionId else { return }
                 isLoading = false
+                // Don't play if user paused during loading
+                guard !isPaused else { return }
                 playAudio(data: audioData, verseIndex: index)
             }
             
@@ -235,6 +251,9 @@ class TTSService: NSObject {
     
     /// Play audio data
     private func playAudio(data: Data, verseIndex: Int) {
+        // Ensure audio session is ready (fixes cold start issue)
+        ensureAudioSessionReady()
+        
         do {
             audioPlayer = try AVAudioPlayer(data: data)
             audioPlayer?.delegate = self
