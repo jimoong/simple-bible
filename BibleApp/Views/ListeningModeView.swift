@@ -85,6 +85,7 @@ struct ListeningModeView: View {
         .onAppear {
             // Refresh callbacks when view appears to ensure proper observation
             viewModel.refreshCallbacks()
+            viewModel.markViewReady()
         }
     }
     

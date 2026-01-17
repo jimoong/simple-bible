@@ -17,12 +17,17 @@ class ListeningViewModel {
     // Unique ID that changes when chapter changes - forces view refresh
     var sessionId: UUID = UUID()
     
+    // Playback start coordination (wait for view to appear)
+    private var isViewReady: Bool = false
+    private var pendingStartIndex: Int?
+    
     // References to content
     var verses: [BibleVerse] = []
     var languageMode: LanguageMode = .kr
     
     // Service reference
     private let ttsService = TTSService.shared
+    
     
     // MARK: - Computed Properties
     
@@ -32,6 +37,10 @@ class ListeningViewModel {
     
     var isPaused: Bool {
         ttsService.isPaused
+    }
+    
+    var isLoading: Bool {
+        ttsService.isLoading
     }
     
     var playbackProgress: Double {
@@ -106,7 +115,6 @@ class ListeningViewModel {
     private func setupCallbacks() {
         // Capture self strongly to avoid weak reference issues during callbacks
         let viewModel = self
-        
         ttsService.onUtteranceStart = { index in
             Task { @MainActor in
                 viewModel.currentVerseIndex = index
@@ -181,6 +189,7 @@ class ListeningViewModel {
         self.verses = verses
         self.languageMode = language
         self.isActive = true
+        self.pendingStartIndex = verseIndex
         
         // Mark all previous verses as fully read
         if verseIndex > 0 {
@@ -195,18 +204,16 @@ class ListeningViewModel {
         // Re-setup callbacks to ensure they're connected to this instance
         setupCallbacks()
         
-        // Start playback after a brief delay to ensure state is settled
-        Task { @MainActor in
-            // Small delay to allow SwiftUI to process state changes
-            try? await Task.sleep(nanoseconds: 100_000_000)  // 100ms
-            self.ttsService.speakFrom(index: verseIndex, texts: self.verseTexts, language: language)
-        }
+        // Start playback once the listening view is ready
+        beginPlaybackIfNeeded()
     }
     
     /// Exit listening mode
     func exit() {
         ttsService.stop()
         isActive = false
+        isViewReady = false
+        pendingStartIndex = nil
         verses = []
         currentVerseIndex = 0
         highlightedRange = nil
@@ -255,6 +262,9 @@ class ListeningViewModel {
     func pauseForNavigation() {
         if isPlaying {
             ttsService.pause()
+        } else if ttsService.isLoading {
+            // Cancel loading request - audio would start playing after navigation otherwise
+            ttsService.stop()
         }
     }
     
@@ -271,6 +281,18 @@ class ListeningViewModel {
     /// Refresh callbacks - called when view appears to ensure proper observation
     func refreshCallbacks() {
         setupCallbacks()
+    }
+    
+    /// Mark listening view ready and start pending playback if needed
+    func markViewReady() {
+        isViewReady = true
+        beginPlaybackIfNeeded()
+    }
+    
+    private func beginPlaybackIfNeeded() {
+        guard isActive, isViewReady, let startIndex = pendingStartIndex else { return }
+        pendingStartIndex = nil
+        ttsService.speakFrom(index: startIndex, texts: verseTexts, language: languageMode)
     }
 }
 

@@ -177,19 +177,27 @@ struct ListeningPlayerView: View {
             } label: {
                 Image(systemName: "backward.end.fill")
                     .font(.system(size: 24, weight: .medium))
-                    .foregroundStyle(.white.opacity(viewModel.currentVerseIndex > 0 ? 0.9 : 0.3))
+                    .foregroundStyle(.white.opacity(viewModel.currentVerseIndex > 0 && !viewModel.isLoading ? 0.9 : 0.3))
             }
-            .disabled(viewModel.currentVerseIndex == 0)
+            .disabled(viewModel.currentVerseIndex == 0 || viewModel.isLoading)
             
-            // Play/Pause
+            // Play/Pause/Loading
             Button {
                 viewModel.togglePlayPause()
                 HapticManager.shared.selection()
             } label: {
-                Image(systemName: viewModel.isPlaying ? "pause.fill" : "play.fill")
-                    .font(.system(size: 36, weight: .medium))
-                    .foregroundStyle(.white)
+                if viewModel.isLoading {
+                    ProgressView()
+                        .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                        .scaleEffect(1.2)
+                        .frame(width: 36, height: 36)
+                } else {
+                    Image(systemName: viewModel.isPlaying ? "pause.fill" : "play.fill")
+                        .font(.system(size: 36, weight: .medium))
+                        .foregroundStyle(.white)
+                }
             }
+            .disabled(viewModel.isLoading)
             
             // Next verse
             Button {
@@ -198,9 +206,9 @@ struct ListeningPlayerView: View {
             } label: {
                 Image(systemName: "forward.end.fill")
                     .font(.system(size: 24, weight: .medium))
-                    .foregroundStyle(.white.opacity(viewModel.currentVerseIndex < viewModel.totalVerses - 1 ? 0.9 : 0.3))
+                    .foregroundStyle(.white.opacity(viewModel.currentVerseIndex < viewModel.totalVerses - 1 && !viewModel.isLoading ? 0.9 : 0.3))
             }
-            .disabled(viewModel.currentVerseIndex >= viewModel.totalVerses - 1)
+            .disabled(viewModel.currentVerseIndex >= viewModel.totalVerses - 1 || viewModel.isLoading)
         }
         .padding(.vertical, 16)
     }

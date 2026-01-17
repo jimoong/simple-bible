@@ -22,8 +22,13 @@ class TTSService: NSObject {
     private var totalVerses: Int = 0
     private var currentLanguage: LanguageMode = .kr
     
+    // Session tracking to ignore stale async responses
+    private var playbackSessionId: UUID = UUID()
+    private var loadTask: Task<Void, Never>?
+    private var prefetchTask: Task<Void, Never>?
+    
     // Timer for simulating word progress (OpenAI TTS doesn't provide word-level callbacks)
-    private var progressTimer: Timer?
+    private var progressTask: Task<Void, Never>?
     private var currentVerseStartTime: Date?
     private var estimatedVerseDuration: TimeInterval = 0
     
@@ -135,6 +140,7 @@ class TTSService: NSObject {
     /// Speak multiple verses sequentially
     func speakVerses(_ texts: [String], language: LanguageMode) {
         stop()
+        startNewSession()
         
         verseTexts = texts
         totalVerses = texts.count
@@ -145,15 +151,18 @@ class TTSService: NSObject {
         errorMessage = nil
         
         // Start loading and playing
-        Task {
-            await loadAndPlayVerse(index: 0)
+        loadTask = Task { [weak self] in
+            guard let self else { return }
+            await self.loadAndPlayVerse(index: 0, sessionId: self.playbackSessionId)
         }
     }
     
     /// Load audio for a verse and play it
-    private func loadAndPlayVerse(index: Int) async {
+    private func loadAndPlayVerse(index: Int, sessionId: UUID) async {
+        guard sessionId == playbackSessionId else { return }
         guard index < verseTexts.count else {
             await MainActor.run {
+                guard sessionId == playbackSessionId else { return }
                 isLoading = false
                 isPlaying = false
                 onAllFinished?()
@@ -171,19 +180,25 @@ class TTSService: NSObject {
             } else {
                 // Generate audio
                 await MainActor.run {
+                    guard sessionId == playbackSessionId else { return }
                     if index == 0 {
                         isLoading = true
                     }
                 }
                 
                 audioData = try await generateSpeech(text: text)
+                guard sessionId == playbackSessionId else { return }
                 audioDataCache[index] = audioData
                 
                 // Pre-fetch next verse in background
                 if index + 1 < verseTexts.count {
-                    Task {
-                        if let nextData = try? await generateSpeech(text: verseTexts[index + 1]) {
-                            audioDataCache[index + 1] = nextData
+                    prefetchTask?.cancel()
+                    prefetchTask = Task { [weak self] in
+                        guard let self else { return }
+                        guard sessionId == self.playbackSessionId else { return }
+                        if let nextData = try? await self.generateSpeech(text: self.verseTexts[index + 1]) {
+                            guard sessionId == self.playbackSessionId else { return }
+                            self.audioDataCache[index + 1] = nextData
                         }
                     }
                 }
@@ -191,12 +206,14 @@ class TTSService: NSObject {
             
             // Play audio
             await MainActor.run {
+                guard sessionId == playbackSessionId else { return }
                 isLoading = false
                 playAudio(data: audioData, verseIndex: index)
             }
             
         } catch {
             await MainActor.run {
+                guard sessionId == playbackSessionId else { return }
                 isLoading = false
                 isPlaying = false
                 errorMessage = error.localizedDescription
@@ -220,7 +237,6 @@ class TTSService: NSObject {
             
             // Start progress simulation
             startProgressSimulation(for: verseIndex)
-            
             onUtteranceStart?(verseIndex)
             
         } catch {
@@ -231,8 +247,8 @@ class TTSService: NSObject {
     
     /// Simulate word-by-word progress (OpenAI doesn't provide word callbacks)
     private func startProgressSimulation(for verseIndex: Int) {
-        progressTimer?.invalidate()
-        progressTimer = nil
+        progressTask?.cancel()
+        progressTask = nil
         
         guard verseIndex < verseTexts.count else { return }
         
@@ -241,58 +257,70 @@ class TTSService: NSObject {
         let duration = audioPlayer?.duration ?? Double(textLength) * 0.05
         
         currentVerseStartTime = Date()
-        estimatedVerseDuration = max(0.1, duration)  // Ensure non-zero duration
+        estimatedVerseDuration = max(0.1, duration)
         
         // Capture values for closure
         let capturedVerseIndex = verseIndex
         let capturedTextLength = textLength
         let capturedDuration = estimatedVerseDuration
         let startTime = currentVerseStartTime!
+        let sessionId = playbackSessionId
         
-        // Update progress every 100ms - explicitly on main run loop
-        let timer = Timer(timeInterval: 0.1, repeats: true) { [weak self] _ in
-            guard let self = self else { return }
-            guard self.isPlaying else { return }
+        // Update progress every 100ms
+        progressTask = Task { @MainActor [weak self] in
+            guard let self else { return }
             
-            let elapsed = Date().timeIntervalSince(startTime)
-            let progress = min(1.0, elapsed / capturedDuration)
-            
-            // Estimate current character position (how much we've read)
-            let charPosition = Int(Double(capturedTextLength) * progress)
-            // Range represents: location=0, length=charPosition (total read so far)
-            let range = NSRange(location: 0, length: min(charPosition, capturedTextLength))
-            
-            self.onWordSpoken?(capturedVerseIndex, range)
-            
-            // Update overall progress
-            let verseProgress = Double(capturedVerseIndex) / Double(max(1, self.totalVerses))
-            let withinVerseProgress = progress / Double(max(1, self.totalVerses))
-            self.playbackProgress = verseProgress + withinVerseProgress
+            while !Task.isCancelled {
+                guard sessionId == self.playbackSessionId else { break }
+                
+                if self.isPaused {
+                    try? await Task.sleep(nanoseconds: 100_000_000)
+                    continue
+                }
+                
+                let elapsed = Date().timeIntervalSince(startTime)
+                let currentTime = self.audioPlayer?.currentTime ?? 0
+                let effectiveDuration = max(0.1, self.audioPlayer?.duration ?? capturedDuration)
+                let baseTime = max(currentTime, elapsed)
+                let progress = min(1.0, baseTime / effectiveDuration)
+                
+                // Estimate current character position
+                let charPosition = Int(Double(capturedTextLength) * progress)
+                let range = NSRange(location: 0, length: min(charPosition, capturedTextLength))
+                
+                self.onWordSpoken?(capturedVerseIndex, range)
+                
+                // Update overall progress
+                let verseProgress = Double(capturedVerseIndex) / Double(max(1, self.totalVerses))
+                let withinVerseProgress = progress / Double(max(1, self.totalVerses))
+                self.playbackProgress = verseProgress + withinVerseProgress
+                
+                try? await Task.sleep(nanoseconds: 100_000_000)
+            }
         }
-        
-        // Add to main run loop explicitly
-        RunLoop.main.add(timer, forMode: .common)
-        progressTimer = timer
     }
     
     /// Start playing from a specific verse index
     func speakFrom(index: Int, texts: [String], language: LanguageMode) {
         guard index < texts.count else { return }
         stop()
+        startNewSession()
         verseTexts = texts
         totalVerses = texts.count
         currentLanguage = language
         currentUtteranceIndex = index
         
-        Task {
-            await loadAndPlayVerse(index: index)
+        loadTask = Task { [weak self] in
+            guard let self else { return }
+            await self.loadAndPlayVerse(index: index, sessionId: self.playbackSessionId)
         }
     }
     
     /// Pause playback
     func pause() {
         audioPlayer?.pause()
-        progressTimer?.invalidate()
+        progressTask?.cancel()
+        progressTask = nil
         isPaused = true
         isPlaying = false
     }
@@ -314,10 +342,15 @@ class TTSService: NSObject {
     
     /// Stop playback completely
     func stop() {
+        progressTask?.cancel()
+        progressTask = nil
+        loadTask?.cancel()
+        loadTask = nil
+        prefetchTask?.cancel()
+        prefetchTask = nil
+        startNewSession()
         audioPlayer?.stop()
         audioPlayer = nil
-        progressTimer?.invalidate()
-        progressTimer = nil
         
         verseTexts.removeAll()
         audioDataCache.removeAll()
@@ -328,6 +361,10 @@ class TTSService: NSObject {
         currentCharacterRange = nil
         playbackProgress = 0
         totalVerses = 0
+    }
+
+    private func startNewSession() {
+        playbackSessionId = UUID()
     }
     
     /// Toggle play/pause
@@ -361,7 +398,9 @@ class TTSService: NSObject {
 extension TTSService: AVAudioPlayerDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        progressTimer?.invalidate()
+        guard totalVerses > 0 else { return }
+        progressTask?.cancel()
+        progressTask = nil
         
         let finishedIndex = currentUtteranceIndex
         onUtteranceFinish?(finishedIndex)
@@ -369,8 +408,10 @@ extension TTSService: AVAudioPlayerDelegate {
         // Play next verse
         let nextIndex = finishedIndex + 1
         if nextIndex < totalVerses {
-            Task {
-                await loadAndPlayVerse(index: nextIndex)
+            loadTask?.cancel()
+            loadTask = Task { [weak self] in
+                guard let self else { return }
+                await self.loadAndPlayVerse(index: nextIndex, sessionId: self.playbackSessionId)
             }
         } else {
             // All finished
