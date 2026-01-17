@@ -250,6 +250,17 @@ final class GamalielViewModel {
             streamingMessageId = nil
             state = .error(error.localizedDescription)
             HapticManager.shared.error()
+            
+            // Report error via FeedbackManager
+            FeedbackManager.shared.reportError(
+                error,
+                context: ErrorContext(
+                    service: "GamalielService",
+                    action: "chatStream",
+                    additionalInfo: ["question": String(question.prefix(100))]
+                ),
+                showToast: false  // Don't show toast, error state is shown in UI
+            )
         }
     }
     

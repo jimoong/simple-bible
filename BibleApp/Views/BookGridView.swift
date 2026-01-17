@@ -508,7 +508,7 @@ struct BookGridView: View {
     
     // MARK: - Normal Bottom Bar
     private var normalBottomBar: some View {
-        HStack(alignment: .bottom, spacing: 12) {
+        HStack(alignment: .bottom, spacing: 8) {
             // Close button (left)
             Button {
                 onClose?()
@@ -597,7 +597,7 @@ struct BookGridView: View {
     
     // MARK: - Search Input Bar
     private var searchInputBar: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 8) {
             // Search input field
             HStack(spacing: 10) {
                 Image(systemName: "magnifyingglass")

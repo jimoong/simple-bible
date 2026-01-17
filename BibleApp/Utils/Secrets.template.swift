@@ -16,4 +16,10 @@ enum Secrets {
     /// Google Gemini API Key (Legacy - optional)
     /// Get your key at: https://aistudio.google.com/app/apikey
     static let geminiKey = "YOUR-GEMINI-API-KEY-HERE"
+    
+    /// Error Reporting Webhook URL (Discord or Slack)
+    /// Discord: https://discord.com/api/webhooks/YOUR_WEBHOOK_ID/YOUR_WEBHOOK_TOKEN
+    /// Slack: https://hooks.slack.com/services/YOUR/WEBHOOK/URL
+    /// Leave empty to disable remote error reporting
+    static let errorReportingWebhookURL = ""
 }

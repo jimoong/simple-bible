@@ -218,6 +218,17 @@ class TTSService: NSObject {
                 isPlaying = false
                 errorMessage = error.localizedDescription
                 onError?(error.localizedDescription)
+                
+                // Report error via FeedbackManager
+                FeedbackManager.shared.reportError(
+                    error,
+                    context: ErrorContext(
+                        service: "TTSService",
+                        action: "generateSpeech",
+                        additionalInfo: ["verseIndex": "\(index)"]
+                    ),
+                    userMessage: "음성 변환에 문제가 있습니다"
+                )
             }
         }
     }
@@ -242,6 +253,17 @@ class TTSService: NSObject {
         } catch {
             errorMessage = "오디오 재생 실패: \(error.localizedDescription)"
             onError?(errorMessage!)
+            
+            // Report error via FeedbackManager
+            FeedbackManager.shared.reportError(
+                error,
+                context: ErrorContext(
+                    service: "TTSService",
+                    action: "playAudio",
+                    additionalInfo: ["verseIndex": "\(verseIndex)"]
+                ),
+                userMessage: "오디오 재생에 문제가 있습니다"
+            )
         }
     }
     
@@ -425,6 +447,27 @@ extension TTSService: AVAudioPlayerDelegate {
     func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer, error: Error?) {
         errorMessage = "오디오 디코딩 오류: \(error?.localizedDescription ?? "Unknown")"
         onError?(errorMessage!)
+        
+        // Report error via FeedbackManager
+        if let error = error {
+            FeedbackManager.shared.reportError(
+                error,
+                context: ErrorContext(
+                    service: "TTSService",
+                    action: "audioPlayerDecode"
+                ),
+                userMessage: "오디오 디코딩에 문제가 있습니다"
+            )
+        } else {
+            FeedbackManager.shared.reportError(
+                message: "Unknown audio decode error",
+                context: ErrorContext(
+                    service: "TTSService",
+                    action: "audioPlayerDecode"
+                ),
+                userMessage: "오디오 디코딩에 문제가 있습니다"
+            )
+        }
     }
 }
 

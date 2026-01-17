@@ -12,6 +12,10 @@ struct BibleAppApp: App {
         WindowGroup {
             SplashScreenView()
                 .preferredColorScheme(.dark)
+                .overlay(alignment: .top) {
+                    AppToastContainer()
+                }
+                .appAlert()
         }
     }
 }

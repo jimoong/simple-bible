@@ -488,7 +488,7 @@ struct GamalielChatView: View {
                 .transition(.scale.combined(with: .opacity))
             }
             
-            HStack(spacing: 12) {
+            HStack(spacing: 8) {
                 // Text input field - same style as search bar
                 HStack(spacing: 10) {
                     TextField(viewModel.inputPlaceholder, text: $viewModel.inputText, axis: .vertical)
@@ -756,6 +756,7 @@ private struct MessageBubble: View {
                             Button {
                                 UIPasteboard.general.string = message.content
                                 HapticManager.shared.lightClick()
+                                FeedbackManager.shared.showSuccess(languageMode == .kr ? "클립보드에 복사되었습니다" : "Copied to clipboard")
                             } label: {
                                 Image(systemName: "doc.on.doc")
                                     .font(.system(size: 17, weight: .regular))

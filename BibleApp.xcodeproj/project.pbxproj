@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		662A3A872F1B5740004F674A /* AppToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A862F1B5740004F674A /* AppToast.swift */; };
+		662A3A8B2F1B5891004F674A /* ErrorReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A892F1B5891004F674A /* ErrorReporter.swift */; };
+		662A3A8C2F1B5891004F674A /* FeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A8A2F1B5891004F674A /* FeedbackManager.swift */; };
+		662A3A8D2F1B5891004F674A /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A882F1B5891004F674A /* ErrorLogger.swift */; };
 		66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */; };
 		66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */; };
 		66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */; };
@@ -72,6 +76,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		662A3A862F1B5740004F674A /* AppToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppToast.swift; sourceTree = "<group>"; };
+		662A3A882F1B5891004F674A /* ErrorLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLogger.swift; sourceTree = "<group>"; };
+		662A3A892F1B5891004F674A /* ErrorReporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorReporter.swift; sourceTree = "<group>"; };
+		662A3A8A2F1B5891004F674A /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleReferenceParser.swift; sourceTree = "<group>"; };
 		66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchService.swift; sourceTree = "<group>"; };
 		66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchViewModel.swift; sourceTree = "<group>"; };
@@ -209,6 +217,7 @@
 		AA0000050000000000000005 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				662A3A862F1B5740004F674A /* AppToast.swift */,
 				66EAF8842F1A1AA500542200 /* ListeningModeView.swift */,
 				66EAF8852F1A1AA500542200 /* ListeningPlayerView.swift */,
 				66EAF8752F16329200542200 /* TimelineView.swift */,
@@ -249,6 +258,9 @@
 		AA0000050000000000000007 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				662A3A882F1B5891004F674A /* ErrorLogger.swift */,
+				662A3A892F1B5891004F674A /* ErrorReporter.swift */,
+				662A3A8A2F1B5891004F674A /* FeedbackManager.swift */,
 				66EAF8802F1A1A8E00542200 /* TTSService.swift */,
 				66EAF8792F1632A800542200 /* TimelineService.swift */,
 				66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */,
@@ -369,6 +381,9 @@
 				AA0000010000000000000021 /* ExpandableFAB.swift in Sources */,
 				AA0000010000000000000032 /* NavigateFAB.swift in Sources */,
 				AA0000010000000000000022 /* SettingsView.swift in Sources */,
+				662A3A8B2F1B5891004F674A /* ErrorReporter.swift in Sources */,
+				662A3A8C2F1B5891004F674A /* FeedbackManager.swift in Sources */,
+				662A3A8D2F1B5891004F674A /* ErrorLogger.swift in Sources */,
 				AA0000010000000000000002 /* ContentView.swift in Sources */,
 				AA0000010000000000000003 /* SlotMachineView.swift in Sources */,
 				AA0000010000000000000004 /* VerseCardView.swift in Sources */,
@@ -409,6 +424,7 @@
 				AA0000010000000000000061 /* DownloadManager.swift in Sources */,
 				AA0000010000000000000062 /* OfflineDownloadView.swift in Sources */,
 				AA0000010000000000000070 /* FavoriteVerse.swift in Sources */,
+				662A3A872F1B5740004F674A /* AppToast.swift in Sources */,
 				AA0000010000000000000071 /* FavoriteService.swift in Sources */,
 				66EAF8832F1A1A9800542200 /* ListeningViewModel.swift in Sources */,
 				AA0000010000000000000072 /* VerseContextMenu.swift in Sources */,

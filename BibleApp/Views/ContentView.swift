@@ -597,6 +597,7 @@ struct ContentView: View {
         let reference = "\(viewModel.currentBook.name(for: viewModel.uiLanguage)) \(verse.chapter):\(verse.verseNumber)"
         UIPasteboard.general.string = "\(text)\n— \(reference)"
         HapticManager.shared.success()
+        FeedbackManager.shared.showSuccess(viewModel.uiLanguage == .kr ? "클립보드에 복사되었습니다" : "Copied to clipboard")
     }
     
     private func handleAskVerse(_ verse: BibleVerse) {
@@ -654,7 +655,7 @@ struct ContentView: View {
         } else {
             // Hide completely when settings FAB is expanded to give menu more space
             if !isSettingsFABExpanded {
-                HStack(spacing: 10) {
+                HStack(spacing: 8) {
                     // Bookshelf button - directly opens bookshelf
                     NavigateFAB(
                         theme: theme,
