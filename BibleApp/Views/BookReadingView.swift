@@ -10,6 +10,7 @@ struct BookReadingView: View {
     var onAskVerse: ((BibleVerse) -> Void)? = nil
     var onListenFromVerse: ((Int) -> Void)? = nil  // Listen from verse index
     var onScrollStateChange: ((Bool) -> Void)? = nil  // true = scrolling, false = idle
+    var externalControlsHidden: Bool = false  // External state to sync with
     
     @State private var dragOffset: CGFloat = 0
     @State private var isDragging: Bool = false
@@ -249,6 +250,12 @@ struct BookReadingView: View {
             if controlsHidden {
                 controlsHidden = false
                 onScrollStateChange?(false)
+            }
+        }
+        .onChange(of: externalControlsHidden) { _, newValue in
+            // Sync internal state when external state changes (e.g., returning from favorites)
+            if !newValue && controlsHidden {
+                controlsHidden = false
             }
         }
     }

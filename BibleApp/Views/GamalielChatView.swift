@@ -729,7 +729,7 @@ private struct MessageBubble: View {
                             Button {
                                 UIPasteboard.general.string = message.content
                                 HapticManager.shared.lightClick()
-                                FeedbackManager.shared.showSuccess(languageMode == .kr ? "클립보드에 복사되었습니다" : "Copied to clipboard")
+                                FeedbackManager.shared.showSuccess(languageMode == .kr ? "클립보드에 복사했어요" : "Copied")
                             } label: {
                                 Image(systemName: "doc.on.doc")
                                     .font(.system(size: 17, weight: .regular))

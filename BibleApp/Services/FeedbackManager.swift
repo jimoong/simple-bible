@@ -91,6 +91,8 @@ class FeedbackManager {
     var showToast = false
     var toastMessage = ""
     var toastType: ToastType = .info
+    var toastActionLabel: String? = nil
+    var toastAction: (() -> Void)? = nil
     
     // MARK: - Alert State
     var showAlert = false
@@ -107,7 +109,9 @@ class FeedbackManager {
     /// - Parameters:
     ///   - message: The message to display
     ///   - type: The type of toast (error, warning, success, info)
-    func showToast(_ message: String, type: ToastType = .info) {
+    ///   - actionLabel: Optional action button label
+    ///   - action: Optional action callback
+    func showToast(_ message: String, type: ToastType = .info, actionLabel: String? = nil, action: (() -> Void)? = nil) {
         Task { @MainActor in
             // If a toast is already showing, dismiss it first
             if showToast {
@@ -117,6 +121,8 @@ class FeedbackManager {
             
             toastMessage = message
             toastType = type
+            toastActionLabel = actionLabel
+            toastAction = action
             showToast = true
         }
     }
@@ -132,8 +138,8 @@ class FeedbackManager {
     }
     
     /// Show a success toast
-    func showSuccess(_ message: String) {
-        showToast(message, type: .success)
+    func showSuccess(_ message: String, actionLabel: String? = nil, action: (() -> Void)? = nil) {
+        showToast(message, type: .success, actionLabel: actionLabel, action: action)
     }
     
     /// Show an info toast
@@ -144,6 +150,8 @@ class FeedbackManager {
     /// Dismiss the current toast
     func dismissToast() {
         showToast = false
+        toastActionLabel = nil
+        toastAction = nil
     }
     
     // MARK: - Alert Methods

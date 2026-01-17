@@ -12,6 +12,8 @@ import SwiftUI
 struct AppToast: View {
     let message: String
     let type: ToastType
+    var actionLabel: String? = nil
+    var onAction: (() -> Void)? = nil
     var onDismiss: () -> Void
     
     private var showIcon: Bool {
@@ -35,6 +37,20 @@ struct AppToast: View {
                 .multilineTextAlignment(.leading)
                 .fixedSize(horizontal: false, vertical: true)
             
+            // Action button (optional)
+            if let label = actionLabel, let action = onAction {
+                Button {
+                    action()
+                    onDismiss()
+                } label: {
+                    Text(label)
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(.white.opacity(0.8))
+                }
+                .buttonStyle(.plain)
+                .padding(.leading, 8)
+            }
+            
             // Close button
             Button {
                 onDismiss()
@@ -49,7 +65,7 @@ struct AppToast: View {
                     )
             }
             .buttonStyle(.plain)
-            .padding(.leading, 12)
+            .padding(.leading, actionLabel != nil ? 4 : 12)
         }
         .padding(.leading, 14)
         .padding(.trailing, 10)
@@ -80,6 +96,8 @@ struct AppToastContainer: View {
                     AppToast(
                         message: feedbackManager.toastMessage,
                         type: feedbackManager.toastType,
+                        actionLabel: feedbackManager.toastActionLabel,
+                        onAction: feedbackManager.toastAction,
                         onDismiss: {
                             dismissToast()
                         }
@@ -241,12 +259,14 @@ extension View {
                 Spacer()
             }
             
-            // Success - no icon
+            // Success with action
             HStack {
                 Spacer()
                 AppToast(
-                    message: "클립보드에 복사되었습니다",
+                    message: "저장했어요",
                     type: .success,
+                    actionLabel: "목록 보기",
+                    onAction: { print("View list") },
                     onDismiss: {}
                 )
                 Spacer()
@@ -286,7 +306,9 @@ extension View {
             .padding()
             
             Button("Show Success Toast") {
-                FeedbackManager.shared.showSuccess("클립보드에 복사되었습니다")
+                FeedbackManager.shared.showSuccess("저장했어요", actionLabel: "목록 보기") {
+                    print("View list")
+                }
             }
             .buttonStyle(.glass)
             .foregroundStyle(.white)

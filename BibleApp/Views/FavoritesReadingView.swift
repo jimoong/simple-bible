@@ -226,7 +226,7 @@ struct FavoritesReadingView: View {
         let reference = favorite.referenceText(for: language)
         UIPasteboard.general.string = "\(text)\n— \(reference)"
         HapticManager.shared.success()
-        FeedbackManager.shared.showSuccess(language == .kr ? "클립보드에 복사되었습니다" : "Copied to clipboard")
+        FeedbackManager.shared.showSuccess(language == .kr ? "클립보드에 복사했어요" : "Copied")
     }
 }
 

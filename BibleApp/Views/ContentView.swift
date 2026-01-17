@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var editingFavorite: FavoriteVerse? = nil
     @State private var isFavoritesFilterExpanded = false  // Hide back button when filter menu is open
     @State private var scrollToFavoriteId: String? = nil  // Scroll to specific favorite on open
+    @State private var favoritesOpenedFromReading = false  // Track if favorites was opened directly from reading view
     
     // Clean reading mode - hide controls while scrolling
     @State private var hideControlsWhileScrolling = false
@@ -102,7 +103,8 @@ struct ContentView: View {
                                 withAnimation(.easeOut(duration: 0.25)) {
                                     hideControlsWhileScrolling = isScrolling
                                 }
-                            }
+                            },
+                            externalControlsHidden: hideControlsWhileScrolling
                         )
                     }
                 }
@@ -177,6 +179,7 @@ struct ContentView: View {
                                 onFavoritesSelect: {
                                     // Set state immediately, then animate the transition
                                     showFavoritesInBookshelf = true
+                                    favoritesOpenedFromReading = false  // Opened from bookshelf, not reading view
                                 },
                                 onNavigate: { book, chapter, verse in
                                     // Restart listening mode with new chapter if was listening
@@ -545,6 +548,7 @@ struct ContentView: View {
                     language: viewModel.uiLanguage,
                     existingFavorite: editingFavorite,
                     onSave: { note in
+                        let isNewFavorite = editingFavorite == nil
                         if let existing = editingFavorite {
                             // Update existing favorite note
                             FavoriteService.shared.updateNote(id: existing.id, note: note)
@@ -558,6 +562,17 @@ struct ContentView: View {
                         }
                         selectedVerseForMenu = nil
                         editingFavorite = nil
+                        
+                        // Show success toast with action (only for new saves)
+                        if isNewFavorite {
+                            FeedbackManager.shared.showSuccess(
+                                viewModel.uiLanguage == .kr ? "저장했어요" : "Saved",
+                                actionLabel: viewModel.uiLanguage == .kr ? "목록 보기" : "View",
+                                action: { [self] in
+                                    openFavoritesList()
+                                }
+                            )
+                        }
                     },
                     onCancel: {
                         selectedVerseForMenu = nil
@@ -585,6 +600,15 @@ struct ContentView: View {
                         )
                         showMultiSelectSaveOverlay = false
                         exitMultiSelectMode()
+                        
+                        // Show success toast with action
+                        FeedbackManager.shared.showSuccess(
+                            viewModel.uiLanguage == .kr ? "저장했어요" : "Saved",
+                            actionLabel: viewModel.uiLanguage == .kr ? "목록 보기" : "View",
+                            action: { [self] in
+                                openFavoritesList()
+                            }
+                        )
                     },
                     onCancel: {
                         showMultiSelectSaveOverlay = false
@@ -674,8 +698,25 @@ struct ContentView: View {
         fullscreenSelectedBook = nil
         viewModel.selectedBookForChapter = nil
         showFavoritesInBookshelf = true
+        favoritesOpenedFromReading = true  // Mark that we came from reading view
+        hideControlsWhileScrolling = false  // Reset controls visibility
         
         // Then animate the bookshelf opening
+        withAnimation(.easeInOut(duration: 0.25)) {
+            viewModel.showBookshelf = true
+        }
+        HapticManager.shared.selection()
+    }
+    
+    private func openFavoritesList() {
+        // Open favorites list without scrolling to specific item
+        fullscreenSelectedBook = nil
+        viewModel.selectedBookForChapter = nil
+        showFavoritesInBookshelf = true
+        scrollToFavoriteId = nil
+        favoritesOpenedFromReading = true  // Mark that we came from reading view
+        hideControlsWhileScrolling = false  // Reset controls visibility
+        
         withAnimation(.easeInOut(duration: 0.25)) {
             viewModel.showBookshelf = true
         }
@@ -687,7 +728,7 @@ struct ContentView: View {
         let reference = "\(viewModel.currentBook.name(for: viewModel.uiLanguage)) \(verse.chapter):\(verse.verseNumber)"
         UIPasteboard.general.string = "\(text)\n— \(reference)"
         HapticManager.shared.success()
-        FeedbackManager.shared.showSuccess(viewModel.uiLanguage == .kr ? "클립보드에 복사되었습니다" : "Copied to clipboard")
+        FeedbackManager.shared.showSuccess(viewModel.uiLanguage == .kr ? "클립보드에 복사했어요" : "Copied")
     }
     
     private func handleAskVerse(_ verse: BibleVerse) {
@@ -780,7 +821,7 @@ struct ContentView: View {
         
         UIPasteboard.general.string = "\(versesText)\n— \(reference)"
         HapticManager.shared.success()
-        FeedbackManager.shared.showSuccess(viewModel.uiLanguage == .kr ? "클립보드에 복사되었습니다" : "Copied to clipboard")
+        FeedbackManager.shared.showSuccess(viewModel.uiLanguage == .kr ? "클립보드에 복사했어요" : "Copied")
     }
     
     // MARK: - Listening Mode
@@ -815,7 +856,14 @@ struct ContentView: View {
             actionButton(icon: "arrow.left") {
                 withAnimation(.easeInOut(duration: 0.25)) {
                     if showFavoritesInBookshelf {
-                        showFavoritesInBookshelf = false
+                        if favoritesOpenedFromReading {
+                            // Came directly from reading view - go back to reading
+                            dismissBookshelf()
+                            favoritesOpenedFromReading = false
+                        } else {
+                            // Came from bookshelf - go back to bookshelf
+                            showFavoritesInBookshelf = false
+                        }
                     } else {
                         fullscreenSelectedBook = nil
                     }
