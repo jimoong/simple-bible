@@ -421,7 +421,7 @@ struct ContentView: View {
                         },
                         onChat: {
                             listeningViewModel.pauseForNavigation()
-                            gamalielViewModel.open(with: viewModel.uiLanguage)
+                            gamalielViewModel.open(with: viewModel.uiLanguage, readingContext: currentReadingContext)
                         }
                     )
                     .transition(.opacity)
@@ -607,8 +607,19 @@ struct ContentView: View {
             verseNumber: verse.verseNumber,
             text: verse.text(for: viewModel.uiLanguage)
         )
-        gamalielViewModel.openWithVerse(attachedVerse, languageMode: viewModel.uiLanguage)
+        let context = currentReadingContext
+        gamalielViewModel.openWithVerse(attachedVerse, languageMode: viewModel.uiLanguage, readingContext: context)
         HapticManager.shared.selection()
+    }
+    
+    /// Current reading context based on reading mode and position
+    private var currentReadingContext: ReadingContext {
+        ReadingContext(
+            book: viewModel.currentBook,
+            chapter: viewModel.currentChapter,
+            verseNumber: viewModel.readingMode == .tap ? (viewModel.currentVerseIndex + 1) : nil,
+            readingMode: viewModel.readingMode
+        )
     }
     
     // MARK: - Listening Mode
@@ -698,7 +709,7 @@ struct ContentView: View {
     
     private var aiChatButton: some View {
         Button {
-            gamalielViewModel.open(with: viewModel.uiLanguage)
+            gamalielViewModel.open(with: viewModel.uiLanguage, readingContext: currentReadingContext)
         } label: {
             ZStack {
                 searchButtonBackground  // Same style as search button

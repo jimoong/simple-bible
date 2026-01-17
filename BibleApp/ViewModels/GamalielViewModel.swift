@@ -42,6 +42,34 @@ struct AttachedVerse: Equatable {
     }
 }
 
+/// Current reading position context (for AI awareness of user's reading location)
+struct ReadingContext: Equatable {
+    let book: BibleBook
+    let chapter: Int
+    let verseNumber: Int?  // nil in scroll mode (only book/chapter known)
+    let readingMode: ReadingMode
+    
+    var referenceKr: String {
+        if let verse = verseNumber {
+            return "\(book.nameKr) \(chapter)장 \(verse)절"
+        } else {
+            return "\(book.nameKr) \(chapter)장"
+        }
+    }
+    
+    var referenceEn: String {
+        if let verse = verseNumber {
+            return "\(book.nameEn) \(chapter):\(verse)"
+        } else {
+            return "\(book.nameEn) \(chapter)"
+        }
+    }
+    
+    func reference(for language: LanguageMode) -> String {
+        language == .kr ? referenceKr : referenceEn
+    }
+}
+
 @MainActor
 @Observable
 final class GamalielViewModel {
@@ -54,6 +82,7 @@ final class GamalielViewModel {
     var isStreaming = false  // Track if response is currently streaming
     var streamingMessageId: UUID? = nil  // ID of message being streamed
     var attachedVerse: AttachedVerse? = nil  // Verse attached to next message
+    var readingContext: ReadingContext? = nil  // Current reading position for AI context
     
     // MARK: - Settings
     private var language: LanguageMode = .kr
@@ -101,8 +130,9 @@ final class GamalielViewModel {
     
     // MARK: - Actions
     
-    func open(with languageMode: LanguageMode) {
+    func open(with languageMode: LanguageMode, readingContext: ReadingContext? = nil) {
         self.language = languageMode
+        self.readingContext = readingContext
         showOverlay = true
         state = .idle
         
@@ -163,9 +193,10 @@ final class GamalielViewModel {
     }
     
     /// Open chat with an attached verse for asking questions
-    func openWithVerse(_ verse: AttachedVerse, languageMode: LanguageMode) {
+    func openWithVerse(_ verse: AttachedVerse, languageMode: LanguageMode, readingContext: ReadingContext? = nil) {
         self.language = languageMode
         self.attachedVerse = verse
+        self.readingContext = readingContext
         showOverlay = true
         state = .idle
         
@@ -179,10 +210,26 @@ final class GamalielViewModel {
         }
     }
     
+    /// Update reading context (called when user navigates in reading view)
+    func updateReadingContext(_ context: ReadingContext?) {
+        self.readingContext = context
+    }
+    
     private func fetchResponse(for question: String, verseContext: AttachedVerse? = nil) async {
         do {
-            // Build the question with verse context if provided
+            // Build the question with context information
             var fullQuestion = question
+            
+            // Add reading context if available (user's current position)
+            if let context = readingContext, verseContext == nil {
+                // Only add reading context if no specific verse is attached
+                let contextNote = language == .kr
+                    ? "[사용자가 현재 읽고 있는 위치: \(context.referenceKr)]\n\n"
+                    : "[User is currently reading: \(context.referenceEn)]\n\n"
+                fullQuestion = contextNote + question
+            }
+            
+            // Add attached verse context if provided (takes priority)
             if let verse = verseContext {
                 let contextPrefix = language == .kr
                     ? "다음 성경 구절을 참고하여 답변해 주세요:\n\(verse.referenceKr): \"\(verse.text)\"\n\n질문: "
