@@ -378,7 +378,7 @@ struct GamalielChatView: View {
     private var regularChatContent: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                LazyVStack(spacing: 32) {
+                VStack(spacing: 32) {
                     ForEach(Array(conversationPairs.enumerated()), id: \.element.id) { index, pair in
                         ConversationPairView(
                             pair: pair,
@@ -709,17 +709,20 @@ private struct MessageBubble: View {
         HStack(alignment: .top, spacing: 12) {
             if message.role == .assistant {
                 // Assistant message - chunked by paragraphs with Bible reference chips
-                VStack(alignment: .leading, spacing: paragraphSpacing) {
-                    ForEach(Array(paragraphs(message.content).enumerated()), id: \.offset) { index, paragraph in
-                        BibleReferenceTextView(
-                            text: paragraph,
-                            font: serifFont(chatFontSize),
-                            lineSpacing: chatLineSpacing,
-                            onNavigateToVerse: onNavigateToVerse
-                        )
+                VStack(alignment: .leading, spacing: 8) {
+                    // Paragraphs with proper spacing
+                    VStack(alignment: .leading, spacing: paragraphSpacing) {
+                        ForEach(Array(paragraphs(message.content).enumerated()), id: \.offset) { index, paragraph in
+                            BibleReferenceTextView(
+                                text: paragraph,
+                                font: serifFont(chatFontSize),
+                                lineSpacing: chatLineSpacing,
+                                onNavigateToVerse: onNavigateToVerse
+                            )
+                        }
                     }
                     
-                    // Action buttons (copy, share) - reserve space always to prevent layout shift
+                    // Action buttons (copy, share) - outside paragraph spacing
                     if !message.content.isEmpty {
                         HStack(spacing: 4) {
                             // Copy button
