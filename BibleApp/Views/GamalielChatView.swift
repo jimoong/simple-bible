@@ -749,8 +749,8 @@ private struct MessageBubble: View {
                         )
                     }
                     
-                    // Action buttons (copy, share) - only show when not streaming
-                    if !isStreaming && !message.content.isEmpty {
+                    // Action buttons (copy, share) - reserve space always to prevent layout shift
+                    if !message.content.isEmpty {
                         HStack(spacing: 4) {
                             // Copy button
                             Button {
@@ -763,6 +763,7 @@ private struct MessageBubble: View {
                                     .frame(width: 44, height: 44)
                                     .contentShape(Rectangle())
                             }
+                            .disabled(isStreaming)
                             
                             // Share button
                             Button {
@@ -774,9 +775,12 @@ private struct MessageBubble: View {
                                     .frame(width: 44, height: 44)
                                     .contentShape(Rectangle())
                             }
+                            .disabled(isStreaming)
                             
                             Spacer()
                         }
+                        .opacity(isStreaming ? 0 : 1)
+                        .animation(.easeOut(duration: 0.3), value: isStreaming)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
