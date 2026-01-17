@@ -326,11 +326,6 @@ struct GamalielChatView: View {
         return pairs
     }
     
-    // Calculate minimum height for conversation view
-    private var conversationMinHeight: CGFloat {
-        UIScreen.main.bounds.height - safeAreaTop - 70 - safeAreaBottom - 90
-    }
-    
     // Check if only welcome message exists (standalone assistant message with no user messages)
     private var isOnlyWelcomeMessage: Bool {
         viewModel.messages.count == 1 && viewModel.messages.first?.role == .assistant
@@ -389,9 +384,7 @@ struct GamalielChatView: View {
                             pair: pair,
                             languageMode: languageMode,
                             isStreaming: viewModel.isStreaming && pair.assistantMessage?.id == viewModel.streamingMessageId,
-                            isLastPair: index == conversationPairs.count - 1,
-                            minHeight: conversationMinHeight,
-                            onNavigateToVerse: handleVerseTap,
+                            onNavigateToVerse: handleVerseTap
                         )
                         .id(pair.id)
                     }
@@ -631,8 +624,6 @@ private struct ConversationPairView: View {
     let pair: ConversationPair
     let languageMode: LanguageMode
     let isStreaming: Bool
-    let isLastPair: Bool  // Only the last pair can have minHeight
-    let minHeight: CGFloat
     var onNavigateToVerse: ((BibleBook, Int, Int?) -> Void)? = nil
     
     var body: some View {
@@ -647,27 +638,6 @@ private struct ConversationPairView: View {
                 MessageBubble(message: assistantMessage, languageMode: languageMode, isStreaming: isStreaming, onNavigateToVerse: onNavigateToVerse)
             }
         }
-        .frame(minHeight: shouldUseMinHeight ? minHeight : nil, alignment: .top)
-    }
-    
-    // Use minimum height only when:
-    // - This is the LAST pair AND
-    // - This pair has a user message AND
-    // - Either streaming is active OR assistant message is empty/nil
-    private var shouldUseMinHeight: Bool {
-        guard isLastPair else { return false }
-        guard pair.userMessage != nil else { return false }
-        
-        if isStreaming {
-            return true
-        }
-        
-        // If assistant message is nil or empty, use min height
-        if let assistantMessage = pair.assistantMessage {
-            return assistantMessage.content.isEmpty
-        }
-        
-        return true  // No assistant message yet
     }
 }
 
