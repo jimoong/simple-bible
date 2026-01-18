@@ -1032,24 +1032,20 @@ struct BookGridView: View {
     
     // MARK: - Title
     private var titleBar: some View {
-        Image("AppIcon")
+        Image("AppLogoTransparent")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 40, height: 40)
-            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .fill(
-                        RadialGradient(
-                            colors: [Color.white.opacity(glowAnimating ? 0.38 : 0.25), Color.clear],
-                            center: .center,
-                            startRadius: 0,
-                            endRadius: 25
-                        )
-                    )
-                    .blur(radius: 8)
-                    .scaleEffect(glowAnimating ? 1.15 : 1.0)
-                    .allowsHitTesting(false)
+                RadialGradient(
+                    colors: [Color.white.opacity(glowAnimating ? 0.38 : 0.25), Color.clear],
+                    center: .center,
+                    startRadius: 0,
+                    endRadius: 25
+                )
+                .blur(radius: 8)
+                .scaleEffect(glowAnimating ? 1.15 : 1.0)
+                .allowsHitTesting(false)
             )
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 20)
