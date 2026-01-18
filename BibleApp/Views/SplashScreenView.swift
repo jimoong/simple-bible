@@ -12,11 +12,10 @@ struct SplashScreenView: View {
                 Color.black
                     .ignoresSafeArea()
                 
-                Image("AppIcon")
+                Image("LaunchLogo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 120, height: 120)
-                    .clipShape(RoundedRectangle(cornerRadius: 26))
+                    .frame(width: 240, height: 240)
                     .opacity(opacity)
             }
             .onAppear {

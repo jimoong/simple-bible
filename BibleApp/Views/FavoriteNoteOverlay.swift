@@ -161,9 +161,10 @@ struct FavoriteNoteOverlay: View {
     private var noteSection: some View {
         ZStack(alignment: .topLeading) {
             TextEditor(text: $noteText)
-                .font(.system(size: 16))
+                .font(.system(size: 17))
                 .foregroundStyle(.white.opacity(0.9))
                 .scrollContentBackground(.hidden)
+                .lineSpacing(6)
                 .frame(minHeight: 150)
                 .focused($isTextEditorFocused)
             
@@ -172,7 +173,7 @@ struct FavoriteNoteOverlay: View {
                 Text(language == .kr 
                      ? "이 구절에 대한 생각이나 묵상을 기록하세요..."
                      : "Write your thoughts or reflections on this verse...")
-                    .font(.system(size: 16))
+                    .font(.system(size: 17))
                     .foregroundStyle(.white.opacity(0.3))
                     .padding(.top, 8)
                     .padding(.leading, 5)

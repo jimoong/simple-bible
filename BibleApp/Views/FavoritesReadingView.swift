@@ -30,6 +30,88 @@ struct FavoritesReadingView: View {
         return favorites.filter { $0.bookId == bookId }
     }
     
+    // Time-based sections
+    private var groupedFavorites: [(label: String, favorites: [FavoriteVerse])] {
+        let now = Date()
+        let calendar = Calendar.current
+        
+        // Define time boundaries
+        let startOfToday = calendar.startOfDay(for: now)
+        let startOfYesterday = calendar.date(byAdding: .day, value: -1, to: startOfToday)!
+        let startOfLastWeek = calendar.date(byAdding: .day, value: -7, to: startOfToday)!
+        let startOfLastMonth = calendar.date(byAdding: .month, value: -1, to: startOfToday)!
+        let startOf6MonthsAgo = calendar.date(byAdding: .month, value: -6, to: startOfToday)!
+        let startOfLastYear = calendar.date(byAdding: .year, value: -1, to: startOfToday)!
+        
+        // "Just now" is within 5 minutes
+        let fiveMinutesAgo = now.addingTimeInterval(-5 * 60)
+        
+        var sections: [(label: String, favorites: [FavoriteVerse])] = []
+        
+        // Sort favorites by likedAt descending (newest first)
+        let sorted = filteredFavorites.sorted { $0.likedAt > $1.likedAt }
+        
+        // Group by time period
+        var justNow: [FavoriteVerse] = []
+        var today: [FavoriteVerse] = []
+        var yesterday: [FavoriteVerse] = []
+        var lastWeek: [FavoriteVerse] = []
+        var lastMonth: [FavoriteVerse] = []
+        var sixMonthsAgo: [FavoriteVerse] = []
+        var lastYear: [FavoriteVerse] = []
+        var older: [FavoriteVerse] = []
+        
+        for favorite in sorted {
+            let date = favorite.likedAt
+            
+            if date >= fiveMinutesAgo {
+                justNow.append(favorite)
+            } else if date >= startOfToday {
+                today.append(favorite)
+            } else if date >= startOfYesterday {
+                yesterday.append(favorite)
+            } else if date >= startOfLastWeek {
+                lastWeek.append(favorite)
+            } else if date >= startOfLastMonth {
+                lastMonth.append(favorite)
+            } else if date >= startOf6MonthsAgo {
+                sixMonthsAgo.append(favorite)
+            } else if date >= startOfLastYear {
+                lastYear.append(favorite)
+            } else {
+                older.append(favorite)
+            }
+        }
+        
+        // Build sections (only include non-empty ones)
+        if !justNow.isEmpty {
+            sections.append((label: language == .kr ? "방금" : "Just Now", favorites: justNow))
+        }
+        if !today.isEmpty {
+            sections.append((label: language == .kr ? "오늘" : "Today", favorites: today))
+        }
+        if !yesterday.isEmpty {
+            sections.append((label: language == .kr ? "어제" : "Yesterday", favorites: yesterday))
+        }
+        if !lastWeek.isEmpty {
+            sections.append((label: language == .kr ? "지난 주" : "Last Week", favorites: lastWeek))
+        }
+        if !lastMonth.isEmpty {
+            sections.append((label: language == .kr ? "지난 달" : "Last Month", favorites: lastMonth))
+        }
+        if !sixMonthsAgo.isEmpty {
+            sections.append((label: language == .kr ? "6개월 전" : "6 Months Ago", favorites: sixMonthsAgo))
+        }
+        if !lastYear.isEmpty {
+            sections.append((label: language == .kr ? "작년" : "Last Year", favorites: lastYear))
+        }
+        if !older.isEmpty {
+            sections.append((label: language == .kr ? "오래 전" : "Older", favorites: older))
+        }
+        
+        return sections
+    }
+    
     // Book counts for filter menu
     private var bookCounts: [(bookId: String, bookName: String, count: Int)] {
         var counts: [String: Int] = [:]
@@ -167,26 +249,32 @@ struct FavoritesReadingView: View {
                     titleSection
                         .padding(.top, safeAreaTop + 16)
                     
-                    // Favorites list (filtered)
+                    // Favorites list (grouped by time)
                     LazyVStack(spacing: 10) {
-                        ForEach(filteredFavorites) { favorite in
-                            FavoriteVerseRow(
-                                favorite: favorite,
-                                language: language,
-                                onTap: {
-                                    onNavigateToVerse(favorite)
-                                },
-                                onCopy: {
-                                    copyVerse(favorite)
-                                },
-                                onEdit: {
-                                    onEditFavorite(favorite)
-                                },
-                                onDelete: {
-                                    deleteFavorite(favorite)
-                                }
-                            )
-                            .id(favorite.id)  // For ScrollViewReader
+                        ForEach(groupedFavorites, id: \.label) { section in
+                            // Section header
+                            sectionHeader(section.label)
+                            
+                            // Section items
+                            ForEach(section.favorites) { favorite in
+                                FavoriteVerseRow(
+                                    favorite: favorite,
+                                    language: language,
+                                    onTap: {
+                                        onNavigateToVerse(favorite)
+                                    },
+                                    onCopy: {
+                                        copyVerse(favorite)
+                                    },
+                                    onEdit: {
+                                        onEditFavorite(favorite)
+                                    },
+                                    onDelete: {
+                                        deleteFavorite(favorite)
+                                    }
+                                )
+                                .id(favorite.id)  // For ScrollViewReader
+                            }
                         }
                     }
                     .padding(.horizontal, 10)
@@ -207,6 +295,22 @@ struct FavoritesReadingView: View {
                 }
             }
         }
+    }
+    
+    // MARK: - Section Header
+    private func sectionHeader(_ title: String) -> some View {
+        HStack {
+            Text(title)
+                .font(.system(size: 13, weight: .semibold))
+                .foregroundStyle(.white.opacity(0.5))
+                .textCase(.uppercase)
+                .tracking(0.5)
+            
+            Spacer()
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 24)
+        .padding(.bottom, 4)
     }
     
     // MARK: - Helper Methods
