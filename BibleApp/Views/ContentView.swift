@@ -336,8 +336,8 @@ struct ContentView: View {
                                 onSave: {
                                     handleMultiSelectSave()
                                 },
-                                onCopy: {
-                                    handleMultiSelectCopy()
+                                onAsk: {
+                                    handleMultiSelectAsk()
                                 },
                                 onClose: {
                                     exitMultiSelectMode()
@@ -840,6 +840,38 @@ struct ContentView: View {
         UIPasteboard.general.string = "\(versesText)\n— \(reference)"
         HapticManager.shared.success()
         FeedbackManager.shared.showSuccess(viewModel.uiLanguage == .kr ? "클립보드에 복사했어요" : "Copied")
+    }
+    
+    private func handleMultiSelectAsk() {
+        guard !selectedVerseIndices.isEmpty else { return }
+        
+        // Sort indices and get verses
+        let sortedIndices = selectedVerseIndices.sorted()
+        let selectedVerses = sortedIndices.compactMap { index -> BibleVerse? in
+            guard index < viewModel.verses.count else { return nil }
+            return viewModel.verses[index]
+        }
+        
+        guard !selectedVerses.isEmpty else { return }
+        
+        // Get verse numbers and texts
+        let verseNumbers = selectedVerses.map { $0.verseNumber }
+        let texts = selectedVerses.map { $0.text(for: viewModel.uiLanguage) }
+        
+        // Create attached passage
+        let passage = AttachedPassage(
+            book: viewModel.currentBook,
+            chapter: viewModel.currentChapter,
+            verseNumbers: verseNumbers,
+            texts: texts
+        )
+        
+        // Open chat with passage
+        gamalielViewModel.openWithPassage(passage, languageMode: viewModel.uiLanguage, readingContext: currentReadingContext)
+        
+        // Exit multi-select mode
+        exitMultiSelectMode()
+        HapticManager.shared.selection()
     }
     
     // MARK: - Listening Mode

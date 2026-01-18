@@ -12,7 +12,7 @@ struct MultiSelectActionBar: View {
     let languageMode: LanguageMode
     var useBlurBackground: Bool = false
     var onSave: () -> Void
-    var onCopy: () -> Void
+    var onAsk: () -> Void
     var onClose: () -> Void
     
     private var hasSelection: Bool {
@@ -76,9 +76,9 @@ struct MultiSelectActionBar: View {
             
             Spacer()
             
-            // Copy button (right)
-            actionButton(icon: "doc.on.doc") {
-                onCopy()
+            // Ask button (right)
+            actionButton(icon: "sparkle") {
+                onAsk()
             }
             .opacity(hasSelection ? 1.0 : 0.6)
             .disabled(!hasSelection)
@@ -216,7 +216,7 @@ private struct PlainButtonPressStyle: ButtonStyle {
                 selectedCount: 0,
                 languageMode: .kr,
                 onSave: {},
-                onCopy: {},
+                onAsk: {},
                 onClose: {}
             )
             .padding(.horizontal, 28)
@@ -235,7 +235,7 @@ private struct PlainButtonPressStyle: ButtonStyle {
                 selectedCount: 3,
                 languageMode: .kr,
                 onSave: {},
-                onCopy: {},
+                onAsk: {},
                 onClose: {}
             )
             .padding(.horizontal, 28)

@@ -457,15 +457,25 @@ struct GamalielChatView: View {
     
     // Should show scroll to bottom button
     private var shouldShowScrollButton: Bool {
-        !isAtBottom && viewModel.attachedVerse == nil && !isOnlyWelcomeMessage
+        !isAtBottom && viewModel.attachedVerse == nil && viewModel.attachedPassage == nil && !isOnlyWelcomeMessage
     }
     
     // MARK: - Input Area (matching search bar style)
     
     private var inputArea: some View {
         VStack(spacing: 8) {
-            // Attached verse bubble (above input, centered)
-            if let attachedVerse = viewModel.attachedVerse {
+            // Attached verse or passage bubble (above input, centered)
+            if let attachedPassage = viewModel.attachedPassage {
+                AttachedPassageBubble(
+                    passage: attachedPassage,
+                    onRemove: {
+                        withAnimation(.easeOut(duration: 0.2)) {
+                            viewModel.clearAttachedPassage()
+                        }
+                    }
+                )
+                .transition(.scale.combined(with: .opacity))
+            } else if let attachedVerse = viewModel.attachedVerse {
                 AttachedVerseBubble(
                     verse: attachedVerse,
                     onRemove: {
@@ -539,6 +549,7 @@ struct GamalielChatView: View {
         .padding(.vertical, 12)
         .padding(.bottom, safeAreaBottom - 16 + (isInputFocused ? 12 : 0))
         .animation(.easeOut(duration: 0.2), value: viewModel.attachedVerse != nil)
+        .animation(.easeOut(duration: 0.2), value: viewModel.attachedPassage != nil)
         .animation(.easeOut(duration: 0.15), value: viewModel.inputText.isEmpty)
     }
 }
@@ -589,6 +600,63 @@ private struct MessageAttachedVerseBubble: View {
     
     var body: some View {
         Text(verse.referenceKr)
+            .font(.system(size: 13, weight: .medium))
+            .foregroundStyle(theme.textSecondary)
+            .padding(.horizontal, 18)
+            .padding(.vertical, 14)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(theme.background)
+            )
+    }
+}
+
+// MARK: - Attached Passage Bubble
+// Shows the attached passage (multiple verses) above the input field
+
+private struct AttachedPassageBubble: View {
+    let passage: AttachedPassage
+    let onRemove: () -> Void
+    
+    private var theme: BookTheme {
+        BookThemes.theme(for: passage.book.id)
+    }
+    
+    var body: some View {
+        HStack(spacing: 8) {
+            Text(passage.referenceKr)
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(theme.textSecondary)
+            
+            Button {
+                onRemove()
+            } label: {
+                Image(systemName: "xmark")
+                    .font(.system(size: 10, weight: .bold))
+                    .foregroundStyle(theme.textSecondary.opacity(0.7))
+            }
+        }
+        .padding(.horizontal, 18)
+        .padding(.vertical, 14)
+        .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(theme.background)
+        )
+    }
+}
+
+// MARK: - Message Attached Passage Bubble
+// Shows the attached passage in sent messages (no remove button)
+
+private struct MessageAttachedPassageBubble: View {
+    let passage: AttachedPassage
+    
+    private var theme: BookTheme {
+        BookThemes.theme(for: passage.book.id)
+    }
+    
+    var body: some View {
+        Text(passage.referenceKr)
             .font(.system(size: 13, weight: .medium))
             .foregroundStyle(theme.textSecondary)
             .padding(.horizontal, 18)
@@ -757,8 +825,10 @@ private struct MessageBubble: View {
             } else {
                 // User message - with bubble (max 80% of screen width, right-aligned bubble, left-aligned text)
                 VStack(alignment: .trailing, spacing: 2) {
-                    // Attached verse bubble (if present)
-                    if let attachedVerse = message.attachedVerse {
+                    // Attached passage or verse bubble (if present)
+                    if let attachedPassage = message.attachedPassage {
+                        MessageAttachedPassageBubble(passage: attachedPassage)
+                    } else if let attachedVerse = message.attachedVerse {
                         MessageAttachedVerseBubble(verse: attachedVerse)
                     }
                     

@@ -14,7 +14,8 @@ struct GamalielMessage: Identifiable, Equatable {
     let role: MessageRole
     var content: String  // Mutable for streaming
     let timestamp: Date
-    var attachedVerse: AttachedVerse? = nil  // Optional attached verse for user messages
+    var attachedVerse: AttachedVerse? = nil  // Optional attached single verse for user messages
+    var attachedPassage: AttachedPassage? = nil  // Optional attached passage (multiple verses) for user messages
     
     enum MessageRole: String, Equatable {
         case user
@@ -39,6 +40,53 @@ struct AttachedVerse: Equatable {
     
     func reference(for language: LanguageMode) -> String {
         language == .kr ? referenceKr : referenceEn
+    }
+}
+
+/// Attached passage (multiple verses) for context-aware questions
+struct AttachedPassage: Equatable {
+    let book: BibleBook
+    let chapter: Int
+    let verseNumbers: [Int]  // Sorted verse numbers
+    let texts: [String]      // Corresponding texts
+    
+    var referenceKr: String {
+        "\(book.nameKr) \(chapter)장 \(formattedVerseNumbers)절"
+    }
+    
+    var referenceEn: String {
+        "\(book.nameEn) \(chapter):\(formattedVerseNumbers)"
+    }
+    
+    func reference(for language: LanguageMode) -> String {
+        language == .kr ? referenceKr : referenceEn
+    }
+    
+    /// Format verse numbers as range or list (e.g., "1-3" or "2, 5, 7")
+    private var formattedVerseNumbers: String {
+        guard !verseNumbers.isEmpty else { return "" }
+        
+        let sorted = verseNumbers.sorted()
+        
+        // Check if consecutive
+        var isConsecutive = true
+        for i in 1..<sorted.count {
+            if sorted[i] != sorted[i-1] + 1 {
+                isConsecutive = false
+                break
+            }
+        }
+        
+        if isConsecutive && sorted.count > 1 {
+            return "\(sorted.first!)-\(sorted.last!)"
+        } else {
+            return sorted.map { String($0) }.joined(separator: ", ")
+        }
+    }
+    
+    /// Combined text for model context
+    var combinedText: String {
+        zip(verseNumbers, texts).map { "\($0). \($1)" }.joined(separator: "\n")
     }
 }
 
@@ -81,7 +129,8 @@ final class GamalielViewModel {
     var inputText: String = ""
     var isStreaming = false  // Track if response is currently streaming
     var streamingMessageId: UUID? = nil  // ID of message being streamed
-    var attachedVerse: AttachedVerse? = nil  // Verse attached to next message
+    var attachedVerse: AttachedVerse? = nil  // Single verse attached to next message
+    var attachedPassage: AttachedPassage? = nil  // Multiple verses attached to next message
     var readingContext: ReadingContext? = nil  // Current reading position for AI context
     
     // MARK: - Settings
@@ -164,27 +213,30 @@ final class GamalielViewModel {
             messages.removeAll()
         }
         
-        // Capture attached verse before clearing
+        // Capture attached content before clearing
         let currentAttachedVerse = attachedVerse
+        let currentAttachedPassage = attachedPassage
         
-        // Add user message with attached verse
+        // Add user message with attached verse or passage
         let userMessage = GamalielMessage(
             role: .user,
             content: text,
             timestamp: Date(),
-            attachedVerse: currentAttachedVerse
+            attachedVerse: currentAttachedVerse,
+            attachedPassage: currentAttachedPassage
         )
         messages.append(userMessage)
         inputText = ""
         attachedVerse = nil  // Clear attachment after sending
+        attachedPassage = nil
         
         // Start thinking
         state = .thinking
         HapticManager.shared.lightClick()
         
-        // Send to API with verse context
+        // Send to API with verse/passage context
         Task {
-            await fetchResponse(for: text, verseContext: currentAttachedVerse)
+            await fetchResponse(for: text, verseContext: currentAttachedVerse, passageContext: currentAttachedPassage)
         }
     }
     
@@ -192,10 +244,39 @@ final class GamalielViewModel {
         attachedVerse = nil
     }
     
+    func clearAttachedPassage() {
+        attachedPassage = nil
+    }
+    
+    func clearAllAttachments() {
+        attachedVerse = nil
+        attachedPassage = nil
+    }
+    
     /// Open chat with an attached verse for asking questions
     func openWithVerse(_ verse: AttachedVerse, languageMode: LanguageMode, readingContext: ReadingContext? = nil) {
         self.language = languageMode
         self.attachedVerse = verse
+        self.attachedPassage = nil  // Clear any existing passage
+        self.readingContext = readingContext
+        showOverlay = true
+        state = .idle
+        
+        // Add welcome message if no messages
+        if messages.isEmpty {
+            messages.append(GamalielMessage(
+                role: .assistant,
+                content: welcomeMessage,
+                timestamp: Date()
+            ))
+        }
+    }
+    
+    /// Open chat with an attached passage (multiple verses) for asking questions
+    func openWithPassage(_ passage: AttachedPassage, languageMode: LanguageMode, readingContext: ReadingContext? = nil) {
+        self.language = languageMode
+        self.attachedPassage = passage
+        self.attachedVerse = nil  // Clear any existing single verse
         self.readingContext = readingContext
         showOverlay = true
         state = .idle
@@ -215,22 +296,29 @@ final class GamalielViewModel {
         self.readingContext = context
     }
     
-    private func fetchResponse(for question: String, verseContext: AttachedVerse? = nil) async {
+    private func fetchResponse(for question: String, verseContext: AttachedVerse? = nil, passageContext: AttachedPassage? = nil) async {
         do {
             // Build the question with context information
             var fullQuestion = question
             
             // Add reading context if available (user's current position)
-            if let context = readingContext, verseContext == nil {
-                // Only add reading context if no specific verse is attached
+            if let context = readingContext, verseContext == nil, passageContext == nil {
+                // Only add reading context if no specific verse/passage is attached
                 let contextNote = language == .kr
                     ? "[사용자가 현재 읽고 있는 위치: \(context.referenceKr)]\n\n"
                     : "[User is currently reading: \(context.referenceEn)]\n\n"
                 fullQuestion = contextNote + question
             }
             
-            // Add attached verse context if provided (takes priority)
-            if let verse = verseContext {
+            // Add attached passage context if provided (takes priority over single verse)
+            if let passage = passageContext {
+                let contextPrefix = language == .kr
+                    ? "다음 성경 구절들을 참고하여 답변해 주세요:\n\(passage.referenceKr):\n\(passage.combinedText)\n\n질문: "
+                    : "Please answer with reference to these Bible verses:\n\(passage.referenceEn):\n\(passage.combinedText)\n\nQuestion: "
+                fullQuestion = contextPrefix + question
+            }
+            // Add attached single verse context if provided
+            else if let verse = verseContext {
                 let contextPrefix = language == .kr
                     ? "다음 성경 구절을 참고하여 답변해 주세요:\n\(verse.referenceKr): \"\(verse.text)\"\n\n질문: "
                     : "Please answer with reference to this Bible verse:\n\(verse.referenceEn): \"\(verse.text)\"\n\nQuestion: "
@@ -239,13 +327,20 @@ final class GamalielViewModel {
             
             // Build conversation history for context (Gemini uses "model" instead of "assistant")
             var conversationMessages = messages.dropLast().suffix(9).map { msg in
-                // For messages with attached verses, include the context
+                // For messages with attached verses/passages, include the context
                 var content = msg.content
-                if let attachedVerse = msg.attachedVerse, msg.role == .user {
-                    let prefix = language == .kr
-                        ? "[\(attachedVerse.referenceKr) 참조]\n"
-                        : "[Ref: \(attachedVerse.referenceEn)]\n"
-                    content = prefix + content
+                if msg.role == .user {
+                    if let attachedPassage = msg.attachedPassage {
+                        let prefix = language == .kr
+                            ? "[\(attachedPassage.referenceKr) 참조]\n"
+                            : "[Ref: \(attachedPassage.referenceEn)]\n"
+                        content = prefix + content
+                    } else if let attachedVerse = msg.attachedVerse {
+                        let prefix = language == .kr
+                            ? "[\(attachedVerse.referenceKr) 참조]\n"
+                            : "[Ref: \(attachedVerse.referenceEn)]\n"
+                        content = prefix + content
+                    }
                 }
                 return GamalielService.ChatMessage(
                     role: msg.role == .user ? "user" : "model",
