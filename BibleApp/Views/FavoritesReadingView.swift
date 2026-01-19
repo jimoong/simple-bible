@@ -372,7 +372,7 @@ struct FavoritesReadingView: View {
                         .padding(.top, safeAreaTop + 72)
                     
                     // Favorites list (grouped by time)
-                    LazyVStack(spacing: isCompactMode ? 8 : 10) {
+                    LazyVStack(spacing: isCompactMode ? 4 : 10) {
                         ForEach(groupedFavorites, id: \.label) { section in
                             // Section header
                             sectionHeader(section.label)

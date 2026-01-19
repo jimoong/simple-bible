@@ -16,8 +16,28 @@ struct FavoriteNoteOverlay: View {
     let onCancel: () -> Void
     var onViewInBible: (() -> Void)? = nil  // Optional: only shown when editing from favorites list
     
-    @State private var noteText: String = ""
+    @State private var noteText: String
     @FocusState private var isTextEditorFocused: Bool
+    
+    init(
+        verse: BibleVerse,
+        book: BibleBook,
+        language: LanguageMode,
+        existingFavorite: FavoriteVerse?,
+        onSave: @escaping (String?) -> Void,
+        onCancel: @escaping () -> Void,
+        onViewInBible: (() -> Void)? = nil
+    ) {
+        self.verse = verse
+        self.book = book
+        self.language = language
+        self.existingFavorite = existingFavorite
+        self.onSave = onSave
+        self.onCancel = onCancel
+        self.onViewInBible = onViewInBible
+        // Initialize @State with the existing note value
+        _noteText = State(initialValue: existingFavorite?.note ?? "")
+    }
     
     private var theme: BookTheme {
         BookThemes.theme(for: book.id)
@@ -90,7 +110,8 @@ struct FavoriteNoteOverlay: View {
                 
             }
         }
-        .onAppear {
+        .onChange(of: existingFavorite?.id) { _, _ in
+            // Reset note text when favorite changes (view reuse)
             noteText = existingFavorite?.note ?? ""
         }
     }
