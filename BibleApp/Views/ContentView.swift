@@ -154,7 +154,7 @@ struct ContentView: View {
                                 .fill(.ultraThinMaterial)
                                 .environment(\.colorScheme, .dark)
                         )
-                        .position(x: geometry.size.width / 2, y: geometry.safeAreaInsets.top + 90)
+                        .position(x: geometry.size.width / 2, y: geometry.safeAreaInsets.top - 16)
                         .zIndex(50)
                 }
                 
