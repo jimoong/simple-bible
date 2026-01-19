@@ -16,7 +16,7 @@ struct ChapterGridView: View {
     // Cell dimensions
     private let cellHeight: CGFloat = 56
     private let cellSpacing: CGFloat = 10
-    private let headerHeight: CGFloat = 120  // Title + subtitle + padding (with doubled bottom)
+    private let headerHeight: CGFloat = 172  // Title + subtitle + padding (below back button row)
     private let summaryHeight: CGFloat = 250  // Summary + message section (17pt font with increased line height)
     
     private var book: BibleBook {
@@ -65,7 +65,7 @@ struct ChapterGridView: View {
     // MARK: - Swipeable Content
     private var swipeableContent: some View {
         VStack(spacing: 0) {
-            // Book title (fixed header)
+            // Book title (fixed header) - positioned below back button row
             VStack(spacing: 8) {
                 Text(book.name(for: viewModel.uiLanguage))
                     .font(theme.display(28, language: viewModel.uiLanguage))
@@ -75,7 +75,7 @@ struct ChapterGridView: View {
                     .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(theme.textSecondary)
             }
-            .padding(.top, 20)
+            .padding(.top, 72)
             .padding(.bottom, 24)
             
             // Scrollable content (summary + chapters)
@@ -305,7 +305,7 @@ struct FullscreenChapterGridView: View {
     // MARK: - Swipeable Content
     private var swipeableContent: some View {
         VStack(spacing: 0) {
-            // Book title and chapter count (fixed header)
+            // Book title and chapter count (fixed header) - positioned below back button row
             VStack(spacing: 8) {
                 Text(currentBook.name(for: viewModel.uiLanguage))
                     .font(theme.display(28, language: viewModel.uiLanguage))
@@ -315,7 +315,7 @@ struct FullscreenChapterGridView: View {
                     .font(.system(size: 13, weight: .regular))
                     .foregroundStyle(theme.textSecondary)
             }
-            .padding(.top, topPadding + 20)
+            .padding(.top, topPadding + 72)
             .padding(.bottom, 24)
             
             // Scrollable content (summary + chapters)

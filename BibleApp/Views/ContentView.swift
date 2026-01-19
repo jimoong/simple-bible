@@ -271,6 +271,21 @@ struct ContentView: View {
                                 }
                             }
                         }
+                        
+                        // Back button - top left (for chapter grid and favorites)
+                        if fullscreenSelectedBook != nil || showFavoritesInBookshelf {
+                            VStack {
+                                HStack {
+                                    topLeftBackButton
+                                        .padding(.top, geometry.safeAreaInsets.top + 8)
+                                        .padding(.leading, 20)
+                                        .opacity(isFavoritesFilterExpanded ? 0 : 1)
+                                        .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
+                                    Spacer()
+                                }
+                                Spacer()
+                            }
+                        }
                     }
                     .ignoresSafeArea()
                     .zIndex(27)  // Above listening mode (25) so bookshelf appears on top
@@ -345,51 +360,46 @@ struct ContentView: View {
                             )
                             .padding(.horizontal, 28)
                             .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
-                        } else {
-                            // Bottom: Action buttons (left) + Expandable menu (right)
+                        } else if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
+                            // Chapter grid view - show book navigation at bottom center
+                            bookNavigationButtons
+                                .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
+                        } else if !isShowingFullscreenBookshelf {
+                            // Normal reading view - Bottom: Action buttons (left) + Expandable menu (right)
                             HStack(alignment: .bottom) {
                                 leftActionButtons
                                     .animation(.easeOut(duration: 0.25), value: isSettingsFABExpanded)
                                 Spacer()
-                                // Show book navigation when in fullscreen chapter grid
-                                if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
-                                    bookNavigationButtons
-                                        .opacity(isFavoritesFilterExpanded ? 0 : 1)
-                                        .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
-                                }
-                                // Hide menu when in fullscreen chapter grid or favorites
-                                if !(isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf)) {
-                                    ExpandableFAB(
-                                        languageMode: $viewModel.languageMode,
-                                        readingMode: $viewModel.readingMode,
-                                        theme: theme,
-                                        primaryLanguageCode: viewModel.primaryLanguageCode,
-                                        secondaryLanguageCode: viewModel.secondaryLanguageCode,
-                                        uiLanguage: viewModel.uiLanguage,
-                                        onLanguageToggle: {
-                                            withAnimation(.easeOut(duration: 0.2)) {
-                                                viewModel.toggleLanguage()
-                                            }
-                                        },
-                                        onReadingModeToggle: {
-                                            withAnimation(.easeOut(duration: 0.2)) {
-                                                viewModel.readingMode = viewModel.readingMode == .tap ? .scroll : .tap
-                                                hideControlsWhileScrolling = false  // Reset on mode change
-                                            }
-                                        },
-                                        onSettings: {
-                                            showSettings = true
-                                        },
-                                        onListening: {
-                                            enterListeningMode()
-                                        },
-                                        onMultiSelect: {
-                                            enterMultiSelectMode()
-                                        },
-                                        isExpanded: $isSettingsFABExpanded,
-                                        useBlurBackground: viewModel.readingMode == .scroll
-                                    )
-                                }
+                                ExpandableFAB(
+                                    languageMode: $viewModel.languageMode,
+                                    readingMode: $viewModel.readingMode,
+                                    theme: theme,
+                                    primaryLanguageCode: viewModel.primaryLanguageCode,
+                                    secondaryLanguageCode: viewModel.secondaryLanguageCode,
+                                    uiLanguage: viewModel.uiLanguage,
+                                    onLanguageToggle: {
+                                        withAnimation(.easeOut(duration: 0.2)) {
+                                            viewModel.toggleLanguage()
+                                        }
+                                    },
+                                    onReadingModeToggle: {
+                                        withAnimation(.easeOut(duration: 0.2)) {
+                                            viewModel.readingMode = viewModel.readingMode == .tap ? .scroll : .tap
+                                            hideControlsWhileScrolling = false  // Reset on mode change
+                                        }
+                                    },
+                                    onSettings: {
+                                        showSettings = true
+                                    },
+                                    onListening: {
+                                        enterListeningMode()
+                                    },
+                                    onMultiSelect: {
+                                        enterMultiSelectMode()
+                                    },
+                                    isExpanded: $isSettingsFABExpanded,
+                                    useBlurBackground: viewModel.readingMode == .scroll
+                                )
                             }
                             .padding(.horizontal, 28)
                             .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
@@ -909,54 +919,58 @@ struct ContentView: View {
     
     @ViewBuilder
     private var leftActionButtons: some View {
-        if isShowingFullscreenBookshelf && (fullscreenSelectedBook != nil || showFavoritesInBookshelf) {
-            // In fullscreen chapters or favorites - show back button
-            // Hide when favorites filter menu is expanded
-            actionButton(icon: "arrow.left") {
-                withAnimation(.easeInOut(duration: 0.25)) {
-                    if showFavoritesInBookshelf {
-                        if favoritesOpenedFromReading {
-                            // Came directly from reading view - go back to reading
+        // Hide completely when settings FAB is expanded to give menu more space
+        if !isSettingsFABExpanded {
+            HStack(spacing: 8) {
+                // Bookshelf button - directly opens bookshelf
+                NavigateFAB(
+                    theme: theme,
+                    onBookshelf: {
+                        if viewModel.showBookshelf {
                             dismissBookshelf()
-                            favoritesOpenedFromReading = false
                         } else {
-                            // Came from bookshelf - go back to bookshelf
-                            showFavoritesInBookshelf = false
+                            viewModel.openBookshelf()
                         }
-                    } else {
-                        fullscreenSelectedBook = nil
-                    }
-                }
-                HapticManager.shared.selection()
+                    },
+                    useBlurBackground: viewModel.readingMode == .scroll
+                )
+                
+                // Search button - opens bookshelf with search mode
+                searchButton
+                
+                // AI chatbot button - opens Gamaliel
+                aiChatButton
             }
-            .opacity(isFavoritesFilterExpanded ? 0 : 1)
-            .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
-        } else {
-            // Hide completely when settings FAB is expanded to give menu more space
-            if !isSettingsFABExpanded {
-                HStack(spacing: 8) {
-                    // Bookshelf button - directly opens bookshelf
-                    NavigateFAB(
-                        theme: theme,
-                        onBookshelf: {
-                            if viewModel.showBookshelf {
-                                dismissBookshelf()
-                            } else {
-                                viewModel.openBookshelf()
-                            }
-                        },
-                        useBlurBackground: viewModel.readingMode == .scroll
-                    )
-                    
-                    // Search button - opens bookshelf with search mode
-                    searchButton
-                    
-                    // AI chatbot button - opens Gamaliel
-                    aiChatButton
-                }
-                .transition(.opacity.combined(with: .scale(scale: 0.8, anchor: .bottomLeading)))
-            }
+            .transition(.opacity.combined(with: .scale(scale: 0.8, anchor: .bottomLeading)))
         }
+    }
+    
+    // MARK: - Top Left Back Button (for chapter grid and favorites)
+    
+    private var topLeftBackButton: some View {
+        Button {
+            withAnimation(.easeInOut(duration: 0.25)) {
+                if showFavoritesInBookshelf {
+                    if favoritesOpenedFromReading {
+                        // Came directly from reading view - go back to reading
+                        dismissBookshelf()
+                        favoritesOpenedFromReading = false
+                    } else {
+                        // Came from bookshelf - go back to bookshelf
+                        showFavoritesInBookshelf = false
+                    }
+                } else {
+                    fullscreenSelectedBook = nil
+                }
+            }
+            HapticManager.shared.selection()
+        } label: {
+            Image(systemName: "chevron.left")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.white)
+                .frame(width: 48, height: 48)
+        }
+        .buttonStyle(.glassCircle)
     }
     
     private var searchButton: some View {
@@ -1068,31 +1082,101 @@ struct ContentView: View {
     
     @ViewBuilder
     private var bookNavigationButtons: some View {
-        HStack(spacing: 8) {
-            // Previous book button
-            actionButton(icon: "chevron.left") {
-                if let prevBook = previousBookForNavigation {
+        HStack(spacing: 12) {
+            // Previous book button - only show if previous book exists
+            if let prevBook = previousBookForNavigation {
+                Button {
                     withAnimation(.easeInOut(duration: 0.25)) {
                         fullscreenSelectedBook = prevBook
                     }
                     HapticManager.shared.selection()
+                } label: {
+                    HStack(spacing: 4) {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 13, weight: .semibold))
+                        Text(prevBook.name(for: viewModel.uiLanguage))
+                            .font(.system(size: 14, weight: .medium))
+                            .lineLimit(1)
+                    }
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 14)
+                    .frame(height: 48)
+                    .background(
+                        Capsule()
+                            .fill(.ultraThinMaterial)
+                            .environment(\.colorScheme, .dark)
+                    )
+                    .overlay(
+                        Capsule()
+                            .stroke(
+                                LinearGradient(
+                                    colors: [
+                                        Color.white.opacity(0.2),
+                                        Color.white.opacity(0.05)
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ),
+                                lineWidth: 1
+                            )
+                    )
+                    .shadow(color: .black.opacity(0.25), radius: 8, y: 4)
                 }
+                .buttonStyle(BookNavigationButtonStyle())
             }
-            .opacity(previousBookForNavigation != nil ? 1 : 0.3)
-            .disabled(previousBookForNavigation == nil)
             
-            // Next book button
-            actionButton(icon: "chevron.right") {
-                if let nextBook = nextBookForNavigation {
+            // Next book button - only show if next book exists
+            if let nextBook = nextBookForNavigation {
+                Button {
                     withAnimation(.easeInOut(duration: 0.25)) {
                         fullscreenSelectedBook = nextBook
                     }
                     HapticManager.shared.selection()
+                } label: {
+                    HStack(spacing: 4) {
+                        Text(nextBook.name(for: viewModel.uiLanguage))
+                            .font(.system(size: 14, weight: .medium))
+                            .lineLimit(1)
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 13, weight: .semibold))
+                    }
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 14)
+                    .frame(height: 48)
+                    .background(
+                        Capsule()
+                            .fill(.ultraThinMaterial)
+                            .environment(\.colorScheme, .dark)
+                    )
+                    .overlay(
+                        Capsule()
+                            .stroke(
+                                LinearGradient(
+                                    colors: [
+                                        Color.white.opacity(0.2),
+                                        Color.white.opacity(0.05)
+                                    ],
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                ),
+                                lineWidth: 1
+                            )
+                    )
+                    .shadow(color: .black.opacity(0.25), radius: 8, y: 4)
                 }
+                .buttonStyle(BookNavigationButtonStyle())
             }
-            .opacity(nextBookForNavigation != nil ? 1 : 0.3)
-            .disabled(nextBookForNavigation == nil)
         }
+    }
+}
+
+// MARK: - Book Navigation Button Style
+private struct BookNavigationButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.95 : 1.0)
+            .opacity(configuration.isPressed ? 0.85 : 1.0)
+            .animation(.easeOut(duration: 0.12), value: configuration.isPressed)
     }
 }
 

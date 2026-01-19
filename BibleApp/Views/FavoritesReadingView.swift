@@ -22,6 +22,12 @@ struct FavoritesReadingView: View {
     @State private var glowAnimating = false
     @State private var selectedBookFilter: String? = nil // nil = All
     
+    // Multi-select mode
+    @State private var isMultiSelectMode = false
+    @State private var selectedFavoriteIds: Set<String> = []
+    @State private var showDeleteConfirmation = false
+    @State private var showDeleteAllConfirmation = false
+    
     // Filtered favorites based on selection
     private var filteredFavorites: [FavoriteVerse] {
         guard let bookId = selectedBookFilter else {
@@ -143,28 +149,106 @@ struct FavoritesReadingView: View {
                 favoritesScrollView
             }
             
-            // Filter FAB - only show when there are favorites
-            // Positioned to align with the back button from ContentView
+            // Top right button: Menu or Done
             if !favorites.isEmpty {
                 VStack {
-                    Spacer()
                     HStack {
                         Spacer()
-                        FilterFAB(
-                            language: language,
-                            selectedBookId: $selectedBookFilter,
-                            bookCounts: bookCounts,
-                            totalCount: favorites.count,
-                            isExpanded: $isFilterExpanded
-                        )
+                        if isMultiSelectMode {
+                            // Done button - pill glass style
+                            Button {
+                                exitMultiSelectMode()
+                            } label: {
+                                Text(language == .kr ? "완료" : "Done")
+                                    .font(.system(size: 15, weight: .medium))
+                                    .foregroundStyle(.white)
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 10)
+                            }
+                            .buttonStyle(.glass)
+                            .padding(.trailing, 20)
+                            .padding(.top, safeAreaTop + 8)
+                        } else {
+                            // Menu button
+                            Menu {
+                                Button {
+                                    enterMultiSelectMode()
+                                } label: {
+                                    Label(
+                                        language == .kr ? "선택하기" : "Select",
+                                        systemImage: "checkmark.circle"
+                                    )
+                                }
+                                
+                                Button {
+                                    // Placeholder - compact view
+                                } label: {
+                                    Label(
+                                        language == .kr ? "작게 보기" : "Compact View",
+                                        systemImage: "rectangle.grid.1x2"
+                                    )
+                                }
+                            } label: {
+                                Image(systemName: "ellipsis")
+                                    .font(.system(size: 18, weight: .semibold))
+                                    .foregroundStyle(.white)
+                                    .frame(width: 48, height: 48)
+                            }
+                            .buttonStyle(.glassCircle)
+                            .padding(.trailing, 20)
+                            .padding(.top, safeAreaTop + 8)
+                        }
                     }
-                    .padding(.horizontal, 28)
+                    Spacer()
+                }
+            }
+            
+            // Filter FAB - only show when not in multi-select mode
+            if !favorites.isEmpty && !isMultiSelectMode {
+                VStack {
+                    Spacer()
+                    FilterFAB(
+                        language: language,
+                        selectedBookId: $selectedBookFilter,
+                        bookCounts: bookCounts,
+                        totalCount: favorites.count,
+                        isExpanded: $isFilterExpanded
+                    )
                     .padding(.bottom, safeAreaBottom - 4)
+                }
+            }
+            
+            // Bottom delete button in multi-select mode (same position as filter FAB)
+            if isMultiSelectMode {
+                VStack {
+                    Spacer()
+                    deleteActionButton
+                        .padding(.bottom, safeAreaBottom - 4)
                 }
             }
         }
         .onAppear {
             loadFavorites()
+        }
+        .confirmationDialog(
+            language == .kr ? "모든 저장된 구절을 삭제하시겠습니까?" : "Delete all saved verses?",
+            isPresented: $showDeleteAllConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button(language == .kr ? "모두 삭제" : "Delete All", role: .destructive) {
+                deleteAllFavorites()
+            }
+            Button(language == .kr ? "취소" : "Cancel", role: .cancel) {}
+        }
+        .confirmationDialog(
+            language == .kr ? "선택한 \(selectedFavoriteIds.count)개의 구절을 삭제하시겠습니까?" : "Delete \(selectedFavoriteIds.count) selected verses?",
+            isPresented: $showDeleteConfirmation,
+            titleVisibility: .visible
+        ) {
+            Button(language == .kr ? "삭제" : "Delete", role: .destructive) {
+                deleteSelectedFavorites()
+            }
+            Button(language == .kr ? "취소" : "Cancel", role: .cancel) {}
         }
     }
     
@@ -245,9 +329,9 @@ struct FavoritesReadingView: View {
         ScrollViewReader { proxy in
             ScrollView(.vertical, showsIndicators: true) {
                 VStack(spacing: 24) {
-                    // Title (same position as bookshelf)
+                    // Title - positioned below back button row
                     titleSection
-                        .padding(.top, safeAreaTop + 16)
+                        .padding(.top, safeAreaTop + 72)
                     
                     // Favorites list (grouped by time)
                     LazyVStack(spacing: 10) {
@@ -260,11 +344,17 @@ struct FavoritesReadingView: View {
                                 FavoriteVerseRow(
                                     favorite: favorite,
                                     language: language,
+                                    isMultiSelectMode: isMultiSelectMode,
+                                    isSelected: selectedFavoriteIds.contains(favorite.id),
                                     onTap: {
-                                        onNavigateToVerse(favorite)
+                                        if isMultiSelectMode {
+                                            toggleSelection(favorite.id)
+                                        } else {
+                                            onNavigateToVerse(favorite)
+                                        }
                                     },
-                                    onCopy: {
-                                        copyVerse(favorite)
+                                    onShare: {
+                                        shareVerse(favorite)
                                     },
                                     onEdit: {
                                         onEditFavorite(favorite)
@@ -325,12 +415,115 @@ struct FavoritesReadingView: View {
         }
     }
     
-    private func copyVerse(_ favorite: FavoriteVerse) {
+    private func shareVerse(_ favorite: FavoriteVerse) {
         let text = favorite.text(for: language)
         let reference = favorite.referenceText(for: language)
-        UIPasteboard.general.string = "\(text)\n— \(reference)"
+        let shareText = "\(text)\n— \(reference)"
+        
+        // Present iOS native share sheet
+        let activityVC = UIActivityViewController(
+            activityItems: [shareText],
+            applicationActivities: nil
+        )
+        
+        // Get the current window scene and present
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let rootViewController = windowScene.windows.first?.rootViewController {
+            // Handle iPad popover
+            if let popover = activityVC.popoverPresentationController {
+                popover.sourceView = rootViewController.view
+                popover.sourceRect = CGRect(x: UIScreen.main.bounds.midX, y: UIScreen.main.bounds.midY, width: 0, height: 0)
+                popover.permittedArrowDirections = []
+            }
+            rootViewController.present(activityVC, animated: true)
+        }
+        HapticManager.shared.selection()
+    }
+    
+    // MARK: - Multi-Select Mode
+    private func enterMultiSelectMode() {
+        withAnimation(.easeOut(duration: 0.2)) {
+            isMultiSelectMode = true
+            selectedFavoriteIds.removeAll()
+        }
+        HapticManager.shared.selection()
+    }
+    
+    private func exitMultiSelectMode() {
+        withAnimation(.easeOut(duration: 0.2)) {
+            isMultiSelectMode = false
+            selectedFavoriteIds.removeAll()
+        }
+        HapticManager.shared.selection()
+    }
+    
+    private func toggleSelection(_ id: String) {
+        if selectedFavoriteIds.contains(id) {
+            selectedFavoriteIds.remove(id)
+        } else {
+            selectedFavoriteIds.insert(id)
+        }
+        HapticManager.shared.selection()
+    }
+    
+    private func deleteSelectedFavorites() {
+        withAnimation(.easeOut(duration: 0.25)) {
+            for id in selectedFavoriteIds {
+                FavoriteService.shared.removeFavorite(id: id)
+            }
+            favorites = FavoriteService.shared.getAllFavorites()
+            selectedFavoriteIds.removeAll()
+        }
+        
+        // Exit multi-select if no favorites left
+        if favorites.isEmpty {
+            exitMultiSelectMode()
+        }
         HapticManager.shared.success()
-        FeedbackManager.shared.showSuccess(language == .kr ? "클립보드에 복사했어요" : "Copied")
+    }
+    
+    private func deleteAllFavorites() {
+        withAnimation(.easeOut(duration: 0.25)) {
+            for favorite in filteredFavorites {
+                FavoriteService.shared.removeFavorite(id: favorite.id)
+            }
+            favorites = FavoriteService.shared.getAllFavorites()
+            selectedFavoriteIds.removeAll()
+        }
+        exitMultiSelectMode()
+        HapticManager.shared.success()
+    }
+    
+    // MARK: - Delete Action Button
+    private var deleteActionButton: some View {
+        Button {
+            if selectedFavoriteIds.isEmpty {
+                showDeleteAllConfirmation = true
+            } else {
+                showDeleteConfirmation = true
+            }
+        } label: {
+            HStack(spacing: 6) {
+                Text(language == .kr ? (selectedFavoriteIds.isEmpty ? "모두 삭제" : "삭제") : (selectedFavoriteIds.isEmpty ? "Delete All" : "Delete"))
+                    .font(.system(size: 15, weight: .medium))
+                    .foregroundStyle(.white)
+                
+                if !selectedFavoriteIds.isEmpty {
+                    Text("\(selectedFavoriteIds.count)")
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(.white.opacity(0.6))
+                        .padding(.horizontal, 6)
+                        .padding(.vertical, 2)
+                        .background(
+                            Capsule()
+                                .fill(.white.opacity(0.12))
+                        )
+                }
+            }
+            .padding(.horizontal, 16)
+            .frame(height: 48)
+        }
+        .buttonStyle(.glass)
     }
 }
 
@@ -338,8 +531,10 @@ struct FavoritesReadingView: View {
 struct FavoriteVerseRow: View {
     let favorite: FavoriteVerse
     let language: LanguageMode
+    var isMultiSelectMode: Bool = false
+    var isSelected: Bool = false
     let onTap: () -> Void
-    let onCopy: () -> Void
+    let onShare: () -> Void
     let onEdit: () -> Void
     let onDelete: () -> Void
     
@@ -466,16 +661,37 @@ struct FavoriteVerseRow: View {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .fill(bookTheme.background)
             )
+            .overlay(alignment: .topLeading) {
+                // Selection checkbox in multi-select mode
+                if isMultiSelectMode {
+                    ZStack {
+                        Circle()
+                            .fill(isSelected ? Color.white : Color.clear)
+                            .frame(width: 28, height: 28)
+                        
+                        Circle()
+                            .stroke(Color.white.opacity(isSelected ? 0 : 0.5), lineWidth: 2)
+                            .frame(width: 28, height: 28)
+                        
+                        if isSelected {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundStyle(bookTheme.background)
+                        }
+                    }
+                    .padding(16)
+                }
+            }
             .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         }
         .buttonStyle(.plain)
-        .contextMenu {
+        .contextMenu(isMultiSelectMode ? nil : ContextMenu {
             Button {
-                onCopy()
+                onShare()
             } label: {
                 Label(
-                    language == .kr ? "복사" : "Copy",
-                    systemImage: "doc.on.doc"
+                    language == .kr ? "공유" : "Share",
+                    systemImage: "square.and.arrow.up"
                 )
             }
             
@@ -496,7 +712,8 @@ struct FavoriteVerseRow: View {
                     systemImage: "trash"
                 )
             }
-        }
+        })
+        .animation(.easeOut(duration: 0.15), value: isSelected)
     }
 }
 

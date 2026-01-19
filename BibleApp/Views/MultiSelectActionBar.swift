@@ -58,7 +58,7 @@ struct MultiSelectActionBar: View {
                             .foregroundStyle(.white.opacity(0.6))
                     }
                     .padding(.horizontal, 16)
-                    .padding(.vertical, 12)
+                    .frame(height: 48)
                     .background(centerButtonCapsuleBackground)
                 } else {
                     // Just X icon
