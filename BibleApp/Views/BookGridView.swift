@@ -245,8 +245,8 @@ struct BookGridView: View {
                             titleBar
                                 .padding(.top, topPadding + 16)
                             
-                            // Favorites section (only if has favorites)
-                            if FavoriteService.shared.hasFavorites && searchText.isEmpty {
+                            // Favorites section (always show)
+                            if searchText.isEmpty {
                                 favoritesSection
                                     .padding(.top, 24)
                             }

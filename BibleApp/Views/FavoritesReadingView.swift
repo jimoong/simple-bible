@@ -200,6 +200,15 @@ struct FavoritesReadingView: View {
                                         systemImage: isCompactMode ? "rectangle.portrait" : "rectangle.grid.1x2"
                                     )
                                 }
+                                
+                                Divider()
+                                
+                                Button(role: .destructive) {
+                                    FavoriteService.shared.populateMockData()
+                                    loadFavorites()
+                                } label: {
+                                    Label(language == .kr ? "테스트 데이터로 교체" : "Replace with Test Data", systemImage: "testtube.2")
+                                }
                             } label: {
                                 Image(systemName: "ellipsis")
                                     .font(.system(size: 18, weight: .semibold))
@@ -240,6 +249,9 @@ struct FavoritesReadingView: View {
             }
         }
         .onAppear {
+            loadFavorites()
+        }
+        .onChange(of: FavoriteService.shared.favorites) { _, _ in
             loadFavorites()
         }
         .confirmationDialog(
@@ -302,6 +314,20 @@ struct FavoritesReadingView: View {
                 .font(.system(size: 14))
                 .foregroundStyle(.white.opacity(0.4))
                 .multilineTextAlignment(.center)
+            
+            // Test data button
+            Button {
+                FavoriteService.shared.populateMockData()
+                loadFavorites()
+            } label: {
+                Text(language == .kr ? "테스트 데이터 채우기" : "Add Test Data")
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundStyle(.white.opacity(0.6))
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+            }
+            .buttonStyle(.glass)
+            .padding(.top, 24)
         }
         .padding(40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
