@@ -77,6 +77,21 @@ struct VerseCardView: View {
         return text
     }
     
+    // Check favorite status
+    private func checkFavoriteStatus() {
+        let wasFavorite = FavoriteService.shared.isFavorite(
+            bookName: verse.bookName,
+            chapter: verse.chapter,
+            verseNumber: verse.verseNumber
+        )
+        if wasFavorite != isFavorite {
+            isFavorite = wasFavorite
+            if wasFavorite {
+                highlightedCharCount = verse.text(for: language).count
+            }
+        }
+    }
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             // Verse number
@@ -93,15 +108,15 @@ struct VerseCardView: View {
                 .fixedSize(horizontal: false, vertical: true)
         }
         .onAppear {
-            let wasFavorite = FavoriteService.shared.isFavorite(
-                bookName: verse.bookName,
-                chapter: verse.chapter,
-                verseNumber: verse.verseNumber
-            )
-            isFavorite = wasFavorite
-            if wasFavorite {
-                highlightedCharCount = verse.text(for: language).count
-            }
+            checkFavoriteStatus()
+        }
+        .onChange(of: verse.id) { _, _ in
+            // When verse changes (scroll reuse), re-check favorite status
+            checkFavoriteStatus()
+        }
+        .onChange(of: FavoriteService.shared.favorites.count) { _, _ in
+            // When favorites list changes, re-check status
+            checkFavoriteStatus()
         }
         .onChange(of: isFavorite) { oldValue, newValue in
             if !newValue && oldValue {

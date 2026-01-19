@@ -400,6 +400,21 @@ struct BookVerseRow: View {
         return text
     }
     
+    // Check favorite status
+    private func checkFavoriteStatus() {
+        let wasFavorite = FavoriteService.shared.isFavorite(
+            bookName: verse.bookName,
+            chapter: verse.chapter,
+            verseNumber: verse.verseNumber
+        )
+        if wasFavorite != isFavorite {
+            isFavorite = wasFavorite
+            if wasFavorite {
+                highlightedCharCount = verse.text(for: language).count
+            }
+        }
+    }
+    
     var body: some View {
         HStack(alignment: .top, spacing: 4) {
             // Verse text on the left - takes remaining space
@@ -452,16 +467,15 @@ struct BookVerseRow: View {
             }
         }
         .onAppear {
-            let wasFavorite = FavoriteService.shared.isFavorite(
-                bookName: verse.bookName,
-                chapter: verse.chapter,
-                verseNumber: verse.verseNumber
-            )
-            isFavorite = wasFavorite
-            if wasFavorite {
-                // Already favorite - show full highlight immediately
-                highlightedCharCount = verse.text(for: language).count
-            }
+            checkFavoriteStatus()
+        }
+        .onChange(of: verse.id) { _, _ in
+            // When verse changes (scroll reuse), re-check favorite status
+            checkFavoriteStatus()
+        }
+        .onChange(of: FavoriteService.shared.favorites.count) { _, _ in
+            // When favorites list changes, re-check status
+            checkFavoriteStatus()
         }
         .onChange(of: isFavorite) { oldValue, newValue in
             if !newValue && oldValue {
