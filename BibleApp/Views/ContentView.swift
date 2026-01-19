@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var selectedVerseForMenu: BibleVerse? = nil
     @State private var editingFavorite: FavoriteVerse? = nil
     @State private var isFavoritesFilterExpanded = false  // Hide back button when filter menu is open
+    @State private var isFavoritesMultiSelectMode = false  // Hide back button when in multi-select mode
     @State private var scrollToFavoriteId: String? = nil  // Scroll to specific favorite on open
     @State private var favoritesOpenedFromReading = false  // Track if favorites was opened directly from reading view
     
@@ -261,6 +262,7 @@ struct ContentView: View {
                                     )
                                 },
                                 isFilterExpanded: $isFavoritesFilterExpanded,
+                                isInMultiSelectMode: $isFavoritesMultiSelectMode,
                                 scrollToId: scrollToFavoriteId
                             )
                             .transition(.opacity)
@@ -279,8 +281,9 @@ struct ContentView: View {
                                     topLeftBackButton
                                         .padding(.top, geometry.safeAreaInsets.top + 8)
                                         .padding(.leading, 20)
-                                        .opacity(isFavoritesFilterExpanded ? 0 : 1)
+                                        .opacity(isFavoritesFilterExpanded || isFavoritesMultiSelectMode ? 0 : 1)
                                         .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
+                                        .animation(.easeOut(duration: 0.2), value: isFavoritesMultiSelectMode)
                                     Spacer()
                                 }
                                 Spacer()

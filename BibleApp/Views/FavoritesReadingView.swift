@@ -16,6 +16,7 @@ struct FavoritesReadingView: View {
     let onNavigateToVerse: (FavoriteVerse) -> Void
     let onEditFavorite: (FavoriteVerse) -> Void
     @Binding var isFilterExpanded: Bool  // Expose to parent to hide back button
+    @Binding var isInMultiSelectMode: Bool  // Expose to parent to hide back button
     var scrollToId: String? = nil  // Scroll to specific favorite on appear
     
     @State private var favorites: [FavoriteVerse] = []
@@ -23,10 +24,17 @@ struct FavoritesReadingView: View {
     @State private var selectedBookFilter: String? = nil // nil = All
     
     // Multi-select mode
-    @State private var isMultiSelectMode = false
+    @State private var isMultiSelectMode = false {
+        didSet {
+            isInMultiSelectMode = isMultiSelectMode
+        }
+    }
     @State private var selectedFavoriteIds: Set<String> = []
     @State private var showDeleteConfirmation = false
     @State private var showDeleteAllConfirmation = false
+    
+    // Compact view mode
+    @State private var isCompactMode = false
     
     // Filtered favorites based on selection
     private var filteredFavorites: [FavoriteVerse] {
@@ -181,11 +189,15 @@ struct FavoritesReadingView: View {
                                 }
                                 
                                 Button {
-                                    // Placeholder - compact view
+                                    withAnimation(.easeOut(duration: 0.2)) {
+                                        isCompactMode.toggle()
+                                    }
                                 } label: {
                                     Label(
-                                        language == .kr ? "작게 보기" : "Compact View",
-                                        systemImage: "rectangle.grid.1x2"
+                                        isCompactMode
+                                            ? (language == .kr ? "크게 보기" : "Large View")
+                                            : (language == .kr ? "작게 보기" : "Compact View"),
+                                        systemImage: isCompactMode ? "rectangle.portrait" : "rectangle.grid.1x2"
                                     )
                                 }
                             } label: {
@@ -334,40 +346,68 @@ struct FavoritesReadingView: View {
                         .padding(.top, safeAreaTop + 72)
                     
                     // Favorites list (grouped by time)
-                    LazyVStack(spacing: 10) {
+                    LazyVStack(spacing: isCompactMode ? 8 : 10) {
                         ForEach(groupedFavorites, id: \.label) { section in
                             // Section header
                             sectionHeader(section.label)
                             
                             // Section items
                             ForEach(section.favorites) { favorite in
-                                FavoriteVerseRow(
-                                    favorite: favorite,
-                                    language: language,
-                                    isMultiSelectMode: isMultiSelectMode,
-                                    isSelected: selectedFavoriteIds.contains(favorite.id),
-                                    onTap: {
-                                        if isMultiSelectMode {
-                                            toggleSelection(favorite.id)
-                                        } else {
-                                            onNavigateToVerse(favorite)
-                                        }
-                                    },
-                                    onShare: {
-                                        shareVerse(favorite)
-                                    },
-                                    onEdit: {
-                                        onEditFavorite(favorite)
-                                    },
-                                    onDelete: {
-                                        deleteFavorite(favorite)
+                                Group {
+                                    if isCompactMode {
+                                        CompactFavoriteRow(
+                                            favorite: favorite,
+                                            language: language,
+                                            isMultiSelectMode: isMultiSelectMode,
+                                            isSelected: selectedFavoriteIds.contains(favorite.id),
+                                            onTap: {
+                                                if isMultiSelectMode {
+                                                    toggleSelection(favorite.id)
+                                                } else {
+                                                    onNavigateToVerse(favorite)
+                                                }
+                                            },
+                                            onShare: {
+                                                shareVerse(favorite)
+                                            },
+                                            onEdit: {
+                                                onEditFavorite(favorite)
+                                            },
+                                            onDelete: {
+                                                deleteFavorite(favorite)
+                                            }
+                                        )
+                                    } else {
+                                        FavoriteVerseRow(
+                                            favorite: favorite,
+                                            language: language,
+                                            isMultiSelectMode: isMultiSelectMode,
+                                            isSelected: selectedFavoriteIds.contains(favorite.id),
+                                            onTap: {
+                                                if isMultiSelectMode {
+                                                    toggleSelection(favorite.id)
+                                                } else {
+                                                    onNavigateToVerse(favorite)
+                                                }
+                                            },
+                                            onShare: {
+                                                shareVerse(favorite)
+                                            },
+                                            onEdit: {
+                                                onEditFavorite(favorite)
+                                            },
+                                            onDelete: {
+                                                deleteFavorite(favorite)
+                                            }
+                                        )
                                     }
-                                )
-                                .id(favorite.id)  // For ScrollViewReader
+                                }
+                                .id("\(favorite.id)_\(isCompactMode)")  // Force re-render on mode change
                             }
                         }
                     }
                     .padding(.horizontal, 10)
+                    .animation(.easeOut(duration: 0.25), value: isCompactMode)
                 }
             }
             .safeAreaInset(edge: .bottom) {
@@ -717,6 +757,110 @@ struct FavoriteVerseRow: View {
     }
 }
 
+// MARK: - Compact Favorite Row (ChapterToast style)
+struct CompactFavoriteRow: View {
+    let favorite: FavoriteVerse
+    let language: LanguageMode
+    var isMultiSelectMode: Bool = false
+    var isSelected: Bool = false
+    let onTap: () -> Void
+    let onShare: () -> Void
+    let onEdit: () -> Void
+    let onDelete: () -> Void
+    
+    // Get the specific book's theme
+    private var bookTheme: BookTheme {
+        BookThemes.theme(for: favorite.bookId)
+    }
+    
+    var body: some View {
+        Button {
+            onTap()
+        } label: {
+            HStack(spacing: 12) {
+                // Selection checkbox (only in multi-select mode)
+                if isMultiSelectMode {
+                    ZStack {
+                        Circle()
+                            .fill(isSelected ? Color.white : Color.clear)
+                            .frame(width: 24, height: 24)
+                        
+                        Circle()
+                            .stroke(Color.white.opacity(isSelected ? 0 : 0.4), lineWidth: 1.5)
+                            .frame(width: 24, height: 24)
+                        
+                        if isSelected {
+                            Image(systemName: "checkmark")
+                                .font(.system(size: 12, weight: .bold))
+                                .foregroundStyle(bookTheme.surface)
+                        }
+                    }
+                }
+                
+                // Content - slides right in multi-select mode
+                VStack(alignment: .leading, spacing: 6) {
+                    // Reference (secondary text)
+                    Text(favorite.referenceText(for: language))
+                        .font(.system(size: 13, weight: .semibold))
+                        .foregroundStyle(bookTheme.textSecondary)
+                    
+                    // Verse text (max 2 lines)
+                    Text(favorite.text(for: language))
+                        .font(bookTheme.verseText(14, language: language))
+                        .foregroundStyle(bookTheme.textPrimary)
+                        .lineLimit(2)
+                        .lineSpacing(3)
+                        .multilineTextAlignment(.leading)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.leading, isMultiSelectMode ? 16 : 0)
+                .transaction { transaction in
+                    // Disable text reflow animation - only animate position
+                    transaction.animation = nil
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 16)
+            .background(
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(bookTheme.surface)
+            )
+            .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+        }
+        .buttonStyle(.plain)
+        .contextMenu(isMultiSelectMode ? nil : ContextMenu {
+            Button {
+                onShare()
+            } label: {
+                Label(
+                    language == .kr ? "공유" : "Share",
+                    systemImage: "square.and.arrow.up"
+                )
+            }
+            
+            Button {
+                onEdit()
+            } label: {
+                Label(
+                    language == .kr ? "수정" : "Edit",
+                    systemImage: "pencil"
+                )
+            }
+            
+            Button(role: .destructive) {
+                onDelete()
+            } label: {
+                Label(
+                    language == .kr ? "삭제" : "Delete",
+                    systemImage: "trash"
+                )
+            }
+        })
+        .animation(.easeOut(duration: 0.15), value: isSelected)
+        .animation(.easeOut(duration: 0.2), value: isMultiSelectMode)
+    }
+}
+
 // MARK: - Filter FAB
 struct FilterFAB: View {
     let language: LanguageMode
@@ -1018,6 +1162,7 @@ private struct FilterFABButtonStyle: ButtonStyle {
         onClose: {},
         onNavigateToVerse: { _ in },
         onEditFavorite: { _ in },
-        isFilterExpanded: .constant(false)
+        isFilterExpanded: .constant(false),
+        isInMultiSelectMode: .constant(false)
     )
 }
