@@ -157,24 +157,23 @@ struct FavoritesReadingView: View {
                 favoritesScrollView
             }
             
-            // Bottom right button: Menu or Done
+            // Bottom right button: Menu or Done (check icon)
             if !favorites.isEmpty {
                 VStack {
                     Spacer()
                     HStack {
                         Spacer()
                         if isMultiSelectMode {
-                            // Done button - pill glass style
+                            // Done button - check icon 48x48 circular
                             Button {
                                 exitMultiSelectMode()
                             } label: {
-                                Text(language == .kr ? "완료" : "Done")
-                                    .font(.system(size: 15, weight: .medium))
+                                Image(systemName: "checkmark")
+                                    .font(.system(size: 18, weight: .semibold))
                                     .foregroundStyle(.white)
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 10)
+                                    .frame(width: 48, height: 48)
                             }
-                            .buttonStyle(.glass)
+                            .buttonStyle(.glassCircle)
                             .padding(.trailing, 20)
                             .padding(.bottom, safeAreaBottom - 4)
                         } else {
@@ -239,12 +238,39 @@ struct FavoritesReadingView: View {
                 }
             }
             
-            // Bottom delete button in multi-select mode (same position as filter FAB)
+            // Bottom left delete button in multi-select mode
             if isMultiSelectMode {
                 VStack {
                     Spacer()
-                    deleteActionButton
-                        .padding(.bottom, safeAreaBottom - 4)
+                    HStack {
+                        deleteActionButton
+                            .padding(.leading, 20)
+                            .padding(.bottom, safeAreaBottom - 4)
+                        Spacer()
+                    }
+                }
+            }
+            
+            // Top center floating counter in multi-select mode
+            if isMultiSelectMode && !selectedFavoriteIds.isEmpty {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Text(language == .kr 
+                             ? "\(selectedFavoriteIds.count) 선택됨" 
+                             : "\(selectedFavoriteIds.count) selected")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                            .background(
+                                Capsule()
+                                    .fill(.ultraThinMaterial)
+                            )
+                        Spacer()
+                    }
+                    .padding(.top, safeAreaTop + 16)
+                    Spacer()
                 }
             }
         }

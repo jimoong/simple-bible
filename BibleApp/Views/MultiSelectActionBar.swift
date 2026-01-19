@@ -14,75 +14,77 @@ struct MultiSelectActionBar: View {
     var onSave: () -> Void
     var onAsk: () -> Void
     var onClose: () -> Void
+    var onNoSelectionTap: (() -> Void)? = nil  // Called when tapping buttons with no selection
     
     private var hasSelection: Bool {
         selectedCount > 0
     }
     
-    private var centerText: String {
-        if selectedCount == 0 {
-            return ""
-        }
-        
-        if languageMode == .kr {
-            return "\(selectedCount)절 선택됨"
-        } else {
-            return "\(selectedCount) selected"
-        }
-    }
-    
     var body: some View {
         HStack(spacing: 0) {
-            // Save button (left)
-            actionButton(icon: "heart") {
-                onSave()
+            // Left: Save and Ask button group with labels
+            HStack(spacing: 8) {
+                // Save button with label
+                labeledButton(
+                    icon: "heart",
+                    label: languageMode == .kr ? "저장" : "Save"
+                ) {
+                    if hasSelection {
+                        onSave()
+                    } else {
+                        onNoSelectionTap?()
+                    }
+                }
+                
+                // Ask button with label
+                labeledButton(
+                    icon: "sparkle",
+                    label: languageMode == .kr ? "물어보기" : "Ask"
+                ) {
+                    if hasSelection {
+                        onAsk()
+                    } else {
+                        onNoSelectionTap?()
+                    }
+                }
             }
-            .opacity(hasSelection ? 1.0 : 0.6)
-            .disabled(!hasSelection)
             
             Spacer()
             
-            // Center: Counter or close button
+            // Right: Done button (checkmark, 48x48)
             Button {
                 onClose()
             } label: {
-                if hasSelection {
-                    // Counter with X
-                    HStack(spacing: 6) {
-                        Text(centerText)
-                            .font(.system(size: 15, weight: .medium))
-                            .foregroundStyle(.white)
-                        
-                        Image(systemName: "xmark")
-                            .font(.system(size: 12, weight: .bold))
-                            .foregroundStyle(.white.opacity(0.6))
-                    }
-                    .padding(.horizontal, 16)
-                    .frame(height: 48)
-                    .background(centerButtonCapsuleBackground)
-                } else {
-                    // Just X icon
-                    ZStack {
-                        buttonBackground
-                        
-                        Image(systemName: "xmark")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.white)
-                    }
-                    .frame(width: 48, height: 48)
+                ZStack {
+                    buttonBackground
+                    
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(.white)
                 }
+                .frame(width: 48, height: 48)
             }
             .buttonStyle(PlainButtonPressStyle())
-            
-            Spacer()
-            
-            // Ask button (right)
-            actionButton(icon: "sparkle") {
-                onAsk()
-            }
-            .opacity(hasSelection ? 1.0 : 0.6)
-            .disabled(!hasSelection)
         }
+    }
+    
+    @ViewBuilder
+    private func labeledButton(icon: String, label: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 6) {
+                Image(systemName: icon)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(.white)
+                
+                Text(label)
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundStyle(.white)
+            }
+            .padding(.horizontal, 14)
+            .frame(height: 48)
+            .background(capsuleBackground)
+        }
+        .buttonStyle(PlainButtonPressStyle())
     }
     
     @ViewBuilder
@@ -151,7 +153,7 @@ struct MultiSelectActionBar: View {
     }
     
     @ViewBuilder
-    private var centerButtonCapsuleBackground: some View {
+    private var capsuleBackground: some View {
         if useBlurBackground {
             Capsule(style: .continuous)
                 .fill(.regularMaterial)

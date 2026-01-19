@@ -140,6 +140,28 @@ struct ContentView: View {
                     .zIndex(1)
                 }
                 
+                // Floating counter for multi-select mode (top center, same position as favorites list)
+                if isMultiSelectMode && !selectedVerseIndices.isEmpty && !isShowingFullscreenBookshelf {
+                    VStack {
+                        Text(viewModel.uiLanguage == .kr 
+                             ? "\(selectedVerseIndices.count)절 선택됨" 
+                             : "\(selectedVerseIndices.count) verses selected")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundStyle(.white)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                            .background(
+                                Capsule()
+                                    .fill(.ultraThinMaterial)
+                                    .environment(\.colorScheme, .dark)
+                            )
+                            .padding(.top, geometry.safeAreaInsets.top + 16)
+                        Spacer()
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                    .zIndex(50)  // High zIndex to be above everything
+                }
+                
                 // Dimmed background - tap to dismiss (only for top panel chapter grid)
                 if isShowingTopPanelChapters {
                     Color.black.opacity(0.4)
@@ -387,9 +409,14 @@ struct ContentView: View {
                                 },
                                 onClose: {
                                     exitMultiSelectMode()
+                                },
+                                onNoSelectionTap: {
+                                    FeedbackManager.shared.showInfo(
+                                        viewModel.uiLanguage == .kr ? "구절을 선택하세요" : "Select verses first"
+                                    )
                                 }
                             )
-                            .padding(.horizontal, 28)
+                            .padding(.horizontal, 20)
                             .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
                         } else if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
                             // Chapter grid view - show book navigation at bottom right
