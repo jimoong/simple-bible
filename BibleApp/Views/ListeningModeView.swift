@@ -85,7 +85,8 @@ struct ListeningModeView: View {
         .onAppear {
             // Refresh callbacks when view appears to ensure proper observation
             viewModel.refreshCallbacks()
-            viewModel.markViewReady()
+            // Note: markViewReady() is called from ScrollViewReader's onAppear
+            // to ensure scrollProxy is set before TTS playback begins
         }
     }
     
@@ -180,11 +181,13 @@ struct ListeningModeView: View {
                 scrollProxy = proxy
                 // Initial scroll to starting verse if not from beginning
                 if viewModel.currentVerseIndex > 0 {
-                    // Small delay to ensure view is rendered
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    // Delay to ensure view layout is complete
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                         scrollToVerse(viewModel.currentVerseIndex)
                     }
                 }
+                // Mark view ready AFTER scrollProxy is set - this triggers TTS playback
+                viewModel.markViewReady()
             }
         }
     }

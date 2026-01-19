@@ -462,7 +462,7 @@ struct BookGridView: View {
                             }
                     }
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, 8)
             }
         }
         .padding(.top, topPadding + 20)

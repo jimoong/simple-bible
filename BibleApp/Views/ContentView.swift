@@ -527,8 +527,9 @@ struct ContentView: View {
             .onAppear {
                 setupVoiceSearchNavigation()
                 showChapterToastIfAvailable()
-                // Warm up TTSService on app launch to fix cold start issues
+                // Warm up services on app launch to fix cold start issues
                 _ = TTSService.shared
+                _ = FavoriteService.shared
             }
             .onChange(of: viewModel.currentChapter) { _, _ in
                 // Quick dismiss current toast when chapter changes (user swiped)

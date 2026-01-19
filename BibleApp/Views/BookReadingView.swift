@@ -242,8 +242,8 @@ struct BookReadingView: View {
             .onAppear {
                 // Handle initial target verse when view appears
                 if let targetVerse = viewModel.targetVerseNumber {
-                    // Small delay to ensure ScrollView is ready, then scroll without animation
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+                    // Delay to ensure ScrollView layout is complete (longer on cold start)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
                         scrollToVerse(targetVerse, proxy: scrollProxy, animated: false)
                     }
                 }

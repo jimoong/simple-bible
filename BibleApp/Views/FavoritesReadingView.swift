@@ -437,7 +437,8 @@ struct FavoritesReadingView: View {
             .onAppear {
                 // Scroll to specific favorite if requested
                 if let targetId = scrollToId {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    // Delay to ensure ScrollView layout is complete on first load
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
                         withAnimation(.easeOut(duration: 0.4)) {
                             proxy.scrollTo(targetId, anchor: .center)
                         }
@@ -832,7 +833,7 @@ struct CompactFavoriteRow: View {
             .padding(.vertical, 16)
             .background(
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
-                    .fill(bookTheme.surface)
+                    .fill(bookTheme.background)
             )
             .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
         }
