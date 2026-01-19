@@ -14,6 +14,7 @@ struct FavoriteNoteOverlay: View {
     let existingFavorite: FavoriteVerse?
     let onSave: (String?) -> Void
     let onCancel: () -> Void
+    var onViewInBible: (() -> Void)? = nil  // Optional: only shown when editing from favorites list
     
     @State private var noteText: String = ""
     @FocusState private var isTextEditorFocused: Bool
@@ -62,28 +63,31 @@ struct FavoriteNoteOverlay: View {
     }
     
     var body: some View {
-        ZStack {
-            // Black background for system view
-            Color.black
-                .ignoresSafeArea()
-            
-            VStack(spacing: 0) {
-                // Top bar with close and save buttons
-                topBar
+        GeometryReader { geometry in
+            ZStack {
+                // Black background for system view
+                Color.black
+                    .ignoresSafeArea()
                 
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 24) {
-                        // Verse display
-                        verseCard
-                        
-                        // Note input section
-                        noteSection
-                        
-                        Spacer(minLength: 100)
+                VStack(spacing: 0) {
+                    // Top bar with close and save buttons
+                    topBar
+                    
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 24) {
+                            // Verse display
+                            verseCard
+                            
+                            // Note input section
+                            noteSection
+                            
+                            Spacer(minLength: 100)
+                        }
+                        .padding(.horizontal, 24)
+                        .padding(.top, 16)
                     }
-                    .padding(.horizontal, 24)
-                    .padding(.top, 16)
                 }
+                
             }
         }
         .onAppear {
@@ -107,18 +111,31 @@ struct FavoriteNoteOverlay: View {
             
             Spacer()
             
-            // Save button
+            // View in Bible button (only when editing from favorites list)
+            if let onViewInBible = onViewInBible {
+                Button {
+                    onViewInBible()
+                } label: {
+                    Text(language == .kr ? "성경 보기" : "View in Bible")
+                        .font(.system(size: 15, weight: .medium))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 10)
+                }
+                .buttonStyle(.glass)
+            }
+            
+            // Save button (check icon)
             Button {
                 let trimmedNote = noteText.trimmingCharacters(in: .whitespacesAndNewlines)
                 onSave(trimmedNote.isEmpty ? nil : trimmedNote)
             } label: {
-                Text(language == .kr ? "저장" : "Save")
+                Image(systemName: "checkmark")
                     .font(.system(size: 15, weight: .medium))
                     .foregroundStyle(.white)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 10)
+                    .frame(width: 36, height: 36)
             }
-            .buttonStyle(.glass)
+            .buttonStyle(.glassCircle)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 12)

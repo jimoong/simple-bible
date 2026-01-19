@@ -364,14 +364,11 @@ struct FavoritesReadingView: View {
                                                 if isMultiSelectMode {
                                                     toggleSelection(favorite.id)
                                                 } else {
-                                                    onNavigateToVerse(favorite)
+                                                    onEditFavorite(favorite)
                                                 }
                                             },
                                             onShare: {
                                                 shareVerse(favorite)
-                                            },
-                                            onEdit: {
-                                                onEditFavorite(favorite)
                                             },
                                             onDelete: {
                                                 deleteFavorite(favorite)
@@ -387,14 +384,11 @@ struct FavoritesReadingView: View {
                                                 if isMultiSelectMode {
                                                     toggleSelection(favorite.id)
                                                 } else {
-                                                    onNavigateToVerse(favorite)
+                                                    onEditFavorite(favorite)
                                                 }
                                             },
                                             onShare: {
                                                 shareVerse(favorite)
-                                            },
-                                            onEdit: {
-                                                onEditFavorite(favorite)
                                             },
                                             onDelete: {
                                                 deleteFavorite(favorite)
@@ -575,7 +569,6 @@ struct FavoriteVerseRow: View {
     var isSelected: Bool = false
     let onTap: () -> Void
     let onShare: () -> Void
-    let onEdit: () -> Void
     let onDelete: () -> Void
     
     @ObservedObject private var fontSizeSettings = FontSizeSettings.shared
@@ -735,15 +728,6 @@ struct FavoriteVerseRow: View {
                 )
             }
             
-            Button {
-                onEdit()
-            } label: {
-                Label(
-                    language == .kr ? "수정" : "Edit",
-                    systemImage: "pencil"
-                )
-            }
-            
             Button(role: .destructive) {
                 onDelete()
             } label: {
@@ -765,7 +749,6 @@ struct CompactFavoriteRow: View {
     var isSelected: Bool = false
     let onTap: () -> Void
     let onShare: () -> Void
-    let onEdit: () -> Void
     let onDelete: () -> Void
     
     // Get the specific book's theme
@@ -835,15 +818,6 @@ struct CompactFavoriteRow: View {
                 Label(
                     language == .kr ? "공유" : "Share",
                     systemImage: "square.and.arrow.up"
-                )
-            }
-            
-            Button {
-                onEdit()
-            } label: {
-                Label(
-                    language == .kr ? "수정" : "Edit",
-                    systemImage: "pencil"
                 )
             }
             

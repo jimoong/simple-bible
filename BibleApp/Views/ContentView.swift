@@ -596,7 +596,26 @@ struct ContentView: View {
                     onCancel: {
                         selectedVerseForMenu = nil
                         editingFavorite = nil
-                    }
+                    },
+                    onViewInBible: editingFavorite != nil ? {
+                        // Navigate to verse in reading view
+                        if let favorite = editingFavorite,
+                           let book = BibleData.book(by: favorite.bookId) {
+                            selectedVerseForMenu = nil
+                            editingFavorite = nil
+                            
+                            // Close favorites list and navigate
+                            showFavoritesInBookshelf = false
+                            Task {
+                                await viewModel.navigateTo(
+                                    book: book,
+                                    chapter: favorite.chapter,
+                                    verse: favorite.verseNumber
+                                )
+                            }
+                            dismissBookshelf()
+                        }
+                    } : nil
                 )
             }
             .fullScreenCover(isPresented: $showMultiSelectSaveOverlay) {
