@@ -36,6 +36,12 @@ struct ListeningModeView: View {
     }
     
     var body: some View {
+        // Force SwiftUI to observe these properties at the top level
+        // This ensures the view re-renders when TTS updates highlighting
+        let _ = viewModel.highlightedRange
+        let _ = viewModel.verseReadPositions
+        let _ = viewModel.currentVerseIndex
+        
         GeometryReader { geometry in
             ZStack {
                 // Background - same as BookReadingView
@@ -140,6 +146,11 @@ struct ListeningModeView: View {
                     // All verses in a continuous flow (same structure as BookReadingView)
                     // Use sessionId to force full refresh when chapter changes
                     ForEach(Array(viewModel.verses.enumerated()), id: \.element.id) { index, verse in
+                        let isCurrentVerse = index == viewModel.currentVerseIndex
+                        let highlightedRange = isCurrentVerse ? viewModel.highlightedRange : nil
+                        let maxReadPosition = viewModel.verseReadPositions[index] ?? 0
+                        let isCompleted = index < viewModel.currentVerseIndex
+                        
                         ListeningVerseRow(
                             verse: verse,
                             index: index,
@@ -147,13 +158,14 @@ struct ListeningModeView: View {
                             theme: theme,
                             fontSize: verseFontSize,
                             lineSpacing: verseLineSpacing,
-                            isCurrentVerse: index == viewModel.currentVerseIndex,
-                            highlightedRange: index == viewModel.currentVerseIndex ? viewModel.highlightedRange : nil,
-                            maxReadPosition: viewModel.verseReadPositions[index] ?? 0,
-                            isCompleted: index < viewModel.currentVerseIndex,
+                            isCurrentVerse: isCurrentVerse,
+                            highlightedRange: highlightedRange,
+                            maxReadPosition: maxReadPosition,
+                            isCompleted: isCompleted,
                             isFinished: viewModel.showCompletionButtons
                         )
-                        .id("\(viewModel.sessionId)-\(index)")  // Include sessionId to force refresh
+                        // Force row update when its specific data changes
+                        .id("\(viewModel.sessionId)-\(index)-\(maxReadPosition)")
                     }
                     
                     // Mark as read at the end (same as BookReadingView)

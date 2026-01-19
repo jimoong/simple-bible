@@ -576,9 +576,12 @@ struct ContentView: View {
                 )
             }
             .fullScreenCover(item: $selectedVerseForMenu) { verse in
-                // Use book from editing favorite if available, otherwise use current book
-                let book = editingFavorite.flatMap { BibleData.book(by: $0.bookId) } ?? viewModel.currentBook
+                // Capture editing favorite first, then derive book from it
                 let currentEditingFavorite = editingFavorite  // Capture current value
+                // Try to get book from: 1) editing favorite, 2) verse bookName, 3) current book
+                let book = currentEditingFavorite.flatMap { BibleData.book(by: $0.bookId) }
+                    ?? BibleData.books.first { $0.nameEn == verse.bookName }
+                    ?? viewModel.currentBook
                 FavoriteNoteOverlay(
                     verse: verse,
                     book: book,

@@ -380,7 +380,16 @@ struct BookVerseRow: View {
     var onSelect: (() -> Void)? = nil  // Tap handler for multi-select mode
     var onMultiSelect: (() -> Void)? = nil  // Enter multi-select mode with this verse selected
     
-    @State private var isFavorite: Bool = false
+    // Use computed property for immediate favorite status check (fixes first-run issue)
+    private var isFavorite: Bool {
+        FavoriteService.shared.isFavorite(
+            bookName: verse.bookName,
+            chapter: verse.chapter,
+            verseNumber: verse.verseNumber
+        )
+    }
+    
+    @State private var showHighlight: Bool = false  // For animation control
     @State private var highlightedCharCount: Int = 0
     @State private var highlightTimer: Timer?
     
@@ -389,9 +398,11 @@ struct BookVerseRow: View {
         let verseString = verse.text(for: language)
         var text = AttributedString(verseString)
         
-        if isFavorite && highlightedCharCount > 0 {
-            let endIndex = min(highlightedCharCount, verseString.count)
-            if endIndex > 0 {
+        // Show full highlight for existing favorites, or animated highlight for new saves
+        if isFavorite {
+            let charCount = showHighlight ? highlightedCharCount : verseString.count
+            if charCount > 0 {
+                let endIndex = min(charCount, verseString.count)
                 let startIdx = text.startIndex
                 let endIdx = text.index(startIdx, offsetByCharacters: endIndex)
                 text[startIdx..<endIdx].backgroundColor = Color(theme.highlightAccent.opacity(0.25))
@@ -400,18 +411,11 @@ struct BookVerseRow: View {
         return text
     }
     
-    // Check favorite status
-    private func checkFavoriteStatus() {
-        let wasFavorite = FavoriteService.shared.isFavorite(
-            bookName: verse.bookName,
-            chapter: verse.chapter,
-            verseNumber: verse.verseNumber
-        )
-        if wasFavorite != isFavorite {
-            isFavorite = wasFavorite
-            if wasFavorite {
-                highlightedCharCount = verse.text(for: language).count
-            }
+    // Initialize highlight state on appear
+    private func initializeHighlightState() {
+        if isFavorite && !showHighlight {
+            // Already favorited - show full highlight immediately
+            highlightedCharCount = verse.text(for: language).count
         }
     }
     
@@ -467,22 +471,13 @@ struct BookVerseRow: View {
             }
         }
         .onAppear {
-            checkFavoriteStatus()
+            initializeHighlightState()
         }
         .onChange(of: verse.id) { _, _ in
-            // When verse changes (scroll reuse), re-check favorite status
-            checkFavoriteStatus()
-        }
-        .onChange(of: FavoriteService.shared.favorites.count) { _, _ in
-            // When favorites list changes, re-check status
-            checkFavoriteStatus()
-        }
-        .onChange(of: isFavorite) { oldValue, newValue in
-            if !newValue && oldValue {
-                // Removed from favorites
-                highlightTimer?.invalidate()
-                highlightedCharCount = 0
-            }
+            // When verse changes (scroll reuse), re-initialize highlight state
+            showHighlight = false
+            highlightTimer?.invalidate()
+            initializeHighlightState()
         }
         .onDisappear {
             highlightTimer?.invalidate()
@@ -497,8 +492,8 @@ struct BookVerseRow: View {
                   chapter == verse.chapter,
                   verseNumber == verse.verseNumber else { return }
             
-            // Update favorite state and animate after delay
-            isFavorite = true
+            // Animate highlight for newly saved verse
+            showHighlight = true
             animateHighlight()
         }
         .onReceive(NotificationCenter.default.publisher(for: .verseFavoriteRemoved)) { notification in
@@ -514,7 +509,7 @@ struct BookVerseRow: View {
             // Immediately remove highlight
             highlightTimer?.invalidate()
             highlightedCharCount = 0
-            isFavorite = false
+            showHighlight = false
         }
         .contextMenu(isMultiSelectMode ? nil : ContextMenu {
             Button {

@@ -114,52 +114,46 @@ class ListeningViewModel {
     
     private func setupCallbacks() {
         // Capture self strongly to avoid weak reference issues during callbacks
+        // NOTE: TTSService already calls these from @MainActor context, so we update directly
+        // without additional Task wrapping to avoid double-dispatch delays
         let viewModel = self
         ttsService.onUtteranceStart = { index in
-            Task { @MainActor in
-                viewModel.currentVerseIndex = index
-                viewModel.showCompletionButtons = false
-                viewModel.highlightedRange = nil
-                // Start auto-scroll after first verse starts
-                if index > 0 {
-                    viewModel.shouldAutoScroll = true
-                }
+            viewModel.currentVerseIndex = index
+            viewModel.showCompletionButtons = false
+            viewModel.highlightedRange = nil
+            // Start auto-scroll after first verse starts
+            if index > 0 {
+                viewModel.shouldAutoScroll = true
             }
         }
         
         ttsService.onWordSpoken = { index, range in
-            Task { @MainActor in
-                viewModel.highlightedRange = range
-                
-                // Track max read position for this verse
-                // Create new dictionary to ensure @Observable triggers update
-                let newPosition = range.location + range.length
-                let currentMax = viewModel.verseReadPositions[index] ?? 0
-                if newPosition > currentMax {
-                    var updatedPositions = viewModel.verseReadPositions
-                    updatedPositions[index] = newPosition
-                    viewModel.verseReadPositions = updatedPositions
-                }
+            viewModel.highlightedRange = range
+            
+            // Track max read position for this verse
+            // Create new dictionary to ensure @Observable triggers update
+            let newPosition = range.location + range.length
+            let currentMax = viewModel.verseReadPositions[index] ?? 0
+            if newPosition > currentMax {
+                var updatedPositions = viewModel.verseReadPositions
+                updatedPositions[index] = newPosition
+                viewModel.verseReadPositions = updatedPositions
             }
         }
         
         ttsService.onUtteranceFinish = { index in
-            Task { @MainActor in
-                // Mark verse as fully read
-                if index < viewModel.verses.count {
-                    let verseLength = viewModel.verses[index].text(for: viewModel.languageMode).count
-                    var updatedPositions = viewModel.verseReadPositions
-                    updatedPositions[index] = verseLength
-                    viewModel.verseReadPositions = updatedPositions
-                }
+            // Mark verse as fully read
+            if index < viewModel.verses.count {
+                let verseLength = viewModel.verses[index].text(for: viewModel.languageMode).count
+                var updatedPositions = viewModel.verseReadPositions
+                updatedPositions[index] = verseLength
+                viewModel.verseReadPositions = updatedPositions
             }
         }
         
         ttsService.onAllFinished = {
-            Task { @MainActor in
-                viewModel.showCompletionButtons = true
-                viewModel.highlightedRange = nil
-            }
+            viewModel.showCompletionButtons = true
+            viewModel.highlightedRange = nil
         }
     }
     
@@ -178,7 +172,8 @@ class ListeningViewModel {
         // Generate new session ID to force view refresh
         self.sessionId = UUID()
         
-        // Reset all state
+        // Reset all state including view readiness (critical for consistent first-run behavior)
+        self.isViewReady = false
         self.currentVerseIndex = verseIndex
         self.showCompletionButtons = false
         self.shouldAutoScroll = verseIndex > 0  // Auto-scroll if not starting from beginning
