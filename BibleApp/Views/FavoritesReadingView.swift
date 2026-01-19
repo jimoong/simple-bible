@@ -157,9 +157,10 @@ struct FavoritesReadingView: View {
                 favoritesScrollView
             }
             
-            // Top right button: Menu or Done
+            // Bottom right button: Menu or Done
             if !favorites.isEmpty {
                 VStack {
+                    Spacer()
                     HStack {
                         Spacer()
                         if isMultiSelectMode {
@@ -175,7 +176,7 @@ struct FavoritesReadingView: View {
                             }
                             .buttonStyle(.glass)
                             .padding(.trailing, 20)
-                            .padding(.top, safeAreaTop + 8)
+                            .padding(.bottom, safeAreaBottom - 4)
                         } else {
                             // Menu button
                             Menu {
@@ -217,10 +218,9 @@ struct FavoritesReadingView: View {
                             }
                             .buttonStyle(.glassCircle)
                             .padding(.trailing, 20)
-                            .padding(.top, safeAreaTop + 8)
+                            .padding(.bottom, safeAreaBottom - 4)
                         }
                     }
-                    Spacer()
                 }
             }
             

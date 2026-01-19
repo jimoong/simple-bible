@@ -290,19 +290,31 @@ struct ContentView: View {
                             }
                         }
                         
-                        // Back button - top left (for chapter grid and favorites)
-                        if fullscreenSelectedBook != nil || showFavoritesInBookshelf {
+                        // Back button - bottom left for chapter grid and favorites
+                        if fullscreenSelectedBook != nil {
+                            // Chapter grid: bottom left
                             VStack {
+                                Spacer()
                                 HStack {
                                     topLeftBackButton
-                                        .padding(.top, geometry.safeAreaInsets.top + 8)
+                                        .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
+                                        .padding(.leading, 20)
+                                    Spacer()
+                                }
+                            }
+                        } else if showFavoritesInBookshelf {
+                            // Favorites: bottom left
+                            VStack {
+                                Spacer()
+                                HStack {
+                                    topLeftBackButton
+                                        .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
                                         .padding(.leading, 20)
                                         .opacity(isFavoritesFilterExpanded || isFavoritesMultiSelectMode ? 0 : 1)
                                         .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
                                         .animation(.easeOut(duration: 0.2), value: isFavoritesMultiSelectMode)
                                     Spacer()
                                 }
-                                Spacer()
                             }
                         }
                     }
@@ -380,9 +392,13 @@ struct ContentView: View {
                             .padding(.horizontal, 28)
                             .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
                         } else if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
-                            // Chapter grid view - show book navigation at bottom center
-                            bookNavigationButtons
-                                .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
+                            // Chapter grid view - show book navigation at bottom right
+                            HStack {
+                                Spacer()
+                                bookNavigationButtons
+                                    .padding(.trailing, 20)
+                                    .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
+                            }
                         } else if !isShowingFullscreenBookshelf {
                             // Normal reading view - Bottom: Action buttons (left) + Expandable menu (right)
                             HStack(alignment: .bottom) {
