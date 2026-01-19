@@ -142,6 +142,21 @@ struct VerseCardView: View {
             isFavorite = true
             animateHighlight()
         }
+        .onReceive(NotificationCenter.default.publisher(for: .verseFavoriteRemoved)) { notification in
+            // Check if this notification is for this verse
+            guard let userInfo = notification.userInfo,
+                  let bookNameEn = userInfo["bookNameEn"] as? String,
+                  let chapter = userInfo["chapter"] as? Int,
+                  let verseNumber = userInfo["verseNumber"] as? Int,
+                  bookNameEn == verse.bookName,
+                  chapter == verse.chapter,
+                  verseNumber == verse.verseNumber else { return }
+            
+            // Immediately remove highlight
+            highlightTimer?.invalidate()
+            highlightedCharCount = 0
+            isFavorite = false
+        }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.horizontal, 28)
         .padding(.bottom, verseNumberHeight)  // Compensate for verse number to optically center text

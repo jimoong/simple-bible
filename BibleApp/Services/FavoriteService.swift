@@ -11,6 +11,7 @@ import SwiftUI
 // Notification for when a verse is saved as favorite
 extension Notification.Name {
     static let verseFavoriteSaved = Notification.Name("verseFavoriteSaved")
+    static let verseFavoriteRemoved = Notification.Name("verseFavoriteRemoved")
 }
 
 @MainActor
@@ -129,10 +130,18 @@ final class FavoriteService {
     
     /// Remove a verse from favorites
     func removeFavorite(bookId: String, chapter: Int, verseNumber: Int) {
+        // Get book name before removing
+        guard let favorite = favorites.first(where: { 
+            $0.bookId == bookId && $0.chapter == chapter && $0.verseNumber == verseNumber 
+        }) else { return }
+        
         let key = makeKey(bookId: bookId, chapter: chapter, verseNumber: verseNumber)
         favorites.removeAll { $0.id == key }
         saveFavorites()
         HapticManager.shared.lightClick()
+        
+        // Post notification for removed favorite
+        postRemovalNotification(for: favorite)
     }
     
     /// Remove a verse from favorites using BibleVerse
@@ -142,9 +151,57 @@ final class FavoriteService {
     
     /// Remove a favorite by its ID
     func removeFavorite(id: String) {
+        // Get favorite info before removing
+        guard let favorite = favorites.first(where: { $0.id == id }) else { return }
+        
         favorites.removeAll { $0.id == id }
         saveFavorites()
         HapticManager.shared.lightClick()
+        
+        // Post notification for removed favorite
+        postRemovalNotification(for: favorite)
+    }
+    
+    /// Post notification for a removed favorite (handles both single verses and passages)
+    private func postRemovalNotification(for favorite: FavoriteVerse) {
+        // For passages, post notification for each verse
+        if let verseNumbers = favorite.verseNumbers {
+            for verseNum in verseNumbers {
+                NotificationCenter.default.post(
+                    name: .verseFavoriteRemoved,
+                    object: nil,
+                    userInfo: [
+                        "bookNameEn": favorite.bookNameEn,
+                        "chapter": favorite.chapter,
+                        "verseNumber": verseNum
+                    ]
+                )
+            }
+        } else if let endVerse = favorite.verseNumberEnd, endVerse > favorite.verseNumber {
+            // Continuous passage
+            for verseNum in favorite.verseNumber...endVerse {
+                NotificationCenter.default.post(
+                    name: .verseFavoriteRemoved,
+                    object: nil,
+                    userInfo: [
+                        "bookNameEn": favorite.bookNameEn,
+                        "chapter": favorite.chapter,
+                        "verseNumber": verseNum
+                    ]
+                )
+            }
+        } else {
+            // Single verse
+            NotificationCenter.default.post(
+                name: .verseFavoriteRemoved,
+                object: nil,
+                userInfo: [
+                    "bookNameEn": favorite.bookNameEn,
+                    "chapter": favorite.chapter,
+                    "verseNumber": favorite.verseNumber
+                ]
+            )
+        }
     }
     
     /// Toggle favorite status for a verse

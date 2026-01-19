@@ -696,34 +696,43 @@ struct ContentView: View {
     }
     
     private func navigateToFavorite(id: String) {
-        // Set scroll target and navigate to favorites
+        // Set scroll target
         scrollToFavoriteId = id
-        
-        // Reset navigation state and set favorites flag FIRST (before animation)
-        // This ensures the favorites view shows when bookshelf opens
-        fullscreenSelectedBook = nil
-        viewModel.selectedBookForChapter = nil
-        showFavoritesInBookshelf = true
         favoritesOpenedFromReading = true  // Mark that we came from reading view
         hideControlsWhileScrolling = false  // Reset controls visibility
         
-        // Then animate the bookshelf opening
-        withAnimation(.easeInOut(duration: 0.25)) {
-            viewModel.showBookshelf = true
+        // Check if bookshelf is already open
+        if viewModel.showBookshelf {
+            // Bookshelf already open - just switch to favorites view
+            withAnimation(.easeInOut(duration: 0.25)) {
+                fullscreenSelectedBook = nil
+                viewModel.selectedBookForChapter = nil
+                showFavoritesInBookshelf = true
+            }
+        } else {
+            // Bookshelf not open - set all states together in one animation block
+            // This ensures SwiftUI processes all state changes atomically
+            withAnimation(.easeInOut(duration: 0.25)) {
+                fullscreenSelectedBook = nil
+                viewModel.selectedBookForChapter = nil
+                showFavoritesInBookshelf = true
+                viewModel.showBookshelf = true
+            }
         }
         HapticManager.shared.selection()
     }
     
     private func openFavoritesList() {
         // Open favorites list without scrolling to specific item
-        fullscreenSelectedBook = nil
-        viewModel.selectedBookForChapter = nil
-        showFavoritesInBookshelf = true
         scrollToFavoriteId = nil
         favoritesOpenedFromReading = true  // Mark that we came from reading view
         hideControlsWhileScrolling = false  // Reset controls visibility
         
+        // Set all states together in one animation block
         withAnimation(.easeInOut(duration: 0.25)) {
+            fullscreenSelectedBook = nil
+            viewModel.selectedBookForChapter = nil
+            showFavoritesInBookshelf = true
             viewModel.showBookshelf = true
         }
         HapticManager.shared.selection()
