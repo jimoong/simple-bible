@@ -142,24 +142,20 @@ struct ContentView: View {
                 
                 // Floating counter for multi-select mode (top center, same position as favorites list)
                 if isMultiSelectMode && !selectedVerseIndices.isEmpty && !isShowingFullscreenBookshelf {
-                    VStack {
-                        Text(viewModel.uiLanguage == .kr 
-                             ? "\(selectedVerseIndices.count)절 선택됨" 
-                             : "\(selectedVerseIndices.count) verses selected")
-                            .font(.system(size: 14, weight: .medium))
-                            .foregroundStyle(.white)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 10)
-                            .background(
-                                Capsule()
-                                    .fill(.ultraThinMaterial)
-                                    .environment(\.colorScheme, .dark)
-                            )
-                            .padding(.top, geometry.safeAreaInsets.top + 16)
-                        Spacer()
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                    .zIndex(50)  // High zIndex to be above everything
+                    Text(viewModel.uiLanguage == .kr 
+                         ? "\(selectedVerseIndices.count)절 선택됨" 
+                         : "\(selectedVerseIndices.count) verses selected")
+                        .font(.system(size: 14, weight: .medium))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 10)
+                        .background(
+                            Capsule()
+                                .fill(.ultraThinMaterial)
+                                .environment(\.colorScheme, .dark)
+                        )
+                        .position(x: geometry.size.width / 2, y: geometry.safeAreaInsets.top + 36)
+                        .zIndex(50)
                 }
                 
                 // Dimmed background - tap to dismiss (only for top panel chapter grid)
@@ -320,7 +316,7 @@ struct ContentView: View {
                                 HStack {
                                     topLeftBackButton
                                         .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
-                                        .padding(.leading, 20)
+                                        .padding(.leading, 28)
                                     Spacer()
                                 }
                             }
@@ -331,7 +327,7 @@ struct ContentView: View {
                                 HStack {
                                     topLeftBackButton
                                         .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
-                                        .padding(.leading, 20)
+                                        .padding(.leading, 28)
                                         .opacity(isFavoritesFilterExpanded || isFavoritesMultiSelectMode ? 0 : 1)
                                         .animation(.easeOut(duration: 0.2), value: isFavoritesFilterExpanded)
                                         .animation(.easeOut(duration: 0.2), value: isFavoritesMultiSelectMode)
@@ -416,14 +412,14 @@ struct ContentView: View {
                                     )
                                 }
                             )
-                            .padding(.horizontal, 20)
+                            .padding(.horizontal, 28)
                             .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
                         } else if isShowingFullscreenBookshelf && fullscreenSelectedBook != nil && !showFavoritesInBookshelf {
                             // Chapter grid view - show book navigation at bottom right
                             HStack {
                                 Spacer()
                                 bookNavigationButtons
-                                    .padding(.trailing, 20)
+                                    .padding(.trailing, 28)
                                     .padding(.bottom, geometry.safeAreaInsets.bottom - 4)
                             }
                         } else if !isShowingFullscreenBookshelf {

@@ -174,7 +174,7 @@ struct FavoritesReadingView: View {
                                     .frame(width: 48, height: 48)
                             }
                             .buttonStyle(.glassCircle)
-                            .padding(.trailing, 20)
+                            .padding(.trailing, 28)
                             .padding(.bottom, safeAreaBottom - 4)
                         } else {
                             // Menu button
@@ -216,8 +216,10 @@ struct FavoritesReadingView: View {
                                     .frame(width: 48, height: 48)
                             }
                             .buttonStyle(.glassCircle)
-                            .padding(.trailing, 20)
+                            .padding(.trailing, 28)
                             .padding(.bottom, safeAreaBottom - 4)
+                            .opacity(isFilterExpanded ? 0 : 1)
+                            .animation(.easeOut(duration: 0.2), value: isFilterExpanded)
                         }
                     }
                 }
@@ -244,7 +246,7 @@ struct FavoritesReadingView: View {
                     Spacer()
                     HStack {
                         deleteActionButton
-                            .padding(.leading, 20)
+                            .padding(.leading, 28)
                             .padding(.bottom, safeAreaBottom - 4)
                         Spacer()
                     }
