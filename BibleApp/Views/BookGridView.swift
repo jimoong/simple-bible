@@ -602,12 +602,12 @@ struct BookGridView: View {
         HStack(spacing: 8) {
             // Search input field
             HStack(spacing: 10) {
-                Image(systemName: "magnifyingglass")
+                Image(systemName: "location")
                     .font(.system(size: 16, weight: .medium))
                     .foregroundStyle(.white.opacity(0.5))
                 
                 TextField(
-                    viewModel.uiLanguage == .kr ? "검색" : "Search",
+                    viewModel.uiLanguage == .kr ? "책 이름, 장, 절 찾아가기" : "Go to book, chapter, verse",
                     text: $searchText
                 )
                 .font(.system(size: 16))

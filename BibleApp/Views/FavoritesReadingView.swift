@@ -44,7 +44,7 @@ struct FavoritesReadingView: View {
         return favorites.filter { $0.bookId == bookId }
     }
     
-    // Time-based sections
+    // Time-based sections (excludes recommended verses)
     private var groupedFavorites: [(label: String, favorites: [FavoriteVerse])] {
         let now = Date()
         let calendar = Calendar.current
@@ -62,8 +62,11 @@ struct FavoritesReadingView: View {
         
         var sections: [(label: String, favorites: [FavoriteVerse])] = []
         
+        // Filter out recommended verses (they go in their own section at the bottom)
+        let userFavorites = filteredFavorites.filter { !$0.isRecommended }
+        
         // Sort favorites by likedAt descending (newest first)
-        let sorted = filteredFavorites.sorted { $0.likedAt > $1.likedAt }
+        let sorted = userFavorites.sorted { $0.likedAt > $1.likedAt }
         
         // Group by time period
         var justNow: [FavoriteVerse] = []
@@ -124,6 +127,11 @@ struct FavoritesReadingView: View {
         }
         
         return sections
+    }
+    
+    // Recommended verses section (always at the bottom)
+    private var recommendedFavorites: [FavoriteVerse] {
+        filteredFavorites.filter { $0.isRecommended }
     }
     
     // Book counts for filter menu
@@ -201,14 +209,6 @@ struct FavoritesReadingView: View {
                                     )
                                 }
                                 
-                                Divider()
-                                
-                                Button(role: .destructive) {
-                                    FavoriteService.shared.populateMockData()
-                                    loadFavorites()
-                                } label: {
-                                    Label(language == .kr ? "테스트 데이터로 교체" : "Replace with Test Data", systemImage: "testtube.2")
-                                }
                             } label: {
                                 Image(systemName: "ellipsis")
                                     .font(.system(size: 18, weight: .semibold))
@@ -342,20 +342,6 @@ struct FavoritesReadingView: View {
                 .font(.system(size: 14))
                 .foregroundStyle(.white.opacity(0.4))
                 .multilineTextAlignment(.center)
-            
-            // Test data button
-            Button {
-                FavoriteService.shared.populateMockData()
-                loadFavorites()
-            } label: {
-                Text(language == .kr ? "테스트 데이터 채우기" : "Add Test Data")
-                    .font(.system(size: 14, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.6))
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 10)
-            }
-            .buttonStyle(.glass)
-            .padding(.top, 24)
         }
         .padding(40)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -401,56 +387,25 @@ struct FavoritesReadingView: View {
                     
                     // Favorites list (grouped by time)
                     LazyVStack(spacing: isCompactMode ? 4 : 10) {
+                        // User's saved favorites (time-based sections)
                         ForEach(groupedFavorites, id: \.label) { section in
                             // Section header
                             sectionHeader(section.label)
                             
                             // Section items
                             ForEach(section.favorites) { favorite in
-                                Group {
-                                    if isCompactMode {
-                                        CompactFavoriteRow(
-                                            favorite: favorite,
-                                            language: language,
-                                            isMultiSelectMode: isMultiSelectMode,
-                                            isSelected: selectedFavoriteIds.contains(favorite.id),
-                                            onTap: {
-                                                if isMultiSelectMode {
-                                                    toggleSelection(favorite.id)
-                                                } else {
-                                                    onEditFavorite(favorite)
-                                                }
-                                            },
-                                            onShare: {
-                                                shareVerse(favorite)
-                                            },
-                                            onDelete: {
-                                                deleteFavorite(favorite)
-                                            }
-                                        )
-                                    } else {
-                                        FavoriteVerseRow(
-                                            favorite: favorite,
-                                            language: language,
-                                            isMultiSelectMode: isMultiSelectMode,
-                                            isSelected: selectedFavoriteIds.contains(favorite.id),
-                                            onTap: {
-                                                if isMultiSelectMode {
-                                                    toggleSelection(favorite.id)
-                                                } else {
-                                                    onEditFavorite(favorite)
-                                                }
-                                            },
-                                            onShare: {
-                                                shareVerse(favorite)
-                                            },
-                                            onDelete: {
-                                                deleteFavorite(favorite)
-                                            }
-                                        )
-                                    }
-                                }
-                                .id("\(favorite.id)_\(isCompactMode)")  // Force re-render on mode change
+                                favoriteRow(for: favorite)
+                                    .id("\(favorite.id)_\(isCompactMode)")  // Force re-render on mode change
+                            }
+                        }
+                        
+                        // Recommended verses section (always at the bottom)
+                        if !recommendedFavorites.isEmpty {
+                            sectionHeader(language == .kr ? "추천 구절" : "Recommended")
+                            
+                            ForEach(recommendedFavorites) { favorite in
+                                favoriteRow(for: favorite)
+                                    .id("\(favorite.id)_\(isCompactMode)")  // Force re-render on mode change
                             }
                         }
                     }
@@ -490,6 +445,54 @@ struct FavoritesReadingView: View {
         .padding(.horizontal, 16)
         .padding(.top, 24)
         .padding(.bottom, 4)
+    }
+    
+    // MARK: - Favorite Row (reusable)
+    @ViewBuilder
+    private func favoriteRow(for favorite: FavoriteVerse) -> some View {
+        Group {
+            if isCompactMode {
+                CompactFavoriteRow(
+                    favorite: favorite,
+                    language: language,
+                    isMultiSelectMode: isMultiSelectMode,
+                    isSelected: selectedFavoriteIds.contains(favorite.id),
+                    onTap: {
+                        if isMultiSelectMode {
+                            toggleSelection(favorite.id)
+                        } else {
+                            onEditFavorite(favorite)
+                        }
+                    },
+                    onShare: {
+                        shareVerse(favorite)
+                    },
+                    onDelete: {
+                        deleteFavorite(favorite)
+                    }
+                )
+            } else {
+                FavoriteVerseRow(
+                    favorite: favorite,
+                    language: language,
+                    isMultiSelectMode: isMultiSelectMode,
+                    isSelected: selectedFavoriteIds.contains(favorite.id),
+                    onTap: {
+                        if isMultiSelectMode {
+                            toggleSelection(favorite.id)
+                        } else {
+                            onEditFavorite(favorite)
+                        }
+                    },
+                    onShare: {
+                        shareVerse(favorite)
+                    },
+                    onDelete: {
+                        deleteFavorite(favorite)
+                    }
+                )
+            }
+        }
     }
     
     // MARK: - Helper Methods
@@ -1012,7 +1015,7 @@ struct FilterFAB: View {
         VStack(spacing: 0) {
             // Search field
             HStack(spacing: 10) {
-                Image(systemName: "magnifyingglass")
+                Image(systemName: "location")
                     .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(.white.opacity(0.5))
                 

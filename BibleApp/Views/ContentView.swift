@@ -1063,7 +1063,7 @@ struct ContentView: View {
             ZStack {
                 searchButtonBackground
                 
-                Image(systemName: "magnifyingglass")
+                Image(systemName: "location")
                     .font(.system(size: 18, weight: .semibold))
                     .foregroundStyle(.white)
             }

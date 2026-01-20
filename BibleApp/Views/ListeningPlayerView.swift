@@ -264,8 +264,8 @@ struct ListeningPlayerView: View {
                     onBookshelf()
                 }
                 
-                // Search button
-                fabButton(icon: "magnifyingglass") {
+                // Location button
+                fabButton(icon: "location") {
                     viewModel.pauseForNavigation()
                     onSearch()
                 }

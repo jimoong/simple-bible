@@ -20,6 +20,7 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
     let textKr: String
     let likedAt: Date
     var note: String?
+    let isRecommended: Bool  // Pre-populated recommended verses (first install)
     
     /// Check if this is a passage (multiple verses)
     var isPassage: Bool {
@@ -48,6 +49,7 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         self.textKr = verse.textKr
         self.likedAt = Date()
         self.note = note
+        self.isRecommended = false
     }
     
     /// Create a FavoriteVerse from multiple verses (passage)
@@ -67,6 +69,7 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
             self.textKr = ""
             self.likedAt = Date()
             self.note = note
+            self.isRecommended = false
             return
         }
         
@@ -94,6 +97,7 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         self.textKr = sortedVerses.map { $0.textKr }.joined(separator: separator)
         self.likedAt = Date()
         self.note = note
+        self.isRecommended = false
     }
     
     /// Create with all parameters (for decoding or editing)
@@ -109,7 +113,8 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         textEn: String,
         textKr: String,
         likedAt: Date,
-        note: String?
+        note: String?,
+        isRecommended: Bool = false
     ) {
         self.id = id
         self.bookId = bookId
@@ -123,6 +128,7 @@ struct FavoriteVerse: Identifiable, Codable, Equatable {
         self.textKr = textKr
         self.likedAt = likedAt
         self.note = note
+        self.isRecommended = isRecommended
     }
     
     // MARK: - Computed Properties
