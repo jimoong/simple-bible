@@ -1,5 +1,17 @@
 import SwiftUI
 
+// Context for verse menu/editing - combines verse and optional editing favorite
+struct VerseMenuContext: Identifiable {
+    let id = UUID()
+    let verse: BibleVerse
+    let editingFavorite: FavoriteVerse?
+    
+    init(verse: BibleVerse, editingFavorite: FavoriteVerse? = nil) {
+        self.verse = verse
+        self.editingFavorite = editingFavorite
+    }
+}
+
 struct ContentView: View {
     @State private var viewModel = BibleViewModel()
     @State private var searchText: String = ""
@@ -14,8 +26,7 @@ struct ContentView: View {
     
     // Favorites system state
     @State private var showFavoritesInBookshelf = false  // Inline in bookshelf (same level as chapter grid)
-    @State private var selectedVerseForMenu: BibleVerse? = nil
-    @State private var editingFavorite: FavoriteVerse? = nil
+    @State private var verseMenuContext: VerseMenuContext? = nil  // Combined verse + editing favorite
     @State private var isFavoritesFilterExpanded = false  // Hide back button when filter menu is open
     @State private var isFavoritesMultiSelectMode = false  // Hide back button when in multi-select mode
     @State private var scrollToFavoriteId: String? = nil  // Scroll to specific favorite on open
@@ -271,28 +282,27 @@ struct ContentView: View {
                                 onEditFavorite: { favorite in
                                     // Create a BibleVerse from the favorite for editing
                                     // First dismiss if already showing, then reopen with new data
-                                    if selectedVerseForMenu != nil {
-                                        selectedVerseForMenu = nil
-                                        editingFavorite = nil
+                                    if verseMenuContext != nil {
+                                        verseMenuContext = nil
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                                            editingFavorite = favorite
-                                            selectedVerseForMenu = BibleVerse(
+                                            let verse = BibleVerse(
                                                 bookName: favorite.bookNameEn,
                                                 chapter: favorite.chapter,
                                                 verseNumber: favorite.verseNumber,
                                                 textEn: favorite.textEn,
                                                 textKr: favorite.textKr
                                             )
+                                            verseMenuContext = VerseMenuContext(verse: verse, editingFavorite: favorite)
                                         }
                                     } else {
-                                        editingFavorite = favorite
-                                        selectedVerseForMenu = BibleVerse(
+                                        let verse = BibleVerse(
                                             bookName: favorite.bookNameEn,
                                             chapter: favorite.chapter,
                                             verseNumber: favorite.verseNumber,
                                             textEn: favorite.textEn,
                                             textKr: favorite.textKr
                                         )
+                                        verseMenuContext = VerseMenuContext(verse: verse, editingFavorite: favorite)
                                     }
                                 },
                                 isFilterExpanded: $isFavoritesFilterExpanded,
@@ -614,21 +624,22 @@ struct ContentView: View {
                     }
                 )
             }
-            .fullScreenCover(item: $selectedVerseForMenu) { verse in
-                // Capture editing favorite first, then derive book from it
-                let currentEditingFavorite = editingFavorite  // Capture current value
+            .fullScreenCover(item: $verseMenuContext) { context in
+                // Use context directly - no closure capture issues
+                let verse = context.verse
+                let editingFavorite = context.editingFavorite
                 // Try to get book from: 1) editing favorite, 2) verse bookName, 3) current book
-                let book = currentEditingFavorite.flatMap { BibleData.book(by: $0.bookId) }
+                let book = editingFavorite.flatMap { BibleData.book(by: $0.bookId) }
                     ?? BibleData.books.first { $0.nameEn == verse.bookName }
                     ?? viewModel.currentBook
                 FavoriteNoteOverlay(
                     verse: verse,
                     book: book,
                     language: viewModel.uiLanguage,
-                    existingFavorite: currentEditingFavorite,
+                    existingFavorite: editingFavorite,
                     onSave: { note in
-                        let isNewFavorite = currentEditingFavorite == nil
-                        if let existing = currentEditingFavorite {
+                        let isNewFavorite = editingFavorite == nil
+                        if let existing = editingFavorite {
                             // Update existing favorite note
                             FavoriteService.shared.updateNote(id: existing.id, note: note)
                         } else {
@@ -639,8 +650,7 @@ struct ContentView: View {
                                 note: note
                             )
                         }
-                        selectedVerseForMenu = nil
-                        editingFavorite = nil
+                        verseMenuContext = nil
                         
                         // Show success toast with action (only for new saves)
                         if isNewFavorite {
@@ -654,15 +664,13 @@ struct ContentView: View {
                         }
                     },
                     onCancel: {
-                        selectedVerseForMenu = nil
-                        editingFavorite = nil
+                        verseMenuContext = nil
                     },
-                    onViewInBible: currentEditingFavorite != nil ? {
+                    onViewInBible: editingFavorite != nil ? {
                         // Navigate to verse in reading view
-                        if let favorite = currentEditingFavorite,
+                        if let favorite = editingFavorite,
                            let book = BibleData.book(by: favorite.bookId) {
-                            selectedVerseForMenu = nil
-                            editingFavorite = nil
+                            verseMenuContext = nil
                             
                             // Close favorites list and navigate
                             showFavoritesInBookshelf = false
@@ -677,7 +685,7 @@ struct ContentView: View {
                         }
                     } : nil
                 )
-                .id(currentEditingFavorite?.id ?? verse.id)  // Force view recreation on favorite change
+                .id(editingFavorite?.id ?? verse.id)  // Force view recreation on favorite change
             }
             .fullScreenCover(isPresented: $showMultiSelectSaveOverlay) {
                 let selectedVerses = selectedVerseIndices.sorted().compactMap { index -> BibleVerse? in
@@ -783,8 +791,7 @@ struct ContentView: View {
             navigateToFavorite(id: favoriteId)
         } else {
             // Not saved - open note overlay to save
-            editingFavorite = nil
-            selectedVerseForMenu = verse
+            verseMenuContext = VerseMenuContext(verse: verse, editingFavorite: nil)
         }
     }
     
