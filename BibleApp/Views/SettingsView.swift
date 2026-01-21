@@ -58,8 +58,10 @@ struct SettingsView: View {
                         // Offline Downloads Section
                         offlineSection
                         
-                        // Developer Section
-                        developerSection
+                        // Developer Section (only shown in development builds)
+                        if FeatureFlags.showDeveloperSettings {
+                            developerSection
+                        }
                         
                         Spacer(minLength: 80)
                     }
@@ -145,8 +147,11 @@ struct SettingsView: View {
             VStack(spacing: 0) {
                 // Primary Language
                 Button {
-                    HapticManager.shared.selection()
-                    showPrimaryPicker = true
+                    // Only show translation picker in development mode
+                    if FeatureFlags.enableTranslationPicker {
+                        HapticManager.shared.selection()
+                        showPrimaryPicker = true
+                    }
                 } label: {
                     HStack {
                         Text(isKoreanUI ? "\(primaryTranslation.language) (주 언어)" : "\(primaryTranslation.language) (Primary)")
@@ -155,9 +160,12 @@ struct SettingsView: View {
                         
                         Spacer()
                         
-                        Text(primaryTranslation.id)
-                            .font(.system(size: 16))
-                            .foregroundStyle(.white.opacity(0.4))
+                        // Show chevron only when picker is available
+                        if FeatureFlags.enableTranslationPicker {
+                            Text(primaryTranslation.id)
+                                .font(.system(size: 16))
+                                .foregroundStyle(.white.opacity(0.4))
+                        }
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
@@ -171,8 +179,11 @@ struct SettingsView: View {
                 
                 // Secondary Language
                 Button {
-                    HapticManager.shared.selection()
-                    showSecondaryPicker = true
+                    // Only show translation picker in development mode
+                    if FeatureFlags.enableTranslationPicker {
+                        HapticManager.shared.selection()
+                        showSecondaryPicker = true
+                    }
                 } label: {
                     HStack {
                         Text(secondaryTranslation.language)
@@ -181,9 +192,12 @@ struct SettingsView: View {
                         
                         Spacer()
                         
-                        Text(secondaryTranslation.id)
-                            .font(.system(size: 16))
-                            .foregroundStyle(.white.opacity(0.4))
+                        // Show translation ID only when picker is available
+                        if FeatureFlags.enableTranslationPicker {
+                            Text(secondaryTranslation.id)
+                                .font(.system(size: 16))
+                                .foregroundStyle(.white.opacity(0.4))
+                        }
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 14)
