@@ -13,6 +13,7 @@
 		662A3A8D2F1B5891004F674A /* ErrorLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A882F1B5891004F674A /* ErrorLogger.swift */; };
 		662A3A902F1C2A8B004F674A /* MultiSelectActionBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A8E2F1C2A8B004F674A /* MultiSelectActionBar.swift */; };
 		662A3A912F1C2A8B004F674A /* MultiSelectSaveOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 662A3A8F2F1C2A8B004F674A /* MultiSelectSaveOverlay.swift */; };
+		669BBC2C2F205D64009112B8 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669BBC2B2F205D64009112B8 /* FeatureFlags.swift */; };
 		66EAF86F2F14AF6500542200 /* BibleReferenceParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */; };
 		66EAF8702F14AF6500542200 /* VoiceSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */; };
 		66EAF8722F14AF7300542200 /* VoiceSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */; };
@@ -84,6 +85,7 @@
 		662A3A8A2F1B5891004F674A /* FeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackManager.swift; sourceTree = "<group>"; };
 		662A3A8E2F1C2A8B004F674A /* MultiSelectActionBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectActionBar.swift; sourceTree = "<group>"; };
 		662A3A8F2F1C2A8B004F674A /* MultiSelectSaveOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectSaveOverlay.swift; sourceTree = "<group>"; };
+		669BBC2B2F205D64009112B8 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		66EAF86D2F14AF6500542200 /* BibleReferenceParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleReferenceParser.swift; sourceTree = "<group>"; };
 		66EAF86E2F14AF6500542200 /* VoiceSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchService.swift; sourceTree = "<group>"; };
 		66EAF8712F14AF7300542200 /* VoiceSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSearchViewModel.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 		AA0000050000000000000008 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				669BBC2B2F205D64009112B8 /* FeatureFlags.swift */,
 				66EAF8882F1AC58700542200 /* AppLegalTexts.swift */,
 				AA0000020000000000000014 /* BibleData.swift */,
 				AA0000020000000000000024 /* BibleBookSummaries.swift */,
@@ -436,6 +439,7 @@
 				AA0000010000000000000071 /* FavoriteService.swift in Sources */,
 				66EAF8832F1A1A9800542200 /* ListeningViewModel.swift in Sources */,
 				AA0000010000000000000072 /* VerseContextMenu.swift in Sources */,
+				669BBC2C2F205D64009112B8 /* FeatureFlags.swift in Sources */,
 				AA0000010000000000000073 /* FavoriteNoteOverlay.swift in Sources */,
 				66EAF8862F1A1AA500542200 /* ListeningPlayerView.swift in Sources */,
 				66EAF8872F1A1AA500542200 /* ListeningModeView.swift in Sources */,
@@ -594,7 +598,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bibleapp.slot;
+				PRODUCT_BUNDLE_IDENTIFIER = app.selah.bible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -628,7 +632,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bibleapp.slot;
+				PRODUCT_BUNDLE_IDENTIFIER = app.selah.bible;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
