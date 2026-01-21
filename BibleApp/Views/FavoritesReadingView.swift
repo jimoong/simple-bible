@@ -33,8 +33,10 @@ struct FavoritesReadingView: View {
     @State private var showDeleteConfirmation = false
     @State private var showDeleteAllConfirmation = false
     
-    // Compact view mode
-    @State private var isCompactMode = false
+    // Compact view mode (persisted)
+    @AppStorage("favoritesCompactMode") private var isCompactMode = false
+    @GestureState private var pinchScale: CGFloat = 1.0
+    @State private var isPinching = false
     
     // Filtered favorites based on selection
     private var filteredFavorites: [FavoriteVerse] {
@@ -417,6 +419,41 @@ struct FavoritesReadingView: View {
                 Color.clear.frame(height: safeAreaBottom + 100)
             }
             .scrollIndicators(.visible)
+            .simultaneousGesture(
+                MagnificationGesture()
+                    .updating($pinchScale) { value, state, _ in
+                        state = value
+                        // Mark as pinching when scale deviates from 1.0
+                        if abs(value - 1.0) > 0.05 {
+                            Task { @MainActor in
+                                isPinching = true
+                            }
+                        }
+                    }
+                    .onEnded { value in
+                        // Clear pinching state after a short delay to prevent tap
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                            isPinching = false
+                        }
+                        
+                        // Don't allow pinch in multi-select mode
+                        guard !isMultiSelectMode else { return }
+                        
+                        if value > 1.4 && isCompactMode {
+                            // Pinch out (zoom in) → Large view
+                            withAnimation(.easeOut(duration: 0.25)) {
+                                isCompactMode = false
+                            }
+                            HapticManager.shared.selection()
+                        } else if value < 0.6 && !isCompactMode {
+                            // Pinch in (zoom out) → Compact view
+                            withAnimation(.easeOut(duration: 0.25)) {
+                                isCompactMode = true
+                            }
+                            HapticManager.shared.selection()
+                        }
+                    }
+            )
             .onAppear {
                 // Scroll to specific favorite if requested
                 if let targetId = scrollToId {
@@ -458,6 +495,8 @@ struct FavoritesReadingView: View {
                     isMultiSelectMode: isMultiSelectMode,
                     isSelected: selectedFavoriteIds.contains(favorite.id),
                     onTap: {
+                        // Ignore tap if pinching just ended
+                        guard !isPinching else { return }
                         if isMultiSelectMode {
                             toggleSelection(favorite.id)
                         } else {
@@ -478,6 +517,8 @@ struct FavoritesReadingView: View {
                     isMultiSelectMode: isMultiSelectMode,
                     isSelected: selectedFavoriteIds.contains(favorite.id),
                     onTap: {
+                        // Ignore tap if pinching just ended
+                        guard !isPinching else { return }
                         if isMultiSelectMode {
                             toggleSelection(favorite.id)
                         } else {
